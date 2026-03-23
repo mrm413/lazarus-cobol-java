@@ -31,7 +31,7 @@ public class Demounstring extends CobolProgram {
 
     private CobolString[] length = new CobolString[100];
 
-    private CobolString sub2 = new CobolString(256); // autofix
+    private CobolString sub2 = new CobolString(256);
     private void para_main() {
         sub1 = new BigDecimal(String.valueOf(1).trim()).intValue();
         for (int _i0 = 0; _i0 < Integer.parseInt(String.valueOf(length[Integer.parseInt(String.valueOf(full_name).trim()) - 1]).trim()); _i0++) {

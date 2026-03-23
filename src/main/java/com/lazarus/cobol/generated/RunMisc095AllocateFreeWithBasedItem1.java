@@ -30,7 +30,7 @@ public class RunMisc095AllocateFreeWithBasedItem1 extends CobolProgram {
 
 
     // SECTION: ASTART
-    private CobolString address = new CobolString(256); // autofix
+    private CobolString address = new CobolString(256);
     private void astart() {
         a01();
     }

@@ -40,7 +40,7 @@ public class RunInitialize011InitializeWithReferenceModification extends CobolPr
         if (!String.valueOf(my_fld).equals(String.valueOf("  CDEF"))) {
             CobolDisplay.display("MY-FLD: " + String.valueOf(my_fld));
         }
-    /* autofix: my_other_fld.setRefMod(2, 2, ""); */ /* int_deref */
+    /* my_other_fld.setRefMod(2, 2, ""); */ /* int_deref */
         my_fld.set(String.valueOf("0  0"));
         if (!String.valueOf(my_other_fld).equals(String.valueOf(CobolString.refMod(my_fld, 1, 4)))) {
             CobolDisplay.display("MY-OTHER-FLD: " + String.valueOf(my_other_fld));

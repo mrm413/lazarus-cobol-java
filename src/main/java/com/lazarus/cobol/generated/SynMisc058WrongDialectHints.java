@@ -29,8 +29,8 @@ public class SynMisc058WrongDialectHints extends CobolProgram {
 
 
 
-    private CobolString _unnamed = new CobolString(256); // autofix
-    private CobolString filler_1 = new CobolString(256); // autofix
+    private CobolString _unnamed = new CobolString(256);
+    private CobolString filler_1 = new CobolString(256);
     private void para_main() {
         CobolDisplay.display(String.valueOf(x));
     }

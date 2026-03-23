@@ -104,7 +104,7 @@ public class RunFile077ExtfhIndexedWithFhFcd extends CobolProgram {
     private CobolString odd_record = new CobolString(256);
     private CobolString null_key = new CobolString(256);
 
-    private CobolString fcd_name_length = new CobolString(256); // autofix
+    private CobolString fcd_name_length = new CobolString(256);
     private void mainfile() {
         address.set(String.valueOf(address));
         address.set(String.valueOf(address));

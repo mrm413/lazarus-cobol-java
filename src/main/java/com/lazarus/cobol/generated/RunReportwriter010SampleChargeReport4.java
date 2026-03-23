@@ -52,7 +52,7 @@ public class RunReportwriter010SampleChargeReport4 extends CobolProgram {
 
 
     // SECTION: USE-SALESMAN-TOTAL
-    private CobolString st_sales_amt = new CobolString(256); // autofix
+    private CobolString st_sales_amt = new CobolString(256);
     private void use_salesman_total() {
         use();
         salesman_total();

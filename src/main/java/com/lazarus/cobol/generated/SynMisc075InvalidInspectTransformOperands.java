@@ -37,9 +37,9 @@ public class SynMisc075InvalidInspectTransformOperands extends CobolProgram {
 
     private CobolString function = new CobolString(256);
 
-    private CobolString udf = new CobolString(256); // autofix
-    private CobolString from = new CobolString(256); // autofix
-    private CobolString yada = new CobolString(256); // autofix
+    private CobolString udf = new CobolString(256);
+    private CobolString from = new CobolString(256);
+    private CobolString yada = new CobolString(256);
     private void para_main() {
         /* INSPECT f — 4 clause(s) */
         /* TRANSFORM f — skipped, target is a file */

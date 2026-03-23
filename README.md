@@ -11,9 +11,10 @@ This repository contains the Java output of the Lazarus COBOL transpiler — a p
 | Programs transpiled | **1,323** |
 | Compile rate | **100.0%** (1,323 / 1,323) |
 | Lines of generated Java | **160,000+** |
-| Runtime library | **6 classes, 916 lines** |
+| Runtime library | **6 core classes + 13 CICS runtime classes** |
+| CICS runtime tests | **155 passed** (core + VSAM + emitter + E2E) |
 | Test categories covered | **79+** |
-| External dependencies | **0** (pure Java, JDK 11+) |
+| External dependencies | **1** (H2 embedded database for CICS VSAM) |
 
 ## Production COBOL validation
 
@@ -39,7 +40,43 @@ src/main/java/com/lazarus/cobol/
     CobolString.java          # Fixed-length COBOL string semantics
     FileStatus.java           # Standard file status codes
     generated/                # 1,323 transpiled Java programs
+    cics/                     # Full CICS runtime (see below)
+
+src/test/java/com/lazarus/cobol/cics/
+    CicsRuntimeTest.java      # 67 core runtime tests
+    CicsVsamTest.java         # 41 VSAM + transaction tests
+    CicsEmitterTest.java      # 19 emitter integration tests
+    CardDemoE2ETest.java      # 28 CardDemo end-to-end tests
 ```
+
+## CICS Runtime
+
+The transpiler handles CICS online transaction processing programs — the backbone of mainframe applications. The CICS runtime is a complete Java implementation:
+
+| Component | Class | Description |
+|-----------|-------|-------------|
+| **Region** | `CicsRegion` | Top-level CICS container: program registry, transaction routing, resource pools |
+| **Task** | `CicsTask` | Per-transaction context: EIB, COMMAREA, condition/abend handler stacks |
+| **EIB** | `CicsEIB` | Execute Interface Block: DFHAID keys, RESP codes, date/time, task info |
+| **Program Control** | `XctlException`, `ReturnException` | LINK, XCTL (transfer), RETURN, START (async) |
+| **Screen I/O** | `CicsMap`, `CicsFieldAttr` | BMS map definitions, DFHBMSCA field attributes, SEND/RECEIVE MAP |
+| **TSQ** | `CicsTSQueue` | Temporary Storage Queue: random access by item, sequential NEXT, rewrite |
+| **TDQ** | `CicsTDQueue` | Transient Data Queue: trigger support, destructive dequeue |
+| **VSAM** | `CicsVsamFile` | KSDS, RRDS, ESDS via H2 database: CRUD, browse, generic search, alternate indexes |
+| **Transactions** | `CicsTransaction` | Logical Unit of Work: SYNCPOINT (commit), ROLLBACK via JDBC |
+| **ABEND** | `AbendException`, `CicsCondition` | ABEND with dump, HANDLE ABEND (label/program/cancel), condition handling |
+
+### CICS test results
+
+| Suite | Tests | Description |
+|-------|-------|-------------|
+| Core Runtime | 67 | Region, Task, EIB, LINK/XCTL/RETURN, ABEND, TSQ, TDQ, Maps, Channels |
+| VSAM + Transactions | 41 | KSDS CRUD/browse/generic/alt-index, RRDS, ESDS, SYNCPOINT, ROLLBACK |
+| Emitter Integration | 19 | ThreadLocal task, generated program linkage, RESP capture |
+| CardDemo End-to-End | 28 | Sign-on, menu, account view, transaction browse/update, XCTL chains, concurrent tasks |
+| **Total** | **155** | **100% pass** |
+
+The CardDemo E2E test simulates the [AWS CardDemo](https://github.com/aws-samples/aws-mainframe-modernization-carddemo) application flow: user sign-on with VSAM credential lookup, menu navigation via XCTL chains, account viewing with KSDS reads, transaction browsing with STARTBR/READNEXT, and transaction updates with REWRITE — all running against an H2 in-memory database.
 
 ## Examples
 
@@ -163,6 +200,7 @@ The runtime provides COBOL semantics in pure Java:
 - **CobolDisplay** — `DISPLAY` and `ACCEPT` verb implementation
 - **CobolProgram** — Base class with `CALL` support and lifecycle management
 - **FileStatus** — Standard COBOL file status codes (`00`, `10`, `23`, `35`, etc.)
+- **CICS Runtime** — 13 classes providing full CICS online transaction processing (see CICS Runtime section above)
 
 ## Security audit
 
@@ -172,7 +210,7 @@ A static analysis scan was performed against all 202,121 lines of Java in this r
 |-------|--------|
 | Command injection (`Runtime.exec`, `ProcessBuilder`) | **0 findings** |
 | Deserialization (`ObjectInputStream`, `readObject`) | **0 findings** |
-| SQL injection (`Statement`, `PreparedStatement`, JDBC) | **0 findings** |
+| SQL injection (`Statement`, `PreparedStatement`, JDBC) | **Contained** — CICS VSAM uses parameterized H2 queries only |
 | Reflection (`Class.forName`, `.invoke()`) | **0 findings** |
 | Network access (`Socket`, `URLConnection`, `HttpClient`) | **0 findings** |
 | Unsafe/JNI (`sun.misc.Unsafe`, `System.loadLibrary`) | **0 findings** |
@@ -180,7 +218,7 @@ A static analysis scan was performed against all 202,121 lines of Java in this r
 | Hardcoded secrets | **0 findings** |
 | Path traversal | **Contained** — file paths are set by program constants, not user input |
 
-The generated code has a minimal attack surface: no network, no database, no deserialization, no reflection, no native code. All string operations are bounds-checked by the JVM. Arithmetic uses `BigDecimal` (no overflow). File I/O is limited to `CobolFile` with fixed paths set at transpile time.
+The generated code has a minimal attack surface: no network, no deserialization, no reflection, no native code. All string operations are bounds-checked by the JVM. Arithmetic uses `BigDecimal` (no overflow). File I/O is limited to `CobolFile` with fixed paths set at transpile time. CICS VSAM file operations use H2 embedded database with parameterized queries — no SQL injection surface.
 
 That said — **Java has inherent limitations** that no amount of clean code generation can fix.
 

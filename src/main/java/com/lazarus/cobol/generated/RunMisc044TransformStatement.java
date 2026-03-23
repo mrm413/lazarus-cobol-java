@@ -29,8 +29,8 @@ public class RunMisc044TransformStatement extends CobolProgram {
 
 
 
-    private CobolString my_ascii = new CobolString(256); // autofix
-    private CobolString my_ebcdic = new CobolString(256); // autofix
+    private CobolString my_ascii = new CobolString(256);
+    private CobolString my_ebcdic = new CobolString(256);
     private void para_main() {
         { String _tf = String.valueOf(x); String _from = String.valueOf("ABC"); String _to = String.valueOf("BCD"); StringBuilder _sb = new StringBuilder(_tf); for (int _i = 0; _i < _sb.length(); _i++) { int _p = _from.indexOf(_sb.charAt(_i)); if (_p >= 0 && _p < _to.length()) _sb.setCharAt(_i, _to.charAt(_p)); } x.set(_sb.toString()); }
         if (!String.valueOf(x).equals(String.valueOf("CDB"))) {

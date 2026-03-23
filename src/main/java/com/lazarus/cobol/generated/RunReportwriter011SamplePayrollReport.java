@@ -78,16 +78,16 @@ public class RunReportwriter011SamplePayrollReport extends CobolProgram {
 
 
     // SECTION: DEPT-HEAD-USE
-    private CobolString dept_foot_gross = new CobolString(256); // autofix
-    private CobolString dept_foot_fica = new CobolString(256); // autofix
-    private CobolString dept_foot_fwt = new CobolString(256); // autofix
-    private CobolString dept_foot_misc = new CobolString(256); // autofix
-    private CobolString dept_foot_net = new CobolString(256); // autofix
-    private CobolString co_gross = new CobolString(256); // autofix
-    private CobolString co_fica = new CobolString(256); // autofix
-    private CobolString co_fwt = new CobolString(256); // autofix
-    private CobolString co_misc = new CobolString(256); // autofix
-    private CobolString co_net = new CobolString(256); // autofix
+    private CobolString dept_foot_gross = new CobolString(256);
+    private CobolString dept_foot_fica = new CobolString(256);
+    private CobolString dept_foot_fwt = new CobolString(256);
+    private CobolString dept_foot_misc = new CobolString(256);
+    private CobolString dept_foot_net = new CobolString(256);
+    private CobolString co_gross = new CobolString(256);
+    private CobolString co_fica = new CobolString(256);
+    private CobolString co_fwt = new CobolString(256);
+    private CobolString co_misc = new CobolString(256);
+    private CobolString co_net = new CobolString(256);
     private void dept_head_use() {
         use();
         dept_head();

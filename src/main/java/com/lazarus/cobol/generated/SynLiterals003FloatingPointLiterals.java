@@ -29,7 +29,7 @@ public class SynLiterals003FloatingPointLiterals extends CobolProgram {
     private CobolString d3 = new CobolString(256);
     private CobolString blah = new CobolString(256);
 
-    private CobolString Infinity = new CobolString(256); // autofix
+    private CobolString Infinity = new CobolString(256);
     private void para_main() {
         CobolDisplay.display(String.valueOf(Infinity) + String.valueOf(_unnamed) + String.valueOf(1000) + String.valueOf(_unnamed) + String.valueOf(0) + String.valueOf(_unnamed) + String.valueOf(123));
         /* RAW: E1 , +.123456789012345678901234567890123456E+0000 */

@@ -40,7 +40,7 @@ public class Testing extends CobolProgram {
 
 
     // SECTION: MY-TEST
-    private CobolFile _unnamed = new CobolFile("_unnamed", "SEQUENTIAL", "SEQUENTIAL"); // autofix
+    private CobolFile _unnamed = new CobolFile("_unnamed", "SEQUENTIAL", "SEQUENTIAL");
     private void my_test() {
         use();
         oodb_result();

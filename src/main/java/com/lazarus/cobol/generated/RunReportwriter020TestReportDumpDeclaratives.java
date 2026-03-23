@@ -47,7 +47,7 @@ public class RunReportwriter020TestReportDumpDeclaratives extends CobolProgram {
     private CobolString[] num4b = new CobolString[100];
 
     // SECTION: BEFORE-DETAIL
-    private CobolString dtl2 = new CobolString(256); // autofix
+    private CobolString dtl2 = new CobolString(256);
     private void before_detail() {
         use();
         rp_dtl2();
