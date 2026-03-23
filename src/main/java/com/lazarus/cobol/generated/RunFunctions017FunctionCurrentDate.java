@@ -1,0 +1,70 @@
+package com.lazarus.cobol.generated;
+
+import com.lazarus.cobol.CobolDisplay;
+import com.lazarus.cobol.CobolFile;
+import com.lazarus.cobol.CobolIntrinsics;
+import com.lazarus.cobol.CobolProgram;
+import com.lazarus.cobol.CobolString;
+import com.lazarus.cobol.FileStatus;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
+public class RunFunctions017FunctionCurrentDate extends CobolProgram {
+    private int tally = 0;
+    private int return_code = 0;
+    private int sort_return = 0;
+    private int number_of_call_parameters = 0;
+    private int cob_crt_status = 0;
+    private int length_an = 0;
+    private CobolString when_compiled = new CobolString(21);
+    private CobolString debug_item = new CobolString(256);
+    private CobolString debug_line = new CobolString(6);
+    private CobolString debug_name = new CobolString(30);
+    private CobolString debug_sub_1 = new CobolString(4);
+    private CobolString debug_sub_2 = new CobolString(4);
+    private CobolString debug_sub_3 = new CobolString(4);
+    private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private CobolString test_fld = new CobolString(1); // Group: TEST-FLD
+    private int ws_year = 0;
+    private int ws_month = 0;
+    private int ws_day = 0;
+    private int ws_hour = 0;
+    private int ws_min = 0;
+    private int ws_sevalidd = 0;
+    private int ws_hundsec = 0;
+    private CobolString ws_greenw = new CobolString(1);
+    private int ws_offset = 0;
+    private int ws_offset2 = 0;
+    private CobolString ws_unset = new CobolString(1);
+
+
+    private CobolString valid_unset = new CobolString(256);
+    private CobolString valid_year = new CobolString(256);
+
+    private void para_main() {
+        {
+            StringBuilder _sb = new StringBuilder();
+            _sb.append(String.valueOf(CobolIntrinsics.current_date()));
+            test_fld.set(_sb.toString());
+        }
+    // if (-valid_unset) {
+    // CobolDisplay.display("FUNCTION result too long");
+    // } else if (!String.valueOf(valid_year).trim().isEmpty()) {
+            /* RAW: AND VALID-MONTH AND VALID-DAY AND VALID-HOUR */
+            /* CONTINUE */
+    // } else {
+    // CobolDisplay.display("CURRENT-DATE with wrong format: " + String.valueOf(CobolString.refMod(test_fld, 1, 21)));
+    // }
+        System.exit(0);
+    }
+
+    @Override
+    public void run() {
+        para_main();
+    }
+
+    public static void main(String[] args) {
+        new RunFunctions017FunctionCurrentDate().run();
+    }
+}

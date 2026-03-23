@@ -1,0 +1,77 @@
+package com.lazarus.cobol.generated;
+
+import com.lazarus.cobol.CobolDisplay;
+import com.lazarus.cobol.CobolFile;
+import com.lazarus.cobol.CobolIntrinsics;
+import com.lazarus.cobol.CobolProgram;
+import com.lazarus.cobol.CobolString;
+import com.lazarus.cobol.FileStatus;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
+public class RunMisc064ExitSection extends CobolProgram {
+    private int tally = 0;
+    private int return_code = 0;
+    private int sort_return = 0;
+    private int number_of_call_parameters = 0;
+    private int cob_crt_status = 0;
+    private int length_an = 0;
+    private CobolString when_compiled = new CobolString(21);
+    private CobolString debug_item = new CobolString(256);
+    private CobolString debug_line = new CobolString(6);
+    private CobolString debug_name = new CobolString(30);
+    private CobolString debug_sub_1 = new CobolString(4);
+    private CobolString debug_sub_2 = new CobolString(4);
+    private CobolString debug_sub_3 = new CobolString(4);
+    private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private int indval = 0;
+
+
+
+    // SECTION: A01
+    private void a01() {
+        a011();
+        a012();
+        indval();
+    }
+
+    private void a011() {
+        for (indval = 1; !(indval > 10); indval += 1) {
+            if (indval > 2) {
+                return;
+            }
+        }
+    }
+
+    private void a012() {
+        CobolDisplay.display();
+    }
+
+    private void indval() {
+    }
+
+    // SECTION: A02
+    private void a02() {
+        cb_if();
+        indval();
+    }
+
+    private void cb_if() {
+        /* RAW: INDVAL NOT = 3 */
+        CobolDisplay.display();
+    }
+
+    private void indval_2() {
+        System.exit(0);
+    }
+
+    @Override
+    public void run() {
+        a011();
+    }
+
+    public static void main(String[] args) {
+        new RunMisc064ExitSection().run();
+    }
+}

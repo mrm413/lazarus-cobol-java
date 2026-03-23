@@ -1,0 +1,60 @@
+package com.lazarus.cobol.generated;
+
+import com.lazarus.cobol.CobolDisplay;
+import com.lazarus.cobol.CobolFile;
+import com.lazarus.cobol.CobolIntrinsics;
+import com.lazarus.cobol.CobolProgram;
+import com.lazarus.cobol.CobolString;
+import com.lazarus.cobol.FileStatus;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
+public class RunFundamental088UseForDebuggingReferenceWithOccurs extends CobolProgram {
+    private int tally = 0;
+    private int return_code = 0;
+    private int sort_return = 0;
+    private int number_of_call_parameters = 0;
+    private int cob_crt_status = 0;
+    private int length_an = 0;
+    private CobolString when_compiled = new CobolString(21);
+    private CobolString debug_item = new CobolString(256);
+    private CobolString debug_line = new CobolString(6);
+    private CobolString debug_name = new CobolString(30);
+    private CobolString debug_sub_1 = new CobolString(4);
+    private CobolString debug_sub_2 = new CobolString(4);
+    private CobolString debug_sub_3 = new CobolString(4);
+    private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private CobolString[][][] data_field = new CobolString[10][5][2];
+
+
+
+    // SECTION: TEST-DEBUG
+    private void test_debug() {
+        use();
+        data_field();
+    }
+
+    private void use() {
+        /* RAW: FOR DEBUGGING ON ALL REFERENCES OF */
+    }
+
+    private void data_field() {
+        CobolDisplay.display(String.valueOf(debug_item) + "|");
+    }
+
+    private void some_par() {
+        if (data_field[4 - 1][2 - 1][1 - 1] == null) data_field[4 - 1][2 - 1][1 - 1] = new CobolString(256);
+        data_field[4 - 1][2 - 1][1 - 1].set(String.valueOf("\""));
+        System.exit(0);
+    }
+
+    @Override
+    public void run() {
+        some_par();
+    }
+
+    public static void main(String[] args) {
+        new RunFundamental088UseForDebuggingReferenceWithOccurs().run();
+    }
+}
