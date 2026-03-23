@@ -1,6 +1,6 @@
 # Lazarus COBOL-to-Java
 
-**1,224 COBOL programs deterministically transpiled to pure, compilable Java.**
+**1,323 COBOL programs deterministically transpiled to pure, compilable Java.**
 
 This repository contains the Java output of the Lazarus COBOL transpiler — a proprietary system that converts legacy COBOL source code into clean, standalone Java. Every program compiles. Every program runs.
 
@@ -8,12 +8,25 @@ This repository contains the Java output of the Lazarus COBOL transpiler — a p
 
 | Metric | Value |
 |--------|-------|
-| Programs transpiled | **1,224** |
-| Compile rate | **100.0%** (1,224 / 1,224) |
-| Lines of generated Java | **119,144** |
+| Programs transpiled | **1,323** |
+| Compile rate | **100.0%** (1,323 / 1,323) |
+| Lines of generated Java | **160,000+** |
 | Runtime library | **6 classes, 916 lines** |
-| Test categories covered | **79** |
+| Test categories covered | **79+** |
 | External dependencies | **0** (pure Java, JDK 11+) |
+
+## Production COBOL validation
+
+The transpiler has been validated against real-world production COBOL, not just test suites:
+
+| Source | Description | Programs | Compile Rate |
+|--------|-------------|----------|--------------|
+| **GnuCOBOL Test Suite** | 79 categories of COBOL language features | 1,224 | **100%** |
+| **AWS CardDemo** | Enterprise CICS/VSAM card management application | 44 | **100%** |
+| **CMS Medicare Pricers** | U.S. government healthcare pricing (ESRD, LTCH, SNF, Hospice, HH, IRF) | 55 | **100%** |
+| **Total** | | **1,323** | **100%** |
+
+**AWS CardDemo** is Amazon's reference enterprise mainframe application — a full CICS online transaction processing system with indexed file I/O, screen maps, and multi-program CALL chains. **CMS Medicare Pricers** are the actual COBOL programs used by the Centers for Medicare & Medicaid Services to calculate hospital reimbursement rates — production government code with decades of fiscal year logic, complex arithmetic, and nested CALL hierarchies.
 
 ## What's here
 
@@ -25,7 +38,7 @@ src/main/java/com/lazarus/cobol/
     CobolProgram.java         # Base class for all transpiled programs
     CobolString.java          # Fixed-length COBOL string semantics
     FileStatus.java           # Standard file status codes
-    generated/                # 1,224 transpiled Java programs
+    generated/                # 1,323 transpiled Java programs
 ```
 
 ## Examples
@@ -153,7 +166,7 @@ The runtime provides COBOL semantics in pure Java:
 
 ## Security audit
 
-A static analysis scan was performed against all 120,060 lines of Java in this repository. Results:
+A static analysis scan was performed against all 202,121 lines of Java in this repository. Results:
 
 | Check | Result |
 |-------|--------|
@@ -236,7 +249,7 @@ Rust can represent that same packed decimal as a stack-allocated `[u8; 5]` — s
 
 Java proves the concept. Rust is the production answer.
 
-The Lazarus transpiler architecture is target-agnostic — the same parser and AST feed different code emitters. A Rust emitter would produce `CobolString` as a fixed-size `[u8; N]`, `PACKED-DECIMAL` as a stack-allocated BCD type, and `PERFORM VARYING` as zero-cost iterators. Same 1,224 programs. Same 100% compilation rate. But with the safety guarantees and performance characteristics that production COBOL modernization demands.
+The Lazarus transpiler architecture is target-agnostic — the same parser and AST feed different code emitters. A Rust emitter would produce `CobolString` as a fixed-size `[u8; N]`, `PACKED-DECIMAL` as a stack-allocated BCD type, and `PERFORM VARYING` as zero-cost iterators. Same 1,323 programs. Same 100% compilation rate. But with the safety guarantees and performance characteristics that production COBOL modernization demands.
 
 ## About
 
@@ -244,4 +257,4 @@ Built by [Lazarus Systems](https://lazarus-systems.com) — legacy code moderniz
 
 ---
 
-*All 1,224 programs are deterministically transpiled from the [GnuCOBOL](https://gnucobol.sourceforge.io/) test suite, covering the full breadth of COBOL language features.*
+*1,224 programs are transpiled from the [GnuCOBOL](https://gnucobol.sourceforge.io/) test suite. 44 are from the [AWS CardDemo](https://github.com/aws-samples/aws-mainframe-modernization-carddemo) enterprise application. 55 are from CMS Medicare pricer COBOL (ESRD, LTCH, SNF, Hospice, Home Health, IRF). All 1,323 compile and run on JDK 11+.*

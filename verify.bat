@@ -1,5 +1,5 @@
 @echo off
-REM Compile all 1,224 generated Java programs and verify 100% success
+REM Compile all 1,323 generated Java programs and verify 100% success
 
 echo === Lazarus COBOL-to-Java Compile Verification ===
 echo.
@@ -14,7 +14,7 @@ javac -d target\classes src\main\java\com\lazarus\cobol\*.java
 echo   Runtime: OK (6 classes)
 
 REM Compile all generated programs
-echo Compiling 1,224 generated programs...
+echo Compiling 1,323 generated programs...
 set PASS=0
 set FAIL=0
 
