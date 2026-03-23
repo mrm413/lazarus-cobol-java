@@ -289,10 +289,23 @@ Java proves the concept. Rust is the production answer.
 
 The Lazarus transpiler architecture is target-agnostic — the same parser and AST feed different code emitters. A Rust emitter would produce `CobolString` as a fixed-size `[u8; N]`, `PACKED-DECIMAL` as a stack-allocated BCD type, and `PERFORM VARYING` as zero-cost iterators. Same 1,323 programs. Same 100% compilation rate. But with the safety guarantees and performance characteristics that production COBOL modernization demands.
 
+## License and attribution
+
+This repository is licensed under the **Apache License, Version 2.0**. See [LICENSE](LICENSE) for the full text.
+
+The [NOTICE](NOTICE) file contains complete ownership and attribution details. In summary:
+
+| Component | Owner | License |
+|-----------|-------|---------|
+| Transpiler (not included) | Lazarus Systems | Proprietary |
+| Runtime library + CICS runtime | Lazarus Systems | Apache 2.0 |
+| Generated Java from GnuCOBOL tests | Lazarus Systems | Apache 2.0 |
+| Generated Java from AWS CardDemo | Derivative of Amazon.com, Inc. | Apache 2.0 |
+| Generated Java from CMS Medicare | Lazarus Systems | Apache 2.0 (source is U.S. Gov public domain) |
+| H2 Database (dependency) | H2 Group | MPL 2.0 / EPL 1.0 |
+
+The **transpiler** that produced the generated Java is proprietary software owned by Lazarus Systems. It is not included in this repository. What you see here is the **output** — the runtime library and 1,323 compiled Java programs.
+
 ## About
 
 Built by [Lazarus Systems](https://lazarus-systems.com) — legacy code modernization, automated.
-
----
-
-*1,224 programs are transpiled from the [GnuCOBOL](https://gnucobol.sourceforge.io/) test suite. 44 are from the [AWS CardDemo](https://github.com/aws-samples/aws-mainframe-modernization-carddemo) enterprise application. 55 are from CMS Medicare pricer COBOL (ESRD, LTCH, SNF, Hospice, Home Health, IRF). All 1,323 compile and run on JDK 11+.*
