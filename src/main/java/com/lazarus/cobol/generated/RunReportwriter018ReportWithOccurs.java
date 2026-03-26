@@ -54,7 +54,7 @@ public class RunReportwriter018ReportWithOccurs extends CobolProgram {
     private CobolString _filler_011 = new CobolString(256); // fallback
     private void para_main() {
         rp_file.open("OUTPUT");
-        /* RAW: INITIATE rp */
+        /* UNSUPPORTED: Report Writer — INITIATE */
         if (nums[1 - 1] == null) nums[1 - 1] = new CobolString(256);
         nums[1 - 1].set(String.valueOf(100));
         _filler_002.set(String.valueOf(100));
@@ -64,7 +64,7 @@ public class RunReportwriter018ReportWithOccurs extends CobolProgram {
         if (nums[3 - 1] == null) nums[3 - 1] = new CobolString(256);
         nums[3 - 1].set(String.valueOf(100));
         mark.set(String.valueOf("<1>"));
-        /* RAW: GENERATE rp-dtl1 */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (grps[1 - 1] == null) grps[1 - 1] = new CobolString(256);
         grps[1 - 1].set(String.valueOf("*"));
         _filler_004.set(String.valueOf("*"));
@@ -89,7 +89,7 @@ public class RunReportwriter018ReportWithOccurs extends CobolProgram {
         _filler_009.set(String.valueOf("Tag2"));
         if (tag2[3 - 1] == null) tag2[3 - 1] = new CobolString(256);
         tag2[3 - 1].set(String.valueOf("Tag2"));
-        /* RAW: GENERATE rp-dtl2 */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (nnns[1 - 1] == null) nnns[1 - 1] = new CobolString(256);
         nnns[1 - 1].set(String.valueOf(200));
         _filler_010.set(String.valueOf(200));
@@ -101,7 +101,7 @@ public class RunReportwriter018ReportWithOccurs extends CobolProgram {
         if (nnns[4 - 1] == null) nnns[4 - 1] = new CobolString(256);
         nnns[4 - 1].set(String.valueOf(200));
         tagp.set(String.valueOf("<3>"));
-        /* RAW: GENERATE RP-DTL3 */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         num4a.set(String.valueOf(400));
         if (num4b[1 - 1] == null) num4b[1 - 1] = new CobolString(256);
         num4b[1 - 1].set(String.valueOf(401));
@@ -110,8 +110,8 @@ public class RunReportwriter018ReportWithOccurs extends CobolProgram {
         if (num4b[3 - 1] == null) num4b[3 - 1] = new CobolString(256);
         num4b[3 - 1].set(String.valueOf(403));
         mrk4.set(String.valueOf("<4>"));
-        /* RAW: GENERATE RP-DTL4 */
-        /* RAW: TERMINATE rp */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — TERMINATE */
         rp_file.close();
         System.exit(0);
     }

@@ -34,7 +34,7 @@ public class RunMisc003DecimalPointIsComma3 extends CobolProgram {
     private CobolString _filler_003 = new CobolString(256); // fallback
     private CobolString _filler_004 = new CobolString(256); // fallback
     private void para_main() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     @Override

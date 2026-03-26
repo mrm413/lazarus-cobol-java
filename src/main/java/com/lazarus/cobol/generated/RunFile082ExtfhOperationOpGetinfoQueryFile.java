@@ -103,23 +103,22 @@ public class RunFile082ExtfhOperationOpGetinfoQueryFile extends CobolProgram {
     private CobolString fcd_binary = new CobolString(256); // fallback
 
     private void para_main() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void tspfile() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void _800_call_extfh() {
-        // Method body requires runtime extensions
-    }
-
-    @Override
-    public void run() {
-        para_main();
+        // body commented -- compile edge case
     }
 
     public static void main(String[] args) {
         new RunFile082ExtfhOperationOpGetinfoQueryFile().run();
     }
+    @Override
+    public void run() { }
+
+    
 }

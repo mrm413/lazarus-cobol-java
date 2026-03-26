@@ -49,7 +49,7 @@ public class RunFile032ReadOnOptionalMissingRelativeSequential extends CobolProg
     private CobolString _filler_002 = new CobolString(256); // fallback
     private CobolString _filler_003 = new CobolString(256); // fallback
     private void main_procedure() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     @Override

@@ -35,7 +35,7 @@ public class RunFundamental012EqualityOfFloatShortFloatLong extends CobolProgram
     private CobolString end_if = new CobolString(256); // fallback
 
     private void para_main() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     @Override

@@ -36,20 +36,20 @@ public class RunMl009JsonGenerateExceptions extends CobolProgram {
     private CobolString json_code = new CobolString(256); // fallback
 
     private void para_main() {
-        /* RAW: JSON  */
-        /* RAW: GENERATE short-str FROM valid-rec COUNT IN */
+        /* UNSUPPORTED: XML/JSON processing — JSON */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (((!String.valueOf(short_str).equals(String.valueOf("{\"val")) || json_len != 33) || !String.valueOf(json_code).equals(String.valueOf(1)))) {
             CobolDisplay.display("Failed 1: " + String.valueOf(short_str) + " " + String.valueOf(json_len) + " " + String.valueOf(json_code));
         }
-        /* RAW: JSON  */
-        /* RAW: GENERATE normal-str FROM valid-rec ON EXCEPTION */
+        /* UNSUPPORTED: XML/JSON processing — JSON */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         CobolDisplay.display("Failed 2: EXCEPTION " + String.valueOf(CobolIntrinsics.trim(normal_str)) + " " + String.valueOf(json_code));
         /* RAW: ON EXCEPTION */
         if (!String.valueOf(json_code).equals(String.valueOf(0))) {
             CobolDisplay.display("Failed 2: NOT EXCEPTION " + String.valueOf(CobolIntrinsics.trim(normal_str)) + " " + String.valueOf(json_code));
         }
         /* RAW: END-JSON JSON */
-        /* RAW: GENERATE short-str FROM valid-rec NOT EXCEPTION */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         CobolDisplay.display("Failed 3: NOT EXCEPTION " + String.valueOf(CobolIntrinsics.trim(normal_str)) + " " + String.valueOf(json_code));
         /* RAW: EXCEPTION  */
         if (!String.valueOf(json_code).equals(String.valueOf(1))) {

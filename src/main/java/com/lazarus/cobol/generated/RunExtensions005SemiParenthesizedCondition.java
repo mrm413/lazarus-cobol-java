@@ -27,7 +27,7 @@ public class RunExtensions005SemiParenthesizedCondition extends CobolProgram {
 
 
     private void para_main() {
-        if ((1 == (1) || true)) {
+        if ((1 == (1) || 1 == 2)) {
             /* RAW: )  */
             CobolDisplay.displayNoAdvancing("OK");
         }

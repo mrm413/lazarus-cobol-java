@@ -37,8 +37,8 @@ public class RunMl010JsonGenerateRecordSelection extends CobolProgram {
 
 
     private void para_main() {
-        /* RAW: JSON  */
-        /* RAW: GENERATE out FROM d */
+        /* UNSUPPORTED: XML/JSON processing — JSON */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("{\"d\":{\"e\":\"abc000\"}}"))) {
             CobolDisplay.display("Failed 2: " + String.valueOf(CobolIntrinsics.trim(out)));
         }

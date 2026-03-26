@@ -33,7 +33,7 @@ public class SynMisc004InvalidConditionalExpression1 extends CobolProgram {
     private CobolString notdefined = new CobolString(256); // fallback
 
     private void para_main() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     @Override

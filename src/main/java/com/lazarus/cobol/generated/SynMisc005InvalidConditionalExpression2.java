@@ -32,10 +32,8 @@ public class SynMisc005InvalidConditionalExpression2 extends CobolProgram {
     private CobolString greater = new CobolString(256); // fallback
     private CobolString _filler_001 = new CobolString(256); // fallback
     private CobolString _filler_002 = new CobolString(256); // fallback
-    private CobolString _filler_003 = new CobolString(256); // fallback
     private CobolString wrkn_is_zero = new CobolString(256); // fallback
 
-    private CobolString _filler_004 = new CobolString(256); // fallback
     private void para_main() {
         if (String.valueOf(wrkn).equals(String.valueOf(true))) {
             CobolDisplay.display("WHAT IS IT?");
@@ -48,10 +46,10 @@ public class SynMisc005InvalidConditionalExpression2 extends CobolProgram {
             /* RAW: NOT = 456 */
             CobolDisplay.display("Strange brew! " + String.valueOf(wrkn));
         }
-        if ((wrkn == 123 || true)) {
+        if ((wrkn == 123 || wrkn == 456)) {
             CobolDisplay.display("Home brew! " + String.valueOf(wrkn));
         }
-        if ((String.valueOf(wrkx).equals(String.valueOf("Red")) || true)) {
+        if ((String.valueOf(wrkx).equals(String.valueOf("Red")) || String.valueOf(wrkx).equals(String.valueOf("White")))) {
             CobolDisplay.display("Home wine! " + String.valueOf(wrkx));
         }
         if (String.valueOf(wrkx).compareTo(String.valueOf("Red")) <= 0) {
@@ -62,7 +60,7 @@ public class SynMisc005InvalidConditionalExpression2 extends CobolProgram {
             /* RAW: NOT "White" */
             CobolDisplay.display("Home wine! " + String.valueOf(wrkx));
         }
-        if ((wrkn == ((123 - 12)) || !String.valueOf(_filler_004).trim().isEmpty())) {
+        if ((wrkn == ((123 - 12)) || wrkn >= ((456 + 16)))) {
             CobolDisplay.display("And another brew! " + String.valueOf(wrkn));
         }
         if (true) {

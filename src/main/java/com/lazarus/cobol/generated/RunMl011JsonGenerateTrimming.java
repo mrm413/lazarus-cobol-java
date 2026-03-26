@@ -45,55 +45,55 @@ public class RunMl011JsonGenerateTrimming extends CobolProgram {
     private CobolString json = new CobolString(256); // fallback
 
     private void para_main() {
-        /* RAW: JSON  */
-        /* RAW: GENERATE out FROM str */
+        /* UNSUPPORTED: XML/JSON processing — JSON */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("{\"str\":\"ab\"}"))) {
             CobolDisplay.display("Failed 1: " + String.valueOf(CobolIntrinsics.trim(out)));
         }
-        /* RAW: JSON  */
-        /* RAW: GENERATE out FROM num-edited */
+        /* UNSUPPORTED: XML/JSON processing — JSON */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("{\"num-edited\":\"01.00\"}"))) {
             CobolDisplay.display("Failed 2: " + String.valueOf(CobolIntrinsics.trim(out)));
         }
-        /* RAW: JSON  */
-        /* RAW: GENERATE out FROM leading-zeroes */
+        /* UNSUPPORTED: XML/JSON processing — JSON */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("{\"leading-zeroes\":5}"))) {
             CobolDisplay.display("Failed 3: " + String.valueOf(CobolIntrinsics.trim(out)));
         }
-        /* RAW: JSON  */
-        /* RAW: GENERATE out FROM decimal-nums */
+        /* UNSUPPORTED: XML/JSON processing — JSON */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf((0 /* non-numeric literal: {"decimal-nums":{"de */ - 0 /* non-numeric literal: "decimal-num-2":0.1} */)))) {
             CobolDisplay.display("Failed 4: " + String.valueOf(CobolIntrinsics.trim(out)));
         }
-        /* RAW: JSON  */
-        /* RAW: GENERATE out FROM signed-decimal-num */
+        /* UNSUPPORTED: XML/JSON processing — JSON */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("{\"signed-decimal-num\":-1}"))) {
             CobolDisplay.display("Failed 5: " + String.valueOf(CobolIntrinsics.trim(out)));
         }
-        /* RAW: JSON  */
-        /* RAW: GENERATE out FROM comp-5-item */
+        /* UNSUPPORTED: XML/JSON processing — JSON */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("{\"comp-5-item\":5}"))) {
             CobolDisplay.display("Failed 6: " + String.valueOf(CobolIntrinsics.trim(out)));
         }
         index_item = new BigDecimal(String.valueOf(500).trim()).intValue();
-        /* RAW: JSON  */
-        /* RAW: GENERATE out FROM index-item */
+        /* UNSUPPORTED: XML/JSON processing — JSON */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("{\"index-item\":500}"))) {
             CobolDisplay.display("Failed 7: " + String.valueOf(CobolIntrinsics.trim(out)));
         }
         just_item.set(String.valueOf("blah "));
         json.set(String.valueOf("blah "));
-        /* RAW: GENERATE out FROM just-item */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("{\"just-item\":\"blah \"}"))) {
             CobolDisplay.display("Failed 10: " + String.valueOf(CobolIntrinsics.trim(out)));
         }
-        /* RAW: JSON  */
-        /* RAW: GENERATE out FROM integer-with-p */
+        /* UNSUPPORTED: XML/JSON processing — JSON */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("{\"integer-with-p\":10000}"))) {
             CobolDisplay.display("Failed 11: " + String.valueOf(CobolIntrinsics.trim(out)));
         }
-        /* RAW: JSON  */
-        /* RAW: GENERATE out FROM decimal-with-p */
+        /* UNSUPPORTED: XML/JSON processing — JSON */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("{\"decimal-with-p\":0.0004}"))) {
             CobolDisplay.display("Failed 12: " + String.valueOf(CobolIntrinsics.trim(out)));
         }

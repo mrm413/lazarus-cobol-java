@@ -34,7 +34,7 @@ public class SynMove015InvalidTargetForMove extends CobolProgram {
     private CobolString quote = new CobolString(256); // fallback
 
     private void para_main() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     @Override

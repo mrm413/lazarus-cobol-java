@@ -81,9 +81,7 @@ public class RunExtensions092BitOperations extends CobolProgram {
         /* RAW: 05 B-OR x 22 ) */
         CobolDisplay.display("x#05 B-OR x#22 is " + String.valueOf(xx1));
         xx1.set(String.valueOf(b_not));
-    }
-
-    private void xx2() {
+        /* RAW: XX2  */
         CobolDisplay.display("B-NOT " + String.valueOf(xx2) + " is " + String.valueOf(xx1));
         xx1.set(String.valueOf(b_not));
         /* RAW: x 22 */
@@ -122,9 +120,7 @@ public class RunExtensions092BitOperations extends CobolProgram {
         /* RAW: B-AND X3 */
         CobolDisplay.display(String.valueOf(x2) + " B-AND " + String.valueOf(x3) + " is " + String.valueOf(x1));
         x1.set(String.valueOf(b_not));
-    }
-
-    private void x2() {
+        /* RAW: X2  */
         CobolDisplay.display("B-NOT " + String.valueOf(x2) + " is " + String.valueOf(x1));
         x1.set(String.valueOf(b_not));
         /* RAW: x 22 */

@@ -58,7 +58,7 @@ public class RunFunctions005FunctionByteLength extends CobolProgram {
             CobolDisplay.display("BYTE-LENGTH z\"a0\" wrong: " + String.valueOf(test_fld));
         }
         /* RAW: * we currently */
-        /* RAW: GENERATE national constants as * alphanumeric */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         /* RAW: *  */
         test_fld = new BigDecimal(String.valueOf((CobolIntrinsics.byte_length("a0") * Integer.parseInt(String.valueOf(to).trim()))).trim());
         _filler_002.set(String.valueOf((CobolIntrinsics.byte_length("a0") * Integer.parseInt(String.valueOf(to).trim()))));

@@ -250,19 +250,19 @@ public class RunFile077ExtfhIndexedWithFhFcd extends CobolProgram {
     private CobolString null_key = new CobolString(256); // fallback
 
     private void mainfile() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void dump_fcd() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void loadfile() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void listfile() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     @Override

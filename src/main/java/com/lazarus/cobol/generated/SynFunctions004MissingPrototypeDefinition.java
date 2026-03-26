@@ -30,7 +30,7 @@ public class SynFunctions004MissingPrototypeDefinition extends CobolProgram {
 
 
     private void para_main() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     @Override

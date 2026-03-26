@@ -48,7 +48,7 @@ public class RunFunctions116FunctionWhenCompiled extends CobolProgram {
         }
         if (!String.valueOf(timezone).equals(String.valueOf("00000"))) {
             /* INSPECT timezone — 2 clause(s) */
-            if ((!String.valueOf(timezone).equals(String.valueOf("+9999")) && true)) {
+            if ((!String.valueOf(timezone).equals(String.valueOf("+9999")) && !String.valueOf(timezone).equals(String.valueOf("-9999")))) {
                 CobolDisplay.display("Timezone format NOT OK: " + String.valueOf(timezone));
             }
         }

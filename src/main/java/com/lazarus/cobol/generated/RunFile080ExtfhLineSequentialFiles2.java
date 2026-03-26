@@ -133,7 +133,7 @@ public class RunFile080ExtfhLineSequentialFiles2 extends CobolProgram {
                 CobolDisplay.display(String.valueOf(program_name) + ": RECORD = " + String.valueOf(CobolString.refMod(lseq_recordarea, 1, Integer.parseInt(String.valueOf(fcd_current_rec_len).trim()))));
             }
             /* RAW: END-PERFORM  */
-            if ((String.valueOf(fcd_file_status).equals(String.valueOf("00")) || true)) {
+            if ((String.valueOf(fcd_file_status).equals(String.valueOf("00")) || String.valueOf(fcd_file_status).equals(String.valueOf("10")))) {
                 CobolDisplay.display(String.valueOf(program_name) + ": LINE SEQUENTIAL READS COMPLETE.");
             } else {
                 CobolDisplay.display(String.valueOf(program_name) + ": UNABLE TO READ LINE SEQUENTIAL FILE.");

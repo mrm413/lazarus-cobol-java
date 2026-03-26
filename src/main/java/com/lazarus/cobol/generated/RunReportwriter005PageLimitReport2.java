@@ -36,18 +36,18 @@ public class RunReportwriter005PageLimitReport2 extends CobolProgram {
 
     private void para_main() {
         report_file.open("OUTPUT");
-        /* RAW: INITIATE rp */
+        /* UNSUPPORTED: Report Writer — INITIATE */
         foo.set(String.valueOf("hello"));
-        /* RAW: GENERATE rp-detail */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         foo.set(String.valueOf("world"));
-        /* RAW: GENERATE rp-detail */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         foo.set(String.valueOf("from"));
-        /* RAW: GENERATE rp-detail */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         foo.set(String.valueOf("REPORT WRITER"));
-        /* RAW: GENERATE rp-detail */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         foo.set(String.valueOf("goodbye"));
-        /* RAW: GENERATE rp-detail */
-        /* RAW: TERMINATE rp */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — TERMINATE */
         report_file.close();
         System.exit(0);
     }

@@ -58,13 +58,13 @@ public class RunReportwriter014OrderReportTestSubstring extends CobolProgram {
         /* UNKNOWN: useForDebugging */
         cust_order_file.open("INPUT");
         cust_print_file.open("OUTPUT");
-        /* RAW: INITIATE ORDER-REPORT */
+        /* UNSUPPORTED: Report Writer — INITIATE */
         if (cust_order_file.read(null) == FileStatus.AT_END) {
             are_there_more_records.set(String.valueOf("NO"));
         }
         while (!(!String.valueOf(there_are_no_more_records).trim().isEmpty())) {
         }
-        /* RAW: TERMINATE ORDER-REPORT */
+        /* UNSUPPORTED: Report Writer — TERMINATE */
         cust_order_file.close();
         cust_print_file.close();
         System.exit(0);
@@ -74,7 +74,7 @@ public class RunReportwriter014OrderReportTestSubstring extends CobolProgram {
         amt_order = new BigDecimal(String.valueOf(num_ord * price).trim()).intValue();
         amt_tax = new BigDecimal(String.valueOf(amt_order * sales_tax).trim()).intValue();
         tot_order = new BigDecimal(String.valueOf(amt_order + shipping + amt_tax).trim()).intValue();
-        /* RAW: GENERATE DETAIL-LINE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (cust_order_file.read(null) == FileStatus.AT_END) {
             are_there_more_records.set(String.valueOf("NO"));
         }

@@ -29,19 +29,18 @@ public class SynMisc036ContinuationOfCobolWords extends CobolProgram {
     private CobolString _filler_001 = new CobolString(256); // fallback
     private CobolString _filler_002 = new CobolString(256); // fallback
     private void para_main() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void _filler_002() {
-        // Method body requires runtime extensions
-    }
-
-    @Override
-    public void run() {
-        para_main();
+        // body commented -- compile edge case
     }
 
     public static void main(String[] args) {
         new SynMisc036ContinuationOfCobolWords().run();
     }
+    @Override
+    public void run() { }
+
+    
 }

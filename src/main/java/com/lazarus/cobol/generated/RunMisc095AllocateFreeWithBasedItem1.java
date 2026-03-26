@@ -31,11 +31,11 @@ public class RunMisc095AllocateFreeWithBasedItem1 extends CobolProgram {
 
     // SECTION: ASTART
     private void astart() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void a01() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     @Override

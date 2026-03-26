@@ -58,18 +58,18 @@ public class SynReportwriter006ReportWithPlusRightCenter extends CobolProgram {
     }
 
     private void a001_loop() {
-        /* RAW: GENERATE REPORT-LINE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (input_file.read(null) == FileStatus.AT_END) {
             are_there_more_records.set(String.valueOf("NO "));
         }
     }
 
     private void do_init() {
-        /* RAW: INITIATE STUDENT-REPORT */
+        /* UNSUPPORTED: Report Writer — INITIATE */
     }
 
     private void do_term() {
-        /* RAW: TERMINATE STUDENT-REPORT */
+        /* UNSUPPORTED: Report Writer — TERMINATE */
     }
 
     @Override

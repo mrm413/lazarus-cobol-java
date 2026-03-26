@@ -40,32 +40,32 @@ public class RunMl001XmlGenerateSuppress extends CobolProgram {
     private CobolString xml = new CobolString(256); // fallback
 
     private void para_main() {
-        /* RAW: XML  */
-        /* RAW: GENERATE out FROM a SUPPRESS */
+        /* UNSUPPORTED: XML/JSON processing — XML */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         /* RAW: SPACES  */
         if (!String.valueOf(out).equals(String.valueOf("<a/>"))) {
             CobolDisplay.display("Test 1 failed: " + String.valueOf(out));
         }
-        /* RAW: XML  */
-        /* RAW: GENERATE out FROM a SUPPRESS b */
+        /* UNSUPPORTED: XML/JSON processing — XML */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         /* RAW: SPACES  */
         if (!String.valueOf(out).equals(String.valueOf("<a><c> </c></a>"))) {
             CobolDisplay.display("Test 2 failed: " + String.valueOf(out));
         }
-        /* RAW: XML  */
-        /* RAW: GENERATE out FROM a SUPPRESS EVERY */
+        /* UNSUPPORTED: XML/JSON processing — XML */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         /* RAW: SPACES  */
         if (!String.valueOf(out).equals(String.valueOf("<a/>"))) {
             CobolDisplay.display("Test 3 failed: " + String.valueOf(out));
         }
-        /* RAW: XML  */
-        /* RAW: GENERATE out FROM p WITH ATTRIBUTES */
+        /* UNSUPPORTED: XML/JSON processing — XML */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         /* RAW: ZERO  */
         if (!String.valueOf(out).equals(String.valueOf("<p r=\"abc\"/>"))) {
             CobolDisplay.display("Test 4 failed: " + String.valueOf(out));
         }
-        /* RAW: XML  */
-        /* RAW: GENERATE out FROM a SUPPRESS c */
+        /* UNSUPPORTED: XML/JSON processing — XML */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         /* RAW: LOW-VALUES , c */
         /* RAW: SPACES , c */
         /* RAW: LOW-VALUES , EVERY ELEMENT */
@@ -76,13 +76,13 @@ public class RunMl001XmlGenerateSuppress extends CobolProgram {
         b.set(String.valueOf("\uFFFF"));
         c.set(String.valueOf("\u0000"));
         xml.set(String.valueOf("\u0000"));
-        /* RAW: GENERATE out FROM a SUPPRESS EVERY */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         /* RAW: HIGH-VALUES OR LOW-VALUES OR ZEROES OR */
         if (!String.valueOf(out).equals(String.valueOf("<a/>"))) {
             CobolDisplay.display("Test 6 failed: " + String.valueOf(out));
         }
-        /* RAW: XML  */
-        /* RAW: GENERATE out FROM x SUPPRESS z */
+        /* UNSUPPORTED: XML/JSON processing — XML */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         /* RAW: SPACE  */
         if (!String.valueOf(out).equals(String.valueOf("<x/>"))) {
             CobolDisplay.display("Test 7 failed: " + String.valueOf(out));

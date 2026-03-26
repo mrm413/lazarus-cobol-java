@@ -47,9 +47,7 @@ public class SynFile022WriteRewriteFromClauseAndFile extends CobolProgram {
         test_file.write(some_rec);
         test_file.write("");
         /* WRITE FILE — no file mapping */ // file.write();
-    }
-
-    private void test_rec() {
+        /* RAW: TEST-REC  */
         /* WRITE FILE — no file mapping */ // file.write();
     }
 
@@ -64,9 +62,7 @@ public class SynFile022WriteRewriteFromClauseAndFile extends CobolProgram {
         test_file.rewrite(some_rec);
         test_file.rewrite("");
         /* REWRITE FILE — no file mapping */ // file.rewrite();
-    }
-
-    private void test_rec_2() {
+        /* RAW: TEST-REC  */
         /* REWRITE FILE — no file mapping */ // file.rewrite();
     }
 

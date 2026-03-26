@@ -32,56 +32,51 @@ public class RunMisc166FloatShortFloatLongWOSizeError extends CobolProgram {
 
 
     private CobolString _filler_001 = new CobolString(256); // fallback
-    private CobolString _filler_002 = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
     private CobolString _filler_003 = new CobolString(256); // fallback
-    private CobolString _filler_004 = new CobolString(256); // fallback
-    private CobolString _filler_005 = new CobolString(256); // fallback
-    private CobolString _filler_006 = new CobolString(256); // fallback
-    private CobolString _filler_007 = new CobolString(256); // fallback
-    private CobolString _filler_008 = new CobolString(256); // fallback
     private void cnd_000() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void cnd_100_ok() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void cnd_350_err() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void cnd_350_ok() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void cnd_380_err() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void cnd_500_ok() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void cnd_500_err() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void cnd_600_ok() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void cnd_600_err() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void cnd_600_xit() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void cnd_999() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     @Override

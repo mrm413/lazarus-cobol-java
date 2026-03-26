@@ -141,7 +141,7 @@ public class RunFile081ExtfhFixedSequential extends CobolProgram {
                 CobolDisplay.display(String.valueOf(program_name) + ": RECORD = " + String.valueOf(CobolString.refMod(fix_recordarea, 1, 40)) + ". " + "Size:" + String.valueOf(fcd_current_rec_len));
             }
             /* RAW: END-PERFORM  */
-            if ((String.valueOf(fcd_file_status).equals(String.valueOf("00")) || true)) {
+            if ((String.valueOf(fcd_file_status).equals(String.valueOf("00")) || String.valueOf(fcd_file_status).equals(String.valueOf("10")))) {
                 CobolDisplay.display(String.valueOf(program_name) + ": FIXED  SEQ READS COMPLETE.");
             } else {
                 CobolDisplay.display(String.valueOf(program_name) + ": UNABLE TO READ FIXED  SEQ FILE.");

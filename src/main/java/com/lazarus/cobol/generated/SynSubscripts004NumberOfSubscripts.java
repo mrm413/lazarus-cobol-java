@@ -32,7 +32,7 @@ public class SynSubscripts004NumberOfSubscripts extends CobolProgram {
 
 
     private void para_main() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     @Override

@@ -36,13 +36,13 @@ public class RunMl008JsonGenerateSuppress extends CobolProgram {
 
 
     private void para_main() {
-        /* RAW: JSON  */
-        /* RAW: GENERATE out FROM a SUPPRESS b */
+        /* UNSUPPORTED: XML/JSON processing — JSON */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("{\"a\":{\"c\":\" \"}}"))) {
             CobolDisplay.display("Test 1 failed: " + String.valueOf(out));
         }
-        /* RAW: JSON  */
-        /* RAW: GENERATE out FROM x SUPPRESS z */
+        /* UNSUPPORTED: XML/JSON processing — JSON */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("{\"x\":{}}"))) {
             CobolDisplay.display("Test 2 failed: " + String.valueOf(out));
         }

@@ -71,7 +71,7 @@ public class RunFile053SequentialFileRewrite extends CobolProgram {
                             CobolDisplay.display("FAIL 3: " + String.valueOf(w_count) + " :: " + String.valueOf(file1_xseen));
                             abort.set(String.valueOf(cb_true));
                         } else {
-                            if ((((w_count == 5 || true) || true) || true)) {
+                            if ((((w_count == 5 || w_count == 10) || w_count == 15) || w_count == 20)) {
                                 file1_serial_2 = new BigDecimal(String.valueOf(1000 + w_count).trim()).intValue();
                                 file1_xseen = new BigDecimal(String.valueOf(file1_xseen + 1).trim()).intValue();
                                 file1.rewrite(file1_rec);
@@ -93,7 +93,7 @@ public class RunFile053SequentialFileRewrite extends CobolProgram {
                                         CobolDisplay.display("FAIL 5");
                                         abort.set(String.valueOf(cb_true));
                                     } else {
-                                        if ((((w_count == 5 || true) || true) || true)) {
+                                        if ((((w_count == 5 || w_count == 10) || w_count == 15) || w_count == 20)) {
                                             if (!((file1_serial_2 == ((1000 + w_count)) && file1_xseen == 1))) {
                                                 CobolDisplay.display("FAIL 6");
                                                 abort.set(String.valueOf(cb_true));

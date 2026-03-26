@@ -135,16 +135,14 @@ public class RunFile085ExtfhRelativeFiles extends CobolProgram {
     private CobolString fcd_max_rec_length = new CobolString(256); // fallback
     private CobolString fcd_current_rec_len = new CobolString(256); // fallback
     private CobolString fcd_file_status = new CobolString(256); // fallback
-    private CobolString _filler_002 = new CobolString(256); // fallback
     private CobolString fcd_status_key_1 = new CobolString(256); // fallback
     private CobolString fcd_binary = new CobolString(256); // fallback
     private CobolString record_growth = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
     private CobolString _filler_003 = new CobolString(256); // fallback
     private CobolString _filler_004 = new CobolString(256); // fallback
     private CobolString _filler_005 = new CobolString(256); // fallback
-    private CobolString _filler_006 = new CobolString(256); // fallback
-    private CobolString _filler_007 = new CobolString(256); // fallback
     private void a_000_main() {
         fh_action.set(String.valueOf("FA01"));
         a_100_open_file();
@@ -176,7 +174,7 @@ public class RunFile085ExtfhRelativeFiles extends CobolProgram {
         file_name.set(String.valueOf("TESTREL.DAT"));
         file_name_len = new BigDecimal(String.valueOf(11).trim()).shortValue();
         fcd_name_length.set(String.valueOf(file_name_len));
-        _filler_003.set(String.valueOf(file_name_len));
+        _filler_002.set(String.valueOf(file_name_len));
         access.set(String.valueOf(file_name_len));
         if (seq[0 - 1] == null) seq[0 - 1] = new CobolString(256);
         seq[0 - 1].set(String.valueOf(file_name_len));
@@ -185,7 +183,7 @@ public class RunFile085ExtfhRelativeFiles extends CobolProgram {
         if (dynamic[8 - 1] == null) dynamic[8 - 1] = new CobolString(256);
         dynamic[8 - 1].set(String.valueOf(file_name_len));
         fcd_access_mode.set(String.valueOf(8));
-        _filler_004.set(String.valueOf(8));
+        _filler_003.set(String.valueOf(8));
         if (isam[2 - 1] == null) isam[2 - 1] = new CobolString(256);
         isam[2 - 1].set(String.valueOf(8));
         if (relative[3 - 1] == null) relative[3 - 1] = new CobolString(256);
@@ -195,7 +193,7 @@ public class RunFile085ExtfhRelativeFiles extends CobolProgram {
         if (seq[1 - 1] == null) seq[1 - 1] = new CobolString(256);
         seq[1 - 1].set(String.valueOf(8));
         fcd_organization.set(String.valueOf(3));
-        _filler_005.set(String.valueOf(3));
+        _filler_004.set(String.valueOf(3));
         if (closed[128 - 1] == null) closed[128 - 1] = new CobolString(256);
         closed[128 - 1].set(String.valueOf(3));
         if (input[0 - 1] == null) input[0 - 1] = new CobolString(256);
@@ -207,7 +205,7 @@ public class RunFile085ExtfhRelativeFiles extends CobolProgram {
         if (extend[3 - 1] == null) extend[3 - 1] = new CobolString(256);
         extend[3 - 1].set(String.valueOf(3));
         fcd_open_mode.set(String.valueOf(128));
-        _filler_006.set(String.valueOf(128));
+        _filler_005.set(String.valueOf(128));
         if (fixed[0 - 1] == null) fixed[0 - 1] = new CobolString(256);
         fixed[0 - 1].set(String.valueOf(128));
         or.set(String.valueOf(128));
@@ -223,8 +221,7 @@ public class RunFile085ExtfhRelativeFiles extends CobolProgram {
 
     private void a_200_call_extfh() {
         CobolProgram.call("EXTFH", fh_action, fcd_area);
-        if ((!String.valueOf(fcd_file_status).equals(String.valueOf("00")) && !(!String.valueOf(_filler_007).trim().isEmpty()))) {
-            /* RAW: '02'  */
+        if ((!String.valueOf(fcd_file_status).equals(String.valueOf("00")) && !String.valueOf(fcd_file_status).equals(String.valueOf("02")))) {
             if (String.valueOf(fcd_status_key_1).equals(String.valueOf("9"))) {
                 CobolDisplay.display("Operation: " + String.valueOf(fh_action2) + " FILE ERROR, STATUS: 9/" + String.valueOf(fcd_binary));
             } else {

@@ -41,7 +41,7 @@ public class RunMisc085SortTableWithDefaultCollatingSequence extends CobolProgra
         }
         if (!String.valueOf(g).equals(String.valueOf("12345abcde"))) {
             if (!String.valueOf(g).equals(String.valueOf("abcde12345"))) {
-                if ((!(String.valueOf(g).equals(String.valueOf("12345abcde"))) || true)) {
+                if ((!(String.valueOf(g).equals(String.valueOf("12345abcde"))) || String.valueOf(g).equals(String.valueOf("abcde12345")))) {
                     CobolDisplay.display(String.valueOf(g));
                 }
             }

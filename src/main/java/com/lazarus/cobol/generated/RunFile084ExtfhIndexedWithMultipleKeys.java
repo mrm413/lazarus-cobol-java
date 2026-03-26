@@ -74,17 +74,15 @@ public class RunFile084ExtfhIndexedWithMultipleKeys extends CobolProgram {
     private CobolString prime_key = new CobolString(256); // fallback
     private CobolString fcd_record_address = new CobolString(256); // fallback
     private CobolString fcd_file_status = new CobolString(256); // fallback
-    private CobolString _filler_002 = new CobolString(256); // fallback
     private CobolString fcd_status_key_1 = new CobolString(256); // fallback
     private CobolString fcd_binary = new CobolString(256); // fallback
     private CobolString rewrite_record = new CobolString(256); // fallback
     private CobolString cobol_op = new CobolString(256); // fallback
     private CobolString fcd_key_length = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
     private CobolString _filler_003 = new CobolString(256); // fallback
     private CobolString _filler_004 = new CobolString(256); // fallback
-    private CobolString _filler_005 = new CobolString(256); // fallback
-    private CobolString _filler_006 = new CobolString(256); // fallback
     private void a_000_main() {
         a_100_open_file();
         a_300_read_record();
@@ -106,7 +104,7 @@ public class RunFile084ExtfhIndexedWithMultipleKeys extends CobolProgram {
         fcd_area.set(String.valueOf("\u0000"));
         acb_key_group.set(String.valueOf("\u0000"));
         fcd_version.set(String.valueOf(fcd_version_number));
-        _filler_003.set(String.valueOf(fcd_version_number));
+        _filler_002.set(String.valueOf(fcd_version_number));
         make.set(String.valueOf(fcd_version_number));
         _3.set(String.valueOf(fcd_version_number));
         keys.set(String.valueOf(fcd_version_number));
@@ -120,7 +118,7 @@ public class RunFile084ExtfhIndexedWithMultipleKeys extends CobolProgram {
         acb_key_pos[3 - 1] = new BigDecimal(String.valueOf(30).trim()).shortValue();
         acb_key_len[3 - 1] = new BigDecimal(String.valueOf(15).trim()).shortValue();
         acb_key_dupe[3 - 1] = new BigDecimal(String.valueOf(1).trim()).shortValue();
-        _filler_004.set(String.valueOf(1));
+        _filler_003.set(String.valueOf(1));
         make.set(String.valueOf(1));
         mf.set(String.valueOf(1));
         key_def.set(String.valueOf(1));
@@ -133,7 +131,7 @@ public class RunFile084ExtfhIndexedWithMultipleKeys extends CobolProgram {
         fcd_access_mode.set(String.valueOf(0));
         fcd_organization.set(String.valueOf(2));
         fcd_open_mode.set(String.valueOf(128));
-        _filler_005.set(String.valueOf(128));
+        _filler_004.set(String.valueOf(128));
         fixed.set(String.valueOf(128));
         or.set(String.valueOf(128));
         variable.set(String.valueOf(128));
@@ -170,8 +168,7 @@ public class RunFile084ExtfhIndexedWithMultipleKeys extends CobolProgram {
 
     private void a_200_call_extfh() {
         CobolProgram.call("EXTFH", fh_action, fcd_area);
-        if ((!String.valueOf(fcd_file_status).equals(String.valueOf("00")) && !(!String.valueOf(_filler_006).trim().isEmpty()))) {
-            /* RAW: '02'  */
+        if ((!String.valueOf(fcd_file_status).equals(String.valueOf("00")) && !String.valueOf(fcd_file_status).equals(String.valueOf("02")))) {
             if (String.valueOf(fcd_status_key_1).equals(String.valueOf("9"))) {
                 CobolDisplay.display("Operation: " + String.valueOf(fh_action2) + " FILE ERROR, STATUS: 9/" + String.valueOf(fcd_binary));
             } else {

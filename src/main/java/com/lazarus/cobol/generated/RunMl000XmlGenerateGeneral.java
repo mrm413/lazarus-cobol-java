@@ -46,37 +46,37 @@ public class RunMl000XmlGenerateGeneral extends CobolProgram {
 
     private CobolString _filler_002 = new CobolString(256); // fallback
     private void para_main() {
-        /* RAW: XML  */
-        /* RAW: GENERATE out FROM rec WITH XML-DECLARATION */
+        /* UNSUPPORTED: XML/JSON processing — XML */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         /* RAW: SPACES  */
         if (!String.valueOf(out).equals(String.valueOf("<?xml version=\"1.0\"?>"))) {
             /* RAW: & X'0A' & '<rec alpha="A"><b>BBB</b></rec>' */
             CobolDisplay.display("Test 1 failed: " + String.valueOf(CobolIntrinsics.trim(out)));
         }
-        /* RAW: XML  */
-        /* RAW: GENERATE out FROM d */
+        /* UNSUPPORTED: XML/JSON processing — XML */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("<d> </d>"))) {
             CobolDisplay.display("Test 2 failed: " + String.valueOf(CobolIntrinsics.trim(out)));
         }
-        /* RAW: XML  */
-        /* RAW: GENERATE out FROM c , WITH */
+        /* UNSUPPORTED: XML/JSON processing — XML */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("<c d=\" \"/>"))) {
             CobolDisplay.display("Test 3 failed: " + String.valueOf(CobolIntrinsics.trim(out)));
         }
         a.set(String.valueOf("A"));
         c.set(String.valueOf("C"));
         xml.set(String.valueOf("C"));
-        /* RAW: GENERATE out FROM rec , TYPE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("<rec>AAABBB<c>CCC</c></rec>"))) {
             CobolDisplay.display("Test 4 failed: " + String.valueOf(CobolIntrinsics.trim(out)));
         }
-        /* RAW: XML  */
-        /* RAW: GENERATE out FROM rec , TYPE */
+        /* UNSUPPORTED: XML/JSON processing — XML */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("<rec>AAA<b>BBB</b><c>CCC</c></rec>"))) {
             CobolDisplay.display("Test 5 failed: " + String.valueOf(CobolIntrinsics.trim(out)));
         }
-        /* RAW: XML  */
-        /* RAW: GENERATE out FROM c , NAMESPACE */
+        /* UNSUPPORTED: XML/JSON processing — XML */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf((0 /* non-numeric literal: <pre:c xmlns:pre="ht */ - 0 /* non-numeric literal: <pre:d>CCC</pre:d></ */)))) {
             CobolDisplay.display("Test 6 failed: " + String.valueOf(CobolIntrinsics.trim(out)) + " " + String.valueOf(xml_code));
         }
@@ -84,23 +84,23 @@ public class RunMl000XmlGenerateGeneral extends CobolProgram {
         _filler_002.set(String.valueOf(" "));
         prefix_str.set(String.valueOf(" "));
         xml.set(String.valueOf(" "));
-        /* RAW: GENERATE out FROM c , NAMESPACE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("<c><d>CCC</d></c>"))) {
             CobolDisplay.display("Test 7 failed: " + String.valueOf(CobolIntrinsics.trim(out)));
         }
         d.set(String.valueOf("&"));
         xml.set(String.valueOf("&"));
-        /* RAW: GENERATE out FROM d */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("<d>&amp;&amp;&amp;</d>"))) {
             CobolDisplay.display("Test 8 failed: " + String.valueOf(CobolIntrinsics.trim(out)));
         }
-        /* RAW: XML  */
-        /* RAW: GENERATE out FROM 0 specialtagname */
+        /* UNSUPPORTED: XML/JSON processing — XML */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("<_0SpecialTAGName>abc</_0SpecialTAGName>"))) {
             CobolDisplay.display("Test 9 failed: " + String.valueOf(CobolIntrinsics.trim(out)));
         }
-        /* RAW: XML  */
-        /* RAW: GENERATE out FROM EMPLOYEE TYPE OF */
+        /* UNSUPPORTED: XML/JSON processing — XML */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf((((0 /* non-numeric literal: <employee id="1"> */ - 0 /* non-numeric literal: <name>Someone</name> */) - 0 /* non-numeric literal: <dept>Marketing</dep */) - 0 /* non-numeric literal: </employee> */)))) {
             CobolDisplay.display("Test 10 failed: " + String.valueOf(CobolIntrinsics.trim(out)));
         }

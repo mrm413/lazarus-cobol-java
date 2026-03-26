@@ -48,7 +48,7 @@ public class RunFile051SequentialFileIOWithVariableRecords extends CobolProgram 
 
     private CobolString _filler_002 = new CobolString(256); // fallback
     private void para_main() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     @Override

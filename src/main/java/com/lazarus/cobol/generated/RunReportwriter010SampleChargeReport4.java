@@ -1,15 +1,108 @@
 package com.lazarus.cobol.generated;
 
+import com.lazarus.cobol.CobolDisplay;
+import com.lazarus.cobol.CobolFile;
+import com.lazarus.cobol.CobolIntrinsics;
 import com.lazarus.cobol.CobolProgram;
+import com.lazarus.cobol.CobolString;
+import com.lazarus.cobol.FileStatus;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class RunReportwriter010SampleChargeReport4 extends CobolProgram {
-    private void para_main() {
-        // Transpiled code requires runtime extensions not yet in public release
+    private int tally = 0;
+    private int return_code = 0;
+    private int sort_return = 0;
+    private int number_of_call_parameters = 0;
+    private int cob_crt_status = 0;
+    private int length_an = 0;
+    private CobolString when_compiled = new CobolString(21);
+    private CobolString debug_item = new CobolString(256);
+    private CobolString debug_line = new CobolString(6);
+    private CobolString debug_name = new CobolString(30);
+    private CobolString debug_sub_1 = new CobolString(4);
+    private CobolString debug_sub_2 = new CobolString(4);
+    private CobolString debug_sub_3 = new CobolString(4);
+    private CobolString debug_contents = new CobolString(256);
+    private int commission_ix = 0;
+    // WORKING-STORAGE SECTION
+    private CobolString end_of_file_switch = new CobolString(1);
+    private CobolString commission_table = new CobolString(1); // Group: COMMISSION-TABLE
+    private CobolString filler_1 = new CobolString(69);
+    private CobolString filler_2 = new CobolString(69);
+    private CobolString filler_3 = new CobolString(69);
+    private CobolString filler_4 = new CobolString(69);
+    private CobolString filler_5 = new CobolString(69);
+    private CobolString filler_6 = new CobolString(69);
+    private CobolString filler_7 = new CobolString(69);
+    private CobolString filler_8 = new CobolString(69);
+    private CobolString filler_9 = new CobolString(69);
+    private CobolString filler_10 = new CobolString(69);
+    private CobolString[] commission_entry = new CobolString[10]; // Group: COMMISSION-ENTRY
+    private CobolString[] ce_district = new CobolString[10];
+    private BigDecimal[] ce_rate = new BigDecimal[10];
+    private CobolString calculated_fields = new CobolString(1); // Group: CALCULATED-FIELDS
+    private int ws_commission = 0;
+
+    // FILE SECTION — SALES-DATA
+    private CobolString sales_record = new CobolString(1); // Group: SALES-RECORD
+    private int sr_salesman_number = 0;
+    private CobolString filler_11 = new CobolString(69);
+    private CobolString sr_district_code = new CobolString(1);
+    private CobolString filler_12 = new CobolString(69);
+    private int sr_sale_amount = 0;
+    private CobolString filler_13 = new CobolString(69);
+
+    // FILE SECTION — REPORT-FILE
+
+
+    // FILE DESCRIPTORS
+    private CobolFile sales_data = new CobolFile("DATAIN", "LINE SEQUENTIAL", "SEQUENTIAL");
+    private CobolFile report_file = new CobolFile("LINE", "SEQUENTIAL", "SEQUENTIAL");
+
+    // FALLBACK FILE DESCRIPTORS
+    private CobolFile _filler_001 = new CobolFile(",", "SEQUENTIAL", "SEQUENTIAL");
+
+    private CobolString end_of_file = new CobolString(256); // fallback
+
+    // SECTION: USE-SALESMAN-TOTAL
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
+    private void use_salesman_total() {
+        // body commented -- compile edge case
+    }
+
+    private void use() {
+        // body commented -- compile edge case
+    }
+
+    private void use_salesman_total_proc() {
+        // body commented -- compile edge case
+    }
+
+    private void use_salesman_total_exit() {
+        // body commented -- compile edge case
+    }
+
+    private void _000_initiate() {
+        // body commented -- compile edge case
+    }
+
+    private void _000_terminate() {
+        // body commented -- compile edge case
+    }
+
+    private void _100_process_sales_data() {
+        // body commented -- compile edge case
+    }
+
+    private void _199_exit() {
+        // body commented -- compile edge case
     }
 
     @Override
     public void run() {
-        para_main();
+        _000_initiate();
     }
 
     public static void main(String[] args) {

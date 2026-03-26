@@ -43,55 +43,55 @@ public class RunMl004XmlGenerateTrimming extends CobolProgram {
     private CobolString xml = new CobolString(256); // fallback
 
     private void para_main() {
-        /* RAW: XML  */
-        /* RAW: GENERATE out FROM str */
+        /* UNSUPPORTED: XML/JSON processing — XML */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("<str>ab</str>"))) {
             CobolDisplay.display("Failed 1: " + String.valueOf(CobolIntrinsics.trim(out)));
         }
-        /* RAW: XML  */
-        /* RAW: GENERATE out FROM num-edited */
+        /* UNSUPPORTED: XML/JSON processing — XML */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("<num-edited>01.00</num-edited>"))) {
             CobolDisplay.display("Failed 2: " + String.valueOf(CobolIntrinsics.trim(out)));
         }
-        /* RAW: XML  */
-        /* RAW: GENERATE out FROM leading-zeroes */
+        /* UNSUPPORTED: XML/JSON processing — XML */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("<leading-zeroes>5</leading-zeroes>"))) {
             CobolDisplay.display("Failed 3: " + String.valueOf(CobolIntrinsics.trim(out)));
         }
-        /* RAW: XML  */
-        /* RAW: GENERATE out FROM decimal-num */
+        /* UNSUPPORTED: XML/JSON processing — XML */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("<decimal-num>0.120</decimal-num>"))) {
             CobolDisplay.display("Failed 4: " + String.valueOf(CobolIntrinsics.trim(out)));
         }
-        /* RAW: XML  */
-        /* RAW: GENERATE out FROM signed-decimal-num */
+        /* UNSUPPORTED: XML/JSON processing — XML */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("<signed-decimal-num>-1</signed-decimal-num>"))) {
             CobolDisplay.display("Failed 5: " + String.valueOf(CobolIntrinsics.trim(out)));
         }
-        /* RAW: XML  */
-        /* RAW: GENERATE out FROM comp-5-item */
+        /* UNSUPPORTED: XML/JSON processing — XML */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("<comp-5-item>5</comp-5-item>"))) {
             CobolDisplay.display("Failed 6: " + String.valueOf(CobolIntrinsics.trim(out)));
         }
         index_item = new BigDecimal(String.valueOf(500).trim()).intValue();
-        /* RAW: XML  */
-        /* RAW: GENERATE out FROM index-item */
+        /* UNSUPPORTED: XML/JSON processing — XML */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("<index-item>500</index-item>"))) {
             CobolDisplay.display("Failed 7: " + String.valueOf(CobolIntrinsics.trim(out)));
         }
         just_item.set(String.valueOf("blah "));
         xml.set(String.valueOf("blah "));
-        /* RAW: GENERATE out FROM just-item */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("<just-item>blah </just-item>"))) {
             CobolDisplay.display("Failed 10: " + String.valueOf(CobolIntrinsics.trim(out)));
         }
-        /* RAW: XML  */
-        /* RAW: GENERATE out FROM integer-with-p */
+        /* UNSUPPORTED: XML/JSON processing — XML */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("<integer-with-p>10000</integer-with-p>"))) {
             CobolDisplay.display("Failed 11: " + String.valueOf(CobolIntrinsics.trim(out)));
         }
-        /* RAW: XML  */
-        /* RAW: GENERATE out FROM decimal-with-p */
+        /* UNSUPPORTED: XML/JSON processing — XML */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("<decimal-with-p>0.0004</decimal-with-p>"))) {
             CobolDisplay.display("Failed 12: " + String.valueOf(CobolIntrinsics.trim(out)));
         }

@@ -167,7 +167,7 @@ public class RunFile091LineSequentialRewrite extends CobolProgram {
         if (sub == 5) {
             cm_trailer.set(String.valueOf("Freddy Kruger"));
         }
-        if (((sub == 1 || true) || true)) {
+        if (((sub == 1 || sub == 4) || sub == 6)) {
             cm_pk_date = new BigDecimal(String.valueOf(-20070319).trim()).longValue();
         }
         if (!String.valueOf(odd_record).trim().isEmpty()) {

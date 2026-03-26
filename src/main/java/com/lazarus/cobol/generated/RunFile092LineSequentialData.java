@@ -140,7 +140,7 @@ public class RunFile092LineSequentialData extends CobolProgram {
         cm_company.set(String.valueOf(data_company[sub - 1]));
         cm_no_terminals = new BigDecimal(String.valueOf(data_no_terminals[sub - 1]).trim()).shortValue();
         cm_pk_date = new BigDecimal(String.valueOf(20070319).trim());
-        if (((sub == 1 || true) || true)) {
+        if (((sub == 1 || sub == 4) || sub == 6)) {
             cm_pk_date = new BigDecimal(String.valueOf(-20070319).trim());
         }
         if (!String.valueOf(odd_record).trim().isEmpty()) {

@@ -27,7 +27,7 @@ public class Listings034HugeReplace extends CobolProgram {
 
 
     private void para_main() {
-        /* RAW: COPY "display.inc" REPLACING = = 111111111111111111111111111111111111111 */
+        /* UNSUPPORTED: COPY (use --copybooks flag) — COPY */
         System.exit(0);
     }
 

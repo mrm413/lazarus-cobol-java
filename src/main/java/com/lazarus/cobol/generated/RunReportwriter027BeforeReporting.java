@@ -70,20 +70,20 @@ public class RunReportwriter027BeforeReporting extends CobolProgram {
 
     private void para_main() {
         print_file.open("OUTPUT");
-        /* RAW: INITIATE REPORT-1 */
+        /* UNSUPPORTED: Report Writer — INITIATE */
         ws_transport_pay = new BigDecimal(String.valueOf(105).trim()).intValue();
         _filler_002.set(String.valueOf(105));
         ws_book_pay = new BigDecimal(String.valueOf(105).trim()).intValue();
         _filler_003.set(String.valueOf(105));
         ws_tution_pay = new BigDecimal(String.valueOf(105).trim()).intValue();
-        /* RAW: GENERATE REPORT-LINE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         ws_transport_pay = new BigDecimal(String.valueOf(106).trim()).intValue();
         _filler_004.set(String.valueOf(106));
         ws_book_pay = new BigDecimal(String.valueOf(106).trim()).intValue();
         _filler_005.set(String.valueOf(106));
         ws_tution_pay = new BigDecimal(String.valueOf(106).trim()).intValue();
-        /* RAW: GENERATE REPORT-LINE */
-        /* RAW: TERMINATE REPORT-1 */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — TERMINATE */
         print_file.close();
         System.exit(0);
     }

@@ -28,13 +28,10 @@ public class RunAccept001AcceptFromTimeDateDayDayOfWeek1 extends CobolProgram {
     private CobolString x = new CobolString(9);
 
 
-    private CobolString _filler_001 = new CobolString(256); // fallback
 
-    private CobolString _filler_002 = new CobolString(256); // fallback
     private void para_main() {
         x.set(String.valueOf(CobolIntrinsics.acceptFrom("TIME")));
-        if ((String.valueOf(CobolString.refMod(x, 1, 2)).compareTo(String.valueOf("00")) >= 0 && !String.valueOf(_filler_002).trim().isEmpty())) {
-            /* RAW: "23" AND X ( 3 : */
+        if (((((((((String.valueOf(CobolString.refMod(x, 1, 2)).compareTo(String.valueOf("00")) >= 0 && String.valueOf(CobolString.refMod(x, 1, 2)).compareTo(String.valueOf("23")) <= 0) && String.valueOf(CobolString.refMod(x, 3, 2)).compareTo(String.valueOf("00")) >= 0) && String.valueOf(CobolString.refMod(x, 3, 2)).compareTo(String.valueOf("59")) <= 0) && String.valueOf(CobolString.refMod(x, 5, 2)).compareTo(String.valueOf("00")) >= 0) && String.valueOf(CobolString.refMod(x, 5, 2)).compareTo(String.valueOf("60")) <= 0) && String.valueOf(CobolString.refMod(x, 7, 2)).compareTo(String.valueOf("00")) >= 0) && String.valueOf(CobolString.refMod(x, 7, 2)).compareTo(String.valueOf("99")) <= 0) && String.valueOf(CobolString.refMod(x, 9)).equals(String.valueOf(" ")))) {
             /* CONTINUE */
         } else {
             CobolDisplay.display("TIME " + String.valueOf(x) + "!");

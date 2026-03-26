@@ -27,7 +27,7 @@ public class SynFunctions009IntrinsicFunctionsNumberOfArguments extends CobolPro
 
 
     private void para_main() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     @Override

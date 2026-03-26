@@ -120,9 +120,6 @@ public class RunExtensions105GcosLiteralsWithEbcdicSymbolsRun extends CobolProgr
         System.exit(0);
     }
 
-    private void s() {
-    }
-
     private void show() {
         CobolDisplay.display("EBCDIC LIT " + String.valueOf(t) + " FAILED: X = \"" + String.valueOf(x) + "\"");
         s = (float) Double.parseDouble(String.valueOf(1).trim());

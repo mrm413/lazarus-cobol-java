@@ -99,7 +99,7 @@ public class RunManualScreen061XOpenCrtStatusClause extends CobolProgram {
             test_field.set(String.valueOf("Y"));
             test_field.set(String.valueOf(CobolDisplay.accept()));
             /* RAW: line 20 , column 18 */
-            if (!((String.valueOf(test_field).equals(String.valueOf("Y")) || true))) {
+            if (!((String.valueOf(test_field).equals(String.valueOf("Y")) || String.valueOf(test_field).equals(String.valueOf("y"))))) {
                 break;
             }
         }

@@ -32,9 +32,9 @@ public class SynMisc017ExamineInvalidLiterals extends CobolProgram {
 
 
     private void para_main() {
-        /* RAW: EXAMINE x TALLYING ALL "AA" REPLACING */
-        /* RAW: EXAMINE y TALLYING ALL x ( */
-        /* RAW: EXAMINE x TALLYING UNTIL FIRST ALL */
+        /* UNSUPPORTED: COBOL-68 EXAMINE — EXAMINE */
+        /* UNSUPPORTED: COBOL-68 EXAMINE — EXAMINE */
+        /* UNSUPPORTED: COBOL-68 EXAMINE — EXAMINE */
     }
 
     @Override

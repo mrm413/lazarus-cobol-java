@@ -100,7 +100,7 @@ public class Listings024FileDescriptions extends CobolProgram {
     private CobolString _filler_006 = new CobolString(256); // fallback
     private CobolString _filler_007 = new CobolString(256); // fallback
     private void para_main() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     @Override

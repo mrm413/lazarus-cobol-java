@@ -32,11 +32,11 @@ public class RunInitialize011InitializeWithReferenceModification extends CobolPr
 
     // SECTION: ASTART
     private void astart() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void a01() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     @Override

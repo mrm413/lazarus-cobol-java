@@ -50,7 +50,7 @@ public class RunFile001VariableLengthSequentialDataIntegrity extends CobolProgra
         }
         w_type = 0;
         e_enr.set("");
-        while (!((eof_test_xml == 1 || (w_type == 1 || true)))) {
+        while (!((eof_test_xml == 1 || (w_type == 1 || w_type == 2)))) {
             if (test_xml00.read(null) == FileStatus.AT_END) {
             }
             /* NEXT SENTENCE */

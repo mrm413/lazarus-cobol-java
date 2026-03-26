@@ -104,7 +104,7 @@ public class RunFile087ExtfhAutoConversionFcd2Fcd3On32bit extends CobolProgram {
             display_a1_zz9.set(String.valueOf(i));
             fcd_record.set(String.valueOf(display_a1_zz9));
             fcd_current_rec_len.set(String.valueOf(10));
-            if ((String.valueOf(i).equals(String.valueOf(3)) || true)) {
+            if ((String.valueOf(i).equals(String.valueOf(3)) || String.valueOf(i).equals(String.valueOf(5)))) {
                 fcd_record.setRefMod(5, 20, String.valueOf("Have a great day"));
                 fcd_current_rec_len.set(String.valueOf(25));
             }

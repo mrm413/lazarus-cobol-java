@@ -28,21 +28,15 @@ public class SynMisc007ValidConditionalExpression extends CobolProgram {
     private int cb_var = 0;
 
 
-    private CobolString _filler_001 = new CobolString(256); // fallback
 
-    private CobolString _filler_002 = new CobolString(256); // fallback
-    private CobolString _filler_003 = new CobolString(256); // fallback
-    private CobolString _filler_004 = new CobolString(256); // fallback
     private void para_main() {
-        if ((cb_var == 83 && !String.valueOf(_filler_002).trim().isEmpty())) {
-            /* RAW: 1 + 1 */
+        if ((cb_var == 83 && cb_var > (1 + 1))) {
             /* CONTINUE */
         }
-        if ((cb_var == 83 && !String.valueOf(_filler_003).trim().isEmpty())) {
-            /* RAW: 2  */
+        if ((cb_var == 83 && cb_var > 2)) {
             /* CONTINUE */
         }
-        if ((cb_var == 83 && !String.valueOf(_filler_004).trim().isEmpty())) {
+        if ((cb_var == 83 && cb_var > ((1 + 1)))) {
             /* CONTINUE */
         }
         if ((cb_var != 1 || cb_var != 2)) {

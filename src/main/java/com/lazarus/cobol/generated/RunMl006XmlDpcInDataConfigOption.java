@@ -31,8 +31,8 @@ public class RunMl006XmlDpcInDataConfigOption extends CobolProgram {
 
 
     private void para_main() {
-        /* RAW: XML  */
-        /* RAW: GENERATE out FROM num */
+        /* UNSUPPORTED: XML/JSON processing — XML */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         CobolDisplay.display(String.valueOf(CobolIntrinsics.trim(out)));
     }
 

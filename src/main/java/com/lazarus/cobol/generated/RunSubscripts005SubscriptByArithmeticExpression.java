@@ -32,7 +32,7 @@ public class RunSubscripts005SubscriptByArithmeticExpression extends CobolProgra
 
 
     private void para_main() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     @Override

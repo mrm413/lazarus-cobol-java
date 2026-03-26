@@ -31,15 +31,15 @@ public class RunFundamental088UseForDebuggingReferenceWithOccurs extends CobolPr
 
     // SECTION: TEST-DEBUG
     private void test_debug() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void use() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void some_par() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     @Override

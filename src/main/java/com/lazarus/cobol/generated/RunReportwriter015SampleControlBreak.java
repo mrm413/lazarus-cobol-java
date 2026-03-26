@@ -51,20 +51,20 @@ public class RunReportwriter015SampleControlBreak extends CobolProgram {
     private void a000_create_reports() {
         student_file.open("INPUT");
         print_file.open("OUTPUT");
-        /* RAW: INITIATE CONTROL-BREAK */
+        /* UNSUPPORTED: Report Writer — INITIATE */
         if (student_file.read(student_area) == FileStatus.AT_END) {
             are_there_more_records.set(String.valueOf("NO "));
         }
         while (!(!String.valueOf(there_are_no_more_records).trim().isEmpty())) {
         }
-        /* RAW: TERMINATE CONTROL-BREAK */
+        /* UNSUPPORTED: Report Writer — TERMINATE */
         student_file.close();
         print_file.close();
         System.exit(0);
     }
 
     private void a001_loop() {
-        /* RAW: GENERATE TRANS-LINE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (student_file.read(student_area) == FileStatus.AT_END) {
             are_there_more_records.set(String.valueOf("NO "));
         }

@@ -38,16 +38,16 @@ public class RunReportwriter000ReportLineOrder extends CobolProgram {
 
     private void _1() {
         report_file.open("OUTPUT");
-        /* RAW: INITIATE RWCS-Report */
-        /* RAW: GENERATE Detail-Line */
-        /* RAW: GENERATE Detail-Line */
-        /* RAW: GENERATE Detail-Line */
-        /* RAW: GENERATE Detail-Line */
-        /* RAW: GENERATE Detail-Line */
-        /* RAW: GENERATE Detail-Line */
-        /* RAW: GENERATE Detail-Line */
-        /* RAW: GENERATE Detail-Line */
-        /* RAW: TERMINATE RWCS-Report */
+        /* UNSUPPORTED: Report Writer — INITIATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — TERMINATE */
         report_file.close();
     }
 

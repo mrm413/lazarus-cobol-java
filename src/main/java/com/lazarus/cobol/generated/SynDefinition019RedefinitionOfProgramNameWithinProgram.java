@@ -29,13 +29,14 @@ public class SynDefinition019RedefinitionOfProgramNameWithinProgram extends Cobo
 
 
 
-    private void prog() {
+    private void para_main() {
+        /* RAW: prog  */
         /* CONTINUE */
     }
 
     @Override
     public void run() {
-        prog();
+        para_main();
     }
 
     public static void main(String[] args) {

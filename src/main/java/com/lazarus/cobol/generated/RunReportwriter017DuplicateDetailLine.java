@@ -36,16 +36,16 @@ public class RunReportwriter017DuplicateDetailLine extends CobolProgram {
 
     private void para_main() {
         report_file.open("OUTPUT");
-        /* RAW: INITIATE MYREPORT */
+        /* UNSUPPORTED: Report Writer — INITIATE */
         save_item.set(String.valueOf("A"));
-        /* RAW: GENERATE DETAIL-LINE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         save_item.set(String.valueOf("B"));
-        /* RAW: GENERATE DETAIL-LINE */
-        /* RAW: GENERATE SND-DETAIL-LINE */
-        /* RAW: GENERATE TRD-DETAIL-LINE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         save_item.set(String.valueOf("C"));
-        /* RAW: GENERATE TRD-DETAIL-LINE */
-        /* RAW: TERMINATE MYREPORT */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — TERMINATE */
         report_file.close();
         System.exit(0);
     }

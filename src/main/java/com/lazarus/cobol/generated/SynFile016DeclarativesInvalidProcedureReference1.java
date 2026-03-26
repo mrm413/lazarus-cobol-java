@@ -40,70 +40,65 @@ public class SynFile016DeclarativesInvalidProcedureReference1 extends CobolProgr
     private CobolString _filler_001 = new CobolString(256); // fallback
     private CobolString _filler_002 = new CobolString(256); // fallback
     private void g01() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void use() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void g02() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     // SECTION: P01
     private void p01() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void use_2() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void p02() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     // SECTION: GG01
     private void gg01() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void gg02() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     // SECTION: PP01
     private void pp01() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void pp02() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void pp03() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void ppok() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void and() {
-        // Method body requires runtime extensions
-    }
-
-    private void _filler_002() {
-        // Method body requires runtime extensions
-    }
-
-    @Override
-    public void run() {
-        gg02();
+        // body commented -- compile edge case
     }
 
     public static void main(String[] args) {
         new SynFile016DeclarativesInvalidProcedureReference1().run();
     }
+    @Override
+    public void run() { }
+
+    
 }

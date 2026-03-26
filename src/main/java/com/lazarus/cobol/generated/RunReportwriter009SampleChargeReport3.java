@@ -64,15 +64,15 @@ public class RunReportwriter009SampleChargeReport3 extends CobolProgram {
     private CobolString _filler_002 = new CobolString(256); // fallback
     private CobolString _filler_003 = new CobolString(256); // fallback
     private void _000_initiate() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void _000_terminate() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void _100_process_transaction_data() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     @Override

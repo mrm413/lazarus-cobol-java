@@ -60,11 +60,11 @@ public class RunReportwriter025ReportPresentAfter extends CobolProgram {
         ws_date.set(String.valueOf(CobolIntrinsics.acceptFrom("DATE YYYYMMDD")));
         /* RAW: *  */
         ws_time.set(String.valueOf(CobolIntrinsics.acceptFrom("TIME")));
-        /* RAW: INITIATE REPORT1 * */
-        /* RAW: GENERATE MAIN-HEADER */
+        /* UNSUPPORTED: Report Writer — INITIATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         _100_open_files();
         _200_main_process();
-        /* RAW: TERMINATE REPORT1 */
+        /* UNSUPPORTED: Report Writer — TERMINATE */
         in_file.close();
         out_file.close();
         System.exit(0);
@@ -89,15 +89,15 @@ public class RunReportwriter025ReportPresentAfter extends CobolProgram {
 
     private void _200_main_process() {
         /* RAW: *  */
-        /* RAW: GENERATE HEADER-1 */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         while (!(!String.valueOf(ws_input_eof).trim().isEmpty())) {
             if (in_file.read(null) == FileStatus.AT_END) {
             }
             ws_misc.set(String.valueOf(in_rec));
             if (String.valueOf(ws_input_status).equals(String.valueOf("00"))) {
-                /* RAW: GENERATE DETAIL-1 */
+                /* UNSUPPORTED: Report Writer — GENERATE */
             } else if (String.valueOf(ws_input_status).equals(String.valueOf("10"))) {
-                /* RAW: GENERATE REP-FOOTER */
+                /* UNSUPPORTED: Report Writer — GENERATE */
             } else {
                 CobolDisplay.display(":ERROR READING INFILE FILE.STATUS = " + String.valueOf(ws_input_status));
                 System.exit(0);

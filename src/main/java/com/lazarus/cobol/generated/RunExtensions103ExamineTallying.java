@@ -33,47 +33,47 @@ public class RunExtensions103ExamineTallying extends CobolProgram {
     private CobolString display = new CobolString(256); // fallback
 
     private void para_main() {
-        /* RAW: EXAMINE X TALLYING ALL "A" */
+        /* UNSUPPORTED: COBOL-68 EXAMINE — EXAMINE */
         if (tally != 4) {
             CobolDisplay.display("Should be 4 but is " + String.valueOf(tally));
         }
-        /* RAW: EXAMINE X TALLYING LEADING "A" */
+        /* UNSUPPORTED: COBOL-68 EXAMINE — EXAMINE */
         if (tally != 2) {
             CobolDisplay.display("Should be 2 but is " + String.valueOf(tally));
         }
-        /* RAW: EXAMINE X TALLYING UNTIL FIRST "C" */
+        /* UNSUPPORTED: COBOL-68 EXAMINE — EXAMINE */
         if (tally != 5) {
             CobolDisplay.display("Should be 5 but is " + String.valueOf(tally));
         }
-        /* RAW: EXAMINE X TALLYING ALL "A" REPLACING */
+        /* UNSUPPORTED: COBOL-68 EXAMINE — EXAMINE */
         if (tally != 4) {
             CobolDisplay.display("Should be 4 but is " + String.valueOf(tally));
         }
         if (!String.valueOf(x).equals(String.valueOf("ZZBZBCZB"))) {
             CobolDisplay.display("Should be ZZBZBCZB but is " + String.valueOf(x));
         }
-        /* RAW: EXAMINE X TALLYING LEADING "Z" REPLACING */
+        /* UNSUPPORTED: COBOL-68 EXAMINE — EXAMINE */
         if (tally != 2) {
             CobolDisplay.display("Should be 2 but is " + String.valueOf(tally));
         }
         if (!String.valueOf(x).equals(String.valueOf("AABZBCZB"))) {
             CobolDisplay.display("Should be AABZBCZB but is " + String.valueOf(x));
         }
-        /* RAW: EXAMINE X TALLYING UNTIL FIRST "C" */
+        /* UNSUPPORTED: COBOL-68 EXAMINE — EXAMINE */
         if (tally != 5) {
             CobolDisplay.display("Should be 5 but is " + String.valueOf(tally));
         }
         if (!String.valueOf(x).equals(String.valueOf("XXXXXCZB"))) {
             CobolDisplay.display("Should be XXXXXCZB but is " + String.valueOf(x));
         }
-        /* RAW: EXAMINE X TALLYING UNTIL FIRST "Y" */
+        /* UNSUPPORTED: COBOL-68 EXAMINE — EXAMINE */
         if (tally != 8) {
             CobolDisplay.display("Should be 8 but is " + String.valueOf(tally));
         }
         if (!String.valueOf(x).equals(String.valueOf("YYYYYYYY"))) {
             CobolDisplay.display("Should be YYYYYYYY but is " + String.valueOf(x));
         }
-        /* RAW: EXAMINE N TALLYING UNTIL FIRST 5 */
+        /* UNSUPPORTED: COBOL-68 EXAMINE — EXAMINE */
         if (n.compareTo(new BigDecimal(String.valueOf(-88888.55).trim())) != 0) {
             CobolDisplay.display("Should be -88888.55 but is " + String.valueOf(n));
         }

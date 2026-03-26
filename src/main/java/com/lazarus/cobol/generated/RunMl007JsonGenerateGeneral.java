@@ -36,29 +36,29 @@ public class RunMl007JsonGenerateGeneral extends CobolProgram {
     private CobolString json = new CobolString(256); // fallback
 
     private void para_main() {
-        /* RAW: JSON  */
-        /* RAW: GENERATE out FROM rec NAME OF */
+        /* UNSUPPORTED: XML/JSON processing — JSON */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("{\"rec\":{\"alpha\":\"A\",\"b\":\"BBB\"}}"))) {
             CobolDisplay.display("Test 1 failed: " + String.valueOf(CobolIntrinsics.trim(out)));
         }
-        /* RAW: JSON  */
-        /* RAW: GENERATE out FROM rec NAME OF */
+        /* UNSUPPORTED: XML/JSON processing — JSON */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("{\"alpha\":\"A\",\"b\":\"BBB\"}"))) {
             CobolDisplay.display("Test 2 failed: " + String.valueOf(CobolIntrinsics.trim(out)));
         }
-        /* RAW: JSON  */
-        /* RAW: GENERATE out FROM d */
+        /* UNSUPPORTED: XML/JSON processing — JSON */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("{\"d\":\" \"}"))) {
             CobolDisplay.display("Test 3 failed: " + String.valueOf(CobolIntrinsics.trim(out)));
         }
-        /* RAW: JSON  */
-        /* RAW: GENERATE out FROM c */
+        /* UNSUPPORTED: XML/JSON processing — JSON */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("{\"c\":{\"d\":\" \"}}"))) {
             CobolDisplay.display("Test 4 failed: " + String.valueOf(CobolIntrinsics.trim(out)));
         }
         d.set(String.valueOf("QUOTES"));
         json.set(String.valueOf("QUOTES"));
-        /* RAW: GENERATE out FROM d */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(out).equals(String.valueOf("{\"d\":\"\\\"\\\"\\\"\"}"))) {
             CobolDisplay.display("Test 5 failed: " + String.valueOf(CobolIntrinsics.trim(out)));
         }

@@ -36,7 +36,7 @@ public class RunFunctions076FunctionNumvalF extends CobolProgram {
 
 
     private void para_main() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     @Override

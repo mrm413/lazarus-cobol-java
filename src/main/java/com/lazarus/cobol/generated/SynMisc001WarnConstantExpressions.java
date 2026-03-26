@@ -27,10 +27,11 @@ public class SynMisc001WarnConstantExpressions extends CobolProgram {
 
 
     private void para_main() {
-        if (((3 == 1 && true) || true)) {
+        if (((3 == 1 && 3 == 2) || 3 == 3)) {
             CobolDisplay.display("OK");
         }
-        if ((3 == 1 || (true && true))) {
+        if ((3 == 1 || 3 == 2)) {
+            /* RAW: AND 3 */
             CobolDisplay.display("NO");
         }
         if (String.valueOf("a").equals(String.valueOf("b"))) {

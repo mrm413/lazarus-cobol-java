@@ -30,7 +30,7 @@ public class RunMisc044TransformStatement extends CobolProgram {
 
 
     private void para_main() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     @Override

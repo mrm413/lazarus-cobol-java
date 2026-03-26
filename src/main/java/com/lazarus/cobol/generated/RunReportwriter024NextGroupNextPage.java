@@ -58,10 +58,10 @@ public class RunReportwriter024NextGroupNextPage extends CobolProgram {
         temp_file.open("INPUT");
         report_file.open("OUTPUT");
         ws_current_date.set(String.valueOf("20150225153000000000000"));
-        /* RAW: INITIATE RPTA */
+        /* UNSUPPORTED: Report Writer — INITIATE */
         process_detail_level_report(); // THRU PDLR-EXIT
         pdlr_exit();
-        /* RAW: TERMINATE RPTA */
+        /* UNSUPPORTED: Report Writer — TERMINATE */
         temp_file.close();
         report_file.close();
         System.exit(0);
@@ -74,7 +74,7 @@ public class RunReportwriter024NextGroupNextPage extends CobolProgram {
             pdlr_exit();
             return;
         }
-        /* RAW: GENERATE RPTA-DETAIL-LINE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         process_detail_level_report();
         return;
     }

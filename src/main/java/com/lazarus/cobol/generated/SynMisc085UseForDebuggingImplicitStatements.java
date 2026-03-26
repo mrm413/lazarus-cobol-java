@@ -42,24 +42,24 @@ public class SynMisc085UseForDebuggingImplicitStatements extends CobolProgram {
     // SECTION: MY-TEST
     private CobolString _filler_001 = new CobolString(256); // fallback
     private void my_test() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void use() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void i_o_test_oodb_result() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     // SECTION: MAIN
     private void para_main() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void _000_begin() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     @Override

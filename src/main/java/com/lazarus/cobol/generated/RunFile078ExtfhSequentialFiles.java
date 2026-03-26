@@ -82,19 +82,19 @@ public class RunFile078ExtfhSequentialFiles extends CobolProgram {
     private CobolString odd_record = new CobolString(256); // fallback
 
     private void para_main() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void read_record() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void loadfile() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void load_record() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     @Override

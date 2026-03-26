@@ -31,8 +31,8 @@ public class RunMl013JsonDpcInDataConfigOption extends CobolProgram {
 
 
     private void para_main() {
-        /* RAW: JSON  */
-        /* RAW: GENERATE out FROM num */
+        /* UNSUPPORTED: XML/JSON processing — JSON */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         CobolDisplay.display(String.valueOf(CobolIntrinsics.trim(out)));
     }
 

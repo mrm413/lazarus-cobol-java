@@ -43,7 +43,6 @@ public class RunExtensions072SystemRoutineCblGcHosted extends CobolProgram {
 
 
     private CobolString address = new CobolString(256); // fallback
-    private CobolString greater = new CobolString(256); // fallback
     private CobolString environment = new CobolString(256); // fallback
     private CobolString tz = new CobolString(256); // fallback
 
@@ -79,8 +78,7 @@ public class RunExtensions072SystemRoutineCblGcHosted extends CobolProgram {
         if (String.valueOf(argv).equals(String.valueOf(0))) {
             CobolDisplay.display("BAD ARGV");
         }
-        if ((cell < 0 || !String.valueOf(greater).trim().isEmpty())) {
-            /* RAW: THAN 8 THEN */
+        if ((cell < 0 || cell > 8)) {
             CobolDisplay.display("UNK CELL " + String.valueOf(cell));
         }
         environment.set(String.valueOf("PST8PDT"));

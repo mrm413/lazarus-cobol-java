@@ -45,40 +45,40 @@ public class RunMl002XmlGenerateExceptions extends CobolProgram {
     private void para_main() {
         short_str.set(String.valueOf("A"));
         xml.set(String.valueOf("A"));
-        /* RAW: GENERATE short-str FROM valid-rec COUNT IN */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (((!String.valueOf(xml_code).equals(String.valueOf(400)) || !String.valueOf(short_str).equals(String.valueOf("<vali"))) || xml_len != 42)) {
             CobolDisplay.display("Failed 1a: " + String.valueOf(short_str) + " " + String.valueOf(xml_len) + " " + String.valueOf(xml_code));
         }
         short_str2.set(String.valueOf("B"));
         xml.set(String.valueOf("B"));
-        /* RAW: GENERATE short-str2 FROM valid-rec COUNT IN */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (((!String.valueOf(xml_code).equals(String.valueOf(400)) || !String.valueOf(short_str2).equals(String.valueOf("<valid-rec><a>aa</a><b"))) || xml_len != 42)) {
             CobolDisplay.display("Failed 1b: " + String.valueOf(short_str2) + " " + String.valueOf(xml_len) + " " + String.valueOf(xml_code));
         }
-        /* RAW: XML  */
-        /* RAW: GENERATE normal-str FROM valid-rec NAMESPACE invalid-namespace */
+        /* UNSUPPORTED: XML/JSON processing — XML */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(xml_code).equals(String.valueOf(416))) {
             CobolDisplay.display("Failed 2: " + String.valueOf(CobolIntrinsics.trim(normal_str)) + " " + String.valueOf(xml_code));
         }
-        /* RAW: XML  */
-        /* RAW: GENERATE normal-str FROM invalid-content */
+        /* UNSUPPORTED: XML/JSON processing — XML */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if ((!String.valueOf(xml_code).equals(String.valueOf(417)) || !String.valueOf(normal_str).equals(String.valueOf((0 /* non-numeric literal: <hex.invalid-content */ - 0 /* non-numeric literal: invalid-content> */))))) {
             CobolDisplay.display("Failed 3: " + String.valueOf(CobolIntrinsics.trim(normal_str)) + " " + String.valueOf(xml_code));
         }
-        /* RAW: XML  */
-        /* RAW: GENERATE normal-str FROM valid-rec NAMESPACE "http://www.w3.org/1999/xhtml" */
+        /* UNSUPPORTED: XML/JSON processing — XML */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (!String.valueOf(xml_code).equals(String.valueOf(419))) {
             CobolDisplay.display("Failed 4: " + String.valueOf(CobolIntrinsics.trim(normal_str)) + " " + String.valueOf(xml_code));
         }
-        /* RAW: XML  */
-        /* RAW: GENERATE normal-str FROM valid-rec ON EXCEPTION */
+        /* UNSUPPORTED: XML/JSON processing — XML */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         CobolDisplay.display("Failed 5: EXCEPTION " + String.valueOf(CobolIntrinsics.trim(normal_str)) + " " + String.valueOf(xml_code));
         /* RAW: ON EXCEPTION */
         if (!String.valueOf(xml_code).equals(String.valueOf(0))) {
             CobolDisplay.display("Failed 5: NOT EXCEPTION " + String.valueOf(CobolIntrinsics.trim(normal_str)) + " " + String.valueOf(xml_code));
         }
         /* RAW: END-XML XML */
-        /* RAW: GENERATE short-str FROM valid-rec NOT EXCEPTION */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         CobolDisplay.display("Failed 6: NOT EXCEPTION " + String.valueOf(CobolIntrinsics.trim(normal_str)) + " " + String.valueOf(xml_code));
         /* RAW: EXCEPTION  */
         if (!String.valueOf(xml_code).equals(String.valueOf(400))) {

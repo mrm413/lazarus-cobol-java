@@ -42,7 +42,7 @@ public class RunExtensions069SystemRoutineCblGcGetopt extends CobolProgram {
 
 
     private void para_main() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     @Override

@@ -27,7 +27,7 @@ public class RunFundamental093AbbreviatedExpressions extends CobolProgram {
 
     private CobolString fld9_7 = new CobolString(256); // fallback
     private CobolString fld9_5 = new CobolString(256); // fallback
-    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString fld9_0 = new CobolString(256); // fallback
     private CobolString fld9_1 = new CobolString(256); // fallback
     private CobolString fld9_2 = new CobolString(256); // fallback
     private CobolString fld9_9 = new CobolString(256); // fallback
@@ -36,12 +36,8 @@ public class RunFundamental093AbbreviatedExpressions extends CobolProgram {
     private CobolString off_wrk_switch_1 = new CobolString(256); // fallback
     private CobolString testnum = new CobolString(256); // fallback
 
-    private CobolString _filler_002 = new CobolString(256); // fallback
-    private CobolString _filler_003 = new CobolString(256); // fallback
-    private CobolString _filler_004 = new CobolString(256); // fallback
     private void main_line() {
-        if ((String.valueOf(fld9_7).compareTo(String.valueOf(fld9_5)) > 0 && !(!String.valueOf(_filler_002).trim().isEmpty()))) {
-            /* RAW: FLD9-0 OR FLD9-1 */
+        if (((String.valueOf(fld9_7).compareTo(String.valueOf(fld9_5)) > 0 && String.valueOf(fld9_7).compareTo(String.valueOf(fld9_0)) >= 0) || !String.valueOf(fld9_1).trim().isEmpty())) {
             pass();
         } else {
             fail();
@@ -61,8 +57,7 @@ public class RunFundamental093AbbreviatedExpressions extends CobolProgram {
         } else {
             fail();
         }
-        if (!((String.valueOf(fld9_5).compareTo(String.valueOf(fld9_7)) > 0 || !String.valueOf(_filler_003).trim().isEmpty()))) {
-            /* RAW: FLD9-1 ) */
+        if (!((String.valueOf(fld9_5).compareTo(String.valueOf(fld9_7)) > 0 || String.valueOf(fld9_5).compareTo(String.valueOf(fld9_1)) < 0))) {
             pass();
         } else {
             fail();
@@ -89,23 +84,22 @@ public class RunFundamental093AbbreviatedExpressions extends CobolProgram {
         }
         /* RAW: * / / */
         CobolDisplay.display("***Constant expressions***");
-        if ((((9 > 2 && true) && true) && true)) {
+        if ((((9 > 2 && 9 > 7) && 9 > 5) && 9 > 1)) {
             pass();
         } else {
             fail();
         }
-        if ((((1 < 2 && true) && true) && true)) {
+        if ((((1 < 2 && 1 < 5) && 1 < 7) && 1 < 9)) {
             pass();
         } else {
             fail();
         }
-        if ((((5 < 2 || true) || true) || true)) {
+        if ((((5 < 2 || 5 < 1) || 5 < 9) || 5 < 7)) {
             pass();
         } else {
             fail();
         }
-        if ((5 > 1 && !String.valueOf(_filler_004).trim().isEmpty())) {
-            /* RAW: 3 OR 6 */
+        if (((5 > 1 && 5 < 3) || 5 < 6)) {
             pass();
         } else {
             fail();

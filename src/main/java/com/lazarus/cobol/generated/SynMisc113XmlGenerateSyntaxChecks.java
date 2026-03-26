@@ -61,43 +61,43 @@ public class SynMisc113XmlGenerateSyntaxChecks extends CobolProgram {
 
 
     private void para_main() {
-        /* RAW: XML  */
-        /* RAW: GENERATE bool-item FROM str XML */
-        /* RAW: GENERATE just-item FROM str XML */
-        /* RAW: GENERATE table-entry ( 1 ) FROM */
-        /* RAW: GENERATE long-str ( 1 : 100 */
-        /* RAW: GENERATE long-str FROM FUNCTION CHAR ( */
-        /* RAW: GENERATE long-str FROM str ( 2 */
-        /* RAW: GENERATE long-str FROM renames-item XML */
-        /* RAW: GENERATE long-str FROM invalid-sub-elt-rec XML */
-        /* RAW: GENERATE long-str FROM all-filler-rec XML */
-        /* RAW: GENERATE long-str FROM str COUNT float-item */
-        /* RAW: GENERATE long-str FROM str COUNT pic-p-item */
-        /* RAW: GENERATE long-str FROM with-attrs-does-nothing WITH ATTRIBUTES */
-        /* RAW: GENERATE long-str FROM str NAMESPACE "<>" */
-        /* RAW: GENERATE long-str FROM str NAMESPACE bool-item */
-        /* RAW: GENERATE long-str FROM str NAMESPACE SPACES */
-        /* RAW: GENERATE long-str FROM str NAMESPACE "http://www.w3.org/xml" */
-        /* RAW: GENERATE long-str FROM rec NAME OF */
-        /* RAW: GENERATE long-str FROM rec NAME OF */
-        /* RAW: GENERATE long-str FROM rec NAME OF */
-        /* RAW: GENERATE long-str FROM rec NAME OF */
-        /* RAW: GENERATE long-str FROM rec TYPE OF */
-        /* RAW: GENERATE long-str FROM rec TYPE OF */
-        /* RAW: GENERATE long-str FROM rec TYPE OF */
-        /* RAW: GENERATE long-str FROM rec SUPPRESS child-3 */
+        /* UNSUPPORTED: XML/JSON processing — XML */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         /* RAW: SPACES , child-1a */
         /* RAW: SPACES , rec */
         /* RAW: SPACES XML */
-        /* RAW: GENERATE long-str FROM rec SUPPRESS FUNCTION */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         /* RAW: SPACE XML */
-        /* RAW: GENERATE long-str FROM rec SUPPRESS child-1 */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         /* RAW: ZERO , child-3-1 ( 1 ) */
         /* RAW: SPACES XML */
-        /* RAW: GENERATE long-str FROM rec SUPPRESS child-3 */
-        /* RAW: GENERATE long-str FROM bool-area SUPPRESS bool-item */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         /* RAW: SPACES XML */
-        /* RAW: GENERATE long-str FROM bool-area SUPPRESS bool-item */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         /* RAW: LOW-VALUES , zoned-decimal */
         /* RAW: HIGH-VALUE  */
         return;

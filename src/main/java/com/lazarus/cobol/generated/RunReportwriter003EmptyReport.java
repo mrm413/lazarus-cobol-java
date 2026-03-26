@@ -38,8 +38,8 @@ public class RunReportwriter003EmptyReport extends CobolProgram {
 
     private void _1() {
         report_file.open("OUTPUT");
-        /* RAW: INITIATE RWCS-Report */
-        /* RAW: TERMINATE RWCS-Report */
+        /* UNSUPPORTED: Report Writer — INITIATE */
+        /* UNSUPPORTED: Report Writer — TERMINATE */
         report_file.close();
     }
 

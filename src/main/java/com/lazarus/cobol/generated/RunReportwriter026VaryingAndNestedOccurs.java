@@ -63,23 +63,23 @@ public class RunReportwriter026VaryingAndNestedOccurs extends CobolProgram {
     private CobolString _filler_012 = new CobolString(256); // fallback
     private CobolString _filler_013 = new CobolString(256); // fallback
     private void before_detail() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void use() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void doit_1() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void para_main() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void doit_now() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     @Override

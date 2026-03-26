@@ -30,7 +30,7 @@ public class RunFundamental011CompareFloatLongWithFloatingPointLiteral extends C
 
 
     private void para_main() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     @Override

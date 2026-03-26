@@ -38,10 +38,10 @@ public class RunReportwriter022MissingInitiateAndGenerate extends CobolProgram {
     private void para_main() {
         report_file.open("OUTPUT");
         foo.set(String.valueOf("hello"));
-        /* RAW: GENERATE rp-detail */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         foo.set(String.valueOf("goodbye"));
-        /* RAW: GENERATE rp-detail */
-        /* RAW: TERMINATE rp */
+        /* UNSUPPORTED: Report Writer — GENERATE */
+        /* UNSUPPORTED: Report Writer — TERMINATE */
         report_file.close();
         System.exit(0);
     }

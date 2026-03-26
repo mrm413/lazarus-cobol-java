@@ -34,9 +34,6 @@ public class SynMisc090StopIdentifier extends CobolProgram {
         System.exit(0);
     }
 
-    private void y() {
-    }
-
     @Override
     public void run() {
         para_main();

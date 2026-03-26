@@ -28,10 +28,8 @@ public class RunMisc168FloatLongWithSizeError extends CobolProgram {
     private CobolString doublevalue = new CobolString(256); // fallback
     private CobolString lastdoublevalue = new CobolString(256); // fallback
     private CobolString counter = new CobolString(256); // fallback
-    private CobolString _filler_001 = new CobolString(256); // fallback
 
     // SECTION: main
-    private CobolString _filler_002 = new CobolString(256); // fallback
     private void para_main() {
         perform();
         end_perform();
@@ -44,8 +42,7 @@ public class RunMisc168FloatLongWithSizeError extends CobolProgram {
     }
 
     private void end_perform() {
-        if (!((Integer.parseInt(String.valueOf(counter).trim()) >= 1023 && !String.valueOf(_filler_002).trim().isEmpty()))) {
-            /* RAW: 1025 ) */
+        if (!((Integer.parseInt(String.valueOf(counter).trim()) >= 1023 && Integer.parseInt(String.valueOf(counter).trim()) <= 1025))) {
             CobolDisplay.display(" ");
             CobolDisplay.display("counter is " + String.valueOf(counter));
         }

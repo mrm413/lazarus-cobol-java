@@ -35,7 +35,8 @@ public class SynMisc000AmbiguousAndOr extends CobolProgram {
         if (((three == one && (two != 0)) || (three != 0))) {
             CobolDisplay.display("OK");
         }
-        if ((3 == 1 || (true && true))) {
+        if ((3 == 1 || 3 == 2)) {
+            /* RAW: AND 3 */
             CobolDisplay.display("NO");
         }
         System.exit(0);

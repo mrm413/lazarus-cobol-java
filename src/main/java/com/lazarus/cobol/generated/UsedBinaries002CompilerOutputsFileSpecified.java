@@ -35,7 +35,7 @@ public class UsedBinaries002CompilerOutputsFileSpecified extends CobolProgram {
     }
 
     private void _00() {
-        /* RAW: COPY PROC */
+        /* UNSUPPORTED: COPY (use --copybooks flag) — COPY */
     }
 
     // SECTION: END-PROC

@@ -47,20 +47,20 @@ public class RunReportwriter016SampleInventoryReport extends CobolProgram {
     private void a000_mainline() {
         inv_file.open("INPUT");
         report_file.open("OUTPUT");
-        /* RAW: INITIATE INV-REPORT */
+        /* UNSUPPORTED: Report Writer — INITIATE */
         if (inv_file.read(null) == FileStatus.AT_END) {
             are_there_more_records.set(String.valueOf("NO "));
         }
         while (!(String.valueOf(are_there_more_records).equals(String.valueOf("NO ")))) {
         }
-        /* RAW: TERMINATE INV-REPORT */
+        /* UNSUPPORTED: Report Writer — TERMINATE */
         inv_file.close();
         report_file.close();
         System.exit(0);
     }
 
     private void a001_loop() {
-        /* RAW: GENERATE INV-DETAIL */
+        /* UNSUPPORTED: Report Writer — GENERATE */
         if (inv_file.read(null) == FileStatus.AT_END) {
             are_there_more_records.set(String.valueOf("NO "));
         }

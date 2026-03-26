@@ -43,7 +43,7 @@ public class RunFunctions017FunctionCurrentDate extends CobolProgram {
     private CobolString valid_year = new CobolString(256); // fallback
 
     private void para_main() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     @Override

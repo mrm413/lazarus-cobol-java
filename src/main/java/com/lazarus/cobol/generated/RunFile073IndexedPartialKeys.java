@@ -54,11 +54,11 @@ public class RunFile073IndexedPartialKeys extends CobolProgram {
     private CobolString depends = new CobolString(256); // fallback
 
     private void para_main() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     private void write_f() {
-        // Method body requires runtime extensions
+        // body commented -- compile edge case
     }
 
     @Override
