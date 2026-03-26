@@ -35,27 +35,13 @@ public class RunInitialize010InitializeOfExternalDataItems extends CobolProgram 
 
 
     private void para_main() {
-    }
-
-    private void ext_var_01() {
-    }
-
-    private void ext_field1() {
-    }
-
-    private void ext_field2() {
-    }
-
-    private void ext_field3() {
-    }
-
-    private void ext_field4() {
-    }
-
-    private void ext_var_01_2() {
-    }
-
-    private void ext_var_grp() {
+        ext_var_01.set(String.valueOf("MOVE"));
+        ext_field1 = new BigDecimal(String.valueOf(1).trim()).intValue();
+        ext_field2.set(String.valueOf("X"));
+        ext_field3 = new BigDecimal(String.valueOf(123).trim()).intValue();
+        ext_field4 = new BigDecimal(String.valueOf(-2.1).trim());
+        ext_var_01.set("");
+        ext_var_grp.set("");
         if (!String.valueOf(ext_var_01).equals(String.valueOf(" "))) {
             CobolDisplay.display("EXT-VAR-01 " + String.valueOf(ext_var_01));
         }

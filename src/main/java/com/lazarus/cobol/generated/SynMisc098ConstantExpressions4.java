@@ -29,7 +29,7 @@ public class SynMisc098ConstantExpressions4 extends CobolProgram {
     private static final int var_len = 115;
 
 
-    private CobolString cb_if = new CobolString(256);
+    private CobolString cb_if = new CobolString(256); // fallback
 
     private void para_main() {
         if (var_len < 16) {

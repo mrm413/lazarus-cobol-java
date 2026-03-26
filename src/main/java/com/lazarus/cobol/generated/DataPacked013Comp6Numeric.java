@@ -33,36 +33,28 @@ public class DataPacked013Comp6Numeric extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void x_2() {
+        x_2.set(String.valueOf("0000"));
         if (!CobolIntrinsics.isNumeric(n_3)) {
             CobolDisplay.display("3 0000 NG");
         }
         if (!CobolIntrinsics.isNumeric(n_4)) {
             CobolDisplay.display("4 0000 NG");
         }
-    }
-
-    private void x_2_2() {
+        x_2.set(String.valueOf("000c"));
         if (CobolIntrinsics.isNumeric(n_3)) {
             CobolDisplay.display("3 000c NG");
         }
         if (CobolIntrinsics.isNumeric(n_4)) {
             CobolDisplay.display("4 000c NG");
         }
-    }
-
-    private void x_2_3() {
+        x_2.set(String.valueOf("1234"));
         if (!CobolIntrinsics.isNumeric(n_3)) {
             CobolDisplay.display("3 1234 NG");
         }
         if (!CobolIntrinsics.isNumeric(n_4)) {
             CobolDisplay.display("4 1234 NG");
         }
-    }
-
-    private void x_2_4() {
+        x_2.set(String.valueOf("ffff"));
         if (CobolIntrinsics.isNumeric(n_3)) {
             CobolDisplay.display("3 ffff NG");
         }

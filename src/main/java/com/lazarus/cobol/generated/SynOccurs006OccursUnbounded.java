@@ -33,10 +33,7 @@ public class SynOccurs006OccursUnbounded extends CobolProgram {
 
 
     private void para_main() {
-        CobolDisplay.display();
-    }
-
-    private void g_1() {
+        CobolDisplay.display(String.valueOf(g_1));
         return;
     }
 

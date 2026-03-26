@@ -32,14 +32,10 @@ public class SynMisc062StatementInAreaA extends CobolProgram {
     // SECTION: SEC-1
     private void sec_1() {
         move();
-        flag();
     }
 
     private void move() {
-        /* RAW: 1 TO */
-    }
-
-    private void flag() {
+        /* RAW: 1 TO FLAG */
     }
 
     private void para_main() {

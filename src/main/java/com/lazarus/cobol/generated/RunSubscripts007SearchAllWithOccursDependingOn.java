@@ -25,8 +25,8 @@ public class RunSubscripts007SearchAllWithOccursDependingOn extends CobolProgram
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
-    private CobolString screen_akt = new CobolString(256);
-    private CobolString[] screen_name = new CobolString[100];
+    private CobolString screen_akt = new CobolString(256); // fallback
+    private CobolString[] screen_name = new CobolString[100]; // fallback array
 
     private void para_main() {
         /* SEARCH ALL SCREEN-ENTRY — binary search */

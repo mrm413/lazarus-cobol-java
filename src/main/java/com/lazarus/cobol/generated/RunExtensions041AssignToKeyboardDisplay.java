@@ -37,12 +37,8 @@ public class RunExtensions041AssignToKeyboardDisplay extends CobolProgram {
 
 
     private void a00() {
-    }
-
-    private void test_file() {
-    }
-
-    private void test_out() {
+        test_file.open("INPUT");
+        test_out.open("OUTPUT");
     }
 
     private void a01() {
@@ -56,12 +52,8 @@ public class RunExtensions041AssignToKeyboardDisplay extends CobolProgram {
     }
 
     private void z99() {
-    }
-
-    private void test_file_2() {
-    }
-
-    private void test_out_2() {
+        test_file.close();
+        test_out.close();
         System.exit(0);
     }
 

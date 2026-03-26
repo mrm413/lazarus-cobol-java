@@ -24,47 +24,10 @@ public class RunFile096FileSortLineSequential extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
-    // FILE SECTION — SORT-IN
-    private CobolString in_rec = new CobolString(20);
 
-    // FILE SECTION — SORT-OUT
-    private CobolString out_rec = new CobolString(20);
-
-
-    // FILE DESCRIPTORS
-    private CobolFile sort_in = new CobolFile("test.txt", "LINE SEQUENTIAL", "SEQUENTIAL");
-    private CobolFile sort_out = new CobolFile("result.txt", "LINE SEQUENTIAL", "SEQUENTIAL");
-    private CobolFile sort_wrk = new CobolFile("SORT-WRK", "SEQUENTIAL", "SEQUENTIAL");
-
-    private CobolString test = new CobolString(256);
-
-    private void para_main() {
-        /* RAW: * Special case : */
-        /* WRITE test — no file mapping */ // test.write();
-        /* RAW: data in COBOL , see note */
-    }
-
-    private void sort_in() {
-        sort_in.write(" ");
-        sort_in.write(" ");
-        sort_in.write("world ");
-        sort_in.write(" ");
-        sort_in.write("hello ");
-        sort_in.write(" ");
-        sort_in.write(" ");
-    }
-
-    private void sort_in_2() {
-        /* SORT SORT-WRK */
-    }
-
-    private void sort_out() {
-        System.exit(0);
-    }
 
     @Override
     public void run() {
-        para_main();
     }
 
     public static void main(String[] args) {

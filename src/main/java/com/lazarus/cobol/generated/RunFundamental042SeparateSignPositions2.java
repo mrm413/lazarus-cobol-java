@@ -31,21 +31,13 @@ public class RunFundamental042SeparateSignPositions2 extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void x() {
+        x = new BigDecimal(String.valueOf(0).trim()).intValue();
         CobolDisplay.displayNoAdvancing(String.valueOf(x));
-    }
-
-    private void x_2() {
+        x = new BigDecimal(String.valueOf(0).trim()).intValue();
         CobolDisplay.displayNoAdvancing(String.valueOf(x));
-    }
-
-    private void y() {
+        y = new BigDecimal(String.valueOf(0).trim()).intValue();
         CobolDisplay.displayNoAdvancing(String.valueOf(y));
-    }
-
-    private void y_2() {
+        y = new BigDecimal(String.valueOf(0).trim()).intValue();
         CobolDisplay.displayNoAdvancing(String.valueOf(y));
         System.exit(0);
     }

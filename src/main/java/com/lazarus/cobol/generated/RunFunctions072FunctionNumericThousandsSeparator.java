@@ -30,9 +30,7 @@ public class RunFunctions072FunctionNumericThousandsSeparator extends CobolProgr
 
 
     private void para_main() {
-    }
-
-    private void test_fld() {
+        test_fld.set(String.valueOf(CobolIntrinsics.numeric_thousands_separator()));
         CobolDisplay.displayNoAdvancing("OK");
         System.exit(0);
     }

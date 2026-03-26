@@ -72,9 +72,7 @@ public class SynFile007AssignToVariable extends CobolProgram {
         test_file_5.open("INPUT");
         test_file_5.close();
         test_file_6.open("INPUT");
-    }
-
-    private void test_file_6() {
+        test_file_6.close();
     }
 
     @Override

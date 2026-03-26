@@ -34,13 +34,7 @@ public class SynFunctions008IntrinsicFunctionsReplaced extends CobolProgram {
     private void para_main() {
         func_out.set(String.valueOf(func_in));
         /* INSPECT func-out — 2 clause(s) */
-    }
-
-    private void func_sub() {
-        /* RAW: END FUNCTION */
-    }
-
-    private void substitute() {
+        /* RAW: END FUNCTION SUBSTITUTE */
     }
 
     @Override

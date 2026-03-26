@@ -48,40 +48,29 @@ public class RunReportwriter012SampleReportWithRightCenter extends CobolProgram 
         print_file.open("OUTPUT");
         do_init();
         if (input_file.read(null) == FileStatus.AT_END) {
-            /* RAW: ARE-THERE-MORE-RECORDS  */
+            are_there_more_records.set(String.valueOf("NO"));
         }
         while (!(String.valueOf(are_there_more_records).equals(String.valueOf("NO ")))) {
         }
         do_term();
         input_file.close();
-    }
-
-    private void print_file() {
+        print_file.close();
         System.exit(0);
     }
 
     private void a001_loop() {
-        /* RAW: GENERATE  */
-    }
-
-    private void report_line() {
+        /* RAW: GENERATE REPORT-LINE */
         if (input_file.read(null) == FileStatus.AT_END) {
-            /* RAW: ARE-THERE-MORE-RECORDS  */
+            are_there_more_records.set(String.valueOf("NO "));
         }
     }
 
     private void do_init() {
-        /* RAW: INITIATE  */
-    }
-
-    private void student_report() {
+        /* RAW: INITIATE STUDENT-REPORT */
     }
 
     private void do_term() {
-        /* RAW: TERMINATE  */
-    }
-
-    private void student_report_2() {
+        /* RAW: TERMINATE STUDENT-REPORT */
     }
 
     @Override

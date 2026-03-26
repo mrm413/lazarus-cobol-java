@@ -31,10 +31,7 @@ public class SynDefinition026AmbiguousReferenceTo02And03Items extends CobolProgr
 
 
     private void para_main() {
-        CobolDisplay.display();
-    }
-
-    private void x() {
+        CobolDisplay.display(String.valueOf(x));
         System.exit(0);
     }
 

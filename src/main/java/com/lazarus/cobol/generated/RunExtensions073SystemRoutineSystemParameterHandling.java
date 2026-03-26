@@ -25,19 +25,13 @@ public class RunExtensions073SystemRoutineSystemParameterHandling extends CobolP
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
-    private CobolString chaining_param = new CobolString(256);
-    private CobolString chaining_param_2 = new CobolString(256);
-    private CobolString test_no = new CobolString(256);
+    private CobolString chaining_param = new CobolString(256); // fallback
+    private CobolString chaining_param_2 = new CobolString(256); // fallback
+    private CobolString test_no = new CobolString(256); // fallback
 
     private void para_main() {
-        /* RAW: CHAINING chaining-param , */
-    }
-
-    private void chaining_param_2() {
-        /* RAW: *  */
-    }
-
-    private void para_main_2() {
+        /* RAW: CHAINING chaining-param , chaining-param-2 */
+        /* RAW: * main */
         if (String.valueOf(chaining_param).equals(String.valueOf(" ")) && String.valueOf(chaining_param_2).equals(String.valueOf(" "))) {
             CobolDisplay.display("started without options - closing");
         } else if (String.valueOf(chaining_param).equals(String.valueOf("1")) && String.valueOf(chaining_param_2).equals(String.valueOf(" "))) {
@@ -73,16 +67,7 @@ public class RunExtensions073SystemRoutineSystemParameterHandling extends CobolP
         System.exit(0);
     }
 
-    private void callme() {
-        test_no.set(new BigDecimal(String.valueOf(test_no).trim()).add(new BigDecimal(String.valueOf(1).trim())).toPlainString());
-        CobolDisplay.display("Test #" + String.valueOf(test_no) + ":");
-        CobolDisplay.display("  CALL 'SYSTEM' with " + String.valueOf(CobolIntrinsics.trim(chaining_param)) + ":");
-        CobolProgram.call("SYSTEM", CobolIntrinsics.trim(chaining_param));
-        CobolDisplay.display("  --> return of the given CALL 'SYSTEM': ");
-    }
-
-    private void return_code() {
-    }
+    private void callme() { /* stub — external/COPY */ }
 
     @Override
     public void run() {

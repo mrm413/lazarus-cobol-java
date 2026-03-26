@@ -35,14 +35,10 @@ public class SynMisc019UnreachableStatement extends CobolProgram {
     // SECTION: f-error
     private void f_error() {
         use();
-        f();
     }
 
     private void use() {
-        /* RAW: AFTER ERROR ON */
-    }
-
-    private void f() {
+        /* RAW: AFTER ERROR ON f */
         return;
     }
 
@@ -63,9 +59,6 @@ public class SynMisc019UnreachableStatement extends CobolProgram {
     private void p03() {
         p04();
         return;
-    }
-
-    private void seconds() {
     }
 
     private void p04() {

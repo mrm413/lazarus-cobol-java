@@ -38,9 +38,7 @@ public class RunFile011AssignDynamicAndExternal extends CobolProgram {
     private void para_main() {
         f.open("OUTPUT");
         f.write("hi");
-    }
-
-    private void f() {
+        f.close();
     }
 
     @Override

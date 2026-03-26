@@ -31,9 +31,7 @@ public class RunExtensions058SystemRoutineCGetpid extends CobolProgram {
         if (return_code == 0) {
             CobolDisplay.display("C$GETPID returned zero!");
         }
-    }
-
-    private void return_code() {
+        return_code = new BigDecimal(String.valueOf(0).trim()).intValue();
         System.exit(0);
     }
 

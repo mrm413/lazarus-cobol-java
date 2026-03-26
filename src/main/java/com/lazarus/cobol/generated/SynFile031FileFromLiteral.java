@@ -34,7 +34,7 @@ public class SynFile031FileFromLiteral extends CobolProgram {
     // FILE DESCRIPTORS
     private CobolFile f = new CobolFile("ssad", "SEQUENTIAL", "SEQUENTIAL");
 
-    private CobolString file = new CobolString(256);
+    private CobolString file = new CobolString(256); // fallback
 
     private void para_main() {
         f.open("OUTPUT");
@@ -50,9 +50,7 @@ public class SynFile031FileFromLiteral extends CobolProgram {
         /* RAW: f FROM 0 */
         /* REWRITE FILE — no file mapping */ // file.rewrite();
         /* RAW: f FROM "abc" */
-    }
-
-    private void f() {
+        f.close();
     }
 
     @Override

@@ -35,9 +35,7 @@ public class RunMisc147ProgramIdCallLiteralVariableWithSpaces extends CobolProgr
         CobolProgram.call(String.valueOf(myrtn), "Y");
         CobolProgram.call("SUB", "Z");
         CobolProgram.call("S U B", "A");
-    }
-
-    private void myrtn() {
+        myrtn.set(String.valueOf(" S U B"));
         CobolProgram.call(String.valueOf(myrtn), "B");
         System.exit(0);
     }

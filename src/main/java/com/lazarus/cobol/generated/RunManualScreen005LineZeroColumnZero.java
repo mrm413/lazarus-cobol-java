@@ -28,17 +28,19 @@ public class RunManualScreen005LineZeroColumnZero extends CobolProgram {
     private CobolString success_flag = new CobolString(1);
 
 
-    private CobolString scr = new CobolString(256);
-    private CobolString line = new CobolString(256);
-    private CobolString _unnamed = new CobolString(256);
-    private CobolString column = new CobolString(256);
-    private CobolString at = new CobolString(256);
-    private CobolString success = new CobolString(256);
+    private CobolString scr = new CobolString(256); // fallback
+    private CobolString line = new CobolString(256); // fallback
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString column = new CobolString(256); // fallback
+    private CobolString at = new CobolString(256); // fallback
+    private CobolString success = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
     private void para_main() {
         CobolDisplay.display(String.valueOf(scr));
-        CobolDisplay.display("2" + String.valueOf(line) + String.valueOf(0) + String.valueOf(_unnamed) + String.valueOf(column) + String.valueOf(0));
-        CobolDisplay.display("3" + String.valueOf(line) + String.valueOf(2) + String.valueOf(_unnamed) + String.valueOf(column) + String.valueOf(3));
+        CobolDisplay.display("2" + String.valueOf(line) + String.valueOf(0) + String.valueOf(_filler_002) + String.valueOf(column) + String.valueOf(0));
+        CobolDisplay.display("3" + String.valueOf(line) + String.valueOf(2) + String.valueOf(_filler_003) + String.valueOf(column) + String.valueOf(3));
         CobolDisplay.display("4" + String.valueOf(at) + String.valueOf(0));
         scr.set(String.valueOf(CobolDisplay.accept()));
         if ((!String.valueOf(success).trim().isEmpty() && cob_crt_status == 0)) {

@@ -36,39 +36,23 @@ public class RunFile031StartRelative3 extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void file1() {
-    }
-
-    private void file1_2() {
-    }
-
-    private void file1_3() {
+        file1.open("OUTPUT");
+        file1.close();
+        file1.open("I-O");
         file1_key = new BigDecimal(String.valueOf(10).trim()).intValue();
-    }
-
-    private void file1_rec() {
+        file1_rec = new BigDecimal(String.valueOf(10).trim()).intValue();
         file1.write(file1_rec);
         file1_key = new BigDecimal(String.valueOf(11).trim()).intValue();
-    }
-
-    private void file1_rec_2() {
+        file1_rec = new BigDecimal(String.valueOf(11).trim()).intValue();
         file1.write(file1_rec);
         file1_key = new BigDecimal(String.valueOf(12).trim()).intValue();
-    }
-
-    private void file1_rec_3() {
+        file1_rec = new BigDecimal(String.valueOf(12).trim()).intValue();
         file1.write(file1_rec);
         file1_key = new BigDecimal(String.valueOf(13).trim()).intValue();
-    }
-
-    private void file1_rec_4() {
+        file1_rec = new BigDecimal(String.valueOf(13).trim()).intValue();
         file1.write(file1_rec);
         /* RAW: *  */
-    }
-
-    private void file1_key() {
+        file1_key = new BigDecimal(String.valueOf(0).trim()).intValue();
         file1.start();
         if (file1.read(null) == FileStatus.AT_END) {
         }
@@ -79,9 +63,7 @@ public class RunFile031StartRelative3 extends CobolProgram {
             CobolDisplay.display("FAILED: START key > 0");
         }
         /* RAW: *  */
-    }
-
-    private void file1_key_2() {
+        file1_key = new BigDecimal(String.valueOf(99).trim()).intValue();
         file1.start();
         if (file1.read(null) == FileStatus.AT_END) {
         }
@@ -92,9 +74,7 @@ public class RunFile031StartRelative3 extends CobolProgram {
             CobolDisplay.display("FAILED: START key < 99");
         }
         /* RAW: *  */
-    }
-
-    private void file1_key_3() {
+        file1_key = new BigDecimal(String.valueOf(0).trim()).intValue();
         file1.start();
     }
 
@@ -108,9 +88,7 @@ public class RunFile031StartRelative3 extends CobolProgram {
             CobolDisplay.display("FAILED: START key FIRST");
         }
         /* RAW: *  */
-    }
-
-    private void file1_key_4() {
+        file1_key = new BigDecimal(String.valueOf(0).trim()).intValue();
         file1.start();
     }
 
@@ -124,9 +102,7 @@ public class RunFile031StartRelative3 extends CobolProgram {
             CobolDisplay.display("FAILED: START key LAST");
         }
         /* RAW: *  */
-    }
-
-    private void file1_key_5() {
+        file1_key = new BigDecimal(String.valueOf(0).trim()).intValue();
         file1.start();
         if (file1.read(null) == FileStatus.AT_END) {
         }
@@ -137,9 +113,7 @@ public class RunFile031StartRelative3 extends CobolProgram {
             CobolDisplay.display("FAILED: START key >= 0");
         }
         /* RAW: *  */
-    }
-
-    private void file1_key_6() {
+        file1_key = new BigDecimal(String.valueOf(99).trim()).intValue();
         file1.start();
         if (file1.read(null) == FileStatus.AT_END) {
         }
@@ -150,9 +124,7 @@ public class RunFile031StartRelative3 extends CobolProgram {
             CobolDisplay.display("FAILED: START key <= 99");
         }
         /* RAW: *  */
-    }
-
-    private void file1_4() {
+        file1.close();
         System.exit(0);
     }
 

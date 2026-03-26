@@ -27,10 +27,7 @@ public class SynMisc105WhenCompiledRegisterInDialect extends CobolProgram {
 
 
     private void para_main() {
-        CobolDisplay.display();
-    }
-
-    private void when_compiled() {
+        CobolDisplay.display(String.valueOf(when_compiled));
     }
 
     @Override

@@ -33,10 +33,7 @@ public class RunExtensions089BinaryComp11 extends CobolProgram {
     private void para_main() {
         comp1 = (float) Double.parseDouble(String.valueOf((7 / 2)).trim());
         num.set(String.valueOf(comp1));
-        CobolDisplay.display();
-    }
-
-    private void num() {
+        CobolDisplay.display(String.valueOf(num));
     }
 
     @Override

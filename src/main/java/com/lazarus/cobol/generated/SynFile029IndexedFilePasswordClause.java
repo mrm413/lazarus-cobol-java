@@ -24,36 +24,10 @@ public class SynFile029IndexedFilePasswordClause extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
-    // WORKING-STORAGE SECTION
-    private CobolString fstat = new CobolString(2);
-    private CobolString pass1 = new CobolString(8);
-    private CobolString pass2 = new CobolString(10);
-    private CobolString pass_ext = new CobolString(4);
 
-    // FILE SECTION — FILE1
-    private CobolString file1_rec = new CobolString(1); // Group: FILE1-REC
-    private CobolString file1_key = new CobolString(1);
-
-    // FILE SECTION — FILE2
-    private CobolString file2_rec = new CobolString(1); // Group: FILE2-REC
-    private int file2_key = 0;
-    private CobolString file2_dat = new CobolString(1);
-
-
-    // FILE DESCRIPTORS
-    private CobolFile file1 = new CobolFile("FILE-TEST", "INDEXED", "DYNAMIC");
-    // File status: FSTAT
-    private CobolFile file2 = new CobolFile("FILE-TEST-EXT", "INDEXED", "DYNAMIC");
-    // File status: FSTAT
-
-
-    private void para_main() {
-        System.exit(0);
-    }
 
     @Override
     public void run() {
-        para_main();
     }
 
     public static void main(String[] args) {

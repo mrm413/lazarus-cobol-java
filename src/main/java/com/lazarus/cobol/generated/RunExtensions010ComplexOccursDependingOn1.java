@@ -36,9 +36,7 @@ public class RunExtensions010ComplexOccursDependingOn1 extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void i() {
+        i = new BigDecimal(String.valueOf(2).trim()).intValue();
         CobolDisplay.displayNoAdvancing(String.valueOf(g_1) + ":" + String.valueOf(g_4) + ":" + String.valueOf(g_5));
     }
 

@@ -29,9 +29,9 @@ public class RunMisc169EcSizeZeroDivide extends CobolProgram {
     private int y = 0;
 
 
-    private CobolString last = new CobolString(256);
-    private CobolString off = new CobolString(256);
-    private CobolString exception = new CobolString(256);
+    private CobolString last = new CobolString(256); // fallback
+    private CobolString off = new CobolString(256); // fallback
+    private CobolString exception = new CobolString(256); // fallback
 
     private void para_main() {
         y = new BigDecimal(String.valueOf(x / y).trim()).intValue();

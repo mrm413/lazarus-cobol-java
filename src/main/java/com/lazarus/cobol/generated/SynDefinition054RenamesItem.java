@@ -44,8 +44,8 @@ public class SynDefinition054RenamesItem extends CobolProgram {
     private CobolString my_std_const = new CobolString(1);
 
 
-    private CobolString valid_2 = new CobolString(256);
-    private CobolString valid_1 = new CobolString(256);
+    private CobolString valid_2 = new CobolString(256); // fallback
+    private CobolString valid_1 = new CobolString(256); // fallback
 
     private void para_main() {
         CobolDisplay.display(String.valueOf(valid_2));

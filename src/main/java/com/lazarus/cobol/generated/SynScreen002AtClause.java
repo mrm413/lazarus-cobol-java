@@ -40,7 +40,7 @@ public class SynScreen002AtClause extends CobolProgram {
     private int scol = 0;
 
 
-    private CobolString at = new CobolString(256);
+    private CobolString at = new CobolString(256); // fallback
 
     private void para_main() {
         CobolDisplay.display("a" + String.valueOf(at) + String.valueOf(curs_1));
@@ -54,10 +54,7 @@ public class SynScreen002AtClause extends CobolProgram {
         CobolDisplay.display("a" + String.valueOf(at) + String.valueOf(curs_4));
         CobolDisplay.display("a" + String.valueOf(at) + String.valueOf(curs_5));
         CobolDisplay.display("a" + String.valueOf(at) + String.valueOf(101));
-        CobolDisplay.display("a" + String.valueOf(at));
-    }
-
-    private void zero() {
+        CobolDisplay.display("a" + String.valueOf(at) + 0);
     }
 
     @Override

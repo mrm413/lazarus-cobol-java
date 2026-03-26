@@ -25,8 +25,8 @@ public class RunMisc129EcScreenLineNumberAndStartingColumn extends CobolProgram 
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
-    private CobolString invalid_line = new CobolString(256);
-    private CobolString invalid_col = new CobolString(256);
+    private CobolString invalid_line = new CobolString(256); // fallback
+    private CobolString invalid_col = new CobolString(256); // fallback
 
     private void para_main() {
         CobolDisplay.display(String.valueOf(invalid_line));

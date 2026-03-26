@@ -29,7 +29,7 @@ public class RunFunctions119FormattedDateTimeWithSystemOffset extends CobolProgr
     private int val = 0;
 
 
-    private CobolString system_offset = new CobolString(256);
+    private CobolString system_offset = new CobolString(256); // fallback
 
     private void para_main() {
         str.set(String.valueOf(CobolIntrinsics.formatted_datetime("YYYYDDDThhmmss+hhmm", 1, 45296, system_offset)));

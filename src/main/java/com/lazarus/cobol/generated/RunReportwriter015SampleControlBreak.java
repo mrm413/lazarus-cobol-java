@@ -46,40 +46,27 @@ public class RunReportwriter015SampleControlBreak extends CobolProgram {
     private CobolFile student_file = new CobolFile("STUDREC", "LINE SEQUENTIAL", "SEQUENTIAL");
     private CobolFile print_file = new CobolFile("LINE", "SEQUENTIAL", "SEQUENTIAL");
 
-    private CobolString there_are_no_more_records = new CobolString(256);
+    private CobolString there_are_no_more_records = new CobolString(256); // fallback
 
     private void a000_create_reports() {
         student_file.open("INPUT");
-    }
-
-    private void print_file() {
-        /* RAW: INITIATE  */
-    }
-
-    private void control_break() {
+        print_file.open("OUTPUT");
+        /* RAW: INITIATE CONTROL-BREAK */
         if (student_file.read(student_area) == FileStatus.AT_END) {
-            /* RAW: ARE-THERE-MORE-RECORDS  */
+            are_there_more_records.set(String.valueOf("NO "));
         }
         while (!(!String.valueOf(there_are_no_more_records).trim().isEmpty())) {
         }
-        /* RAW: TERMINATE  */
-    }
-
-    private void control_break_2() {
+        /* RAW: TERMINATE CONTROL-BREAK */
         student_file.close();
-    }
-
-    private void print_file_2() {
+        print_file.close();
         System.exit(0);
     }
 
     private void a001_loop() {
-        /* RAW: GENERATE  */
-    }
-
-    private void trans_line() {
+        /* RAW: GENERATE TRANS-LINE */
         if (student_file.read(student_area) == FileStatus.AT_END) {
-            /* RAW: ARE-THERE-MORE-RECORDS  */
+            are_there_more_records.set(String.valueOf("NO "));
         }
     }
 

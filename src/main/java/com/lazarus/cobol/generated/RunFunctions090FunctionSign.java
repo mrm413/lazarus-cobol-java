@@ -31,57 +31,36 @@ public class RunFunctions090FunctionSign extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void z() {
+        z = new BigDecimal(String.valueOf(CobolIntrinsics.sign(3.12345)).trim()).intValue();
         if (z != 1) {
-            CobolDisplay.display("Sign 1 ");
-            /* RAW: Z  */
+            CobolDisplay.display("Sign 1 " + String.valueOf(z));
         }
-    }
-
-    private void z_2() {
+        z = new BigDecimal(String.valueOf(CobolIntrinsics.sign(0)).trim()).intValue();
         if (z != 0) {
-            CobolDisplay.display("Sign 2 ");
-            /* RAW: Z  */
+            CobolDisplay.display("Sign 2 " + String.valueOf(z));
         }
-    }
-
-    private void z_3() {
+        z = new BigDecimal(String.valueOf(CobolIntrinsics.sign(0)).trim()).intValue();
         if (z != 0) {
-            CobolDisplay.display("Sign 3 ");
-            /* RAW: Z  */
+            CobolDisplay.display("Sign 3 " + String.valueOf(z));
         }
-    }
-
-    private void z_4() {
+        z = new BigDecimal(String.valueOf(CobolIntrinsics.sign(-3.12345)).trim()).intValue();
         if (z != -1) {
-            CobolDisplay.display("Sign 4 ");
-            /* RAW: Z  */
+            CobolDisplay.display("Sign 4 " + String.valueOf(z));
         }
         f = Double.parseDouble(String.valueOf(3.12345).trim());
-    }
-
-    private void z_5() {
+        z = new BigDecimal(String.valueOf(CobolIntrinsics.sign(f)).trim()).intValue();
         if (z != 1) {
-            CobolDisplay.display("Sign 5 ");
-            /* RAW: Z  */
+            CobolDisplay.display("Sign 5 " + String.valueOf(z));
         }
         f = Double.parseDouble(String.valueOf(0).trim());
-    }
-
-    private void z_6() {
+        z = new BigDecimal(String.valueOf(CobolIntrinsics.sign(f)).trim()).intValue();
         if (z != 0) {
-            CobolDisplay.display("Sign 6 ");
-            /* RAW: Z  */
+            CobolDisplay.display("Sign 6 " + String.valueOf(z));
         }
         f = Double.parseDouble(String.valueOf(-3.12345).trim());
-    }
-
-    private void z_7() {
+        z = new BigDecimal(String.valueOf(CobolIntrinsics.sign(f)).trim()).intValue();
         if (z != -1) {
-            CobolDisplay.display("Sign 7 ");
-            /* RAW: Z  */
+            CobolDisplay.display("Sign 7 " + String.valueOf(z));
         }
         System.exit(0);
     }

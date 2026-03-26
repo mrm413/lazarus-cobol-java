@@ -57,48 +57,20 @@ public class SynFile006AssignToLsqDeviceName extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void tst_file1() {
-    }
-
-    private void tst_file1_2() {
-    }
-
-    private void tst_file2() {
-    }
-
-    private void tst_file2_2() {
-    }
-
-    private void tst_file3() {
-    }
-
-    private void tst_file3_2() {
-    }
-
-    private void tst_file4() {
-    }
-
-    private void tst_file4_2() {
-    }
-
-    private void tst_file5() {
-    }
-
-    private void tst_file5_2() {
-    }
-
-    private void tst_file6() {
-    }
-
-    private void tst_file6_2() {
-    }
-
-    private void tst_file7() {
-    }
-
-    private void tst_file7_2() {
+        tst_file1.open("INPUT");
+        tst_file1.close();
+        tst_file2.open("INPUT");
+        tst_file2.close();
+        tst_file3.open("INPUT");
+        tst_file3.close();
+        tst_file4.open("INPUT");
+        tst_file4.close();
+        tst_file5.open("INPUT");
+        tst_file5.close();
+        tst_file6.open("INPUT");
+        tst_file6.close();
+        tst_file7.open("INPUT");
+        tst_file7.close();
         System.exit(0);
     }
 

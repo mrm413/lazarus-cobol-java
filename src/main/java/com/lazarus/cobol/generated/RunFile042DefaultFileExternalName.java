@@ -41,13 +41,9 @@ public class RunFile042DefaultFileExternalName extends CobolProgram {
     private void para_main() {
         file1_date.set(String.valueOf(CobolIntrinsics.acceptFrom("DATE YYYYMMDD")));
         file1_time.set(String.valueOf(CobolIntrinsics.acceptFrom("TIME")));
-    }
-
-    private void file1() {
+        file1.open("OUTPUT");
         file1.write(file1_rec);
-    }
-
-    private void file1_2() {
+        file1.close();
         CobolProgram.call("fexists_signed", "./file1", file1_rec, rec_size);
         if (erc != 0) {
             CobolDisplay.display("FAILED file1");

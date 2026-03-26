@@ -27,19 +27,16 @@ public class RunFundamental018AlphabeticLowerTest extends CobolProgram {
     // WORKING-STORAGE SECTION
     private CobolString x = new CobolString(4);
     private CobolString xbyte = new CobolString(1);
+    private CobolString filler_1 = new CobolString(3);
 
 
 
     private void para_main() {
-    }
-
-    private void xbyte() {
+        xbyte.set(String.valueOf("0D"));
         if (CobolIntrinsics.isAlphabetic_lower(x)) {
             CobolDisplay.display("Fail - Not alphabetic lower");
         }
-    }
-
-    private void xbyte_2() {
+        xbyte.set(String.valueOf("a"));
         if (!CobolIntrinsics.isAlphabetic_lower(x)) {
             CobolDisplay.display("Fail - Alphabetic lower");
         }

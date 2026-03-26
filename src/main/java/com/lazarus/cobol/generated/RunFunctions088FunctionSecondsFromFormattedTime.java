@@ -30,47 +30,29 @@ public class RunFunctions088FunctionSecondsFromFormattedTime extends CobolProgra
 
 
     private void para_main() {
-    }
-
-    private void result() {
+        result = new BigDecimal(String.valueOf(CobolIntrinsics.seconds_from_formatted_time("hhmmss", "010203")).trim()).shortValue();
         if (result != 3723) {
-            CobolDisplay.display("Test 1 failed: ");
-            /* RAW: result  */
+            CobolDisplay.display("Test 1 failed: " + String.valueOf(result));
         }
-    }
-
-    private void result_2() {
+        result = new BigDecimal(String.valueOf(CobolIntrinsics.seconds_from_formatted_time("hh:mm:ss", "01:02:03")).trim()).shortValue();
         if (result != 3723) {
-            CobolDisplay.display("Test 2 failed: ");
-            /* RAW: result  */
+            CobolDisplay.display("Test 2 failed: " + String.valueOf(result));
         }
-    }
-
-    private void result_3() {
+        result = new BigDecimal(String.valueOf(CobolIntrinsics.seconds_from_formatted_time("hhmmss.ssssssss", "010203.04050607")).trim()).shortValue();
         if (result != 3723.04050607) {
-            CobolDisplay.display("Test 3 failed: ");
-            /* RAW: result  */
+            CobolDisplay.display("Test 3 failed: " + String.valueOf(result));
         }
-    }
-
-    private void result_4() {
+        result = new BigDecimal(String.valueOf(CobolIntrinsics.seconds_from_formatted_time("hhmmssZ", "010203Z")).trim()).shortValue();
         if (result != 3723) {
-            CobolDisplay.display("Test 4 failed: ");
-            /* RAW: result  */
+            CobolDisplay.display("Test 4 failed: " + String.valueOf(result));
         }
-    }
-
-    private void result_5() {
+        result = new BigDecimal(String.valueOf(CobolIntrinsics.seconds_from_formatted_time("hhmmss+hhmm", "010203+0405")).trim()).shortValue();
         if (result != 3723) {
-            CobolDisplay.display("Test 5 failed: ");
-            /* RAW: result  */
+            CobolDisplay.display("Test 5 failed: " + String.valueOf(result));
         }
-    }
-
-    private void result_6() {
+        result = new BigDecimal(String.valueOf(CobolIntrinsics.seconds_from_formatted_time("YYYYMMDDThhmmss", "16010101T010203")).trim()).shortValue();
         if (result != 3723) {
-            CobolDisplay.display("Test 6 failed: ");
-            /* RAW: result  */
+            CobolDisplay.display("Test 6 failed: " + String.valueOf(result));
         }
         System.exit(0);
     }

@@ -45,14 +45,10 @@ public class SynDefinition035AmbiguousReferenceToParagraphName extends CobolProg
     // SECTION: S-3
     private void s_3() {
         go();
-        l();
     }
 
     private void go() {
-        /* RAW: TO  */
-    }
-
-    private void l_3() {
+        /* RAW: TO L */
         System.exit(0);
     }
 

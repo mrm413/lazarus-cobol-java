@@ -54,8 +54,8 @@ public class SynDefinition059ApplyCommitClause extends CobolProgram {
     // File status: CHNG-FILE-STATUS
     private CobolFile sort_file = new CobolFile("SORT", "SEQUENTIAL", "SEQUENTIAL");
 
-    private CobolString stck_file_ok = new CobolString(256);
-    private CobolString chng_file_ok = new CobolString(256);
+    private CobolString stck_file_ok = new CobolString(256); // fallback
+    private CobolString chng_file_ok = new CobolString(256); // fallback
 
     // SECTION: MAIN
     private void para_main() {

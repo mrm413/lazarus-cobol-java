@@ -39,10 +39,10 @@ public class RunFile053SequentialFileRewrite extends CobolProgram {
     // FILE DESCRIPTORS
     private CobolFile file1 = new CobolFile("FILE1", "SEQUENTIAL", "SEQUENTIAL");
 
-    private CobolString eof = new CobolString(256);
-    private CobolString cb_false = new CobolString(256);
-    private CobolString abort = new CobolString(256);
-    private CobolString cb_true = new CobolString(256);
+    private CobolString eof = new CobolString(256); // fallback
+    private CobolString cb_false = new CobolString(256); // fallback
+    private CobolString abort = new CobolString(256); // fallback
+    private CobolString cb_true = new CobolString(256); // fallback
 
     private void para_main() {
         file1.open("OUTPUT");
@@ -106,7 +106,7 @@ public class RunFile053SequentialFileRewrite extends CobolProgram {
                                         }
                                         /* RAW: END-READ  */
                                         /* RAW: END-PERFORM  */
-                                        /* RAW: file1  */
+                                        file1.close();
                                     }
                                 }
                             }

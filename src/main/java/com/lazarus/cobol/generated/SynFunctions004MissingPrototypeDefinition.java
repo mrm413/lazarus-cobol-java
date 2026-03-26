@@ -30,14 +30,9 @@ public class SynFunctions004MissingPrototypeDefinition extends CobolProgram {
 
 
     private void para_main() {
-    // ret.set(String.valueOf(x()));
-    }
-
-    private void ret() {
-        /* RAW: END FUNCTION */
-    }
-
-    private void blah() {
+        // KNOWN_ISSUE: ret.set(String.valueOf(CobolIntrinsics.x()));
+        // KNOWN_ISSUE: ret.set(String.valueOf(CobolIntrinsics.x()));
+        /* RAW: END FUNCTION blah */
     }
 
     @Override
@@ -48,5 +43,4 @@ public class SynFunctions004MissingPrototypeDefinition extends CobolProgram {
     public static void main(String[] args) {
         new SynFunctions004MissingPrototypeDefinition().run();
     }
-    private void x() {  }
 }

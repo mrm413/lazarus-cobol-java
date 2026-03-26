@@ -35,9 +35,6 @@ public class Listings017CommandLine extends CobolProgram {
         return;
     }
 
-    private void withpar() {
-    }
-
     @Override
     public void run() {
         para_main();

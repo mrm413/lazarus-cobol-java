@@ -30,9 +30,7 @@ public class RunFunctions015FunctionCos extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void y() {
+        y = new BigDecimal(String.valueOf(CobolIntrinsics.cos(-0.2345)).trim());
         if (y.compareTo(new BigDecimal(String.valueOf(0.9726306412562582).trim())) != 0) {
             CobolDisplay.display(String.valueOf(y));
         }

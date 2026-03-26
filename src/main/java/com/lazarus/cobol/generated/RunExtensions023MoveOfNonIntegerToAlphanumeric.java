@@ -36,100 +36,71 @@ public class RunExtensions023MoveOfNonIntegerToAlphanumeric extends CobolProgram
     private BigDecimal signed_non_integer_3 = BigDecimal.ZERO;
 
 
-    private CobolString alpha_numeric = new CobolString(256);
-    private CobolString _unnamed = new CobolString(256);
-    private CobolString ignore = new CobolString(256);
-    private CobolString decimal = new CobolString(256);
-    private CobolString point = new CobolString(256);
+    private CobolString alpha_numeric = new CobolString(256); // fallback
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString ignore = new CobolString(256); // fallback
+    private CobolString decimal = new CobolString(256); // fallback
+    private CobolString point = new CobolString(256); // fallback
+    private CobolString s_01 = new CobolString(256); // fallback
 
+    private CobolString _filler_003 = new CobolString(256); // fallback
+    private CobolString _filler_004 = new CobolString(256); // fallback
+    private CobolString _filler_005 = new CobolString(256); // fallback
     private void para_main() {
         /* RAW: * * */
         alpha_numeric.set(String.valueOf(non_integer));
-        _unnamed.set(String.valueOf(non_integer));
-        _unnamed.set(String.valueOf(non_integer));
-        _unnamed.set(String.valueOf(non_integer));
+        _filler_003.set(String.valueOf(non_integer));
+        _filler_004.set(String.valueOf(non_integer));
+        _filler_005.set(String.valueOf(non_integer));
         ignore.set(String.valueOf(non_integer));
         decimal.set(String.valueOf(non_integer));
         point.set(String.valueOf(non_integer));
-    }
-
-    private void s_01() {
-    }
-
-    private void alpha_field() {
-    }
-
-    private void alpha_field_2() {
+        s_01.set(String.valueOf(non_integer));
+        alpha_field.set(String.valueOf(" "));
+        alpha_field.set(String.valueOf(integer));
         CobolDisplay.displayNoAdvancing(String.valueOf(alpha_field));
     }
 
     private void s_02() {
-    }
-
-    private void alpha_field_3() {
-    }
-
-    private void alpha_field_4() {
+        alpha_field.set(String.valueOf(" "));
+        alpha_field.set(String.valueOf(signed_integer));
         CobolDisplay.displayNoAdvancing(String.valueOf(alpha_field));
     }
 
     private void s_03() {
-    }
-
-    private void alpha_field_5() {
-    }
-
-    private void alpha_field_6() {
+        alpha_field.set(String.valueOf(" "));
+        alpha_field.set(String.valueOf(non_integer));
         CobolDisplay.displayNoAdvancing(String.valueOf(alpha_field));
     }
 
     private void s_10() {
-    }
-
-    private void alpha_field_7() {
-    }
-
-    private void alpha_field_8() {
+        alpha_field.set(String.valueOf(" "));
+        alpha_field.set(String.valueOf(non_integer_2));
         CobolDisplay.displayNoAdvancing(String.valueOf(alpha_field));
     }
 
     private void s_20() {
-    }
-
-    private void alpha_field_9() {
-    }
-
-    private void alpha_field_10() {
+        alpha_field.set(String.valueOf(" "));
+        alpha_field.set(String.valueOf(non_integer_3));
         CobolDisplay.displayNoAdvancing(String.valueOf(alpha_field));
     }
 
     private void s_30() {
-    }
-
-    private void alpha_field_11() {
-    }
-
-    private void alpha_field_12() {
+        alpha_field.set(String.valueOf(" "));
+        alpha_field.set(String.valueOf(signed_non_integer));
         CobolDisplay.displayNoAdvancing(String.valueOf(alpha_field));
     }
 
     private void s_40() {
-    }
-
-    private void alpha_field_13() {
-    }
-
-    private void alpha_field_14() {
+        alpha_field.set(String.valueOf(" "));
+        alpha_field.set(String.valueOf(signed_non_integer_2));
         CobolDisplay.displayNoAdvancing(String.valueOf(alpha_field));
     }
 
     private void s_50() {
-    }
-
-    private void alpha_field_15() {
-    }
-
-    private void alpha_field_16() {
+        alpha_field.set(String.valueOf(" "));
+        alpha_field.set(String.valueOf(signed_non_integer_3));
         CobolDisplay.displayNoAdvancing(String.valueOf(alpha_field));
         System.exit(0);
     }

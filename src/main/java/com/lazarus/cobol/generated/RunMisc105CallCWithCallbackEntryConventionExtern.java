@@ -28,8 +28,8 @@ public class RunMisc105CallCWithCallbackEntryConventionExtern extends CobolProgr
     private long cb = 0L;
 
 
-    private CobolString entry = new CobolString(256);
-    private CobolString cb_static = new CobolString(256);
+    private CobolString entry = new CobolString(256); // fallback
+    private CobolString cb_static = new CobolString(256); // fallback
 
     private void para_main() {
         cb = new BigDecimal(String.valueOf(entry).trim()).longValue();

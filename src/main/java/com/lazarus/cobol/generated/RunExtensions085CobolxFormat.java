@@ -25,14 +25,14 @@ public class RunExtensions085CobolxFormat extends CobolProgram {
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
-    private CobolString ddisplay = new CobolString(256);
-    private CobolString d = new CobolString(256);
-    private CobolString trucated = new CobolString(256);
-    private CobolString alphanumeric = new CobolString(256);
-    private CobolString literals = new CobolString(256);
-    private CobolString are = new CobolString(256);
-    private CobolString not = new CobolString(256);
-    private CobolString padded = new CobolString(256);
+    private CobolString ddisplay = new CobolString(256); // fallback
+    private CobolString d = new CobolString(256); // fallback
+    private CobolString trucated = new CobolString(256); // fallback
+    private CobolString alphanumeric = new CobolString(256); // fallback
+    private CobolString literals = new CobolString(256); // fallback
+    private CobolString are = new CobolString(256); // fallback
+    private CobolString not = new CobolString(256); // fallback
+    private CobolString padded = new CobolString(256); // fallback
 
     private void para_main() {
         /* RAW: /  */

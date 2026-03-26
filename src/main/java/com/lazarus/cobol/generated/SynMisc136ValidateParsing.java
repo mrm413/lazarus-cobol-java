@@ -32,6 +32,7 @@ public class SynMisc136ValidateParsing extends CobolProgram {
     private int in_type = 0;
     private CobolString in_rec_format_1 = new CobolString(1); // Group: IN-REC-FORMAT-1
     private CobolString in_name = new CobolString(20);
+    private CobolString filler_1 = new CobolString(20);
     private int[] in_week = new int[5];
     private CobolString in_rec_format_2 = new CobolString(1); // Group: IN-REC-FORMAT-2
     private CobolString in_pay = new CobolString(6);

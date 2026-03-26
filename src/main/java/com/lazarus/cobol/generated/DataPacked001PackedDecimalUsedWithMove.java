@@ -48,10 +48,7 @@ public class DataPacked001PackedDecimalUsedWithMove extends CobolProgram {
 
     private void para_main() {
         x_99 = new BigDecimal(String.valueOf(c_p1234).trim());
-        CobolDisplay.display();
-    }
-
-    private void x_99() {
+        CobolDisplay.display(String.valueOf(x_99));
         if (!String.valueOf(fence_1).equals(String.valueOf(fence))) {
             fence_1.set(String.valueOf(fence));
             CobolDisplay.display("broken FENCE-1");
@@ -61,10 +58,7 @@ public class DataPacked001PackedDecimalUsedWithMove extends CobolProgram {
             CobolDisplay.display("broken FENCE-2");
         }
         x_s99 = new BigDecimal(String.valueOf(c_p1234).trim());
-        CobolDisplay.display();
-    }
-
-    private void x_s99() {
+        CobolDisplay.display(String.valueOf(x_s99));
         if (!String.valueOf(fence_2).equals(String.valueOf(fence))) {
             fence_2.set(String.valueOf(fence));
             CobolDisplay.display("broken FENCE-2");
@@ -74,10 +68,7 @@ public class DataPacked001PackedDecimalUsedWithMove extends CobolProgram {
             CobolDisplay.display("broken FENCE-3");
         }
         x_999 = new BigDecimal(String.valueOf(c_p1234).trim());
-        CobolDisplay.display();
-    }
-
-    private void x_999() {
+        CobolDisplay.display(String.valueOf(x_999));
         if (!String.valueOf(fence_3).equals(String.valueOf(fence))) {
             fence_3.set(String.valueOf(fence));
             CobolDisplay.display("broken FENCE-3");
@@ -87,10 +78,7 @@ public class DataPacked001PackedDecimalUsedWithMove extends CobolProgram {
             CobolDisplay.display("broken FENCE-4");
         }
         x_s999 = new BigDecimal(String.valueOf(c_p1234).trim());
-        CobolDisplay.display();
-    }
-
-    private void x_s999() {
+        CobolDisplay.display(String.valueOf(x_s999));
         if (!String.valueOf(fence_4).equals(String.valueOf(fence))) {
             fence_4.set(String.valueOf(fence));
             CobolDisplay.display("broken FENCE-4");
@@ -100,10 +88,7 @@ public class DataPacked001PackedDecimalUsedWithMove extends CobolProgram {
             CobolDisplay.display("broken FENCE-5");
         }
         x_99 = new BigDecimal(String.valueOf(c_n1234).trim());
-        CobolDisplay.display();
-    }
-
-    private void x_99_2() {
+        CobolDisplay.display(String.valueOf(x_99));
         if (!String.valueOf(fence_1).equals(String.valueOf(fence))) {
             fence_1.set(String.valueOf(fence));
             CobolDisplay.display("broken FENCE-1");
@@ -113,10 +98,7 @@ public class DataPacked001PackedDecimalUsedWithMove extends CobolProgram {
             CobolDisplay.display("broken FENCE-2");
         }
         x_s99 = new BigDecimal(String.valueOf(c_n1234).trim());
-        CobolDisplay.display();
-    }
-
-    private void x_s99_2() {
+        CobolDisplay.display(String.valueOf(x_s99));
         if (!String.valueOf(fence_2).equals(String.valueOf(fence))) {
             fence_2.set(String.valueOf(fence));
             CobolDisplay.display("broken FENCE-2");
@@ -126,10 +108,7 @@ public class DataPacked001PackedDecimalUsedWithMove extends CobolProgram {
             CobolDisplay.display("broken FENCE-3");
         }
         x_999 = new BigDecimal(String.valueOf(c_n1234).trim());
-        CobolDisplay.display();
-    }
-
-    private void x_999_2() {
+        CobolDisplay.display(String.valueOf(x_999));
         if (!String.valueOf(fence_3).equals(String.valueOf(fence))) {
             fence_3.set(String.valueOf(fence));
             CobolDisplay.display("broken FENCE-3");
@@ -139,10 +118,7 @@ public class DataPacked001PackedDecimalUsedWithMove extends CobolProgram {
             CobolDisplay.display("broken FENCE-4");
         }
         x_s999 = new BigDecimal(String.valueOf(c_n1234).trim());
-        CobolDisplay.display();
-    }
-
-    private void x_s999_2() {
+        CobolDisplay.display(String.valueOf(x_s999));
         if (!String.valueOf(fence_4).equals(String.valueOf(fence))) {
             fence_4.set(String.valueOf(fence));
             CobolDisplay.display("broken FENCE-4");
@@ -152,10 +128,7 @@ public class DataPacked001PackedDecimalUsedWithMove extends CobolProgram {
             CobolDisplay.display("broken FENCE-5");
         }
         x_999 = new BigDecimal(String.valueOf(b_n1234).trim());
-        CobolDisplay.display();
-    }
-
-    private void x_999_3() {
+        CobolDisplay.display(String.valueOf(x_999));
         if (!String.valueOf(fence_3).equals(String.valueOf(fence))) {
             fence_3.set(String.valueOf(fence));
             CobolDisplay.display("broken FENCE-3");
@@ -165,10 +138,7 @@ public class DataPacked001PackedDecimalUsedWithMove extends CobolProgram {
             CobolDisplay.display("broken FENCE-4");
         }
         x_s999 = new BigDecimal(String.valueOf(b_n1234).trim());
-        CobolDisplay.display();
-    }
-
-    private void x_s999_3() {
+        CobolDisplay.display(String.valueOf(x_s999));
         if (!String.valueOf(fence_4).equals(String.valueOf(fence))) {
             fence_4.set(String.valueOf(fence));
             CobolDisplay.display("broken FENCE-4");
@@ -178,10 +148,7 @@ public class DataPacked001PackedDecimalUsedWithMove extends CobolProgram {
             CobolDisplay.display("broken FENCE-5");
         }
         x_99 = new BigDecimal(String.valueOf(c_p234).trim());
-        CobolDisplay.display();
-    }
-
-    private void x_99_3() {
+        CobolDisplay.display(String.valueOf(x_99));
         if (!String.valueOf(fence_1).equals(String.valueOf(fence))) {
             fence_1.set(String.valueOf(fence));
             CobolDisplay.display("broken FENCE-1");
@@ -191,10 +158,7 @@ public class DataPacked001PackedDecimalUsedWithMove extends CobolProgram {
             CobolDisplay.display("broken FENCE-2");
         }
         x_s99 = new BigDecimal(String.valueOf(c_p234).trim());
-        CobolDisplay.display();
-    }
-
-    private void x_s99_3() {
+        CobolDisplay.display(String.valueOf(x_s99));
         if (!String.valueOf(fence_2).equals(String.valueOf(fence))) {
             fence_2.set(String.valueOf(fence));
             CobolDisplay.display("broken FENCE-2");
@@ -204,10 +168,7 @@ public class DataPacked001PackedDecimalUsedWithMove extends CobolProgram {
             CobolDisplay.display("broken FENCE-3");
         }
         x_999 = new BigDecimal(String.valueOf(c_p234).trim());
-        CobolDisplay.display();
-    }
-
-    private void x_999_4() {
+        CobolDisplay.display(String.valueOf(x_999));
         if (!String.valueOf(fence_3).equals(String.valueOf(fence))) {
             fence_3.set(String.valueOf(fence));
             CobolDisplay.display("broken FENCE-3");
@@ -217,10 +178,7 @@ public class DataPacked001PackedDecimalUsedWithMove extends CobolProgram {
             CobolDisplay.display("broken FENCE-4");
         }
         x_s999 = new BigDecimal(String.valueOf(c_p234).trim());
-        CobolDisplay.display();
-    }
-
-    private void x_s999_4() {
+        CobolDisplay.display(String.valueOf(x_s999));
         if (!String.valueOf(fence_4).equals(String.valueOf(fence))) {
             fence_4.set(String.valueOf(fence));
             CobolDisplay.display("broken FENCE-4");
@@ -230,10 +188,7 @@ public class DataPacked001PackedDecimalUsedWithMove extends CobolProgram {
             CobolDisplay.display("broken FENCE-5");
         }
         x_99 = new BigDecimal(String.valueOf(c_n234).trim());
-        CobolDisplay.display();
-    }
-
-    private void x_99_4() {
+        CobolDisplay.display(String.valueOf(x_99));
         if (!String.valueOf(fence_1).equals(String.valueOf(fence))) {
             fence_1.set(String.valueOf(fence));
             CobolDisplay.display("broken FENCE-1");
@@ -243,10 +198,7 @@ public class DataPacked001PackedDecimalUsedWithMove extends CobolProgram {
             CobolDisplay.display("broken FENCE-2");
         }
         x_s99 = new BigDecimal(String.valueOf(c_n234).trim());
-        CobolDisplay.display();
-    }
-
-    private void x_s99_4() {
+        CobolDisplay.display(String.valueOf(x_s99));
         if (!String.valueOf(fence_2).equals(String.valueOf(fence))) {
             fence_2.set(String.valueOf(fence));
             CobolDisplay.display("broken FENCE-2");
@@ -256,10 +208,7 @@ public class DataPacked001PackedDecimalUsedWithMove extends CobolProgram {
             CobolDisplay.display("broken FENCE-3");
         }
         x_999 = new BigDecimal(String.valueOf(c_n234).trim());
-        CobolDisplay.display();
-    }
-
-    private void x_999_5() {
+        CobolDisplay.display(String.valueOf(x_999));
         if (!String.valueOf(fence_3).equals(String.valueOf(fence))) {
             fence_3.set(String.valueOf(fence));
             CobolDisplay.display("broken FENCE-3");
@@ -269,10 +218,7 @@ public class DataPacked001PackedDecimalUsedWithMove extends CobolProgram {
             CobolDisplay.display("broken FENCE-4");
         }
         x_s999 = new BigDecimal(String.valueOf(c_n234).trim());
-        CobolDisplay.display();
-    }
-
-    private void x_s999_5() {
+        CobolDisplay.display(String.valueOf(x_s999));
         if (!String.valueOf(fence_4).equals(String.valueOf(fence))) {
             fence_4.set(String.valueOf(fence));
             CobolDisplay.display("broken FENCE-4");
@@ -282,10 +228,7 @@ public class DataPacked001PackedDecimalUsedWithMove extends CobolProgram {
             CobolDisplay.display("broken FENCE-5");
         }
         x_calc = new BigDecimal(String.valueOf(0).trim());
-        CobolDisplay.display();
-    }
-
-    private void x_calc() {
+        CobolDisplay.display(String.valueOf(x_calc));
         if (!String.valueOf(fence_5).equals(String.valueOf(fence))) {
             fence_5.set(String.valueOf(fence));
             CobolDisplay.display("broken FENCE-5");
@@ -295,10 +238,7 @@ public class DataPacked001PackedDecimalUsedWithMove extends CobolProgram {
             CobolDisplay.display("broken FENCE-6");
         }
         x_calc = new BigDecimal(String.valueOf(1).trim());
-        CobolDisplay.display();
-    }
-
-    private void x_calc_2() {
+        CobolDisplay.display(String.valueOf(x_calc));
         if (!String.valueOf(fence_5).equals(String.valueOf(fence))) {
             fence_5.set(String.valueOf(fence));
             CobolDisplay.display("broken FENCE-5");

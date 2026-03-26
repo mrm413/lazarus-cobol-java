@@ -32,8 +32,7 @@ public class RunExtensions049RedefinesNonReferencedAmbiguousItem extends CobolPr
 
     private void para_main() {
         if (g != 2) {
-            CobolDisplay.display("G IS ");
-            /* RAW: G  */
+            CobolDisplay.display("G IS " + String.valueOf(g));
         }
         System.exit(0);
     }

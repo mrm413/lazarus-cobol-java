@@ -45,9 +45,7 @@ public class RunFile048LineSequentialStandardRecordOverflow extends CobolProgram
 
 
     private void a000_begin() {
-    }
-
-    private void infile() {
+        infile.open("INPUT");
         if (infile.read(null) == FileStatus.AT_END) {
         }
         CobolDisplay.display(" Read 1: STATUS IS " + String.valueOf(input_status) + " LENGTH IS " + String.valueOf(input_len));

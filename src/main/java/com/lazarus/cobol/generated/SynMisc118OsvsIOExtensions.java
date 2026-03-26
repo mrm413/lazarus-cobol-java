@@ -41,19 +41,19 @@ public class SynMisc118OsvsIOExtensions extends CobolProgram {
     private CobolFile f = new CobolFile("f.dat", "SEQUENTIAL", "SEQUENTIAL");
     private CobolFile g = new CobolFile("g.dat", "RELATIVE", "SEQUENTIAL");
 
-    
+    // FALLBACK FILE DESCRIPTORS
     private CobolFile disp = new CobolFile("DISP", "SEQUENTIAL", "SEQUENTIAL");
-    private CobolFile _unnamed = new CobolFile(",", "SEQUENTIAL", "SEQUENTIAL");
+    private CobolFile _filler_001 = new CobolFile(",", "SEQUENTIAL", "SEQUENTIAL");
+    private CobolFile reread = new CobolFile("REREAD", "SEQUENTIAL", "SEQUENTIAL");
 
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
     private void para_main() {
         f.open("INPUT");
         disp.open("INPUT");
-        _unnamed.open("INPUT");
+        // KNOWN_ISSUE: _filler_002.open("INPUT");
         g.open("INPUT");
-    }
-
-    private void reread() {
+        reread.open("INPUT");
     }
 
     @Override

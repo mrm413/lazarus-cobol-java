@@ -32,10 +32,7 @@ public class RunExtensions037ProcedureDivisionChaining extends CobolProgram {
 
 
     private void para_main() {
-        /* RAW: CHAINING X ABCD */
-    }
-
-    private void num() {
+        /* RAW: CHAINING X ABCD NUM */
         if ((!String.valueOf(x).equals(String.valueOf("X")) || !String.valueOf(abcd).equals(String.valueOf("ABCD")))) {
             CobolDisplay.display("X = " + String.valueOf(x) + " ABCD = " + String.valueOf(abcd));
         }

@@ -29,7 +29,7 @@ public class RunFundamental008MoveToItemWithSimpleAndFloatingInsertion extends C
     private CobolString num_2 = new CobolString(9);
 
 
-    private CobolString num_3 = new CobolString(256);
+    private CobolString num_3 = new CobolString(256); // fallback
 
     private void para_main() {
         num_1.set(String.valueOf(-123));

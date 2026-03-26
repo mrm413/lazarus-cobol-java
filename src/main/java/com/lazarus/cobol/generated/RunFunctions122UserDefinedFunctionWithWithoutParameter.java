@@ -35,9 +35,6 @@ public class RunFunctions122UserDefinedFunctionWithWithoutParameter extends Cobo
         return;
     }
 
-    private void withpar() {
-    }
-
     @Override
     public void run() {
         para_main();

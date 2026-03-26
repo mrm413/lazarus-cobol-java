@@ -27,7 +27,11 @@ public class SynMisc018MaximumDataSize extends CobolProgram {
     // WORKING-STORAGE SECTION
     private CobolString single_item = new CobolString(9999);
     private CobolString group_item1 = new CobolString(1); // Group: GROUP-ITEM1
+    private CobolString filler_1 = new CobolString(9999);
     private CobolString group_item2 = new CobolString(1); // Group: GROUP-ITEM2
+    private CobolString filler_2 = new CobolString(9999);
+    private CobolString filler_3 = new CobolString(9999);
+    private CobolString filler_4 = new CobolString(9999);
 
 
 

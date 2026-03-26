@@ -6,6 +6,7 @@ import com.lazarus.cobol.CobolIntrinsics;
 import com.lazarus.cobol.CobolProgram;
 import com.lazarus.cobol.CobolString;
 import com.lazarus.cobol.FileStatus;
+import com.lazarus.cobol.jcl.batch.DfsortProgram;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -44,12 +45,20 @@ public class RunMisc081SortTable3 extends CobolProgram {
             if (tab_data[k - 1] == null) tab_data[k - 1] = new CobolString(256);
             tab_data[k - 1].set(String.valueOf("BLA"));
         }
-        /* SORT ROW1 */
+        { /* SORT ROW1 (row1) */
+            DfsortProgram _sort = new DfsortProgram();
+            _sort.setSortKeys(new String[]{});
+            _sort.execute();
+        }
         for (k = 1; !(k > 4); k += 1) {
             CobolDisplay.displayNoAdvancing(String.valueOf(tab1_nr[k - 1]));
         }
         tab2.set(String.valueOf(tab1));
-        /* SORT ROW2 */
+        { /* SORT ROW2 (row2) */
+            DfsortProgram _sort = new DfsortProgram();
+            _sort.setSortKeys(new String[]{});
+            _sort.execute();
+        }
         for (k = 1; !(k > 4); k += 1) {
             CobolDisplay.displayNoAdvancing(String.valueOf(tab2_nr[k - 1]));
         }

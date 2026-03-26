@@ -43,8 +43,7 @@ public class DataPacked012Comp6Arithmetic extends CobolProgram {
     private void para_main() {
         x_99 = new BigDecimal(String.valueOf(b_999).trim());
         if (x_99.compareTo(new BigDecimal(String.valueOf(23).trim())) != 0) {
-            CobolDisplay.display("trunk 123 -> 99: ");
-            /* RAW: X-99  */
+            CobolDisplay.display("trunk 123 -> 99: " + String.valueOf(x_99));
         }
         if (!String.valueOf(fence_2).equals(String.valueOf(fence))) {
             fence_2.set(String.valueOf(fence));
@@ -56,8 +55,7 @@ public class DataPacked012Comp6Arithmetic extends CobolProgram {
         }
         x_9 = new BigDecimal(String.valueOf(b_999).trim());
         if (x_9.compareTo(new BigDecimal(String.valueOf(3).trim())) != 0) {
-            CobolDisplay.display("trunk 123 -> 9: ");
-            /* RAW: X-9  */
+            CobolDisplay.display("trunk 123 -> 9: " + String.valueOf(x_9));
         }
         if (!String.valueOf(fence_1).equals(String.valueOf(fence))) {
             fence_1.set(String.valueOf(fence));
@@ -96,16 +94,13 @@ public class DataPacked012Comp6Arithmetic extends CobolProgram {
         }
         b_99 = new BigDecimal(String.valueOf(x_99.add(x_920)).trim()).intValue();
         if (b_99 != 222) {
-            CobolDisplay.display("!222: ");
-            /* RAW: B-99  */
+            CobolDisplay.display("!222: " + String.valueOf(b_99));
         }
         if (x_920.compareTo(new BigDecimal(String.valueOf(124).trim())) > 0) {
-            CobolDisplay.display("> 124 ");
-            /* RAW: X-920  */
+            CobolDisplay.display("> 124 " + String.valueOf(x_920));
         }
         if (x_921.compareTo(new BigDecimal(String.valueOf(98).trim())) < 0) {
-            CobolDisplay.display("< 98 ");
-            /* RAW: X-921  */
+            CobolDisplay.display("< 98 " + String.valueOf(x_921));
         }
         if (!String.valueOf(fence_1).equals(String.valueOf(fence))) {
             CobolDisplay.display("broken FENCE-1");

@@ -30,24 +30,20 @@ public class SynMisc009InitializeConstant extends CobolProgram {
     private static final String c78 = "A";
 
 
-    private CobolString _unnamed = new CobolString(256);
-    private CobolString _9 = new CobolString(256);
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString _9 = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
     private void para_main() {
-    }
-
-    private void con() {
-    }
-
-    private void v() {
+        con.set("");
         v = 0;
-        _unnamed.set("");
+        v = 0;
+        _filler_002.set("");
         _9.set("");
         /* INITIALIZE constant C78 — skipped (static final) */
-        _unnamed.set("");
-    }
-
-    private void v_2() {
+        _filler_003.set("");
+        v = 0;
     }
 
     @Override

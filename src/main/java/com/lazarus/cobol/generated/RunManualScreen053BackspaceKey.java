@@ -30,31 +30,21 @@ public class RunManualScreen053BackspaceKey extends CobolProgram {
     private CobolString ws_x_20 = new CobolString(20);
 
 
-    private CobolString line = new CobolString(256);
-    private CobolString column = new CobolString(256);
-    private CobolString success = new CobolString(256);
+    private CobolString line = new CobolString(256); // fallback
+    private CobolString column = new CobolString(256); // fallback
+    private CobolString success = new CobolString(256); // fallback
 
     private void para_main() {
         CobolDisplay.display("Enter 'y' if each press of the BACKSPACE key" + String.valueOf(line) + String.valueOf(1) + String.valueOf(column) + String.valueOf(1));
         CobolDisplay.display("deletes the character to the left and moves the" + String.valueOf(line) + String.valueOf(2) + String.valueOf(column) + String.valueOf(1));
         CobolDisplay.display("cursor and remaining characters one space to the" + String.valueOf(line) + String.valueOf(3) + String.valueOf(column) + String.valueOf(1));
         CobolDisplay.display("left." + String.valueOf(line) + String.valueOf(4) + String.valueOf(column) + String.valueOf(1));
-    }
-
-    private void ws_x_20() {
-    }
-
-    private void cur_pos() {
+        ws_x_20.set(String.valueOf("ABCD      "));
+        cur_pos = new BigDecimal(String.valueOf(6002).trim()).intValue();
         ws_x_20.set(String.valueOf(CobolDisplay.accept()));
         /* RAW: LINE 6 COLUMN 1 WITH AUTO-SKIP */
-    }
-
-    private void update() {
         success_flag.set(String.valueOf(CobolDisplay.accept()));
-        /* RAW: LINE 8 COLUMN 1 WITH */
-    }
-
-    private void update_2() {
+        /* RAW: LINE 8 COLUMN 1 WITH UPDATE */
         if ((!String.valueOf(success).trim().isEmpty() && cob_crt_status == 0)) {
             return;
         } else {

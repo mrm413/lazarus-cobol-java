@@ -27,8 +27,11 @@ public class SynDefinition056SameAsClause extends CobolProgram {
     // WORKING-STORAGE SECTION
     private CobolString message_text_2 = new CobolString(1); // Group: MESSAGE-TEXT-2
     private CobolString ausgabe_file_name = new CobolString(50);
+    private CobolString filler_1 = new CobolString(1);
     private CobolString ausgabe_file_name_2 = new CobolString(1); // Group: AUSGABE-FILE-NAME-2
+    private CobolString filler_2 = new CobolString(1);
     private int detail_no = 0;
+    private CobolString filler_3 = new CobolString(1);
     private CobolString output_name = new CobolString(1);
     private CobolString z_message_t2 = new CobolString(1);
     private CobolString z_message_t3 = new CobolString(1); // Group: Z-MESSAGE-T3

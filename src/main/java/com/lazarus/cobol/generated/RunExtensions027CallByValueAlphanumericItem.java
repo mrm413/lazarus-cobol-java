@@ -28,23 +28,17 @@ public class RunExtensions027CallByValueAlphanumericItem extends CobolProgram {
     private CobolString x = new CobolString(2);
 
 
+    private CobolString y = new CobolString(256); // fallback
 
     // SECTION: LINKAGE
     private void linkage() {
         _01();
-        y();
-        y();
     }
 
     private void _01() {
         /* RAW: Y PIC XX */
-        /* RAW: PROCEDURE DIVISION USING BY VALUE */
-    }
-
-    private void y() {
-    }
-
-    private void y_2() {
+        /* RAW: PROCEDURE DIVISION USING BY VALUE Y */
+        y.set(String.valueOf("KO"));
         return;
     }
 
@@ -60,10 +54,7 @@ public class RunExtensions027CallByValueAlphanumericItem extends CobolProgram {
     }
 
     private void prog2() {
-        /* RAW: DATA  */
-    }
-
-    private void division() {
+        /* RAW: DATA DIVISION */
     }
 
     @Override

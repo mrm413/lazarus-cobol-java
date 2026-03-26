@@ -31,37 +31,25 @@ public class RunFundamental058NumericOperations1 extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void x() {
+        x = new BigDecimal(String.valueOf(-0.1).trim());
         x = x.add(new BigDecimal(String.valueOf(1).trim()));
         if (x.compareTo(new BigDecimal(String.valueOf(0.9).trim())) != 0) {
-            CobolDisplay.display();
-            /* RAW: X  */
+            CobolDisplay.display(String.valueOf(x));
         }
-    }
-
-    private void x_2() {
+        x = new BigDecimal(String.valueOf(0.1).trim());
         x = x.subtract(new BigDecimal(String.valueOf(1).trim()));
         if (x.compareTo(new BigDecimal(String.valueOf(-0.9).trim())) != 0) {
-            CobolDisplay.display();
-            /* RAW: X  */
+            CobolDisplay.display(String.valueOf(x));
         }
-    }
-
-    private void y() {
+        y = new BigDecimal(String.valueOf(-0.1).trim());
         y = y.add(new BigDecimal(String.valueOf(1).trim()));
         if (y.compareTo(new BigDecimal(String.valueOf(0.9).trim())) != 0) {
-            CobolDisplay.display();
-            /* RAW: Y  */
+            CobolDisplay.display(String.valueOf(y));
         }
-    }
-
-    private void y_2() {
+        y = new BigDecimal(String.valueOf(0.1).trim());
         y = y.subtract(new BigDecimal(String.valueOf(1).trim()));
         if (y.compareTo(new BigDecimal(String.valueOf(-0.9).trim())) != 0) {
-            CobolDisplay.display();
-            /* RAW: Y  */
+            CobolDisplay.display(String.valueOf(y));
         }
         System.exit(0);
     }

@@ -24,30 +24,10 @@ public class RunMisc176AssortedMath extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
-    // WORKING-STORAGE SECTION
-    private int n = 0;
-    private int m = 0;
-    private int variable = 0;
 
-
-    private CobolString a_one = new CobolString(256);
-    private CobolString a_two = new CobolString(256);
-
-    private void para_main() {
-        CobolDisplay.displayNoAdvancing(String.valueOf(CobolString.refMod(n, ((int) Math.pow(n, 0) + 1))));
-        CobolDisplay.displayNoAdvancing("-");
-        CobolDisplay.displayNoAdvancing(String.valueOf(CobolString.refMod(n, ((int) Math.pow(n, m) + 1))));
-        if ((!(!String.valueOf(a_one).trim().isEmpty()) && !(!String.valueOf(a_two).trim().isEmpty()))) {
-            CobolDisplay.display("succeeded");
-        } else {
-            CobolDisplay.display("failed");
-        }
-        return;
-    }
 
     @Override
     public void run() {
-        para_main();
     }
 
     public static void main(String[] args) {

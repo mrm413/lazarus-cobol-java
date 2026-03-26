@@ -30,10 +30,15 @@ public class SynReportwriter000ReportErrorWarning extends CobolProgram {
     // FILE SECTION — TRANSACTION-DATA
     private CobolString transaction_record = new CobolString(1); // Group: TRANSACTION-RECORD
     private int tr_customer_number = 0;
+    private CobolString filler_1 = new CobolString(47);
     private CobolString tr_customer_name = new CobolString(16);
+    private CobolString filler_2 = new CobolString(47);
     private int tr_item_number = 0;
     private int tr_item_department = 0;
+    private CobolString filler_3 = new CobolString(47);
+    private CobolString filler_4 = new CobolString(47);
     private int tr_item_cost = 0;
+    private CobolString filler_5 = new CobolString(47);
 
     // FILE SECTION — REPORT-FILE
 
@@ -42,21 +47,18 @@ public class SynReportwriter000ReportErrorWarning extends CobolProgram {
     private CobolFile transaction_data = new CobolFile("DATAIN", "LINE SEQUENTIAL", "SEQUENTIAL");
     private CobolFile report_file = new CobolFile("LINE", "SEQUENTIAL", "SEQUENTIAL");
 
-    
-    private CobolFile _unnamed = new CobolFile(",", "SEQUENTIAL", "SEQUENTIAL");
+    // FALLBACK FILE DESCRIPTORS
+    private CobolFile _filler_001 = new CobolFile(",", "SEQUENTIAL", "SEQUENTIAL");
 
-    private CobolString goforever = new CobolString(256);
+    private CobolString goforever = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
     private void para_main() {
         transaction_data.open("INPUT");
-        _unnamed.open("INPUT");
-    }
-
-    private void report_file() {
-        /* RAW: INITIATE  */
-    }
-
-    private void customer_report() {
+        // KNOWN_ISSUE: _filler_002.open("INPUT");
+        report_file.open("OUTPUT");
+        /* RAW: INITIATE CUSTOMER-REPORT */
         if (transaction_data.read(null) == FileStatus.AT_END) {
             end_of_file_switch.set(String.valueOf("Y"));
         }
@@ -66,15 +68,10 @@ public class SynReportwriter000ReportErrorWarning extends CobolProgram {
                 break;
             }
         }
-        /* RAW: TERMINATE  */
-    }
-
-    private void customer_report_2() {
+        /* RAW: TERMINATE CUSTOMER-REPORT */
         transaction_data.close();
-        _unnamed.close();
-    }
-
-    private void report_file_2() {
+        // KNOWN_ISSUE: _filler_003.close();
+        report_file.close();
         System.exit(0);
     }
 

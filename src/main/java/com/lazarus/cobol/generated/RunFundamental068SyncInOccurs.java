@@ -32,8 +32,8 @@ public class RunFundamental068SyncInOccurs extends CobolProgram {
     private int[] ptr_num = new int[5];
 
 
-    private CobolString[] address = new CobolString[100];
-    private CobolString num = new CobolString(256);
+    private CobolString[] address = new CobolString[100]; // fallback array
+    private CobolString num = new CobolString(256); // fallback
 
     private void para_main() {
         ptr[2 - 1] = new BigDecimal(String.valueOf(address[2 - 1]).trim()).longValue();

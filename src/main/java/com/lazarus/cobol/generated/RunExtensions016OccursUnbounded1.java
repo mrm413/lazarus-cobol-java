@@ -40,9 +40,11 @@ public class RunExtensions016OccursUnbounded1 extends CobolProgram {
     private CobolString[] col2 = new CobolString[100];
 
 
-    private CobolString address = new CobolString(256);
-    private CobolString _unnamed = new CobolString(256);
+    private CobolString address = new CobolString(256); // fallback
+    private CobolString _filler_001 = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
     private void para_main() {
         if (!String.valueOf(CobolIntrinsics.length(w_table)).equals(String.valueOf(369))) {
             CobolDisplay.display("WRONG WS LENGTH: " + String.valueOf(CobolIntrinsics.length(a_table)));
@@ -60,13 +62,11 @@ public class RunExtensions016OccursUnbounded1 extends CobolProgram {
         }
         /* RAW: *  */
         w_table.set("");
-        _unnamed.set("");
+        _filler_002.set("");
         sav.set(String.valueOf(a_table));
         a_table.set("");
-        _unnamed.set("");
-    }
-
-    private void p() {
+        _filler_003.set("");
+        p = 0L; /* FREE */
     }
 
     @Override

@@ -53,12 +53,14 @@ public class RunInitialize012InitializeBigTableWithValue extends CobolProgram {
     private CobolString[][][] t02_txt3 = new CobolString[10][2200][33];
 
 
-    private CobolString to = new CobolString(256);
-    private CobolString cb_default = new CobolString(256);
+    private CobolString to = new CobolString(256); // fallback
+    private CobolString cb_default = new CobolString(256); // fallback
 
     private void init_rtn() {
+        if (t01_tab[5 - 1] == null) t01_tab[5 - 1] = new CobolString[2200];
         if (t01_tab[5 - 1][55 - 1] == null) t01_tab[5 - 1][55 - 1] = new CobolString(256);
         t01_tab[5 - 1][55 - 1].set(String.valueOf("HIGH-VALUE"));
+        if (t01_tab[10 - 1] == null) t01_tab[10 - 1] = new CobolString[2200];
         if (t01_tab[10 - 1][400 - 1] == null) t01_tab[10 - 1][400 - 1] = new CobolString(256);
         t01_tab[10 - 1][400 - 1].set(String.valueOf("LOW-VALUE"));
         if (t01_rec[2 - 1] == null) t01_rec[2 - 1] = new CobolString(256);

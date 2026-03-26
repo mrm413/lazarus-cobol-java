@@ -29,14 +29,10 @@ public class RunFundamental083UseForDebuggingOnAllProcedures extends CobolProgra
     // SECTION: TEST-DEBUG
     private void test_debug() {
         use();
-        procedures();
     }
 
     private void use() {
-        /* RAW: FOR DEBUGGING ON ALL */
-    }
-
-    private void procedures() {
+        /* RAW: FOR DEBUGGING ON ALL PROCEDURES */
         CobolDisplay.display(String.valueOf(debug_item) + "|");
     }
 

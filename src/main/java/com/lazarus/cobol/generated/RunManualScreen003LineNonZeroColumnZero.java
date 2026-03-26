@@ -28,15 +28,16 @@ public class RunManualScreen003LineNonZeroColumnZero extends CobolProgram {
     private CobolString success_flag = new CobolString(1);
 
 
-    private CobolString scr = new CobolString(256);
-    private CobolString line = new CobolString(256);
-    private CobolString _unnamed = new CobolString(256);
-    private CobolString column = new CobolString(256);
-    private CobolString success = new CobolString(256);
+    private CobolString scr = new CobolString(256); // fallback
+    private CobolString line = new CobolString(256); // fallback
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString column = new CobolString(256); // fallback
+    private CobolString success = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
     private void para_main() {
         CobolDisplay.display(String.valueOf(scr));
-        CobolDisplay.display("2" + String.valueOf(line) + String.valueOf(2) + String.valueOf(_unnamed) + String.valueOf(column) + String.valueOf(0) + "3");
+        CobolDisplay.display("2" + String.valueOf(line) + String.valueOf(2) + String.valueOf(_filler_002) + String.valueOf(column) + String.valueOf(0) + "3");
         scr.set(String.valueOf(CobolDisplay.accept()));
         if ((!String.valueOf(success).trim().isEmpty() && cob_crt_status == 0)) {
             return;

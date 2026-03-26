@@ -30,9 +30,7 @@ public class RunFunctions071FunctionNumericDecimalPoint extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void test_fld() {
+        test_fld.set(String.valueOf(CobolIntrinsics.numeric_decimal_point()));
         CobolDisplay.displayNoAdvancing("OK");
         System.exit(0);
     }

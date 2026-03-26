@@ -35,34 +35,13 @@ public class RunFile020AssignDynamicWithDataItemInLinkage extends CobolProgram {
 
 
     private void para_main() {
-        CobolProgram.call("TSTOPN");
-    }
-
-    private void omitted() {
-        CobolProgram.call("TSTOPN");
-    }
-
-    private void y_path() {
-        CobolProgram.call("TSTOPEN", f_path, rec1);
-    }
-
-    private void cust_stat() {
-        CobolProgram.call("TSTOPEN", x_path, rec1);
-    }
-
-    private void cust_stat_2() {
-        CobolProgram.call("TSTOPEN", null /* OMITTED */, rec1);
-    }
-
-    private void cust_stat_3() {
-        CobolProgram.call("TSTOPEN", f_path, rec2);
-    }
-
-    private void cust_stat_4() {
-        CobolProgram.call("TSTOPEN", x_path, rec2);
-    }
-
-    private void cust_stat_5() {
+        CobolProgram.call("TSTOPN", null /* OMITTED */);
+        CobolProgram.call("TSTOPN", y_path);
+        CobolProgram.call("TSTOPEN", f_path, rec1, cust_stat);
+        CobolProgram.call("TSTOPEN", x_path, rec1, cust_stat);
+        CobolProgram.call("TSTOPEN", null /* OMITTED */, rec1, cust_stat);
+        CobolProgram.call("TSTOPEN", f_path, rec2, cust_stat);
+        CobolProgram.call("TSTOPEN", x_path, rec2, cust_stat);
         System.exit(0);
     }
 

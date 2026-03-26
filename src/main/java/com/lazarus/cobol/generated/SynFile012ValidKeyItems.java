@@ -35,6 +35,7 @@ public class SynFile012ValidKeyItems extends CobolProgram {
     // FILE SECTION — TEST-FILE
     private CobolString test_rec = new CobolString(1); // Group: TEST-REC
     private CobolString test_p1 = new CobolString(4);
+    private CobolString filler_1 = new CobolString(4);
     private CobolString test_p4 = new CobolString(4);
 
 
@@ -42,10 +43,11 @@ public class SynFile012ValidKeyItems extends CobolProgram {
     private CobolFile test_some = new CobolFile("FILE-TEST", "INDEXED", "DYNAMIC");
     private CobolFile test_file = new CobolFile("FILE-TEST2", "INDEXED", "DYNAMIC");
 
-    
-    private CobolFile _unnamed = new CobolFile("*", "SEQUENTIAL", "SEQUENTIAL");
+    // FALLBACK FILE DESCRIPTORS
+    private CobolFile _filler_001 = new CobolFile("*", "SEQUENTIAL", "SEQUENTIAL");
 
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
     private void para_main() {
         test_file.open("INPUT");
         test_file.close();
@@ -53,7 +55,7 @@ public class SynFile012ValidKeyItems extends CobolProgram {
         /* MOVE CORRESPONDING WS-REC TO SOME-REC — requires runtime */
         test_some.write(some_rec);
         test_some.close();
-        _unnamed.close();
+        // KNOWN_ISSUE: _filler_002.close();
         System.exit(0);
     }
 

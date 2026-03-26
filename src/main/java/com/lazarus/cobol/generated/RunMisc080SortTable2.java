@@ -6,6 +6,7 @@ import com.lazarus.cobol.CobolIntrinsics;
 import com.lazarus.cobol.CobolProgram;
 import com.lazarus.cobol.CobolString;
 import com.lazarus.cobol.FileStatus;
+import com.lazarus.cobol.jcl.batch.DfsortProgram;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -38,16 +39,19 @@ public class RunMisc080SortTable2 extends CobolProgram {
     private short cnt3 = (short) 0;
     private CobolString[] row3 = new CobolString[10]; // Group: ROW3
     private int[] tab3_nr = new int[10];
+    private CobolString[] filler_1 = new CobolString[10];
     private CobolString[] tab3_data = new CobolString[10];
+    private CobolString[] filler_2 = new CobolString[10];
     private CobolString[] tab3_data2 = new CobolString[10];
 
 
-    private CobolString _unnamed = new CobolString(256);
+    private CobolString _filler_001 = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
     private void a() {
         for (k = 1; !(k > 4); k += 1) {
             tab1_nr[k - 1] = new BigDecimal(String.valueOf(k).trim()).intValue();
-            _unnamed.set(String.valueOf(k));
+            _filler_002.set(String.valueOf(k));
             tab2_nr[k - 1] = new BigDecimal(String.valueOf(k).trim()).intValue();
         }
         tab3_nr[1 - 1] = new BigDecimal(String.valueOf(1).trim()).intValue();
@@ -100,8 +104,16 @@ public class RunMisc080SortTable2 extends CobolProgram {
         tab3_data2[9 - 1].set(String.valueOf("cow"));
         if (tab3_data2[10 - 1] == null) tab3_data2[10 - 1] = new CobolString(256);
         tab3_data2[10 - 1].set(String.valueOf("the"));
-        /* SORT ROW1 */
-        /* SORT ROW2 */
+        { /* SORT ROW1 (row1) */
+            DfsortProgram _sort = new DfsortProgram();
+            _sort.setSortKeys(new String[]{"TAB1-NR:D"});
+            _sort.execute();
+        }
+        { /* SORT ROW2 (row2) */
+            DfsortProgram _sort = new DfsortProgram();
+            _sort.setSortKeys(new String[]{"TAB2-NR:D"});
+            _sort.execute();
+        }
         CobolDisplay.display("SINGLE TABLE");
         for (k = 1; !(k > 4); k += 1) {
             CobolDisplay.display(String.valueOf(CobolIntrinsics.trim(tab1_nr[k - 1])));
@@ -110,7 +122,11 @@ public class RunMisc080SortTable2 extends CobolProgram {
         for (k = 1; !(k > 4); k += 1) {
             CobolDisplay.display(String.valueOf(CobolIntrinsics.trim(tab2_nr[k - 1])));
         }
-        /* SORT ROW3 */
+        { /* SORT ROW3 (row3) */
+            DfsortProgram _sort = new DfsortProgram();
+            _sort.setSortKeys(new String[]{"TAB3-NR:D", "TAB3-DATA:A"});
+            _sort.execute();
+        }
         CobolDisplay.display("MULTY KEY SORT");
         for (k = 1; !(k > 10); k += 1) {
             CobolDisplay.display(String.valueOf(CobolIntrinsics.trim(row3[k - 1])));

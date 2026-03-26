@@ -36,33 +36,19 @@ public class RunFundamental004DisplayDataItemsWithMoveStatement extends CobolPro
 
 
     private void para_main() {
-    }
-
-    private void x_abc() {
+        x_abc.set(String.valueOf("abc"));
         CobolDisplay.display(String.valueOf(x_abc));
-    }
-
-    private void x_123() {
+        x_123 = new BigDecimal(String.valueOf(123).trim()).intValue();
         CobolDisplay.display(String.valueOf(x_123));
-    }
-
-    private void x_p123() {
+        x_p123 = new BigDecimal(String.valueOf(123).trim()).intValue();
         CobolDisplay.display(String.valueOf(x_p123));
-    }
-
-    private void x_n123() {
+        x_n123 = new BigDecimal(String.valueOf(-123).trim()).intValue();
         CobolDisplay.display(String.valueOf(x_n123));
-    }
-
-    private void x_12_3() {
+        x_12_3 = new BigDecimal(String.valueOf(12.3).trim()).intValue();
         CobolDisplay.display(String.valueOf(x_12_3));
-    }
-
-    private void x_p12_3() {
+        x_p12_3 = new BigDecimal(String.valueOf(12.3).trim());
         CobolDisplay.display(String.valueOf(x_p12_3));
-    }
-
-    private void x_n12_3() {
+        x_n12_3 = new BigDecimal(String.valueOf(-12.3).trim());
         CobolDisplay.display(String.valueOf(x_n12_3));
         System.exit(0);
     }

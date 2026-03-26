@@ -30,11 +30,11 @@ public class SynMisc003WarnLiteralSizeInConstantExprLevel88 extends CobolProgram
     private CobolString xx = new CobolString(1);
 
 
-    private CobolString never_true = new CobolString(256);
-    private CobolString never_truen = new CobolString(256);
-    private CobolString some_not_s = new CobolString(256);
-    private CobolString some_not = new CobolString(256);
-    private CobolString cb_true = new CobolString(256);
+    private CobolString never_true = new CobolString(256); // fallback
+    private CobolString never_truen = new CobolString(256); // fallback
+    private CobolString some_not_s = new CobolString(256); // fallback
+    private CobolString some_not = new CobolString(256); // fallback
+    private CobolString cb_true = new CobolString(256); // fallback
 
     private void para_main() {
         if (!String.valueOf(never_true).trim().isEmpty()) {

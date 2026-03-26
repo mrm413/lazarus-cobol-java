@@ -12,7 +12,8 @@ mkdir -p target/classes
 # Compile runtime
 echo "Compiling runtime..."
 javac -d target/classes src/main/java/com/lazarus/cobol/*.java
-echo "  Runtime: OK (6 classes)"
+javac -cp target/classes -d target/classes src/main/java/com/lazarus/cobol/jcl/batch/*.java 2>/dev/null
+echo "  Runtime: OK"
 
 # Compile all generated programs
 echo "Compiling 1,323 generated programs..."

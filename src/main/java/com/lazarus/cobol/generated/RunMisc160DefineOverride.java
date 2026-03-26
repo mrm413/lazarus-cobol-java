@@ -32,8 +32,8 @@ public class RunMisc160DefineOverride extends CobolProgram {
     private CobolString myponyenv = new CobolString(12);
 
 
-    private CobolString doggy = new CobolString(256);
-    private CobolString pony = new CobolString(256);
+    private CobolString doggy = new CobolString(256); // fallback
+    private CobolString pony = new CobolString(256); // fallback
 
     private void para_main() {
         CobolDisplay.display("ENVPONY");

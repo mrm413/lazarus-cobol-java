@@ -30,9 +30,7 @@ public class RunFunctions112FunctionTrimZeroLength extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void x() {
+        x.set(String.valueOf(CobolIntrinsics.trim("  ")));
         CobolDisplay.display(">" + String.valueOf(x) + "<");
         CobolDisplay.display(">" + String.valueOf(CobolIntrinsics.trim("   ")) + "<");
         System.exit(0);

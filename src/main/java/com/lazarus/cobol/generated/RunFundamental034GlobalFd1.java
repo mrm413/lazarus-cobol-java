@@ -39,13 +39,9 @@ public class RunFundamental034GlobalFd1 extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void test_file() {
+        test_file.open("INPUT");
         CobolProgram.call("prog2");
-    }
-
-    private void test_file_2() {
+        test_file.close();
         System.exit(0);
     }
 

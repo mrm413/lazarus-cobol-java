@@ -36,21 +36,13 @@ public class RunFile007ReadIntoDataItemAtEndSequence extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void test_file() {
-    }
-
-    private void test_file_2() {
-    }
-
-    private void test_file_3() {
+        test_file.open("OUTPUT");
+        test_file.close();
+        test_file.open("INPUT");
         if (test_file.read(x) == FileStatus.AT_END) {
             x.set(String.valueOf("ZERO"));
         }
-    }
-
-    private void test_file_4() {
+        test_file.close();
         if (!String.valueOf(x).equals(String.valueOf("0000000000"))) {
             CobolDisplay.display("Expected zeros - Got " + String.valueOf(x));
         }

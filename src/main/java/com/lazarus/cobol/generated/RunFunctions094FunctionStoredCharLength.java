@@ -31,15 +31,10 @@ public class RunFunctions094FunctionStoredCharLength extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void y() {
-    }
-
-    private void z() {
+        y.set(String.valueOf("123456789012"));
+        z = new BigDecimal(String.valueOf(CobolIntrinsics.stored_char_length(y)).trim()).intValue();
         if (z != 12) {
-            CobolDisplay.display();
-            /* RAW: Z  */
+            CobolDisplay.display(String.valueOf(z));
         }
         System.exit(0);
     }

@@ -33,9 +33,7 @@ public class RunInitialize000InitializeGroupEntryWithOccurs extends CobolProgram
 
 
     private void para_main() {
-    }
-
-    private void g1() {
+        g1.set(String.valueOf(" "));
         if (g2[2 - 1] == null) g2[2 - 1] = new CobolString(1);
         g2[2 - 1].set("");
         if (!String.valueOf(g1).equals(String.valueOf("   0"))) {

@@ -31,18 +31,19 @@ public class SynDefinition029SynchronizedClause extends CobolProgram {
     private short csr = (short) 0;
 
 
-    private CobolString _unnamed = new CobolString(256);
+    private CobolString _filler_001 = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
+    private CobolString _filler_004 = new CobolString(256); // fallback
     private void para_main() {
         cs_full = new BigDecimal(String.valueOf(1).trim()).shortValue();
-        _unnamed.set(String.valueOf(1));
+        _filler_002.set(String.valueOf(1));
         cs = new BigDecimal(String.valueOf(1).trim()).shortValue();
-        _unnamed.set(String.valueOf(1));
+        _filler_003.set(String.valueOf(1));
         csl = new BigDecimal(String.valueOf(1).trim()).shortValue();
-        _unnamed.set(String.valueOf(1));
-    }
-
-    private void csr() {
+        _filler_004.set(String.valueOf(1));
+        csr = new BigDecimal(String.valueOf(1).trim()).shortValue();
         System.exit(0);
     }
 

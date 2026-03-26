@@ -28,7 +28,7 @@ public class RunFunctions110FunctionTrim extends CobolProgram {
     private CobolString x = new CobolString(12);
 
 
-    private CobolString trailing = new CobolString(256);
+    private CobolString trailing = new CobolString(256); // fallback
 
     private void para_main() {
         CobolDisplay.display(String.valueOf(CobolIntrinsics.trim(x)));

@@ -28,12 +28,17 @@ public class RunFunctions111FunctionTrimWithReferenceModding extends CobolProgra
     private CobolString x = new CobolString(12);
 
 
-    private CobolString _unnamed = new CobolString(256);
-    private CobolString trailing = new CobolString(256);
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString trailing = new CobolString(256); // fallback
 
+    private CobolString _filler_003 = new CobolString(256); // fallback
+    private CobolString _filler_004 = new CobolString(256); // fallback
+    private CobolString _filler_005 = new CobolString(256); // fallback
+    private CobolString _filler_006 = new CobolString(256); // fallback
     private void para_main() {
-        CobolDisplay.display(String.valueOf(CobolIntrinsics.trim(x)) + String.valueOf((2)) + String.valueOf(_unnamed) + String.valueOf(3) + String.valueOf(_unnamed));
-        CobolDisplay.display(String.valueOf(CobolIntrinsics.trim(x, trailing)) + String.valueOf((2)) + String.valueOf(_unnamed) + String.valueOf(3) + String.valueOf(_unnamed));
+        CobolDisplay.display(String.valueOf(CobolIntrinsics.trim(x)) + String.valueOf((2)) + String.valueOf(_filler_003) + String.valueOf(3) + String.valueOf(_filler_004));
+        CobolDisplay.display(String.valueOf(CobolIntrinsics.trim(x, trailing)) + String.valueOf((2)) + String.valueOf(_filler_005) + String.valueOf(3) + String.valueOf(_filler_006));
         System.exit(0);
     }
 

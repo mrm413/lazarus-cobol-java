@@ -27,19 +27,16 @@ public class RunFundamental016AlphabeticTest extends CobolProgram {
     // WORKING-STORAGE SECTION
     private CobolString x = new CobolString(4);
     private CobolString xbyte = new CobolString(1);
+    private CobolString filler_1 = new CobolString(3);
 
 
 
     private void para_main() {
-    }
-
-    private void xbyte() {
+        xbyte.set(String.valueOf("0D"));
         if (CobolIntrinsics.isAlphabetic(x)) {
             CobolDisplay.display("Fail - Alphabetic");
         }
-    }
-
-    private void xbyte_2() {
+        xbyte.set(String.valueOf("A"));
         if (!CobolIntrinsics.isAlphabetic(x)) {
             CobolDisplay.display("Fail - Not Alphabetic");
         }

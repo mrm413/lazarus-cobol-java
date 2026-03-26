@@ -28,9 +28,9 @@ public class RunMisc172EntryForGoToGoToEntry extends CobolProgram {
     private int jump_entry = 0;
 
 
-    private CobolString entry = new CobolString(256);
-    private CobolString cb_for = new CobolString(256);
-    private CobolString ext_modus = new CobolString(256);
+    private CobolString entry = new CobolString(256); // fallback
+    private CobolString cb_for = new CobolString(256); // fallback
+    private CobolString ext_modus = new CobolString(256); // fallback
 
     private void para_main() {
         entry();

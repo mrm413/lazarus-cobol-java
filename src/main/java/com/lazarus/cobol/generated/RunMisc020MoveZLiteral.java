@@ -35,9 +35,7 @@ public class RunMisc020MoveZLiteral extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void x() {
+        x.set(String.valueOf("012"));
         if ((((String.valueOf(xbyte1).equals(String.valueOf("0")) && String.valueOf(xbyte2).equals(String.valueOf("1"))) && String.valueOf(xbyte3).equals(String.valueOf("2"))) && String.valueOf(xbyte4).equals(String.valueOf("\u0000")))) {
             CobolDisplay.displayNoAdvancing("OK");
         } else {

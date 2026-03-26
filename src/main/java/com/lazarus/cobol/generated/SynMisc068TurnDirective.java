@@ -24,21 +24,10 @@ public class SynMisc068TurnDirective extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
-    // FILE SECTION — f
-    private CobolString f_rec = new CobolString(1);
 
-
-    // FILE DESCRIPTORS
-    private CobolFile f = new CobolFile("f.txt", "SEQUENTIAL", "SEQUENTIAL");
-
-
-    private void para_main() {
-        System.exit(0);
-    }
 
     @Override
     public void run() {
-        para_main();
     }
 
     public static void main(String[] args) {

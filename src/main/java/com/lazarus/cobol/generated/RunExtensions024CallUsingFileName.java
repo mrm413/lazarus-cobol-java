@@ -36,16 +36,10 @@ public class RunExtensions024CallUsingFileName extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void filename() {
+        filename.set("");
         CobolProgram.call("setfilename", test_file, "TESTFILE");
-    }
-
-    private void test_file() {
-    }
-
-    private void test_file_2() {
+        test_file.open("OUTPUT");
+        test_file.close();
         System.exit(0);
     }
 

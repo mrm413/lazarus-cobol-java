@@ -33,30 +33,21 @@ public class RunFile040SystemRoutinesForFilesFilenameMapping extends CobolProgra
     private CobolString read_buffer = new CobolString(10);
 
 
-    private CobolString trailing = new CobolString(256);
+    private CobolString trailing = new CobolString(256); // fallback
 
     private void para_main() {
-        /* RAW: CHAINING  */
-    }
-
-    private void fname() {
+        /* RAW: CHAINING FNAME */
         CobolDisplay.display("RUN WITH " + String.valueOf(CobolIntrinsics.trim(fname, trailing)));
-        CobolProgram.call("CBL_OPEN_FILE", fname, 1, 0, 0);
-    }
-
-    private void fhandle() {
+        CobolProgram.call("CBL_OPEN_FILE", fname, 1, 0, 0, fhandle);
         if (return_code != 0) {
             CobolDisplay.display("error opening file ...");
             return_code = new BigDecimal(String.valueOf(0).trim()).intValue();
             System.exit(0);
         }
-        CobolProgram.call("CBL_CLOSE_FILE");
-    }
-
-    private void fhandle_2() {
+        CobolProgram.call("CBL_CLOSE_FILE", fhandle);
         if (return_code != 0) {
             CobolDisplay.display("error closing file ..." + String.valueOf(return_code));
-            /* RAW: RETURN-CODE  */
+            return_code = new BigDecimal(String.valueOf(0).trim()).intValue();
         }
         System.exit(0);
     }

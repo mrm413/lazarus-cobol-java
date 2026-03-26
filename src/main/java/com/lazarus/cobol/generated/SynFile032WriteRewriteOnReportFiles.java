@@ -31,7 +31,7 @@ public class SynFile032WriteRewriteOnReportFiles extends CobolProgram {
     // FILE DESCRIPTORS
     private CobolFile f = new CobolFile("ssad", "LINE SEQUENTIAL", "SEQUENTIAL");
 
-    private CobolString file = new CobolString(256);
+    private CobolString file = new CobolString(256); // fallback
 
     private void para_main() {
         f.open("OUTPUT");
@@ -39,9 +39,7 @@ public class SynFile032WriteRewriteOnReportFiles extends CobolProgram {
         /* RAW: f FROM "abc" */
         /* REWRITE FILE — no file mapping */ // file.rewrite();
         /* RAW: f FROM "abc" */
-    }
-
-    private void f() {
+        f.close();
     }
 
     @Override

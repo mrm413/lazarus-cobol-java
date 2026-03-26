@@ -31,10 +31,7 @@ public class SynMisc081DuplicateCallUsingByReferenceItems extends CobolProgram {
 
 
     private void para_main() {
-        CobolProgram.call("prog2", p, p, o);
-    }
-
-    private void p() {
+        CobolProgram.call("prog2", p, p, o, p);
         CobolProgram.call("prog3", p, p, o, p, CobolString.refMod(o, 2));
     }
 

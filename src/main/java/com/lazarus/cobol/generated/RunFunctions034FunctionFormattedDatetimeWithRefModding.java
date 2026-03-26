@@ -28,17 +28,22 @@ public class RunFunctions034FunctionFormattedDatetimeWithRefModding extends Cobo
     private CobolString str = new CobolString(4);
 
 
-    private CobolString _unnamed = new CobolString(256);
-    private CobolString _3 = new CobolString(256);
-    private CobolString _4 = new CobolString(256);
-    private CobolString to = new CobolString(256);
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString _3 = new CobolString(256); // fallback
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _4 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
+    private CobolString to = new CobolString(256); // fallback
 
+    private CobolString _filler_004 = new CobolString(256); // fallback
+    private CobolString _filler_005 = new CobolString(256); // fallback
+    private CobolString _filler_006 = new CobolString(256); // fallback
     private void para_main() {
-        _unnamed.set(String.valueOf(CobolIntrinsics.formatted_datetime("YYYYMMDDThhmmss", 1, 1)));
+        _filler_004.set(String.valueOf(CobolIntrinsics.formatted_datetime("YYYYMMDDThhmmss", 1, 1)));
         _3.set(String.valueOf(CobolIntrinsics.formatted_datetime("YYYYMMDDThhmmss", 1, 1)));
-        _unnamed.set(String.valueOf(CobolIntrinsics.formatted_datetime("YYYYMMDDThhmmss", 1, 1)));
+        _filler_005.set(String.valueOf(CobolIntrinsics.formatted_datetime("YYYYMMDDThhmmss", 1, 1)));
         _4.set(String.valueOf(CobolIntrinsics.formatted_datetime("YYYYMMDDThhmmss", 1, 1)));
-        _unnamed.set(String.valueOf(CobolIntrinsics.formatted_datetime("YYYYMMDDThhmmss", 1, 1)));
+        _filler_006.set(String.valueOf(CobolIntrinsics.formatted_datetime("YYYYMMDDThhmmss", 1, 1)));
         to.set(String.valueOf(CobolIntrinsics.formatted_datetime("YYYYMMDDThhmmss", 1, 1)));
         str.set(String.valueOf(CobolIntrinsics.formatted_datetime("YYYYMMDDThhmmss", 1, 1)));
         if (!String.valueOf(str).equals(String.valueOf("0101"))) {

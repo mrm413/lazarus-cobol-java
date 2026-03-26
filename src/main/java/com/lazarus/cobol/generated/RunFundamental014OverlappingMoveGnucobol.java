@@ -31,19 +31,14 @@ public class RunFundamental014OverlappingMoveGnucobol extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void tstmov2() {
+        tstmov2.set(String.valueOf("0123456789"));
         tstmov2.setRefMod(1, 9, String.valueOf(CobolString.refMod(tstmov2, 2, 9)));
         if (!String.valueOf(tstmov2).equals(String.valueOf("1234567899"))) {
             CobolDisplay.display("  PROBLEM MOVE: " + String.valueOf(tstmov2));
         } else {
-            CobolDisplay.display("  OK with MOVE: ");
-            /* RAW: TSTMOV2  */
+            CobolDisplay.display("  OK with MOVE: " + String.valueOf(tstmov2));
         }
-    }
-
-    private void tstmov2_2() {
+        tstmov2.set(String.valueOf("0123456789"));
         tstmov2.setRefMod(2, 8, String.valueOf(CobolString.refMod(tstmov2, 1, 8)));
         if (String.valueOf(tstmov2).equals(String.valueOf("0000000009"))) {
             CobolDisplay.display("IBM style MOVE: " + String.valueOf(tstmov2));
@@ -51,8 +46,7 @@ public class RunFundamental014OverlappingMoveGnucobol extends CobolProgram {
             if (!String.valueOf(tstmov2).equals(String.valueOf("0012345679"))) {
                 CobolDisplay.display("  PROBLEM MOVE: " + String.valueOf(tstmov2));
             } else {
-                CobolDisplay.display("  OK with MOVE: ");
-                /* RAW: TSTMOV2  */
+                CobolDisplay.display("  OK with MOVE: " + String.valueOf(tstmov2));
             }
         }
         System.exit(0);

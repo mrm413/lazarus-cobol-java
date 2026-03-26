@@ -33,13 +33,23 @@ public class RunManualScreen022LineDrawCharactersViaControlGraphics extends Cobo
     private CobolString graphcontrol = new CobolString(50);
 
 
-    private CobolString at = new CobolString(256);
-    private CobolString line = new CobolString(256);
-    private CobolString col = new CobolString(256);
-    private CobolString success = new CobolString(256);
-    private CobolString _unnamed = new CobolString(256);
-    private CobolString control = new CobolString(256);
+    private CobolString at = new CobolString(256); // fallback
+    private CobolString line = new CobolString(256); // fallback
+    private CobolString col = new CobolString(256); // fallback
+    private CobolString success = new CobolString(256); // fallback
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString control = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
+    private CobolString _filler_004 = new CobolString(256); // fallback
+    private CobolString _filler_005 = new CobolString(256); // fallback
+    private CobolString _filler_006 = new CobolString(256); // fallback
+    private CobolString _filler_007 = new CobolString(256); // fallback
+    private CobolString _filler_008 = new CobolString(256); // fallback
+    private CobolString _filler_009 = new CobolString(256); // fallback
+    private CobolString _filler_010 = new CobolString(256); // fallback
+    private CobolString _filler_011 = new CobolString(256); // fallback
     private void testme() {
         lin = new BigDecimal(String.valueOf(2).trim()).shortValue();
         CobolDisplay.display(String.valueOf(scr1) + String.valueOf(at) + String.valueOf(line) + String.valueOf(lin) + String.valueOf(col) + String.valueOf(2));
@@ -61,56 +71,26 @@ public class RunManualScreen022LineDrawCharactersViaControlGraphics extends Cobo
 
     private void dspcol() {
         lin = new BigDecimal(String.valueOf(lin_start).trim()).shortValue();
-        CobolDisplay.display("lqqqqwqqqqk" + String.valueOf(line) + String.valueOf(lin) + String.valueOf(col) + String.valueOf(5) + String.valueOf(_unnamed) + String.valueOf(control));
-    }
-
-    private void graphcontrol() {
+        CobolDisplay.display("lqqqqwqqqqk" + String.valueOf(line) + String.valueOf(lin) + String.valueOf(col) + String.valueOf(5) + String.valueOf(_filler_002) + String.valueOf(control) + String.valueOf(graphcontrol));
         lin = new BigDecimal(String.valueOf(lin + 1).trim()).shortValue();
-        CobolDisplay.display("x    x    x" + String.valueOf(line) + String.valueOf(lin) + String.valueOf(col) + String.valueOf(5) + String.valueOf(_unnamed) + String.valueOf(control));
-    }
-
-    private void graphcontrol_2() {
+        CobolDisplay.display("x    x    x" + String.valueOf(line) + String.valueOf(lin) + String.valueOf(col) + String.valueOf(5) + String.valueOf(_filler_003) + String.valueOf(control) + String.valueOf(graphcontrol));
         lin = new BigDecimal(String.valueOf(lin + 1).trim()).shortValue();
-        CobolDisplay.display("tqqqqnqqqqu" + String.valueOf(line) + String.valueOf(lin) + String.valueOf(col) + String.valueOf(5) + String.valueOf(_unnamed) + String.valueOf(control));
-    }
-
-    private void graphcontrol_3() {
+        CobolDisplay.display("tqqqqnqqqqu" + String.valueOf(line) + String.valueOf(lin) + String.valueOf(col) + String.valueOf(5) + String.valueOf(_filler_004) + String.valueOf(control) + String.valueOf(graphcontrol));
         lin = new BigDecimal(String.valueOf(lin + 1).trim()).shortValue();
-        CobolDisplay.display("x    x    x" + String.valueOf(line) + String.valueOf(lin) + String.valueOf(col) + String.valueOf(5) + String.valueOf(_unnamed) + String.valueOf(control));
-    }
-
-    private void graphcontrol_4() {
+        CobolDisplay.display("x    x    x" + String.valueOf(line) + String.valueOf(lin) + String.valueOf(col) + String.valueOf(5) + String.valueOf(_filler_005) + String.valueOf(control) + String.valueOf(graphcontrol));
         lin = new BigDecimal(String.valueOf(lin + 1).trim()).shortValue();
-        CobolDisplay.display("mqqqqvqqqqj" + String.valueOf(line) + String.valueOf(lin) + String.valueOf(col) + String.valueOf(5) + String.valueOf(_unnamed) + String.valueOf(control));
-    }
-
-    private void graphcontrol_5() {
+        CobolDisplay.display("mqqqqvqqqqj" + String.valueOf(line) + String.valueOf(lin) + String.valueOf(col) + String.valueOf(5) + String.valueOf(_filler_006) + String.valueOf(control) + String.valueOf(graphcontrol));
         lin = new BigDecimal(String.valueOf(lin + 1).trim()).shortValue();
         lin = new BigDecimal(String.valueOf(lin_start).trim()).shortValue();
-        CobolDisplay.display("LQQQQWQQQQK" + String.valueOf(line) + String.valueOf(lin) + String.valueOf(col) + String.valueOf(20) + String.valueOf(_unnamed) + String.valueOf(control));
-    }
-
-    private void graphcontrol_6() {
+        CobolDisplay.display("LQQQQWQQQQK" + String.valueOf(line) + String.valueOf(lin) + String.valueOf(col) + String.valueOf(20) + String.valueOf(_filler_007) + String.valueOf(control) + String.valueOf(graphcontrol));
         lin = new BigDecimal(String.valueOf(lin + 1).trim()).shortValue();
-        CobolDisplay.display("X    X    X" + String.valueOf(line) + String.valueOf(lin) + String.valueOf(col) + String.valueOf(20) + String.valueOf(_unnamed) + String.valueOf(control));
-    }
-
-    private void graphcontrol_7() {
+        CobolDisplay.display("X    X    X" + String.valueOf(line) + String.valueOf(lin) + String.valueOf(col) + String.valueOf(20) + String.valueOf(_filler_008) + String.valueOf(control) + String.valueOf(graphcontrol));
         lin = new BigDecimal(String.valueOf(lin + 1).trim()).shortValue();
-        CobolDisplay.display("TQQQQNQQQQU" + String.valueOf(line) + String.valueOf(lin) + String.valueOf(col) + String.valueOf(20) + String.valueOf(_unnamed) + String.valueOf(control));
-    }
-
-    private void graphcontrol_8() {
+        CobolDisplay.display("TQQQQNQQQQU" + String.valueOf(line) + String.valueOf(lin) + String.valueOf(col) + String.valueOf(20) + String.valueOf(_filler_009) + String.valueOf(control) + String.valueOf(graphcontrol));
         lin = new BigDecimal(String.valueOf(lin + 1).trim()).shortValue();
-        CobolDisplay.display("X    X    X" + String.valueOf(line) + String.valueOf(lin) + String.valueOf(col) + String.valueOf(20) + String.valueOf(_unnamed) + String.valueOf(control));
-    }
-
-    private void graphcontrol_9() {
+        CobolDisplay.display("X    X    X" + String.valueOf(line) + String.valueOf(lin) + String.valueOf(col) + String.valueOf(20) + String.valueOf(_filler_010) + String.valueOf(control) + String.valueOf(graphcontrol));
         lin = new BigDecimal(String.valueOf(lin + 1).trim()).shortValue();
-        CobolDisplay.display("MQQQQVQQQQJ" + String.valueOf(line) + String.valueOf(lin) + String.valueOf(col) + String.valueOf(20) + String.valueOf(_unnamed) + String.valueOf(control));
-    }
-
-    private void graphcontrol_10() {
+        CobolDisplay.display("MQQQQVQQQQJ" + String.valueOf(line) + String.valueOf(lin) + String.valueOf(col) + String.valueOf(20) + String.valueOf(_filler_011) + String.valueOf(control) + String.valueOf(graphcontrol));
     }
 
     @Override

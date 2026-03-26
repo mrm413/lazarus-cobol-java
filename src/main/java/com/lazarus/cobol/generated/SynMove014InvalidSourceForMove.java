@@ -28,16 +28,12 @@ public class SynMove014InvalidSourceForMove extends CobolProgram {
     private CobolString main_var = new CobolString(3);
 
 
-    private CobolString main = new CobolString(256);
-    private CobolString repo_prog = new CobolString(256);
+    private CobolString main = new CobolString(256); // fallback
+    private CobolString repo_prog = new CobolString(256); // fallback
 
     private void para_main() {
-    }
-
-    private void main_var() {
-    }
-
-    private void para_main_2() {
+        main_var.set(String.valueOf(main));
+        main.set(String.valueOf(repo_prog));
         System.exit(0);
     }
 

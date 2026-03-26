@@ -39,9 +39,9 @@ public class RunFile090TurnEcIO extends CobolProgram {
     // File status: f-status
     private CobolFile g = new CobolFile("out.txt", "SEQUENTIAL", "SEQUENTIAL");
 
-    private CobolString last = new CobolString(256);
-    private CobolString off = new CobolString(256);
-    private CobolString exception = new CobolString(256);
+    private CobolString last = new CobolString(256); // fallback
+    private CobolString off = new CobolString(256); // fallback
+    private CobolString exception = new CobolString(256); // fallback
 
     private void para_main() {
         f.open("OUTPUT");
@@ -61,7 +61,7 @@ public class RunFile090TurnEcIO extends CobolProgram {
         exception.set(String.valueOf(off));
         f.close();
         f.open("INPUT");
-        for (int _i0 = 0; _i0 < 2; _i0++) {
+        for (int _i1 = 0; _i1 < 2; _i1++) {
             if (f.read(null) == FileStatus.AT_END) {
             }
             CobolDisplay.display(String.valueOf(f_rec));
@@ -72,14 +72,12 @@ public class RunFile090TurnEcIO extends CobolProgram {
         exception.set(String.valueOf(off));
         f.close();
         g.open("INPUT");
-        for (int _i0 = 0; _i0 < 2; _i0++) {
+        for (int _i2 = 0; _i2 < 2; _i2++) {
             if (g.read(null) == FileStatus.AT_END) {
             }
             CobolDisplay.display(String.valueOf(g_rec));
         }
-    }
-
-    private void g() {
+        g.close();
     }
 
     @Override

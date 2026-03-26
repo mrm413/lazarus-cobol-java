@@ -33,7 +33,6 @@ public class RunMisc064ExitSection extends CobolProgram {
     private void a01() {
         a011();
         a012();
-        indval();
     }
 
     private void a011() {
@@ -45,24 +44,17 @@ public class RunMisc064ExitSection extends CobolProgram {
     }
 
     private void a012() {
-        CobolDisplay.display();
-    }
-
-    private void indval() {
+        CobolDisplay.display(String.valueOf(indval));
     }
 
     // SECTION: A02
     private void a02() {
         cb_if();
-        indval();
     }
 
     private void cb_if() {
         /* RAW: INDVAL NOT = 3 */
-        CobolDisplay.display();
-    }
-
-    private void indval_2() {
+        CobolDisplay.display(String.valueOf(indval));
         System.exit(0);
     }
 

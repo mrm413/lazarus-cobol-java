@@ -40,9 +40,7 @@ public class RunFile046LineSequentialRecordTruncation1 extends CobolProgram {
             }
             CobolDisplay.display("(" + String.valueOf(test_rec) + ")");
         }
-    }
-
-    private void test_file() {
+        test_file.close();
         System.exit(0);
     }
 

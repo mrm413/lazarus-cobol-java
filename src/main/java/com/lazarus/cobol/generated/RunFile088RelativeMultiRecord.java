@@ -30,12 +30,36 @@ public class RunFile088RelativeMultiRecord extends CobolProgram {
     private int rec_num = 0;
     private CobolString test_data = new CobolString(1); // Group: TEST-DATA
     private CobolString data_cust_num_tbl = new CobolString(1); // Group: DATA-CUST-NUM-TBL
+    private BigDecimal filler_1 = BigDecimal.ZERO;
+    private BigDecimal filler_2 = BigDecimal.ZERO;
+    private BigDecimal filler_3 = BigDecimal.ZERO;
+    private BigDecimal filler_4 = BigDecimal.ZERO;
+    private BigDecimal filler_5 = BigDecimal.ZERO;
+    private BigDecimal filler_6 = BigDecimal.ZERO;
     private CobolString[] data_cust_num = new CobolString[100];
     private CobolString data_company_tbl = new CobolString(1); // Group: DATA-COMPANY-TBL
+    private BigDecimal filler_7 = BigDecimal.ZERO;
+    private BigDecimal filler_8 = BigDecimal.ZERO;
+    private BigDecimal filler_9 = BigDecimal.ZERO;
+    private BigDecimal filler_10 = BigDecimal.ZERO;
+    private BigDecimal filler_11 = BigDecimal.ZERO;
+    private BigDecimal filler_12 = BigDecimal.ZERO;
     private CobolString[] data_company = new CobolString[100];
     private CobolString data_address_2_tbl = new CobolString(1); // Group: DATA-ADDRESS-2-TBL
+    private BigDecimal filler_13 = BigDecimal.ZERO;
+    private BigDecimal filler_14 = BigDecimal.ZERO;
+    private BigDecimal filler_15 = BigDecimal.ZERO;
+    private BigDecimal filler_16 = BigDecimal.ZERO;
+    private BigDecimal filler_17 = BigDecimal.ZERO;
+    private BigDecimal filler_18 = BigDecimal.ZERO;
     private CobolString[] data_address = new CobolString[100];
     private CobolString data_no_terminals_tbl = new CobolString(1); // Group: DATA-NO-TERMINALS-TBL
+    private BigDecimal filler_19 = BigDecimal.ZERO;
+    private BigDecimal filler_20 = BigDecimal.ZERO;
+    private BigDecimal filler_21 = BigDecimal.ZERO;
+    private BigDecimal filler_22 = BigDecimal.ZERO;
+    private BigDecimal filler_23 = BigDecimal.ZERO;
+    private BigDecimal filler_24 = BigDecimal.ZERO;
     private BigDecimal[] data_no_terminals = new BigDecimal[100];
     private CobolString work_area = new CobolString(1); // Group: WORK-AREA
     private int sub = 0;
@@ -63,14 +87,14 @@ public class RunFile088RelativeMultiRecord extends CobolProgram {
     private CobolFile flatfile = new CobolFile("RELVAR", "RELATIVE", "SEQUENTIAL");
     // File status: CUST-STAT
 
-    private CobolString odd_record = new CobolString(256);
-    private CobolString _unnamed = new CobolString(256);
+    private CobolString odd_record = new CobolString(256); // fallback
+    private CobolString _filler_001 = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
     private void para_main() {
         loadfile();
-    }
-
-    private void flatfile() {
+        flatfile.open("INPUT");
         CobolDisplay.display("Initial Re-Read Open Sts:" + String.valueOf(cust_stat));
         while (!(!String.valueOf(cust_stat).equals(String.valueOf("00")))) {
             read_record();
@@ -79,94 +103,55 @@ public class RunFile088RelativeMultiRecord extends CobolProgram {
             flatfile.close();
             System.exit(0);
         }
-    }
-
-    private void flatfile_2() {
-    }
-
-    private void flatfile_3() {
+        flatfile.close();
+        flatfile.open("I-O");
         CobolDisplay.display("For Rewrite Open I-O Sts:" + String.valueOf(cust_stat));
         read_record();
         c2_no_terminals = new BigDecimal(String.valueOf(c2_no_terminals + 1).trim()).shortValue();
         flatfile.rewrite(tsp2_record);
-        CobolDisplay.display("REWRITE " + String.valueOf(cm_cust_num) + " Sts " + String.valueOf(cust_stat) + " Trms:");
-    }
-
-    private void c2_no_terminals() {
-    }
-
-    private void flatfile_4() {
-    }
-
-    private void flatfile_5() {
+        CobolDisplay.display("REWRITE " + String.valueOf(cm_cust_num) + " Sts " + String.valueOf(cust_stat) + " Trms:" + String.valueOf(c2_no_terminals));
+        flatfile.close();
+        flatfile.open("I-O");
         CobolDisplay.display("For Rewrite/Delete Open I-O Sts:" + String.valueOf(cust_stat));
         read_record();
         c2_no_terminals = new BigDecimal(String.valueOf(c2_no_terminals + 1).trim()).shortValue();
         flatfile.rewrite(tsp2_record);
-        CobolDisplay.display("REWRITE " + String.valueOf(cm_cust_num) + " Sts " + String.valueOf(cust_stat) + " Trms:");
-    }
-
-    private void c2_no_terminals_2() {
+        CobolDisplay.display("REWRITE " + String.valueOf(cm_cust_num) + " Sts " + String.valueOf(cust_stat) + " Trms:" + String.valueOf(c2_no_terminals));
         read_record();
         flatfile.delete();
-        CobolDisplay.display("DELETE " + String.valueOf(cm_cust_num) + " Sts ");
-    }
-
-    private void cust_stat() {
-    }
-
-    private void flatfile_6() {
-    }
-
-    private void flatfile_7() {
+        CobolDisplay.display("DELETE " + String.valueOf(cm_cust_num) + " Sts " + String.valueOf(cust_stat));
+        flatfile.close();
+        flatfile.open("INPUT");
         CobolDisplay.display("Re-list Open Sts:" + String.valueOf(cust_stat));
         while (!(!String.valueOf(cust_stat).equals(String.valueOf("00")))) {
             read_record();
         }
-    }
-
-    private void flatfile_8() {
-    }
-
-    private void flatfile_9() {
+        flatfile.close();
+        flatfile.open("EXTEND");
         for (sub = 1; !(sub > 2); sub += 1) {
         }
-    }
-
-    private void flatfile_10() {
-    }
-
-    private void flatfile_11() {
+        flatfile.close();
+        flatfile.open("INPUT");
         CobolDisplay.display("Re-list afer Extend Open Sts:" + String.valueOf(cust_stat));
         while (!(!String.valueOf(cust_stat).equals(String.valueOf("00")))) {
             read_record();
         }
-    }
-
-    private void flatfile_12() {
+        flatfile.close();
         System.exit(0);
     }
 
     private void loadfile() {
         CobolDisplay.display("Loading sample program data file.");
-    }
-
-    private void flatfile_13() {
+        flatfile.open("OUTPUT");
         for (sub = 1; !(sub > max_sub); sub += 1) {
         }
         CobolDisplay.display("Sample program data file load complete.");
-    }
-
-    private void flatfile_14() {
+        flatfile.close();
     }
 
     private void read_record() {
-    }
-
-    private void tspfl_record() {
-    }
-
-    private void tsp2_record() {
+        tspfl_record.set(String.valueOf(" "));
+        tsp2_record.set(String.valueOf(" "));
         if (flatfile.read(null) == FileStatus.AT_END) {
         }
         if (!String.valueOf(cust_stat).equals(String.valueOf("00"))) {
@@ -178,38 +163,23 @@ public class RunFile088RelativeMultiRecord extends CobolProgram {
                 CobolDisplay.display("Read2 " + String.valueOf(c2_cust_num) + " #:" + String.valueOf(rec_num) + " Trms:" + String.valueOf(c2_no_terminals));
             }
         }
-        /* RAW: *  */
-    }
-
-    private void load_record() {
-    }
-
-    private void tspfl_record_2() {
-    }
-
-    private void tsp2_record_2() {
-    }
-
-    private void cm_cust_num() {
-    }
-
-    private void cm_company() {
-    }
-
-    private void cm_no_terminals() {
-    }
-
-    private void cm_pk_date() {
+        /* RAW: * LOAD-RECORD */
+        tspfl_record.set(String.valueOf(" "));
+        tsp2_record.set(String.valueOf(" "));
+        cm_cust_num.set(String.valueOf(data_cust_num[sub - 1]));
+        cm_company.set(String.valueOf(data_company[sub - 1]));
+        cm_no_terminals = new BigDecimal(String.valueOf(data_no_terminals[sub - 1]).trim()).shortValue();
+        cm_pk_date = new BigDecimal(String.valueOf(20070319).trim());
         if (((sub == 1 || true) || true)) {
-            /* RAW: CM-PK-DATE  */
+            cm_pk_date = new BigDecimal(String.valueOf(-20070319).trim());
         }
         /* RAW: *  */
         if (!String.valueOf(odd_record).trim().isEmpty()) {
             c2_disk.set(String.valueOf("8417"));
-            _unnamed.set(String.valueOf("8417"));
+            _filler_002.set(String.valueOf("8417"));
             c2_cust_num.set(String.valueOf(cm_cust_num));
             c2_type.set(String.valueOf("2"));
-            _unnamed.set(String.valueOf("2"));
+            _filler_003.set(String.valueOf("2"));
             c2_company.set(String.valueOf(cm_company));
             c2_pk_date = new BigDecimal(String.valueOf(cm_pk_date).trim());
             c2_no_terminals = new BigDecimal(String.valueOf(cm_no_terminals).trim()).shortValue();

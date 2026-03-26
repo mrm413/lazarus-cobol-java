@@ -31,10 +31,7 @@ public class SynMisc080DuplicateProcedureDivisionEntryUsingItems extends CobolPr
 
 
     private void para_main() {
-        /* RAW: ENTRY "sub" USING o p */
-    }
-
-    private void o() {
+        /* RAW: ENTRY "sub" USING o p o */
     }
 
     @Override

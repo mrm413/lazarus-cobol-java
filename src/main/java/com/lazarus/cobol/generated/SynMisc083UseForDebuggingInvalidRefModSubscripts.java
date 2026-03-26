@@ -33,29 +33,21 @@ public class SynMisc083UseForDebuggingInvalidRefModSubscripts extends CobolProgr
     // SECTION: test-DEBUG
     private void test_debug() {
         use();
-        debug_line();
     }
 
     private void use() {
         /* RAW: FOR DEBUGGING ON ALL OF I */
-        CobolDisplay.display();
-    }
-
-    private void debug_line() {
+        CobolDisplay.display(String.valueOf(debug_line));
     }
 
     // SECTION: test-DEBUGo
     private void test_debugo() {
         use();
-        debug_line();
     }
 
     private void use_2() {
         /* RAW: FOR DEBUGGING ON ALL OF X */
-        CobolDisplay.display();
-    }
-
-    private void debug_line_2() {
+        CobolDisplay.display(String.valueOf(debug_line));
     }
 
     // SECTION: MAIN

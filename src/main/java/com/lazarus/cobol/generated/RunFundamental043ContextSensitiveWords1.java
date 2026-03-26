@@ -31,9 +31,7 @@ public class RunFundamental043ContextSensitiveWords1 extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void byte_length() {
+        byte_length = new BigDecimal(String.valueOf(x).trim()).intValue();
         CobolDisplay.displayNoAdvancing(String.valueOf(byte_length));
         System.exit(0);
     }

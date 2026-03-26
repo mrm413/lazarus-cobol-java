@@ -26,6 +26,9 @@ public class RunMisc073UnstringDelimitedAllLowValue extends CobolProgram {
     private CobolString debug_contents = new CobolString(256);
     // WORKING-STORAGE SECTION
     private CobolString g = new CobolString(1); // Group: G
+    private CobolString filler_1 = new CobolString(3);
+    private CobolString filler_2 = new CobolString(3);
+    private CobolString filler_3 = new CobolString(3);
     private CobolString a = new CobolString(3);
     private CobolString b = new CobolString(3);
 
@@ -36,12 +39,10 @@ public class RunMisc073UnstringDelimitedAllLowValue extends CobolProgram {
         a.set(String.valueOf(""));
         b.set(String.valueOf(""));
         if (!String.valueOf(a).equals(String.valueOf("ABC"))) {
-            CobolDisplay.display();
-            /* RAW: A  */
+            CobolDisplay.display(String.valueOf(a));
         }
         if (!String.valueOf(b).equals(String.valueOf("DEF"))) {
-            CobolDisplay.display();
-            /* RAW: B  */
+            CobolDisplay.display(String.valueOf(b));
         }
         System.exit(0);
     }

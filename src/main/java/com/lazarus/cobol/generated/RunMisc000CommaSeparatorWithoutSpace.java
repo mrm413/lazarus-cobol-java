@@ -25,10 +25,12 @@ public class RunMisc000CommaSeparatorWithoutSpace extends CobolProgram {
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
-    private CobolString _unnamed = new CobolString(256);
+    private CobolString _filler_001 = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
     private void para_main() {
-        CobolDisplay.displayNoAdvancing(String.valueOf(1) + String.valueOf(_unnamed) + String.valueOf(1) + String.valueOf(_unnamed) + String.valueOf(1));
+        CobolDisplay.displayNoAdvancing(String.valueOf(1) + String.valueOf(_filler_002) + String.valueOf(1) + String.valueOf(_filler_003) + String.valueOf(1));
         System.exit(0);
     }
 

@@ -40,8 +40,7 @@ public class RunFile006OutputOnIndexedFileToMissingDirectory extends CobolProgra
         /* RAW: *  */
         file0.open("OUTPUT");
         if (!String.valueOf(wsfs).equals(String.valueOf("30"))) {
-            CobolDisplay.display("STATUS OPENO ");
-            /* RAW: WSFS  */
+            CobolDisplay.display("STATUS OPENO " + String.valueOf(wsfs));
         }
         /* RAW: *  */
         System.exit(0);

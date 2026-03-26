@@ -32,25 +32,13 @@ public class DataPacked010Comp6UsedWithDisplay extends CobolProgram {
 
     private void para_main() {
         x_99 = new BigDecimal(String.valueOf(0).trim());
-        CobolDisplay.display();
-    }
-
-    private void x_99() {
+        CobolDisplay.display(String.valueOf(x_99));
         x_99 = new BigDecimal(String.valueOf(99).trim());
-        CobolDisplay.display();
-    }
-
-    private void x_99_2() {
+        CobolDisplay.display(String.valueOf(x_99));
         x_999 = new BigDecimal(String.valueOf(0).trim());
-        CobolDisplay.display();
-    }
-
-    private void x_999() {
+        CobolDisplay.display(String.valueOf(x_999));
         x_999 = new BigDecimal(String.valueOf(123).trim());
-        CobolDisplay.display();
-    }
-
-    private void x_999_2() {
+        CobolDisplay.display(String.valueOf(x_999));
         System.exit(0);
     }
 

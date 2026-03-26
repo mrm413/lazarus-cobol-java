@@ -33,40 +33,28 @@ public class RunExtensions092BitOperations extends CobolProgram {
     private CobolString xx3 = new CobolString(2);
 
 
-    private CobolString x = new CobolString(256);
-    private CobolString _09 = new CobolString(256);
-    private CobolString to = new CobolString(256);
-    private CobolString _0 = new CobolString(256);
-    private CobolString e = new CobolString(256);
-    private CobolString b_not = new CobolString(256);
+    private CobolString x = new CobolString(256); // fallback
+    private CobolString _09 = new CobolString(256); // fallback
+    private CobolString to = new CobolString(256); // fallback
+    private CobolString _0 = new CobolString(256); // fallback
+    private CobolString e = new CobolString(256); // fallback
+    private CobolString b_not = new CobolString(256); // fallback
 
     private void para_main() {
         xx2.set(String.valueOf(2));
         x2.set(String.valueOf(2));
         xx3.set(String.valueOf(4));
-    }
-
-    private void x3() {
+        x3.set(String.valueOf(4));
         CobolDisplay.display("Test using PIC XX COMP-X");
         xx1.set(String.valueOf((xx2)));
         /* RAW: B-OR XX3 ) */
-        CobolDisplay.display(String.valueOf(xx2) + " B-OR  " + String.valueOf(xx3) + " is ");
-    }
-
-    private void xx1() {
-    }
-
-    private void xx3() {
+        CobolDisplay.display(String.valueOf(xx2) + " B-OR  " + String.valueOf(xx3) + " is " + String.valueOf(xx1));
+        xx3.set(String.valueOf(3));
         xx1.set(String.valueOf((xx2)));
         /* RAW: B-XOR XX3 ) */
-        CobolDisplay.display(String.valueOf(xx2) + " B-XOR " + String.valueOf(xx3) + " is ");
-    }
-
-    private void xx1_2() {
+        CobolDisplay.display(String.valueOf(xx2) + " B-XOR " + String.valueOf(xx3) + " is " + String.valueOf(xx1));
         xx2.set(String.valueOf(3));
-    }
-
-    private void xx1_3() {
+        xx1.set(String.valueOf(1));
         if (!String.valueOf(xx2).trim().isEmpty()) {
             /* RAW: B-AND XX1 ) = XX1 */
             CobolDisplay.display(String.valueOf(xx2) + " B-AND " + String.valueOf(xx1) + " = " + String.valueOf(xx1) + " TRUE");
@@ -75,77 +63,42 @@ public class RunExtensions092BitOperations extends CobolProgram {
         }
         xx1.set(String.valueOf((xx2)));
         /* RAW: B-XOR XX3 ) + 1 */
-        CobolDisplay.display("(" + String.valueOf(xx2) + " B-XOR " + String.valueOf(xx3) + ") + 1 is ");
-    }
-
-    private void xx1_4() {
+        CobolDisplay.display("(" + String.valueOf(xx2) + " B-XOR " + String.valueOf(xx3) + ") + 1 is " + String.valueOf(xx1));
         xx1.set(String.valueOf(xx2));
         /* RAW: B-XOR ( XX3 + 1 ) */
-        CobolDisplay.display(String.valueOf(xx2) + " B-XOR (" + String.valueOf(xx3) + " + 1) is ");
-    }
-
-    private void xx1_5() {
+        CobolDisplay.display(String.valueOf(xx2) + " B-XOR (" + String.valueOf(xx3) + " + 1) is " + String.valueOf(xx1));
         _09.set(String.valueOf(x));
         to.set(String.valueOf(x));
-    }
-
-    private void xx3_2() {
+        xx3.set(String.valueOf(x));
         _0.set(String.valueOf(x));
         e.set(String.valueOf(x));
         to.set(String.valueOf(x));
+        xx2.set(String.valueOf(x));
+        xx1.set(String.valueOf(xx2));
+        /* RAW: B-AND XX3 */
+        CobolDisplay.display(String.valueOf(xx2) + " B-AND " + String.valueOf(xx3) + " is " + String.valueOf(xx1));
+        xx1.set(String.valueOf((x)));
+        /* RAW: 05 B-OR x 22 ) */
+        CobolDisplay.display("x#05 B-OR x#22 is " + String.valueOf(xx1));
+        xx1.set(String.valueOf(b_not));
     }
 
     private void xx2() {
-        xx1.set(String.valueOf(xx2));
-        /* RAW: B-AND  */
-    }
-
-    private void xx3_3() {
-        CobolDisplay.display(String.valueOf(xx2) + " B-AND " + String.valueOf(xx3) + " is ");
-    }
-
-    private void xx1_6() {
-        xx1.set(String.valueOf((x)));
-        /* RAW: 05 B-OR x 22 ) */
-        CobolDisplay.display("x#05 B-OR x#22 is ");
-    }
-
-    private void xx1_7() {
-        xx1.set(String.valueOf(b_not));
-    }
-
-    private void xx2_2() {
-        CobolDisplay.display("B-NOT " + String.valueOf(xx2) + " is ");
-    }
-
-    private void xx1_8() {
+        CobolDisplay.display("B-NOT " + String.valueOf(xx2) + " is " + String.valueOf(xx1));
         xx1.set(String.valueOf(b_not));
         /* RAW: x 22 */
-        CobolDisplay.display("B-NOT x#22 is ");
-    }
-
-    private void xx1_9() {
+        CobolDisplay.display("B-NOT x#22 is " + String.valueOf(xx1));
         CobolDisplay.display("  -----");
         CobolDisplay.display("Test using PIC X COMP-X");
         x1.set(String.valueOf((x2)));
         /* RAW: B-OR X3 ) */
-        CobolDisplay.display(String.valueOf(x2) + " B-OR  " + String.valueOf(x3) + " is ");
-    }
-
-    private void x1() {
-    }
-
-    private void x3_2() {
+        CobolDisplay.display(String.valueOf(x2) + " B-OR  " + String.valueOf(x3) + " is " + String.valueOf(x1));
+        x3.set(String.valueOf(3));
         x1.set(String.valueOf((x2)));
         /* RAW: B-XOR X3 ) */
-        CobolDisplay.display(String.valueOf(x2) + " B-XOR " + String.valueOf(x3) + " is ");
-    }
-
-    private void x1_2() {
+        CobolDisplay.display(String.valueOf(x2) + " B-XOR " + String.valueOf(x3) + " is " + String.valueOf(x1));
         x2.set(String.valueOf(3));
-    }
-
-    private void x1_3() {
+        x1.set(String.valueOf(1));
         if (!String.valueOf(x2).trim().isEmpty()) {
             /* RAW: B-AND X1 ) = X1 */
             CobolDisplay.display(String.valueOf(x2) + " B-AND " + String.valueOf(x1) + " = " + String.valueOf(x1) + " TRUE");
@@ -154,50 +107,28 @@ public class RunExtensions092BitOperations extends CobolProgram {
         }
         x1.set(String.valueOf((x2)));
         /* RAW: B-XOR X3 ) + 1 */
-        CobolDisplay.display("(" + String.valueOf(x2) + " B-XOR " + String.valueOf(x3) + ") + 1 is ");
-    }
-
-    private void x1_4() {
+        CobolDisplay.display("(" + String.valueOf(x2) + " B-XOR " + String.valueOf(x3) + ") + 1 is " + String.valueOf(x1));
         x1.set(String.valueOf(x2));
         /* RAW: B-XOR ( X3 + 1 ) */
-        CobolDisplay.display(String.valueOf(x2) + " B-XOR (" + String.valueOf(x3) + " + 1) is ");
-    }
-
-    private void x1_5() {
+        CobolDisplay.display(String.valueOf(x2) + " B-XOR (" + String.valueOf(x3) + " + 1) is " + String.valueOf(x1));
         _09.set(String.valueOf(x));
         to.set(String.valueOf(x));
-    }
-
-    private void x3_3() {
+        x3.set(String.valueOf(x));
         _0.set(String.valueOf(x));
         e.set(String.valueOf(x));
         to.set(String.valueOf(x));
+        x2.set(String.valueOf(x));
+        x1.set(String.valueOf(x2));
+        /* RAW: B-AND X3 */
+        CobolDisplay.display(String.valueOf(x2) + " B-AND " + String.valueOf(x3) + " is " + String.valueOf(x1));
+        x1.set(String.valueOf(b_not));
     }
 
     private void x2() {
-        x1.set(String.valueOf(x2));
-        /* RAW: B-AND  */
-    }
-
-    private void x3_4() {
-        CobolDisplay.display(String.valueOf(x2) + " B-AND " + String.valueOf(x3) + " is ");
-    }
-
-    private void x1_6() {
-        x1.set(String.valueOf(b_not));
-    }
-
-    private void x2_2() {
-        CobolDisplay.display("B-NOT " + String.valueOf(x2) + " is ");
-    }
-
-    private void x1_7() {
+        CobolDisplay.display("B-NOT " + String.valueOf(x2) + " is " + String.valueOf(x1));
         x1.set(String.valueOf(b_not));
         /* RAW: x 22 */
-        CobolDisplay.display("B-NOT x#22 is ");
-    }
-
-    private void x1_8() {
+        CobolDisplay.display("B-NOT x#22 is " + String.valueOf(x1));
         System.exit(0);
     }
 

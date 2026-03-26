@@ -31,12 +31,9 @@ public class RunFunctions086FunctionReverse extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void z() {
+        z.set(String.valueOf(CobolIntrinsics.reverse(x)));
         if (!String.valueOf(z).equals(String.valueOf("$E+D%C.B#A"))) {
-            CobolDisplay.display();
-            /* RAW: Z  */
+            CobolDisplay.display(String.valueOf(z));
         }
         System.exit(0);
     }

@@ -33,12 +33,8 @@ public class SynFile005AssignToPrinterName extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void test_file() {
-    }
-
-    private void test_file_2() {
+        test_file.open("INPUT");
+        test_file.close();
         System.exit(0);
     }
 

@@ -29,11 +29,14 @@ public class RunMisc146AlphanumericMoveWithTruncation extends CobolProgram {
     private CobolString x_right = new CobolString(3);
 
 
-    private CobolString _unnamed = new CobolString(256);
+    private CobolString _filler_001 = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
+    private CobolString _filler_004 = new CobolString(256); // fallback
     private void para_main() {
         x_left.set(String.valueOf("1234"));
-        _unnamed.set(String.valueOf("1234"));
+        _filler_002.set(String.valueOf("1234"));
         x_right.set(String.valueOf("1234"));
         if ((!String.valueOf(x_left).equals(String.valueOf("123")) || !String.valueOf(x_right).equals(String.valueOf("234")))) {
             CobolDisplay.display("error with \"1234\":");
@@ -41,7 +44,7 @@ public class RunMisc146AlphanumericMoveWithTruncation extends CobolProgram {
             CobolDisplay.display(String.valueOf(x_right));
         }
         x_left.set(String.valueOf("   3"));
-        _unnamed.set(String.valueOf("   3"));
+        _filler_003.set(String.valueOf("   3"));
         x_right.set(String.valueOf("   3"));
         if ((!String.valueOf(x_left).equals(String.valueOf(" ")) || !String.valueOf(x_right).equals(String.valueOf("  3")))) {
             CobolDisplay.display("error with \"   3\":");
@@ -49,7 +52,7 @@ public class RunMisc146AlphanumericMoveWithTruncation extends CobolProgram {
             CobolDisplay.display(String.valueOf(x_right));
         }
         x_left.set(String.valueOf("3   "));
-        _unnamed.set(String.valueOf("3   "));
+        _filler_004.set(String.valueOf("3   "));
         x_right.set(String.valueOf("3   "));
         if ((!String.valueOf(x_left).equals(String.valueOf("3")) || !String.valueOf(x_right).equals(String.valueOf(" ")))) {
             CobolDisplay.display("error with \"3   \":");

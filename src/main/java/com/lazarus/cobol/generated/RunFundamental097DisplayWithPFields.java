@@ -33,14 +33,15 @@ public class RunFundamental097DisplayWithPFields extends CobolProgram {
     private int p6 = 0;
 
 
-    private CobolString _unnamed = new CobolString(256);
+    private CobolString _filler_001 = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
     private void para_main() {
         CobolDisplay.display("00=" + String.valueOf(p2) + "; 001=" + String.valueOf(p1) + "; 00=" + String.valueOf(p2) + ";");
         CobolDisplay.display(".00=" + String.valueOf(p4) + "; .000=" + String.valueOf(p5) + "; .123=" + String.valueOf(p3) + "; " + ".00=" + String.valueOf(p4) + "; .000=" + String.valueOf(p5) + ";");
         p2 = new BigDecimal(String.valueOf(p1).trim()).intValue();
         p4 = new BigDecimal(String.valueOf(p3).trim());
-        _unnamed.set(String.valueOf(p3));
+        _filler_002.set(String.valueOf(p3));
         p5 = new BigDecimal(String.valueOf(p3).trim());
         CobolDisplay.display("00=" + String.valueOf(p2) + "; .02=" + String.valueOf(p4) + "; .003=" + String.valueOf(p5) + ";");
         CobolDisplay.display("10=" + String.valueOf(p6) + ";");

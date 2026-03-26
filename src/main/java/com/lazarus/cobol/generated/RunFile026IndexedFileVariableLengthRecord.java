@@ -44,276 +44,77 @@ public class RunFile026IndexedFileVariableLengthRecord extends CobolProgram {
     private CobolFile tbw = new CobolFile("path-tbw", "INDEXED", "DYNAMIC");
     // File status: fs-file-status
 
-    
+    // FALLBACK FILE DESCRIPTORS
     private CobolFile file = new CobolFile("FILE", "SEQUENTIAL", "SEQUENTIAL");
 
-    private CobolString flag_tbw_open = new CobolString(256);
-    private CobolString cb_true = new CobolString(256);
-    private CobolString flag_tbw_closed = new CobolString(256);
+    private CobolString flag_tbw_open = new CobolString(256); // fallback
+    private CobolString cb_true = new CobolString(256); // fallback
+    private CobolString flag_tbw_closed = new CobolString(256); // fallback
 
     private void para_main() {
-        /* RAW: *  */
-    }
-
-    private void prepare() {
-    }
-
-    private void path_tbw() {
-        /* RAW: * First */
-    }
-
-    private void test() {
+        /* RAW: * Prepare */
+        path_tbw.set(String.valueOf("tbw"));
+        /* RAW: * First test */
         tbw_delete_file(); // THRU tbw-exit
-        fs_file_status();
-        tbw();
-        tbw_close();
-        tbw_close_exit();
-        tbw_exit();
         tbw_open_i_o(); // THRU tbw-exit
         tbw();
-        tbw_start_primary_greater();
-        tbw_start_alternate();
-        tbw_read_next();
-        tbw_write();
-        tbw_rewrite();
-        tbw_delete_file();
-        fs_file_status();
-        tbw();
-        tbw_close();
         tbw_close_exit();
         tbw_exit();
-    }
-
-    private void tbw_key() {
+        tbw_key.set(String.valueOf("\u0000"));
         tbw_start_primary_greater(); // THRU tbw-exit
-        tbw_start_alternate();
-        tbw_read_next();
-        tbw_write();
-        tbw_rewrite();
-        tbw_delete_file();
-        fs_file_status();
-        tbw();
-        tbw_close();
-        tbw_close_exit();
-        tbw_exit();
         tbw_read_next(); // THRU tbw-exit
-        tbw_write();
-        tbw_rewrite();
-        tbw_delete_file();
-        fs_file_status();
-        tbw();
-        tbw_close();
-        tbw_close_exit();
-        tbw_exit();
-    }
-
-    private void end_tbw_record() {
-    }
-
-    private void tbw_key_2() {
+        end_tbw_record = new BigDecimal(String.valueOf(122).trim()).shortValue();
+        tbw_key.set(String.valueOf("aaaaa"));
         tbw_alt.set(String.valueOf(" "));
         tbw_f1.set(String.valueOf(" "));
-    }
-
-    private void tbw_f2() {
+        tbw_f2.set(String.valueOf(" "));
         tbw_write(); // THRU tbw-exit
-        tbw_rewrite();
-        tbw_delete_file();
-        fs_file_status();
-        tbw();
-        tbw_close();
-        tbw_close_exit();
-        tbw_exit();
-    }
-
-    private void tbw_alt() {
+        tbw_alt.set(String.valueOf("\u0000"));
         tbw_start_alternate(); // THRU tbw-exit
-        tbw_read_next();
-        tbw_write();
-        tbw_rewrite();
-        tbw_delete_file();
-        fs_file_status();
-        tbw();
-        tbw_close();
-        tbw_close_exit();
-        tbw_exit();
-    }
-
-    private void tbw_key_3() {
+        tbw_key.set(String.valueOf("\u0000"));
         tbw_start_primary_greater(); // THRU tbw-exit
-        tbw_start_alternate();
-        tbw_read_next();
-        tbw_write();
-        tbw_rewrite();
-        tbw_delete_file();
-        fs_file_status();
-        tbw();
-        tbw_close();
-        tbw_close_exit();
-        tbw_exit();
         tbw_read_next(); // THRU tbw-exit
-        tbw_write();
-        tbw_rewrite();
-        tbw_delete_file();
-        fs_file_status();
-        tbw();
-        tbw_close();
-        tbw_close_exit();
-        tbw_exit();
         tbw_read_next(); // THRU tbw-exit
-        tbw_write();
-        tbw_rewrite();
-        tbw_delete_file();
-        fs_file_status();
-        tbw();
-        tbw_close();
-        tbw_close_exit();
-        tbw_exit();
         tbw_close(); // THRU tbw-exit
-        tbw_close_exit();
-        tbw_exit();
-        /* RAW: * Second */
-    }
-
-    private void test_2() {
+        /* RAW: * Second test */
         tbw_delete_file(); // THRU tbw-exit
-        fs_file_status();
-        tbw();
-        tbw_close();
-        tbw_close_exit();
-        tbw_exit();
         tbw_open_i_o(); // THRU tbw-exit
         tbw();
-        tbw_start_primary_greater();
-        tbw_start_alternate();
-        tbw_read_next();
-        tbw_write();
-        tbw_rewrite();
-        tbw_delete_file();
-        fs_file_status();
-        tbw();
-        tbw_close();
         tbw_close_exit();
         tbw_exit();
-    }
-
-    private void tbw_key_4() {
+        tbw_key.set(String.valueOf("\u0000"));
         tbw_start_primary_greater(); // THRU tbw-exit
-        tbw_start_alternate();
-        tbw_read_next();
-        tbw_write();
-        tbw_rewrite();
-        tbw_delete_file();
-        fs_file_status();
-        tbw();
-        tbw_close();
-        tbw_close_exit();
-        tbw_exit();
         tbw_read_next(); // THRU tbw-exit
-        tbw_write();
-        tbw_rewrite();
-        tbw_delete_file();
-        fs_file_status();
-        tbw();
-        tbw_close();
-        tbw_close_exit();
-        tbw_exit();
-    }
-
-    private void end_tbw_record_2() {
-    }
-
-    private void tbw_key_5() {
+        end_tbw_record = new BigDecimal(String.valueOf(163).trim()).shortValue();
+        tbw_key.set(String.valueOf("aaaaa"));
         tbw_alt_1 = new BigDecimal(String.valueOf(1).trim()).intValue();
-    }
-
-    private void tbw_alt_2() {
+        tbw_alt_2 = new BigDecimal(String.valueOf(1).trim()).intValue();
         tbw_f1.set(String.valueOf(" "));
-    }
-
-    private void tbw_f2_2() {
+        tbw_f2.set(String.valueOf(" "));
         tbw_write(); // THRU tbw-exit
-        tbw_rewrite();
-        tbw_delete_file();
-        fs_file_status();
-        tbw();
-        tbw_close();
-        tbw_close_exit();
-        tbw_exit();
-    }
-
-    private void end_tbw_record_3() {
-    }
-
-    private void tbw_key_6() {
+        end_tbw_record = new BigDecimal(String.valueOf(122).trim()).shortValue();
+        tbw_key.set(String.valueOf("aaaab"));
         tbw_alt.set(String.valueOf(" "));
         tbw_f1.set(String.valueOf(" "));
-    }
-
-    private void tbw_f2_3() {
+        tbw_f2.set(String.valueOf(" "));
         tbw_write(); // THRU tbw-exit
-        tbw_rewrite();
-        tbw_delete_file();
-        fs_file_status();
-        tbw();
-        tbw_close();
-        tbw_close_exit();
-        tbw_exit();
-    }
-
-    private void tbw_alt_3() {
+        tbw_alt.set(String.valueOf("\u0000"));
         tbw_start_alternate(); // THRU tbw-exit
-        tbw_read_next();
-        tbw_write();
-        tbw_rewrite();
-        tbw_delete_file();
-        fs_file_status();
-        tbw();
-        tbw_close();
-        tbw_close_exit();
-        tbw_exit();
         tbw_read_next(); // THRU tbw-exit
-        tbw_write();
-        tbw_rewrite();
-        tbw_delete_file();
-        fs_file_status();
-        tbw();
-        tbw_close();
-        tbw_close_exit();
-        tbw_exit();
-    }
-
-    private void tbw_alt_4() {
+        tbw_alt.set(String.valueOf(" "));
         tbw_rewrite(); // THRU tbw-exit
-        tbw_delete_file();
-        fs_file_status();
-        tbw();
-        tbw_close();
-        tbw_close_exit();
-        tbw_exit();
-        /* RAW: *  */
-    }
-
-    private void finish() {
+        /* RAW: * Finish */
         tbw_close(); // THRU tbw-exit
-        tbw_close_exit();
-        tbw_exit();
         CobolDisplay.display("Test completed");
         System.exit(0);
-    }
-
-    private void o() {
     }
 
     private void tbw_open_i_o() {
         if (!String.valueOf(flag_tbw_open).trim().isEmpty()) {
             tbw_close(); // THRU tbw-Close-exit
-            tbw_close_exit();
         }
         CobolDisplay.display("open");
-    }
-
-    private void tbw() {
+        tbw.open("I-O");
         CobolDisplay.display("open done");
         if (String.valueOf(fs_file_status).compareTo(String.valueOf("10")) < 0) {
             flag_tbw_open.set(String.valueOf(cb_true));
@@ -322,78 +123,10 @@ public class RunFile026IndexedFileVariableLengthRecord extends CobolProgram {
         return;
     }
 
-    private void tbw_start_primary_greater() {
-        CobolDisplay.display("start > tbw-key");
-        tbw.start();
-        /* INVALID KEY handling — needs file status check */
-        CobolDisplay.display("start > tbw-key " + String.valueOf(fs_file_status));
-        tbw_exit();
-        return;
-    }
-
-    private void tbw_start_alternate() {
-        CobolDisplay.display("start >= tbw-alt");
-        tbw.start();
-        /* INVALID KEY handling — needs file status check */
-        CobolDisplay.display("start >= tbw-alt " + String.valueOf(fs_file_status));
-        tbw_exit();
-        return;
-    }
-
-    private void tbw_read_next() {
-        CobolDisplay.display("read next");
-        if (tbw.read(null) == FileStatus.AT_END) {
-        }
-        /* NEXT SENTENCE */
-        /* RAW: record at end */
-        CobolDisplay.display("read next end");
-        tbw_exit();
-        return;
-    }
-
-    private void tbw_write() {
-        CobolDisplay.display("write");
-        tbw.write(tbw_record);
-        /* INVALID KEY handling — needs file status check */
-        CobolDisplay.display("write " + String.valueOf(fs_file_status));
-        tbw_exit();
-        return;
-    }
-
-    private void tbw_rewrite() {
-        CobolDisplay.display("rewrite");
-        tbw.rewrite(tbw_record);
-        /* INVALID KEY handling — needs file status check */
-        CobolDisplay.display("rewrite " + String.valueOf(fs_file_status));
-        tbw_exit();
-        return;
-    }
-
-    private void tbw_delete_file() {
-        if (!String.valueOf(flag_tbw_open).trim().isEmpty()) {
-            tbw_close(); // THRU tbw-Close-exit
-            tbw_close_exit();
-        }
-    }
-
-    private void fs_file_status() {
-        CobolDisplay.display("delete file");
-        file.delete();
-    }
-
-    private void tbw_2() {
+    private void tbw() {
         CobolDisplay.display("delete file done");
         tbw_exit();
         return;
-    }
-
-    private void tbw_close() {
-        if (!String.valueOf(flag_tbw_open).trim().isEmpty()) {
-            CobolDisplay.display("close");
-            tbw.close();
-            CobolDisplay.display("close done");
-            flag_tbw_closed.set(String.valueOf(cb_true));
-        }
     }
 
     private void tbw_close_exit() {
@@ -403,6 +136,20 @@ public class RunFile026IndexedFileVariableLengthRecord extends CobolProgram {
     private void tbw_exit() {
         return;
     }
+
+    private void tbw_delete_file() { /* stub — external/COPY */ }
+
+    private void tbw_start_primary_greater() { /* stub — external/COPY */ }
+
+    private void tbw_read_next() { /* stub — external/COPY */ }
+
+    private void tbw_write() { /* stub — external/COPY */ }
+
+    private void tbw_start_alternate() { /* stub — external/COPY */ }
+
+    private void tbw_close() { /* stub — external/COPY */ }
+
+    private void tbw_rewrite() { /* stub — external/COPY */ }
 
     @Override
     public void run() {

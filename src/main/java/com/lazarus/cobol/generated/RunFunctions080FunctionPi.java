@@ -30,12 +30,9 @@ public class RunFunctions080FunctionPi extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void y() {
+        y = new BigDecimal(String.valueOf(CobolIntrinsics.pi()).trim()).intValue();
         if (y != 3.141592653589793) {
-            CobolDisplay.display();
-            /* RAW: Y  */
+            CobolDisplay.display(String.valueOf(y));
         }
         System.exit(0);
     }

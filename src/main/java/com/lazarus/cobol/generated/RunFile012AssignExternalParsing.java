@@ -37,12 +37,8 @@ public class RunFile012AssignExternalParsing extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void test_file() {
-    }
-
-    private void test_file_2() {
+        test_file.open("OUTPUT");
+        test_file.close();
         System.exit(0);
     }
 

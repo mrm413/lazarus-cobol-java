@@ -25,7 +25,7 @@ public class SynMisc124DisplayDirective3 extends CobolProgram {
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
-    private CobolString ok = new CobolString(256);
+    private CobolString ok = new CobolString(256); // fallback
 
     private void para_main() {
         CobolDisplay.display(String.valueOf(ok));

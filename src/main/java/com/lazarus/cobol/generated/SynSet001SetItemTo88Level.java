@@ -29,9 +29,9 @@ public class SynSet001SetItemTo88Level extends CobolProgram {
     private CobolString y = new CobolString(1);
 
 
-    private CobolString x_wrong_init = new CobolString(256);
-    private CobolString cb_true = new CobolString(256);
-    private CobolString y_wrong_init = new CobolString(256);
+    private CobolString x_wrong_init = new CobolString(256); // fallback
+    private CobolString cb_true = new CobolString(256); // fallback
+    private CobolString y_wrong_init = new CobolString(256); // fallback
 
     private void para_main() {
         x_wrong_init.set(String.valueOf(cb_true));

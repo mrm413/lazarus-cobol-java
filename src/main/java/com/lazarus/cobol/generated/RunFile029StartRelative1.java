@@ -36,33 +36,27 @@ public class RunFile029StartRelative1 extends CobolProgram {
     private CobolFile test_file = new CobolFile("TESTFILE", "RELATIVE", "DYNAMIC");
     // File status: TESTSTAT
 
-    
+    // FALLBACK FILE DESCRIPTORS
     private CobolFile file = new CobolFile("FILE", "SEQUENTIAL", "SEQUENTIAL");
 
-    private CobolString v_ok = new CobolString(256);
+    private CobolString v_ok = new CobolString(256); // fallback
 
     private void para_main() {
         file.delete();
     }
 
     private void test_file() {
-    }
-
-    private void test_file_2() {
+        test_file.open("I-O");
         if (!(!String.valueOf(v_ok).trim().isEmpty())) {
             CobolDisplay.display("OPEN " + String.valueOf(teststat));
             return;
         }
-    }
-
-    private void testkey() {
+        testkey = new BigDecimal(String.valueOf(99).trim()).intValue();
         test_file.start();
         if (!String.valueOf(teststat).equals(String.valueOf("23"))) {
             CobolDisplay.display("START " + String.valueOf(teststat));
         }
-    }
-
-    private void test_file_3() {
+        test_file.close();
     }
 
     @Override

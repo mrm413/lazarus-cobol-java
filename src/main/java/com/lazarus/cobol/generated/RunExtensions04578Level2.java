@@ -28,6 +28,7 @@ public class RunExtensions04578Level2 extends CobolProgram {
     private CobolString z = new CobolString(1);
     private static final String x = "OK";
     private static final String y = "OK";
+    private CobolString filler_1 = new CobolString(2);
 
 
 

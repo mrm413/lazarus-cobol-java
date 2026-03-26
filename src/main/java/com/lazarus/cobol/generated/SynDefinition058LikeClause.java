@@ -27,8 +27,11 @@ public class SynDefinition058LikeClause extends CobolProgram {
     // WORKING-STORAGE SECTION
     private CobolString message_text_2 = new CobolString(1); // Group: MESSAGE-TEXT-2
     private CobolString ausgabe_file_name = new CobolString(50);
+    private CobolString filler_1 = new CobolString(1);
     private CobolString ausgabe_file_name_2 = new CobolString(1); // Group: AUSGABE-FILE-NAME-2
+    private CobolString filler_2 = new CobolString(1);
     private int detail_no = 0;
+    private CobolString filler_3 = new CobolString(1);
     private CobolString output_val = new CobolString(1);
     private CobolString output_val_p1 = new CobolString(1);
     private CobolString output_val_p1b = new CobolString(1);
@@ -43,7 +46,7 @@ public class SynDefinition058LikeClause extends CobolProgram {
         CobolDisplay.display(String.valueOf(ausgabe_file_name));
         CobolDisplay.display(String.valueOf(CobolString.refMod(z_message_t2, 55, CobolIntrinsics.length(detail_no))));
         CobolDisplay.display(String.valueOf(CobolString.refMod(mt3, 1, CobolIntrinsics.length(ausgabe_file_name))));
-    // detail_no = new BigDecimal(String.valueOf(detail_no + output_val).trim()).intValue();
+        // KNOWN_ISSUE: detail_no = new BigDecimal(String.valueOf(detail_no + output_val).trim()).intValue();
         return;
     }
 

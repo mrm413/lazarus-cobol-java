@@ -34,8 +34,7 @@ public class RunMisc069NonOverflowAfterOverflow extends CobolProgram {
         x = new BigDecimal(String.valueOf(100).trim()).intValue();
         y = new BigDecimal(String.valueOf(99).trim()).intValue();
         if ((x != 0 && y != 99)) {
-            CobolDisplay.display();
-            /* RAW: Y  */
+            CobolDisplay.display(String.valueOf(y));
         }
         System.exit(0);
     }

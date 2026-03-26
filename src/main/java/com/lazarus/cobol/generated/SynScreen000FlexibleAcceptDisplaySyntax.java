@@ -28,27 +28,36 @@ public class SynScreen000FlexibleAcceptDisplaySyntax extends CobolProgram {
     private CobolString a_field = new CobolString(3);
 
 
-    private CobolString col = new CobolString(256);
-    private CobolString highlight = new CobolString(256);
-    private CobolString at = new CobolString(256);
-    private CobolString line = new CobolString(256);
-    private CobolString underline = new CobolString(256);
-    private CobolString _unnamed = new CobolString(256);
-    private CobolString scr = new CobolString(256);
+    private CobolString col = new CobolString(256); // fallback
+    private CobolString highlight = new CobolString(256); // fallback
+    private CobolString at = new CobolString(256); // fallback
+    private CobolString line = new CobolString(256); // fallback
+    private CobolString underline = new CobolString(256); // fallback
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString scr = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
+    private CobolString _filler_004 = new CobolString(256); // fallback
+    private CobolString _filler_005 = new CobolString(256); // fallback
+    private CobolString _filler_006 = new CobolString(256); // fallback
+    private CobolString _filler_007 = new CobolString(256); // fallback
+    private CobolString _filler_008 = new CobolString(256); // fallback
+    private CobolString _filler_009 = new CobolString(256); // fallback
+    private CobolString _filler_010 = new CobolString(256); // fallback
     private void para_main() {
         CobolDisplay.displayNoAdvancing("123" + "456" + "789");
-        CobolDisplay.display("foo" + String.valueOf(col) + String.valueOf(1) + String.valueOf(highlight) + String.valueOf(at) + String.valueOf(line) + String.valueOf(1) + String.valueOf(underline) + String.valueOf(_unnamed) + "bar" + String.valueOf(_unnamed) + "foo");
-        CobolDisplay.display("a" + String.valueOf(_unnamed) + "b" + String.valueOf(line) + String.valueOf(3) + String.valueOf(col) + String.valueOf(3) + String.valueOf(_unnamed) + "c");
-        CobolDisplay.display(String.valueOf(scr) + String.valueOf(_unnamed) + String.valueOf(scr));
+        CobolDisplay.display("foo" + String.valueOf(col) + String.valueOf(1) + String.valueOf(highlight) + String.valueOf(at) + String.valueOf(line) + String.valueOf(1) + String.valueOf(underline) + String.valueOf(_filler_002) + "bar" + String.valueOf(_filler_003) + "foo");
+        CobolDisplay.display("a" + String.valueOf(_filler_004) + "b" + String.valueOf(line) + String.valueOf(3) + String.valueOf(col) + String.valueOf(3) + String.valueOf(_filler_005) + "c");
+        CobolDisplay.display(String.valueOf(scr) + String.valueOf(_filler_006) + String.valueOf(scr));
         a_field.set(String.valueOf(CobolDisplay.accept()));
         /* RAW: LINE 5 SIZE 3 AT COL */
         CobolDisplay.displayNoAdvancing(String.valueOf(scr));
-        CobolDisplay.display(String.valueOf(scr) + String.valueOf(_unnamed) + String.valueOf(scr) + String.valueOf(line) + String.valueOf(2) + String.valueOf(col) + String.valueOf(2));
-        CobolDisplay.display("foo" + String.valueOf(line) + String.valueOf(2) + String.valueOf(col) + String.valueOf(2) + String.valueOf(_unnamed) + String.valueOf(scr));
-        CobolDisplay.display("foo" + String.valueOf(line) + String.valueOf(2) + String.valueOf(col) + String.valueOf(2) + String.valueOf(_unnamed) + "bar");
+        CobolDisplay.display(String.valueOf(scr) + String.valueOf(_filler_007) + String.valueOf(scr) + String.valueOf(line) + String.valueOf(2) + String.valueOf(col) + String.valueOf(2));
+        CobolDisplay.display("foo" + String.valueOf(line) + String.valueOf(2) + String.valueOf(col) + String.valueOf(2) + String.valueOf(_filler_008) + String.valueOf(scr));
+        CobolDisplay.display("foo" + String.valueOf(line) + String.valueOf(2) + String.valueOf(col) + String.valueOf(2) + String.valueOf(_filler_009) + "bar");
         CobolDisplay.display("foo" + String.valueOf(line) + String.valueOf(1));
-        CobolDisplay.display(String.valueOf(scr) + String.valueOf(_unnamed) + "foo");
+        CobolDisplay.display(String.valueOf(scr) + String.valueOf(_filler_010) + "foo");
     }
 
     @Override

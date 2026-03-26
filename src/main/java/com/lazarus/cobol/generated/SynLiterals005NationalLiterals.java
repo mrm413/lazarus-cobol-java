@@ -25,7 +25,7 @@ public class SynLiterals005NationalLiterals extends CobolProgram {
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
-    private CobolString nc = new CobolString(256);
+    private CobolString nc = new CobolString(256); // fallback
 
     private void para_main() {
         CobolDisplay.display("UTF-16 string");

@@ -24,37 +24,10 @@ public class SynMisc011InspectInvalidSize extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
-    // WORKING-STORAGE SECTION
-    private int x_pos = 0;
-    private CobolString[] x = new CobolString[2];
 
-
-
-    private void para_main() {
-        /* INSPECT X — 2 clause(s) */
-        /* INSPECT X — 2 clause(s) */
-        /* INSPECT X — 2 clause(s) */
-    }
-
-    private void spaces() {
-        /* INSPECT X — 2 clause(s) */
-        /* INSPECT X — 2 clause(s) */
-        /* INSPECT X — 2 clause(s) */
-    }
-
-    private void spaces_2() {
-        /* INSPECT X — 2 clause(s) */
-    }
-
-    private void alpha() {
-        /* INSPECT X — 2 clause(s) */
-        /* INSPECT X — 2 clause(s) */
-        System.exit(0);
-    }
 
     @Override
     public void run() {
-        para_main();
     }
 
     public static void main(String[] args) {

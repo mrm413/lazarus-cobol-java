@@ -35,27 +35,17 @@ public class RunFile062IndexedSequentialBasicIO extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void filex() {
-    }
-
-    private void filex_rec() {
+        filex.open("OUTPUT");
+        filex_rec.set(String.valueOf("A"));
         filex.write(filex_rec);
-    }
-
-    private void filex_2() {
-    }
-
-    private void filex_3() {
+        filex.close();
+        filex.open("INPUT");
         if (filex.read(null) == FileStatus.AT_END) {
         }
         if (!String.valueOf(filex_rec).equals(String.valueOf("A"))) {
             CobolDisplay.display("FAILED");
         }
-    }
-
-    private void filex_4() {
+        filex.close();
         System.exit(0);
     }
 

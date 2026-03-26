@@ -30,7 +30,7 @@ public class RunMisc061ExitPerform extends CobolProgram {
         for (int _i0 = 0; _i0 < 2; _i0++) {
             CobolDisplay.displayNoAdvancing("OK");
             break;
-    // CobolDisplay.display("NOT OK");
+        // KNOWN_ISSUE: CobolDisplay.display("NOT OK");
         }
         System.exit(0);
     }

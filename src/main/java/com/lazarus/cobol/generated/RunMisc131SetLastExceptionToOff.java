@@ -28,9 +28,9 @@ public class RunMisc131SetLastExceptionToOff extends CobolProgram {
     private int x = 0;
 
 
-    private CobolString last = new CobolString(256);
-    private CobolString off = new CobolString(256);
-    private CobolString exception = new CobolString(256);
+    private CobolString last = new CobolString(256); // fallback
+    private CobolString off = new CobolString(256); // fallback
+    private CobolString exception = new CobolString(256); // fallback
 
     private void para_main() {
         x = new BigDecimal(String.valueOf(10).trim()).intValue();

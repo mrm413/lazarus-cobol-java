@@ -35,28 +35,39 @@ public class RunMisc140DumpFeatureWithNullAddress extends CobolProgram {
     private long[] tab_adr_adr_64 = new long[1000];
     private long[] tab_adr_last_adr_64 = new long[1000];
     private CobolString grp_x = new CobolString(1); // Group: GRP-X
+    private CobolString filler_1 = new CobolString(3);
     private CobolString[] fld_x = new CobolString[10]; // Group: FLD-X
     private int[] fld_x_y = new int[10];
     private int[] fld_x_m = new int[10];
     private CobolString[] fld_x_x = new CobolString[10];
+    private CobolString filler_2 = new CobolString(3);
     private CobolString grp_1 = new CobolString(1); // Group: GRP-1
+    private CobolString filler_3 = new CobolString(3);
     private CobolString[] fld_1 = new CobolString[10]; // Group: FLD-1
     private int[] fld_1_y = new int[10];
     private int[] fld_1_m = new int[10];
     private CobolString[] fld_1_x = new CobolString[10];
+    private CobolString filler_4 = new CobolString(3);
     private CobolString grp_2 = new CobolString(1); // Group: GRP-2
+    private CobolString filler_5 = new CobolString(3);
     private CobolString fld_2 = new CobolString(42);
+    private CobolString filler_6 = new CobolString(3);
     private CobolString grp_2a = new CobolString(1); // Group: GRP-2A
+    private CobolString filler_7 = new CobolString(3);
     private CobolString fld_2a = new CobolString(8);
+    private CobolString filler_8 = new CobolString(3);
     private CobolString grp_3 = new CobolString(1); // Group: GRP-3
+    private CobolString filler_9 = new CobolString(3);
     private CobolString[] fld_3 = new CobolString[3]; // Group: FLD-3
     private CobolString[] fld_3_2 = new CobolString[3];
     private int[] fld_3_3 = new int[3];
     private CobolString[][] fld_3o_1 = new CobolString[3][4];
     private int[][] fld_3o_2 = new int[3][4];
     private CobolString[] fld_3_4 = new CobolString[3];
+    private CobolString filler_10 = new CobolString(3);
     private int c5 = 0;
     private CobolString grp_5 = new CobolString(1); // Group: GRP-5
+    private CobolString filler_11 = new CobolString(3);
     private CobolString fld_5 = new CobolString(1); // Group: FLD-5
     private CobolString[] fld_5_1 = new CobolString[9]; // Group: FLD-5-1
     private CobolString[] fld_5_2 = new CobolString[9];
@@ -73,19 +84,17 @@ public class RunMisc140DumpFeatureWithNullAddress extends CobolProgram {
     private CobolString[] col2 = new CobolString[100];
 
 
-    private CobolString numeric = new CobolString(256);
-    private CobolString to = new CobolString(256);
-    private CobolString value = new CobolString(256);
-    private CobolString _unnamed = new CobolString(256);
-    private CobolString address = new CobolString(256);
+    private CobolString numeric = new CobolString(256); // fallback
+    private CobolString to = new CobolString(256); // fallback
+    private CobolString value = new CobolString(256); // fallback
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString address = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
     private void para_main() {
         grp_2.set(String.valueOf("*"));
         fld_2.set("");
-        CobolDisplay.display("GRP-2:");
-    }
-
-    private void grp_2() {
+        CobolDisplay.display("GRP-2:" + String.valueOf(grp_2));
         /* RAW: *  */
         grp_3.set(String.valueOf("*"));
         grp_3.set("");
@@ -100,20 +109,14 @@ public class RunMisc140DumpFeatureWithNullAddress extends CobolProgram {
         fld_3[3 - 1].set("");
         if (fld_3o_1[3 - 1][2 - 1] == null) fld_3o_1[3 - 1][2 - 1] = new CobolString(1);
         fld_3o_1[3 - 1][2 - 1].set("");
-        _unnamed.set("");
+        _filler_002.set("");
         fld_3o_2[3 - 1][2 - 1] = 0;
-        CobolDisplay.display("GRP-3:");
-    }
-
-    private void grp_3() {
+        CobolDisplay.display("GRP-3:" + String.valueOf(grp_3));
         /* RAW: *  */
         c5 = new BigDecimal(String.valueOf(7).trim()).intValue();
         grp_5.set(String.valueOf("*"));
         fld_5.set("");
-        CobolDisplay.display("GRP-5:");
-    }
-
-    private void grp_5() {
+        CobolDisplay.display("GRP-5:" + String.valueOf(grp_5));
         /* RAW: *  */
         grp_2a.set(String.valueOf(" "));
         grp_2a.setRefMod(510, 4, String.valueOf("Peek"));

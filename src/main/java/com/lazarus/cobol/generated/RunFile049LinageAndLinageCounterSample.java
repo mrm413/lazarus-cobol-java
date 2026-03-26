@@ -30,12 +30,22 @@ public class RunFile049LinageAndLinageCounterSample extends CobolProgram {
     private CobolString data_file_status = new CobolString(2);
     private int lc = 0;
     private CobolString report_line_blank = new CobolString(1); // Group: report-line-blank
+    private CobolString filler_1 = new CobolString(6);
+    private CobolString filler_2 = new CobolString(6);
+    private CobolString filler_3 = new CobolString(6);
+    private CobolString filler_4 = new CobolString(6);
+    private CobolString filler_5 = new CobolString(6);
     private CobolString report_line_data = new CobolString(1); // Group: report-line-data
     private int body_tag = 0;
     private CobolString line_3 = new CobolString(74);
     private CobolString report_line_header = new CobolString(1); // Group: report-line-header
+    private CobolString filler_6 = new CobolString(6);
     private int page_no = 0;
+    private CobolString filler_7 = new CobolString(6);
+    private CobolString filler_8 = new CobolString(6);
     private int header_tag = 0;
+    private CobolString filler_9 = new CobolString(6);
+    private CobolString filler_10 = new CobolString(6);
     private CobolString page_date = new CobolString(6);
     private int page_count = 0;
 
@@ -52,54 +62,28 @@ public class RunFile049LinageAndLinageCounterSample extends CobolProgram {
     // File status: data-file-status
     private CobolFile mini_report = new CobolFile("mini-report", "SEQUENTIAL", "SEQUENTIAL");
 
-    private CobolString endofdata = new CobolString(256);
-    private CobolString linage_counter = new CobolString(256);
-    private CobolString cb_true = new CobolString(256);
+    private CobolString endofdata = new CobolString(256); // fallback
+    private CobolString linage_counter = new CobolString(256); // fallback
+    private CobolString cb_true = new CobolString(256); // fallback
 
     private void para_main() {
-    }
-
-    private void data_file() {
+        data_file.open("INPUT");
         if (data_file.read(null) == FileStatus.AT_END) {
             CobolDisplay.display("File open error: " + String.valueOf(data_file_status));
             System.exit(0);
         }
-    }
-
-    private void mini_report() {
+        mini_report.open("OUTPUT");
         mini_report.write(report_line_blank);
-    }
-
-    private void page_count() {
+        page_count = new BigDecimal(String.valueOf(1).trim()).intValue();
         page_date.set(String.valueOf(CobolIntrinsics.acceptFrom("date")));
-    }
-
-    private void page_no() {
+        page_no = new BigDecimal(String.valueOf(page_count).trim()).intValue();
         mini_report.write(report_line_header);
         while (!(!String.valueOf(endofdata).trim().isEmpty())) {
         }
         CobolDisplay.display("Normal termination, ending status: " + String.valueOf(data_file_status));
-    }
-
-    private void mini_report_2() {
-    }
-
-    private void data_file_2() {
+        mini_report.close();
+        data_file.close();
         System.exit(0);
-    }
-
-    private void readwrite_loop() {
-        report_line_data.set(String.valueOf(data_record));
-        body_tag = new BigDecimal(String.valueOf(linage_counter).trim()).intValue();
-        mini_report.write(report_line_data);
-        /* RAW: end-of-page  */
-        page_count = new BigDecimal(String.valueOf(page_count + 1).trim()).intValue();
-        page_no = new BigDecimal(String.valueOf(page_count).trim()).intValue();
-        header_tag = new BigDecimal(String.valueOf(linage_counter).trim()).intValue();
-        mini_report.write(report_line_header);
-        if (data_file.read(null) == FileStatus.AT_END) {
-            endofdata.set(String.valueOf(cb_true));
-        }
     }
 
     @Override

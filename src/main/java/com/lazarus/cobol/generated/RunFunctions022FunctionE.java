@@ -30,9 +30,7 @@ public class RunFunctions022FunctionE extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void y() {
+        y = new BigDecimal(String.valueOf(CobolIntrinsics.e()).trim()).intValue();
         if (y != 2.718281828459045) {
             CobolDisplay.display(String.valueOf(y));
         }

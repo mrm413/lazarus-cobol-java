@@ -38,9 +38,9 @@ public class RunFile001VariableLengthSequentialDataIntegrity extends CobolProgra
     private CobolFile test_xml00 = new CobolFile("DATA", "SEQUENTIAL", "SEQUENTIAL");
     // File status: ST-TEST
 
-    private CobolString not = new CobolString(256);
-    private CobolString at = new CobolString(256);
-    private CobolString end = new CobolString(256);
+    private CobolString not = new CobolString(256); // fallback
+    private CobolString at = new CobolString(256); // fallback
+    private CobolString end = new CobolString(256); // fallback
 
     private void debut() {
         test_xml00.open("INPUT");

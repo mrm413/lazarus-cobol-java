@@ -30,9 +30,7 @@ public class RunFunctions066FunctionModulePath extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void test_path() {
+        test_path.set(String.valueOf(CobolIntrinsics.module_path()));
         if (!String.valueOf(test_path).equals(String.valueOf(" "))) {
             CobolDisplay.displayNoAdvancing("OK");
         }

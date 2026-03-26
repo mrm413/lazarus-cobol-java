@@ -30,9 +30,7 @@ public class RunFunctions117FunctionYearToYyyy extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void z() {
+        z = new BigDecimal(String.valueOf(CobolIntrinsics.year_to_yyyy(50)).trim()).intValue();
         if (z != 2050) {
             CobolDisplay.display(String.valueOf(z));
         }

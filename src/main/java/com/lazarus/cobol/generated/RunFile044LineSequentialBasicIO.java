@@ -35,24 +35,27 @@ public class RunFile044LineSequentialBasicIO extends CobolProgram {
     private CobolFile file1 = new CobolFile("ORGANIZATION", "LINE SEQUENTIAL", "SEQUENTIAL");
     private CobolFile file2 = new CobolFile("ORGANIZATION", "LINE SEQUENTIAL", "SEQUENTIAL");
 
-    
+    // FALLBACK FILE DESCRIPTORS
     private CobolFile file = new CobolFile("FILE", "SEQUENTIAL", "SEQUENTIAL");
-    private CobolFile _unnamed = new CobolFile(",", "SEQUENTIAL", "SEQUENTIAL");
+    private CobolFile _filler_001 = new CobolFile(",", "SEQUENTIAL", "SEQUENTIAL");
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
 
+    private CobolString _filler_003 = new CobolString(256); // fallback
+    private CobolString _filler_004 = new CobolString(256); // fallback
     private void para_main() {
         file.delete();
         /* RAW: file1 , file2 */
         file1.open("OUTPUT");
-        _unnamed.open("OUTPUT");
+        /* OPEN , — skipped, not a file */
         file2.open("OUTPUT");
         file1_rec.set(String.valueOf("A"));
-        /* MOVE to file , — not applicable */
+        _filler_003.set(String.valueOf("A"));
         file2_rec.set(String.valueOf("A"));
         file1.write(file1_rec);
         file2.write(file2_rec);
         file1_rec.set(String.valueOf(" "));
-        /* MOVE to file , — not applicable */
+        _filler_004.set(String.valueOf(" "));
         file2_rec.set(String.valueOf(" "));
         file1.write(file1_rec);
         file2.write(file2_rec);
@@ -61,10 +64,10 @@ public class RunFile044LineSequentialBasicIO extends CobolProgram {
         file1.write(" ");
         file2.write(" A");
         file1.close();
-        _unnamed.close();
+        /* CLOSE , — skipped, not a file */
         file2.close();
         file1.open("INPUT");
-        _unnamed.open("INPUT");
+        /* OPEN , — skipped, not a file */
         file2.open("INPUT");
         if (file1.read(null) == FileStatus.AT_END) {
         }
@@ -107,10 +110,8 @@ public class RunFile044LineSequentialBasicIO extends CobolProgram {
             CobolDisplay.display("FAILED 4 file2 - '" + String.valueOf(file2_rec) + "'");
         }
         file1.close();
-        _unnamed.close();
-    }
-
-    private void file2() {
+        /* CLOSE , — skipped, not a file */
+        file2.close();
         System.exit(0);
     }
 

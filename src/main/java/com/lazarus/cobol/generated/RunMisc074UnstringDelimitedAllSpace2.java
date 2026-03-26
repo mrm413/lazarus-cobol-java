@@ -26,6 +26,11 @@ public class RunMisc074UnstringDelimitedAllSpace2 extends CobolProgram {
     private CobolString debug_contents = new CobolString(256);
     // WORKING-STORAGE SECTION
     private CobolString ws_record = new CobolString(1); // Group: WS-RECORD
+    private CobolString filler_1 = new CobolString(8);
+    private CobolString filler_2 = new CobolString(8);
+    private CobolString filler_3 = new CobolString(8);
+    private CobolString filler_4 = new CobolString(8);
+    private CobolString filler_5 = new CobolString(8);
     private CobolString space_2 = new CobolString(2);
     private CobolString ws_dummy = new CobolString(15);
     private int ws_pointer = 0;
@@ -33,60 +38,38 @@ public class RunMisc074UnstringDelimitedAllSpace2 extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void ws_pointer() {
+        ws_pointer = new BigDecimal(String.valueOf(1).trim()).intValue();
         /* RAW: *  */
-        _0001();
-        /* RAW: -  */
-    }
-
-    private void sub() {
+        _0001_sub();
         if (!String.valueOf(ws_dummy).equals(String.valueOf(" "))) {
-            CobolDisplay.display("Expected space - Got ");
-            /* RAW: WS-DUMMY  */
+            CobolDisplay.display("Expected space - Got " + String.valueOf(ws_dummy));
         }
         if (ws_pointer != 5) {
-            CobolDisplay.display("Expected 5 - Got ");
-            /* RAW: WS-POINTER  */
+            CobolDisplay.display("Expected 5 - Got " + String.valueOf(ws_pointer));
         }
         /* RAW: *  */
-        _0001();
-        /* RAW: -  */
-    }
-
-    private void sub_2() {
+        _0001_sub();
         if (!String.valueOf(ws_dummy).equals(String.valueOf("ABC AND DE"))) {
-            CobolDisplay.display("Expected ABC AND DE - Got ");
-            /* RAW: WS-DUMMY  */
+            CobolDisplay.display("Expected ABC AND DE - Got " + String.valueOf(ws_dummy));
         }
         if (ws_pointer != 21) {
-            CobolDisplay.display("Expected 21 - Got ");
-            /* RAW: WS-POINTER  */
+            CobolDisplay.display("Expected 21 - Got " + String.valueOf(ws_pointer));
         }
         /* RAW: *  */
-        _0001();
-        /* RAW: -  */
-    }
-
-    private void sub_3() {
+        _0001_sub();
         if (!String.valueOf(ws_dummy).equals(String.valueOf(" FG AND HIJ"))) {
-            CobolDisplay.display("Expected  FG AND HIJ - Got ");
-            /* RAW: WS-DUMMY  */
+            CobolDisplay.display("Expected  FG AND HIJ - Got " + String.valueOf(ws_dummy));
         }
         if (ws_pointer != 40) {
-            CobolDisplay.display("Expected 40 - Got ");
-            /* RAW: WS-POINTER  */
+            CobolDisplay.display("Expected 40 - Got " + String.valueOf(ws_pointer));
         }
         System.exit(0);
     }
 
-    private void sub_4() {
+    private void _0001_sub() {
         /* UNSTRING — requires runtime implementation */
         ws_dummy.set(String.valueOf(""));
     }
-
-    private void _0001() { /* stub — external/COPY */ }
 
     @Override
     public void run() {

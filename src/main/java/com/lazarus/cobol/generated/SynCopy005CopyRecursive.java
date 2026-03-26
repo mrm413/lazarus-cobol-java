@@ -25,12 +25,10 @@ public class SynCopy005CopyRecursive extends CobolProgram {
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
+    private CobolString test_var = new CobolString(256); // fallback
 
     private void para_main() {
-        CobolDisplay.display();
-    }
-
-    private void test_var() {
+        CobolDisplay.display(String.valueOf(test_var));
         System.exit(0);
     }
 

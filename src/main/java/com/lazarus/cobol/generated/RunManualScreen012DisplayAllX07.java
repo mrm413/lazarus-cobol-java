@@ -28,11 +28,11 @@ public class RunManualScreen012DisplayAllX07 extends CobolProgram {
     private CobolString success_flag = new CobolString(1);
 
 
-    private CobolString scr = new CobolString(256);
-    private CobolString success = new CobolString(256);
-    private CobolString environment = new CobolString(256);
-    private CobolString cob_bell = new CobolString(256);
-    private CobolString scr2 = new CobolString(256);
+    private CobolString scr = new CobolString(256); // fallback
+    private CobolString success = new CobolString(256); // fallback
+    private CobolString environment = new CobolString(256); // fallback
+    private CobolString cob_bell = new CobolString(256); // fallback
+    private CobolString scr2 = new CobolString(256); // fallback
 
     private void para_main() {
         CobolDisplay.display(String.valueOf(scr));

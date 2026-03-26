@@ -30,8 +30,8 @@ public class SynMultiply001CategoryCheckOfFormat2 extends CobolProgram {
     private CobolString x_09 = new CobolString(2);
 
 
-    private CobolString _789 = new CobolString(256);
-    private CobolString c = new CobolString(256);
+    private CobolString _789 = new CobolString(256); // fallback
+    private CobolString c = new CobolString(256); // fallback
 
     private void para_main() {
         _789.set(String.valueOf(123 * 456));

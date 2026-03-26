@@ -31,13 +31,11 @@ public class RunMisc071StringWithSubscriptReference extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void g() {
+        g.set(String.valueOf(" "));
         {
             StringBuilder _sb = new StringBuilder();
             _sb.append("abc");
-    // x[2 - 1] = _sb.toString();
+        // KNOWN_ISSUE: x[2 - 1] = _sb.toString();
         }
         if (!String.valueOf(g).equals(String.valueOf("   abc   "))) {
             CobolDisplay.display(String.valueOf(x[1 - 1]));

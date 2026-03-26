@@ -25,7 +25,7 @@ public class SynFunctions014SpecifiedOffsetAndSystemOffset extends CobolProgram 
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
-    private CobolString system_offset = new CobolString(256);
+    private CobolString system_offset = new CobolString(256); // fallback
 
     private void para_main() {
         CobolDisplay.display(String.valueOf(CobolIntrinsics.formatted_datetime("YYYYDDDThhmmssZ", 1, 1, 1, system_offset)));

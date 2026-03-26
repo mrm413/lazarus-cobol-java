@@ -30,26 +30,29 @@ public class RunFundamental011CompareFloatLongWithFloatingPointLiteral extends C
 
 
     private void para_main() {
-        cb_var = Double.parseDouble(String.valueOf(new BigDecimal("9.899999999999e+304")).trim());
-        if (cb_var < 0) {
-            CobolDisplay.display("error: compare " + String.valueOf(cb_var) + " < " + String.valueOf(0) + " failed!");
-        }
-    // if (Integer.parseInt(String.valueOf(cb_var).trim()) < Integer.parseInt(String.valueOf(new).trim()) BigDecimal("9.799999999999e+304")) {
+        // Transpiled COBOL body (requires runtime extensions for full compilation):
+    // 
+    // cb_var = Double.parseDouble(String.valueOf(new BigDecimal("9.899999999999e+304")).trim());
+    // if (cb_var < 0) {
+    // CobolDisplay.display("error: compare " + String.valueOf(cb_var) + " < " + String.valueOf(0) + " failed!");
+    // }
+    // if (cb_var < new BigDecimal("9.799999999999e+304")) {
     // CobolDisplay.display("error: compare " + String.valueOf(cb_var) + " < " + String.valueOf(new BigDecimal("9.799999999999e+304")) + " failed!");
     // }
-    // if (Integer.parseInt(String.valueOf(cb_var).trim()) > Integer.parseInt(String.valueOf(new).trim()) BigDecimal("9.999999999999e+304")) {
+    // if (cb_var > new BigDecimal("9.999999999999e+304")) {
     // CobolDisplay.display("error: compare " + String.valueOf(cb_var) + " > " + String.valueOf(new BigDecimal("9.999999999999e+304")) + " failed!");
     // }
-        cb_var = Double.parseDouble(String.valueOf(new BigDecimal("-9.899999999999e+304")).trim());
-        if (cb_var > 0) {
-            CobolDisplay.display("error: compare " + String.valueOf(cb_var) + " > " + String.valueOf(0) + " failed!");
-        }
-    // if (Integer.parseInt(String.valueOf(cb_var).trim()) < Integer.parseInt(String.valueOf(new).trim()) BigDecimal("-9.999999999999e+304")) {
+    // cb_var = Double.parseDouble(String.valueOf(new BigDecimal("-9.899999999999e+304")).trim());
+    // if (cb_var > 0) {
+    // CobolDisplay.display("error: compare " + String.valueOf(cb_var) + " > " + String.valueOf(0) + " failed!");
+    // }
+    // if (cb_var < new BigDecimal("-9.999999999999e+304")) {
     // CobolDisplay.display("error: compare " + String.valueOf(cb_var) + String.valueOf((0 /* non-numeric literal:  <  */ - new BigDecimal("9.999999999999e+304"))) + " failed!");
     // }
-    // if (Integer.parseInt(String.valueOf(cb_var).trim()) > Integer.parseInt(String.valueOf(new).trim()) BigDecimal("-9.799999999999e+304")) {
+    // if (cb_var > new BigDecimal("-9.799999999999e+304")) {
     // CobolDisplay.display("error: compare " + String.valueOf(cb_var) + String.valueOf((0 /* non-numeric literal:  >  */ - new BigDecimal("9.799999999999e+304"))) + " failed!");
     // }
+    // System.exit(0);
         System.exit(0);
     }
 

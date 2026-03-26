@@ -30,33 +30,46 @@ public class RunExtensions105GcosLiteralsWithEbcdicSymbolsRun extends CobolProgr
     private float s = 0.0f;
 
 
-    private CobolString _135 = new CobolString(256);
-    private CobolString _unnamed = new CobolString(256);
-    private CobolString _151 = new CobolString(256);
-    private CobolString bar = new CobolString(256);
-    private CobolString _195 = new CobolString(256);
-    private CobolString _194 = new CobolString(256);
-    private CobolString _234 = new CobolString(256);
-    private CobolString to = new CobolString(256);
-    private CobolString z = new CobolString(256);
-    private CobolString _75 = new CobolString(256);
-    private CobolString _80 = new CobolString(256);
-    private CobolString _91 = new CobolString(256);
+    private CobolString _135 = new CobolString(256); // fallback
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString _151 = new CobolString(256); // fallback
+    private CobolString bar = new CobolString(256); // fallback
+    private CobolString _195 = new CobolString(256); // fallback
+    private CobolString _194 = new CobolString(256); // fallback
+    private CobolString _234 = new CobolString(256); // fallback
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString to = new CobolString(256); // fallback
+    private CobolString z = new CobolString(256); // fallback
+    private CobolString _75 = new CobolString(256); // fallback
+    private CobolString _80 = new CobolString(256); // fallback
+    private CobolString _91 = new CobolString(256); // fallback
 
+    private CobolString _filler_003 = new CobolString(256); // fallback
+    private CobolString _filler_004 = new CobolString(256); // fallback
+    private CobolString _filler_005 = new CobolString(256); // fallback
+    private CobolString _filler_006 = new CobolString(256); // fallback
+    private CobolString _filler_007 = new CobolString(256); // fallback
+    private CobolString _filler_008 = new CobolString(256); // fallback
+    private CobolString _filler_009 = new CobolString(256); // fallback
+    private CobolString _filler_010 = new CobolString(256); // fallback
+    private CobolString _filler_011 = new CobolString(256); // fallback
+    private CobolString _filler_012 = new CobolString(256); // fallback
+    private CobolString _filler_013 = new CobolString(256); // fallback
+    private CobolString _filler_014 = new CobolString(256); // fallback
     private void para_main() {
         t = new BigDecimal(String.valueOf(1).trim()).intValue();
         _135.set(String.valueOf(""));
-        _unnamed.set(String.valueOf(""));
+        _filler_003.set(String.valueOf(""));
         _151.set(String.valueOf(""));
-        _unnamed.set(String.valueOf(""));
+        _filler_004.set(String.valueOf(""));
         _151.set(String.valueOf(""));
         bar.set(String.valueOf(""));
         _195.set(String.valueOf(""));
-        _unnamed.set(String.valueOf(""));
+        _filler_005.set(String.valueOf(""));
         _194.set(String.valueOf(""));
-        _unnamed.set(String.valueOf(""));
+        _filler_006.set(String.valueOf(""));
         _234.set(String.valueOf(""));
-        _unnamed.set(String.valueOf(""));
+        _filler_007.set(String.valueOf(""));
         to.set(String.valueOf(""));
         x.set(String.valueOf(""));
         if (!String.valueOf(x).equals(String.valueOf("foobarBAZ"))) {
@@ -64,9 +77,9 @@ public class RunExtensions105GcosLiteralsWithEbcdicSymbolsRun extends CobolProgr
         }
         t = new BigDecimal(String.valueOf(2).trim()).intValue();
         _135.set(String.valueOf("  "));
-        _unnamed.set(String.valueOf("  "));
+        _filler_008.set(String.valueOf("  "));
         _151.set(String.valueOf("  "));
-        _unnamed.set(String.valueOf("  "));
+        _filler_009.set(String.valueOf("  "));
         _151.set(String.valueOf("  "));
         bar.set(String.valueOf("  "));
         _195.set(String.valueOf("  "));
@@ -80,11 +93,11 @@ public class RunExtensions105GcosLiteralsWithEbcdicSymbolsRun extends CobolProgr
         t = new BigDecimal(String.valueOf(3).trim()).intValue();
         _135.set(String.valueOf(" "));
         _151.set(String.valueOf(" "));
-        _unnamed.set(String.valueOf(" "));
+        _filler_010.set(String.valueOf(" "));
         _151.set(String.valueOf(" "));
         bar.set(String.valueOf(" "));
         _195.set(String.valueOf(" "));
-        _unnamed.set(String.valueOf(" "));
+        _filler_011.set(String.valueOf(" "));
         _194.set(String.valueOf(" "));
         z.set(String.valueOf(" "));
         to.set(String.valueOf(" "));
@@ -94,11 +107,11 @@ public class RunExtensions105GcosLiteralsWithEbcdicSymbolsRun extends CobolProgr
         }
         t = new BigDecimal(String.valueOf(4).trim()).intValue();
         _75.set(String.valueOf(""));
-        _unnamed.set(String.valueOf(""));
+        _filler_012.set(String.valueOf(""));
         _80.set(String.valueOf(""));
-        _unnamed.set(String.valueOf(""));
+        _filler_013.set(String.valueOf(""));
         _91.set(String.valueOf(""));
-        _unnamed.set(String.valueOf(""));
+        _filler_014.set(String.valueOf(""));
         to.set(String.valueOf(""));
         x.set(String.valueOf(""));
         if (!String.valueOf(x).equals(String.valueOf("[!]"))) {
@@ -112,9 +125,7 @@ public class RunExtensions105GcosLiteralsWithEbcdicSymbolsRun extends CobolProgr
 
     private void show() {
         CobolDisplay.display("EBCDIC LIT " + String.valueOf(t) + " FAILED: X = \"" + String.valueOf(x) + "\"");
-    }
-
-    private void s_2() {
+        s = (float) Double.parseDouble(String.valueOf(1).trim());
     }
 
     @Override

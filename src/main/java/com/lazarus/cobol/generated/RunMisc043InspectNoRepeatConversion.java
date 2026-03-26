@@ -33,13 +33,11 @@ public class RunMisc043InspectNoRepeatConversion extends CobolProgram {
     private void para_main() {
         /* INSPECT X — 2 clause(s) */
         if (!String.valueOf(x).equals(String.valueOf("CDB"))) {
-            CobolDisplay.display("X: ");
-            /* RAW: X  */
+            CobolDisplay.display("X: " + String.valueOf(x));
         }
         /* INSPECT Y — 2 clause(s) */
         if (!String.valueOf(y).equals(String.valueOf("   CDB"))) {
-            CobolDisplay.display("Y: ");
-            /* RAW: Y  */
+            CobolDisplay.display("Y: " + String.valueOf(y));
         }
         System.exit(0);
     }

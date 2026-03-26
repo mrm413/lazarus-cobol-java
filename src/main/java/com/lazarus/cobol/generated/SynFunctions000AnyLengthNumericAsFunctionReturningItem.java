@@ -31,10 +31,7 @@ public class SynFunctions000AnyLengthNumericAsFunctionReturningItem extends Cobo
 
     private void para_main() {
         /* CONTINUE */
-        /* RAW: END FUNCTION */
-    }
-
-    private void func() {
+        /* RAW: END FUNCTION func */
     }
 
     @Override

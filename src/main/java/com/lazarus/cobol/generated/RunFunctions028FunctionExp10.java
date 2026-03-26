@@ -30,9 +30,7 @@ public class RunFunctions028FunctionExp10 extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void test_fld() {
+        test_fld = new BigDecimal(String.valueOf(CobolIntrinsics.exp10(4)).trim());
         if (test_fld.compareTo(new BigDecimal(String.valueOf(10000).trim())) != 0) {
             CobolDisplay.display(String.valueOf(test_fld));
         }

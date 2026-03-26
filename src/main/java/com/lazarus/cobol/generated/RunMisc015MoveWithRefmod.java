@@ -32,8 +32,7 @@ public class RunMisc015MoveWithRefmod extends CobolProgram {
     private void para_main() {
         { String _rs = String.valueOf(x); StringBuilder _rb = new StringBuilder(_rs); try { _rb.replace(1 - 1, 1 - 1 + 1, String.valueOf("1")); x = Integer.parseInt(_rb.toString().trim()); } catch (Exception _e) {} }
         if (x != 1000) {
-            CobolDisplay.display();
-            /* RAW: X  */
+            CobolDisplay.display(String.valueOf(x));
         }
         System.exit(0);
     }

@@ -30,9 +30,7 @@ public class RunFunctions068FunctionModuleTime extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void test_time() {
+        test_time = new BigDecimal(String.valueOf(CobolIntrinsics.module_time()).trim()).intValue();
         if (test_time != 0) {
             CobolDisplay.displayNoAdvancing("OK");
         }

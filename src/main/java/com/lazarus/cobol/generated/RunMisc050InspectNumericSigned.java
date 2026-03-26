@@ -41,130 +41,122 @@ public class RunMisc050InspectNumericSigned extends CobolProgram {
         cnt = new BigDecimal(String.valueOf(0).trim()).intValue();
         /* INSPECT SEPARATE1 — 2 clause(s) */
         if (cnt != 2) {
-            CobolDisplay.display("T1 - ");
-            /* RAW: CNT  */
+            CobolDisplay.display("T1 - " + String.valueOf(cnt));
         }
         cnt = new BigDecimal(String.valueOf(0).trim()).intValue();
         /* INSPECT SEPARATE2 — 2 clause(s) */
         if (cnt != 2) {
-            CobolDisplay.display("T2 - ");
-            /* RAW: CNT  */
+            CobolDisplay.display("T2 - " + String.valueOf(cnt));
         }
         cnt = new BigDecimal(String.valueOf(0).trim()).intValue();
         /* INSPECT TSEPARATE1 — 2 clause(s) */
         if (cnt != 2) {
-            CobolDisplay.display("T3 - ");
-            /* RAW: CNT  */
+            CobolDisplay.display("T3 - " + String.valueOf(cnt));
         }
         cnt = new BigDecimal(String.valueOf(0).trim()).intValue();
         /* INSPECT TSEPARATE2 — 2 clause(s) */
         if (cnt != 2) {
-            CobolDisplay.display("T4 - ");
-            /* RAW: CNT  */
+            CobolDisplay.display("T4 - " + String.valueOf(cnt));
         }
         cnt = new BigDecimal(String.valueOf(0).trim()).intValue();
         /* INSPECT NSEPARATE1 — 2 clause(s) */
         if (cnt != 2) {
-            CobolDisplay.display("T5 - ");
-            /* RAW: CNT  */
+            CobolDisplay.display("T5 - " + String.valueOf(cnt));
         }
         cnt = new BigDecimal(String.valueOf(0).trim()).intValue();
         /* INSPECT NSEPARATE2 — 2 clause(s) */
         if (cnt != 2) {
-            CobolDisplay.display("T6 - ");
-            /* RAW: CNT  */
+            CobolDisplay.display("T6 - " + String.valueOf(cnt));
         }
         cnt = new BigDecimal(String.valueOf(0).trim()).intValue();
         /* INSPECT TRAILING1 — 2 clause(s) */
         if (cnt != 2) {
-            CobolDisplay.display("T7 - ");
-            /* RAW: CNT  */
+            CobolDisplay.display("T7 - " + String.valueOf(cnt));
         }
         cnt = new BigDecimal(String.valueOf(0).trim()).intValue();
         /* INSPECT TRAILING2 — 2 clause(s) */
         if (cnt != 2) {
-            CobolDisplay.display("T8 - ");
-            /* RAW: CNT  */
+            CobolDisplay.display("T8 - " + String.valueOf(cnt));
         }
         /* INSPECT SEPARATE1 — 2 clause(s) */
         if (separate1 != -22) {
             CobolDisplay.display("C1 - " + String.valueOf(separate1));
-            /* RAW: SEPARATE1  */
+            separate1 = new BigDecimal(String.valueOf(-22).trim()).intValue();
         }
         /* INSPECT SEPARATE2 — 2 clause(s) */
         if (separate2 != 22) {
             CobolDisplay.display("C2 - " + String.valueOf(separate2));
-            /* RAW: SEPARATE2  */
+            separate2 = new BigDecimal(String.valueOf(22).trim()).intValue();
         }
         /* INSPECT TSEPARATE1 — 2 clause(s) */
         if (tseparate1 != -22) {
             CobolDisplay.display("C3 - " + String.valueOf(tseparate1));
-            /* RAW: TSEPARATE1  */
+            tseparate1 = new BigDecimal(String.valueOf(-22).trim()).intValue();
         }
         /* INSPECT TSEPARATE2 — 2 clause(s) */
         if (tseparate2 != 22) {
             CobolDisplay.display("C4 - " + String.valueOf(tseparate2));
-            /* RAW: TSEPARATE2  */
+            tseparate2 = new BigDecimal(String.valueOf(22).trim()).intValue();
         }
         /* INSPECT NSEPARATE1 — 2 clause(s) */
         if (nseparate1 != -22) {
             CobolDisplay.display("C5 - " + String.valueOf(nseparate1));
-            /* RAW: NSEPARATE1  */
+            nseparate1 = new BigDecimal(String.valueOf(-22).trim()).intValue();
         }
         /* INSPECT NSEPARATE2 — 2 clause(s) */
         if (nseparate2 != 22) {
             CobolDisplay.display("C6 - " + String.valueOf(nseparate2));
-            /* RAW: NSEPARATE2  */
+            nseparate2 = new BigDecimal(String.valueOf(22).trim()).intValue();
         }
         /* INSPECT TRAILING1 — 2 clause(s) */
         if (trailing1 != -22) {
             CobolDisplay.display("C7 - " + String.valueOf(trailing1));
-            /* RAW: TRAILING1  */
+            trailing1 = new BigDecimal(String.valueOf(-22).trim()).intValue();
         }
         /* INSPECT TRAILING2 — 2 clause(s) */
         if (trailing2 != 22) {
             CobolDisplay.display("C8 - " + String.valueOf(trailing2));
-            /* RAW: TRAILING2  */
+            trailing2 = new BigDecimal(String.valueOf(22).trim()).intValue();
         }
         /* INSPECT SEPARATE1 — 2 clause(s) */
         if (separate1 != -33) {
             CobolDisplay.display("R1 - " + String.valueOf(separate1));
-            /* RAW: SEPARATE1  */
+            separate1 = new BigDecimal(String.valueOf(-33).trim()).intValue();
         }
         /* INSPECT SEPARATE2 — 2 clause(s) */
         if (separate2 != 33) {
             CobolDisplay.display("R2 - " + String.valueOf(separate2));
-            /* RAW: SEPARATE2  */
+            separate2 = new BigDecimal(String.valueOf(33).trim()).intValue();
         }
         /* INSPECT TSEPARATE1 — 2 clause(s) */
         if (tseparate1 != -33) {
             CobolDisplay.display("R3 - " + String.valueOf(tseparate1));
-            /* RAW: TSEPARATE1  */
+            tseparate1 = new BigDecimal(String.valueOf(-33).trim()).intValue();
         }
         /* INSPECT TSEPARATE2 — 2 clause(s) */
         if (tseparate2 != 33) {
             CobolDisplay.display("R4 - " + String.valueOf(tseparate2));
-            /* RAW: TSEPARATE2  */
+            tseparate2 = new BigDecimal(String.valueOf(33).trim()).intValue();
         }
         /* INSPECT NSEPARATE1 — 2 clause(s) */
         if (nseparate1 != -33) {
             CobolDisplay.display("R5 - " + String.valueOf(nseparate1));
-            /* RAW: NSEPARATE1  */
+            nseparate1 = new BigDecimal(String.valueOf(-33).trim()).intValue();
         }
         /* INSPECT NSEPARATE2 — 2 clause(s) */
         if (nseparate2 != 33) {
             CobolDisplay.display("R6 - " + String.valueOf(nseparate2));
-            /* RAW: NSEPARATE2  */
+            nseparate2 = new BigDecimal(String.valueOf(33).trim()).intValue();
         }
         /* INSPECT TRAILING1 — 2 clause(s) */
         if (trailing1 != -33) {
             CobolDisplay.display("R7 - " + String.valueOf(trailing1));
-            /* RAW: TRAILING1  */
+            trailing1 = new BigDecimal(String.valueOf(-33).trim()).intValue();
         }
         /* INSPECT TRAILING2 — 2 clause(s) */
         if (trailing2 != 33) {
             CobolDisplay.display("R8 - " + String.valueOf(trailing2));
-            /* RAW: TRAILING2  */
+            trailing2 = new BigDecimal(String.valueOf(33).trim()).intValue();
         }
         System.exit(0);
     }

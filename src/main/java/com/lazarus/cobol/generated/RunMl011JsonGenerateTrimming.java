@@ -42,7 +42,7 @@ public class RunMl011JsonGenerateTrimming extends CobolProgram {
     private CobolString out = new CobolString(300);
 
 
-    private CobolString json = new CobolString(256);
+    private CobolString json = new CobolString(256); // fallback
 
     private void para_main() {
         /* RAW: JSON  */

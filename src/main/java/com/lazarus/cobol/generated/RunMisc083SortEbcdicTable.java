@@ -24,45 +24,10 @@ public class RunMisc083SortEbcdicTable extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
-    // WORKING-STORAGE SECTION
-    private CobolString z = new CobolString(10);
-    private CobolString g = new CobolString(1); // Group: G
-    private CobolString[] tbl = new CobolString[10]; // Group: TBL
-    private CobolString[] x = new CobolString[10];
 
-
-
-    private void para_main() {
-    }
-
-    private void g() {
-        /* RAW: * alphabet-name as collation : */
-        /* SORT TBL */
-    }
-
-    private void alpha() {
-        if (!String.valueOf(g).equals(String.valueOf("abcde12345"))) {
-            CobolDisplay.display();
-            /* RAW: G  */
-        }
-    }
-
-    private void g_2() {
-        /* RAW: * code-name as collation : */
-        /* SORT TBL */
-    }
-
-    private void ebcdic() {
-        if (!String.valueOf(g).equals(String.valueOf("54321edcba"))) {
-            CobolDisplay.display();
-            /* RAW: G  */
-        }
-        System.exit(0);
-    }
 
     @Override
     public void run() {
-        para_main();
     }
 
     public static void main(String[] args) {

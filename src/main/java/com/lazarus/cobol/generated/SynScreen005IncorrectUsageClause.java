@@ -28,7 +28,7 @@ public class SynScreen005IncorrectUsageClause extends CobolProgram {
     private CobolString x = new CobolString(1);
 
 
-    private CobolString sg = new CobolString(256);
+    private CobolString sg = new CobolString(256); // fallback
 
     private void para_main() {
         CobolDisplay.display(String.valueOf(sg));

@@ -33,49 +33,28 @@ public class RunMisc075UnstringDelimitedPointer extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void ws_lay_record() {
-    }
-
-    private void ws_pointer() {
-        _0001();
-        /* RAW: -  */
-    }
-
-    private void sub() {
+        ws_lay_record.set(String.valueOf("        10  AF-RECORD-TYPE-SEQUENCE-04     PIC   9(05) COMP-3."));
+        ws_pointer = new BigDecimal(String.valueOf(1).trim()).intValue();
+        _0001_sub();
         if (ws_pointer != 48) {
-            CobolDisplay.display("Expected 48 - Got ");
-            /* RAW: WS-POINTER  */
+            CobolDisplay.display("Expected 48 - Got " + String.valueOf(ws_pointer));
         }
         ws_pointer = new BigDecimal(String.valueOf(ws_pointer + 7).trim()).intValue();
-        _0001();
-        /* RAW: -  */
-    }
-
-    private void sub_2() {
+        _0001_sub();
         if (ws_pointer != 62) {
-            CobolDisplay.display("Expected 62 - Got ");
-            /* RAW: WS-POINTER  */
+            CobolDisplay.display("Expected 62 - Got " + String.valueOf(ws_pointer));
         }
-        _0001();
-        /* RAW: -  */
-    }
-
-    private void sub_3() {
+        _0001_sub();
         if (ws_pointer != 63) {
-            CobolDisplay.display("Expected 63 - Got ");
-            /* RAW: WS-POINTER  */
+            CobolDisplay.display("Expected 63 - Got " + String.valueOf(ws_pointer));
         }
         System.exit(0);
     }
 
-    private void sub_4() {
+    private void _0001_sub() {
         /* UNSTRING — requires runtime implementation */
         ws_dummy.set(String.valueOf(""));
     }
-
-    private void _0001() { /* stub — external/COPY */ }
 
     @Override
     public void run() {

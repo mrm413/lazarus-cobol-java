@@ -40,7 +40,7 @@ public class RunMl004XmlGenerateTrimming extends CobolProgram {
     private CobolString out = new CobolString(300);
 
 
-    private CobolString xml = new CobolString(256);
+    private CobolString xml = new CobolString(256); // fallback
 
     private void para_main() {
         /* RAW: XML  */

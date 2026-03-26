@@ -34,6 +34,7 @@ public class SynFile013IndexedFileInvalidKeyItems extends CobolProgram {
     // FILE SECTION — TEST-FILE
     private CobolString test_rec = new CobolString(1); // Group: TEST-REC
     private CobolString test_p1 = new CobolString(4);
+    private CobolString filler_1 = new CobolString(4);
     private CobolString test_p4 = new CobolString(4);
 
     // FILE SECTION — TEST-MORE
@@ -48,12 +49,8 @@ public class SynFile013IndexedFileInvalidKeyItems extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void test_file() {
-    }
-
-    private void test_file_2() {
+        test_file.open("INPUT");
+        test_file.close();
         System.exit(0);
     }
 

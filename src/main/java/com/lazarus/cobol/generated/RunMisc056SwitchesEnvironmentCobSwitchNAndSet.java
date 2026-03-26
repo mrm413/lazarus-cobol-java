@@ -25,16 +25,16 @@ public class RunMisc056SwitchesEnvironmentCobSwitchNAndSet extends CobolProgram 
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
-    private CobolString swit1_on = new CobolString(256);
-    private CobolString swit2_on = new CobolString(256);
-    private CobolString swit3_on = new CobolString(256);
-    private CobolString swit4_off = new CobolString(256);
-    private CobolString swit1 = new CobolString(256);
-    private CobolString off = new CobolString(256);
-    private CobolString swit2 = new CobolString(256);
-    private CobolString on = new CobolString(256);
-    private CobolString swit31_on = new CobolString(256);
-    private CobolString swit36_off = new CobolString(256);
+    private CobolString swit1_on = new CobolString(256); // fallback
+    private CobolString swit2_on = new CobolString(256); // fallback
+    private CobolString swit3_on = new CobolString(256); // fallback
+    private CobolString swit4_off = new CobolString(256); // fallback
+    private CobolString swit1 = new CobolString(256); // fallback
+    private CobolString off = new CobolString(256); // fallback
+    private CobolString swit2 = new CobolString(256); // fallback
+    private CobolString on = new CobolString(256); // fallback
+    private CobolString swit31_on = new CobolString(256); // fallback
+    private CobolString swit36_off = new CobolString(256); // fallback
 
     private void para_main() {
         if (!String.valueOf(swit1_on).trim().isEmpty()) {

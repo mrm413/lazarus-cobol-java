@@ -30,9 +30,7 @@ public class RunFunctions042FunctionIntegerOfDay extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void test_fld() {
+        test_fld = new BigDecimal(String.valueOf(CobolIntrinsics.integer_of_day(2000269)).trim());
         if (test_fld.compareTo(new BigDecimal(String.valueOf(146000).trim())) != 0) {
             CobolDisplay.display(String.valueOf(test_fld));
         }

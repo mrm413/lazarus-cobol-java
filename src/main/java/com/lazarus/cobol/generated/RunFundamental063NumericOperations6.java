@@ -31,43 +31,29 @@ public class RunFundamental063NumericOperations6 extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void p_field1() {
+        p_field1 = new BigDecimal(String.valueOf(5000).trim()).intValue();
         p_field1 = new BigDecimal(String.valueOf(p_field1 + 5).trim()).intValue();
         if (p_field1 != 5000) {
             CobolDisplay.display("Error: Add 5 to PIC 99PPP.");
         }
-        CobolProgram.call("dump");
-    }
-
-    private void p_field1_2() {
+        CobolProgram.call("dump", p_field1);
         p_field1 = new BigDecimal(String.valueOf(p_field1 + 5000).trim()).intValue();
         if (p_field1 != 10000) {
             CobolDisplay.display("Error: Add 5000 to PIC 99PPP.");
         }
-        CobolProgram.call("dump");
-    }
-
-    private void p_field1_3() {
+        CobolProgram.call("dump", p_field1);
         p_field2 = new BigDecimal(String.valueOf(0.00055).trim()).intValue();
         p_field2 = new BigDecimal(String.valueOf(p_field2 + 0.00033).trim()).intValue();
         if (p_field2 != 0.00088) {
             CobolDisplay.display("Error: Add 0.00033 to PIC PPP99.");
         }
-        CobolProgram.call("dump");
-    }
-
-    private void p_field2() {
+        CobolProgram.call("dump", p_field2);
         p_field2 = new BigDecimal(String.valueOf(0.00055).trim()).intValue();
         p_field2 = new BigDecimal(String.valueOf(p_field2 + 0.003).trim()).intValue();
         if (p_field2 != 0.00055) {
             CobolDisplay.display("Error: Add 0.00300 to PIC PPP99.");
         }
-        CobolProgram.call("dump");
-    }
-
-    private void p_field2_2() {
+        CobolProgram.call("dump", p_field2);
         System.exit(0);
     }
 

@@ -6,6 +6,7 @@ import com.lazarus.cobol.CobolIntrinsics;
 import com.lazarus.cobol.CobolProgram;
 import com.lazarus.cobol.CobolString;
 import com.lazarus.cobol.FileStatus;
+import com.lazarus.cobol.jcl.batch.DfsortProgram;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -38,11 +39,12 @@ public class RunExtensions042SortAssignKeyboardToAssignDisplay extends CobolProg
 
 
     private void a00() {
-        /* SORT SORT-FILE */
+        { /* SORT SORT-FILE (sort_file) */
+            DfsortProgram _sort = new DfsortProgram();
+            _sort.setSortKeys(new String[]{});
+            _sort.execute();
+        }
         /* RAW: ON ASCENDING SORT-REC USING TEST-FILE GIVING */
-    }
-
-    private void test_out() {
         System.exit(0);
     }
 

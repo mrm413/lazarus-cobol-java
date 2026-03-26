@@ -28,15 +28,12 @@ public class SynMisc058WrongDialectHints extends CobolProgram {
     private CobolString x = new CobolString(1);
 
 
+    private CobolString conversion = new CobolString(256); // fallback
 
-    private CobolString _unnamed = new CobolString(256);
-    private CobolString filler_1 = new CobolString(256);
+    private CobolString _filler_001 = new CobolString(256); // fallback
     private void para_main() {
-        CobolDisplay.display(String.valueOf(x));
-    }
-
-    private void conversion() {
-        { String _tf = String.valueOf(x); String _from = String.valueOf(String.valueOf(_unnamed)); String _to = String.valueOf(String.valueOf(filler_1)); StringBuilder _sb = new StringBuilder(_tf); for (int _i = 0; _i < _sb.length(); _i++) { int _p = _from.indexOf(_sb.charAt(_i)); if (_p >= 0 && _p < _to.length()) _sb.setCharAt(_i, _to.charAt(_p)); } x.set(_sb.toString()); }
+        CobolDisplay.display(String.valueOf(x) + String.valueOf(conversion));
+        // KNOWN_ISSUE: { String _tf = String.valueOf(x); String _from = String.valueOf(String.valueOf(_filler_001)); String _to = String.valueOf(String.valueOf(filler_1)); StringBuilder _sb = new StringBuilder(_tf); for (int _i = 0; _i < _sb.length(); _i++) { int _p = _from.indexOf(_sb.charAt(_i)); if (_p >= 0 && _p < _to.length()) _sb.setCharAt(_i, _to.charAt(_p)); } x.set(_sb.toString()); }
     }
 
     @Override

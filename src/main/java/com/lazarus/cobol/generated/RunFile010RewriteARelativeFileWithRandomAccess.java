@@ -37,68 +37,38 @@ public class RunFile010RewriteARelativeFileWithRandomAccess extends CobolProgram
 
     private void para_main() {
         /* RAW: *  */
-    }
-
-    private void test_file() {
-    }
-
-    private void test_key() {
-    }
-
-    private void test_rec() {
+        test_file.open("OUTPUT");
+        test_key = new BigDecimal(String.valueOf(1).trim()).intValue();
+        test_rec.set(String.valueOf("A"));
         test_file.write(test_rec);
-    }
-
-    private void test_key_2() {
-    }
-
-    private void test_rec_2() {
+        test_key = new BigDecimal(String.valueOf(2).trim()).intValue();
+        test_rec.set(String.valueOf("B"));
         test_file.write(test_rec);
-    }
-
-    private void test_file_2() {
+        test_file.close();
         /* RAW: *  */
-    }
-
-    private void test_file_3() {
-    }
-
-    private void test_key_3() {
+        test_file.open("I-O");
+        test_key = new BigDecimal(String.valueOf(1).trim()).intValue();
         if (test_file.read(null) == FileStatus.AT_END) {
         }
-    }
-
-    private void test_key_4() {
-    }
-
-    private void test_rec_3() {
+        test_key = new BigDecimal(String.valueOf(2).trim()).intValue();
+        test_rec.set(String.valueOf("C"));
         test_file.rewrite(test_rec);
-    }
-
-    private void test_file_4() {
+        test_file.close();
         /* RAW: *  */
-    }
-
-    private void test_file_5() {
-    }
-
-    private void test_key_5() {
+        test_file.open("INPUT");
+        test_key = new BigDecimal(String.valueOf(1).trim()).intValue();
         if (test_file.read(null) == FileStatus.AT_END) {
         }
         if (!String.valueOf(test_rec).equals(String.valueOf("A"))) {
             CobolDisplay.display("Expected 'A' - Got " + String.valueOf(test_rec));
         }
-    }
-
-    private void test_key_6() {
+        test_key = new BigDecimal(String.valueOf(2).trim()).intValue();
         if (test_file.read(null) == FileStatus.AT_END) {
         }
         if (!String.valueOf(test_rec).equals(String.valueOf("C"))) {
             CobolDisplay.display("Expected 'C' - Got " + String.valueOf(test_rec));
         }
-    }
-
-    private void test_file_6() {
+        test_file.close();
         System.exit(0);
     }
 

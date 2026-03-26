@@ -30,9 +30,7 @@ public class RunFunctions004FunctionAtan extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void y() {
+        y = new BigDecimal(String.valueOf(CobolIntrinsics.atan(1)).trim());
         if (y.compareTo(new BigDecimal(String.valueOf(0.7853981633974483).trim())) != 0) {
             CobolDisplay.display(String.valueOf(y));
         }

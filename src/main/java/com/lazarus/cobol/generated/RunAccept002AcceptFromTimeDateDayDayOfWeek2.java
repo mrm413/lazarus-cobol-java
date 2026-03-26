@@ -35,7 +35,9 @@ public class RunAccept002AcceptFromTimeDateDayDayOfWeek2 extends CobolProgram {
     private int ws_date_today_9 = 0;
     private CobolString ws_date = new CobolString(1); // Group: WS-DATE
     private int ws_date_mm = 0;
+    private CobolString filler_1 = new CobolString(1);
     private int ws_date_dd = 0;
+    private CobolString filler_2 = new CobolString(1);
     private int ws_date_yy = 0;
     private CobolString ws_time_now = new CobolString(1); // Group: WS-TIME-NOW
     private int ws_now_hh = 0;
@@ -45,7 +47,9 @@ public class RunAccept002AcceptFromTimeDateDayDayOfWeek2 extends CobolProgram {
     private int ws_time_now_9 = 0;
     private CobolString ws_time = new CobolString(1); // Group: WS-TIME
     private int ws_time_hh = 0;
+    private CobolString filler_3 = new CobolString(1);
     private int ws_time_mm = 0;
+    private CobolString filler_4 = new CobolString(1);
     private int ws_time_ss = 0;
     private CobolString ws_microsecond_time = new CobolString(1); // Group: WS-MICROSECOND-TIME
     private int ws_time_micro = 0;
@@ -92,7 +96,7 @@ public class RunAccept002AcceptFromTimeDateDayDayOfWeek2 extends CobolProgram {
         if (!String.valueOf(ws_dayofweek).equals(String.valueOf("7"))) {
             CobolDisplay.display("Wrong date DAYOFWEEK: " + String.valueOf(ws_dayofweek) + " expected: 7");
         }
-        for (int _i0 = 0; _i0 < 500; _i0++) {
+        for (int _i1 = 0; _i1 < 500; _i1++) {
             ws_date_today.set(String.valueOf(CobolIntrinsics.acceptFrom("DATE")));
             ws_time_now.set(String.valueOf(CobolIntrinsics.acceptFrom("TIME")));
             ws_microsecond_time.set(String.valueOf(CobolIntrinsics.acceptFrom("MICROSECOND-TIME")));

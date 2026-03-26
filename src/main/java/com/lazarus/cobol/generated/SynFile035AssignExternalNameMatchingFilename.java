@@ -33,9 +33,7 @@ public class SynFile035AssignExternalNameMatchingFilename extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void sysut1() {
+        sysut1.open("INPUT");
         return;
     }
 

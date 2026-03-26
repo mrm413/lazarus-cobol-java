@@ -43,12 +43,17 @@ public class RunMisc086JustifiedAndValueClauses extends CobolProgram {
 
 
     private void para_main() {
-        _1000();
-        /* RAW: - JUSTIFY-IS-RIGHT THRU 1000 - */
-        return;
+        _1000_justify_is_right(); // THRU 1000-EXIT
+        _1000_exit();
+        _2000_justify_is_off(); // THRU 2000-EXIT
+        _2000_exit();
+        if (!String.valueOf(ele4).equals(String.valueOf("RRRRRRRRRR"))) {
+            CobolDisplay.display("ELE4 NOT INITIALIZED CORRECTLY" + String.valueOf(ele4));
+        }
+        System.exit(0);
     }
 
-    private void justify_is_right() {
+    private void _1000_justify_is_right() {
         if (!String.valueOf(ele).equals(String.valueOf("     RIGHT"))) {
             CobolDisplay.display("ELE NOT INITIALIZED CORRECTLY " + String.valueOf(ele));
         }
@@ -85,20 +90,10 @@ public class RunMisc086JustifiedAndValueClauses extends CobolProgram {
         if (!String.valueOf(arr_fld5[6 - 1][6 - 1]).equals(String.valueOf("LEFT      "))) {
             CobolDisplay.display("ARR-FLD5 (6,6) NOT INITIALIZED CORRECTLY");
         }
-    }
-
-    private void arr_array() {
-    }
-
-    private void ele() {
+        arr_array.set(String.valueOf("X"));
+        ele.set(String.valueOf("X"));
         ele.set("");
-    }
-
-    private void value() {
         arr_array.set("");
-    }
-
-    private void value_2() {
         if (!String.valueOf(ele).equals(String.valueOf("     RIGHT"))) {
             CobolDisplay.display("ELE NOT INITIALIZED CORRECTLY");
         }
@@ -126,11 +121,13 @@ public class RunMisc086JustifiedAndValueClauses extends CobolProgram {
         if (!String.valueOf(arr_fld5[6 - 1][6 - 1]).equals(String.valueOf("LEFT      "))) {
             CobolDisplay.display("ARR-FLD5 (6,6) NOT INITIALIZED CORRECTLY");
         }
-        /* RAW: 1000 - */
+    }
+
+    private void _1000_exit() {
         return;
     }
 
-    private void justify_is_off() {
+    private void _2000_justify_is_off() {
         if (!String.valueOf(ele).equals(String.valueOf("RIGHT     "))) {
             CobolDisplay.display("ELE NOT INITIALIZED CORRECTLY " + String.valueOf(ele));
         }
@@ -167,20 +164,10 @@ public class RunMisc086JustifiedAndValueClauses extends CobolProgram {
         if (!String.valueOf(arr_fld5[6 - 1][6 - 1]).equals(String.valueOf("LEFT      "))) {
             CobolDisplay.display("ARR-FLD5 (6,6) NOT INITIALIZED CORRECTLY");
         }
-    }
-
-    private void arr_array_2() {
-    }
-
-    private void ele_2() {
+        arr_array.set(String.valueOf("X"));
+        ele.set(String.valueOf("X"));
         ele.set("");
-    }
-
-    private void value_3() {
         arr_array.set("");
-    }
-
-    private void value_4() {
         if (!String.valueOf(ele).equals(String.valueOf("RIGHT     "))) {
             CobolDisplay.display("ELE NOT INITIALIZED CORRECTLY");
         }
@@ -208,13 +195,11 @@ public class RunMisc086JustifiedAndValueClauses extends CobolProgram {
         if (!String.valueOf(arr_fld5[6 - 1][6 - 1]).equals(String.valueOf("LEFT      "))) {
             CobolDisplay.display("ARR-FLD5 (6,6) NOT INITIALIZED CORRECTLY");
         }
-        /* RAW: 2000 - */
-        return;
     }
 
-    private void _1000() { /* stub — external/COPY */ }
-
-    private void _2000() { /* stub — external/COPY */ }
+    private void _2000_exit() {
+        return;
+    }
 
     @Override
     public void run() {

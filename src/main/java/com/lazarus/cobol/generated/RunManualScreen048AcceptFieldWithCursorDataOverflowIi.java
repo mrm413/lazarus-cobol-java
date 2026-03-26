@@ -30,11 +30,11 @@ public class RunManualScreen048AcceptFieldWithCursorDataOverflowIi extends Cobol
     private CobolString ws_x_20 = new CobolString(20);
 
 
-    private CobolString environment = new CobolString(256);
-    private CobolString cob_screen_exceptions = new CobolString(256);
-    private CobolString cob_screen_esc = new CobolString(256);
-    private CobolString line = new CobolString(256);
-    private CobolString column = new CobolString(256);
+    private CobolString environment = new CobolString(256); // fallback
+    private CobolString cob_screen_exceptions = new CobolString(256); // fallback
+    private CobolString cob_screen_esc = new CobolString(256); // fallback
+    private CobolString line = new CobolString(256); // fallback
+    private CobolString column = new CobolString(256); // fallback
 
     private void testme() {
         environment.set(String.valueOf("TRUE"));
@@ -44,17 +44,10 @@ public class RunManualScreen048AcceptFieldWithCursorDataOverflowIi extends Cobol
         CobolDisplay.display("If the cursor below is positioned at the first" + String.valueOf(line) + String.valueOf(1) + String.valueOf(column) + String.valueOf(1));
         CobolDisplay.display("column in the field below and it is empty, then" + String.valueOf(line) + String.valueOf(2) + String.valueOf(column) + String.valueOf(1));
         CobolDisplay.display("enter 'AB', position after the 'B' and press ENTER." + String.valueOf(line) + String.valueOf(3) + String.valueOf(column) + String.valueOf(1));
-    }
-
-    private void ws_x_20() {
-    }
-
-    private void cur_pos() {
+        ws_x_20.set(String.valueOf("ABCDE     "));
+        cur_pos = new BigDecimal(String.valueOf(8).trim()).intValue();
         ws_x_20.set(String.valueOf(CobolDisplay.accept()));
         /* RAW: LINE 5 COLUMN 3 WITH SIZE */
-    }
-
-    private void cur_pos_2() {
         if ((cur_pos == 3 && cob_crt_status == 0)) {
             return;
         } else {

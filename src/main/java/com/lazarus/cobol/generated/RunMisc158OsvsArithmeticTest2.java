@@ -38,40 +38,19 @@ public class RunMisc158OsvsArithmeticTest2 extends CobolProgram {
 
     private void para_main() {
         res = new BigDecimal(String.valueOf(val.divide(div1, 18, RoundingMode.HALF_UP).divide(div2, 18, RoundingMode.HALF_UP)).trim());
-        CobolDisplay.display("RES = ");
-    }
-
-    private void res() {
+        CobolDisplay.display("RES = " + String.valueOf(res));
         res = new BigDecimal(String.valueOf(val.divide(div1, 18, RoundingMode.HALF_UP).divide(div2, 18, RoundingMode.HALF_UP)).trim());
-        CobolDisplay.display("RES ROUNDED = ");
-    }
-
-    private void res_2() {
+        CobolDisplay.display("RES ROUNDED = " + String.valueOf(res));
         res = new BigDecimal(String.valueOf(val.multiply(mul1).divide(div3, 18, RoundingMode.HALF_UP).divide(div2, 18, RoundingMode.HALF_UP)).trim());
-        CobolDisplay.display("RES MULT1 = ");
-    }
-
-    private void res_3() {
+        CobolDisplay.display("RES MULT1 = " + String.valueOf(res));
         res = new BigDecimal(String.valueOf(val.multiply(mul2).multiply(mul3).divide(div3, 18, RoundingMode.HALF_UP).divide(div2, 18, RoundingMode.HALF_UP)).trim());
-        CobolDisplay.display("RES MULT2 = ");
-    }
-
-    private void res_4() {
+        CobolDisplay.display("RES MULT2 = " + String.valueOf(res));
         res = new BigDecimal(String.valueOf(val.divide(div1, 18, RoundingMode.HALF_UP)).trim());
-        CobolDisplay.display("RES 1 = ");
-    }
-
-    private void res_5() {
+        CobolDisplay.display("RES 1 = " + String.valueOf(res));
         res = new BigDecimal(String.valueOf(res.divide(div2, 18, RoundingMode.HALF_UP)).trim());
-        CobolDisplay.display("RES F = ");
-    }
-
-    private void res_6() {
+        CobolDisplay.display("RES F = " + String.valueOf(res));
         res = new BigDecimal(String.valueOf(val.divide(div1, 18, RoundingMode.HALF_UP).divide(div2, 18, RoundingMode.HALF_UP)).trim());
-        CobolDisplay.display("RES ROUNDED AWAY = ");
-    }
-
-    private void res_7() {
+        CobolDisplay.display("RES ROUNDED AWAY = " + String.valueOf(res));
         System.exit(0);
     }
 

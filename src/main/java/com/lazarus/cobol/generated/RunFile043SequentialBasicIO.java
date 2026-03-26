@@ -31,7 +31,7 @@ public class RunFile043SequentialBasicIO extends CobolProgram {
     // FILE DESCRIPTORS
     private CobolFile file1 = new CobolFile("ORGANIZATION", "SEQUENTIAL", "SEQUENTIAL");
 
-    
+    // FALLBACK FILE DESCRIPTORS
     private CobolFile file = new CobolFile("FILE", "SEQUENTIAL", "SEQUENTIAL");
 
 
@@ -40,19 +40,11 @@ public class RunFile043SequentialBasicIO extends CobolProgram {
     }
 
     private void file1() {
-    }
-
-    private void file1_2() {
-    }
-
-    private void file1_rec() {
+        file1.open("OUTPUT");
+        file1_rec.set(String.valueOf("A"));
         file1.write(file1_rec);
-    }
-
-    private void file1_3() {
-    }
-
-    private void file1_4() {
+        file1.close();
+        file1.open("I-O");
         if (file1.read(null) == FileStatus.AT_END) {
         }
         if (!String.valueOf(file1_rec).equals(String.valueOf("A"))) {
@@ -61,23 +53,17 @@ public class RunFile043SequentialBasicIO extends CobolProgram {
             file1_rec.set(String.valueOf("X"));
             file1.rewrite(file1_rec);
         }
-    }
-
-    private void file1_5() {
+        file1.close();
         if (!String.valueOf(file1_rec).equals(String.valueOf("X"))) {
             System.exit(0);
         }
-    }
-
-    private void file1_6() {
+        file1.open("INPUT");
         if (file1.read(null) == FileStatus.AT_END) {
         }
         if (!String.valueOf(file1_rec).equals(String.valueOf("X"))) {
             CobolDisplay.display("SECOND READ FAILED");
         }
-    }
-
-    private void file1_7() {
+        file1.close();
         System.exit(0);
     }
 

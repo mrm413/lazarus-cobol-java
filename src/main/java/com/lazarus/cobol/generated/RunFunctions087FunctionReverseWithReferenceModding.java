@@ -29,24 +29,26 @@ public class RunFunctions087FunctionReverseWithReferenceModding extends CobolPro
     private CobolString z = new CobolString(10);
 
 
-    private CobolString _unnamed = new CobolString(256);
-    private CobolString _1 = new CobolString(256);
-    private CobolString _4 = new CobolString(256);
-    private CobolString to = new CobolString(256);
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString _1 = new CobolString(256); // fallback
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _4 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
+    private CobolString to = new CobolString(256); // fallback
 
+    private CobolString _filler_004 = new CobolString(256); // fallback
+    private CobolString _filler_005 = new CobolString(256); // fallback
+    private CobolString _filler_006 = new CobolString(256); // fallback
     private void para_main() {
-        _unnamed.set(String.valueOf(CobolIntrinsics.reverse(x)));
+        _filler_004.set(String.valueOf(CobolIntrinsics.reverse(x)));
         _1.set(String.valueOf(CobolIntrinsics.reverse(x)));
-        _unnamed.set(String.valueOf(CobolIntrinsics.reverse(x)));
+        _filler_005.set(String.valueOf(CobolIntrinsics.reverse(x)));
         _4.set(String.valueOf(CobolIntrinsics.reverse(x)));
-        _unnamed.set(String.valueOf(CobolIntrinsics.reverse(x)));
+        _filler_006.set(String.valueOf(CobolIntrinsics.reverse(x)));
         to.set(String.valueOf(CobolIntrinsics.reverse(x)));
-    }
-
-    private void z() {
+        z.set(String.valueOf(CobolIntrinsics.reverse(x)));
         if (!String.valueOf(z).equals(String.valueOf("$E+D      "))) {
-            CobolDisplay.display();
-            /* RAW: Z  */
+            CobolDisplay.display(String.valueOf(z));
         }
         System.exit(0);
     }

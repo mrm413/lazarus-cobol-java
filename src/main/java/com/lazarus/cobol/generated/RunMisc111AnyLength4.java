@@ -32,10 +32,7 @@ public class RunMisc111AnyLength4 extends CobolProgram {
     private void para_main() {
         CobolProgram.call("subprog", str);
         str.set(String.valueOf("   45"));
-        CobolProgram.call("subprog");
-    }
-
-    private void str() {
+        CobolProgram.call("subprog", str);
     }
 
     @Override

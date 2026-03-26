@@ -28,6 +28,7 @@ public class RunSubscripts006LengthOfOdoWReferenceModification extends CobolProg
     private CobolString pline = new CobolString(1); // Group: PLINE
     private short pline_len = (short) 0;
     private CobolString pline_text = new CobolString(1); // Group: PLINE-TEXT
+    private CobolString[] filler_1 = new CobolString[80];
 
 
 

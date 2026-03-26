@@ -34,9 +34,7 @@ public class SynFile019RecordingMode extends CobolProgram {
 
     private void para_main() {
         f.open("INPUT");
-    }
-
-    private void f() {
+        f.close();
     }
 
     @Override

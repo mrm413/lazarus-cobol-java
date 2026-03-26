@@ -30,12 +30,12 @@ public class SynMisc069StringUnstringWithInvalidSyntax extends CobolProgram {
     private CobolString c = new CobolString(3);
 
 
-    private CobolString delimited = new CobolString(256);
-    private CobolString by = new CobolString(256);
-    private CobolString end_string = new CobolString(256);
-    private CobolString size = new CobolString(256);
-    private CobolString space = new CobolString(256);
-    private CobolString into = new CobolString(256);
+    private CobolString delimited = new CobolString(256); // fallback
+    private CobolString by = new CobolString(256); // fallback
+    private CobolString end_string = new CobolString(256); // fallback
+    private CobolString size = new CobolString(256); // fallback
+    private CobolString space = new CobolString(256); // fallback
+    private CobolString into = new CobolString(256); // fallback
 
     private void para_main() {
         {

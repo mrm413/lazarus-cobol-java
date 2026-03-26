@@ -44,6 +44,7 @@ public class Listings022SymbolsOccursAndRedefines extends CobolProgram {
     private CobolString fld = new CobolString(20);
     private CobolString fld1 = new CobolString(100);
     private CobolString[] fld2 = new CobolString[100]; // Group: FLD2
+    private CobolString[] filler_1 = new CobolString[100];
     private CobolString fld3 = new CobolString(3);
     private CobolString fld4 = new CobolString(4);
 

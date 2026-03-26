@@ -34,15 +34,17 @@ public class SynOccurs011OccursWithUnmatchedDependingToPhrases extends CobolProg
     private CobolString[] x3 = new CobolString[10];
 
 
-    private CobolString _unnamed = new CobolString(256);
+    private CobolString _filler_001 = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
     private void para_main() {
         if (x[1 - 1] == null) x[1 - 1] = new CobolString(256);
         x[1 - 1].set(String.valueOf("A"));
-        _unnamed.set(String.valueOf("A"));
+        _filler_002.set(String.valueOf("A"));
         if (x2[2 - 1] == null) x2[2 - 1] = new CobolString(256);
         x2[2 - 1].set(String.valueOf("A"));
-        _unnamed.set(String.valueOf("A"));
+        _filler_003.set(String.valueOf("A"));
         if (x3[3 - 1] == null) x3[3 - 1] = new CobolString(256);
         x3[3 - 1].set(String.valueOf("A"));
         return;

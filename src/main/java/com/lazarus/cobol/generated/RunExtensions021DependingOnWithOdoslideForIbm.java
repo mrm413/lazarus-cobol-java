@@ -35,50 +35,20 @@ public class RunExtensions021DependingOnWithOdoslideForIbm extends CobolProgram 
 
 
     private void para_main() {
-    }
-
-    private void buffer() {
-    }
-
-    private void l1_1_2_s() {
-    }
-
-    private void l1_1_2_1_s() {
-    }
-
-    private void l1_2_s() {
-    }
-
-    private void l1_3_s() {
-    }
-
-    private void l1_3_2_s() {
-        CobolProgram.call("IBM-ODO-TEST", buffer, l1_1_2_s, l1_1_2_1_s, l1_2_s, l1_3_s);
-    }
-
-    private void l1_3_2_s_2() {
-    }
-
-    private void buffer_2() {
-    }
-
-    private void l1_1_2_s_2() {
-    }
-
-    private void l1_1_2_1_s_2() {
-    }
-
-    private void l1_2_s_2() {
-    }
-
-    private void l1_3_s_2() {
-    }
-
-    private void l1_3_2_s_3() {
-        CobolProgram.call("IBM-ODO-TEST", buffer, l1_1_2_s, l1_1_2_1_s, l1_2_s, l1_3_s);
-    }
-
-    private void l1_3_2_s_4() {
+        buffer.set(String.valueOf("0123456789"));
+        l1_1_2_s = new BigDecimal(String.valueOf(3).trim()).intValue();
+        l1_1_2_1_s = new BigDecimal(String.valueOf(4).trim()).intValue();
+        l1_2_s = new BigDecimal(String.valueOf(0).trim()).intValue();
+        l1_3_s = new BigDecimal(String.valueOf(6).trim()).intValue();
+        l1_3_2_s = new BigDecimal(String.valueOf(1).trim()).intValue();
+        CobolProgram.call("IBM-ODO-TEST", buffer, l1_1_2_s, l1_1_2_1_s, l1_2_s, l1_3_s, l1_3_2_s);
+        buffer.set(String.valueOf("0123456789"));
+        l1_1_2_s = new BigDecimal(String.valueOf(2).trim()).intValue();
+        l1_1_2_1_s = new BigDecimal(String.valueOf(3).trim()).intValue();
+        l1_2_s = new BigDecimal(String.valueOf(1).trim()).intValue();
+        l1_3_s = new BigDecimal(String.valueOf(4).trim()).intValue();
+        l1_3_2_s = new BigDecimal(String.valueOf(0).trim()).intValue();
+        CobolProgram.call("IBM-ODO-TEST", buffer, l1_1_2_s, l1_1_2_1_s, l1_2_s, l1_3_s, l1_3_2_s);
         System.exit(0);
     }
 

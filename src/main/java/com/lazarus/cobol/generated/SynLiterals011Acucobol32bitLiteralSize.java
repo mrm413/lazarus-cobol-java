@@ -25,9 +25,9 @@ public class SynLiterals011Acucobol32bitLiteralSize extends CobolProgram {
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
-    private CobolString b = new CobolString(256);
-    private CobolString o = new CobolString(256);
-    private CobolString x = new CobolString(256);
+    private CobolString b = new CobolString(256); // fallback
+    private CobolString o = new CobolString(256); // fallback
+    private CobolString x = new CobolString(256); // fallback
 
     private void para_main() {
         CobolDisplay.display(String.valueOf(b) + String.valueOf(new BigDecimal("1.1111111111111112e+63")) + String.valueOf(o) + String.valueOf(new BigDecimal("1.1111111111111111e+21")) + String.valueOf(x) + String.valueOf(1111111111111111L));

@@ -624,4 +624,122 @@ public class CobolIntrinsics {
             return String.valueOf((char) (ord - 1));
         } catch (Exception e) { return " "; }
     }
+
+    // FUNCTION SIGN — returns -1, 0, or 1
+    public static int sign(Object val) {
+        try {
+            double d = Double.parseDouble(String.valueOf(val).trim());
+            return d > 0 ? 1 : (d < 0 ? -1 : 0);
+        } catch (Exception e) { return 0; }
+    }
+    public static int sign(double val) { return val > 0 ? 1 : (val < 0 ? -1 : 0); }
+    public static int sign(int val) { return val > 0 ? 1 : (val < 0 ? -1 : 0); }
+
+    // FUNCTION EXP — e^x
+    public static double exp(Object val) {
+        try { return Math.exp(Double.parseDouble(String.valueOf(val).trim())); }
+        catch (Exception e) { return 0; }
+    }
+    public static double exp(double val) { return Math.exp(val); }
+    public static double exp(int val) { return Math.exp(val); }
+
+    // FUNCTION EXP10 — 10^x
+    public static double exp10(Object val) {
+        try { return Math.pow(10, Double.parseDouble(String.valueOf(val).trim())); }
+        catch (Exception e) { return 0; }
+    }
+    public static double exp10(double val) { return Math.pow(10, val); }
+    public static double exp10(int val) { return Math.pow(10, val); }
+
+    // FUNCTION FRACTION-PART — fractional part of a number
+    public static double fraction_part(Object val) {
+        try {
+            double d = Double.parseDouble(String.valueOf(val).trim());
+            return d - (int) d;
+        } catch (Exception e) { return 0; }
+    }
+
+    // FUNCTION LOCALE-TIME-FROM-SECONDS
+    public static String locale_time_from_seconds(Object seconds) {
+        try {
+            int secs = (int) Double.parseDouble(String.valueOf(seconds).trim());
+            int h = secs / 3600, m = (secs % 3600) / 60, s = secs % 60;
+            return String.format("%02d%02d%02d", h, m, s);
+        } catch (Exception e) { return "000000"; }
+    }
+
+    // FUNCTION MODULE-DATE / MODULE-FORMATTED-DATE / MODULE-TIME
+    public static int module_date() {
+        java.time.LocalDate d = java.time.LocalDate.now();
+        return d.getYear() * 10000 + d.getMonthValue() * 100 + d.getDayOfMonth();
+    }
+    public static String module_formatted_date() {
+        return String.valueOf(module_date());
+    }
+    public static int module_time() {
+        java.time.LocalTime t = java.time.LocalTime.now();
+        return t.getHour() * 10000 + t.getMinute() * 100 + t.getSecond();
+    }
+
+    // FUNCTION MONETARY-DECIMAL-POINT / MONETARY-THOUSANDS-SEPARATOR
+    public static String monetary_decimal_point() { return "."; }
+    public static String monetary_thousands_separator() { return ","; }
+
+    // FUNCTION NUMERIC-DECIMAL-POINT / NUMERIC-THOUSANDS-SEPARATOR
+    public static String numeric_decimal_point() { return "."; }
+    public static String numeric_thousands_separator() { return ","; }
+
+    // FUNCTION CURRENCY-SYMBOL
+    public static String currency_symbol() { return "$"; }
+
+    // FUNCTION NUMVAL — additional overloads
+    public static BigDecimal numval(Object val, Object mode) {
+        return numval(val);
+    }
+
+    // FUNCTION NUMVAL-C — additional overloads
+    public static BigDecimal numval_c(Object val, Object currency) {
+        String s = String.valueOf(val).trim()
+            .replace(String.valueOf(currency).trim(), "")
+            .replaceAll("[,]", "").replaceAll("[()]", "-");
+        try { return new BigDecimal(s.trim()); } catch (Exception e) { return BigDecimal.ZERO; }
+    }
+
+    // FUNCTION COMBINED-DATETIME — overloads for various types
+    public static double combined_datetime(Object date, Object time) {
+        try {
+            double d = Double.parseDouble(String.valueOf(date).trim());
+            double t = Double.parseDouble(String.valueOf(time).trim());
+            return d * 1000000 + t;
+        } catch (Exception e) { return 0; }
+    }
+
+    // FUNCTION MAX/MIN — overloads for BigDecimal and Object types
+    public static BigDecimal max(BigDecimal... values) {
+        BigDecimal m = values[0];
+        for (BigDecimal v : values) if (v.compareTo(m) > 0) m = v;
+        return m;
+    }
+    public static BigDecimal min(BigDecimal... values) {
+        BigDecimal m = values[0];
+        for (BigDecimal v : values) if (v.compareTo(m) < 0) m = v;
+        return m;
+    }
+    public static double max(double... values) {
+        double m = values[0];
+        for (double v : values) if (v > m) m = v;
+        return m;
+    }
+    public static double min(double... values) {
+        double m = values[0];
+        for (double v : values) if (v < m) m = v;
+        return m;
+    }
+
+    // FUNCTION LENGTH — overloads
+    public static int length(String val) { return val.length(); }
+    public static int length(CobolString val) { return val.length(); }
+
+    // FUNCTION PI — no-arg already exists but ensure callable as pi(0) too
+    public static double pi(Object... args) { return Math.PI; }
 }

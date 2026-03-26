@@ -25,13 +25,11 @@ public class Sub extends CobolProgram {
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
-    private CobolString test_var = new CobolString(256);
+    private CobolString test_var = new CobolString(256); // fallback
+    private CobolString test_var2 = new CobolString(256); // fallback
 
     private void para_main() {
-        CobolDisplay.display(String.valueOf(test_var));
-    }
-
-    private void test_var2() {
+        CobolDisplay.display(String.valueOf(test_var) + String.valueOf(test_var2));
         System.exit(0);
     }
 

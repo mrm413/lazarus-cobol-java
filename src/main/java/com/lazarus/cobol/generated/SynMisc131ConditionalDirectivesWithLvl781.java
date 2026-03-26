@@ -28,21 +28,22 @@ public class SynMisc131ConditionalDirectivesWithLvl781 extends CobolProgram {
     private static final String y = "a";
 
 
-    private CobolString x = new CobolString(256);
-    private CobolString defined = new CobolString(256);
-    private CobolString elif = new CobolString(256);
-    private CobolString not = new CobolString(256);
-    private CobolString _unnamed = new CobolString(256);
-    private CobolString but = new CobolString(256);
-    private CobolString via = new CobolString(256);
-    private CobolString lvl = new CobolString(256);
-    private CobolString end = new CobolString(256);
+    private CobolString x = new CobolString(256); // fallback
+    private CobolString defined = new CobolString(256); // fallback
+    private CobolString elif = new CobolString(256); // fallback
+    private CobolString not = new CobolString(256); // fallback
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString but = new CobolString(256); // fallback
+    private CobolString via = new CobolString(256); // fallback
+    private CobolString lvl = new CobolString(256); // fallback
+    private CobolString end = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
     private void para_main() {
         if (!String.valueOf(x).trim().isEmpty()) {
             /* RAW: DEFINED  */
             CobolDisplay.display(String.valueOf(x) + String.valueOf(defined) + String.valueOf(elif) + String.valueOf(y) + String.valueOf(defined));
-            CobolDisplay.display(String.valueOf(x) + String.valueOf(not) + String.valueOf(defined) + String.valueOf(_unnamed) + String.valueOf(but) + String.valueOf(y) + String.valueOf(via) + String.valueOf(lvl) + String.valueOf(78));
+            CobolDisplay.display(String.valueOf(x) + String.valueOf(not) + String.valueOf(defined) + String.valueOf(_filler_002) + String.valueOf(but) + String.valueOf(y) + String.valueOf(via) + String.valueOf(lvl) + String.valueOf(78));
         } else {
             CobolDisplay.display(String.valueOf(x) + String.valueOf(not) + String.valueOf(defined) + String.valueOf(end));
             /* CONTINUE */

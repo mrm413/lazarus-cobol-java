@@ -25,32 +25,9 @@ public class RunMisc167FloatShortWithSizeError extends CobolProgram {
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
-    private CobolString floatvalue = new CobolString(256);
-    private CobolString lastfloatvalue = new CobolString(256);
-    private CobolString counter = new CobolString(256);
-
-    // SECTION: main
-    private void para_main() {
-        perform();
-        end_perform();
-    }
-
-    private void perform() {
-        /* RAW: varying counter from 1 by 1 */
-        floatvalue.set(String.valueOf((Integer.parseInt(String.valueOf(floatvalue).trim()) * 2)));
-        /* ON SIZE ERROR handling — needs runtime overflow detection */
-    }
-
-    private void end_perform() {
-        if (!String.valueOf(counter).equals(String.valueOf(127))) {
-            CobolDisplay.display("counter is " + String.valueOf(counter));
-        }
-        return;
-    }
 
     @Override
     public void run() {
-        perform();
     }
 
     public static void main(String[] args) {

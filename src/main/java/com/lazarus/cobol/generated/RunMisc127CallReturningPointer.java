@@ -28,7 +28,7 @@ public class RunMisc127CallReturningPointer extends CobolProgram {
     private long c_text_pointer = 0L;
 
 
-    private CobolString cb_static = new CobolString(256);
+    private CobolString cb_static = new CobolString(256); // fallback
 
     private void para_main() {
         CobolProgram.call(String.valueOf(cb_static));

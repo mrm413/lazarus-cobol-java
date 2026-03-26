@@ -33,10 +33,7 @@ public class RunMisc152OptionsParagraphDefaultRoundedMode extends CobolProgram {
         x = new BigDecimal(String.valueOf(1.5).trim()).intValue();
         CobolDisplay.display(String.valueOf(x));
         x = new BigDecimal(String.valueOf(2.5).trim()).intValue();
-        CobolDisplay.display();
-    }
-
-    private void x() {
+        CobolDisplay.display(String.valueOf(x));
     }
 
     @Override

@@ -6,6 +6,7 @@ import com.lazarus.cobol.CobolIntrinsics;
 import com.lazarus.cobol.CobolProgram;
 import com.lazarus.cobol.CobolString;
 import com.lazarus.cobol.FileStatus;
+import com.lazarus.cobol.jcl.batch.DfsortProgram;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -34,10 +35,13 @@ public class RunFile097FileSortLineSequentialSameFile extends CobolProgram {
 
 
     private void para_main() {
-        /* SORT SORT-WRK */
-    }
-
-    private void sort_in() {
+        { /* SORT SORT-WRK (sort_wrk) */
+            DfsortProgram _sort = new DfsortProgram();
+            _sort.setSortKeys(new String[]{"SORT-ENTRY:A"});
+            _sort.addInputFile("SORT-IN");
+            _sort.setOutputFile("SORT-IN");
+            _sort.execute();
+        }
         System.exit(0);
     }
 

@@ -36,12 +36,13 @@ public class SynMisc002WarnLiteralSize extends CobolProgram {
     private int pic_9_decimal = 0;
     private int compute_1 = 0;
     private CobolString group_item_x6 = new CobolString(1); // Group: GROUP-ITEM-X6
+    private CobolString filler_1 = new CobolString(6);
     private static final String const1 = "CAT     ";
     private CobolString const2 = new CobolString(1);
     private int if_d16 = 0;
 
 
-    private CobolString cb_continue = new CobolString(256);
+    private CobolString cb_continue = new CobolString(256); // fallback
 
     private void para_main() {
         if (String.valueOf(group_item_x6).equals(String.valueOf("1234567"))) {
@@ -226,9 +227,6 @@ public class SynMisc002WarnLiteralSize extends CobolProgram {
             /* CONTINUE */
         }
         /* RAW: * Both have correct error check */
-    }
-
-    private void syn_refmod() {
         /* RAW: at * */
         if (String.valueOf(CobolString.refMod(group_item_x6, 2, 6)).equals(String.valueOf((0 /* non-numeric literal: 123456 */ * Integer.parseInt(String.valueOf(cb_continue).trim()))))) {
         }

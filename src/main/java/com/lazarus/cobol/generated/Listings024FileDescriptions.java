@@ -26,12 +26,19 @@ public class Listings024FileDescriptions extends CobolProgram {
     private CobolString debug_contents = new CobolString(256);
     // WORKING-STORAGE SECTION
     private CobolString headings_line = new CobolString(1); // Group: HEADINGS-LINE
+    private CobolString filler_1 = new CobolString(82);
+    private CobolString filler_2 = new CobolString(82);
     private CobolString phase = new CobolString(17);
     private CobolString month_run = new CobolString(2);
+    private CobolString filler_3 = new CobolString(82);
     private CobolString day_run = new CobolString(2);
+    private CobolString filler_4 = new CobolString(82);
     private CobolString year_run = new CobolString(2);
+    private CobolString filler_5 = new CobolString(82);
+    private CobolString filler_6 = new CobolString(82);
     private int page_number = 0;
     private CobolString command_listing = new CobolString(1); // Group: COMMAND-LISTING
+    private CobolString filler_7 = new CobolString(82);
     private CobolString command_image = new CobolString(80);
     private CobolString activities_listing = new CobolString(1); // Group: ACTIVITIES-LISTING
     private CobolString disposition = new CobolString(2);
@@ -39,9 +46,12 @@ public class Listings024FileDescriptions extends CobolProgram {
     private CobolString upsi_byte = new CobolString(1); // Group: UPSI-BYTE
     private CobolString[] upsi_bit = new CobolString[8];
     private CobolString message_log = new CobolString(1); // Group: MESSAGE-LOG
+    private CobolString filler_8 = new CobolString(82);
     private CobolString message_text = new CobolString(80);
     private CobolString display_message = new CobolString(1); // Group: DISPLAY-MESSAGE
+    private CobolString filler_9 = new CobolString(82);
     private CobolString display_temp = new CobolString(6);
+    private CobolString filler_10 = new CobolString(82);
     private CobolString display_text = new CobolString(60);
 
     // FILE SECTION — OLD-VERSION
@@ -58,13 +68,18 @@ public class Listings024FileDescriptions extends CobolProgram {
     private CobolString update_order = new CobolString(1); // Group: UPDATE-ORDER
     private CobolString insertion = new CobolString(1); // Group: INSERTION
     private CobolString command = new CobolString(6);
+    private CobolString filler_11 = new CobolString(82);
     private int a_field = 0;
     private CobolString a_alpha = new CobolString(5);
+    private CobolString filler_12 = new CobolString(82);
     private int b_field = 0;
     private CobolString b_alpha = new CobolString(5);
+    private CobolString filler_13 = new CobolString(82);
+    private CobolString filler_14 = new CobolString(82);
 
     // FILE SECTION — COMMENTARY
     private CobolString comment_line = new CobolString(1); // Group: COMMENT-LINE
+    private CobolString filler_15 = new CobolString(82);
 
 
     // FILE DESCRIPTORS
@@ -74,29 +89,31 @@ public class Listings024FileDescriptions extends CobolProgram {
     private CobolFile modification = new CobolFile("SYSIN1", "LINE SEQUENTIAL", "SEQUENTIAL");
     private CobolFile commentary = new CobolFile("SYSOU1", "LINE SEQUENTIAL", "SEQUENTIAL");
 
-    
-    private CobolFile _unnamed = new CobolFile(",", "SEQUENTIAL", "SEQUENTIAL");
+    // FALLBACK FILE DESCRIPTORS
+    private CobolFile _filler_001 = new CobolFile(",", "SEQUENTIAL", "SEQUENTIAL");
 
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
+    private CobolString _filler_004 = new CobolString(256); // fallback
+    private CobolString _filler_005 = new CobolString(256); // fallback
+    private CobolString _filler_006 = new CobolString(256); // fallback
+    private CobolString _filler_007 = new CobolString(256); // fallback
     private void para_main() {
         old_version.open("INPUT");
-        _unnamed.open("INPUT");
+        // KNOWN_ISSUE: _filler_002.open("INPUT");
         modification.open("INPUT");
-        _unnamed.open("INPUT");
+        // KNOWN_ISSUE: _filler_003.open("INPUT");
         new_version.open("OUTPUT");
-        _unnamed.open("OUTPUT");
-    }
-
-    private void commentary() {
+        // KNOWN_ISSUE: _filler_004.open("OUTPUT");
+        commentary.open("OUTPUT");
         old_version.close();
-        _unnamed.close();
+        // KNOWN_ISSUE: _filler_005.close();
         new_version.close();
-        _unnamed.close();
+        // KNOWN_ISSUE: _filler_006.close();
         modification.close();
-        _unnamed.close();
-    }
-
-    private void commentary_2() {
+        // KNOWN_ISSUE: _filler_007.close();
+        commentary.close();
         System.exit(0);
     }
 

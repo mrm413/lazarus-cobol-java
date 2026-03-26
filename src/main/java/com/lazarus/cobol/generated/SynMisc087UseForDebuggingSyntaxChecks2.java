@@ -33,19 +33,11 @@ public class SynMisc087UseForDebuggingSyntaxChecks2 extends CobolProgram {
     // SECTION: test-DEBUG
     private void test_debug() {
         use();
-        para_main();
-        debug_line();
     }
 
     private void use() {
         /* RAW: FOR DEBUGGING ON ALL REFERENCES OF */
-    }
-
-    private void para_main() {
-        CobolDisplay.display();
-    }
-
-    private void debug_line() {
+        CobolDisplay.display(String.valueOf(debug_line));
         para_main();
         test_debug2();
         test_debug2();
@@ -55,23 +47,15 @@ public class SynMisc087UseForDebuggingSyntaxChecks2 extends CobolProgram {
     // SECTION: test-DEBUG2
     private void test_debug2() {
         use();
-        test_debug();
-        debug_line();
     }
 
     private void use_2() {
         /* RAW: FOR DEBUGGING ON ALL OF I */
-    }
-
-    private void test_debug_2() {
-        CobolDisplay.display();
-    }
-
-    private void debug_line_2() {
+        CobolDisplay.display(String.valueOf(debug_line));
     }
 
     // SECTION: MAIN
-    private void para_main_2() {
+    private void para_main() {
         move();
     }
 

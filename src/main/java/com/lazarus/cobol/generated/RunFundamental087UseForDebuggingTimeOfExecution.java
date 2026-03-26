@@ -32,25 +32,16 @@ public class RunFundamental087UseForDebuggingTimeOfExecution extends CobolProgra
     // SECTION: TEST-DEBUG
     private void test_debug() {
         use();
-        data_field();
-        data_field();
     }
 
     private void use() {
         /* RAW: FOR DEBUGGING ON ALL REFERENCES OF */
-    }
-
-    private void data_field() {
         CobolDisplay.display(String.valueOf(debug_item) + "|");
-    }
-
-    private void data_field_2() {
+        data_field.set(String.valueOf("ABCD"));
     }
 
     private void some_par() {
-    }
-
-    private void data_field_3() {
+        data_field.set(String.valueOf("\""));
         if (String.valueOf(data_field).equals(String.valueOf("\""))) {
             CobolDisplay.display("NO DEBUG");
         } else {

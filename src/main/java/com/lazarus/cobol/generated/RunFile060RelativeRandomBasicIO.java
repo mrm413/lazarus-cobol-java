@@ -34,7 +34,7 @@ public class RunFile060RelativeRandomBasicIO extends CobolProgram {
     // FILE DESCRIPTORS
     private CobolFile file1 = new CobolFile("ORGANIZATION", "RELATIVE", "RANDOM");
 
-    
+    // FALLBACK FILE DESCRIPTORS
     private CobolFile file = new CobolFile("FILE", "SEQUENTIAL", "SEQUENTIAL");
 
 
@@ -43,55 +43,31 @@ public class RunFile060RelativeRandomBasicIO extends CobolProgram {
     }
 
     private void file1() {
-    }
-
-    private void file1_2() {
-    }
-
-    private void file1_key() {
-    }
-
-    private void file1_rec() {
+        file1.open("OUTPUT");
+        file1_key = new BigDecimal(String.valueOf(1).trim()).intValue();
+        file1_rec.set(String.valueOf("A"));
         file1.write(file1_rec);
-    }
-
-    private void file1_key_2() {
-    }
-
-    private void file1_rec_2() {
+        file1_key = new BigDecimal(String.valueOf(2).trim()).intValue();
+        file1_rec.set(String.valueOf("B"));
         file1.write(file1_rec);
-    }
-
-    private void file1_key_3() {
-    }
-
-    private void file1_rec_3() {
+        file1_key = new BigDecimal(String.valueOf(3).trim()).intValue();
+        file1_rec.set(String.valueOf("C"));
         file1.write(file1_rec);
-    }
-
-    private void file1_3() {
-    }
-
-    private void file1_4() {
-    }
-
-    private void file1_key_4() {
+        file1.close();
+        file1.open("INPUT");
+        file1_key = new BigDecimal(String.valueOf(2).trim()).intValue();
         if (file1.read(null) == FileStatus.AT_END) {
         }
         if (!String.valueOf(file1_rec).equals(String.valueOf("B"))) {
             CobolDisplay.display("FAILED");
         }
-    }
-
-    private void file1_key_5() {
+        file1_key = new BigDecimal(String.valueOf(1).trim()).intValue();
         if (file1.read(null) == FileStatus.AT_END) {
         }
         if (!String.valueOf(file1_rec).equals(String.valueOf("A"))) {
             CobolDisplay.display("FAILED");
         }
-    }
-
-    private void file1_5() {
+        file1.close();
         System.exit(0);
     }
 

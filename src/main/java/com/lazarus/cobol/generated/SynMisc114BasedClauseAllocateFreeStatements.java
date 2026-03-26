@@ -36,7 +36,7 @@ public class SynMisc114BasedClauseAllocateFreeStatements extends CobolProgram {
     private long ptr = 0L;
 
 
-    private CobolString address = new CobolString(256);
+    private CobolString address = new CobolString(256); // fallback
 
     private void para_main() {
         /* ALLOCATE — dynamic memory, not typical in Java */

@@ -29,24 +29,25 @@ public class RunFunctions009FunctionConcatenateWithReferenceModding extends Cobo
     private CobolString test_fld = new CobolString(9);
 
 
-    private CobolString _unnamed = new CobolString(256);
-    private CobolString _2 = new CobolString(256);
-    private CobolString _9 = new CobolString(256);
-    private CobolString to = new CobolString(256);
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString _2 = new CobolString(256); // fallback
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _9 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
+    private CobolString to = new CobolString(256); // fallback
 
+    private CobolString _filler_004 = new CobolString(256); // fallback
+    private CobolString _filler_005 = new CobolString(256); // fallback
+    private CobolString _filler_006 = new CobolString(256); // fallback
     private void para_main() {
-    }
-
-    private void y() {
-        _unnamed.set(String.valueOf(CobolIntrinsics.concatenate(y, "abc", "zz", "55", "666")));
+        y.set(String.valueOf("defx"));
+        _filler_004.set(String.valueOf(CobolIntrinsics.concatenate(y, "abc", "zz", "55", "666")));
         _2.set(String.valueOf(CobolIntrinsics.concatenate(y, "abc", "zz", "55", "666")));
-        _unnamed.set(String.valueOf(CobolIntrinsics.concatenate(y, "abc", "zz", "55", "666")));
+        _filler_005.set(String.valueOf(CobolIntrinsics.concatenate(y, "abc", "zz", "55", "666")));
         _9.set(String.valueOf(CobolIntrinsics.concatenate(y, "abc", "zz", "55", "666")));
-        _unnamed.set(String.valueOf(CobolIntrinsics.concatenate(y, "abc", "zz", "55", "666")));
+        _filler_006.set(String.valueOf(CobolIntrinsics.concatenate(y, "abc", "zz", "55", "666")));
         to.set(String.valueOf(CobolIntrinsics.concatenate(y, "abc", "zz", "55", "666")));
-    }
-
-    private void test_fld() {
+        test_fld.set(String.valueOf(CobolIntrinsics.concatenate(y, "abc", "zz", "55", "666")));
         if (!String.valueOf(test_fld).equals(String.valueOf("efxabczz5"))) {
             CobolDisplay.display(String.valueOf(test_fld));
         }

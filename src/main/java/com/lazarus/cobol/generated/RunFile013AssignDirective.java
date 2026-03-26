@@ -35,7 +35,7 @@ public class RunFile013AssignDirective extends CobolProgram {
     private CobolFile f = new CobolFile("whatever", "LINE SEQUENTIAL", "SEQUENTIAL");
     private CobolFile g = new CobolFile("whatever", "LINE SEQUENTIAL", "SEQUENTIAL");
 
-    private CobolString whatever = new CobolString(256);
+    private CobolString whatever = new CobolString(256); // fallback
 
     private void para_main() {
         whatever.set(String.valueOf("out.txt"));
@@ -44,9 +44,7 @@ public class RunFile013AssignDirective extends CobolProgram {
         f.close();
         g.open("OUTPUT");
         g.write("hi");
-    }
-
-    private void g() {
+        g.close();
     }
 
     @Override

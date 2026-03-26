@@ -28,10 +28,10 @@ public class RunManualScreen024BlankLine extends CobolProgram {
     private CobolString success_flag = new CobolString(1);
 
 
-    private CobolString scr_1 = new CobolString(256);
-    private CobolString scr_2 = new CobolString(256);
-    private CobolString success_field = new CobolString(256);
-    private CobolString success = new CobolString(256);
+    private CobolString scr_1 = new CobolString(256); // fallback
+    private CobolString scr_2 = new CobolString(256); // fallback
+    private CobolString success_field = new CobolString(256); // fallback
+    private CobolString success = new CobolString(256); // fallback
 
     private void para_main() {
         CobolDisplay.display(String.valueOf(scr_1));

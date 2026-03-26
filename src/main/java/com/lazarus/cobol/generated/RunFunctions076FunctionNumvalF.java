@@ -24,42 +24,10 @@ public class RunFunctions076FunctionNumvalF extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
-    // WORKING-STORAGE SECTION
-    private CobolString x1 = new CobolString(12);
-    private CobolString x2 = new CobolString(12);
-    private CobolString bad1 = new CobolString(18);
-    private BigDecimal n = BigDecimal.ZERO;
 
-
-    
-    private CobolFile zero = new CobolFile("ZERO", "SEQUENTIAL", "SEQUENTIAL");
-
-
-    private void para_main() {
-        n = new BigDecimal(String.valueOf(CobolIntrinsics.numval_f(x1)).trim());
-        if (n.compareTo(new BigDecimal(String.valueOf(-1234).trim())) != 0) {
-            CobolDisplay.display("X1 '" + String.valueOf(x1) + "' : ");
-            /* RAW: N  */
-        }
-        n = new BigDecimal(String.valueOf(CobolIntrinsics.numval_f(x2)).trim());
-        if (n.compareTo(new BigDecimal(String.valueOf(0.001234).trim())) != 0) {
-            CobolDisplay.display("X2 '" + String.valueOf(x2) + "' : ");
-            /* RAW: N  */
-        }
-        /* RAW: * Note : the following tests */
-        /* RETURN zero */
-        /* RAW: , 3.2 + get "whatever is valid there" * */
-        n = new BigDecimal(String.valueOf(CobolIntrinsics.numval_f(bad1)).trim());
-        if (n.compareTo(new BigDecimal(String.valueOf(0).trim())) != 0) {
-            CobolDisplay.display("BAD1 '" + String.valueOf(bad1) + "' : ");
-            /* RAW: N  */
-        }
-        System.exit(0);
-    }
 
     @Override
     public void run() {
-        para_main();
     }
 
     public static void main(String[] args) {

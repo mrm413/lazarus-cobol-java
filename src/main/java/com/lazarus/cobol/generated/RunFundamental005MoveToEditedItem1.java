@@ -39,21 +39,11 @@ public class RunFundamental005MoveToEditedItem1 extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void edt_1() {
-    }
-
-    private void edt_2() {
-    }
-
-    private void edt_3() {
-    }
-
-    private void edt_4() {
-    }
-
-    private void edt_5() {
+        edt_1.set(String.valueOf(src_1));
+        edt_2.set(String.valueOf(src_2));
+        edt_3.set(String.valueOf(src_3));
+        edt_4.set(String.valueOf(src_4));
+        edt_5.set(String.valueOf(src_5));
         CobolDisplay.display(">" + String.valueOf(edt_1) + "<");
         CobolDisplay.display(">" + String.valueOf(edt_2) + "<");
         CobolDisplay.display(">" + String.valueOf(edt_3) + "<");

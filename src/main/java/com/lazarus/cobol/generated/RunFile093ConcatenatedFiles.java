@@ -43,9 +43,9 @@ public class RunFile093ConcatenatedFiles extends CobolProgram {
     private CobolFile flatfile = new CobolFile("THE-FILE-NAME", "LINE SEQUENTIAL", "SEQUENTIAL");
     // File status: FLAT-STAT
 
-    private CobolString environment = new CobolString(256);
-    private CobolString cob_seq_concat_sep = new CobolString(256);
-    private CobolString cannot = new CobolString(256);
+    private CobolString environment = new CobolString(256); // fallback
+    private CobolString cob_seq_concat_sep = new CobolString(256); // fallback
+    private CobolString cannot = new CobolString(256); // fallback
 
     private void para_main() {
         the_file_name.set(String.valueOf("file1"));
@@ -64,24 +64,18 @@ public class RunFile093ConcatenatedFiles extends CobolProgram {
     }
 
     private void listfile() {
-    }
-
-    private void flatfile() {
+        flatfile.open("INPUT");
         if (!String.valueOf(flat_stat).equals(String.valueOf("00"))) {
             CobolDisplay.display("OPEN INPUT: " + String.valueOf(the_file_name) + " Sts:" + String.valueOf(flat_stat));
         }
         while (!(!String.valueOf(flat_stat).equals(String.valueOf("00")))) {
             read_record();
         }
-    }
-
-    private void flatfile_2() {
+        flatfile.close();
     }
 
     private void updtfile() {
-    }
-
-    private void flatfile_3() {
+        flatfile.open("I-O");
         if (!String.valueOf(flat_stat).equals(String.valueOf("00"))) {
             CobolDisplay.display("OPEN I-O: " + String.valueOf(the_file_name) + " Sts:" + String.valueOf(flat_stat));
         }
@@ -105,16 +99,12 @@ public class RunFile093ConcatenatedFiles extends CobolProgram {
                 }
             }
         }
-    }
-
-    private void flatfile_4() {
+        flatfile.close();
     }
 
     private void read_record() {
         /* RAW: *  */
-    }
-
-    private void flat_record() {
+        flat_record.set(String.valueOf(" "));
         if (flatfile.read(null) == FileStatus.AT_END) {
         }
         if (!String.valueOf(flat_stat).equals(String.valueOf("00"))) {
@@ -127,32 +117,20 @@ public class RunFile093ConcatenatedFiles extends CobolProgram {
     }
 
     private void loadfile() {
-    }
-
-    private void flatfile_5() {
+        flatfile.open("OUTPUT");
         if (!String.valueOf(flat_stat).equals(String.valueOf("00"))) {
             CobolDisplay.display("OPEN OUTPUT: " + String.valueOf(the_file_name) + " Sts:" + String.valueOf(flat_stat));
         }
         for (rec_num = 1; !(rec_num > max_rec); rec_num += 1) {
         }
-    }
-
-    private void flatfile_6() {
+        flatfile.close();
     }
 
     private void load_record() {
-    }
-
-    private void flat_record_2() {
-    }
-
-    private void flat_recnum() {
-    }
-
-    private void file_name() {
-    }
-
-    private void flat_num() {
+        flat_record.set(String.valueOf(" "));
+        flat_recnum.set(String.valueOf("Record"));
+        file_name.set(String.valueOf(the_file_name));
+        flat_num.set(String.valueOf(rec_num));
         flatfile.write(flat_record);
         if (!String.valueOf(flat_stat).equals(String.valueOf("00"))) {
             CobolDisplay.display("Write: " + String.valueOf(file_name) + " Rec#" + String.valueOf(rec_num) + " Sts:" + String.valueOf(flat_stat));

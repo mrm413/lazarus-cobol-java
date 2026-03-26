@@ -95,36 +95,34 @@ public class DataPacked015Comp3VsComp6BcdComparison extends CobolProgram {
     private BigDecimal cd_36 = BigDecimal.ZERO;
 
 
-    private CobolString on = new CobolString(256);
-    private CobolString error = new CobolString(256);
-    private CobolString no_disp = new CobolString(256);
-    private CobolString cb_true = new CobolString(256);
-    private CobolString some = new CobolString(256);
-    private CobolString pz_02_x = new CobolString(256);
-    private CobolString pz_03_x = new CobolString(256);
-    private CobolString pz_04_x = new CobolString(256);
-    private CobolString pz_05_x = new CobolString(256);
-    private CobolString pz_06_x = new CobolString(256);
-    private CobolString pz_01 = new CobolString(256);
-    private CobolString pz_02 = new CobolString(256);
-    private CobolString pz_03 = new CobolString(256);
-    private CobolString pz_04 = new CobolString(256);
-    private CobolString pz_05 = new CobolString(256);
-    private CobolString pz_06 = new CobolString(256);
-    private CobolString u4_32d = new CobolString(256);
-    private CobolString up_32d = new CobolString(256);
-    private CobolString sp_32d = new CobolString(256);
-    private CobolString np_32d = new CobolString(256);
+    private CobolString on = new CobolString(256); // fallback
+    private CobolString error = new CobolString(256); // fallback
+    private CobolString no_disp = new CobolString(256); // fallback
+    private CobolString cb_true = new CobolString(256); // fallback
+    private CobolString some = new CobolString(256); // fallback
+    private CobolString pz_01_x = new CobolString(256); // fallback
+    private CobolString pz_02_x = new CobolString(256); // fallback
+    private CobolString pz_03_x = new CobolString(256); // fallback
+    private CobolString pz_04_x = new CobolString(256); // fallback
+    private CobolString pz_05_x = new CobolString(256); // fallback
+    private CobolString pz_06_x = new CobolString(256); // fallback
+    private CobolString pz_01 = new CobolString(256); // fallback
+    private CobolString pz_02 = new CobolString(256); // fallback
+    private CobolString pz_03 = new CobolString(256); // fallback
+    private CobolString pz_04 = new CobolString(256); // fallback
+    private CobolString pz_05 = new CobolString(256); // fallback
+    private CobolString pz_06 = new CobolString(256); // fallback
+    private CobolString u4_32d = new CobolString(256); // fallback
+    private CobolString up_32d = new CobolString(256); // fallback
+    private CobolString sp_32d = new CobolString(256); // fallback
+    private CobolString np_32d = new CobolString(256); // fallback
 
     private void para_main() {
         /* RAW: * Test with */
         CobolDisplay.display(String.valueOf(on) + String.valueOf(error));
         do_check();
         no_disp.set(String.valueOf((Integer.parseInt(String.valueOf(cb_true).trim()) * Integer.parseInt(String.valueOf(some).trim()))));
-        /* RAW: performance checks on the */
-    }
-
-    private void way() {
+        /* RAW: performance checks on the way */
         for (int _i0 = 0; _i0 < 10000; _i0++) {
         }
         return;
@@ -546,9 +544,7 @@ public class DataPacked015Comp3VsComp6BcdComparison extends CobolProgram {
             CobolDisplay.display("CD-36 <> CD-03");
         }
         /* RAW: * SETTING UP DATA FOR COMPARE */
-    }
-
-    private void pz_01_x() {
+        pz_01_x.set(String.valueOf("\u0000"));
         pz_02_x.set(String.valueOf("\u0000"));
         pz_02_x.setRefMod(20, 1, String.valueOf("0C"));
         pz_03_x.set(String.valueOf("\u0000"));

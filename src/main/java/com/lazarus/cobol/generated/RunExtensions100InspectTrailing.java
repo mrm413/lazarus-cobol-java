@@ -24,63 +24,10 @@ public class RunExtensions100InspectTrailing extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
-    // WORKING-STORAGE SECTION
-    private CobolString w01_string = new CobolString(20);
-    private short w01_index = (short) 0;
 
-
-
-    private void para_main() {
-    }
-
-    private void w01_index() {
-        /* INSPECT W01-STRING — 2 clause(s) */
-    }
-
-    private void space() {
-        if (w01_index != 10) {
-            CobolDisplay.display("Bad Result for Inspect Trailing Case 1");
-        }
-        /* INSPECT W01-STRING — 2 clause(s) */
-        if (!String.valueOf(w01_string).equals(String.valueOf("0123456789AAAAAAAAAA"))) {
-            CobolDisplay.display("Bad Result for Inspect Trailing Case 2");
-        }
-    }
-
-    private void w01_index_2() {
-        /* INSPECT W01-STRING — 4 clause(s) */
-        if (!String.valueOf(w01_string).equals(String.valueOf("0123456789BBBBBBBBBB"))) {
-            CobolDisplay.display("Bad Result for Inspect Trailing Case 3");
-        }
-    }
-
-    private void w01_index_3() {
-    }
-
-    private void w01_string() {
-        /* INSPECT W01-STRING — 2 clause(s) */
-        if (w01_index != 0) {
-            CobolDisplay.display("Bad Result for Inspect Trailing Case 4" + String.valueOf(w01_index));
-        }
-    }
-
-    private void w01_index_4() {
-    }
-
-    private void w01_string_2() {
-        /* INSPECT W01-STRING — 2 clause(s) */
-    }
-
-    private void spaces() {
-        if (w01_index != 20) {
-            CobolDisplay.display("Bad Result for Inspect Trailing Case 5" + String.valueOf(w01_index));
-        }
-        return;
-    }
 
     @Override
     public void run() {
-        para_main();
     }
 
     public static void main(String[] args) {

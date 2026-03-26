@@ -24,44 +24,10 @@ public class RunFunctions003FunctionAsin extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
-    // WORKING-STORAGE SECTION
-    private BigDecimal y = BigDecimal.ZERO;
-    private BigDecimal p = BigDecimal.ZERO;
-    private BigDecimal s = BigDecimal.ZERO;
 
-
-
-    private void para_main() {
-    }
-
-    private void y() {
-        if (y.compareTo(new BigDecimal(String.valueOf(-0.23670419431334683).trim())) != 0) {
-            CobolDisplay.display("DISPLAY: ");
-            /* RAW: Y  */
-        }
-    }
-
-    private void p() {
-        if (p.compareTo(new BigDecimal(String.valueOf(-0.23670419431334683).trim())) != 0) {
-            CobolDisplay.display("PACKED:  ");
-            /* RAW: P  */
-        }
-    }
-
-    private void s() {
-        if (s.compareTo(new BigDecimal(String.valueOf(0.23670419431334683).trim())) != 0) {
-            CobolDisplay.display("COMP-6:  ");
-            /* RAW: S  */
-        }
-        if (!String.valueOf(CobolIntrinsics.asin(-0.2345)).equals(String.valueOf(CobolIntrinsics.asin(-0.2345)))) {
-            CobolDisplay.display("ASIN IS NOT ITSELF");
-        }
-        System.exit(0);
-    }
 
     @Override
     public void run() {
-        para_main();
     }
 
     public static void main(String[] args) {

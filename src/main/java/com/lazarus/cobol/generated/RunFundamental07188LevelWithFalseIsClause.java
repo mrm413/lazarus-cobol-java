@@ -28,8 +28,8 @@ public class RunFundamental07188LevelWithFalseIsClause extends CobolProgram {
     private CobolString myfld = new CobolString(6);
 
 
-    private CobolString myfld88 = new CobolString(256);
-    private CobolString cb_false = new CobolString(256);
+    private CobolString myfld88 = new CobolString(256); // fallback
+    private CobolString cb_false = new CobolString(256); // fallback
 
     // SECTION: ASTART
     private void astart() {

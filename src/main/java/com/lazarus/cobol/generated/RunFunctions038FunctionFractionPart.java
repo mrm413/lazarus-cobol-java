@@ -30,15 +30,11 @@ public class RunFunctions038FunctionFractionPart extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void test_fld() {
+        test_fld = new BigDecimal(String.valueOf(CobolIntrinsics.fraction_part(3.12345)).trim());
         if (test_fld.compareTo(new BigDecimal(String.valueOf(0.12345).trim())) != 0) {
             CobolDisplay.display("FRACTION-PART ( +3.12345 ) wrong: " + String.valueOf(test_fld));
         }
-    }
-
-    private void test_fld_2() {
+        test_fld = new BigDecimal(String.valueOf(CobolIntrinsics.fraction_part(-3.12345)).trim());
         if (test_fld.compareTo(new BigDecimal(String.valueOf(-0.12345).trim())) != 0) {
             CobolDisplay.display("FRACTION-PART ( -3.12345 ) wrong: " + String.valueOf(test_fld));
         }

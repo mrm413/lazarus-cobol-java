@@ -36,45 +36,31 @@ public class DataDisplay003DisplayUnsigned extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void x_bcu() {
+        x_bcu = new BigDecimal(String.valueOf(127).trim()).intValue();
         CobolDisplay.display(String.valueOf(x_bcu));
         x_bcu = new BigDecimal(String.valueOf(x_bcu + 1).trim()).intValue();
         CobolDisplay.display(String.valueOf(x_bcu));
-    }
-
-    private void x_bsu() {
+        x_bsu = new BigDecimal(String.valueOf(32767).trim()).intValue();
         CobolDisplay.display(String.valueOf(x_bsu));
         x_bsu = new BigDecimal(String.valueOf(x_bsu + 1).trim()).intValue();
         CobolDisplay.display(String.valueOf(x_bsu));
-    }
-
-    private void x_biu() {
+        x_biu = new BigDecimal(String.valueOf(2147483647).trim()).intValue();
         CobolDisplay.display(String.valueOf(x_biu));
         x_biu = new BigDecimal(String.valueOf(x_biu + 1).trim()).intValue();
         CobolDisplay.display(String.valueOf(x_biu));
-    }
-
-    private void x_blu() {
+        x_blu = new BigDecimal(String.valueOf(2147483647).trim()).intValue();
         CobolDisplay.display(String.valueOf(x_blu));
         x_blu = new BigDecimal(String.valueOf(x_blu + 1).trim()).intValue();
         CobolDisplay.display(String.valueOf(x_blu));
-    }
-
-    private void x_bdu() {
+        x_bdu = new BigDecimal(String.valueOf(new BigDecimal("9223372036854776000")).trim()).intValue();
         CobolDisplay.display(String.valueOf(x_bdu));
         x_bdu = new BigDecimal(String.valueOf(x_bdu + 1).trim()).intValue();
         CobolDisplay.display(String.valueOf(x_bdu));
-    }
-
-    private void x_us() {
+        x_us.set(String.valueOf(32767));
         CobolDisplay.display(String.valueOf(x_us));
         x_us.set(new BigDecimal(String.valueOf(x_us).trim()).add(new BigDecimal(String.valueOf(1).trim())).toPlainString());
         CobolDisplay.display(String.valueOf(x_us));
-    }
-
-    private void x_ui() {
+        x_ui.set(String.valueOf(2147483647));
         CobolDisplay.display(String.valueOf(x_ui));
         x_ui.set(new BigDecimal(String.valueOf(x_ui).trim()).add(new BigDecimal(String.valueOf(1).trim())).toPlainString());
         CobolDisplay.display(String.valueOf(x_ui));

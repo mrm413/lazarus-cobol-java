@@ -37,10 +37,7 @@ public class RunFile019AssignDynamicWithBasedDataItem extends CobolProgram {
 
 
     private void para_main() {
-        /* RAW: CHAINING  */
-    }
-
-    private void x() {
+        /* RAW: CHAINING x */
         if (!String.valueOf(x).equals(String.valueOf(" "))) {
             /* ALLOCATE — dynamic memory, not typical in Java */
             path.set(String.valueOf("TEST-FILE"));

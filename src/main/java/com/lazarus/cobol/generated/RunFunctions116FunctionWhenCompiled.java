@@ -28,15 +28,14 @@ public class RunFunctions116FunctionWhenCompiled extends CobolProgram {
     private CobolString compiled_datetime = new CobolString(1); // Group: compiled-datetime
     private CobolString compiled_date = new CobolString(1); // Group: compiled-date
     private CobolString millennium = new CobolString(1);
+    private CobolString filler_1 = new CobolString(15);
     private CobolString timezone = new CobolString(5);
 
 
-    private CobolString _unnamed = new CobolString(256);
+    private CobolString _filler_001 = new CobolString(256); // fallback
 
     private void para_main() {
-    }
-
-    private void compiled_datetime() {
+        compiled_datetime.set(String.valueOf(CobolIntrinsics.when_compiled()));
         if (!String.valueOf(millennium).equals(String.valueOf("2"))) {
             CobolDisplay.display("Millennium NOT OK: " + String.valueOf(millennium));
         }

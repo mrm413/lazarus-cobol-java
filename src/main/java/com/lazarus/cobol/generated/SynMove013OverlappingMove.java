@@ -31,19 +31,21 @@ public class SynMove013OverlappingMove extends CobolProgram {
     private CobolString structure2 = new CobolString(1); // Group: STRUCTURE2
     private CobolString field2_1 = new CobolString(10);
     private CobolString field2_2 = new CobolString(5);
+    private CobolString filler_1 = new CobolString(1);
     private CobolString[] field = new CobolString[7];
     private CobolString[] fieldo = new CobolString[7];
     private int numvar = 0;
     private static final int const4 = 4;
 
 
-    private CobolString _unnamed = new CobolString(256);
+    private CobolString _filler_001 = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
     private void para_main() {
         structure1.set(String.valueOf(field1_2));
         field1_1.set(String.valueOf(field1_2));
         field1_2.set(String.valueOf(field1_1));
-        _unnamed.set(String.valueOf(field1_1));
+        _filler_002.set(String.valueOf(field1_1));
         field2_2.set(String.valueOf(field1_1));
         field2_1.set(String.valueOf(field1_2));
         field2_2.set(String.valueOf(field2_1));

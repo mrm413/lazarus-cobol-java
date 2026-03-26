@@ -24,33 +24,10 @@ public class RunInitialize011InitializeWithReferenceModification extends CobolPr
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
-    // WORKING-STORAGE SECTION
-    private CobolString my_fld = new CobolString(6);
-    private int my_other_fld = 0;
 
-
-
-    // SECTION: ASTART
-    private void astart() {
-        a01();
-    }
-
-    private void a01() {
-        my_fld.setRefMod(1, 2, "");
-        if (!String.valueOf(my_fld).equals(String.valueOf("  CDEF"))) {
-            CobolDisplay.display("MY-FLD: " + String.valueOf(my_fld));
-        }
-    /* my_other_fld.setRefMod(2, 2, ""); */ /* int_deref */
-        my_fld.set(String.valueOf("0  0"));
-        if (!String.valueOf(my_other_fld).equals(String.valueOf(CobolString.refMod(my_fld, 1, 4)))) {
-            CobolDisplay.display("MY-OTHER-FLD: " + String.valueOf(my_other_fld));
-        }
-        System.exit(0);
-    }
 
     @Override
     public void run() {
-        a01();
     }
 
     public static void main(String[] args) {

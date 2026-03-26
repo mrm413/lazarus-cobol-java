@@ -35,49 +35,18 @@ public class RunReportwriter017DuplicateDetailLine extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void report_file() {
-        /* RAW: INITIATE  */
-    }
-
-    private void myreport() {
-    }
-
-    private void save_item() {
-        /* RAW: GENERATE  */
-    }
-
-    private void detail_line() {
-    }
-
-    private void save_item_2() {
-        /* RAW: GENERATE  */
-    }
-
-    private void detail_line_2() {
-        /* RAW: GENERATE  */
-    }
-
-    private void snd_detail_line() {
-        /* RAW: GENERATE  */
-    }
-
-    private void trd_detail_line() {
-    }
-
-    private void save_item_3() {
-        /* RAW: GENERATE  */
-    }
-
-    private void trd_detail_line_2() {
-        /* RAW: TERMINATE  */
-    }
-
-    private void myreport_2() {
-    }
-
-    private void report_file_2() {
+        report_file.open("OUTPUT");
+        /* RAW: INITIATE MYREPORT */
+        save_item.set(String.valueOf("A"));
+        /* RAW: GENERATE DETAIL-LINE */
+        save_item.set(String.valueOf("B"));
+        /* RAW: GENERATE DETAIL-LINE */
+        /* RAW: GENERATE SND-DETAIL-LINE */
+        /* RAW: GENERATE TRD-DETAIL-LINE */
+        save_item.set(String.valueOf("C"));
+        /* RAW: GENERATE TRD-DETAIL-LINE */
+        /* RAW: TERMINATE MYREPORT */
+        report_file.close();
         System.exit(0);
     }
 

@@ -31,9 +31,7 @@ public class RunFunctions113FunctionUpperCase extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void z() {
+        z.set(String.valueOf(CobolIntrinsics.upper_case(x)));
         if (!String.valueOf(z).equals(String.valueOf("A#B.C%D+E$"))) {
             CobolDisplay.display(String.valueOf(z));
         }

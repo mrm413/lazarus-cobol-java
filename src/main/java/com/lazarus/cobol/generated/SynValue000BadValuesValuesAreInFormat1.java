@@ -25,21 +25,9 @@ public class SynValue000BadValuesValuesAreInFormat1 extends CobolProgram {
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
-    private CobolString days = new CobolString(256);
-    private CobolString sepx = new CobolString(256);
-    private CobolString months = new CobolString(256);
-
-    private void para_main() {
-        CobolDisplay.display(String.valueOf(days) + String.valueOf(sepx) + String.valueOf(months));
-    }
-
-    private void sepl() {
-        return;
-    }
 
     @Override
     public void run() {
-        para_main();
     }
 
     public static void main(String[] args) {

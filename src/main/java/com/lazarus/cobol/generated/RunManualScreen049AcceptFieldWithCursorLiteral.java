@@ -29,11 +29,11 @@ public class RunManualScreen049AcceptFieldWithCursorLiteral extends CobolProgram
     private CobolString ws_x_20 = new CobolString(20);
 
 
-    private CobolString environment = new CobolString(256);
-    private CobolString cob_screen_exceptions = new CobolString(256);
-    private CobolString cob_screen_esc = new CobolString(256);
-    private CobolString line = new CobolString(256);
-    private CobolString column = new CobolString(256);
+    private CobolString environment = new CobolString(256); // fallback
+    private CobolString cob_screen_exceptions = new CobolString(256); // fallback
+    private CobolString cob_screen_esc = new CobolString(256); // fallback
+    private CobolString line = new CobolString(256); // fallback
+    private CobolString column = new CobolString(256); // fallback
 
     private void testme() {
         environment.set(String.valueOf("TRUE"));
@@ -42,14 +42,9 @@ public class RunManualScreen049AcceptFieldWithCursorLiteral extends CobolProgram
         cob_screen_esc.set(String.valueOf("TRUE"));
         CobolDisplay.display("If the cursor below is positioned at the 'C'" + String.valueOf(line) + String.valueOf(1) + String.valueOf(column) + String.valueOf(1));
         CobolDisplay.display("(third column in field) below, then press ENTER." + String.valueOf(line) + String.valueOf(2) + String.valueOf(column) + String.valueOf(1));
-    }
-
-    private void ws_x_20() {
+        ws_x_20.set(String.valueOf("ABCDEFG   "));
         ws_x_20.set(String.valueOf(CobolDisplay.accept()));
         /* RAW: LINE 4 COLUMN 2 WITH AUTO-SKIP */
-    }
-
-    private void update() {
         if (cob_crt_status == 0) {
             return;
         } else {

@@ -47,40 +47,24 @@ public class RunMisc16278Value extends CobolProgram {
     private static final String xstrt4 = "START";
 
 
-    private CobolString num2 = new CobolString(256);
-    private CobolString thedog = new CobolString(256);
+    private CobolString div1 = new CobolString(256); // fallback
+    private CobolString hun2 = new CobolString(256); // fallback
+    private CobolString num2 = new CobolString(256); // fallback
+    private CobolString thedog = new CobolString(256); // fallback
 
     private void para_main() {
-        CobolDisplay.display("DIV1 is ");
-    }
-
-    private void div1() {
-        CobolDisplay.display("HUN  is ");
-    }
-
-    private void hun() {
-        CobolDisplay.display("HUN2 is ");
-    }
-
-    private void hun2() {
+        CobolDisplay.display("DIV1 is " + String.valueOf(div1));
+        CobolDisplay.display("HUN  is " + String.valueOf(hun));
+        CobolDisplay.display("HUN2 is " + String.valueOf(hun2));
         fld1 = new BigDecimal(String.valueOf(num2).trim()).intValue();
         if (fld1 == 9) {
             CobolDisplay.display("NUM2 is " + String.valueOf(num2) + " left to right precedence.");
         } else {
             CobolDisplay.display("NUM2 is " + String.valueOf(num2) + " normal precedence.");
         }
-        CobolDisplay.display("XFLD3 starts at ");
-    }
-
-    private void xpos3() {
-        CobolDisplay.display("XFLD4 starts at ");
-    }
-
-    private void xstrt4() {
-        CobolDisplay.display("XFLD4 starts at ");
-    }
-
-    private void xpos4() {
+        CobolDisplay.display("XFLD3 starts at " + String.valueOf(xpos3));
+        CobolDisplay.display("XFLD4 starts at " + String.valueOf(xstrt4));
+        CobolDisplay.display("XFLD4 starts at " + String.valueOf(xpos4));
         CobolDisplay.display("Your Dog's name is " + String.valueOf(doggy) + ";");
         CobolDisplay.display("The Dog's name is " + String.valueOf(thedog) + ";");
         System.exit(0);

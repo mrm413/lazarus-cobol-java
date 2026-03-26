@@ -31,48 +31,22 @@ public class SynMove017MoveFigurativeToNumeric extends CobolProgram {
 
 
     private void main_1() {
-    }
-
-    private void myfld() {
-    }
-
-    private void myfld_2() {
-    }
-
-    private void myfld_3() {
-    }
-
-    private void myfld_4() {
-    }
-
-    private void myfld_5() {
-    }
-
-    private void myfld_6() {
-    }
-
-    private void myfld_7() {
-    }
-
-    private void myfld_8() {
-    }
-
-    private void myfld_9() {
+        myfld = new BigDecimal(String.valueOf(bigflt).trim()).intValue();
+        myfld = new BigDecimal(String.valueOf(" ").trim()).intValue();
+        myfld = new BigDecimal(String.valueOf("\u0000").trim()).intValue();
+        myfld = new BigDecimal(String.valueOf("\uFFFF").trim()).intValue();
+        myfld = new BigDecimal(String.valueOf("\"").trim()).intValue();
+        myfld = new BigDecimal(String.valueOf("*").trim()).intValue();
+        myfld = new BigDecimal(String.valueOf("0").trim()).intValue();
+        myfld = new BigDecimal(String.valueOf("A1").trim()).intValue();
+        myfld = new BigDecimal(String.valueOf("21").trim()).intValue();
         myfld = new BigDecimal(String.valueOf("\uFFFF").trim()).intValue();
         myfld = new BigDecimal(String.valueOf(" ").trim()).intValue();
         { String _rs = String.valueOf(myfld); StringBuilder _rb = new StringBuilder(_rs); try { _rb.replace(1 - 1, _rb.length(), String.valueOf("\uFFFF")); myfld = Integer.parseInt(_rb.toString().trim()); } catch (Exception _e) {} }
-    }
-
-    private void bigflt() {
-    }
-
-    private void bigflt_2() {
-    }
-
-    private void bigflt_3() {
-    }
-
-    private void bigflt_4() {
+        bigflt = (float) Double.parseDouble(String.valueOf("\uFFFF").trim());
+        bigflt = (float) Double.parseDouble(String.valueOf("\"").trim());
+        bigflt = (float) Double.parseDouble(String.valueOf("*").trim());
+        bigflt = (float) Double.parseDouble(String.valueOf("21").trim());
         System.exit(0);
     }
 

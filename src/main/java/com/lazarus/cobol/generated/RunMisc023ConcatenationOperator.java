@@ -28,14 +28,18 @@ public class RunMisc023ConcatenationOperator extends CobolProgram {
     private CobolString str = new CobolString(5);
 
 
-    private CobolString _unnamed = new CobolString(256);
-    private CobolString ok = new CobolString(256);
-    private CobolString to = new CobolString(256);
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString ok = new CobolString(256); // fallback
+    private CobolString to = new CobolString(256); // fallback
 
+    private CobolString _filler_003 = new CobolString(256); // fallback
+    private CobolString _filler_004 = new CobolString(256); // fallback
+    private CobolString _filler_005 = new CobolString(256); // fallback
     private void para_main() {
-        _unnamed.set(String.valueOf("OK"));
-        _unnamed.set(String.valueOf("OK"));
-        _unnamed.set(String.valueOf("OK"));
+        _filler_003.set(String.valueOf("OK"));
+        _filler_004.set(String.valueOf("OK"));
+        _filler_005.set(String.valueOf("OK"));
         ok.set(String.valueOf("OK"));
         to.set(String.valueOf("OK"));
         str.set(String.valueOf("OK"));

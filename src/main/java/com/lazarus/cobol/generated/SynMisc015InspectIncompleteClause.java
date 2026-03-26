@@ -28,13 +28,10 @@ public class SynMisc015InspectIncompleteClause extends CobolProgram {
     private int x = 0;
 
 
-    private CobolString abcde = new CobolString(256);
+    private CobolString abcde = new CobolString(256); // fallback
 
     private void para_main() {
         /* INSPECT "abcde" — 2 clause(s) */
-    }
-
-    private void cb_for() {
     }
 
     @Override

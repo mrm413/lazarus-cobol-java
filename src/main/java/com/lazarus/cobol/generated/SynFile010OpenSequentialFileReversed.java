@@ -31,7 +31,7 @@ public class SynFile010OpenSequentialFileReversed extends CobolProgram {
     // FILE DESCRIPTORS
     private CobolFile test_file = new CobolFile("./TEST-FILE", "SEQUENTIAL", "SEQUENTIAL");
 
-    
+    // FALLBACK FILE DESCRIPTORS
     private CobolFile reversed = new CobolFile("REVERSED", "SEQUENTIAL", "SEQUENTIAL");
 
 

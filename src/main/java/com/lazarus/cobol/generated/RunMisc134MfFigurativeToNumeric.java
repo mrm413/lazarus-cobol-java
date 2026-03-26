@@ -34,96 +34,58 @@ public class RunMisc134MfFigurativeToNumeric extends CobolProgram {
         CobolDisplay.display("Initial value");
         show_it();
         CobolDisplay.display("MOVE BIGFLT");
-    }
-
-    private void myfld() {
+        myfld = new BigDecimal(String.valueOf(bigflt).trim()).intValue();
         show_it();
         CobolDisplay.display("MOVE SPACES");
-    }
-
-    private void myfld_2() {
+        myfld = new BigDecimal(String.valueOf(" ").trim()).intValue();
         show_it();
         CobolDisplay.display("MOVE LOW-VALUES");
-    }
-
-    private void myfld_3() {
+        myfld = new BigDecimal(String.valueOf("\u0000").trim()).intValue();
         show_it();
         CobolDisplay.display("MOVE HIGH-VALUES");
-    }
-
-    private void myfld_4() {
+        myfld = new BigDecimal(String.valueOf("\uFFFF").trim()).intValue();
         show_it();
         CobolDisplay.display("MOVE QUOTE");
-    }
-
-    private void myfld_5() {
+        myfld = new BigDecimal(String.valueOf("\"").trim()).intValue();
         show_it();
         CobolDisplay.display("MOVE ALL *");
-    }
-
-    private void myfld_6() {
+        myfld = new BigDecimal(String.valueOf("*").trim()).intValue();
         show_it();
         CobolDisplay.display("MOVE ALL 0");
-    }
-
-    private void myfld_7() {
+        myfld = new BigDecimal(String.valueOf("0").trim()).intValue();
         show_it();
         CobolDisplay.display("MOVE ALL 'A1'");
-    }
-
-    private void myfld_8() {
+        myfld = new BigDecimal(String.valueOf("A1").trim()).intValue();
         show_it();
         CobolDisplay.display("MOVE ALL '21'");
-    }
-
-    private void myfld_9() {
+        myfld = new BigDecimal(String.valueOf("21").trim()).intValue();
         show_it();
         CobolDisplay.display("MOVE HIGH-VALUES TO (1:)");
         { String _rs = String.valueOf(myfld); StringBuilder _rb = new StringBuilder(_rs); try { _rb.replace(1 - 1, _rb.length(), String.valueOf("\uFFFF")); myfld = Integer.parseInt(_rb.toString().trim()); } catch (Exception _e) {} }
         show_it();
         CobolDisplay.display("MOVE HIGH-VALUES TO BIGFLT");
-    }
-
-    private void bigflt() {
+        bigflt = (float) Double.parseDouble(String.valueOf("\uFFFF").trim());
         show_big();
-        CobolProgram.call("dump");
-    }
-
-    private void bigflt_2() {
+        CobolProgram.call("dump", bigflt);
         CobolDisplay.display("MOVE QUOTE TO BIGFLT");
-    }
-
-    private void bigflt_3() {
+        bigflt = (float) Double.parseDouble(String.valueOf("\"").trim());
         show_big();
-        CobolProgram.call("dump");
-    }
-
-    private void bigflt_4() {
+        CobolProgram.call("dump", bigflt);
         CobolDisplay.display("MOVE ALL * TO BIGFLT");
-    }
-
-    private void bigflt_5() {
+        bigflt = (float) Double.parseDouble(String.valueOf("*").trim());
         show_big();
         CobolDisplay.display("MOVE ALL '21' TO BIGFLT");
-    }
-
-    private void bigflt_6() {
+        bigflt = (float) Double.parseDouble(String.valueOf("21").trim());
         show_big();
         System.exit(0);
     }
 
     private void show_it() {
-        CobolProgram.call("dump");
-    }
-
-    private void myfld_10() {
+        CobolProgram.call("dump", myfld);
     }
 
     private void show_big() {
-        CobolDisplay.display("BIGFLT is ");
-    }
-
-    private void bigflt_7() {
+        CobolDisplay.display("BIGFLT is " + String.valueOf(bigflt));
     }
 
     @Override

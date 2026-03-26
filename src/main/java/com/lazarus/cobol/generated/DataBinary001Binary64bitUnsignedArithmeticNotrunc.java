@@ -30,18 +30,10 @@ public class DataBinary001Binary64bitUnsignedArithmeticNotrunc extends CobolProg
 
 
     private void para_main() {
-    }
-
-    private void work_udword_1() {
-        CobolDisplay.display();
-    }
-
-    private void work_udword_1_2() {
+        work_udword_1 = new BigDecimal(String.valueOf(new BigDecimal("18446744073709552000")).trim()).shortValue();
+        CobolDisplay.display(String.valueOf(work_udword_1));
         work_udword_1 = new BigDecimal(String.valueOf((work_udword_1 / 2)).trim()).shortValue();
-        CobolDisplay.display();
-    }
-
-    private void work_udword_1_3() {
+        CobolDisplay.display(String.valueOf(work_udword_1));
         System.exit(0);
     }
 

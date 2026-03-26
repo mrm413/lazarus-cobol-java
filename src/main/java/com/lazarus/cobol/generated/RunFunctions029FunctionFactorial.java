@@ -30,9 +30,7 @@ public class RunFunctions029FunctionFactorial extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void test_fld() {
+        test_fld = new BigDecimal(String.valueOf(CobolIntrinsics.factorial(6)).trim());
         if (test_fld.compareTo(new BigDecimal(String.valueOf(720).trim())) != 0) {
             CobolDisplay.display(String.valueOf(test_fld));
         }

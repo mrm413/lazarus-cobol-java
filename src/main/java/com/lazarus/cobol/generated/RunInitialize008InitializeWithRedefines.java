@@ -33,9 +33,7 @@ public class RunInitialize008InitializeWithRedefines extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void g1() {
+        g1.set("");
         if (!String.valueOf(g1).equals(String.valueOf(" 0"))) {
             CobolDisplay.displayNoAdvancing(String.valueOf(g1));
         }

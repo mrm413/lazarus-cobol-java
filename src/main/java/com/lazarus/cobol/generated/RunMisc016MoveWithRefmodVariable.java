@@ -32,12 +32,9 @@ public class RunMisc016MoveWithRefmodVariable extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void y() {
+        y.set(String.valueOf(CobolString.refMod(x, 1, i)));
         if (!String.valueOf(y).equals(String.valueOf("1   "))) {
-            CobolDisplay.display();
-            /* RAW: Y  */
+            CobolDisplay.display(String.valueOf(y));
         }
         System.exit(0);
     }

@@ -46,17 +46,13 @@ public class SynDefinition010SameParagraphsInDifferentSections extends CobolProg
     private void s_3() {
         go();
         l();
-        l();
     }
 
     private void go() {
-        /* RAW: TO  */
+        /* RAW: TO L */
     }
 
     private void l_3() {
-    }
-
-    private void l_4() {
     }
 
     @Override

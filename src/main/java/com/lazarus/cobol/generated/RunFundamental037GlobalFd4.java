@@ -39,9 +39,7 @@ public class RunFundamental037GlobalFd4 extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void teststat() {
+        teststat.set(String.valueOf("00"));
         CobolProgram.call("prog2");
         if (String.valueOf(teststat).equals(String.valueOf("00"))) {
             CobolDisplay.display("Not OK");

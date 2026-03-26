@@ -38,27 +38,21 @@ public class RunMisc16301Constant extends CobolProgram {
     private static final int hun = 10;
 
 
-    private CobolString num2 = new CobolString(256);
-    private CobolString con5 = new CobolString(256);
-    private CobolString con4 = new CobolString(256);
-    private CobolString con6 = new CobolString(256);
-    private CobolString dogname = new CobolString(256);
+    private CobolString div1 = new CobolString(256); // fallback
+    private CobolString hun2 = new CobolString(256); // fallback
+    private CobolString num2 = new CobolString(256); // fallback
+    private CobolString con5 = new CobolString(256); // fallback
+    private CobolString con3 = new CobolString(256); // fallback
+    private CobolString con4 = new CobolString(256); // fallback
+    private CobolString con6 = new CobolString(256); // fallback
+    private CobolString dogname = new CobolString(256); // fallback
 
     private void para_main() {
         CobolDisplay.display("CAT  is '" + String.valueOf(cat) + "'");
         CobolDisplay.display("Yard is '" + String.valueOf(yard) + "'");
-        CobolDisplay.display("DIV1 is ");
-    }
-
-    private void div1() {
-        CobolDisplay.display("HUN  is ");
-    }
-
-    private void hun() {
-        CobolDisplay.display("HUN2 is ");
-    }
-
-    private void hun2() {
+        CobolDisplay.display("DIV1 is " + String.valueOf(div1));
+        CobolDisplay.display("HUN  is " + String.valueOf(hun));
+        CobolDisplay.display("HUN2 is " + String.valueOf(hun2));
         fld1 = new BigDecimal(String.valueOf(num2).trim()).intValue();
         if (fld1 == 9) {
             CobolDisplay.display("78 VALUE has simple left to right precedence.");
@@ -71,10 +65,7 @@ public class RunMisc16301Constant extends CobolProgram {
         } else {
             CobolDisplay.display("01 CONSTANT is " + String.valueOf(con5) + " left to right precedence.");
         }
-        CobolDisplay.display("CON3 is ");
-    }
-
-    private void con3() {
+        CobolDisplay.display("CON3 is " + String.valueOf(con3));
         CobolDisplay.display("CON4 is " + String.valueOf(con4) + " vs " + String.valueOf(3.141596) + String.valueOf((0 /* non-numeric literal:  &  */ - 2.189)) + String.valueOf((0 /* non-numeric literal:  &  */ + 12)));
         CobolDisplay.display("CON6 is " + String.valueOf(con6) + ".");
         CobolDisplay.display("My Dog's name is " + String.valueOf(dogname) + ";");

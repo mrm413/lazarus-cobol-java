@@ -32,9 +32,7 @@ public class RunMisc041CallBinaryLiteralParameterLengthOf extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void myocc() {
+        myocc = new BigDecimal(String.valueOf(9).trim()).shortValue();
         CobolProgram.call("dump", 1);
         CobolProgram.call("dump", CobolIntrinsics.length(mytab));
         CobolProgram.call("dump", CobolIntrinsics.length(myocc));

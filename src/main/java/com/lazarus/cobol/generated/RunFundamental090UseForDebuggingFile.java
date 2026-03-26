@@ -35,33 +35,21 @@ public class RunFundamental090UseForDebuggingFile extends CobolProgram {
     // SECTION: TEST-DEBUG
     private void test_debug() {
         use();
-        test_file();
     }
 
     private void use() {
-        /* RAW: FOR DEBUGGING ON */
-    }
-
-    private void test_file() {
+        /* RAW: FOR DEBUGGING ON TEST-FILE */
         CobolDisplay.display(String.valueOf(debug_item) + "|");
     }
 
     private void some_par() {
-    }
-
-    private void test_file_2() {
+        test_file.open("OUTPUT");
         test_file.write("DEF");
-    }
-
-    private void test_file_3() {
-    }
-
-    private void test_file_4() {
+        test_file.close();
+        test_file.open("INPUT");
         if (test_file.read(null) == FileStatus.AT_END) {
         }
-    }
-
-    private void test_file_5() {
+        test_file.close();
         System.exit(0);
     }
 

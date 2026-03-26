@@ -25,8 +25,8 @@ public class SynCopy009CopyLeadingReplacement extends CobolProgram {
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
-    private CobolString first_var = new CobolString(256);
-    private CobolString second_var = new CobolString(256);
+    private CobolString first_var = new CobolString(256); // fallback
+    private CobolString second_var = new CobolString(256); // fallback
 
     private void para_main() {
         CobolDisplay.displayNoAdvancing(String.valueOf(first_var));

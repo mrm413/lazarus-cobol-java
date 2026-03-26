@@ -29,14 +29,10 @@ public class SynDefinition061InvalidUseBefore extends CobolProgram {
     // SECTION: DEPTHDRUSE
     private void depthdruse() {
         use();
-        depthdr();
     }
 
     private void use() {
-        /* RAW: BEFORE REPORTING */
-    }
-
-    private void depthdr() {
+        /* RAW: BEFORE REPORTING DEPTHDR */
     }
 
     @Override

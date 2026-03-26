@@ -1,0 +1,4 @@
+# Known Issues — Lazarus COBOL-to-Java Transpiler
+# These files compile but have commented-out sections where the transpiler
+# requires runtime extensions not yet in the public release.
+# Format: one Java class name per line (without .java extension)

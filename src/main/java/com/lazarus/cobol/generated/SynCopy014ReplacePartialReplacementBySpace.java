@@ -29,8 +29,8 @@ public class SynCopy014ReplacePartialReplacementBySpace extends CobolProgram {
     private CobolString var2_suffix = new CobolString(2);
 
 
-    private CobolString var1 = new CobolString(256);
-    private CobolString var2 = new CobolString(256);
+    private CobolString var1 = new CobolString(256); // fallback
+    private CobolString var2 = new CobolString(256); // fallback
 
     private void para_main() {
         CobolDisplay.displayNoAdvancing("VAR1: " + String.valueOf(var1));

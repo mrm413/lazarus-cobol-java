@@ -37,45 +37,31 @@ public class RunFunctions039FunctionHighestAlgebraic extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void test_fld() {
+        test_fld = new BigDecimal(String.valueOf(CobolIntrinsics.highest_algebraic(f1)).trim());
         if (test_fld.compareTo(new BigDecimal(String.valueOf(999).trim())) != 0) {
             CobolDisplay.display("Test 1 fail: " + String.valueOf(test_fld));
         }
-    }
-
-    private void test_fld_2() {
+        test_fld = new BigDecimal(String.valueOf(CobolIntrinsics.highest_algebraic(f2)).trim());
         if (test_fld.compareTo(new BigDecimal(String.valueOf(9999).trim())) != 0) {
             CobolDisplay.display("Test 2 fail: " + String.valueOf(test_fld));
         }
-    }
-
-    private void test_fld_3() {
+        test_fld = new BigDecimal(String.valueOf(CobolIntrinsics.highest_algebraic(f3)).trim());
         if (test_fld.compareTo(new BigDecimal(String.valueOf(99.999).trim())) != 0) {
             CobolDisplay.display("Test 3 fail: " + String.valueOf(test_fld));
         }
-    }
-
-    private void test_fld_4() {
+        test_fld = new BigDecimal(String.valueOf(CobolIntrinsics.highest_algebraic(f4)).trim());
         if (test_fld.compareTo(new BigDecimal(String.valueOf(99999.99).trim())) != 0) {
             CobolDisplay.display("Test 4 fail: " + String.valueOf(test_fld));
         }
-    }
-
-    private void test_fld_5() {
+        test_fld = new BigDecimal(String.valueOf(CobolIntrinsics.highest_algebraic(f5)).trim());
         if (test_fld.compareTo(new BigDecimal(String.valueOf(99999.99).trim())) != 0) {
             CobolDisplay.display("Test 5 fail: " + String.valueOf(test_fld));
         }
-    }
-
-    private void test_fld_6() {
+        test_fld = new BigDecimal(String.valueOf(CobolIntrinsics.highest_algebraic(f6)).trim());
         if (test_fld.compareTo(new BigDecimal(String.valueOf(127).trim())) != 0) {
             CobolDisplay.display("Test 6 fail: " + String.valueOf(test_fld));
         }
-    }
-
-    private void test_fld_7() {
+        test_fld = new BigDecimal(String.valueOf(CobolIntrinsics.highest_algebraic(f7)).trim());
         if (test_fld.compareTo(new BigDecimal(String.valueOf(255).trim())) != 0) {
             CobolDisplay.display("Test 7 fail: " + String.valueOf(test_fld));
         }

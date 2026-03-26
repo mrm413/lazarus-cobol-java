@@ -31,12 +31,8 @@ public class SynMove000MoveSpaceToNumericOrNumericEditedItem extends CobolProgra
 
 
     private void para_main() {
-    }
-
-    private void x() {
-    }
-
-    private void y() {
+        x = new BigDecimal(String.valueOf(" ").trim()).intValue();
+        y.set(String.valueOf(" "));
         System.exit(0);
     }
 

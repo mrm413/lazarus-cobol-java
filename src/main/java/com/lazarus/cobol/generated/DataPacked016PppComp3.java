@@ -47,24 +47,16 @@ public class DataPacked016PppComp3 extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void move72() {
-    }
-
-    private void move73() {
+        move72 = new BigDecimal(String.valueOf(3344556677L).trim()).intValue();
+        move73.set(String.valueOf(move72));
         if (!String.valueOf(move73).equals(String.valueOf("33445 56677     0 "))) {
             CobolDisplay.display("MOVE X-EDIT failed: " + String.valueOf(move73) + ".");
         }
-    }
-
-    private void ae_0002() {
+        ae_0002.set(String.valueOf(19823));
         if (!String.valueOf(grp_ae_0002).equals(String.valueOf("01098 23 "))) {
             CobolDisplay.display("MOVE AE-EDIT failed: " + String.valueOf(grp_ae_0002) + ".");
         }
-    }
-
-    private void wrk_ae_3() {
+        wrk_ae_3.set(String.valueOf(wrk_ds_ls_1p17_1));
         CobolDisplay.display("MOVE 1P17: " + String.valueOf(wrk_ds_ls_1p17_1) + " : " + String.valueOf(CobolIntrinsics.length(wrk_ds_ls_1p17_1)) + ".");
         CobolDisplay.display("MOVE A-E : " + String.valueOf(wrk_ae_3) + ".");
         if (!String.valueOf(wrk_ae_3).equals(String.valueOf("1 000/000/000/000/000 00"))) {
@@ -76,9 +68,7 @@ public class DataPacked016PppComp3 extends CobolProgram {
         CobolDisplay.display("INIT D-1 : " + String.valueOf(d_1) + " .");
         x_2 = new BigDecimal(String.valueOf(d_1).trim());
         x_1 = new BigDecimal(String.valueOf(d_1).trim());
-    }
-
-    private void d_1() {
+        d_1 = new BigDecimal(String.valueOf(x_2).trim());
         CobolDisplay.display("MOVE X-1 : " + String.valueOf(x_1) + " .");
         CobolDisplay.display("MOVE X-2 : " + String.valueOf(x_2) + " .");
         x_4 = new BigDecimal(String.valueOf(0.000256).trim());
@@ -88,37 +78,29 @@ public class DataPacked016PppComp3 extends CobolProgram {
         x_1 = new BigDecimal(String.valueOf(d_2).trim());
         CobolDisplay.display("MOVE X-1 : " + String.valueOf(x_1) + ":" + String.valueOf(d_2) + " .");
         CobolDisplay.display("MOVE X-2 : " + String.valueOf(x_2) + ":" + String.valueOf(d_2) + " .");
-    }
-
-    private void x_1() {
+        x_1 = new BigDecimal(String.valueOf(98000).trim());
         if (x_1.compareTo(new BigDecimal(String.valueOf(98000).trim())) != 0) {
-            CobolDisplay.display("MOVE 98000 failed: ");
-            /* RAW: X-1  */
+            CobolDisplay.display("MOVE 98000 failed: " + String.valueOf(x_1));
         }
         d_1 = new BigDecimal(String.valueOf(98000).trim());
         if (d_1.compareTo(new BigDecimal(String.valueOf(98000).trim())) != 0) {
-            CobolDisplay.display("MOVE 98000 failed: ");
-            /* RAW: D-1  */
+            CobolDisplay.display("MOVE 98000 failed: " + String.valueOf(d_1));
         }
         x_1 = x_1.add(new BigDecimal(String.valueOf(1000).trim()));
         if (x_1.compareTo(new BigDecimal(String.valueOf(99000).trim())) != 0) {
-            CobolDisplay.display("+ 1000 failed: ");
-            /* RAW: X-1  */
+            CobolDisplay.display("+ 1000 failed: " + String.valueOf(x_1));
         }
         x_1 = x_1.subtract(new BigDecimal(String.valueOf(4000).trim()));
         if (x_1.compareTo(new BigDecimal(String.valueOf(95000).trim())) != 0) {
-            CobolDisplay.display("- 4000 failed: ");
-            /* RAW: X-1  */
+            CobolDisplay.display("- 4000 failed: " + String.valueOf(x_1));
         }
         /* DIVIDE without GIVING — needs runtime */
         if (x_1.compareTo(new BigDecimal(String.valueOf(31000).trim())) != 0) {
-            CobolDisplay.display("/ 3 failed: ");
-            /* RAW: X-1  */
+            CobolDisplay.display("/ 3 failed: " + String.valueOf(x_1));
         }
         x_1 = new BigDecimal(String.valueOf(new BigDecimal(String.valueOf(2).trim()).multiply(x_1)).trim());
         if (x_1.compareTo(new BigDecimal(String.valueOf(62000).trim())) != 0) {
-            CobolDisplay.display("* 2 failed: ");
-            /* RAW: X-1  */
+            CobolDisplay.display("* 2 failed: " + String.valueOf(x_1));
         }
         if (!String.valueOf(fence_1).equals(String.valueOf(fence))) {
             CobolDisplay.display("broken FENCE-1");

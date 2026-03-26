@@ -30,12 +30,9 @@ public class RunFunctions089FunctionSecondsPastMidnight extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void y() {
+        y = new BigDecimal(String.valueOf(CobolIntrinsics.seconds_past_midnight()).trim()).shortValue();
         if (y >= 86402) {
-            CobolDisplay.display();
-            /* RAW: Y  */
+            CobolDisplay.display(String.valueOf(y));
         }
         System.exit(0);
     }

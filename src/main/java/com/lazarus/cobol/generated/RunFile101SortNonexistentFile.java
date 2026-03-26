@@ -6,6 +6,7 @@ import com.lazarus.cobol.CobolIntrinsics;
 import com.lazarus.cobol.CobolProgram;
 import com.lazarus.cobol.CobolString;
 import com.lazarus.cobol.FileStatus;
+import com.lazarus.cobol.jcl.batch.DfsortProgram;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -38,10 +39,13 @@ public class RunFile101SortNonexistentFile extends CobolProgram {
 
 
     private void para_main() {
-        /* SORT SORT-WRK */
-    }
-
-    private void sort_out() {
+        { /* SORT SORT-WRK (sort_wrk) */
+            DfsortProgram _sort = new DfsortProgram();
+            _sort.setSortKeys(new String[]{"WRK-REC:A"});
+            _sort.addInputFile("SORT-IN");
+            _sort.setOutputFile("SORT-OUT");
+            _sort.execute();
+        }
         System.exit(0);
     }
 

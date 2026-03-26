@@ -35,7 +35,7 @@ public class RunExtensions006AddressOf extends CobolProgram {
     private CobolString y = new CobolString(3);
 
 
-    private CobolString address = new CobolString(256);
+    private CobolString address = new CobolString(256); // fallback
 
     private void para_main() {
         address.set(String.valueOf(address));
@@ -48,9 +48,7 @@ public class RunExtensions006AddressOf extends CobolProgram {
         if (!String.valueOf(y).equals(String.valueOf("X-2"))) {
             CobolDisplay.display("Test 2 " + String.valueOf(y));
         }
-    }
-
-    private void ptr_1() {
+        ptr_1 = 0L;
         if (!String.valueOf(ptr_1).equals(String.valueOf(0))) {
             CobolDisplay.display("NG 1");
         }

@@ -30,7 +30,7 @@ public class RunMisc058PerformVaryingBy02Decimal extends CobolProgram {
 
 
     private void para_main() {
-        for (x = (int) 0.8; !(x < 0.4); x += (int) -0.2) {
+        for (x = (int) (0.8); !(x < 0.4); x += (int) (-0.2)) {
             CobolDisplay.displayNoAdvancing("X");
         }
         if (x != 0.2) {

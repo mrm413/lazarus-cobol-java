@@ -28,6 +28,13 @@ public class RunMisc153OccursIndexedAscending extends CobolProgram {
     private int rec_name_dbx = 0;
     // WORKING-STORAGE SECTION
     private CobolString dbi_record_namest = new CobolString(1); // Group: DBI-RECORD-NAMEST
+    private CobolString filler_1 = new CobolString(35);
+    private CobolString filler_2 = new CobolString(35);
+    private CobolString filler_3 = new CobolString(35);
+    private CobolString filler_4 = new CobolString(35);
+    private CobolString filler_5 = new CobolString(35);
+    private CobolString filler_6 = new CobolString(35);
+    private CobolString filler_7 = new CobolString(35);
     private CobolString dbi_record_namesr = new CobolString(1); // Group: DBI-RECORD-NAMESR
     private CobolString[] dbi_record_names = new CobolString[7]; // Group: DBI-RECORD-NAMES
     private CobolString[] dbi_record_name = new CobolString[7];
@@ -35,6 +42,13 @@ public class RunMisc153OccursIndexedAscending extends CobolProgram {
     private CobolString[] dbi_record_dir = new CobolString[7];
     private CobolString rec_name = new CobolString(30);
     private CobolString dbx_record_namest = new CobolString(1); // Group: DBX-RECORD-NAMEST
+    private CobolString filler_8 = new CobolString(35);
+    private CobolString filler_9 = new CobolString(35);
+    private CobolString filler_10 = new CobolString(35);
+    private CobolString filler_11 = new CobolString(35);
+    private CobolString filler_12 = new CobolString(35);
+    private CobolString filler_13 = new CobolString(35);
+    private CobolString filler_14 = new CobolString(35);
     private CobolString dbx_record_namesr = new CobolString(1); // Group: DBX-RECORD-NAMESR
     private CobolString[] dbx_record_names = new CobolString[7]; // Group: DBX-RECORD-NAMES
     private CobolString[] dbx_record_name = new CobolString[7];
@@ -45,13 +59,9 @@ public class RunMisc153OccursIndexedAscending extends CobolProgram {
 
     private void para_main() {
         rec_name_idx = new BigDecimal(String.valueOf(1).trim()).intValue();
-    }
-
-    private void rec_name() {
+        rec_name.set(String.valueOf("A-F-GEN-LEDGER-ZGL"));
         findit();
-    }
-
-    private void rec_name_2() {
+        rec_name.set(String.valueOf("JUNK"));
         findit();
         System.exit(0);
     }

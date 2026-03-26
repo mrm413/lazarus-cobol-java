@@ -30,9 +30,7 @@ public class RunFunctions064FunctionModuleFormattedDate extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void test_date() {
+        test_date.set(String.valueOf(CobolIntrinsics.module_formatted_date()));
         if (!String.valueOf(test_date).equals(String.valueOf(" "))) {
             CobolDisplay.displayNoAdvancing("OK");
         }

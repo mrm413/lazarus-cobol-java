@@ -31,31 +31,43 @@ public class SynMisc132ConditionalDirectivesWithLvl782 extends CobolProgram {
     private static final int z = 354;
 
 
-    private CobolString y2x = new CobolString(256);
-    private CobolString correct = new CobolString(256);
-    private CobolString _unnamed = new CobolString(256);
-    private CobolString bad = new CobolString(256);
-    private CobolString should = new CobolString(256);
-    private CobolString be = new CobolString(256);
-    private CobolString end = new CobolString(256);
-    private CobolString is = new CobolString(256);
-    private CobolString not = new CobolString(256);
-    private CobolString elif = new CobolString(256);
-    private CobolString broken = new CobolString(256);
+    private CobolString y2x = new CobolString(256); // fallback
+    private CobolString correct = new CobolString(256); // fallback
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString bad = new CobolString(256); // fallback
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString should = new CobolString(256); // fallback
+    private CobolString be = new CobolString(256); // fallback
+    private CobolString end = new CobolString(256); // fallback
+    private CobolString is = new CobolString(256); // fallback
+    private CobolString not = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
+    private CobolString elif = new CobolString(256); // fallback
+    private CobolString _filler_004 = new CobolString(256); // fallback
+    private CobolString broken = new CobolString(256); // fallback
 
+    private CobolString _filler_005 = new CobolString(256); // fallback
+    private CobolString _filler_006 = new CobolString(256); // fallback
+    private CobolString _filler_007 = new CobolString(256); // fallback
+    private CobolString _filler_008 = new CobolString(256); // fallback
+    private CobolString _filler_009 = new CobolString(256); // fallback
+    private CobolString _filler_010 = new CobolString(256); // fallback
+    private CobolString _filler_011 = new CobolString(256); // fallback
+    private CobolString _filler_012 = new CobolString(256); // fallback
+    private CobolString _filler_013 = new CobolString(256); // fallback
     private void para_main() {
         if (String.valueOf(y).equals(String.valueOf(y2x))) {
-            CobolDisplay.display(String.valueOf(correct) + String.valueOf(y) + String.valueOf(_unnamed) + String.valueOf(y2));
+            CobolDisplay.display(String.valueOf(correct) + String.valueOf(y) + String.valueOf(_filler_005) + String.valueOf(y2));
         } else {
-            CobolDisplay.display(String.valueOf(bad) + String.valueOf(_unnamed) + String.valueOf(y) + String.valueOf(should) + String.valueOf(be) + String.valueOf(_unnamed) + String.valueOf(y2) + String.valueOf(end));
+            CobolDisplay.display(String.valueOf(bad) + String.valueOf(_filler_006) + String.valueOf(y) + String.valueOf(should) + String.valueOf(be) + String.valueOf(_filler_007) + String.valueOf(y2) + String.valueOf(end));
             if (y > x) {
-                CobolDisplay.display(String.valueOf((Integer.parseInt(String.valueOf(bad).trim()) - y)) + String.valueOf(is) + String.valueOf(not) + String.valueOf(_unnamed) + String.valueOf(x) + String.valueOf(elif) + String.valueOf(y) + String.valueOf(_unnamed) + String.valueOf(x));
-                CobolDisplay.display(String.valueOf(correct) + String.valueOf(y) + String.valueOf(_unnamed) + String.valueOf(x));
+                CobolDisplay.display(String.valueOf((Integer.parseInt(String.valueOf(bad).trim()) - y)) + String.valueOf(is) + String.valueOf(not) + String.valueOf(_filler_008) + String.valueOf(x) + String.valueOf(elif) + String.valueOf(y) + String.valueOf(_filler_009) + String.valueOf(x));
+                CobolDisplay.display(String.valueOf(correct) + String.valueOf(y) + String.valueOf(_filler_010) + String.valueOf(x));
             } else {
                 CobolDisplay.display(String.valueOf(broken) + String.valueOf(end));
                 if (x > y) {
-                    CobolDisplay.display(String.valueOf(correct) + String.valueOf(x) + String.valueOf(_unnamed) + String.valueOf(y) + String.valueOf(elif) + String.valueOf(x) + String.valueOf(_unnamed) + String.valueOf(y));
-                    CobolDisplay.display(String.valueOf((Integer.parseInt(String.valueOf(bad).trim()) - x)) + String.valueOf(is) + String.valueOf(not) + String.valueOf(_unnamed) + String.valueOf(y));
+                    CobolDisplay.display(String.valueOf(correct) + String.valueOf(x) + String.valueOf(_filler_011) + String.valueOf(y) + String.valueOf(elif) + String.valueOf(x) + String.valueOf(_filler_012) + String.valueOf(y));
+                    CobolDisplay.display(String.valueOf((Integer.parseInt(String.valueOf(bad).trim()) - x)) + String.valueOf(is) + String.valueOf(not) + String.valueOf(_filler_013) + String.valueOf(y));
                 } else {
                     CobolDisplay.display(String.valueOf(broken) + String.valueOf(end));
                     /* CONTINUE */

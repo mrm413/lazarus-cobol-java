@@ -25,20 +25,16 @@ public class RunFundamental085UseForDebuggingCobSetDebugSwitched extends CobolPr
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
-    private CobolString environment = new CobolString(256);
-    private CobolString cob_set_debug = new CobolString(256);
+    private CobolString environment = new CobolString(256); // fallback
+    private CobolString cob_set_debug = new CobolString(256); // fallback
 
     // SECTION: TEST-DEBUG
     private void test_debug() {
         use();
-        procedures();
     }
 
     private void use() {
-        /* RAW: FOR DEBUGGING ON ALL */
-    }
-
-    private void procedures() {
+        /* RAW: FOR DEBUGGING ON ALL PROCEDURES */
         CobolDisplay.display(String.valueOf(debug_item) + "|");
     }
 

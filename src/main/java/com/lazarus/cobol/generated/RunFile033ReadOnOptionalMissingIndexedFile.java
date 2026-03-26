@@ -35,7 +35,7 @@ public class RunFile033ReadOnOptionalMissingIndexedFile extends CobolProgram {
     private CobolFile file1 = new CobolFile("fileX", "INDEXED", "SEQUENTIAL");
     // File status: f-status
 
-    
+    // FALLBACK FILE DESCRIPTORS
     private CobolFile file = new CobolFile("FILE", "SEQUENTIAL", "SEQUENTIAL");
 
 
@@ -44,9 +44,7 @@ public class RunFile033ReadOnOptionalMissingIndexedFile extends CobolProgram {
     }
 
     private void file1() {
-    }
-
-    private void file1_2() {
+        file1.open("INPUT");
         if (!String.valueOf(f_status).equals(String.valueOf("05"))) {
             CobolDisplay.display("FAILED OPEN: fs=" + String.valueOf(f_status));
         }
@@ -57,9 +55,7 @@ public class RunFile033ReadOnOptionalMissingIndexedFile extends CobolProgram {
         } else {
             CobolDisplay.display("FAILED READ NO AT END: status " + String.valueOf(f_status));
         }
-    }
-
-    private void file1_3() {
+        file1.close();
     }
 
     @Override

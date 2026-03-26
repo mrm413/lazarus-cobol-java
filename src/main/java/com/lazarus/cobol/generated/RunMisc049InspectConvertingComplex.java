@@ -33,12 +33,12 @@ public class RunMisc049InspectConvertingComplex extends CobolProgram {
         /* INSPECT X — 2 clause(s) */
         if (!String.valueOf(x).equals(String.valueOf("Z0ZYYXDXXEXX"))) {
             CobolDisplay.display("1 - " + String.valueOf(x));
-            /* RAW: X  */
+            x.set(String.valueOf("Z0ZYYXDXXEXX"));
         }
         /* INSPECT X — 2 clause(s) */
         if (!String.valueOf(x).equals(String.valueOf("Z0ZYYXD  EXX"))) {
             CobolDisplay.display("2 - " + String.valueOf(x));
-            /* RAW: X  */
+            x.set(String.valueOf("Z0ZYYXD  EXX"));
         }
         System.exit(0);
     }

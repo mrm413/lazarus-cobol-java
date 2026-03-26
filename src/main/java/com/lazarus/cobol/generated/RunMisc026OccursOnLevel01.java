@@ -31,7 +31,7 @@ public class RunMisc026OccursOnLevel01 extends CobolProgram {
     private CobolString x_all = new CobolString(10);
 
 
-    private CobolString[] address = new CobolString[100];
+    private CobolString[] address = new CobolString[100]; // fallback array
 
     private void para_main() {
         if (x[1 - 1] == null) x[1 - 1] = new CobolString(1);

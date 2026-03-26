@@ -29,13 +29,14 @@ public class SynScreen003AcceptDisplayExtensionsDetection extends CobolProgram {
     private int x = 0;
 
 
-    private CobolString at = new CobolString(256);
-    private CobolString line = new CobolString(256);
-    private CobolString column = new CobolString(256);
-    private CobolString scr = new CobolString(256);
-    private CobolString underline = new CobolString(256);
-    private CobolString _unnamed = new CobolString(256);
+    private CobolString at = new CobolString(256); // fallback
+    private CobolString line = new CobolString(256); // fallback
+    private CobolString column = new CobolString(256); // fallback
+    private CobolString scr = new CobolString(256); // fallback
+    private CobolString underline = new CobolString(256); // fallback
+    private CobolString _filler_001 = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
     private void para_main() {
         CobolDisplay.display("hello" + String.valueOf(at) + String.valueOf(0));
         CobolDisplay.display("world" + String.valueOf(line) + 0 + String.valueOf(column) + String.valueOf(zero_const));
@@ -44,7 +45,7 @@ public class SynScreen003AcceptDisplayExtensionsDetection extends CobolProgram {
         CobolDisplay.display(String.valueOf(scr) + String.valueOf(underline));
         scr.set(String.valueOf(CobolDisplay.accept()));
         /* RAW: WITH HIGHLIGHT */
-        CobolDisplay.display(String.valueOf(scr) + String.valueOf(_unnamed) + String.valueOf(scr));
+        CobolDisplay.display(String.valueOf(scr) + String.valueOf(_filler_002) + String.valueOf(scr));
         CobolDisplay.display(String.valueOf(scr));
         scr.set(String.valueOf(CobolDisplay.accept()));
         /* RAW: AT LINE 4 COLUMN 4 */

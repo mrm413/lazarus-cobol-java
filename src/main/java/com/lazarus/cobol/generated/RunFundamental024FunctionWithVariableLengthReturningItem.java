@@ -24,29 +24,10 @@ public class RunFundamental024FunctionWithVariableLengthReturningItem extends Co
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
-    // WORKING-STORAGE SECTION
-    private int arg_len = 0;
 
-    // LINKAGE SECTION
-    private CobolString argument = new CobolString(1);
-    private CobolString result = new CobolString(1); // Group: result
-
-
-
-    private void para_main() {
-        arg_len = new BigDecimal(String.valueOf(CobolIntrinsics.length(argument)).trim()).intValue();
-    }
-
-    private void result() {
-        /* RAW: END FUNCTION */
-    }
-
-    private void reply() {
-    }
 
     @Override
     public void run() {
-        para_main();
     }
 
     public static void main(String[] args) {

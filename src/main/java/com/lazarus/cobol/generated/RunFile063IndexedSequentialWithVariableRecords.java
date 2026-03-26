@@ -26,6 +26,8 @@ public class RunFile063IndexedSequentialWithVariableRecords extends CobolProgram
     private CobolString debug_contents = new CobolString(256);
     // WORKING-STORAGE SECTION
     private int rec_size = 0;
+    private CobolString _1_template = new CobolString(1); // Group: 1-template
+    private CobolString[] _1_x = new CobolString[20];
 
     // FILE SECTION — f
     private CobolString f_rec = new CobolString(1); // Group: f-rec
@@ -37,27 +39,26 @@ public class RunFile063IndexedSequentialWithVariableRecords extends CobolProgram
     // FILE DESCRIPTORS
     private CobolFile f = new CobolFile("INDEXED", "SEQUENTIAL", "RANDOM");
 
-    
-    private CobolFile _unnamed = new CobolFile("*", "SEQUENTIAL", "SEQUENTIAL");
+    // FALLBACK FILE DESCRIPTORS
+    private CobolFile _filler_001 = new CobolFile("*", "SEQUENTIAL", "SEQUENTIAL");
     private CobolFile should = new CobolFile("SHOULD", "SEQUENTIAL", "SEQUENTIAL");
     private CobolFile not = new CobolFile("NOT", "SEQUENTIAL", "SEQUENTIAL");
     private CobolFile influence = new CobolFile("INFLUENCE", "SEQUENTIAL", "SEQUENTIAL");
     private CobolFile move = new CobolFile("MOVE", "SEQUENTIAL", "SEQUENTIAL");
 
-    private CobolString template = new CobolString(256);
-    private CobolString[] x = new CobolString[100];
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
     private void para_main() {
         f.open("OUTPUT");
         f_key = new BigDecimal(String.valueOf(1).trim()).intValue();
         for (rec_size = 22; !(rec_size < 12); rec_size += -1) {
-            f_data.set(String.valueOf((1 - Integer.parseInt(String.valueOf(template).trim()))));
+            f_data.set(String.valueOf(_1_template));
             f.write(f_rec);
             f_key = new BigDecimal(String.valueOf(f_key + 1).trim()).intValue();
         }
         f.close();
         f.open("INPUT");
-        _unnamed.open("INPUT");
+        // KNOWN_ISSUE: _filler_002.open("INPUT");
         /* OPEN rec-size — skipped, not a file */
         should.open("INPUT");
         not.open("INPUT");
@@ -75,14 +76,12 @@ public class RunFile063IndexedSequentialWithVariableRecords extends CobolProgram
                 CobolDisplay.display("Failed: bad record size - " + String.valueOf(rec_size));
                 System.exit(1);
             }
-            if (!String.valueOf(f_x[(rec_size - 2) - 1]).equals(String.valueOf((1 - Integer.parseInt(String.valueOf(x[(rec_size - 2) - 1]).trim()))))) {
+            if (!String.valueOf(f_x[(rec_size - 2) - 1]).equals(String.valueOf(_1_x[(rec_size - 2) - 1]))) {
                 CobolDisplay.display("Failed: bad data - " + String.valueOf(f_data));
                 System.exit(1);
             }
         }
-    }
-
-    private void f() {
+        f.close();
     }
 
     @Override

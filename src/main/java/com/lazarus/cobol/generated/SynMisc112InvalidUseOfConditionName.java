@@ -33,14 +33,15 @@ public class SynMisc112InvalidUseOfConditionName extends CobolProgram {
     private CobolString[] tentry = new CobolString[6];
 
 
-    private CobolString val_i1 = new CobolString(256);
-    private CobolString val_i2 = new CobolString(256);
-    private CobolString _unnamed = new CobolString(256);
-    private CobolString vnum_9 = new CobolString(256);
-    private CobolString vnum_1 = new CobolString(256);
-    private CobolString vnum_2 = new CobolString(256);
-    private CobolString address = new CobolString(256);
+    private CobolString val_i1 = new CobolString(256); // fallback
+    private CobolString val_i2 = new CobolString(256); // fallback
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString vnum_9 = new CobolString(256); // fallback
+    private CobolString vnum_1 = new CobolString(256); // fallback
+    private CobolString vnum_2 = new CobolString(256); // fallback
+    private CobolString address = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
     private void para_main() {
         {
             StringBuilder _sb = new StringBuilder();
@@ -64,7 +65,7 @@ public class SynMisc112InvalidUseOfConditionName extends CobolProgram {
         /* UNSTRING — requires runtime implementation */
         val_i1.set(String.valueOf(""));
         val_i2.set(String.valueOf(val_i1));
-        _unnamed.set(String.valueOf(val_i1));
+        _filler_002.set(String.valueOf(val_i1));
         if (tentry[Integer.parseInt(String.valueOf(vnum_9).trim()) - 1] == null) tentry[Integer.parseInt(String.valueOf(vnum_9).trim()) - 1] = new CobolString(256);
         tentry[Integer.parseInt(String.valueOf(vnum_9).trim()) - 1].set(String.valueOf(val_i1));
         vnum_1.set(String.valueOf(vnum));

@@ -26,21 +26,8 @@ public class SynMisc037LineAndFloatingComments extends CobolProgram {
     private CobolString debug_contents = new CobolString(256);
 
 
-    private void para_main() {
-        /* RAW: *  */
-        CobolDisplay.display("COMMENT");
-        /* RAW: /  */
-        CobolDisplay.display("COMMENTSLASH");
-        /* RAW: *  */
-        CobolDisplay.display("MFCOMMENT");
-        /* RAW: *  */
-        CobolDisplay.display("NOMFCOMMENT");
-        System.exit(0);
-    }
-
     @Override
     public void run() {
-        para_main();
     }
 
     public static void main(String[] args) {

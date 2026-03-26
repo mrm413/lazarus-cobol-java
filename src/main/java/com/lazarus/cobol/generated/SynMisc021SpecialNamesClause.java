@@ -32,7 +32,7 @@ public class SynMisc021SpecialNamesClause extends CobolProgram {
     private int crt_status = 0;
 
 
-    private CobolString omitted = new CobolString(256);
+    private CobolString omitted = new CobolString(256); // fallback
 
     private void para_main() {
         omitted.set(String.valueOf(CobolDisplay.accept()));

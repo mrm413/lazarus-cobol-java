@@ -31,12 +31,8 @@ public class RunMisc046InspectConvertingToFigurativeConstant extends CobolProgra
 
     private void para_main() {
         /* INSPECT X — 2 clause(s) */
-    }
-
-    private void spaces() {
         if (!String.valueOf(x).equals(String.valueOf(" "))) {
-            CobolDisplay.display();
-            /* RAW: X  */
+            CobolDisplay.display(String.valueOf(x));
         }
         System.exit(0);
     }

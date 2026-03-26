@@ -25,11 +25,11 @@ public class RunExtensions002AcucobolLiterals extends CobolProgram {
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
-    private CobolString b = new CobolString(256);
-    private CobolString o = new CobolString(256);
-    private CobolString x = new CobolString(256);
-    private CobolString ffffffff = new CobolString(256);
-    private CobolString h = new CobolString(256);
+    private CobolString b = new CobolString(256); // fallback
+    private CobolString o = new CobolString(256); // fallback
+    private CobolString x = new CobolString(256); // fallback
+    private CobolString ffffffff = new CobolString(256); // fallback
+    private CobolString h = new CobolString(256); // fallback
 
     private void para_main() {
         CobolDisplay.display(String.valueOf(b) + String.valueOf(101));

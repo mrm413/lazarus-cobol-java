@@ -44,12 +44,15 @@ public class SynMisc113XmlGenerateSyntaxChecks extends CobolProgram {
     private CobolString child_3 = new CobolString(1); // Group: child-3
     private CobolString[] child_3_1 = new CobolString[5];
     private CobolString all_filler_rec = new CobolString(1); // Group: all-filler-rec
+    private CobolString filler_1 = new CobolString(1);
+    private CobolString filler_2 = new CobolString(1);
     private CobolString invalid_sub_elt_rec = new CobolString(1); // Group: invalid-sub-elt-rec
     private CobolString non_unique_name = new CobolString(1);
     private CobolString valid_sub_rec = new CobolString(1); // Group: valid-sub-rec
     private CobolString bit_item = new CobolString(0);
     private long ptr_item = 0L;
     private CobolString with_attrs_does_nothing = new CobolString(1); // Group: with-attrs-does-nothing
+    private CobolString filler_3 = new CobolString(1);
     private CobolString[] table_elt = new CobolString[2];
     private CobolString with_attrs_group = new CobolString(1); // Group: with-attrs-group
     private CobolString with_attrs_group_child = new CobolString(1);

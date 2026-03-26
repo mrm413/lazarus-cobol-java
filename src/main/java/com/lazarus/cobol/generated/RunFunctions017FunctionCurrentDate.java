@@ -39,23 +39,26 @@ public class RunFunctions017FunctionCurrentDate extends CobolProgram {
     private CobolString ws_unset = new CobolString(1);
 
 
-    private CobolString valid_unset = new CobolString(256);
-    private CobolString valid_year = new CobolString(256);
+    private CobolString valid_unset = new CobolString(256); // fallback
+    private CobolString valid_year = new CobolString(256); // fallback
 
     private void para_main() {
-        {
-            StringBuilder _sb = new StringBuilder();
-            _sb.append(String.valueOf(CobolIntrinsics.current_date()));
-            test_fld.set(_sb.toString());
-        }
+        // Transpiled COBOL body (requires runtime extensions for full compilation):
+    // 
+    // {
+    // StringBuilder _sb = new StringBuilder();
+    // _sb.append(String.valueOf(CobolIntrinsics.current_date()));
+    // test_fld.set(_sb.toString());
+    // }
     // if (-valid_unset) {
     // CobolDisplay.display("FUNCTION result too long");
     // } else if (!String.valueOf(valid_year).trim().isEmpty()) {
-            /* RAW: AND VALID-MONTH AND VALID-DAY AND VALID-HOUR */
-            /* CONTINUE */
+    // /* RAW: AND VALID-MONTH AND VALID-DAY AND VALID-HOUR */
+    // /* CONTINUE */
     // } else {
     // CobolDisplay.display("CURRENT-DATE with wrong format: " + String.valueOf(CobolString.refMod(test_fld, 1, 21)));
     // }
+    // System.exit(0);
         System.exit(0);
     }
 

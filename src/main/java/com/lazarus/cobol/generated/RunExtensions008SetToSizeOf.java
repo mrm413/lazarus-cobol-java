@@ -32,7 +32,7 @@ public class RunExtensions008SetToSizeOf extends CobolProgram {
     private int ln = 0;
 
 
-    private CobolString size = new CobolString(256);
+    private CobolString size = new CobolString(256); // fallback
 
     private void para_main() {
         ln = new BigDecimal(String.valueOf(size).trim()).intValue();

@@ -33,7 +33,7 @@ public class RunMl009JsonGenerateExceptions extends CobolProgram {
     private int json_len = 0;
 
 
-    private CobolString json_code = new CobolString(256);
+    private CobolString json_code = new CobolString(256); // fallback
 
     private void para_main() {
         /* RAW: JSON  */

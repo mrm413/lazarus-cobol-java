@@ -25,7 +25,7 @@ public class Listings006CopyReplacementOrder extends CobolProgram {
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
-    private CobolString first_match = new CobolString(256);
+    private CobolString first_match = new CobolString(256); // fallback
 
     private void para_main() {
         CobolDisplay.displayNoAdvancing(String.valueOf(first_match));

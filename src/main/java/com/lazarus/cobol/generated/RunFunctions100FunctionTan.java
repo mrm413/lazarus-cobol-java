@@ -30,12 +30,9 @@ public class RunFunctions100FunctionTan extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void y() {
+        y = new BigDecimal(String.valueOf(CobolIntrinsics.tan(1.5)).trim());
         if (y.compareTo(new BigDecimal(String.valueOf(14.101419947171719).trim())) != 0) {
-            CobolDisplay.display();
-            /* RAW: Y  */
+            CobolDisplay.display(String.valueOf(y));
         }
         System.exit(0);
     }

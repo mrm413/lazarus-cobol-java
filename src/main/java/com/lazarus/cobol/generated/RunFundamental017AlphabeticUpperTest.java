@@ -27,19 +27,16 @@ public class RunFundamental017AlphabeticUpperTest extends CobolProgram {
     // WORKING-STORAGE SECTION
     private CobolString x = new CobolString(4);
     private CobolString xbyte = new CobolString(1);
+    private CobolString filler_1 = new CobolString(3);
 
 
 
     private void para_main() {
-    }
-
-    private void xbyte() {
+        xbyte.set(String.valueOf("0D"));
         if (CobolIntrinsics.isAlphabetic_upper(x)) {
             CobolDisplay.display("Fail - Not alphabetic upper");
         }
-    }
-
-    private void xbyte_2() {
+        xbyte.set(String.valueOf("A"));
         if (!CobolIntrinsics.isAlphabetic_upper(x)) {
             CobolDisplay.display("Fail - Alphabetic upper");
         }

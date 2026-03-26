@@ -31,10 +31,7 @@ public class RunExtensions050Obsolete2002KeywordsWithCobol2014 extends CobolProg
 
 
     private void para_main() {
-        CobolDisplay.display(String.valueOf(terminal));
-    }
-
-    private void send() {
+        CobolDisplay.display(String.valueOf(terminal) + String.valueOf(send));
         System.exit(0);
     }
 

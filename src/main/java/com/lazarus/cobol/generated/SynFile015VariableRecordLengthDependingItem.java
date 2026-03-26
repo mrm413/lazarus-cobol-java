@@ -26,17 +26,21 @@ public class SynFile015VariableRecordLengthDependingItem extends CobolProgram {
     private CobolString debug_contents = new CobolString(256);
     // FILE SECTION — TEST-FILE
     private CobolString test_rec = new CobolString(1); // Group: TEST-REC
+    private CobolString filler_1 = new CobolString(2);
 
     // FILE SECTION — TEST-FIL2
     private CobolString test_rec2 = new CobolString(1); // Group: TEST-REC2
+    private CobolString filler_2 = new CobolString(2);
     private int recordsize3 = 0;
     private CobolString recordsize4 = new CobolString(4);
 
     // FILE SECTION — TEST-FIL3
     private CobolString test_rec3 = new CobolString(1); // Group: TEST-REC3
+    private CobolString filler_3 = new CobolString(2);
 
     // FILE SECTION — TEST-FIL4
     private CobolString test_rec4 = new CobolString(1); // Group: TEST-REC4
+    private CobolString filler_4 = new CobolString(2);
 
 
     // FILE DESCRIPTORS
@@ -47,30 +51,14 @@ public class SynFile015VariableRecordLengthDependingItem extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void test_file() {
-    }
-
-    private void test_file_2() {
-    }
-
-    private void test_fil2() {
-    }
-
-    private void test_fil2_2() {
-    }
-
-    private void test_fil3() {
-    }
-
-    private void test_fil3_2() {
-    }
-
-    private void test_fil4() {
-    }
-
-    private void test_fil4_2() {
+        test_file.open("INPUT");
+        test_file.close();
+        test_fil2.open("INPUT");
+        test_fil2.close();
+        test_fil3.open("INPUT");
+        test_fil3.close();
+        test_fil4.open("INPUT");
+        test_fil4.close();
         System.exit(0);
     }
 

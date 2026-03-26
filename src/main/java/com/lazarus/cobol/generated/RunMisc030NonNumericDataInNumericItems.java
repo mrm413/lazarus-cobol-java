@@ -30,7 +30,7 @@ public class RunMisc030NonNumericDataInNumericItems extends CobolProgram {
     private int num = 0;
 
 
-    private CobolString goback = new CobolString(256);
+    private CobolString goback = new CobolString(256); // fallback
 
     private void para_main() {
         x.setRefMod(2, 2, String.valueOf("0000"));

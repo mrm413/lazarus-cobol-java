@@ -33,16 +33,18 @@ public class RunMl000XmlGenerateGeneral extends CobolProgram {
     private CobolString b = new CobolString(3);
     private CobolString c = new CobolString(1); // Group: c
     private CobolString d = new CobolString(3);
+    private CobolString filler_1 = new CobolString(3);
     private CobolString employee = new CobolString(1); // Group: employee
     private int id = 0;
     private CobolString name = new CobolString(10);
     private CobolString dept = new CobolString(10);
 
 
-    private CobolString xml = new CobolString(256);
-    private CobolString xml_code = new CobolString(256);
-    private CobolString _unnamed = new CobolString(256);
+    private CobolString xml = new CobolString(256); // fallback
+    private CobolString xml_code = new CobolString(256); // fallback
+    private CobolString _filler_001 = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
     private void para_main() {
         /* RAW: XML  */
         /* RAW: GENERATE out FROM rec WITH XML-DECLARATION */
@@ -58,9 +60,6 @@ public class RunMl000XmlGenerateGeneral extends CobolProgram {
         }
         /* RAW: XML  */
         /* RAW: GENERATE out FROM c , WITH */
-    }
-
-    private void attributes() {
         if (!String.valueOf(out).equals(String.valueOf("<c d=\" \"/>"))) {
             CobolDisplay.display("Test 3 failed: " + String.valueOf(CobolIntrinsics.trim(out)));
         }
@@ -82,7 +81,7 @@ public class RunMl000XmlGenerateGeneral extends CobolProgram {
             CobolDisplay.display("Test 6 failed: " + String.valueOf(CobolIntrinsics.trim(out)) + " " + String.valueOf(xml_code));
         }
         namespace_str.set(String.valueOf(" "));
-        _unnamed.set(String.valueOf(" "));
+        _filler_002.set(String.valueOf(" "));
         prefix_str.set(String.valueOf(" "));
         xml.set(String.valueOf(" "));
         /* RAW: GENERATE out FROM c , NAMESPACE */

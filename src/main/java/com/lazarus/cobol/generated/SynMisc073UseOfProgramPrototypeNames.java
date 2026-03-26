@@ -25,13 +25,11 @@ public class SynMisc073UseOfProgramPrototypeNames extends CobolProgram {
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
-    private CobolString test_prog = new CobolString(256);
+    private CobolString test_prog = new CobolString(256); // fallback
 
     private void para_main() {
         CobolProgram.call(String.valueOf(test_prog));
-    }
-
-    private void test_prog() {
+        /* CANCEL test_prog */
     }
 
     @Override

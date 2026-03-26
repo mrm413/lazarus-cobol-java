@@ -30,12 +30,9 @@ public class RunFunctions082FunctionRandom extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void y() {
+        y = new BigDecimal(String.valueOf(CobolIntrinsics.random()).trim());
         if (y.compareTo(new BigDecimal(String.valueOf(0).trim())) < 0) {
-            CobolDisplay.display();
-            /* RAW: Y  */
+            CobolDisplay.display(String.valueOf(y));
         }
         System.exit(0);
     }

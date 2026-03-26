@@ -30,7 +30,7 @@ public class RunMisc096AllocateFreeWithBasedItem2 extends CobolProgram {
     private int myfld9 = 0;
 
 
-    private CobolString address = new CobolString(256);
+    private CobolString address = new CobolString(256); // fallback
 
     private void para_main() {
         if (!String.valueOf(address).equals(String.valueOf(0))) {

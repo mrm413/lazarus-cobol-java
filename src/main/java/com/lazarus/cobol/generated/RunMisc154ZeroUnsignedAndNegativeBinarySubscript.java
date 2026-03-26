@@ -32,6 +32,7 @@ public class RunMisc154ZeroUnsignedAndNegativeBinarySubscript extends CobolProgr
     private int uchr = 0;
     private int schr = 0;
     private CobolString tstrec = new CobolString(1); // Group: TSTREC
+    private CobolString[] filler_1 = new CobolString[300];
     private CobolString[] tstx = new CobolString[3];
     private CobolString[] tsty = new CobolString[300];
 
@@ -50,49 +51,31 @@ public class RunMisc154ZeroUnsignedAndNegativeBinarySubscript extends CobolProgr
         tsty[2 - 1].set(String.valueOf("2"));
         if (tsty[3 - 1] == null) tsty[3 - 1] = new CobolString(256);
         tsty[3 - 1].set(String.valueOf("3"));
-    }
-
-    private void unup() {
+        unup = new BigDecimal(String.valueOf(0).trim()).intValue();
         CobolDisplay.display("UNUP: " + String.valueOf(unup) + " is :" + String.valueOf(tsty[unup - 1]) + ":");
-    }
-
-    private void snup() {
+        snup = new BigDecimal(String.valueOf(0).trim()).intValue();
         CobolDisplay.display("SNUP: " + String.valueOf(snup) + " is :" + String.valueOf(tsty[snup - 1]) + ":");
-    }
-
-    private void sbin() {
+        sbin = new BigDecimal(String.valueOf(0).trim()).intValue();
         CobolDisplay.display("SBIN: " + String.valueOf(sbin) + " is :" + String.valueOf(tsty[sbin - 1]) + ":");
-    }
-
-    private void sbin_2() {
+        sbin = new BigDecimal(String.valueOf(-1).trim()).intValue();
         CobolDisplay.display("SBIN: " + String.valueOf(sbin) + " is :" + String.valueOf(tsty[sbin - 1]) + ":");
         if (tsty[sbin - 1] == null) tsty[sbin - 1] = new CobolString(256);
         tsty[sbin - 1].set(String.valueOf("xxx"));
         CobolDisplay.display("SBIN: " + String.valueOf(sbin) + " is :" + String.valueOf(tsty[sbin - 1]) + ":");
         /* RAW: * The following would often core */
-    }
-
-    private void ubin() {
+        ubin = new BigDecimal(String.valueOf(0).trim()).shortValue();
         CobolDisplay.display("UBIN: " + String.valueOf(ubin) + " is :" + String.valueOf(tsty[ubin - 1]) + ":");
         if (tsty[ubin - 1] == null) tsty[ubin - 1] = new CobolString(256);
         tsty[ubin - 1].set(String.valueOf("yyy"));
-    }
-
-    private void ubin_2() {
+        ubin = new BigDecimal(String.valueOf(1).trim()).shortValue();
         CobolDisplay.display("UBIN: " + String.valueOf(ubin) + " is :" + String.valueOf(tsty[ubin - 1]) + ":");
-    }
-
-    private void uchr() {
+        uchr = new BigDecimal(String.valueOf(0).trim()).intValue();
         CobolDisplay.display("UCHR: " + String.valueOf(uchr) + " is :" + String.valueOf(tsty[uchr - 1]) + ":");
-    }
-
-    private void schr() {
+        schr = new BigDecimal(String.valueOf(-1).trim()).intValue();
         CobolDisplay.display("SCHR: " + String.valueOf(schr) + " is :" + String.valueOf(tsty[schr - 1]) + ":");
         if (tsty[129 - 1] == null) tsty[129 - 1] = new CobolString(256);
         tsty[129 - 1].set(String.valueOf("zzz"));
-    }
-
-    private void uchr_2() {
+        uchr = new BigDecimal(String.valueOf(129).trim()).intValue();
         CobolDisplay.display("UCHR: " + String.valueOf(uchr) + " is :" + String.valueOf(tsty[uchr - 1]) + ":");
         System.exit(0);
     }

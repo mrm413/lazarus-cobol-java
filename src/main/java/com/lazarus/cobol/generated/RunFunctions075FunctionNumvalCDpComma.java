@@ -34,8 +34,7 @@ public class RunFunctions075FunctionNumvalCDpComma extends CobolProgram {
         n = new BigDecimal(String.valueOf(CobolIntrinsics.numval_c(x1)).trim());
         if (n.compareTo(new BigDecimal(String.valueOf(-19876).trim())) != 0) {
             /* RAW: , 1234 */
-            CobolDisplay.display("X1 '" + String.valueOf(x1) + "' : ");
-            /* RAW: N  */
+            CobolDisplay.display("X1 '" + String.valueOf(x1) + "' : " + String.valueOf(n));
         }
         System.exit(0);
     }

@@ -28,12 +28,12 @@ public class RunManualScreen013ScreenPositionAfterFieldDisplay extends CobolProg
     private CobolString success_flag = new CobolString(1);
 
 
-    private CobolString at = new CobolString(256);
-    private CobolString line = new CobolString(256);
-    private CobolString col = new CobolString(256);
-    private CobolString scr = new CobolString(256);
-    private CobolString success_field = new CobolString(256);
-    private CobolString success = new CobolString(256);
+    private CobolString at = new CobolString(256); // fallback
+    private CobolString line = new CobolString(256); // fallback
+    private CobolString col = new CobolString(256); // fallback
+    private CobolString scr = new CobolString(256); // fallback
+    private CobolString success_field = new CobolString(256); // fallback
+    private CobolString success = new CobolString(256); // fallback
 
     private void para_main() {
         CobolDisplay.display("ignore this" + String.valueOf(at) + String.valueOf(line) + String.valueOf(4) + String.valueOf(col) + String.valueOf(4));

@@ -29,14 +29,12 @@ public class SynMisc094SymbolicConstant extends CobolProgram {
     private CobolString short_x = new CobolString(5);
 
 
-    private CobolString con_1 = new CobolString(256);
-    private CobolString c = new CobolString(256);
-    private CobolString to = new CobolString(256);
+    private CobolString con_1 = new CobolString(256); // fallback
+    private CobolString c = new CobolString(256); // fallback
+    private CobolString to = new CobolString(256); // fallback
 
     private void para_main() {
-    }
-
-    private void num2() {
+        num2 = new BigDecimal(String.valueOf(con_1).trim()).intValue();
         c.set(String.valueOf(25156));
         to.set(String.valueOf(25156));
         short_x.set(String.valueOf(25156));

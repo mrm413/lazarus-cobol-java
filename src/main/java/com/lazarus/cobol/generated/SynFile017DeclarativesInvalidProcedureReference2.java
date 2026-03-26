@@ -35,15 +35,11 @@ public class SynFile017DeclarativesInvalidProcedureReference2 extends CobolProgr
     // SECTION: P01
     private void p01() {
         use();
-        test_file();
         p02();
     }
 
     private void use() {
-        /* RAW: AFTER ERROR PROCEDURE ON */
-    }
-
-    private void test_file() {
+        /* RAW: AFTER ERROR PROCEDURE ON TEST-FILE */
     }
 
     private void p02() {
@@ -53,17 +49,11 @@ public class SynFile017DeclarativesInvalidProcedureReference2 extends CobolProgr
     // SECTION: PP01
     private void pp01() {
         pp02();
-        test_file();
-        test_file();
     }
 
     private void pp02() {
-    }
-
-    private void test_file_2() {
-    }
-
-    private void test_file_3() {
+        test_file.open("INPUT");
+        test_file.close();
         p02();
         p02();
         return;

@@ -48,9 +48,6 @@ public class RunFunctions045FunctionLength extends CobolProgram {
             CobolDisplay.display("LENGTH \"00128\" wrong: " + String.valueOf(test_fld));
         }
         /* RAW: * note : we currently do */
-    }
-
-    private void cb_boolean() {
         test_fld = new BigDecimal(String.valueOf(CobolIntrinsics.length("a0")).trim());
         if (test_fld.compareTo(new BigDecimal(String.valueOf(1).trim())) != 0) {
             CobolDisplay.display("LENGTH x\"a0\" wrong: " + String.valueOf(test_fld));

@@ -32,14 +32,10 @@ public class RunSubscripts001ValueOfDependingOnNOutOfBounds extends CobolProgram
 
 
     private void para_main() {
-    }
-
-    private void n() {
+        n = new BigDecimal(String.valueOf(5).trim()).intValue();
         g.set(String.valueOf("12345"));
         CobolDisplay.displayNoAdvancing(String.valueOf(x[3 - 1]));
-    }
-
-    private void n_2() {
+        n = new BigDecimal(String.valueOf(3).trim()).intValue();
         CobolDisplay.display(String.valueOf(x[5 - 1]));
         System.exit(0);
     }

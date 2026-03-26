@@ -31,9 +31,6 @@ public class SynDefinition022ProcedureDivisionReturningOmittedFunction extends C
         return;
     }
 
-    private void func() {
-    }
-
     @Override
     public void run() {
         para_main();

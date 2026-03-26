@@ -29,6 +29,7 @@ public class RunFile085ExtfhRelativeFiles extends CobolProgram {
     private CobolString file_name = new CobolString(64);
     private short file_name_len = (short) 0;
     private CobolString fh_action = new CobolString(2);
+    private CobolString filler_1 = new CobolString(1);
     private CobolString fh_action2 = new CobolString(1);
     private CobolString action_code = new CobolString(1); // Group: ACTION-CODE
     private CobolString action_type = new CobolString(1);
@@ -100,43 +101,50 @@ public class RunFile085ExtfhRelativeFiles extends CobolProgram {
     private CobolString fcd_area = new CobolString(1);
 
 
-    private CobolString record_area = new CobolString(256);
-    private CobolString data_area1 = new CobolString(256);
-    private CobolString fcd_relative_key = new CobolString(256);
-    private CobolString prime_key = new CobolString(256);
-    private CobolString fcd_record_address = new CobolString(256);
-    private CobolString address = new CobolString(256);
-    private CobolString fcd_version_number = new CobolString(256);
-    private CobolString fcd_version = new CobolString(256);
-    private CobolString fcd_name_length = new CobolString(256);
-    private CobolString _unnamed = new CobolString(256);
-    private CobolString access = new CobolString(256);
-    private CobolString[] seq = new CobolString[100];
-    private CobolString[] random = new CobolString[100];
-    private CobolString[] dynamic = new CobolString[100];
-    private CobolString fcd_access_mode = new CobolString(256);
-    private CobolString[] isam = new CobolString[100];
-    private CobolString[] relative = new CobolString[100];
-    private CobolString[] lseq = new CobolString[100];
-    private CobolString fcd_organization = new CobolString(256);
-    private CobolString[] closed = new CobolString[100];
-    private CobolString[] input = new CobolString[100];
-    private CobolString[] output = new CobolString[100];
-    private CobolString[] i_o = new CobolString[100];
-    private CobolString[] extend = new CobolString[100];
-    private CobolString fcd_open_mode = new CobolString(256);
-    private CobolString[] fixed = new CobolString[100];
-    private CobolString or = new CobolString(256);
-    private CobolString[] variable = new CobolString[100];
-    private CobolString fcd_recording_mode = new CobolString(256);
-    private CobolString fcd_filename_address = new CobolString(256);
-    private CobolString fcd_min_rec_length = new CobolString(256);
-    private CobolString fcd_max_rec_length = new CobolString(256);
-    private CobolString fcd_current_rec_len = new CobolString(256);
-    private CobolString fcd_file_status = new CobolString(256);
-    private CobolString fcd_status_key_1 = new CobolString(256);
-    private CobolString fcd_binary = new CobolString(256);
+    private CobolString record_area = new CobolString(256); // fallback
+    private CobolString data_area1 = new CobolString(256); // fallback
+    private CobolString fcd_relative_key = new CobolString(256); // fallback
+    private CobolString prime_key = new CobolString(256); // fallback
+    private CobolString fcd_record_address = new CobolString(256); // fallback
+    private CobolString address = new CobolString(256); // fallback
+    private CobolString fcd_version_number = new CobolString(256); // fallback
+    private CobolString fcd_version = new CobolString(256); // fallback
+    private CobolString fcd_name_length = new CobolString(256); // fallback
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString access = new CobolString(256); // fallback
+    private CobolString[] seq = new CobolString[100]; // fallback array
+    private CobolString[] random = new CobolString[100]; // fallback array
+    private CobolString[] dynamic = new CobolString[100]; // fallback array
+    private CobolString fcd_access_mode = new CobolString(256); // fallback
+    private CobolString[] isam = new CobolString[100]; // fallback array
+    private CobolString[] relative = new CobolString[100]; // fallback array
+    private CobolString[] lseq = new CobolString[100]; // fallback array
+    private CobolString fcd_organization = new CobolString(256); // fallback
+    private CobolString[] closed = new CobolString[100]; // fallback array
+    private CobolString[] input = new CobolString[100]; // fallback array
+    private CobolString[] output = new CobolString[100]; // fallback array
+    private CobolString[] i_o = new CobolString[100]; // fallback array
+    private CobolString[] extend = new CobolString[100]; // fallback array
+    private CobolString fcd_open_mode = new CobolString(256); // fallback
+    private CobolString[] fixed = new CobolString[100]; // fallback array
+    private CobolString or = new CobolString(256); // fallback
+    private CobolString[] variable = new CobolString[100]; // fallback array
+    private CobolString fcd_recording_mode = new CobolString(256); // fallback
+    private CobolString fcd_filename_address = new CobolString(256); // fallback
+    private CobolString fcd_min_rec_length = new CobolString(256); // fallback
+    private CobolString fcd_max_rec_length = new CobolString(256); // fallback
+    private CobolString fcd_current_rec_len = new CobolString(256); // fallback
+    private CobolString fcd_file_status = new CobolString(256); // fallback
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString fcd_status_key_1 = new CobolString(256); // fallback
+    private CobolString fcd_binary = new CobolString(256); // fallback
+    private CobolString record_growth = new CobolString(256); // fallback
 
+    private CobolString _filler_003 = new CobolString(256); // fallback
+    private CobolString _filler_004 = new CobolString(256); // fallback
+    private CobolString _filler_005 = new CobolString(256); // fallback
+    private CobolString _filler_006 = new CobolString(256); // fallback
+    private CobolString _filler_007 = new CobolString(256); // fallback
     private void a_000_main() {
         fh_action.set(String.valueOf("FA01"));
         a_100_open_file();
@@ -168,7 +176,7 @@ public class RunFile085ExtfhRelativeFiles extends CobolProgram {
         file_name.set(String.valueOf("TESTREL.DAT"));
         file_name_len = new BigDecimal(String.valueOf(11).trim()).shortValue();
         fcd_name_length.set(String.valueOf(file_name_len));
-        _unnamed.set(String.valueOf(file_name_len));
+        _filler_003.set(String.valueOf(file_name_len));
         access.set(String.valueOf(file_name_len));
         if (seq[0 - 1] == null) seq[0 - 1] = new CobolString(256);
         seq[0 - 1].set(String.valueOf(file_name_len));
@@ -177,7 +185,7 @@ public class RunFile085ExtfhRelativeFiles extends CobolProgram {
         if (dynamic[8 - 1] == null) dynamic[8 - 1] = new CobolString(256);
         dynamic[8 - 1].set(String.valueOf(file_name_len));
         fcd_access_mode.set(String.valueOf(8));
-        _unnamed.set(String.valueOf(8));
+        _filler_004.set(String.valueOf(8));
         if (isam[2 - 1] == null) isam[2 - 1] = new CobolString(256);
         isam[2 - 1].set(String.valueOf(8));
         if (relative[3 - 1] == null) relative[3 - 1] = new CobolString(256);
@@ -187,7 +195,7 @@ public class RunFile085ExtfhRelativeFiles extends CobolProgram {
         if (seq[1 - 1] == null) seq[1 - 1] = new CobolString(256);
         seq[1 - 1].set(String.valueOf(8));
         fcd_organization.set(String.valueOf(3));
-        _unnamed.set(String.valueOf(3));
+        _filler_005.set(String.valueOf(3));
         if (closed[128 - 1] == null) closed[128 - 1] = new CobolString(256);
         closed[128 - 1].set(String.valueOf(3));
         if (input[0 - 1] == null) input[0 - 1] = new CobolString(256);
@@ -199,7 +207,7 @@ public class RunFile085ExtfhRelativeFiles extends CobolProgram {
         if (extend[3 - 1] == null) extend[3 - 1] = new CobolString(256);
         extend[3 - 1].set(String.valueOf(3));
         fcd_open_mode.set(String.valueOf(128));
-        _unnamed.set(String.valueOf(128));
+        _filler_006.set(String.valueOf(128));
         if (fixed[0 - 1] == null) fixed[0 - 1] = new CobolString(256);
         fixed[0 - 1].set(String.valueOf(128));
         or.set(String.valueOf(128));
@@ -215,7 +223,7 @@ public class RunFile085ExtfhRelativeFiles extends CobolProgram {
 
     private void a_200_call_extfh() {
         CobolProgram.call("EXTFH", fh_action, fcd_area);
-        if ((!String.valueOf(fcd_file_status).equals(String.valueOf("00")) && !(!String.valueOf(_unnamed).trim().isEmpty()))) {
+        if ((!String.valueOf(fcd_file_status).equals(String.valueOf("00")) && !(!String.valueOf(_filler_007).trim().isEmpty()))) {
             /* RAW: '02'  */
             if (String.valueOf(fcd_status_key_1).equals(String.valueOf("9"))) {
                 CobolDisplay.display("Operation: " + String.valueOf(fh_action2) + " FILE ERROR, STATUS: 9/" + String.valueOf(fcd_binary));
@@ -227,42 +235,28 @@ public class RunFile085ExtfhRelativeFiles extends CobolProgram {
     }
 
     private void a_300_read_record() {
-    }
-
-    private void record_area() {
-    }
-
-    private void cobol_op() {
+        record_area.set("");
+        cobol_op.set(String.valueOf(read_random_lock));
         fcd_record_address.set(String.valueOf(address));
         a_200_call_extfh();
-    }
-
-    private void i() {
+        i = new BigDecimal(String.valueOf(fcd_relative_key).trim()).shortValue();
     }
 
     private void a_400_rewrite_record() {
-    }
-
-    private void action_type() {
-    }
-
-    private void cobol_op_2() {
+        action_type.set(String.valueOf(cobol_type));
+        cobol_op.set(String.valueOf(rewrite_record));
         a_200_call_extfh();
     }
 
     private void a_600_close_file() {
-    }
-
-    private void fh_action() {
+        fh_action.set(String.valueOf("FA80"));
         a_200_call_extfh();
     }
 
     private void a_700_update() {
         a_300_read_record();
         CobolDisplay.display("READ    " + String.valueOf(i) + ": " + String.valueOf(CobolString.refMod(record_area, 1, 41)) + ".");
-    }
-
-    private void record_growth() {
+        record_growth.set(String.valueOf("1234567890"));
         a_400_rewrite_record();
         a_300_read_record();
         CobolDisplay.display("REWRITE " + String.valueOf(i) + ": " + String.valueOf(CobolString.refMod(record_area, 1, 41)) + ".");

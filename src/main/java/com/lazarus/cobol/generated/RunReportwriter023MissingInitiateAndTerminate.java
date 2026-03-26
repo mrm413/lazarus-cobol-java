@@ -36,16 +36,9 @@ public class RunReportwriter023MissingInitiateAndTerminate extends CobolProgram 
 
 
     private void para_main() {
-    }
-
-    private void report_file() {
-        /* RAW: TERMINATE  */
-    }
-
-    private void rp() {
-    }
-
-    private void report_file_2() {
+        report_file.open("OUTPUT");
+        /* RAW: TERMINATE rp */
+        report_file.close();
         System.exit(0);
     }
 

@@ -42,6 +42,7 @@ public class RunReportwriter014OrderReportTestSubstring extends CobolProgram {
     private int num_ord = 0;
     private int price = 0;
     private int shipping = 0;
+    private CobolString filler_1 = new CobolString(7);
 
     // FILE SECTION — CUST-PRINT-FILE
 
@@ -50,32 +51,22 @@ public class RunReportwriter014OrderReportTestSubstring extends CobolProgram {
     private CobolFile cust_order_file = new CobolFile("CUSTORD", "LINE SEQUENTIAL", "SEQUENTIAL");
     private CobolFile cust_print_file = new CobolFile("LINE", "SEQUENTIAL", "SEQUENTIAL");
 
-    private CobolString there_are_no_more_records = new CobolString(256);
+    private CobolString there_are_no_more_records = new CobolString(256); // fallback
 
     private void a000_mainline() {
         /* RAW: *  */
         /* UNKNOWN: useForDebugging */
         cust_order_file.open("INPUT");
-    }
-
-    private void cust_print_file() {
-        /* RAW: INITIATE  */
-    }
-
-    private void order_report() {
+        cust_print_file.open("OUTPUT");
+        /* RAW: INITIATE ORDER-REPORT */
         if (cust_order_file.read(null) == FileStatus.AT_END) {
-            /* RAW: ARE-THERE-MORE-RECORDS  */
+            are_there_more_records.set(String.valueOf("NO"));
         }
         while (!(!String.valueOf(there_are_no_more_records).trim().isEmpty())) {
         }
-        /* RAW: TERMINATE  */
-    }
-
-    private void order_report_2() {
+        /* RAW: TERMINATE ORDER-REPORT */
         cust_order_file.close();
-    }
-
-    private void cust_print_file_2() {
+        cust_print_file.close();
         System.exit(0);
     }
 
@@ -83,12 +74,9 @@ public class RunReportwriter014OrderReportTestSubstring extends CobolProgram {
         amt_order = new BigDecimal(String.valueOf(num_ord * price).trim()).intValue();
         amt_tax = new BigDecimal(String.valueOf(amt_order * sales_tax).trim()).intValue();
         tot_order = new BigDecimal(String.valueOf(amt_order + shipping + amt_tax).trim()).intValue();
-        /* RAW: GENERATE  */
-    }
-
-    private void detail_line() {
+        /* RAW: GENERATE DETAIL-LINE */
         if (cust_order_file.read(null) == FileStatus.AT_END) {
-            /* RAW: ARE-THERE-MORE-RECORDS  */
+            are_there_more_records.set(String.valueOf("NO"));
         }
     }
 

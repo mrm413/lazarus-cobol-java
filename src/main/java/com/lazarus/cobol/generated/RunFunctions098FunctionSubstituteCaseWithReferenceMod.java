@@ -29,27 +29,27 @@ public class RunFunctions098FunctionSubstituteCaseWithReferenceMod extends Cobol
     private CobolString z = new CobolString(20);
 
 
-    private CobolString _unnamed = new CobolString(256);
-    private CobolString _2 = new CobolString(256);
-    private CobolString _9 = new CobolString(256);
-    private CobolString to = new CobolString(256);
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString _2 = new CobolString(256); // fallback
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _9 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
+    private CobolString to = new CobolString(256); // fallback
 
+    private CobolString _filler_004 = new CobolString(256); // fallback
+    private CobolString _filler_005 = new CobolString(256); // fallback
+    private CobolString _filler_006 = new CobolString(256); // fallback
     private void para_main() {
-    }
-
-    private void y() {
-        _unnamed.set(String.valueOf(CobolIntrinsics.substitute_case(y, "ABC", "zz", "55", "666")));
+        y.set(String.valueOf("abc111444555defxxabc"));
+        _filler_004.set(String.valueOf(CobolIntrinsics.substitute_case(y, "ABC", "zz", "55", "666")));
         _2.set(String.valueOf(CobolIntrinsics.substitute_case(y, "ABC", "zz", "55", "666")));
-        _unnamed.set(String.valueOf(CobolIntrinsics.substitute_case(y, "ABC", "zz", "55", "666")));
+        _filler_005.set(String.valueOf(CobolIntrinsics.substitute_case(y, "ABC", "zz", "55", "666")));
         _9.set(String.valueOf(CobolIntrinsics.substitute_case(y, "ABC", "zz", "55", "666")));
-        _unnamed.set(String.valueOf(CobolIntrinsics.substitute_case(y, "ABC", "zz", "55", "666")));
+        _filler_006.set(String.valueOf(CobolIntrinsics.substitute_case(y, "ABC", "zz", "55", "666")));
         to.set(String.valueOf(CobolIntrinsics.substitute_case(y, "ABC", "zz", "55", "666")));
-    }
-
-    private void z() {
+        z.set(String.valueOf(CobolIntrinsics.substitute_case(y, "ABC", "zz", "55", "666")));
         if (!String.valueOf(z).equals(String.valueOf("z11144466"))) {
-            CobolDisplay.display();
-            /* RAW: Z  */
+            CobolDisplay.display(String.valueOf(z));
         }
         System.exit(0);
     }

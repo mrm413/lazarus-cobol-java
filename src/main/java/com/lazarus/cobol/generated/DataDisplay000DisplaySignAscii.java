@@ -37,82 +37,38 @@ public class DataDisplay000DisplaySignAscii extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void x() {
-    }
-
-    private void x_9() {
+        x.set(String.valueOf(0));
+        x_9 = new BigDecimal(String.valueOf(1234).trim()).intValue();
         CobolDisplay.display(String.valueOf(x));
-    }
-
-    private void x_2() {
-    }
-
-    private void x_s9() {
+        x.set(String.valueOf(0));
+        x_s9 = new BigDecimal(String.valueOf(1234).trim()).intValue();
         CobolDisplay.display(String.valueOf(x));
-    }
-
-    private void x_3() {
-    }
-
-    private void x_s9_2() {
+        x.set(String.valueOf(0));
+        x_s9 = new BigDecimal(String.valueOf(-1234).trim()).intValue();
         CobolDisplay.display(String.valueOf(x));
-    }
-
-    private void x_4() {
-    }
-
-    private void x_s9_l() {
+        x.set(String.valueOf(0));
+        x_s9_l = new BigDecimal(String.valueOf(1234).trim()).intValue();
         CobolDisplay.display(String.valueOf(x));
-    }
-
-    private void x_5() {
-    }
-
-    private void x_s9_l_2() {
+        x.set(String.valueOf(0));
+        x_s9_l = new BigDecimal(String.valueOf(-1234).trim()).intValue();
         CobolDisplay.display(String.valueOf(x));
-    }
-
-    private void x_6() {
-    }
-
-    private void x_s9_ls() {
+        x.set(String.valueOf(0));
+        x_s9_ls = new BigDecimal(String.valueOf(1234).trim()).intValue();
         CobolDisplay.display(String.valueOf(x));
-    }
-
-    private void x_7() {
-    }
-
-    private void x_s9_ls_2() {
+        x.set(String.valueOf(0));
+        x_s9_ls = new BigDecimal(String.valueOf(-1234).trim()).intValue();
         CobolDisplay.display(String.valueOf(x));
-    }
-
-    private void x_8() {
-    }
-
-    private void x_s9_t() {
+        x.set(String.valueOf(0));
+        x_s9_t = new BigDecimal(String.valueOf(1234).trim()).intValue();
         CobolDisplay.display(String.valueOf(x));
-    }
-
-    private void x_10() {
-    }
-
-    private void x_s9_t_2() {
+        x.set(String.valueOf(0));
+        x_s9_t = new BigDecimal(String.valueOf(-1234).trim()).intValue();
         CobolDisplay.display(String.valueOf(x));
-    }
-
-    private void x_11() {
-    }
-
-    private void x_s9_ts() {
+        x.set(String.valueOf(0));
+        x_s9_ts = new BigDecimal(String.valueOf(1234).trim()).intValue();
         CobolDisplay.display(String.valueOf(x));
-    }
-
-    private void x_12() {
-    }
-
-    private void x_s9_ts_2() {
+        x.set(String.valueOf(0));
+        x_s9_ts = new BigDecimal(String.valueOf(-1234).trim()).intValue();
         CobolDisplay.display(String.valueOf(x));
         System.exit(0);
     }

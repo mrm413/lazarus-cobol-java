@@ -31,8 +31,8 @@ public class RunManualScreen002Column2 extends CobolProgram {
     private CobolString success_flag = new CobolString(1);
 
 
-    private CobolString scr = new CobolString(256);
-    private CobolString success = new CobolString(256);
+    private CobolString scr = new CobolString(256); // fallback
+    private CobolString success = new CobolString(256); // fallback
 
     private void para_main() {
         CobolDisplay.display(String.valueOf(scr));

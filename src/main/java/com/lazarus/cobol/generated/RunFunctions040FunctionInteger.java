@@ -32,15 +32,11 @@ public class RunFunctions040FunctionInteger extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void test_fld() {
+        test_fld = new BigDecimal(String.valueOf(CobolIntrinsics.integer(x)).trim());
         if (test_fld.compareTo(new BigDecimal(String.valueOf(-2).trim())) != 0) {
             CobolDisplay.display("INTEGER ( X ) wrong: " + String.valueOf(test_fld));
         }
-    }
-
-    private void test_fld_2() {
+        test_fld = new BigDecimal(String.valueOf(CobolIntrinsics.integer((y / 71))).trim());
         if (test_fld.compareTo(new BigDecimal(String.valueOf(8462696833L).trim())) != 0) {
             CobolDisplay.display("INTEGER ( Y / 71 ) wrong: " + String.valueOf(test_fld));
         }

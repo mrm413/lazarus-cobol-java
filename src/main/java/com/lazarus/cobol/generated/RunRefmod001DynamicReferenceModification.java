@@ -31,21 +31,13 @@ public class RunRefmod001DynamicReferenceModification extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void i() {
+        i = new BigDecimal(String.valueOf(1).trim()).intValue();
         CobolDisplay.display(String.valueOf(CobolString.refMod(x, i, 1)));
-    }
-
-    private void i_2() {
+        i = new BigDecimal(String.valueOf(4).trim()).intValue();
         CobolDisplay.display(String.valueOf(CobolString.refMod(x, i, 1)));
-    }
-
-    private void i_3() {
+        i = new BigDecimal(String.valueOf(1).trim()).intValue();
         CobolDisplay.display(String.valueOf(CobolString.refMod(x, 1, i)));
-    }
-
-    private void i_4() {
+        i = new BigDecimal(String.valueOf(4).trim()).intValue();
         CobolDisplay.display(String.valueOf(CobolString.refMod(x, 1, i)));
         System.exit(0);
     }

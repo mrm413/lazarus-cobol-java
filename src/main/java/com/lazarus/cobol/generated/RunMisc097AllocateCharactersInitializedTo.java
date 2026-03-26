@@ -31,7 +31,7 @@ public class RunMisc097AllocateCharactersInitializedTo extends CobolProgram {
     private CobolString myfld = new CobolString(4);
 
 
-    private CobolString address = new CobolString(256);
+    private CobolString address = new CobolString(256); // fallback
 
     // SECTION: ASTART
     private void astart() {

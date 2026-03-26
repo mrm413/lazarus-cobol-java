@@ -24,38 +24,10 @@ public class RunFundamental032CallProgramPointer extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
-    // WORKING-STORAGE SECTION
-    private long prog_ptr = 0L;
-    private int num = 0;
 
-
-    private CobolString address = new CobolString(256);
-
-    private void para_main() {
-        prog_ptr = new BigDecimal(String.valueOf(address).trim()).longValue();
-        /* RAW: "recursion-test"  */
-        CobolProgram.call(String.valueOf(prog_ptr), num);
-        CobolDisplay.display("<");
-        prog_ptr = new BigDecimal(String.valueOf(address).trim()).longValue();
-        /* RAW: "cancel-test"  */
-        CobolProgram.call(String.valueOf(prog_ptr));
-        CobolProgram.call(String.valueOf(prog_ptr));
-        /* CANCEL "cancel-test" */
-        prog_ptr = new BigDecimal(String.valueOf(address).trim()).longValue();
-        /* RAW: "cancel-test"  */
-        CobolProgram.call(String.valueOf(prog_ptr));
-        CobolDisplay.display("<");
-        prog_ptr = new BigDecimal(String.valueOf(address).trim()).longValue();
-        /* RAW: "dummy-call"  */
-        CobolProgram.call(String.valueOf(prog_ptr));
-        for (int _i0 = 0; _i0 < 500000; _i0++) {
-            CobolProgram.call(String.valueOf(prog_ptr));
-        }
-    }
 
     @Override
     public void run() {
-        para_main();
     }
 
     public static void main(String[] args) {

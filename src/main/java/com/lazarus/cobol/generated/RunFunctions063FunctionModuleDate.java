@@ -30,9 +30,7 @@ public class RunFunctions063FunctionModuleDate extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void test_date() {
+        test_date = new BigDecimal(String.valueOf(CobolIntrinsics.module_date()).trim()).intValue();
         if (test_date != 0) {
             CobolDisplay.displayNoAdvancing("OK");
         }

@@ -27,6 +27,7 @@ public class SynMisc039SegmentationModule extends CobolProgram {
 
 
     // SECTION: DEC-1
+    private CobolString _filler_001 = new CobolString(256); // fallback
     private void dec_1() {
         _49();
     }
@@ -64,11 +65,14 @@ public class SynMisc039SegmentationModule extends CobolProgram {
 
     // SECTION: SEC-3
     private void sec_3() {
-        _unnamed();
+        _filler_001();
+        _00();
     }
 
-    private void _unnamed() {
-        /* RAW: 00  */
+    private void _filler_001() {
+    }
+
+    private void _00_2() {
         /* CONTINUE */
     }
 

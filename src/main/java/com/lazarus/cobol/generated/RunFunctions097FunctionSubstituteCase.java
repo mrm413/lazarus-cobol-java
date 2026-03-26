@@ -31,15 +31,10 @@ public class RunFunctions097FunctionSubstituteCase extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void y() {
-    }
-
-    private void z() {
+        y.set(String.valueOf("ABC111444555defxxabc"));
+        z.set(String.valueOf(CobolIntrinsics.substitute_case(y, "abc", "zz", "55", "666")));
         if (!String.valueOf(z).equals(String.valueOf("zz1114446665defxxzz"))) {
-            CobolDisplay.display();
-            /* RAW: Z  */
+            CobolDisplay.display(String.valueOf(z));
         }
         System.exit(0);
     }

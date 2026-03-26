@@ -27,9 +27,7 @@ public class RunReturncode002ReturnCodeNested extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void return_code() {
+        return_code = new BigDecimal(String.valueOf(1).trim()).intValue();
         if (return_code != 1) {
             CobolDisplay.displayNoAdvancing(String.valueOf(return_code));
         }
@@ -37,9 +35,7 @@ public class RunReturncode002ReturnCodeNested extends CobolProgram {
         if (return_code != 2) {
             CobolDisplay.displayNoAdvancing(String.valueOf(return_code));
         }
-    }
-
-    private void return_code_2() {
+        return_code = new BigDecimal(String.valueOf(0).trim()).intValue();
         System.exit(0);
     }
 
@@ -47,16 +43,11 @@ public class RunReturncode002ReturnCodeNested extends CobolProgram {
     }
 
     private void mod1() {
-        /* RAW: PROCEDURE  */
-    }
-
-    private void division() {
+        /* RAW: PROCEDURE DIVISION */
         if (return_code != 1) {
             CobolDisplay.displayNoAdvancing(String.valueOf(return_code));
         }
-    }
-
-    private void return_code_3() {
+        return_code = new BigDecimal(String.valueOf(2).trim()).intValue();
         return;
     }
 

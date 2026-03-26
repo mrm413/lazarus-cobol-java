@@ -33,10 +33,7 @@ public class RunExtensions032ProgramIdAsClause extends CobolProgram {
 
     private void program_id() {
         /* RAW: callee AS "prog" */
-        /* RAW: PROCEDURE  */
-    }
-
-    private void division() {
+        /* RAW: PROCEDURE DIVISION */
         return;
     }
 

@@ -33,22 +33,10 @@ public class SynMisc111SystemRoutinesWithWrongNumberOfParameters extends CobolPr
 
 
     private void para_main() {
-        CobolProgram.call("91", var1, var2, var3);
-    }
-
-    private void var4() {
-        CobolProgram.call("91");
-    }
-
-    private void var1() {
-        CobolProgram.call("C$TOUPPER", var1, var2);
-    }
-
-    private void var3() {
-        CobolProgram.call("CBL_GC_FORK");
-    }
-
-    private void var1_2() {
+        CobolProgram.call("91", var1, var2, var3, var4);
+        CobolProgram.call("91", var1);
+        CobolProgram.call("C$TOUPPER", var1, var2, var3);
+        CobolProgram.call("CBL_GC_FORK", var1);
     }
 
     @Override

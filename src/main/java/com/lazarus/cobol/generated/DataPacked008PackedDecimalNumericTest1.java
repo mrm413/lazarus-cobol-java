@@ -33,63 +33,49 @@ public class DataPacked008PackedDecimalNumericTest1 extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void x_2() {
+        x_2.set(String.valueOf("0000"));
         if (CobolIntrinsics.isNumeric(n_2)) {
             CobolDisplay.display(" 0000 NG");
         }
         if (CobolIntrinsics.isNumeric(n_s2)) {
             CobolDisplay.display("S0000 NG");
         }
-    }
-
-    private void x_2_2() {
+        x_2.set(String.valueOf("000c"));
         if (CobolIntrinsics.isNumeric(n_2)) {
             CobolDisplay.display(" 000c NG");
         }
         if (!CobolIntrinsics.isNumeric(n_s2)) {
             CobolDisplay.display("S000c NG");
         }
-    }
-
-    private void x_2_3() {
+        x_2.set(String.valueOf("000d"));
         if (CobolIntrinsics.isNumeric(n_2)) {
             CobolDisplay.display(" 000d NG");
         }
         if (!CobolIntrinsics.isNumeric(n_s2)) {
             CobolDisplay.display("S000d NG");
         }
-    }
-
-    private void x_2_4() {
+        x_2.set(String.valueOf("000f"));
         if (!CobolIntrinsics.isNumeric(n_2)) {
             CobolDisplay.display(" 000f NG");
         }
         if (CobolIntrinsics.isNumeric(n_s2)) {
             CobolDisplay.display("S000f NG");
         }
-    }
-
-    private void x_2_5() {
+        x_2.set(String.valueOf("1234"));
         if (CobolIntrinsics.isNumeric(n_2)) {
             CobolDisplay.display(" 1234 NG");
         }
         if (CobolIntrinsics.isNumeric(n_s2)) {
             CobolDisplay.display("S1234 NG");
         }
-    }
-
-    private void x_2_6() {
+        x_2.set(String.valueOf("999f"));
         if (!CobolIntrinsics.isNumeric(n_2)) {
             CobolDisplay.display(" 999f NG");
         }
         if (CobolIntrinsics.isNumeric(n_s2)) {
             CobolDisplay.display("S999f NG");
         }
-    }
-
-    private void x_2_7() {
+        x_2.set(String.valueOf("ffff"));
         if (CobolIntrinsics.isNumeric(n_2)) {
             CobolDisplay.display(" ffff NG");
         }

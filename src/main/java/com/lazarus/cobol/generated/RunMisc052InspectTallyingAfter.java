@@ -31,24 +31,16 @@ public class RunMisc052InspectTallyingAfter extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void tal() {
+        tal = new BigDecimal(String.valueOf(0).trim()).intValue();
         /* INSPECT X — 2 clause(s) */
         if (tal != 0) {
-            CobolDisplay.display();
-            /* RAW: TAL  */
+            CobolDisplay.display(String.valueOf(tal));
         }
-    }
-
-    private void tal_2() {
-    }
-
-    private void x() {
+        tal = new BigDecimal(String.valueOf(0).trim()).intValue();
+        x.set(String.valueOf(" ABC"));
         /* INSPECT X — 2 clause(s) */
         if (tal != 3) {
-            CobolDisplay.display();
-            /* RAW: TAL  */
+            CobolDisplay.display(String.valueOf(tal));
         }
         System.exit(0);
     }

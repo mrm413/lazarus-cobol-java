@@ -29,23 +29,16 @@ public class SynMove015InvalidTargetForMove extends CobolProgram {
     private CobolString main_var = new CobolString(3);
 
 
+    private CobolString main = new CobolString(256); // fallback
+    private CobolString repo_prog = new CobolString(256); // fallback
+    private CobolString quote = new CobolString(256); // fallback
 
     private void para_main() {
-    }
-
-    private void main_var() {
-    }
-
-    private void para_main_2() {
-    }
-
-    private void repo_prog() {
-    }
-
-    private void quote() {
-    }
-
-    private void defined_const() {
+        main_var.set(String.valueOf("A"));
+        main.set(String.valueOf("B"));
+        repo_prog.set(String.valueOf("C"));
+        quote.set(String.valueOf("D"));
+        // KNOWN_ISSUE: defined_const.set(String.valueOf("E"));
         System.exit(0);
     }
 

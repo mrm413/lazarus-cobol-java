@@ -28,7 +28,7 @@ public class RunMisc093LookupEntryFromMainExecutable extends CobolProgram {
     private long program_link = 0L;
 
 
-    private CobolString entry = new CobolString(256);
+    private CobolString entry = new CobolString(256); // fallback
 
     private void para_main() {
         program_link = new BigDecimal(String.valueOf(entry).trim()).longValue();

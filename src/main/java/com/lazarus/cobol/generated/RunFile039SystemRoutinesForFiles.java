@@ -45,15 +45,9 @@ public class RunFile039SystemRoutinesForFiles extends CobolProgram {
             CobolDisplay.display("error creating file ...");
             return_code = new BigDecimal(String.valueOf(0).trim()).intValue();
         }
-    }
-
-    private void write_buffer() {
-    }
-
-    private void offset() {
-    }
-
-    private void nbytes() {
+        write_buffer.set(String.valueOf("TestText.ABCD"));
+        offset.set(String.valueOf(0));
+        nbytes.set(String.valueOf(9));
         CobolProgram.call("CBL_WRITE_FILE", fhandle, offset, nbytes, "0", write_buffer);
         if (return_code != 0) {
             CobolDisplay.display("error writing file ...");

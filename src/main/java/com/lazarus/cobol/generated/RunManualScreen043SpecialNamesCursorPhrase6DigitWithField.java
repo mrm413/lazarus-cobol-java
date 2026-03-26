@@ -30,11 +30,11 @@ public class RunManualScreen043SpecialNamesCursorPhrase6DigitWithField extends C
     private CobolString ws_x_20 = new CobolString(20);
 
 
-    private CobolString environment = new CobolString(256);
-    private CobolString cob_screen_exceptions = new CobolString(256);
-    private CobolString cob_screen_esc = new CobolString(256);
-    private CobolString line = new CobolString(256);
-    private CobolString column = new CobolString(256);
+    private CobolString environment = new CobolString(256); // fallback
+    private CobolString cob_screen_exceptions = new CobolString(256); // fallback
+    private CobolString cob_screen_esc = new CobolString(256); // fallback
+    private CobolString line = new CobolString(256); // fallback
+    private CobolString column = new CobolString(256); // fallback
 
     private void testme() {
         environment.set(String.valueOf("TRUE"));
@@ -44,17 +44,10 @@ public class RunManualScreen043SpecialNamesCursorPhrase6DigitWithField extends C
         CobolDisplay.display("If the cursor below is positioned at the 'C'" + String.valueOf(line) + String.valueOf(1) + String.valueOf(column) + String.valueOf(1));
         CobolDisplay.display("(third column) below, then position it at the" + String.valueOf(line) + String.valueOf(2) + String.valueOf(column) + String.valueOf(1));
         CobolDisplay.display("'E' (fifth column) and press ENTER." + String.valueOf(line) + String.valueOf(3) + String.valueOf(column) + String.valueOf(1));
-    }
-
-    private void ws_x_20() {
-    }
-
-    private void cur_pos() {
+        ws_x_20.set(String.valueOf("ABCDEFG   "));
+        cur_pos = new BigDecimal(String.valueOf(5003).trim()).intValue();
         ws_x_20.set(String.valueOf(CobolDisplay.accept()));
         /* RAW: LINE 5 COLUMN 1 WITH AUTO-SKIP */
-    }
-
-    private void update() {
         if ((cur_pos == 5005 && cob_crt_status == 0)) {
             return;
         } else {

@@ -30,13 +30,14 @@ public class RunMisc171ConstantExpressions extends CobolProgram {
     private static final int var_len = 115;
 
 
-    private CobolString equals = new CobolString(256);
-    private CobolString _unnamed = new CobolString(256);
+    private CobolString equals = new CobolString(256); // fallback
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString _filler_002 = new CobolString(256); // fallback
 
+    private CobolString _filler_004 = new CobolString(256); // fallback
+    private CobolString _filler_006 = new CobolString(256); // fallback
     private void main_10() {
-    }
-
-    private void cb_var() {
+        cb_var.set(String.valueOf("Peek a boo"));
         if (true) {
             /* RAW: ALSO VAR-LEN > 16 AND VAR-LEN */
             cb_var.setRefMod((16 - var_len), (var_len - 9), String.valueOf(CobolString.refMod(othervar, 1, (var_len - 9))));
@@ -50,9 +51,7 @@ public class RunMisc171ConstantExpressions extends CobolProgram {
             cb_var.set(String.valueOf(othervar));
             CobolDisplay.display("A: OK VAR IS SPACES");
         }
-    }
-
-    private void cb_var_2() {
+        cb_var.set(String.valueOf("Peek a boo"));
         if (String.valueOf(3).equals(String.valueOf(cb_var))) {
             /* RAW: = SPACES */
             CobolDisplay.display("B: OK VAR IS NOT SPACES");
@@ -60,9 +59,7 @@ public class RunMisc171ConstantExpressions extends CobolProgram {
             /* RAW: NOT = SPACES */
             CobolDisplay.display("B: FALSE VAR IS SPACES");
         }
-    }
-
-    private void cb_var_3() {
+        cb_var.set(String.valueOf(" "));
         if (!(!String.valueOf(cb_var).trim().isEmpty())) {
             /* RAW: = SPACES */
             CobolDisplay.display("C: FALSE VAR IS SPACES");
@@ -70,9 +67,7 @@ public class RunMisc171ConstantExpressions extends CobolProgram {
             /* RAW: NOT = SPACES */
             CobolDisplay.display("C: OK VAR IS SPACES");
         }
-    }
-
-    private void cb_var_4() {
+        cb_var.set(String.valueOf("Peek a boo"));
         if (!String.valueOf(cb_var).trim().isEmpty()) {
             /* RAW: = SPACES */
             CobolDisplay.display("D: BAD VAR IS SPACES");
@@ -80,13 +75,11 @@ public class RunMisc171ConstantExpressions extends CobolProgram {
             /* RAW: NOT = SPACES */
             CobolDisplay.display("D: OK VAR IS NOT SPACES");
         }
-    }
-
-    private void cb_var_5() {
-        if (String.valueOf(var_len).equals(String.valueOf(_unnamed))) {
+        cb_var.set(String.valueOf(" "));
+        if (String.valueOf(var_len).equals(String.valueOf(_filler_004))) {
             /* RAW: 32 ALSO SPACES */
             CobolDisplay.display("E: OK VAR IS SPACES");
-        } else if (String.valueOf(var_len).equals(String.valueOf(_unnamed))) {
+        } else if (String.valueOf(var_len).equals(String.valueOf(_filler_006))) {
             /* RAW: 16 ALSO NOT SPACES */
             CobolDisplay.display("E: BAD VAR IS NOT SPACES");
         } else {

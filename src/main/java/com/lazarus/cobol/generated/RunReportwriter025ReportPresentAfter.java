@@ -36,6 +36,7 @@ public class RunReportwriter025ReportPresentAfter extends CobolProgram {
     private CobolString in_emp_userid = new CobolString(10);
     private CobolString in_bill_days = new CobolString(3);
     private int in_salary = 0;
+    private CobolString filler_1 = new CobolString(34);
 
     // FILE SECTION — OUT-FILE
     private CobolString rep_rec = new CobolString(100);
@@ -47,12 +48,12 @@ public class RunReportwriter025ReportPresentAfter extends CobolProgram {
     private CobolFile out_file = new CobolFile("OREPORT", "LINE SEQUENTIAL", "SEQUENTIAL");
     // File status: WS-OUTPUT-STATUS
 
-    private CobolString ws_date = new CobolString(256);
-    private CobolString ws_time = new CobolString(256);
-    private CobolString ws_input_ok = new CobolString(256);
-    private CobolString ws_output_ok = new CobolString(256);
-    private CobolString ws_input_eof = new CobolString(256);
-    private CobolString ws_misc = new CobolString(256);
+    private CobolString ws_date = new CobolString(256); // fallback
+    private CobolString ws_time = new CobolString(256); // fallback
+    private CobolString ws_input_ok = new CobolString(256); // fallback
+    private CobolString ws_output_ok = new CobolString(256); // fallback
+    private CobolString ws_input_eof = new CobolString(256); // fallback
+    private CobolString ws_misc = new CobolString(256); // fallback
 
     private void para_main() {
         /* RAW: *  */
@@ -61,17 +62,15 @@ public class RunReportwriter025ReportPresentAfter extends CobolProgram {
         ws_time.set(String.valueOf(CobolIntrinsics.acceptFrom("TIME")));
         /* RAW: INITIATE REPORT1 * */
         /* RAW: GENERATE MAIN-HEADER */
-        _100();
-        /* RAW: - OPEN-FILES */
-        _200();
-        /* RAW: - MAIN-PROCESS */
+        _100_open_files();
+        _200_main_process();
         /* RAW: TERMINATE REPORT1 */
         in_file.close();
         out_file.close();
         System.exit(0);
     }
 
-    private void open_files() {
+    private void _100_open_files() {
         in_file.open("INPUT");
         if (!String.valueOf(ws_input_ok).trim().isEmpty()) {
             /* CONTINUE */
@@ -86,10 +85,9 @@ public class RunReportwriter025ReportPresentAfter extends CobolProgram {
             CobolDisplay.display("ERROR OPENING OREPORT FILE.STATUS = " + String.valueOf(ws_output_status));
             System.exit(0);
         }
-        /* RAW: 200 - */
     }
 
-    private void main_process() {
+    private void _200_main_process() {
         /* RAW: *  */
         /* RAW: GENERATE HEADER-1 */
         while (!(!String.valueOf(ws_input_eof).trim().isEmpty())) {
@@ -106,10 +104,6 @@ public class RunReportwriter025ReportPresentAfter extends CobolProgram {
             }
         }
     }
-
-    private void _100() { /* stub — external/COPY */ }
-
-    private void _200() { /* stub — external/COPY */ }
 
     @Override
     public void run() {

@@ -31,7 +31,7 @@ public class SynFile011OpenSequentialFileNoRewind extends CobolProgram {
     // FILE DESCRIPTORS
     private CobolFile test_file = new CobolFile("./TEST-FILE", "SEQUENTIAL", "SEQUENTIAL");
 
-    
+    // FALLBACK FILE DESCRIPTORS
     private CobolFile no = new CobolFile("NO", "SEQUENTIAL", "SEQUENTIAL");
     private CobolFile rewind = new CobolFile("REWIND", "SEQUENTIAL", "SEQUENTIAL");
 

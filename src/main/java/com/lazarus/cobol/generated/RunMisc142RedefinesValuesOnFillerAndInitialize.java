@@ -29,7 +29,9 @@ public class RunMisc142RedefinesValuesOnFillerAndInitialize extends CobolProgram
     private CobolString ws_ask_id_date = new CobolString(10);
     private CobolString ws_ask_id_date_r = new CobolString(1); // Group: WS-ASK-ID-DATE-R
     private int ws_ask_id_date_yyyy = 0;
+    private CobolString filler_1 = new CobolString(1);
     private int ws_ask_id_date_mm = 0;
+    private CobolString filler_2 = new CobolString(1);
     private int ws_ask_id_date_dd = 0;
 
 
@@ -39,23 +41,15 @@ public class RunMisc142RedefinesValuesOnFillerAndInitialize extends CobolProgram
         ws_ask_id_date_mm = new BigDecimal(String.valueOf(8).trim()).intValue();
         ws_ask_id_date_dd = new BigDecimal(String.valueOf(21).trim()).intValue();
         CobolDisplay.display("The date is " + String.valueOf(ws_ask_id_date) + " Compiled");
-    }
-
-    private void ws_ask_id_date_r() {
+        ws_ask_id_date_r.set("");
         ws_ask_id_date_mm = new BigDecimal(String.valueOf(8).trim()).intValue();
         ws_ask_id_date_dd = new BigDecimal(String.valueOf(21).trim()).intValue();
         CobolDisplay.display("The date is " + String.valueOf(ws_ask_id_date) + " INITIALIZE");
         ws_ask_id_date_r.set("");
-    }
-
-    private void filler_1() {
         ws_ask_id_date_mm = new BigDecimal(String.valueOf(8).trim()).intValue();
         ws_ask_id_date_dd = new BigDecimal(String.valueOf(21).trim()).intValue();
         CobolDisplay.display("The date is " + String.valueOf(ws_ask_id_date) + " WITH FILLER");
         ws_ask_id_date_r.set("");
-    }
-
-    private void value() {
         ws_ask_id_date_mm = new BigDecimal(String.valueOf(8).trim()).intValue();
         ws_ask_id_date_dd = new BigDecimal(String.valueOf(21).trim()).intValue();
         CobolDisplay.display("The date is " + String.valueOf(ws_ask_id_date) + " ALL TO VALUE");

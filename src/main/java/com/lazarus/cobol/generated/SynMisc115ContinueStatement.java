@@ -48,10 +48,7 @@ public class SynMisc115ContinueStatement extends CobolProgram {
         /* CONTINUE */
         /* RAW: AFTER ptr SECONDS */
         /* CONTINUE */
-        /* RAW: AFTER one */
-    }
-
-    private void seconds() {
+        /* RAW: AFTER one SECONDS */
     }
 
     @Override

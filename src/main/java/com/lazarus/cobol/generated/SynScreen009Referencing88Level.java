@@ -28,7 +28,7 @@ public class SynScreen009Referencing88Level extends CobolProgram {
     private CobolString flag = new CobolString(1);
 
 
-    private CobolString scr = new CobolString(256);
+    private CobolString scr = new CobolString(256); // fallback
 
     private void para_main() {
         scr.set(String.valueOf(CobolDisplay.accept()));

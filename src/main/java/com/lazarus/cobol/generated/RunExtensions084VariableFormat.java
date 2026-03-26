@@ -27,10 +27,7 @@ public class RunExtensions084VariableFormat extends CobolProgram {
 
 
     private void para_main() {
-        /* RAW: PROGRAM  */
-    }
-
-    private void prog() {
+        /* RAW: PROGRAM prog */
     }
 
     @Override

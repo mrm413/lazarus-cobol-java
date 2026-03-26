@@ -28,16 +28,17 @@ public class RunManualScreen008DisplayLowValuesTwoStatements extends CobolProgra
     private CobolString success_flag = new CobolString(1);
 
 
-    private CobolString scr = new CobolString(256);
-    private CobolString at = new CobolString(256);
-    private CobolString line = new CobolString(256);
-    private CobolString _unnamed = new CobolString(256);
-    private CobolString col = new CobolString(256);
-    private CobolString success = new CobolString(256);
+    private CobolString scr = new CobolString(256); // fallback
+    private CobolString at = new CobolString(256); // fallback
+    private CobolString line = new CobolString(256); // fallback
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString col = new CobolString(256); // fallback
+    private CobolString success = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
     private void para_main() {
         CobolDisplay.display(String.valueOf(scr));
-        CobolDisplay.display("\u0000" + String.valueOf(at) + String.valueOf(line) + String.valueOf(3) + String.valueOf(_unnamed) + String.valueOf(col) + String.valueOf(3));
+        CobolDisplay.display("\u0000" + String.valueOf(at) + String.valueOf(line) + String.valueOf(3) + String.valueOf(_filler_002) + String.valueOf(col) + String.valueOf(3));
         CobolDisplay.display("Hello!");
         scr.set(String.valueOf(CobolDisplay.accept()));
         if ((!String.valueOf(success).trim().isEmpty() && cob_crt_status == 0)) {

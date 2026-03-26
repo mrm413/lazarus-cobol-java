@@ -38,15 +38,11 @@ public class RunFile036DeclarativesProcedureReferencingMultiple extends CobolPro
     // SECTION: P01
     private void p01() {
         use();
-        test_file();
         p0101();
     }
 
     private void use() {
-        /* RAW: AFTER ERROR PROCEDURE ON */
-    }
-
-    private void test_file() {
+        /* RAW: AFTER ERROR PROCEDURE ON TEST-FILE */
     }
 
     private void p0101() {
@@ -56,15 +52,11 @@ public class RunFile036DeclarativesProcedureReferencingMultiple extends CobolPro
     // SECTION: P02
     private void p02() {
         use();
-        output();
         p0201();
     }
 
     private void use_2() {
-        /* RAW: AFTER ERROR PROCEDURE ON */
-    }
-
-    private void output() {
+        /* RAW: AFTER ERROR PROCEDURE ON OUTPUT */
     }
 
     private void p0201() {
@@ -74,17 +66,13 @@ public class RunFile036DeclarativesProcedureReferencingMultiple extends CobolPro
     // SECTION: MP01
     private void mp01() {
         mp0101();
-        test_file();
     }
 
     private void mp0101() {
-    }
-
-    private void test_file_2() {
+        test_file.open("INPUT");
         p01(); // THRU P02
         if (z != 3) {
-            CobolDisplay.display();
-            /* RAW: Z  */
+            CobolDisplay.display(String.valueOf(z));
         }
         return;
     }

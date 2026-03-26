@@ -29,9 +29,9 @@ public class RunManualScreen006DisplayAt extends CobolProgram {
     private int screen_loc = 0;
 
 
-    private CobolString at = new CobolString(256);
-    private CobolString scr = new CobolString(256);
-    private CobolString success = new CobolString(256);
+    private CobolString at = new CobolString(256); // fallback
+    private CobolString scr = new CobolString(256); // fallback
+    private CobolString success = new CobolString(256); // fallback
 
     private void para_main() {
         CobolDisplay.display("1" + String.valueOf(at) + String.valueOf(202));

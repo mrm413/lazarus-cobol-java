@@ -28,15 +28,16 @@ public class SynDefinition057TypedefClause extends CobolProgram {
     private CobolString ausgabe_file_name_t = new CobolString(50);
     private int some_very_long_typedef_name = 0;
     private CobolString ausgabe_file_name_2t = new CobolString(1); // Group: AUSGABE-FILE-NAME-2T
+    private int filler_1 = 0;
     private int detail_no = 0;
 
 
-    private CobolString ausgabe_file_name = new CobolString(256);
-    private CobolString output_name = new CobolString(256);
-    private CobolString amount = new CobolString(256);
-    private CobolString[] grp_amount = new CobolString[100];
-    private CobolString my_proc = new CobolString(256);
-    private CobolString address = new CobolString(256);
+    private CobolString ausgabe_file_name = new CobolString(256); // fallback
+    private CobolString output_name = new CobolString(256); // fallback
+    private CobolString amount = new CobolString(256); // fallback
+    private CobolString[] grp_amount = new CobolString[100]; // fallback array
+    private CobolString my_proc = new CobolString(256); // fallback
+    private CobolString address = new CobolString(256); // fallback
 
     private void para_main() {
         CobolDisplay.display(String.valueOf(ausgabe_file_name));

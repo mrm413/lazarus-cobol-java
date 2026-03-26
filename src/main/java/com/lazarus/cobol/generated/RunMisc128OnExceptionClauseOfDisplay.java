@@ -25,8 +25,8 @@ public class RunMisc128OnExceptionClauseOfDisplay extends CobolProgram {
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
-    private CobolString at = new CobolString(256);
-    private CobolString column = new CobolString(256);
+    private CobolString at = new CobolString(256); // fallback
+    private CobolString column = new CobolString(256); // fallback
 
     private void para_main() {
         CobolDisplay.display("hello" + String.valueOf(at) + String.valueOf(column) + String.valueOf(500));

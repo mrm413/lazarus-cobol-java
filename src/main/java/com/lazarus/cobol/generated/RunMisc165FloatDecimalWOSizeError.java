@@ -31,17 +31,21 @@ public class RunMisc165FloatDecimalWOSizeError extends CobolProgram {
     private int sv34 = 0;
 
 
-    private CobolString _unnamed = new CobolString(256);
+    private CobolString _filler_001 = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
+    private CobolString _filler_004 = new CobolString(256); // fallback
+    private CobolString _filler_005 = new CobolString(256); // fallback
+    private CobolString _filler_006 = new CobolString(256); // fallback
+    private CobolString _filler_007 = new CobolString(256); // fallback
     private void cnd_000() {
         CobolDisplay.display("--- FLOAT-DECIMAL-34 ---");
         fd34 = new BigDecimal(String.valueOf((((((((10000000 / 2.1)) / 3.1)) - 0.5)) * 6)).trim()).intValue();
         CobolDisplay.display("A: " + String.valueOf(fd34));
         fd34 = new BigDecimal(String.valueOf((((((((10000000 / 2.9)) / 3.9)) - 0.5)) * 6)).trim()).intValue();
         CobolDisplay.display("B: " + String.valueOf(fd34));
-    }
-
-    private void fd34() {
+        fd34 = new BigDecimal(String.valueOf(0).trim()).intValue();
         fd34 = new BigDecimal(String.valueOf((1000 / 2.1)).trim()).intValue();
         /* ON SIZE ERROR handling — needs runtime overflow detection */
         CobolDisplay.display("    ...");
@@ -50,18 +54,14 @@ public class RunMisc165FloatDecimalWOSizeError extends CobolProgram {
         CobolDisplay.display("A: " + String.valueOf(fd16));
         fd16 = new BigDecimal(String.valueOf((((((((10000000 / 2.9)) / 3.9)) - 0.5)) * 6)).trim()).intValue();
         CobolDisplay.display("B: " + String.valueOf(fd16));
-    }
-
-    private void fd16() {
+        fd16 = new BigDecimal(String.valueOf(0).trim()).intValue();
         fd16 = new BigDecimal(String.valueOf((1000 / 2.1)).trim()).intValue();
         /* ON SIZE ERROR handling — needs runtime overflow detection */
         CobolDisplay.display("    ...");
         CobolDisplay.display("--- 99 + 1 / 3 ---");
         fd16 = new BigDecimal(String.valueOf(-1).trim()).intValue();
-        _unnamed.set(String.valueOf(-1));
-    }
-
-    private void fd34_2() {
+        _filler_002.set(String.valueOf(-1));
+        fd34 = new BigDecimal(String.valueOf(-1).trim()).intValue();
         fd34 = new BigDecimal(String.valueOf((99 + (1 / 3))).trim()).intValue();
         /* ON SIZE ERROR handling — needs runtime overflow detection */
         fd16 = new BigDecimal(String.valueOf((99 + (1 / 3))).trim()).intValue();
@@ -69,10 +69,8 @@ public class RunMisc165FloatDecimalWOSizeError extends CobolProgram {
         CobolDisplay.display("    ...");
         CobolDisplay.display("--- 99 ---");
         fd16 = new BigDecimal(String.valueOf(-1).trim()).intValue();
-        _unnamed.set(String.valueOf(-1));
-    }
-
-    private void fd34_3() {
+        _filler_003.set(String.valueOf(-1));
+        fd34 = new BigDecimal(String.valueOf(-1).trim()).intValue();
         fd34 = new BigDecimal(String.valueOf(99).trim()).intValue();
         /* ON SIZE ERROR handling — needs runtime overflow detection */
         fd16 = new BigDecimal(String.valueOf(99).trim()).intValue();
@@ -83,10 +81,8 @@ public class RunMisc165FloatDecimalWOSizeError extends CobolProgram {
         CobolDisplay.display("    ...");
         CobolDisplay.display("--- Test overflow ---");
         fd16 = new BigDecimal(String.valueOf(9900000000000L).trim()).intValue();
-        _unnamed.set(String.valueOf(9900000000000L));
-    }
-
-    private void fd34_4() {
+        _filler_004.set(String.valueOf(9900000000000L));
+        fd34 = new BigDecimal(String.valueOf(9900000000000L).trim()).intValue();
         for (int _i0 = 0; _i0 < 390; _i0++) {
             sv16 = new BigDecimal(String.valueOf(fd16).trim()).intValue();
             fd16 = new BigDecimal(String.valueOf((fd16 * 10)).trim()).intValue();
@@ -108,11 +104,9 @@ public class RunMisc165FloatDecimalWOSizeError extends CobolProgram {
 
     private void cnd_200_ok() {
         fd16 = new BigDecimal(String.valueOf(9900000000000L).trim()).intValue();
-        _unnamed.set(String.valueOf(9900000000000L));
-    }
-
-    private void fd34_5() {
-        for (int _i0 = 0; _i0 < 6500; _i0++) {
+        _filler_005.set(String.valueOf(9900000000000L));
+        fd34 = new BigDecimal(String.valueOf(9900000000000L).trim()).intValue();
+        for (int _i1 = 0; _i1 < 6500; _i1++) {
             sv34 = new BigDecimal(String.valueOf(fd34).trim()).intValue();
             fd34 = new BigDecimal(String.valueOf((fd34 * 10)).trim()).intValue();
             /* ON SIZE ERROR handling — needs runtime overflow detection */
@@ -134,11 +128,9 @@ public class RunMisc165FloatDecimalWOSizeError extends CobolProgram {
         CobolDisplay.display("    ...");
         CobolDisplay.display("--- Test underflow ---");
         fd16 = new BigDecimal(String.valueOf(9.9e-8).trim()).intValue();
-        _unnamed.set(String.valueOf(9.9e-8));
-    }
-
-    private void fd34_6() {
-        for (int _i0 = 0; _i0 < 400; _i0++) {
+        _filler_006.set(String.valueOf(9.9e-8));
+        fd34 = new BigDecimal(String.valueOf(9.9e-8).trim()).intValue();
+        for (int _i2 = 0; _i2 < 400; _i2++) {
             sv16 = new BigDecimal(String.valueOf(fd16).trim()).intValue();
             fd16 = new BigDecimal(String.valueOf((fd16 / 10)).trim()).intValue();
             /* ON SIZE ERROR handling — needs runtime overflow detection */
@@ -158,11 +150,9 @@ public class RunMisc165FloatDecimalWOSizeError extends CobolProgram {
 
     private void cnd_400_ok() {
         fd16 = new BigDecimal(String.valueOf(9.9e-8).trim()).intValue();
-        _unnamed.set(String.valueOf(9.9e-8));
-    }
-
-    private void fd34_7() {
-        for (int _i0 = 0; _i0 < 6600; _i0++) {
+        _filler_007.set(String.valueOf(9.9e-8));
+        fd34 = new BigDecimal(String.valueOf(9.9e-8).trim()).intValue();
+        for (int _i3 = 0; _i3 < 6600; _i3++) {
             sv34 = new BigDecimal(String.valueOf(fd34).trim()).intValue();
             fd34 = new BigDecimal(String.valueOf((fd34 / 10)).trim()).intValue();
             /* ON SIZE ERROR handling — needs runtime overflow detection */

@@ -42,9 +42,7 @@ public class DataBinary009PppComp5 extends CobolProgram {
         CobolDisplay.display("INIT D-1 : " + String.valueOf(d_1) + " .");
         x_2 = new BigDecimal(String.valueOf(d_1).trim()).shortValue();
         x_1 = new BigDecimal(String.valueOf(d_1).trim()).shortValue();
-    }
-
-    private void d_1() {
+        d_1 = new BigDecimal(String.valueOf(x_2).trim()).shortValue();
         CobolDisplay.display("MOVE X-1 : " + String.valueOf(x_1) + " .");
         CobolDisplay.display("MOVE X-2 : " + String.valueOf(x_2) + " .");
         x_4 = new BigDecimal(String.valueOf(0.000256).trim());
@@ -54,37 +52,29 @@ public class DataBinary009PppComp5 extends CobolProgram {
         x_1 = new BigDecimal(String.valueOf(d_2).trim()).shortValue();
         CobolDisplay.display("MOVE X-1 : " + String.valueOf(x_1) + ":" + String.valueOf(d_2) + " .");
         CobolDisplay.display("MOVE X-2 : " + String.valueOf(x_2) + ":" + String.valueOf(d_2) + " .");
-    }
-
-    private void x_1() {
+        x_1 = new BigDecimal(String.valueOf(98000).trim()).shortValue();
         if (x_1 != 98000) {
-            CobolDisplay.display("MOVE 98000 failed: ");
-            /* RAW: X-1  */
+            CobolDisplay.display("MOVE 98000 failed: " + String.valueOf(x_1));
         }
         d_1 = new BigDecimal(String.valueOf(98000).trim()).shortValue();
         if (d_1 != 98000) {
-            CobolDisplay.display("MOVE 98000 failed: ");
-            /* RAW: D-1  */
+            CobolDisplay.display("MOVE 98000 failed: " + String.valueOf(d_1));
         }
         x_1 = new BigDecimal(String.valueOf(x_1 + 1000).trim()).shortValue();
         if (x_1 != 99000) {
-            CobolDisplay.display("+ 1000 failed: ");
-            /* RAW: X-1  */
+            CobolDisplay.display("+ 1000 failed: " + String.valueOf(x_1));
         }
         x_1 = new BigDecimal(String.valueOf(x_1 - 4000).trim()).shortValue();
         if (x_1 != 95000) {
-            CobolDisplay.display("- 4000 failed: ");
-            /* RAW: X-1  */
+            CobolDisplay.display("- 4000 failed: " + String.valueOf(x_1));
         }
         /* DIVIDE without GIVING — needs runtime */
         if (x_1 != 31000) {
-            CobolDisplay.display("/ 3 failed: ");
-            /* RAW: X-1  */
+            CobolDisplay.display("/ 3 failed: " + String.valueOf(x_1));
         }
         x_1 = new BigDecimal(String.valueOf(2 * x_1).trim()).shortValue();
         if (x_1 != 62000) {
-            CobolDisplay.display("* 2 failed: ");
-            /* RAW: X-1  */
+            CobolDisplay.display("* 2 failed: " + String.valueOf(x_1));
         }
         System.exit(0);
     }

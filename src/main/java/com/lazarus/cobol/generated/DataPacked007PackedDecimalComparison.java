@@ -45,23 +45,21 @@ public class DataPacked007PackedDecimalComparison extends CobolProgram {
     private BigDecimal s2_32d = BigDecimal.ZERO;
     private BigDecimal s3_32d = BigDecimal.ZERO;
     private BigDecimal s4_32d = BigDecimal.ZERO;
+    private int filler_1 = 0;
 
 
-    private CobolString on = new CobolString(256);
-    private CobolString error = new CobolString(256);
-    private CobolString no_disp = new CobolString(256);
-    private CobolString cb_true = new CobolString(256);
-    private CobolString some = new CobolString(256);
+    private CobolString on = new CobolString(256); // fallback
+    private CobolString error = new CobolString(256); // fallback
+    private CobolString no_disp = new CobolString(256); // fallback
+    private CobolString cb_true = new CobolString(256); // fallback
+    private CobolString some = new CobolString(256); // fallback
 
     private void para_main() {
         /* RAW: * Test with */
         CobolDisplay.display(String.valueOf(on) + String.valueOf(error));
         do_check();
         no_disp.set(String.valueOf((Integer.parseInt(String.valueOf(cb_true).trim()) * Integer.parseInt(String.valueOf(some).trim()))));
-        /* RAW: performance checks on the */
-    }
-
-    private void way() {
+        /* RAW: performance checks on the way */
         for (int _i0 = 0; _i0 < 30000; _i0++) {
         }
         return;

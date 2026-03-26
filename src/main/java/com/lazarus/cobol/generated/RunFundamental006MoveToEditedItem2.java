@@ -39,21 +39,11 @@ public class RunFundamental006MoveToEditedItem2 extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void edt_1() {
-    }
-
-    private void edt_2() {
-    }
-
-    private void edt_3() {
-    }
-
-    private void edt_4() {
-    }
-
-    private void edt_5() {
+        edt_1 = new BigDecimal(String.valueOf(src_1).trim()).intValue();
+        edt_2 = new BigDecimal(String.valueOf(src_2).trim()).intValue();
+        edt_3.set(String.valueOf(src_3));
+        edt_4 = new BigDecimal(String.valueOf(src_4).trim()).intValue();
+        edt_5 = new BigDecimal(String.valueOf(src_5).trim()).intValue();
         CobolDisplay.display(">" + String.valueOf(edt_1) + "<");
         CobolDisplay.display(">" + String.valueOf(edt_2) + "<");
         CobolDisplay.display(">" + String.valueOf(edt_3) + "<");

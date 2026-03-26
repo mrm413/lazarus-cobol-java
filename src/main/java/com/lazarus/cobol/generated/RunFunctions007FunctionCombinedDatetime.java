@@ -30,9 +30,7 @@ public class RunFunctions007FunctionCombinedDatetime extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void test_fld() {
+        test_fld = new BigDecimal(String.valueOf(CobolIntrinsics.combined_datetime(987, 345.6)).trim());
         if (test_fld.compareTo(new BigDecimal(String.valueOf(987.003456).trim())) != 0) {
             CobolDisplay.display(String.valueOf(test_fld));
         }

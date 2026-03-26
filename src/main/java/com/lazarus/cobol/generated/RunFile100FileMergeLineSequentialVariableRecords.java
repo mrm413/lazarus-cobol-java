@@ -6,6 +6,7 @@ import com.lazarus.cobol.CobolIntrinsics;
 import com.lazarus.cobol.CobolProgram;
 import com.lazarus.cobol.CobolString;
 import com.lazarus.cobol.FileStatus;
+import com.lazarus.cobol.jcl.batch.DfsortProgram;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -42,11 +43,13 @@ public class RunFile100FileMergeLineSequentialVariableRecords extends CobolProgr
 
 
     private void para_main() {
-        /* MERGE file4 */
+        {
+            DfsortProgram _merge = new DfsortProgram();
+            _merge.setMergeMode(true);
+            _merge.setSortKeys(new String[]{});
+            _merge.execute();
+        }
         /* RAW: ON ASCENDING file4-key1 DESCENDING file4-key2 USING */
-    }
-
-    private void file3() {
         System.exit(0);
     }
 

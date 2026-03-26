@@ -30,29 +30,30 @@ public class SynLiterals012ZeroLengthLiterals extends CobolProgram {
     private int n = 0;
 
 
-    private CobolString h = new CobolString(256);
-    private CobolString _unnamed = new CobolString(256);
-    private CobolString to = new CobolString(256);
-    private CobolString l = new CobolString(256);
-    private CobolString nx = new CobolString(256);
+    private CobolString h = new CobolString(256); // fallback
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString to = new CobolString(256); // fallback
+    private CobolString l = new CobolString(256); // fallback
+    private CobolString nx = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
+    private CobolString _filler_004 = new CobolString(256); // fallback
     private void para_main() {
         x.set(String.valueOf(""));
-        _unnamed.set(String.valueOf(h));
+        _filler_002.set(String.valueOf(h));
         to.set(String.valueOf(h));
         n = new BigDecimal(String.valueOf(h).trim()).intValue();
         x.set(String.valueOf(""));
-        _unnamed.set(String.valueOf(l));
+        _filler_003.set(String.valueOf(l));
         to.set(String.valueOf(l));
         x.set(String.valueOf(l));
         nat.set(String.valueOf(""));
-        _unnamed.set(String.valueOf(nx));
+        _filler_004.set(String.valueOf(nx));
         to.set(String.valueOf(nx));
         nat.set(String.valueOf(nx));
         n = new BigDecimal(String.valueOf("").trim()).intValue();
-    }
-
-    private void n() {
+        n = new BigDecimal(String.valueOf("").trim()).intValue();
     }
 
     @Override

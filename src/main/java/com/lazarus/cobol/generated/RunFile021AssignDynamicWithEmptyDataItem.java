@@ -37,10 +37,7 @@ public class RunFile021AssignDynamicWithEmptyDataItem extends CobolProgram {
 
 
     private void para_main() {
-        /* RAW: CHAINING  */
-    }
-
-    private void x() {
+        /* RAW: CHAINING x */
         if (String.valueOf(x).equals(String.valueOf(" "))) {
             path.set(String.valueOf(" "));
         } else {

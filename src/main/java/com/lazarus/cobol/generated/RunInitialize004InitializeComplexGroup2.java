@@ -34,9 +34,7 @@ public class RunInitialize004InitializeComplexGroup2 extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void g1() {
+        g1.set("");
         if (!String.valueOf(g1).equals(String.valueOf("0   0   "))) {
             CobolDisplay.display("Test failed: " + String.valueOf(g1) + ".");
             CobolDisplay.display("  should be: " + "0   0   .");

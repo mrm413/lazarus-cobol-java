@@ -31,10 +31,7 @@ public class RunFundamental023GlobalRedefines extends CobolProgram {
 
 
     private void para_main() {
-        CobolDisplay.display();
-    }
-
-    private void t1() {
+        CobolDisplay.display(String.valueOf(t1));
     }
 
     @Override

@@ -36,13 +36,11 @@ public class SynFile022WriteRewriteFromClauseAndFile extends CobolProgram {
     // FILE DESCRIPTORS
     private CobolFile test_file = new CobolFile("FILE-TEST", "INDEXED", "DYNAMIC");
 
-    private CobolString some_val = new CobolString(256);
-    private CobolString file = new CobolString(256);
+    private CobolString some_val = new CobolString(256); // fallback
+    private CobolString file = new CobolString(256); // fallback
 
     private void para_main() {
-    }
-
-    private void test_file() {
+        test_file.open("I-O");
         /* WRITE SOME-VAL — no file mapping */ // some_val.write();
         /* WRITE SOME-REC — no file mapping */ // some_rec.write();
         test_file.write(test_rec);
@@ -55,17 +53,11 @@ public class SynFile022WriteRewriteFromClauseAndFile extends CobolProgram {
         /* WRITE FILE — no file mapping */ // file.write();
     }
 
-    private void test_file_2() {
+    private void test_file() {
         /* WRITE FILE — no file mapping */ // file.write();
-        /* RAW: TEST-FILE FROM */
-    }
-
-    private void test_rec_2() {
+        /* RAW: TEST-FILE FROM TEST-REC */
         /* WRITE FILE — no file mapping */ // file.write();
-        /* RAW: TEST-FILE FROM */
-    }
-
-    private void some_rec() {
+        /* RAW: TEST-FILE FROM SOME-REC */
         /* REWRITE SOME-VAL — no file mapping */ // some_val.rewrite();
         /* REWRITE SOME-REC — no file mapping */ // some_rec.rewrite();
         test_file.rewrite(test_rec);
@@ -74,24 +66,16 @@ public class SynFile022WriteRewriteFromClauseAndFile extends CobolProgram {
         /* REWRITE FILE — no file mapping */ // file.rewrite();
     }
 
-    private void test_rec_3() {
+    private void test_rec_2() {
         /* REWRITE FILE — no file mapping */ // file.rewrite();
     }
 
-    private void test_file_3() {
+    private void test_file_2() {
         /* REWRITE FILE — no file mapping */ // file.rewrite();
-        /* RAW: TEST-FILE FROM */
-    }
-
-    private void test_rec_4() {
+        /* RAW: TEST-FILE FROM TEST-REC */
         /* REWRITE FILE — no file mapping */ // file.rewrite();
-        /* RAW: TEST-FILE FROM */
-    }
-
-    private void some_rec_2() {
-    }
-
-    private void test_file_4() {
+        /* RAW: TEST-FILE FROM SOME-REC */
+        test_file.close();
         System.exit(0);
     }
 

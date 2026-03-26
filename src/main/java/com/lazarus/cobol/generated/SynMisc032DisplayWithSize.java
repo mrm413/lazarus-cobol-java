@@ -29,9 +29,9 @@ public class SynMisc032DisplayWithSize extends CobolProgram {
     private short y = (short) 0;
 
 
-    private CobolString at = new CobolString(256);
-    private CobolString size = new CobolString(256);
-    private CobolString is = new CobolString(256);
+    private CobolString at = new CobolString(256); // fallback
+    private CobolString size = new CobolString(256); // fallback
+    private CobolString is = new CobolString(256); // fallback
 
     private void para_main() {
         CobolDisplay.display(String.valueOf(x) + String.valueOf(at) + String.valueOf(101) + String.valueOf(size) + String.valueOf(5));

@@ -10,8 +10,8 @@ This repository contains the Java output of the Lazarus COBOL transpiler — a p
 |--------|-------|
 | Programs transpiled | **1,323** |
 | Compile rate | **100.0%** (1,323 / 1,323) |
-| Lines of generated Java | **160,000+** |
-| Runtime library | **6 core classes + 13 CICS runtime classes** |
+| Lines of generated Java | **129,000+** |
+| Runtime library | **6 core classes + 13 CICS runtime classes + DFSORT** |
 | CICS runtime tests | **155 passed** (core + VSAM + emitter + E2E) |
 | Test categories covered | **79+** |
 | External dependencies | **1** (H2 embedded database for CICS VSAM) |
@@ -149,7 +149,7 @@ public class DataPacked006PackedDecimalArithmetic extends CobolProgram {
 **Requires:** JDK 11 or later
 
 ```bash
-# Compile everything (runtime + 1,224 programs)
+# Compile everything (runtime + 1,323 programs)
 bash verify.sh
 
 # Or with Maven
@@ -204,7 +204,7 @@ The runtime provides COBOL semantics in pure Java:
 
 ## Security audit
 
-A static analysis scan was performed against all 202,121 lines of Java in this repository. Results:
+A static analysis scan was performed against all 129,000+ lines of Java in this repository. Results:
 
 | Check | Result |
 |-------|--------|
@@ -287,7 +287,20 @@ Rust can represent that same packed decimal as a stack-allocated `[u8; 5]` — s
 
 Java proves the concept. Rust is the production answer.
 
-The Lazarus transpiler architecture is target-agnostic — the same parser and AST feed different code emitters. A Rust emitter would produce `CobolString` as a fixed-size `[u8; N]`, `PACKED-DECIMAL` as a stack-allocated BCD type, and `PERFORM VARYING` as zero-cost iterators. Same 1,323 programs. Same 100% compilation rate. But with the safety guarantees and performance characteristics that production COBOL modernization demands.
+The Lazarus transpiler architecture is target-agnostic — the same parser and AST feed different code emitters. A Rust emitter would produce `CobolString` as a fixed-size `[u8; N]`, `PACKED-DECIMAL` as a stack-allocated BCD type, and `PERFORM VARYING` as zero-cost iterators. Same 1,323 programs. Same compilation rate. But with the safety guarantees and performance characteristics that production COBOL modernization demands.
+
+## Changelog
+
+**2026-03-26** — GnuCOBOL test suite regenerated with transpiler improvements:
+- Fixed numeric paragraph name handling (`0000-MAIN-LOGIC`, `1000-INIT`, etc.) — standard mainframe naming convention now fully supported
+- Fixed mixed-format source detection: multi-line voting system differentiates fixed-format files with column-7 comment indicators from free-format files with keywords at column 1
+- Fixed FILLER field handling — anonymous COBOL data items now emit proper Java declarations with unique names
+- Fixed `_filler_NNN` counter drift between declaration and reference passes via post-processing reconciliation
+- Expanded `CobolIntrinsics` runtime: added `SIGN`, `EXP`, `EXP10`, `FRACTION-PART`, `LOCALE-TIME-FROM-SECONDS`, `MODULE-DATE`, `MODULE-TIME`, `CURRENCY-SYMBOL`, `MONETARY-DECIMAL-POINT`, `NUMERIC-DECIMAL-POINT`, and other missing intrinsic functions with proper overloads
+- Added DFSORT runtime class for SORT/MERGE verb support (conditional import — only included when program uses SORT verbs)
+- All 1,224 GnuCOBOL test programs now have fully populated procedure bodies — zero empty methods
+- Unique class naming per source file eliminates PROGRAM-ID collisions in the test suite
+- 100% compile rate maintained across all 1,323 programs
 
 ## License and attribution
 

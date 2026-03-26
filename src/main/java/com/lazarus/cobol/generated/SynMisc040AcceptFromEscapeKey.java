@@ -28,7 +28,7 @@ public class SynMisc040AcceptFromEscapeKey extends CobolProgram {
     private int keynum = 0;
 
 
-    private CobolString omitted = new CobolString(256);
+    private CobolString omitted = new CobolString(256); // fallback
 
     private void para_main() {
         keynum = new BigDecimal(String.valueOf(CobolIntrinsics.acceptFrom("ESCAPE")).trim()).intValue();

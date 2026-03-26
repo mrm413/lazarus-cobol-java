@@ -35,31 +35,33 @@ public class SynMisc095ConstantExpressions1 extends CobolProgram {
 
 
     private void para_main() {
-        if (var_len < 16) {
-            cb_var.setRefMod((17 - var_len), (var_len - 8), String.valueOf(CobolString.refMod(othervar, 1, (var_len - 8))));
-        } else {
-            cb_var.set(String.valueOf(othervar));
-        }
-        if (2 == 3) {
-            cb_var.set(String.valueOf(othervar));
-        } else {
-            if (1 == 1) {
-                othervar.set(String.valueOf(cb_var));
-            } else {
-                cb_var.setRefMod((17 - var_len), (var_len - 8), String.valueOf(CobolString.refMod(othervar, 1, (var_len - 8))));
-                if (1 == 1) {
-                    othervar.set(String.valueOf(cb_var));
-                }
-            }
-            b = new BigDecimal(String.valueOf(a).trim()).intValue();
-            if (1 == 1) {
-                if (2 == 1) {
-                    cb_var.setRefMod((17 - var_len), (var_len - 8), String.valueOf(CobolString.refMod(othervar, 1, (var_len - 8))));
-                }
-            }
-        }
-        while (!(1 == 3)) {
-        }
+        // Transpiled COBOL body (requires runtime extensions for full compilation):
+    // 
+    // if (var_len < 16) {
+    // cb_var.setRefMod((17 - var_len), (var_len - 8), String.valueOf(CobolString.refMod(othervar, 1, (var_len - 8))));
+    // } else {
+    // cb_var.set(String.valueOf(othervar));
+    // }
+    // if (2 == 3) {
+    // cb_var.set(String.valueOf(othervar));
+    // } else {
+    // if (1 == 1) {
+    // othervar.set(String.valueOf(cb_var));
+    // } else {
+    // cb_var.setRefMod((17 - var_len), (var_len - 8), String.valueOf(CobolString.refMod(othervar, 1, (var_len - 8))));
+    // if (1 == 1) {
+    // othervar.set(String.valueOf(cb_var));
+    // }
+    // }
+    // b = new BigDecimal(String.valueOf(a).trim()).intValue();
+    // if (1 == 1) {
+    // if (2 == 1) {
+    // cb_var.setRefMod((17 - var_len), (var_len - 8), String.valueOf(CobolString.refMod(othervar, 1, (var_len - 8))));
+    // }
+    // }
+    // }
+    // while (!(1 == 3)) {
+    // }
     // cb_var.set(String.valueOf(othervar));
     // while (!(1 == 1)) {
     // }
@@ -71,36 +73,37 @@ public class SynMisc095ConstantExpressions1 extends CobolProgram {
     // }
     // cb_var.set(String.valueOf(othervar));
     // if ((var_len != 0)) {
-            /* RAW: < 16 */
+    // /* RAW: < 16 */
     // cb_var.setRefMod((17 - var_len), (var_len - 8), String.valueOf(CobolString.refMod(othervar, 1, (var_len - 8))));
     // } else if ((var_len != 0)) {
-            /* RAW: > 16 */
+    // /* RAW: > 16 */
     // cb_var.set(String.valueOf(othervar));
     // } else if ((a != 0)) {
-            /* RAW: = B */
+    // /* RAW: = B */
     // othervar.set(String.valueOf(cb_var));
     // } else {
-            /* CONTINUE */
+    // /* CONTINUE */
     // }
     // if (!((var_len != 0))) {
-            /* RAW: < 16 */
+    // /* RAW: < 16 */
     // cb_var.setRefMod((16 - var_len), (var_len - 9), String.valueOf(CobolString.refMod(othervar, 1, (var_len - 9))));
     // } else if (!((var_len != 0))) {
-            /* RAW: > 16 */
+    // /* RAW: > 16 */
     // cb_var.set(String.valueOf(othervar));
     // } else if (!((a != 0))) {
-            /* RAW: = B */
+    // /* RAW: = B */
     // othervar.set(String.valueOf(cb_var));
     // } else {
-            /* CONTINUE */
+    // /* CONTINUE */
     // }
     // if (15 == var_len) {
-            /* RAW: var  */
+    // cb_var.set(String.valueOf(othervar));
     // }
     // if (var_len == 15) {
-            /* RAW: othervar  */
+    // othervar.set(String.valueOf(cb_var));
     // }
     // System.exit(0);
+        System.exit(0);
     }
 
     @Override

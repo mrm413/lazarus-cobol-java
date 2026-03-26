@@ -30,9 +30,11 @@ public class RunMisc119OccursClauseWith1Entry extends CobolProgram {
     private CobolString d2 = new CobolString(1); // Group: D2
     private CobolString[] d2_entry = new CobolString[1];
     private CobolString d1tor = new CobolString(1); // Group: D1TOR
+    private CobolString filler_1 = new CobolString(3);
     private CobolString d1_r = new CobolString(1); // Group: D1-R
     private CobolString[] d1_r_entry = new CobolString[1];
     private CobolString d2tor = new CobolString(1); // Group: D2TOR
+    private CobolString filler_2 = new CobolString(3);
     private CobolString d2_r = new CobolString(1); // Group: D2-R
     private CobolString[] d2_r_entry = new CobolString[1];
 

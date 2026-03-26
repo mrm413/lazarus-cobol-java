@@ -32,33 +32,23 @@ public class RunExtensions076SystemRoutineCblErrorProc2 extends CobolProgram {
     private CobolString err_message_from_runtime = new CobolString(1023);
 
 
-    private CobolString entry = new CobolString(256);
-    private CobolString _unnamed = new CobolString(256);
+    private CobolString entry = new CobolString(256); // fallback
+    private CobolString _filler_001 = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
     private void s1() {
         CobolDisplay.display("Program is starting");
         err_proc_address = new BigDecimal(String.valueOf(entry).trim()).longValue();
         /* RAW: 'ErrProc'  */
-        CobolProgram.call("CBL_ERROR_PROC", 0, _unnamed, err_proc_address);
+        CobolProgram.call("CBL_ERROR_PROC", 0, _filler_002, err_proc_address);
         err_proc_address = new BigDecimal(String.valueOf(entry).trim()).longValue();
         /* RAW: 'ErrProc-internal'  */
-        CobolProgram.call("CBL_ERROR_PROC", 0, _unnamed, err_proc_address);
+        CobolProgram.call("CBL_ERROR_PROC", 0, _filler_003, err_proc_address);
         err_proc_address = new BigDecimal(String.valueOf(0).trim()).longValue();
         CobolProgram.call("Tilt");
         CobolDisplay.display("Program is stopping");
         System.exit(0);
-    }
-
-    private void err_message_from_runtime() {
-        CobolDisplay.display("Error (interal): " + String.valueOf(CobolIntrinsics.exception_location()) + "-");
-        CobolDisplay.display("                 " + String.valueOf(CobolIntrinsics.exception_statement()) + "-");
-        CobolDisplay.display("                 " + String.valueOf(CobolIntrinsics.exception_status()) + "-");
-        err_message_len = new BigDecimal(String.valueOf(0).trim()).shortValue();
-        /* INSPECT Err-Message-From-Runtime — 2 clause(s) */
-        CobolDisplay.display("Error-Message:   " + String.valueOf(CobolString.refMod(err_message_from_runtime, 1, err_message_len)));
-        CobolDisplay.display("-*- Stop error routines here -*-");
-        return_code = new BigDecimal(String.valueOf(0).trim()).intValue();
-        return;
     }
 
     @Override

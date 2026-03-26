@@ -28,12 +28,10 @@ public class Listings004CopyReplacementWithPartialMatch extends CobolProgram {
     private CobolString get_value = new CobolString(1);
 
 
+    private CobolString test_avr = new CobolString(256); // fallback
 
     private void para_main() {
-        CobolDisplay.display();
-    }
-
-    private void test_avr() {
+        CobolDisplay.display(String.valueOf(test_avr));
         System.exit(0);
     }
 

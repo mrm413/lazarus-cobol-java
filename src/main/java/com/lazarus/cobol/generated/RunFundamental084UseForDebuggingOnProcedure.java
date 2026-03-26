@@ -29,14 +29,10 @@ public class RunFundamental084UseForDebuggingOnProcedure extends CobolProgram {
     // SECTION: TEST-DEBUG
     private void test_debug() {
         use();
-        second_par();
     }
 
     private void use() {
-        /* RAW: FOR DEBUGGING ON */
-    }
-
-    private void second_par() {
+        /* RAW: FOR DEBUGGING ON SECOND-PAR */
         CobolDisplay.display(String.valueOf(debug_item) + "|");
     }
 
@@ -46,7 +42,7 @@ public class RunFundamental084UseForDebuggingOnProcedure extends CobolProgram {
         return;
     }
 
-    private void second_par_2() {
+    private void second_par() {
         CobolDisplay.display("OK2");
     }
 

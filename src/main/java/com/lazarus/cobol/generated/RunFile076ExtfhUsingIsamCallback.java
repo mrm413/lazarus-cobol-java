@@ -26,25 +26,170 @@ public class RunFile076ExtfhUsingIsamCallback extends CobolProgram {
     private CobolString debug_contents = new CobolString(256);
     // WORKING-STORAGE SECTION
     private CobolString cust_stat = new CobolString(1); // Group: CUST-STAT
+    private BigDecimal filler_1 = BigDecimal.ZERO;
     private static final int max_sub = 16;
     private CobolString test_data = new CobolString(1); // Group: TEST-DATA
     private CobolString data_cust_num_tbl = new CobolString(1); // Group: DATA-CUST-NUM-TBL
+    private BigDecimal filler_2 = BigDecimal.ZERO;
+    private BigDecimal filler_3 = BigDecimal.ZERO;
+    private BigDecimal filler_4 = BigDecimal.ZERO;
+    private BigDecimal filler_5 = BigDecimal.ZERO;
+    private BigDecimal filler_6 = BigDecimal.ZERO;
+    private BigDecimal filler_7 = BigDecimal.ZERO;
+    private BigDecimal filler_8 = BigDecimal.ZERO;
+    private BigDecimal filler_9 = BigDecimal.ZERO;
+    private BigDecimal filler_10 = BigDecimal.ZERO;
+    private BigDecimal filler_11 = BigDecimal.ZERO;
+    private BigDecimal filler_12 = BigDecimal.ZERO;
+    private BigDecimal filler_13 = BigDecimal.ZERO;
+    private BigDecimal filler_14 = BigDecimal.ZERO;
+    private BigDecimal filler_15 = BigDecimal.ZERO;
+    private BigDecimal filler_16 = BigDecimal.ZERO;
+    private BigDecimal filler_17 = BigDecimal.ZERO;
     private CobolString[] data_cust_num = new CobolString[100];
     private CobolString data_company_tbl = new CobolString(1); // Group: DATA-COMPANY-TBL
+    private BigDecimal filler_18 = BigDecimal.ZERO;
+    private BigDecimal filler_19 = BigDecimal.ZERO;
+    private BigDecimal filler_20 = BigDecimal.ZERO;
+    private BigDecimal filler_21 = BigDecimal.ZERO;
+    private BigDecimal filler_22 = BigDecimal.ZERO;
+    private BigDecimal filler_23 = BigDecimal.ZERO;
+    private BigDecimal filler_24 = BigDecimal.ZERO;
+    private BigDecimal filler_25 = BigDecimal.ZERO;
+    private BigDecimal filler_26 = BigDecimal.ZERO;
+    private BigDecimal filler_27 = BigDecimal.ZERO;
+    private BigDecimal filler_28 = BigDecimal.ZERO;
+    private BigDecimal filler_29 = BigDecimal.ZERO;
+    private BigDecimal filler_30 = BigDecimal.ZERO;
+    private BigDecimal filler_31 = BigDecimal.ZERO;
+    private BigDecimal filler_32 = BigDecimal.ZERO;
+    private BigDecimal filler_33 = BigDecimal.ZERO;
     private CobolString[] data_company = new CobolString[100];
     private CobolString data_address_1_tbl = new CobolString(1); // Group: DATA-ADDRESS-1-TBL
+    private BigDecimal filler_34 = BigDecimal.ZERO;
+    private BigDecimal filler_35 = BigDecimal.ZERO;
+    private BigDecimal filler_36 = BigDecimal.ZERO;
+    private BigDecimal filler_37 = BigDecimal.ZERO;
+    private BigDecimal filler_38 = BigDecimal.ZERO;
+    private BigDecimal filler_39 = BigDecimal.ZERO;
+    private BigDecimal filler_40 = BigDecimal.ZERO;
+    private BigDecimal filler_41 = BigDecimal.ZERO;
+    private BigDecimal filler_42 = BigDecimal.ZERO;
+    private BigDecimal filler_43 = BigDecimal.ZERO;
+    private BigDecimal filler_44 = BigDecimal.ZERO;
+    private BigDecimal filler_45 = BigDecimal.ZERO;
+    private BigDecimal filler_46 = BigDecimal.ZERO;
+    private BigDecimal filler_47 = BigDecimal.ZERO;
+    private BigDecimal filler_48 = BigDecimal.ZERO;
+    private BigDecimal filler_49 = BigDecimal.ZERO;
     private CobolString[] data_address_1 = new CobolString[100];
     private CobolString data_address_2_tbl = new CobolString(1); // Group: DATA-ADDRESS-2-TBL
+    private BigDecimal filler_50 = BigDecimal.ZERO;
+    private BigDecimal filler_51 = BigDecimal.ZERO;
+    private BigDecimal filler_52 = BigDecimal.ZERO;
+    private BigDecimal filler_53 = BigDecimal.ZERO;
+    private BigDecimal filler_54 = BigDecimal.ZERO;
+    private BigDecimal filler_55 = BigDecimal.ZERO;
+    private BigDecimal filler_56 = BigDecimal.ZERO;
+    private BigDecimal filler_57 = BigDecimal.ZERO;
+    private BigDecimal filler_58 = BigDecimal.ZERO;
+    private BigDecimal filler_59 = BigDecimal.ZERO;
+    private BigDecimal filler_60 = BigDecimal.ZERO;
+    private BigDecimal filler_61 = BigDecimal.ZERO;
+    private BigDecimal filler_62 = BigDecimal.ZERO;
+    private BigDecimal filler_63 = BigDecimal.ZERO;
+    private BigDecimal filler_64 = BigDecimal.ZERO;
+    private BigDecimal filler_65 = BigDecimal.ZERO;
     private CobolString[] data_address_2 = new CobolString[100];
     private CobolString data_address_3_tbl = new CobolString(1); // Group: DATA-ADDRESS-3-TBL
+    private BigDecimal filler_66 = BigDecimal.ZERO;
+    private BigDecimal filler_67 = BigDecimal.ZERO;
+    private BigDecimal filler_68 = BigDecimal.ZERO;
+    private BigDecimal filler_69 = BigDecimal.ZERO;
+    private BigDecimal filler_70 = BigDecimal.ZERO;
+    private BigDecimal filler_71 = BigDecimal.ZERO;
+    private BigDecimal filler_72 = BigDecimal.ZERO;
+    private BigDecimal filler_73 = BigDecimal.ZERO;
+    private BigDecimal filler_74 = BigDecimal.ZERO;
+    private BigDecimal filler_75 = BigDecimal.ZERO;
+    private BigDecimal filler_76 = BigDecimal.ZERO;
+    private BigDecimal filler_77 = BigDecimal.ZERO;
+    private BigDecimal filler_78 = BigDecimal.ZERO;
+    private BigDecimal filler_79 = BigDecimal.ZERO;
+    private BigDecimal filler_80 = BigDecimal.ZERO;
+    private BigDecimal filler_81 = BigDecimal.ZERO;
     private CobolString[] data_address_3 = new CobolString[100];
     private CobolString data_telephone_tbl = new CobolString(1); // Group: DATA-TELEPHONE-TBL
+    private BigDecimal filler_82 = BigDecimal.ZERO;
+    private BigDecimal filler_83 = BigDecimal.ZERO;
+    private BigDecimal filler_84 = BigDecimal.ZERO;
+    private BigDecimal filler_85 = BigDecimal.ZERO;
+    private BigDecimal filler_86 = BigDecimal.ZERO;
+    private BigDecimal filler_87 = BigDecimal.ZERO;
+    private BigDecimal filler_88 = BigDecimal.ZERO;
+    private BigDecimal filler_89 = BigDecimal.ZERO;
+    private BigDecimal filler_90 = BigDecimal.ZERO;
+    private BigDecimal filler_91 = BigDecimal.ZERO;
+    private BigDecimal filler_92 = BigDecimal.ZERO;
+    private BigDecimal filler_93 = BigDecimal.ZERO;
+    private BigDecimal filler_94 = BigDecimal.ZERO;
+    private BigDecimal filler_95 = BigDecimal.ZERO;
+    private BigDecimal filler_96 = BigDecimal.ZERO;
+    private BigDecimal filler_97 = BigDecimal.ZERO;
     private int[] data_telephone = new int[100];
     private CobolString data_dp_mgr_tbl = new CobolString(1); // Group: DATA-DP-MGR-TBL
+    private BigDecimal filler_98 = BigDecimal.ZERO;
+    private BigDecimal filler_99 = BigDecimal.ZERO;
+    private BigDecimal filler_100 = BigDecimal.ZERO;
+    private BigDecimal filler_101 = BigDecimal.ZERO;
+    private BigDecimal filler_102 = BigDecimal.ZERO;
+    private BigDecimal filler_103 = BigDecimal.ZERO;
+    private BigDecimal filler_104 = BigDecimal.ZERO;
+    private BigDecimal filler_105 = BigDecimal.ZERO;
+    private BigDecimal filler_106 = BigDecimal.ZERO;
+    private BigDecimal filler_107 = BigDecimal.ZERO;
+    private BigDecimal filler_108 = BigDecimal.ZERO;
+    private BigDecimal filler_109 = BigDecimal.ZERO;
+    private BigDecimal filler_110 = BigDecimal.ZERO;
+    private BigDecimal filler_111 = BigDecimal.ZERO;
+    private BigDecimal filler_112 = BigDecimal.ZERO;
+    private BigDecimal filler_113 = BigDecimal.ZERO;
     private CobolString[] data_dp_mgr = new CobolString[100];
     private CobolString data_machine_tbl = new CobolString(1); // Group: DATA-MACHINE-TBL
+    private BigDecimal filler_114 = BigDecimal.ZERO;
+    private BigDecimal filler_115 = BigDecimal.ZERO;
+    private BigDecimal filler_116 = BigDecimal.ZERO;
+    private BigDecimal filler_117 = BigDecimal.ZERO;
+    private BigDecimal filler_118 = BigDecimal.ZERO;
+    private BigDecimal filler_119 = BigDecimal.ZERO;
+    private BigDecimal filler_120 = BigDecimal.ZERO;
+    private BigDecimal filler_121 = BigDecimal.ZERO;
+    private BigDecimal filler_122 = BigDecimal.ZERO;
+    private BigDecimal filler_123 = BigDecimal.ZERO;
+    private BigDecimal filler_124 = BigDecimal.ZERO;
+    private BigDecimal filler_125 = BigDecimal.ZERO;
+    private BigDecimal filler_126 = BigDecimal.ZERO;
+    private BigDecimal filler_127 = BigDecimal.ZERO;
+    private BigDecimal filler_128 = BigDecimal.ZERO;
+    private BigDecimal filler_129 = BigDecimal.ZERO;
     private CobolString[] data_machine = new CobolString[100];
     private CobolString data_no_terminals_tbl = new CobolString(1); // Group: DATA-NO-TERMINALS-TBL
+    private BigDecimal filler_130 = BigDecimal.ZERO;
+    private BigDecimal filler_131 = BigDecimal.ZERO;
+    private BigDecimal filler_132 = BigDecimal.ZERO;
+    private BigDecimal filler_133 = BigDecimal.ZERO;
+    private BigDecimal filler_134 = BigDecimal.ZERO;
+    private BigDecimal filler_135 = BigDecimal.ZERO;
+    private BigDecimal filler_136 = BigDecimal.ZERO;
+    private BigDecimal filler_137 = BigDecimal.ZERO;
+    private BigDecimal filler_138 = BigDecimal.ZERO;
+    private BigDecimal filler_139 = BigDecimal.ZERO;
+    private BigDecimal filler_140 = BigDecimal.ZERO;
+    private BigDecimal filler_141 = BigDecimal.ZERO;
+    private BigDecimal filler_142 = BigDecimal.ZERO;
+    private BigDecimal filler_143 = BigDecimal.ZERO;
+    private BigDecimal filler_144 = BigDecimal.ZERO;
+    private BigDecimal filler_145 = BigDecimal.ZERO;
     private BigDecimal[] data_no_terminals = new BigDecimal[100];
     private static final int rec_max = 10;
     private CobolString work_area = new CobolString(1); // Group: WORK-AREA
@@ -104,13 +249,11 @@ public class RunFile076ExtfhUsingIsamCallback extends CobolProgram {
     private CobolFile flatfile = new CobolFile("RELFIX", "RELATIVE", "RANDOM");
     // File status: CUST-STAT
 
-    private CobolString odd_record = new CobolString(256);
+    private CobolString odd_record = new CobolString(256); // fallback
 
     private void mainfile() {
         tspfile.open("OUTPUT");
-    }
-
-    private void tspfile() {
+        tspfile.close();
         tspfile.open("I-O");
         cust_stat.set(String.valueOf("99"));
         if (tspfile.read(null) == FileStatus.AT_END) {
@@ -121,9 +264,7 @@ public class RunFile076ExtfhUsingIsamCallback extends CobolProgram {
             CobolDisplay.display("Error " + String.valueOf(cust_stat) + " on read of empty file");
             System.exit(0);
         }
-    }
-
-    private void tspfl_record() {
+        tspfl_record.set(String.valueOf("\u0000"));
         tspfile.start();
         if (!String.valueOf(cust_stat).equals(String.valueOf("23"))) {
             CobolDisplay.display("Error " + String.valueOf(cust_stat) + " starting empty file");
@@ -138,9 +279,7 @@ public class RunFile076ExtfhUsingIsamCallback extends CobolProgram {
             System.exit(0);
         }
         CobolDisplay.display("OK: Operations on empty file");
-    }
-
-    private void tspfile_2() {
+        tspfile.close();
         loadfile();
         listfile();
         tstfile.open("INPUT");
@@ -161,52 +300,22 @@ public class RunFile076ExtfhUsingIsamCallback extends CobolProgram {
             CobolDisplay.display("Error " + String.valueOf(cust_stat) + " opening 'testisam' file");
             System.exit(0);
         }
-        _1000();
-        /* RAW: - LOAD-RECORD VARYING SUB FROM 1 */
-    }
-
-    private void max_sub() {
+        for (sub = 1; !(sub > max_sub); sub += 1) {
+        }
         CobolDisplay.display("Sample data file load complete.");
-    }
-
-    private void tspfile_3() {
+        tspfile.close();
         /* RAW: * - - - - - */
-    }
-
-    private void load_record() {
-    }
-
-    private void tspfl_record_2() {
-    }
-
-    private void cm_cust_num() {
-    }
-
-    private void tspfl_key() {
-    }
-
-    private void cm_company() {
-    }
-
-    private void cm_address_1() {
-    }
-
-    private void cm_address_2() {
-    }
-
-    private void cm_address_3() {
-    }
-
-    private void cm_telephone() {
-    }
-
-    private void cm_dp_mgr() {
-    }
-
-    private void cm_machine() {
-    }
-
-    private void cm_no_terminals() {
+        tspfl_record.set(String.valueOf(" "));
+        cm_cust_num.set(String.valueOf(data_cust_num[sub - 1]));
+        tspfl_key.set(String.valueOf(cm_cust_num));
+        cm_company.set(String.valueOf(data_company[sub - 1]));
+        cm_address_1.set(String.valueOf(data_address_1[sub - 1]));
+        cm_address_2.set(String.valueOf(data_address_2[sub - 1]));
+        cm_address_3.set(String.valueOf(data_address_3[sub - 1]));
+        cm_telephone = new BigDecimal(String.valueOf(data_telephone[sub - 1]).trim()).intValue();
+        cm_dp_mgr.set(String.valueOf(data_dp_mgr[sub - 1]));
+        cm_machine.set(String.valueOf(data_machine[sub - 1]));
+        cm_no_terminals = new BigDecimal(String.valueOf(data_no_terminals[sub - 1]).trim()).intValue();
         if (!String.valueOf(odd_record).trim().isEmpty()) {
             cm_disk.set(String.valueOf("8417"));
             cm_tape.set(String.valueOf("1600 BPI"));
@@ -214,7 +323,7 @@ public class RunFile076ExtfhUsingIsamCallback extends CobolProgram {
         } else {
             cm_disk.set(String.valueOf("8470"));
             cm_tape.set(String.valueOf("6250 BPI"));
-            /* RAW: CM-MEMORY  */
+            cm_memory.set(String.valueOf("3MEG"));
         }
         tspfile.write(tspfl_record);
         if ((!String.valueOf(cust_stat).equals(String.valueOf("00")) && !String.valueOf(cust_stat).equals(String.valueOf("02")))) {
@@ -225,12 +334,8 @@ public class RunFile076ExtfhUsingIsamCallback extends CobolProgram {
     private void listfile() {
         CobolDisplay.display("LIST SAMPLE FILE");
         tstfile.open("INPUT");
-    }
-
-    private void tstfl_record() {
-    }
-
-    private void cm_cust_num_2() {
+        tstfl_record.set(String.valueOf(" "));
+        cm_cust_num.set(String.valueOf("PRE00000"));
         tstfile.start();
         if (tstfile.read(null) == FileStatus.AT_END) {
         }
@@ -240,21 +345,15 @@ public class RunFile076ExtfhUsingIsamCallback extends CobolProgram {
         }
         /* NEXT SENTENCE */
         /* RAW: RECORD  */
-    }
-
-    private void tstfile() {
+        tstfile.close();
         rec_num = new BigDecimal(String.valueOf(0).trim()).intValue();
         tspfile.open("INPUT");
         if (!String.valueOf(cust_stat).equals(String.valueOf("00"))) {
             CobolDisplay.display("ERROR " + String.valueOf(cust_stat) + " OPENING INPUT FILE");
             System.exit(0);
         }
-    }
-
-    private void tspfl_record_3() {
-    }
-
-    private void cm_cust_num_3() {
+        tspfl_record.set(String.valueOf(" "));
+        cm_cust_num.set(String.valueOf("PRE00000"));
         tspfile.start();
         if (tspfile.read(null) == FileStatus.AT_END) {
         }
@@ -264,12 +363,8 @@ public class RunFile076ExtfhUsingIsamCallback extends CobolProgram {
         }
         /* NEXT SENTENCE */
         /* RAW: RECORD  */
-    }
-
-    private void tspfl_record_4() {
-    }
-
-    private void cm_cust_num_4() {
+        tspfl_record.set(String.valueOf(" "));
+        cm_cust_num.set(String.valueOf("DEL00000"));
         tspfile.start();
         if (!String.valueOf(cust_stat).equals(String.valueOf("00"))) {
             CobolDisplay.display("Error " + String.valueOf(cust_stat) + " starting file");
@@ -319,30 +414,18 @@ public class RunFile076ExtfhUsingIsamCallback extends CobolProgram {
             /* RAW: END-READ  */
             rec_num = new BigDecimal(String.valueOf(rec_num + 1).trim()).intValue();
         }
-    }
-
-    private void tspfile_4() {
-    }
-
-    private void tspfile_5() {
-    }
-
-    private void tspfl_record_5() {
-    }
-
-    private void cm_cust_num_5() {
+        tspfile.close();
+        tspfile.open("I-O");
+        tspfl_record.set(String.valueOf(" "));
+        cm_cust_num.set(String.valueOf(data_cust_num[2 - 1]));
         cm_cust_num.setRefMod(5, 1, String.valueOf("X"));
         if (tspfile.read(null) == FileStatus.AT_END) {
         }
         if (!String.valueOf(cust_stat).equals(String.valueOf("23"))) {
             CobolDisplay.display("Error " + String.valueOf(cust_stat) + " instead of 23.");
         }
-    }
-
-    private void cm_cust_num_6() {
-    }
-
-    private void cm_company_2() {
+        cm_cust_num.set(String.valueOf(data_cust_num[2 - 1]));
+        cm_company.set(String.valueOf(data_company[2 - 1]));
         if (tspfile.read(null) == FileStatus.AT_END) {
         }
         if (!String.valueOf(cust_stat).equals(String.valueOf("00"))) {
@@ -359,12 +442,8 @@ public class RunFile076ExtfhUsingIsamCallback extends CobolProgram {
         } else {
             CobolDisplay.display("Nxt: " + String.valueOf(cm_cust_num) + " is " + String.valueOf(cm_company) + " Disk=" + String.valueOf(cm_disk) + ".");
         }
-    }
-
-    private void cm_telephone_2() {
-    }
-
-    private void cm_machine_2() {
+        cm_telephone = new BigDecimal(String.valueOf(data_telephone[7 - 1]).trim()).intValue();
+        cm_machine.set(String.valueOf(data_machine[7 - 1]));
         if (tspfile.read(null) == FileStatus.AT_END) {
         }
         if (!String.valueOf(cust_stat).equals(String.valueOf("00"))) {
@@ -378,12 +457,8 @@ public class RunFile076ExtfhUsingIsamCallback extends CobolProgram {
         } else {
             CobolDisplay.display("  Write: " + String.valueOf(cm_cust_num) + " got 22 as expected");
         }
-    }
-
-    private void cm_cust_num_7() {
-    }
-
-    private void cm_company_3() {
+        cm_cust_num.set(String.valueOf(data_cust_num[3 - 1]));
+        cm_company.set(String.valueOf(data_company[3 - 1]));
         if (tspfile.read(null) == FileStatus.AT_END) {
         }
         CobolDisplay.display("   Read: " + String.valueOf(cm_cust_num) + " got " + String.valueOf(cust_stat) + " as expected " + String.valueOf(cm_no_terminals) + " terminals");
@@ -394,41 +469,25 @@ public class RunFile076ExtfhUsingIsamCallback extends CobolProgram {
         } else {
             CobolDisplay.display("ReWrite: " + String.valueOf(cm_cust_num) + " got " + "00/02 as expected " + String.valueOf(cm_no_terminals) + " terminals");
         }
-    }
-
-    private void cm_cust_num_8() {
-    }
-
-    private void cm_company_4() {
+        cm_cust_num.set(String.valueOf(data_cust_num[2 - 1]));
+        cm_company.set(String.valueOf(data_company[2 - 1]));
         if (tspfile.read(null) == FileStatus.AT_END) {
         }
         CobolDisplay.display("   Read: " + String.valueOf(cm_cust_num) + " got " + String.valueOf(cust_stat) + " as expected " + String.valueOf(cm_no_terminals) + " terminals");
-    }
-
-    private void cm_cust_num_9() {
-    }
-
-    private void cm_company_5() {
+        cm_cust_num.set(String.valueOf(data_cust_num[3 - 1]));
+        cm_company.set(String.valueOf(data_company[3 - 1]));
         tspfile.rewrite(tspfl_record);
         if ((!String.valueOf(cust_stat).equals(String.valueOf("02")) && !String.valueOf(cust_stat).equals(String.valueOf("00")))) {
             CobolDisplay.display("Error " + String.valueOf(cust_stat) + " instead of 02");
         } else {
             CobolDisplay.display("ReWrite: " + String.valueOf(cm_cust_num) + " got " + "00/02 as expected");
         }
-    }
-
-    private void cm_cust_num_10() {
-    }
-
-    private void cm_company_6() {
+        cm_cust_num.set(String.valueOf(data_cust_num[6 - 1]));
+        cm_company.set(String.valueOf(data_company[6 - 1]));
         if (tspfile.read(null) == FileStatus.AT_END) {
         }
-    }
-
-    private void cm_telephone_3() {
-    }
-
-    private void cm_machine_3() {
+        cm_telephone = new BigDecimal(String.valueOf(data_telephone[7 - 1]).trim()).intValue();
+        cm_machine.set(String.valueOf(data_machine[7 - 1]));
         tspfile.rewrite(tspfl_record);
         if ((!String.valueOf(cust_stat).equals(String.valueOf("02")) && !String.valueOf(cust_stat).equals(String.valueOf("00")))) {
             CobolDisplay.display("Error " + String.valueOf(cust_stat) + " instead of 02");
@@ -436,62 +495,38 @@ public class RunFile076ExtfhUsingIsamCallback extends CobolProgram {
             CobolDisplay.display("ReWrite: " + String.valueOf(cm_cust_num) + " got " + "00/02 as expected");
         }
         tspfile.delete();
-    }
-
-    private void tspfile_6() {
+        tspfile.close();
     }
 
     private void loadflat() {
-    }
-
-    private void flatfile() {
+        flatfile.open("OUTPUT");
         for (sub = 1; !((sub > max_sub || sub > 5)); sub += 1) {
         }
-    }
-
-    private void flatfile_2() {
-    }
-
-    private void flatfile_3() {
+        flatfile.close();
+        flatfile.open("INPUT");
         rec_num = new BigDecimal(String.valueOf(3).trim()).intValue();
         if (flatfile.read(null) == FileStatus.AT_END) {
         }
         rec_num = new BigDecimal(String.valueOf(999).trim()).intValue();
         if (flatfile.read(null) == FileStatus.AT_END) {
         }
-    }
-
-    private void flatfile_4() {
+        flatfile.close();
     }
 
     private void flat_record() {
-    }
-
-    private void tsp2_record() {
-    }
-
-    private void rec_num() {
-    }
-
-    private void c2_cust_num() {
-    }
-
-    private void c2_company() {
-    }
-
-    private void c2_no_terminals() {
-    }
-
-    private void c2_pk_date() {
+        tsp2_record.set(String.valueOf(" "));
+        rec_num = new BigDecimal(String.valueOf(sub).trim()).intValue();
+        c2_cust_num.set(String.valueOf(data_cust_num[sub - 1]));
+        c2_company.set(String.valueOf(data_company[sub - 1]));
+        c2_no_terminals = new BigDecimal(String.valueOf(data_no_terminals[sub - 1]).trim()).shortValue();
+        c2_pk_date = new BigDecimal(String.valueOf(20070319).trim());
         if (!String.valueOf(odd_record).trim().isEmpty()) {
             c2_disk.set(String.valueOf("8417"));
         } else {
-            /* RAW: C2-DISK  */
+            c2_disk.set(String.valueOf("8470"));
         }
         flatfile.write(tsp2_record);
     }
-
-    private void _1000() { /* stub — external/COPY */ }
 
     @Override
     public void run() {

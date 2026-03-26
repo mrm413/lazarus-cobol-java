@@ -32,8 +32,7 @@ public class RunFunctions084FunctionRemValid extends CobolProgram {
     private void para_main() {
         r = new BigDecimal(String.valueOf(CobolIntrinsics.rem(-11, 5)).trim());
         if (r.compareTo(new BigDecimal(String.valueOf(-1).trim())) != 0) {
-            CobolDisplay.display();
-            /* RAW: R  */
+            CobolDisplay.display(String.valueOf(r));
         }
         System.exit(0);
     }

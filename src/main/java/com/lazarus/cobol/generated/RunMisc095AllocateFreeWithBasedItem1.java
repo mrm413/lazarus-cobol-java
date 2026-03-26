@@ -30,7 +30,6 @@ public class RunMisc095AllocateFreeWithBasedItem1 extends CobolProgram {
 
 
     // SECTION: ASTART
-    private CobolString address = new CobolString(256);
     private void astart() {
         a01();
     }
@@ -40,7 +39,7 @@ public class RunMisc095AllocateFreeWithBasedItem1 extends CobolProgram {
         if (!String.valueOf(myfld).equals(String.valueOf("ABCDEF"))) {
             CobolDisplay.display(String.valueOf(myfld));
         }
-        address = null; /* FREE */
+        // KNOWN_ISSUE: address = null; /* FREE */
         System.exit(0);
     }
 

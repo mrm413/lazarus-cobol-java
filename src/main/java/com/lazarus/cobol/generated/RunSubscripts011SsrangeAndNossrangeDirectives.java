@@ -24,27 +24,10 @@ public class RunSubscripts011SsrangeAndNossrangeDirectives extends CobolProgram 
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
-    // WORKING-STORAGE SECTION
-    private CobolString x = new CobolString(1); // Group: x
-    private CobolString[] y = new CobolString[5];
-    private CobolString z = new CobolString(1);
-    private int idx = 0;
 
-
-    private CobolString nossrange = new CobolString(256);
-    private CobolString display = new CobolString(256);
-    private CobolString ssrange = new CobolString(256);
-
-    private void para_main() {
-        nossrange.set(String.valueOf(display));
-        /* RAW: y ( idx ) */
-        ssrange.set(String.valueOf(display));
-        /* RAW: y ( idx ) */
-    }
 
     @Override
     public void run() {
-        para_main();
     }
 
     public static void main(String[] args) {

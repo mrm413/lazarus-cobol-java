@@ -6,6 +6,7 @@ import com.lazarus.cobol.CobolIntrinsics;
 import com.lazarus.cobol.CobolProgram;
 import com.lazarus.cobol.CobolString;
 import com.lazarus.cobol.FileStatus;
+import com.lazarus.cobol.jcl.batch.DfsortProgram;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -27,51 +28,51 @@ public class RunFile102SortWithInputOutputProcedures extends CobolProgram {
     private int ix_1 = 0;
     // WORKING-STORAGE SECTION
     private int w_eof = 0;
+    private CobolString _1_values = new CobolString(1); // Group: 1-values
+    private CobolString filler_1 = new CobolString(1);
+    private CobolString filler_2 = new CobolString(1);
+    private CobolString filler_3 = new CobolString(1);
+    private CobolString filler_4 = new CobolString(1);
+    private CobolString filler_5 = new CobolString(1);
+    private CobolString filler_6 = new CobolString(1);
+    private CobolString filler_7 = new CobolString(1);
+    private CobolString filler_8 = new CobolString(1);
+    private CobolString filler_9 = new CobolString(1);
+    private CobolString filler_10 = new CobolString(1);
+    private CobolString filler_11 = new CobolString(1);
+    private CobolString filler_12 = new CobolString(1);
+    private CobolString filler_13 = new CobolString(1);
+    private CobolString filler_14 = new CobolString(1);
+    private CobolString filler_15 = new CobolString(1);
+    private CobolString filler_16 = new CobolString(1);
+    private CobolString filler_17 = new CobolString(1);
+    private CobolString filler_18 = new CobolString(1);
+    private CobolString filler_19 = new CobolString(1);
+    private CobolString filler_20 = new CobolString(1);
+    private CobolString filler_21 = new CobolString(1);
+    private CobolString filler_22 = new CobolString(1);
+    private CobolString filler_23 = new CobolString(1);
+    private CobolString filler_24 = new CobolString(1);
+    private CobolString filler_25 = new CobolString(1);
+    private CobolString filler_26 = new CobolString(1);
+    private CobolString[] _1_record = new CobolString[26]; // Group: 1-record
+    private int[] _1_key = new int[26];
+    private CobolString[] _1_data = new CobolString[26];
 
 
     // FILE DESCRIPTORS
     private CobolFile file1 = new CobolFile("FILE1", "SEQUENTIAL", "SEQUENTIAL");
 
-    private CobolString file1_rec = new CobolString(256);
-    private CobolString[] cb_record = new CobolString[100];
+    private CobolString file1_rec = new CobolString(256); // fallback
 
     private void a01_main() {
-        /* SORT file1 */
+        { /* SORT file1 (file1) */
+            DfsortProgram _sort = new DfsortProgram();
+            _sort.setSortKeys(new String[]{});
+            _sort.execute();
+        }
         /* RAW: ON ASCENDING file1-key INPUT PROCEDURE a02-release-to-sort */
-    }
-
-    private void a03_return_from_sort() {
         System.exit(0);
-    }
-
-    private void a02_release_to_sort() {
-        for (ix_1 = 1; !(ix_1 > 26); ix_1 += 2) {
-            /* RELEASE file1-rec */
-        }
-        for (ix_1 = 2; !(ix_1 > 26); ix_1 += 2) {
-            /* RELEASE file1-rec */
-        }
-        /* RAW: *  */
-    }
-
-    private void a03_return_from_sort_2() {
-        for (ix_1 = 1; !((ix_1 > 26 || w_eof == 1)); ix_1 += 1) {
-            /* RETURN file1 */
-            {
-                w_eof = new BigDecimal(String.valueOf(1).trim()).intValue();
-            }
-            if (!String.valueOf(file1_rec).equals(String.valueOf((1 - Integer.parseInt(String.valueOf(cb_record[ix_1 - 1]).trim()))))) {
-                w_eof = new BigDecimal(String.valueOf(1).trim()).intValue();
-            }
-        }
-        if (w_eof == 1) {
-            CobolDisplay.display("FAILED: unexpected eof");
-        } else {
-            /* RETURN file1 */
-            {
-                /* CONTINUE */
-            }
-        }
     }
 
     @Override

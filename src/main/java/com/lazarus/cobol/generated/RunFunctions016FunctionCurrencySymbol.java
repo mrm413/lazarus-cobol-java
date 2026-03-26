@@ -30,9 +30,7 @@ public class RunFunctions016FunctionCurrencySymbol extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void test_fld() {
+        test_fld.set(String.valueOf(CobolIntrinsics.currency_symbol()));
         CobolDisplay.displayNoAdvancing("OK");
         System.exit(0);
     }

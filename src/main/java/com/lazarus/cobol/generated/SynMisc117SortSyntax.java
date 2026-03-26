@@ -6,6 +6,7 @@ import com.lazarus.cobol.CobolIntrinsics;
 import com.lazarus.cobol.CobolProgram;
 import com.lazarus.cobol.CobolString;
 import com.lazarus.cobol.FileStatus;
+import com.lazarus.cobol.jcl.batch.DfsortProgram;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -43,33 +44,53 @@ public class SynMisc117SortSyntax extends CobolProgram {
 
 
     private void para_main() {
-        /* SORT TBL */
-    }
-
-    private void x() {
-        /* SORT TBL */
-    }
-
-    private void descending() {
-        /* SORT TBL */
-        /* SORT TBL-ORD */
-    }
-
-    private void ascending() {
-        /* SORT TBL-ORD */
-        /* SORT STFILE */
-    }
-
-    private void srtrec() {
-        /* SORT STFILE */
-    }
-
-    private void srtfil() {
-        /* SORT STFILE */
-    }
-
-    private void ascending_2() {
-        /* SORT STFILE */
+        { /* SORT TBL (tbl) */
+            DfsortProgram _sort = new DfsortProgram();
+            _sort.setSortKeys(new String[]{"X:A"});
+            _sort.execute();
+        }
+        { /* SORT TBL (tbl) */
+            DfsortProgram _sort = new DfsortProgram();
+            _sort.setSortKeys(new String[]{});
+            _sort.execute();
+        }
+        { /* SORT TBL (tbl) */
+            DfsortProgram _sort = new DfsortProgram();
+            _sort.setSortKeys(new String[]{});
+            _sort.execute();
+        }
+        { /* SORT TBL-ORD (tbl_ord) */
+            DfsortProgram _sort = new DfsortProgram();
+            _sort.setSortKeys(new String[]{});
+            _sort.execute();
+        }
+        { /* SORT TBL-ORD (tbl_ord) */
+            DfsortProgram _sort = new DfsortProgram();
+            _sort.setSortKeys(new String[]{});
+            _sort.execute();
+        }
+        { /* SORT STFILE (stfile) */
+            DfsortProgram _sort = new DfsortProgram();
+            _sort.setSortKeys(new String[]{"SRTREC:D"});
+            _sort.execute();
+        }
+        { /* SORT STFILE (stfile) */
+            DfsortProgram _sort = new DfsortProgram();
+            _sort.setSortKeys(new String[]{"SRTREC:D"});
+            _sort.addInputFile("SRTFIL");
+            _sort.setOutputFile("SRTFIL");
+            _sort.execute();
+        }
+        { /* SORT STFILE (stfile) */
+            DfsortProgram _sort = new DfsortProgram();
+            _sort.setSortKeys(new String[]{});
+            _sort.execute();
+        }
+        { /* SORT STFILE (stfile) */
+            DfsortProgram _sort = new DfsortProgram();
+            _sort.setSortKeys(new String[]{});
+            _sort.execute();
+        }
         System.exit(0);
     }
 

@@ -30,9 +30,7 @@ public class RunFunctions047FunctionLocaleDate extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void x() {
+        x.set(String.valueOf(CobolIntrinsics.locale_date("19630302")));
         if (!String.valueOf(x).equals(String.valueOf(" "))) {
             CobolDisplay.display("OK");
         }

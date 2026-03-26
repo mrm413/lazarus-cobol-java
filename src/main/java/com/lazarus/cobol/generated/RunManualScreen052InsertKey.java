@@ -29,28 +29,20 @@ public class RunManualScreen052InsertKey extends CobolProgram {
     private CobolString ws_x_20 = new CobolString(20);
 
 
-    private CobolString line = new CobolString(256);
-    private CobolString column = new CobolString(256);
-    private CobolString success = new CobolString(256);
+    private CobolString line = new CobolString(256); // fallback
+    private CobolString column = new CobolString(256); // fallback
+    private CobolString success = new CobolString(256); // fallback
 
     private void para_main() {
         CobolDisplay.display("Enter 'y' if multiple presses of the INSERT key" + String.valueOf(line) + String.valueOf(1) + String.valueOf(column) + String.valueOf(1));
         CobolDisplay.display("go back and forth between" + String.valueOf(line) + String.valueOf(2) + String.valueOf(column) + String.valueOf(1));
         CobolDisplay.display("Insert Mode ON (characters move to the right)" + String.valueOf(line) + String.valueOf(3) + String.valueOf(column) + String.valueOf(1));
         CobolDisplay.display("and Insert Mode OFF (characters type over)." + String.valueOf(line) + String.valueOf(4) + String.valueOf(column) + String.valueOf(1));
-    }
-
-    private void ws_x_20() {
+        ws_x_20.set(String.valueOf("ABCD      "));
         ws_x_20.set(String.valueOf(CobolDisplay.accept()));
         /* RAW: LINE 6 COLUMN 1 WITH AUTO-SKIP */
-    }
-
-    private void update() {
         success_flag.set(String.valueOf(CobolDisplay.accept()));
-        /* RAW: LINE 8 COLUMN 1 WITH */
-    }
-
-    private void update_2() {
+        /* RAW: LINE 8 COLUMN 1 WITH UPDATE */
         if ((!String.valueOf(success).trim().isEmpty() && cob_crt_status == 0)) {
             return;
         } else {

@@ -28,9 +28,9 @@ public class SynCopy022CopyAndReplaceWithReservedWords extends CobolProgram {
     private CobolString input_rec = new CobolString(1);
 
 
-    private CobolString ws_in = new CobolString(256);
-    private CobolString in_a = new CobolString(256);
-    private CobolString in_ws = new CobolString(256);
+    private CobolString ws_in = new CobolString(256); // fallback
+    private CobolString in_a = new CobolString(256); // fallback
+    private CobolString in_ws = new CobolString(256); // fallback
 
     private void para_main() {
         CobolDisplay.displayNoAdvancing(String.valueOf(ws_in) + String.valueOf(in_a) + String.valueOf(in_ws));

@@ -29,27 +29,19 @@ public class RunManualScreen057AltRightArrowKey extends CobolProgram {
     private CobolString ws_x_10 = new CobolString(10);
 
 
-    private CobolString line = new CobolString(256);
-    private CobolString column = new CobolString(256);
-    private CobolString success = new CobolString(256);
+    private CobolString line = new CobolString(256); // fallback
+    private CobolString column = new CobolString(256); // fallback
+    private CobolString success = new CobolString(256); // fallback
 
     private void para_main() {
         CobolDisplay.display("Enter 'y' if pressing the ALT and RIGHT-ARROW keys" + String.valueOf(line) + String.valueOf(1) + String.valueOf(column) + String.valueOf(1));
         CobolDisplay.display("at the last column does not exit the field." + String.valueOf(line) + String.valueOf(2) + String.valueOf(column) + String.valueOf(1));
         CobolDisplay.display("But the RIGHT-ARROW without ALT does exit." + String.valueOf(line) + String.valueOf(3) + String.valueOf(column) + String.valueOf(1));
-    }
-
-    private void ws_x_10() {
+        ws_x_10.set(String.valueOf("ABCDE"));
         ws_x_10.set(String.valueOf(CobolDisplay.accept()));
         /* RAW: LINE 5 COLUMN 1 WITH AUTO-SKIP */
-    }
-
-    private void update() {
         success_flag.set(String.valueOf(CobolDisplay.accept()));
-        /* RAW: LINE 7 COLUMN 1 WITH */
-    }
-
-    private void update_2() {
+        /* RAW: LINE 7 COLUMN 1 WITH UPDATE */
         if ((!String.valueOf(success).trim().isEmpty() && cob_crt_status == 0)) {
             return;
         } else {

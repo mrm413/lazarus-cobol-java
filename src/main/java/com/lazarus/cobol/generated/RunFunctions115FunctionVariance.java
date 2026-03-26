@@ -24,30 +24,10 @@ public class RunFunctions115FunctionVariance extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
-    // WORKING-STORAGE SECTION
-    private BigDecimal z = BigDecimal.ZERO;
 
-
-
-    private void para_main() {
-    }
-
-    private void z() {
-        if (z.compareTo(new BigDecimal(String.valueOf(54.16).trim())) != 0) {
-            CobolDisplay.display("EXP 54.16 GOT ");
-            /* RAW: Z  */
-        }
-        z = new BigDecimal(String.valueOf(CobolIntrinsics.variance(4, 0, 5)).trim());
-        if (z.compareTo(new BigDecimal(String.valueOf(4.66666666).trim())) != 0) {
-            CobolDisplay.display("EXP 4.66666666 GOT ");
-            /* RAW: Z  */
-        }
-        System.exit(0);
-    }
 
     @Override
     public void run() {
-        para_main();
     }
 
     public static void main(String[] args) {

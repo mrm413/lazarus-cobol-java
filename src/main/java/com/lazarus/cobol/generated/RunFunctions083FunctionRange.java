@@ -30,12 +30,9 @@ public class RunFunctions083FunctionRange extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void z() {
+        z = new BigDecimal(String.valueOf(CobolIntrinsics.range((3 - 14), 0, (8 - 3))).trim());
         if (z.compareTo(new BigDecimal(String.valueOf(22).trim())) != 0) {
-            CobolDisplay.display();
-            /* RAW: Z  */
+            CobolDisplay.display(String.valueOf(z));
         }
         System.exit(0);
     }

@@ -6,6 +6,7 @@ import com.lazarus.cobol.CobolIntrinsics;
 import com.lazarus.cobol.CobolProgram;
 import com.lazarus.cobol.CobolString;
 import com.lazarus.cobol.FileStatus;
+import com.lazarus.cobol.jcl.batch.DfsortProgram;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -35,10 +36,11 @@ public class RunMisc087SearchAllTableWithDefaultCollatingSequence extends CobolP
 
 
     private void para_main() {
-        /* SORT TBL */
-    }
-
-    private void k() {
+        { /* SORT TBL (tbl) */
+            DfsortProgram _sort = new DfsortProgram();
+            _sort.setSortKeys(new String[]{"K:A"});
+            _sort.execute();
+        }
         kk.set(String.valueOf("3"));
         /* SEARCH ALL TBL — binary search */
         {

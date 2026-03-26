@@ -36,24 +36,12 @@ public class SynMove003MoveAlphanumericToX extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void y_a() {
-    }
-
-    private void y_x() {
-    }
-
-    private void y_bx() {
-    }
-
-    private void y_n() {
-    }
-
-    private void y_9() {
-    }
-
-    private void y_09() {
+        y_a.set(String.valueOf(x));
+        y_x.set(String.valueOf(x));
+        y_bx.set(String.valueOf(x));
+        y_n.set(String.valueOf(x));
+        y_9 = new BigDecimal(String.valueOf(x).trim()).intValue();
+        y_09.set(String.valueOf(x));
         System.exit(0);
     }
 

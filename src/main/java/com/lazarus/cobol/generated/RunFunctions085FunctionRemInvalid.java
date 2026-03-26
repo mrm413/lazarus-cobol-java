@@ -36,8 +36,7 @@ public class RunFunctions085FunctionRemInvalid extends CobolProgram {
             CobolDisplay.display("Wrong/missing exception: " + String.valueOf(CobolIntrinsics.exception_status()));
         }
         if (r.compareTo(new BigDecimal(String.valueOf(0).trim())) != 0) {
-            CobolDisplay.display("result is not zero: ");
-            /* RAW: R  */
+            CobolDisplay.display("result is not zero: " + String.valueOf(r));
         }
         System.exit(0);
     }

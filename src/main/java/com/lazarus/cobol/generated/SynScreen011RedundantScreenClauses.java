@@ -28,16 +28,14 @@ public class SynScreen011RedundantScreenClauses extends CobolProgram {
     private int x = 0;
 
 
-    private CobolString background_color = new CobolString(256);
-    private CobolString _unnamed = new CobolString(256);
+    private CobolString background_color = new CobolString(256); // fallback
+    private CobolString _filler_001 = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
     private void para_main() {
-        CobolDisplay.display("hello" + String.valueOf(background_color) + String.valueOf(2) + String.valueOf(_unnamed) + String.valueOf(background_color) + String.valueOf(2));
+        CobolDisplay.display("hello" + String.valueOf(background_color) + String.valueOf(2) + String.valueOf(_filler_002) + String.valueOf(background_color) + String.valueOf(2));
         x = new BigDecimal(String.valueOf(CobolDisplay.accept()).trim()).intValue();
         /* RAW: WITH HIGHLIGHT , HIGHLIGHT , UPDATE */
-    }
-
-    private void cb_default() {
     }
 
     @Override

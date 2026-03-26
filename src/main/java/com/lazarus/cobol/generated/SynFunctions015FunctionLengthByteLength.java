@@ -25,17 +25,21 @@ public class SynFunctions015FunctionLengthByteLength extends CobolProgram {
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
-    private CobolString _unnamed = new CobolString(256);
-    private CobolString physical = new CobolString(256);
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString physical = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
+    private CobolString _filler_004 = new CobolString(256); // fallback
+    private CobolString _filler_005 = new CobolString(256); // fallback
     private void para_main() {
-    // CobolDisplay.display(String.valueOf(CobolIntrinsics.length("abcd", _unnamed, "xyz")));
-    // CobolDisplay.display(String.valueOf(CobolIntrinsics.byte_length("abcd", _unnamed, "xyz")));
-    // CobolDisplay.display(String.valueOf(CobolIntrinsics.length("abcd", "xyz")));
+        // KNOWN_ISSUE: CobolDisplay.display(String.valueOf(CobolIntrinsics.length("abcd", _filler_002, "xyz")));
+        // KNOWN_ISSUE: CobolDisplay.display(String.valueOf(CobolIntrinsics.byte_length("abcd", _filler_003, "xyz")));
+        // KNOWN_ISSUE: CobolDisplay.display(String.valueOf(CobolIntrinsics.length("abcd", "xyz")));
         CobolDisplay.display(String.valueOf(CobolIntrinsics.byte_length(1234)));
         CobolDisplay.display(String.valueOf(CobolIntrinsics.length(567)));
-    // CobolDisplay.display(String.valueOf(CobolIntrinsics.length("abcd", _unnamed, "xyz", physical)));
-    // CobolDisplay.display(String.valueOf(CobolIntrinsics.byte_length("abcd", _unnamed, "xyz", physical)));
+        // KNOWN_ISSUE: CobolDisplay.display(String.valueOf(CobolIntrinsics.length("abcd", _filler_004, "xyz", physical)));
+        // KNOWN_ISSUE: CobolDisplay.display(String.valueOf(CobolIntrinsics.byte_length("abcd", _filler_005, "xyz", physical)));
     }
 
     @Override

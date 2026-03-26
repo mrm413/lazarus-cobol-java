@@ -44,9 +44,7 @@ public class DataDisplay002DisplaySignEbcdic extends CobolProgram {
         x_s9[9 - 1] = new BigDecimal(String.valueOf(8).trim()).intValue();
         x_s9[10 - 1] = new BigDecimal(String.valueOf(9).trim()).intValue();
         CobolDisplay.displayNoAdvancing(String.valueOf(x));
-    }
-
-    private void x_s99() {
+        x_s99 = new BigDecimal(String.valueOf(-10).trim()).intValue();
         x.setRefMod(1, 1, String.valueOf(CobolString.refMod(x, 2, 1)));
         x_s9[2 - 1] = new BigDecimal(String.valueOf(-1).trim()).intValue();
         x_s9[3 - 1] = new BigDecimal(String.valueOf(-2).trim()).intValue();

@@ -31,6 +31,7 @@ public class RunExtensions022InitializeLevel01Occurs extends CobolProgram {
     private CobolString[] init = new CobolString[3];
 
 
+    private CobolString cb_default = new CobolString(256); // fallback
 
     private void para_main() {
         if (l2[3 - 1] != 5) {
@@ -46,9 +47,7 @@ public class RunExtensions022InitializeLevel01Occurs extends CobolProgram {
         }
         if (l1[1 - 1] == null) l1[1 - 1] = new CobolString(1);
         l1[1 - 1].set("");
-    }
-
-    private void cb_default() {
+        cb_default.set("");
         if (l2[1 - 1] != 0) {
             CobolDisplay.display("2 VALUE(1) = " + String.valueOf(l2[1 - 1]));
         }
@@ -57,9 +56,6 @@ public class RunExtensions022InitializeLevel01Occurs extends CobolProgram {
         }
         if (l1[1 - 1] == null) l1[1 - 1] = new CobolString(1);
         l1[1 - 1].set("");
-    }
-
-    private void value() {
         if (l2[1 - 1] != 5) {
             CobolDisplay.display("3 VALUE(1) = " + String.valueOf(l2[1 - 1]));
         }
@@ -83,9 +79,6 @@ public class RunExtensions022InitializeLevel01Occurs extends CobolProgram {
         }
         if (init[2 - 1] == null) init[2 - 1] = new CobolString(1);
         init[2 - 1].set("");
-    }
-
-    private void value_2() {
         if (!String.valueOf(init[2 - 1]).equals(String.valueOf(" "))) {
             CobolDisplay.display("INIT2 NOT = SPACES");
         }

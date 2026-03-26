@@ -35,7 +35,7 @@ public class RunMisc126Pointer extends CobolProgram {
     private CobolString y2 = new CobolString(4);
 
 
-    private CobolString address = new CobolString(256);
+    private CobolString address = new CobolString(256); // fallback
 
     private void para_main() {
         p_xx_1 = new BigDecimal(String.valueOf(address).trim()).longValue();

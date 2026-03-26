@@ -29,15 +29,11 @@ public class SynDefinition011GoToSectionsAndForeignParagraphs extends CobolProgr
     // SECTION: S-1
     private void s_1() {
         go();
-        s_2();
         e_1();
     }
 
     private void go() {
-        /* RAW: TO  */
-    }
-
-    private void s_2() {
+        /* RAW: TO S-2 */
     }
 
     private void e_1() {
@@ -48,17 +44,13 @@ public class SynDefinition011GoToSectionsAndForeignParagraphs extends CobolProgr
     }
 
     // SECTION: S-2
-    private void s_2_2() {
+    private void s_2() {
         go();
-        e_3();
         e_2();
     }
 
     private void go_2() {
-        /* RAW: TO  */
-    }
-
-    private void e_3() {
+        /* RAW: TO E-3 */
     }
 
     private void e_2() {
@@ -69,7 +61,7 @@ public class SynDefinition011GoToSectionsAndForeignParagraphs extends CobolProgr
         e_3();
     }
 
-    private void e_3_2() {
+    private void e_3() {
     }
 
     @Override

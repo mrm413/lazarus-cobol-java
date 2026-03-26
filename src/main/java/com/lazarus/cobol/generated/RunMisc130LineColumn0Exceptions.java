@@ -28,10 +28,10 @@ public class RunMisc130LineColumn0Exceptions extends CobolProgram {
     private int zero_var = 0;
 
 
-    private CobolString scr = new CobolString(256);
-    private CobolString at = new CobolString(256);
-    private CobolString line = new CobolString(256);
-    private CobolString column = new CobolString(256);
+    private CobolString scr = new CobolString(256); // fallback
+    private CobolString at = new CobolString(256); // fallback
+    private CobolString line = new CobolString(256); // fallback
+    private CobolString column = new CobolString(256); // fallback
 
     private void para_main() {
         CobolDisplay.display(String.valueOf(scr) + String.valueOf(at) + String.valueOf(line) + String.valueOf(zero_var));

@@ -32,8 +32,7 @@ public class RunMisc047InspectConvertingNull extends CobolProgram {
     private void para_main() {
         /* INSPECT X — 2 clause(s) */
         if (!String.valueOf(x).equals(String.valueOf("AAA"))) {
-            CobolDisplay.display();
-            /* RAW: X  */
+            CobolDisplay.display(String.valueOf(x));
         }
         System.exit(0);
     }

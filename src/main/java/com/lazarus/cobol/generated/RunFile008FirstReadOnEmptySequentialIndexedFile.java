@@ -33,23 +33,15 @@ public class RunFile008FirstReadOnEmptySequentialIndexedFile extends CobolProgra
 
 
     private void para_main() {
-    }
-
-    private void test_file() {
-    }
-
-    private void test_file_2() {
-    }
-
-    private void test_file_3() {
+        test_file.open("OUTPUT");
+        test_file.close();
+        test_file.open("INPUT");
         if (test_file.read(null) == FileStatus.AT_END) {
             /* CONTINUE */
         } else {
             CobolDisplay.display("NOT OK");
         }
-    }
-
-    private void test_file_4() {
+        test_file.close();
         System.exit(0);
     }
 

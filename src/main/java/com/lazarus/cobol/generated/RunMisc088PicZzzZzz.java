@@ -33,39 +33,27 @@ public class RunMisc088PicZzzZzz extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void x_zzzn() {
+        x_zzzn.set(String.valueOf(-1));
         if (!String.valueOf(xzn_red).equals(String.valueOf("  1-"))) {
             CobolDisplay.display("(" + String.valueOf(x_zzzn) + ")");
         }
-    }
-
-    private void x_zzzn_2() {
+        x_zzzn.set(String.valueOf(0));
         if (!String.valueOf(xzn_red).equals(String.valueOf("    "))) {
             CobolDisplay.display("(" + String.valueOf(x_zzzn) + ")");
         }
-    }
-
-    private void x_zzzn_3() {
+        x_zzzn.set(String.valueOf(1));
         if (!String.valueOf(xzn_red).equals(String.valueOf("  1 "))) {
             CobolDisplay.display("(" + String.valueOf(x_zzzn) + ")");
         }
-    }
-
-    private void x_zzzp() {
+        x_zzzp.set(String.valueOf(-1));
         if (!String.valueOf(xzp_red).equals(String.valueOf("  1-"))) {
             CobolDisplay.display("(" + String.valueOf(x_zzzp) + ")");
         }
-    }
-
-    private void x_zzzp_2() {
+        x_zzzp.set(String.valueOf(0));
         if (!String.valueOf(xzp_red).equals(String.valueOf("    "))) {
             CobolDisplay.display("(" + String.valueOf(x_zzzp) + ")");
         }
-    }
-
-    private void x_zzzp_3() {
+        x_zzzp.set(String.valueOf(1));
         if (!String.valueOf(xzp_red).equals(String.valueOf("  1+"))) {
             CobolDisplay.display("(" + String.valueOf(x_zzzp) + ")");
         }

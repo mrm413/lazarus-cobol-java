@@ -30,9 +30,7 @@ public class SynMove001MoveZeroToAlphabeticItem extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void a() {
+        a.set(String.valueOf(0));
         System.exit(0);
     }
 

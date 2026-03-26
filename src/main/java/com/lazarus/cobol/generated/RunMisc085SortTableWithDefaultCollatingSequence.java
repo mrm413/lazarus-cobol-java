@@ -6,6 +6,7 @@ import com.lazarus.cobol.CobolIntrinsics;
 import com.lazarus.cobol.CobolProgram;
 import com.lazarus.cobol.CobolString;
 import com.lazarus.cobol.FileStatus;
+import com.lazarus.cobol.jcl.batch.DfsortProgram;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -33,10 +34,11 @@ public class RunMisc085SortTableWithDefaultCollatingSequence extends CobolProgra
 
 
     private void para_main() {
-        /* SORT TBL */
-    }
-
-    private void x() {
+        { /* SORT TBL (tbl) */
+            DfsortProgram _sort = new DfsortProgram();
+            _sort.setSortKeys(new String[]{"X:A"});
+            _sort.execute();
+        }
         if (!String.valueOf(g).equals(String.valueOf("12345abcde"))) {
             if (!String.valueOf(g).equals(String.valueOf("abcde12345"))) {
                 if ((!(String.valueOf(g).equals(String.valueOf("12345abcde"))) || true)) {

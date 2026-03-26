@@ -28,13 +28,15 @@ public class RunMisc005DecimalPointIsComma5 extends CobolProgram {
     private int x = 0;
 
 
-    private CobolString _unnamed = new CobolString(256);
+    private CobolString _filler_001 = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
     private void para_main() {
-        x = new BigDecimal(String.valueOf((1 + Integer.parseInt(String.valueOf(_unnamed).trim()))).trim()).intValue();
+        x = new BigDecimal(String.valueOf((1 + Integer.parseInt(String.valueOf(_filler_002).trim()))).trim()).intValue();
         /* RAW: 1  */
         CobolDisplay.display(String.valueOf(x));
-        x = new BigDecimal(String.valueOf((1 * Integer.parseInt(String.valueOf(_unnamed).trim()))).trim()).intValue();
+        x = new BigDecimal(String.valueOf((1 * Integer.parseInt(String.valueOf(_filler_003).trim()))).trim()).intValue();
         /* RAW: 1  */
         CobolDisplay.display(String.valueOf(x));
         System.exit(0);

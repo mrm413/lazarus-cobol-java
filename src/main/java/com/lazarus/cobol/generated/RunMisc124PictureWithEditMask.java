@@ -34,18 +34,10 @@ public class RunMisc124PictureWithEditMask extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void wflt() {
-        CobolDisplay.display("WFLT IS ");
-    }
-
-    private void wflt_2() {
+        wflt.set(String.valueOf(18536.23));
+        CobolDisplay.display("WFLT IS " + String.valueOf(wflt));
         dl_prod_cost.set(String.valueOf(dept_cost_ytd * 1));
-        CobolDisplay.display("COST IS ");
-    }
-
-    private void dl_prod_cost() {
+        CobolDisplay.display("COST IS " + String.valueOf(dl_prod_cost));
         System.exit(0);
     }
 

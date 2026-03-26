@@ -34,9 +34,6 @@ public class SynDefinition023ProcedureDivisionReturningItem extends CobolProgram
         return;
     }
 
-    private void func() {
-    }
-
     @Override
     public void run() {
         para_main();

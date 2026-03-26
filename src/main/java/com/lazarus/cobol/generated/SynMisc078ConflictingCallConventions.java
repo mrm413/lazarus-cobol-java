@@ -25,21 +25,15 @@ public class SynMisc078ConflictingCallConventions extends CobolProgram {
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
-    private CobolString extern = new CobolString(256);
+    private CobolString extern = new CobolString(256); // fallback
 
     private void para_main() {
         CobolProgram.call(String.valueOf(extern));
         /* RAW: 'callee'  */
         CobolProgram.call("callee");
-        /* RAW: WITH C */
-    }
-
-    private void linkage() {
+        /* RAW: WITH C LINKAGE */
         CobolProgram.call(String.valueOf(extern));
-        /* RAW: 'callee' WITH C */
-    }
-
-    private void linkage_2() {
+        /* RAW: 'callee' WITH C LINKAGE */
         System.exit(0);
     }
 

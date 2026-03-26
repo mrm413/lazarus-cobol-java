@@ -25,16 +25,12 @@ public class SynFunctions001RepositoryIntrinsicPhrase extends CobolProgram {
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
+    private CobolString pi = new CobolString(256); // fallback
+    private CobolString e = new CobolString(256); // fallback
 
     private void para_main() {
-        CobolDisplay.display();
-    }
-
-    private void pi() {
-        CobolDisplay.display();
-    }
-
-    private void e() {
+        CobolDisplay.display(String.valueOf(pi));
+        CobolDisplay.display(String.valueOf(e));
         System.exit(0);
     }
 

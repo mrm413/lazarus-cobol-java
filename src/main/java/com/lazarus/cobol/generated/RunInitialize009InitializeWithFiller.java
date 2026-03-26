@@ -27,28 +27,21 @@ public class RunInitialize009InitializeWithFiller extends CobolProgram {
     // WORKING-STORAGE SECTION
     private CobolString g1 = new CobolString(1); // Group: G1
     private int x = 0;
+    private int filler_1 = 0;
     private int z = 0;
     private CobolString my_filler = new CobolString(1); // Group: MY-FILLER
+    private int filler_2 = 0;
 
 
 
     private void para_main() {
-    }
-
-    private void g1() {
-    }
-
-    private void g1_2() {
+        g1.set(String.valueOf("A"));
+        g1.set("");
         if (!String.valueOf(g1).equals(String.valueOf("00A00"))) {
             CobolDisplay.display("G1 (INIT): " + String.valueOf(g1));
         }
-    }
-
-    private void g1_3() {
+        g1.set(String.valueOf("A"));
         g1.set("");
-    }
-
-    private void filler_1() {
         if (!String.valueOf(g1).equals(String.valueOf("00 00"))) {
             CobolDisplay.display("G1 (INIT FILLER):" + String.valueOf(g1));
         }

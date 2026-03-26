@@ -37,8 +37,7 @@ public class RunMisc089PerformTypeOsvs extends CobolProgram {
     private void a01() {
         btest();
         if (myocc != 2) {
-            CobolDisplay.display();
-            /* RAW: MYOCC  */
+            CobolDisplay.display(String.valueOf(myocc));
         }
         System.exit(0);
     }

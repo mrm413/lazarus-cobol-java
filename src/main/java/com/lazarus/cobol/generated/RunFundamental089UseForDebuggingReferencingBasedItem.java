@@ -33,19 +33,15 @@ public class RunFundamental089UseForDebuggingReferencingBasedItem extends CobolP
     private CobolString data_field2 = new CobolString(10);
 
 
-    private CobolString address = new CobolString(256);
+    private CobolString address = new CobolString(256); // fallback
 
     // SECTION: TEST-DEBUG
     private void test_debug() {
         use();
-        data_field3();
     }
 
     private void use() {
         /* RAW: FOR DEBUGGING ON ALL REFERENCES OF */
-    }
-
-    private void data_field3() {
         CobolDisplay.display(String.valueOf(debug_item) + "|");
     }
 

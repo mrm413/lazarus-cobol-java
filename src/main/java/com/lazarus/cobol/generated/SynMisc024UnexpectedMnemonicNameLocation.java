@@ -25,16 +25,14 @@ public class SynMisc024UnexpectedMnemonicNameLocation extends CobolProgram {
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
-    private CobolString stdout = new CobolString(256);
-    private CobolString stdin = new CobolString(256);
+    private CobolString stdout = new CobolString(256); // fallback
+    private CobolString stdin = new CobolString(256); // fallback
+    private CobolString my_stdin = new CobolString(256); // fallback
 
     private void para_main() {
         CobolProgram.call("something", stdout);
         CobolProgram.call("something", stdin);
-        CobolProgram.call("something");
-    }
-
-    private void my_stdin() {
+        CobolProgram.call("something", my_stdin);
     }
 
     @Override

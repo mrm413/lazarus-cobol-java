@@ -28,7 +28,7 @@ public class SynMisc119EqualsInExpressions extends CobolProgram {
     private int num = 0;
 
 
-    private CobolString equals = new CobolString(256);
+    private CobolString equals = new CobolString(256); // fallback
 
     private void para_main() {
         if (num <= Integer.parseInt(String.valueOf(equals).trim())) {

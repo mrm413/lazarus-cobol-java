@@ -26,19 +26,24 @@ public class RunInitialize013InitializeToTableFormatValuesAre extends CobolProgr
     private CobolString debug_contents = new CobolString(256);
     // WORKING-STORAGE SECTION
     private CobolString grp_3 = new CobolString(1); // Group: GRP-3
+    private CobolString filler_1 = new CobolString(3);
     private CobolString[] fld_3 = new CobolString[3]; // Group: FLD-3
     private CobolString[] fld_3_2 = new CobolString[3];
     private int[] fld_3_3 = new int[3];
     private CobolString[][] fld_3o_1 = new CobolString[3][4];
     private int[][] fld_3o_2 = new int[3][4];
     private CobolString[] fld_3_4 = new CobolString[3];
+    private CobolString filler_2 = new CobolString(3);
+    private CobolString filler_3 = new CobolString(3);
     private int c5 = 0;
     private CobolString grp_5 = new CobolString(1); // Group: GRP-5
+    private CobolString filler_4 = new CobolString(3);
     private CobolString fld_5 = new CobolString(1); // Group: FLD-5
     private CobolString[] fld_5_1 = new CobolString[9]; // Group: FLD-5-1
     private CobolString[] fld_5_2 = new CobolString[9];
     private int[] fld_5_3 = new int[9];
     private CobolString[] fld_5_4 = new CobolString[9];
+    private CobolString filler_5 = new CobolString(3);
     private CobolString ws = new CobolString(1); // Group: WS
     private int ix1 = 0;
     private int ix2 = 0;
@@ -58,11 +63,12 @@ public class RunInitialize013InitializeToTableFormatValuesAre extends CobolProgr
     private CobolString[][] flr = new CobolString[2][4];
 
 
-    private CobolString numeric = new CobolString(256);
-    private CobolString to = new CobolString(256);
-    private CobolString value = new CobolString(256);
-    private CobolString _unnamed = new CobolString(256);
+    private CobolString numeric = new CobolString(256); // fallback
+    private CobolString to = new CobolString(256); // fallback
+    private CobolString value = new CobolString(256); // fallback
+    private CobolString _filler_001 = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
     private void init_rtn() {
         CobolDisplay.display("Simple OCCURS with multi VALUES");
         for (ix1 = 1; !(ix1 > 13); ix1 += 1) {
@@ -89,38 +95,23 @@ public class RunInitialize013InitializeToTableFormatValuesAre extends CobolProgr
         fld_3[3 - 1].set("");
         if (fld_3o_1[3 - 1][2 - 1] == null) fld_3o_1[3 - 1][2 - 1] = new CobolString(1);
         fld_3o_1[3 - 1][2 - 1].set("");
-        _unnamed.set("");
+        _filler_002.set("");
         fld_3o_2[3 - 1][2 - 1] = 0;
         CobolDisplay.display(String.valueOf(grp_3) + ".");
         CobolDisplay.display("Initialize VALUE OCCURS DEPENDING test");
-    }
-
-    private void c5() {
-    }
-
-    private void grp_5() {
+        c5 = new BigDecimal(String.valueOf(6).trim()).intValue();
+        grp_5.set(String.valueOf("*"));
         fld_5.set("");
-    }
-
-    private void value() {
         CobolDisplay.display("GRP-5 with 6:" + String.valueOf(grp_5) + ".");
-    }
-
-    private void c5_2() {
-    }
-
-    private void grp_5_2() {
+        c5 = new BigDecimal(String.valueOf(4).trim()).intValue();
+        grp_5.set(String.valueOf("*"));
         fld_5.set("");
-    }
-
-    private void value_2() {
         CobolDisplay.display("GRP-5 with 4:" + String.valueOf(grp_5) + ".");
         /* RAW: * * The following gets very */
         ix3 = new BigDecimal(String.valueOf(1).trim()).intValue();
-    }
-
-    private void ix2() {
+        ix2 = new BigDecimal(String.valueOf(2).trim()).intValue();
         CobolDisplay.display(String.valueOf(ix3) + "-" + String.valueOf(ix2) + ": " + String.valueOf(dayx_monthx[ix3 - 1][ix2 - 1]) + ".");
+        if (dayx_monthx[ix3 - 1] == null) dayx_monthx[ix3 - 1] = new CobolString[4];
         if (dayx_monthx[ix3 - 1][ix2 - 1] == null) dayx_monthx[ix3 - 1][ix2 - 1] = new CobolString(256);
         dayx_monthx[ix3 - 1][ix2 - 1].set(String.valueOf("*"));
         CobolDisplay.display(String.valueOf(ix3) + "-" + String.valueOf(ix2) + ": " + String.valueOf(dayx_monthx[ix3 - 1][ix2 - 1]) + ".");
@@ -130,9 +121,6 @@ public class RunInitialize013InitializeToTableFormatValuesAre extends CobolProgr
         CobolDisplay.display("Initialize VALUE inside OCCURS test");
         if (dayx_monthx[ix3 - 1][ix2 - 1] == null) dayx_monthx[ix3 - 1][ix2 - 1] = new CobolString(1);
         dayx_monthx[ix3 - 1][ix2 - 1].set("");
-    }
-
-    private void value_3() {
         CobolDisplay.display(String.valueOf(ix3) + "-" + String.valueOf(ix2) + ": " + String.valueOf(dayx_monthx[ix3 - 1][ix2 - 1]) + ".");
         System.exit(0);
     }

@@ -31,12 +31,8 @@ public class RunMisc055InspectReplacingFigurativeConstant extends CobolProgram {
 
     private void para_main() {
         /* INSPECT X — 2 clause(s) */
-    }
-
-    private void space() {
         if (!String.valueOf(x).equals(String.valueOf("  A"))) {
-            CobolDisplay.display();
-            /* RAW: X  */
+            CobolDisplay.display(String.valueOf(x));
         }
         System.exit(0);
     }

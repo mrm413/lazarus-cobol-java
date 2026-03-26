@@ -30,6 +30,14 @@ public class SynMisc135PerformThruSyntaxChecks extends CobolProgram {
     private void para_main() {
         main_00();
         main_ex();
+        sub1_00();
+        sub1_01();
+        sub1_02();
+        sub1_ex();
+        sub2_00();
+        sub2_01();
+        sub2_02();
+        sub2_ex();
     }
 
     private void main_00() {
@@ -46,14 +54,6 @@ public class SynMisc135PerformThruSyntaxChecks extends CobolProgram {
 
     private void main_ex() {
         return;
-    }
-
-    // SECTION: SUB1
-    private void sub1() {
-        sub1_00();
-        sub1_01();
-        sub1_02();
-        sub1_ex();
     }
 
     private void sub1_00() {
@@ -73,14 +73,6 @@ public class SynMisc135PerformThruSyntaxChecks extends CobolProgram {
         return;
     }
 
-    // SECTION: SUB2
-    private void sub2() {
-        sub2_00();
-        sub2_01();
-        sub2_02();
-        sub2_ex();
-    }
-
     private void sub2_00() {
         sub1_02(); // THRU SUB1-01
     }
@@ -96,6 +88,10 @@ public class SynMisc135PerformThruSyntaxChecks extends CobolProgram {
     private void sub2_ex() {
         return;
     }
+
+    private void sub1() { /* stub — external/COPY */ }
+
+    private void sub2() { /* stub — external/COPY */ }
 
     @Override
     public void run() {

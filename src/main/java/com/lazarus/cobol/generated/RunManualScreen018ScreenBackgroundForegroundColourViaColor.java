@@ -37,28 +37,35 @@ public class RunManualScreen018ScreenBackgroundForegroundColourViaColor extends 
     private int cwhite = 0;
 
 
-    private CobolString scr = new CobolString(256);
-    private CobolString _unnamed = new CobolString(256);
-    private CobolString scr2 = new CobolString(256);
-    private CobolString success = new CobolString(256);
+    private CobolString scr = new CobolString(256); // fallback
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString scr2 = new CobolString(256); // fallback
+    private CobolString success = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
+    private CobolString _filler_004 = new CobolString(256); // fallback
+    private CobolString _filler_005 = new CobolString(256); // fallback
+    private CobolString _filler_006 = new CobolString(256); // fallback
+    private CobolString _filler_007 = new CobolString(256); // fallback
+    private CobolString _filler_008 = new CobolString(256); // fallback
     private void para_main() {
         cblack = new BigDecimal(String.valueOf(cblack + 256).trim()).intValue();
         CobolDisplay.display(String.valueOf(scr));
         cblack = new BigDecimal(String.valueOf(cblack + 1024).trim()).intValue();
-        _unnamed.set(new BigDecimal(String.valueOf(_unnamed).trim()).add(new BigDecimal(String.valueOf(1024).trim())).toPlainString());
+        _filler_002.set(new BigDecimal(String.valueOf(_filler_002).trim()).add(new BigDecimal(String.valueOf(1024).trim())).toPlainString());
         cblue = new BigDecimal(String.valueOf(cblue + 1024).trim()).intValue();
-        _unnamed.set(new BigDecimal(String.valueOf(_unnamed).trim()).add(new BigDecimal(String.valueOf(1024).trim())).toPlainString());
+        _filler_003.set(new BigDecimal(String.valueOf(_filler_003).trim()).add(new BigDecimal(String.valueOf(1024).trim())).toPlainString());
         cgreen = new BigDecimal(String.valueOf(cgreen + 1024).trim()).intValue();
-        _unnamed.set(new BigDecimal(String.valueOf(_unnamed).trim()).add(new BigDecimal(String.valueOf(1024).trim())).toPlainString());
+        _filler_004.set(new BigDecimal(String.valueOf(_filler_004).trim()).add(new BigDecimal(String.valueOf(1024).trim())).toPlainString());
         ccyan = new BigDecimal(String.valueOf(ccyan + 1024).trim()).intValue();
-        _unnamed.set(new BigDecimal(String.valueOf(_unnamed).trim()).add(new BigDecimal(String.valueOf(1024).trim())).toPlainString());
+        _filler_005.set(new BigDecimal(String.valueOf(_filler_005).trim()).add(new BigDecimal(String.valueOf(1024).trim())).toPlainString());
         cred = new BigDecimal(String.valueOf(cred + 1024).trim()).intValue();
-        _unnamed.set(new BigDecimal(String.valueOf(_unnamed).trim()).add(new BigDecimal(String.valueOf(1024).trim())).toPlainString());
+        _filler_006.set(new BigDecimal(String.valueOf(_filler_006).trim()).add(new BigDecimal(String.valueOf(1024).trim())).toPlainString());
         cmagenta = new BigDecimal(String.valueOf(cmagenta + 1024).trim()).intValue();
-        _unnamed.set(new BigDecimal(String.valueOf(_unnamed).trim()).add(new BigDecimal(String.valueOf(1024).trim())).toPlainString());
+        _filler_007.set(new BigDecimal(String.valueOf(_filler_007).trim()).add(new BigDecimal(String.valueOf(1024).trim())).toPlainString());
         cyellow = new BigDecimal(String.valueOf(cyellow + 1024).trim()).intValue();
-        _unnamed.set(new BigDecimal(String.valueOf(_unnamed).trim()).add(new BigDecimal(String.valueOf(1024).trim())).toPlainString());
+        _filler_008.set(new BigDecimal(String.valueOf(_filler_008).trim()).add(new BigDecimal(String.valueOf(1024).trim())).toPlainString());
         cwhite = new BigDecimal(String.valueOf(cwhite + 1024).trim()).intValue();
         CobolDisplay.display(String.valueOf(scr2));
         scr.set(String.valueOf(CobolDisplay.accept()));

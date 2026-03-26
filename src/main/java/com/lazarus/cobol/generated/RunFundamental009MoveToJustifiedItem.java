@@ -35,25 +35,15 @@ public class RunFundamental009MoveToJustifiedItem extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void edt_fld() {
+        edt_fld.set(String.valueOf(src_1));
         CobolDisplay.display(">" + String.valueOf(edt_fld) + "<");
-    }
-
-    private void edt_fld_2() {
+        edt_fld.set(String.valueOf(src_2));
         CobolDisplay.display(">" + String.valueOf(edt_fld) + "<");
-    }
-
-    private void edt_fld_3() {
+        edt_fld.set(String.valueOf(src_3));
         CobolDisplay.display(">" + String.valueOf(edt_fld) + "<");
-    }
-
-    private void edt_fld_4() {
+        edt_fld.set(String.valueOf(src_4));
         CobolDisplay.display(">" + String.valueOf(edt_fld) + "<");
-    }
-
-    private void edt_fld_5() {
+        edt_fld.set(String.valueOf(src_5));
         CobolDisplay.display(">" + String.valueOf(edt_fld) + "<");
         System.exit(0);
     }

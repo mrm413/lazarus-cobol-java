@@ -32,12 +32,8 @@ public class RunExtensions056SystemRoutineCPrintable extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void x1() {
-    }
-
-    private void x234() {
+        x1.set(String.valueOf("\u0000"));
+        x234.set(String.valueOf("BCD"));
         CobolProgram.call("C$PRINTABLE", x);
         if (!String.valueOf(x).equals(String.valueOf(".BCD"))) {
             CobolDisplay.displayNoAdvancing(String.valueOf(x));

@@ -39,14 +39,11 @@ public class RunFunctions024FunctionExceptionLocation extends CobolProgram {
     // SECTION: A00-MAIN
     private void a00_main() {
         a00();
-        test_file();
     }
 
     private void a00() {
         CobolDisplay.displayNoAdvancing(String.valueOf(CobolIntrinsics.exception_location()) + "|");
-    }
-
-    private void test_file() {
+        test_file.open("INPUT");
         b00_main();
     }
 

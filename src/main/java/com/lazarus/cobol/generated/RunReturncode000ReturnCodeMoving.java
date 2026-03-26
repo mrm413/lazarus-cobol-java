@@ -30,18 +30,10 @@ public class RunReturncode000ReturnCodeMoving extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void return_code() {
-    }
-
-    private void return_code_2() {
-    }
-
-    private void return_code_3() {
-    }
-
-    private void i() {
+        return_code = 0;
+        return_code = new BigDecimal(String.valueOf(0).trim()).intValue();
+        return_code = new BigDecimal(String.valueOf(1).trim()).intValue();
+        i = new BigDecimal(String.valueOf(return_code).trim()).shortValue();
         if (i != 1) {
             CobolDisplay.displayNoAdvancing(String.valueOf(i));
         }

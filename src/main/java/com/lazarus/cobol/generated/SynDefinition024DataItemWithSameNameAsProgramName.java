@@ -31,10 +31,7 @@ public class SynDefinition024DataItemWithSameNameAsProgramName extends CobolProg
 
     private void para_main() {
         /* CONTINUE */
-        /* RAW: END FUNCTION */
-    }
-
-    private void x() {
+        /* RAW: END FUNCTION x */
     }
 
     @Override

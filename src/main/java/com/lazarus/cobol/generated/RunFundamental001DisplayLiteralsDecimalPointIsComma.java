@@ -25,15 +25,21 @@ public class RunFundamental001DisplayLiteralsDecimalPointIsComma extends CobolPr
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
-    private CobolString _unnamed = new CobolString(256);
+    private CobolString _filler_001 = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
+    private CobolString _filler_004 = new CobolString(256); // fallback
+    private CobolString _filler_005 = new CobolString(256); // fallback
+    private CobolString _filler_006 = new CobolString(256); // fallback
+    private CobolString _filler_007 = new CobolString(256); // fallback
     private void para_main() {
-        CobolDisplay.display(String.valueOf(12) + String.valueOf(_unnamed) + String.valueOf(3));
-        CobolDisplay.display(String.valueOf(12) + String.valueOf(_unnamed) + String.valueOf(3));
-        CobolDisplay.display(String.valueOf(-12) + String.valueOf(_unnamed) + String.valueOf(3));
-        CobolDisplay.display(String.valueOf(1) + String.valueOf(_unnamed) + String.valueOf(23));
-        CobolDisplay.display(String.valueOf(1) + String.valueOf(_unnamed) + String.valueOf(23));
-        CobolDisplay.display(String.valueOf(-1) + String.valueOf(_unnamed) + String.valueOf(23));
+        CobolDisplay.display(String.valueOf(12) + String.valueOf(_filler_002) + String.valueOf(3));
+        CobolDisplay.display(String.valueOf(12) + String.valueOf(_filler_003) + String.valueOf(3));
+        CobolDisplay.display(String.valueOf(-12) + String.valueOf(_filler_004) + String.valueOf(3));
+        CobolDisplay.display(String.valueOf(1) + String.valueOf(_filler_005) + String.valueOf(23));
+        CobolDisplay.display(String.valueOf(1) + String.valueOf(_filler_006) + String.valueOf(23));
+        CobolDisplay.display(String.valueOf(-1) + String.valueOf(_filler_007) + String.valueOf(23));
         System.exit(0);
     }
 

@@ -30,13 +30,9 @@ public class RunFundamental010MoveIntegerLiteralToAlphanumeric extends CobolProg
 
 
     private void para_main() {
-    }
-
-    private void x() {
+        x.set(String.valueOf(0));
         CobolDisplay.displayNoAdvancing(String.valueOf(x));
-    }
-
-    private void x_2() {
+        x.set(String.valueOf(1000));
         CobolDisplay.displayNoAdvancing(String.valueOf(x));
         System.exit(0);
     }

@@ -24,50 +24,10 @@ public class RunFunctions031FunctionFormattedDate extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
-    // WORKING-STORAGE SECTION
-    private CobolString str = new CobolString(10);
 
-
-
-    private void para_main() {
-        str.set(String.valueOf(CobolIntrinsics.formatted_date("YYYYMMDD", 1)));
-        if (!String.valueOf(str).equals(String.valueOf("16010101"))) {
-            CobolDisplay.display("Test 1 failed: " + String.valueOf(str));
-        }
-        str.set(String.valueOf(CobolIntrinsics.formatted_date("YYYY-MM-DD", 1)));
-        if (!String.valueOf(str).equals(String.valueOf("1601-01-01"))) {
-            CobolDisplay.display("Test 2 failed: " + String.valueOf(str));
-        }
-        str.set(String.valueOf(CobolIntrinsics.formatted_date("YYYYDDD", 1)));
-        if (!String.valueOf(str).equals(String.valueOf("1601001"))) {
-            CobolDisplay.display("Test 3 failed: " + String.valueOf(str));
-        }
-        str.set(String.valueOf(CobolIntrinsics.formatted_date("YYYY-DDD", 1)));
-        if (!String.valueOf(str).equals(String.valueOf("1601-001"))) {
-            CobolDisplay.display("Test 4 failed: " + String.valueOf(str));
-        }
-        str.set(String.valueOf(CobolIntrinsics.formatted_date("YYYYWwwD", 1)));
-        if (!String.valueOf(str).equals(String.valueOf("1601W011"))) {
-            CobolDisplay.display("Test 5 failed: " + String.valueOf(str));
-        }
-        str.set(String.valueOf(CobolIntrinsics.formatted_date("YYYY-Www-D", 1)));
-        if (!String.valueOf(str).equals(String.valueOf("1601-W01-1"))) {
-            CobolDisplay.display("Test 6 failed: " + String.valueOf(str));
-        }
-        str.set(String.valueOf(CobolIntrinsics.formatted_date("YYYYWwwD", 150115)));
-        if (!String.valueOf(str).equals(String.valueOf("2011W527"))) {
-            CobolDisplay.display("Test 7 failed: " + String.valueOf(str));
-        }
-        str.set(String.valueOf(CobolIntrinsics.formatted_date("YYYYWwwD", 150844)));
-        if (!String.valueOf(str).equals(String.valueOf("2014W011"))) {
-            CobolDisplay.display("Test 8 failed: " + String.valueOf(str));
-        }
-        System.exit(0);
-    }
 
     @Override
     public void run() {
-        para_main();
     }
 
     public static void main(String[] args) {

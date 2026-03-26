@@ -25,13 +25,15 @@ public class SynLiterals003FloatingPointLiterals extends CobolProgram {
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
-    private CobolString _unnamed = new CobolString(256);
-    private CobolString d3 = new CobolString(256);
-    private CobolString blah = new CobolString(256);
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString d3 = new CobolString(256); // fallback
+    private CobolString blah = new CobolString(256); // fallback
 
-    private CobolString Infinity = new CobolString(256);
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
+    private CobolString _filler_004 = new CobolString(256); // fallback
     private void para_main() {
-        CobolDisplay.display(String.valueOf(Infinity) + String.valueOf(_unnamed) + String.valueOf(1000) + String.valueOf(_unnamed) + String.valueOf(0) + String.valueOf(_unnamed) + String.valueOf(123));
+        // KNOWN_ISSUE: CobolDisplay.display(String.valueOf(Infinity) + String.valueOf(_filler_002) + String.valueOf(1000) + String.valueOf(_filler_003) + String.valueOf(0) + String.valueOf(_filler_004) + String.valueOf(123));
         /* RAW: E1 , +.123456789012345678901234567890123456E+0000 */
         CobolDisplay.display(String.valueOf(1) + String.valueOf(d3));
         CobolDisplay.display(String.valueOf(1000));
@@ -41,7 +43,7 @@ public class SynLiterals003FloatingPointLiterals extends CobolProgram {
         CobolDisplay.display(String.valueOf(1000));
         CobolDisplay.display(String.valueOf(0.12345678901234568));
         CobolDisplay.display(String.valueOf(0));
-        CobolDisplay.display(String.valueOf(Infinity));
+        // KNOWN_ISSUE: CobolDisplay.display(String.valueOf(Infinity));
         CobolDisplay.display(String.valueOf(0));
         System.exit(0);
     }

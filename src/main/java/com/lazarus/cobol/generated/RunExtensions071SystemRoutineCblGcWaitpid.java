@@ -45,9 +45,7 @@ public class RunExtensions071SystemRoutineCblGcWaitpid extends CobolProgram {
     private void child_code() {
         CobolProgram.call("C$SLEEP", 1);
         CobolDisplay.display("Hello, I am the child");
-    }
-
-    private void return_code() {
+        return_code = new BigDecimal(String.valueOf(2).trim()).intValue();
     }
 
     private void parent_code() {

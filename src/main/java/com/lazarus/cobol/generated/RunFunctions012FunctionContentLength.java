@@ -30,12 +30,10 @@ public class RunFunctions012FunctionContentLength extends CobolProgram {
     private int test_fld = 0;
 
 
-    private CobolString address = new CobolString(256);
+    private CobolString address = new CobolString(256); // fallback
 
     private void para_main() {
-    }
-
-    private void test_fld() {
+        test_fld = new BigDecimal(String.valueOf(CobolIntrinsics.content_length(p)).trim()).intValue();
         if (test_fld != 0) {
             CobolDisplay.display("CONTENT-LENGTH NULL wrong: " + String.valueOf(test_fld));
         }

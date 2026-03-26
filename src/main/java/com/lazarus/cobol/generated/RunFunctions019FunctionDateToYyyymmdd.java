@@ -30,9 +30,7 @@ public class RunFunctions019FunctionDateToYyyymmdd extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void test_fld() {
+        test_fld = new BigDecimal(String.valueOf(CobolIntrinsics.date_to_yyyymmdd(981002, -10, 1994)).trim());
         if (test_fld.compareTo(new BigDecimal(String.valueOf(18981002).trim())) != 0) {
             CobolDisplay.display(String.valueOf(test_fld));
         }

@@ -75,61 +75,34 @@ public class RunExtensions020DependingOnWithOdoslide extends CobolProgram {
     private CobolFile flatfile = new CobolFile("SEQODO", "LINE SEQUENTIAL", "SEQUENTIAL");
     // File status: CUST-STAT
 
-    private CobolString _unnamed = new CobolString(256);
+    private CobolString _filler_001 = new CobolString(256); // fallback
 
     // SECTION: WRITE-REC
+    private CobolString _filler_002 = new CobolString(256); // fallback
     private void write_rec() {
         add();
-        seq();
-        ln();
-        ln();
-        tstgrp();
-        tsttail2();
-        ln();
-        ln();
-        tstgrp2();
-        dep_x2();
-        tst2tail1();
-        ln();
-        ln();
     }
 
     private void add() {
-        /* RAW: 1 TO */
-    }
-
-    private void seq() {
-    }
-
-    private void ln() {
-        CobolDisplay.display("Write SEQ " + String.valueOf(seq) + ", DEP-X = " + String.valueOf(dep_x) + " & DEP-Y = " + String.valueOf(dep_y) + ", TSTREC len:");
-    }
-
-    private void ln_2() {
-    }
-
-    private void tstgrp() {
+        /* RAW: 1 TO SEQ */
+        ln = new BigDecimal(String.valueOf(CobolIntrinsics.length(tstrec)).trim()).intValue();
+        CobolDisplay.display("Write SEQ " + String.valueOf(seq) + ", DEP-X = " + String.valueOf(dep_x) + " & DEP-Y = " + String.valueOf(dep_y) + ", TSTREC len:" + String.valueOf(ln));
+        tstgrp.set(String.valueOf("*"));
         tsttail1.set(String.valueOf("<>"));
-        _unnamed.set(String.valueOf("<>"));
-    }
-
-    private void tsttail2() {
+        _filler_002.set(String.valueOf("<>"));
+        tsttail2.set(String.valueOf("<>"));
         for (ix = 1; !(ix > dep_x); ix += 1) {
             if (tstg_1[ix - 1] == null) tstg_1[ix - 1] = new CobolString(256);
             tstg_1[ix - 1].set(String.valueOf(ix));
         }
-    }
-
-    private void ln_3() {
-        CobolDisplay.display("Group1: '" + String.valueOf(tstgrp1) + "' len:");
-    }
-
-    private void ln_4() {
+        ln = new BigDecimal(String.valueOf(CobolIntrinsics.length(tstgrp1)).trim()).intValue();
+        CobolDisplay.display("Group1: '" + String.valueOf(tstgrp1) + "' len:" + String.valueOf(ln));
         for (ix = 1; !(ix > dep_x); ix += 1) {
             tsty_1[ix - 1] = new BigDecimal(String.valueOf(ix).trim()).intValue();
             if (tsty_4[ix - 1] == null) tsty_4[ix - 1] = new CobolString(256);
             tsty_4[ix - 1].set(String.valueOf("."));
             for (iy = 1; !(iy > dep_y); iy += 1) {
+                if (tsty_3[ix - 1] == null) tsty_3[ix - 1] = new CobolString[12];
                 if (tsty_3[ix - 1][iy - 1] == null) tsty_3[ix - 1][iy - 1] = new CobolString(256);
                 tsty_3[ix - 1][iy - 1].set(String.valueOf(alph_chr[iy - 1]));
             }
@@ -137,40 +110,29 @@ public class RunExtensions020DependingOnWithOdoslide extends CobolProgram {
         for (ix = 1; !(ix > dep_x); ix += 1) {
             for (iy = 1; !(iy > dep_x); iy += 1) {
                 for (iz = 1; !(iz > dep_x); iz += 1) {
+        // KNOWN_ISSUE: if (tsty_7[ix - 1] == null) tsty_7[ix - 1] = new CobolString[3];
+                    if (tsty_7[ix - 1][iy - 1] == null) tsty_7[ix - 1][iy - 1] = new CobolString[3];
                     if (tsty_7[ix - 1][iy - 1][iz - 1] == null) tsty_7[ix - 1][iy - 1][iz - 1] = new CobolString(256);
                     tsty_7[ix - 1][iy - 1][iz - 1].set(String.valueOf(hex_chr[((ix + iy) + iz) - 1]));
                 }
             }
         }
         CobolDisplay.display("  Data: '" + String.valueOf(tstgrp) + "'");
-    }
-
-    private void tstgrp2() {
-    }
-
-    private void dep_x2() {
+        tstgrp2.set(String.valueOf("*"));
+        dep_x2 = new BigDecimal(String.valueOf(dep_x).trim()).intValue();
         for (ix = 1; !(ix > dep_x2); ix += 1) {
             if (tstg2_1[ix - 1] == null) tstg2_1[ix - 1] = new CobolString(256);
             tstg2_1[ix - 1].set(String.valueOf(ix));
         }
-    }
-
-    private void tst2tail1() {
-    }
-
-    private void ln_5() {
-        CobolDisplay.display("Group2: '" + String.valueOf(tstgrp2) + "' len:");
-    }
-
-    private void ln_6() {
+        tst2tail1.set(String.valueOf("<>"));
+        ln = new BigDecimal(String.valueOf(CobolIntrinsics.length(tstgrp2)).trim()).intValue();
+        CobolDisplay.display("Group2: '" + String.valueOf(tstgrp2) + "' len:" + String.valueOf(ln));
         flatfile.write(tstrec);
     }
 
     // SECTION: READ-REC
     private void read_rec() {
         read_10();
-        ln();
-        ln();
         read_99();
     }
 
@@ -179,13 +141,8 @@ public class RunExtensions020DependingOnWithOdoslide extends CobolProgram {
             read_99();
             return;
         }
-    }
-
-    private void ln_7() {
-        CobolDisplay.display("Read SEQ " + String.valueOf(seq) + ", DEP-X = " + String.valueOf(dep_x) + " & DEP-Y = " + String.valueOf(dep_y) + ", TSTREC len:");
-    }
-
-    private void ln_8() {
+        ln = new BigDecimal(String.valueOf(CobolIntrinsics.length(tstrec)).trim()).intValue();
+        CobolDisplay.display("Read SEQ " + String.valueOf(seq) + ", DEP-X = " + String.valueOf(dep_x) + " & DEP-Y = " + String.valueOf(dep_y) + ", TSTREC len:" + String.valueOf(ln));
         CobolDisplay.display("  Data: '" + String.valueOf(tstgrp) + "'");
         read_10();
         return;
@@ -196,18 +153,14 @@ public class RunExtensions020DependingOnWithOdoslide extends CobolProgram {
     }
 
     private void main_10() {
-    }
-
-    private void dep_x3() {
+        dep_x3 = new BigDecimal(String.valueOf(6).trim()).intValue();
         tstg3_1[1 - 1] = new BigDecimal(String.valueOf(1).trim()).intValue();
         tstg3_1[2 - 1] = new BigDecimal(String.valueOf(2).trim()).intValue();
         tstg3_1[3 - 1] = new BigDecimal(String.valueOf(3).trim()).intValue();
         tstg3_1[4 - 1] = new BigDecimal(String.valueOf(4).trim()).intValue();
         tstg3_1[5 - 1] = new BigDecimal(String.valueOf(5).trim()).intValue();
         tstg3_1[6 - 1] = new BigDecimal(String.valueOf(6).trim()).intValue();
-    }
-
-    private void dep_x3_2() {
+        dep_x3 = new BigDecimal(String.valueOf(3).trim()).intValue();
         {
             StringBuilder _sb = new StringBuilder();
             _sb.append(String.valueOf(tstgrp3));
@@ -215,53 +168,25 @@ public class RunExtensions020DependingOnWithOdoslide extends CobolProgram {
             tstwrk.set(_sb.toString());
         }
         CobolDisplay.display("'" + String.valueOf(tstwrk) + "'");
-    }
-
-    private void flatfile() {
-    }
-
-    private void hello() {
-    }
-
-    private void seq_2() {
-    }
-
-    private void dep_x() {
-    }
-
-    private void dep_y() {
+        flatfile.open("OUTPUT");
+        hello.set(String.valueOf("Howdy"));
+        seq = new BigDecimal(String.valueOf(0).trim()).intValue();
+        dep_x = new BigDecimal(String.valueOf(2).trim()).intValue();
+        dep_y = new BigDecimal(String.valueOf(5).trim()).intValue();
         write_rec();
-    }
-
-    private void dep_x_2() {
-    }
-
-    private void dep_y_2() {
+        dep_x = new BigDecimal(String.valueOf(1).trim()).intValue();
+        dep_y = new BigDecimal(String.valueOf(2).trim()).intValue();
         write_rec();
-    }
-
-    private void dep_x_3() {
-    }
-
-    private void dep_y_3() {
+        dep_x = new BigDecimal(String.valueOf(3).trim()).intValue();
+        dep_y = new BigDecimal(String.valueOf(3).trim()).intValue();
         write_rec();
-    }
-
-    private void dep_x_4() {
-    }
-
-    private void dep_y_4() {
+        dep_x = new BigDecimal(String.valueOf(3).trim()).intValue();
+        dep_y = new BigDecimal(String.valueOf(10).trim()).intValue();
         write_rec();
-    }
-
-    private void flatfile_2() {
-    }
-
-    private void flatfile_3() {
+        flatfile.close();
+        flatfile.open("INPUT");
         read_rec();
-    }
-
-    private void flatfile_4() {
+        flatfile.close();
         System.exit(0);
     }
 

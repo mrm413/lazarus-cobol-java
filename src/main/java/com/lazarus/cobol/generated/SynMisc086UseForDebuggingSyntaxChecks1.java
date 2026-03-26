@@ -32,33 +32,17 @@ public class SynMisc086UseForDebuggingSyntaxChecks1 extends CobolProgram {
     // SECTION: test-DEBUG
     private void test_debug() {
         use();
-        para_main();
-        debug_item();
-        debug_contents();
-        debug_sub_3();
     }
 
     private void use() {
         /* RAW: FOR DEBUGGING ON ALL REFERENCES OF */
-    }
-
-    private void para_main() {
-        CobolDisplay.display();
-    }
-
-    private void debug_item() {
-        CobolDisplay.display(String.valueOf(debug_name) + " AT " + String.valueOf(debug_line) + " WITH ");
-    }
-
-    private void debug_contents() {
-        CobolDisplay.display(String.valueOf(debug_sub_1) + String.valueOf(debug_sub_2));
-    }
-
-    private void debug_sub_3() {
+        CobolDisplay.display(String.valueOf(debug_item));
+        CobolDisplay.display(String.valueOf(debug_name) + " AT " + String.valueOf(debug_line) + " WITH " + String.valueOf(debug_contents));
+        CobolDisplay.display(String.valueOf(debug_sub_1) + String.valueOf(debug_sub_2) + String.valueOf(debug_sub_3));
     }
 
     // SECTION: MAIN
-    private void para_main_2() {
+    private void para_main() {
         move();
     }
 

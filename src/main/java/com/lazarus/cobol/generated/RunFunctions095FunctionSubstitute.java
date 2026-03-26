@@ -31,17 +31,14 @@ public class RunFunctions095FunctionSubstitute extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void y() {
+        y.set(String.valueOf("abc111444555defxxabc"));
         {
             StringBuilder _sb = new StringBuilder();
             _sb.append(String.valueOf(CobolIntrinsics.substitute(y, "abc", "zz", "55", "666")));
             z.set(_sb.toString());
         }
         if (!String.valueOf(z).equals(String.valueOf("zz1114446665defxxzz_"))) {
-            CobolDisplay.display();
-            /* RAW: Z  */
+            CobolDisplay.display(String.valueOf(z));
         }
         System.exit(0);
     }

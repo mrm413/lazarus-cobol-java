@@ -36,36 +36,24 @@ public class RunFile030StartRelative2 extends CobolProgram {
     private CobolFile test_file = new CobolFile("TESTFILE", "RELATIVE", "DYNAMIC");
     // File status: TESTSTAT
 
-    private CobolString v_ok = new CobolString(256);
-    private CobolString v_zero = new CobolString(256);
+    private CobolString v_ok = new CobolString(256); // fallback
+    private CobolString v_zero = new CobolString(256); // fallback
 
     private void para_main() {
-    }
-
-    private void test_file() {
+        test_file.open("I-O");
         if (!(!String.valueOf(v_ok).trim().isEmpty())) {
             CobolDisplay.display("OPEN " + String.valueOf(teststat));
             return;
         }
-    }
-
-    private void testkey() {
-    }
-
-    private void test_rec() {
+        testkey = new BigDecimal(String.valueOf(3).trim()).intValue();
+        test_rec.set(String.valueOf("0003"));
         test_file.write(test_rec);
         /* INVALID KEY handling — needs file status check */
-    }
-
-    private void testkey_2() {
-    }
-
-    private void test_rec_2() {
+        testkey = new BigDecimal(String.valueOf(2).trim()).intValue();
+        test_rec.set(String.valueOf("0002"));
         test_file.write(test_rec);
         /* INVALID KEY handling — needs file status check */
-    }
-
-    private void testkey_3() {
+        testkey = new BigDecimal(String.valueOf(99).trim()).intValue();
         test_file.start();
         if (!(!String.valueOf(v_zero).trim().isEmpty())) {
             CobolDisplay.display("START " + String.valueOf(teststat));
@@ -73,9 +61,7 @@ public class RunFile030StartRelative2 extends CobolProgram {
         if (testkey != 99) {
             CobolDisplay.display("TESTKEY " + String.valueOf(testkey));
         }
-    }
-
-    private void test_rec_3() {
+        test_rec.set(String.valueOf(" "));
         if (test_file.read(null) == FileStatus.AT_END) {
         }
         /* NEXT SENTENCE */
@@ -85,9 +71,7 @@ public class RunFile030StartRelative2 extends CobolProgram {
         if (!String.valueOf(test_rec).equals(String.valueOf("0003"))) {
             CobolDisplay.display("READ RECORD " + String.valueOf(test_rec));
         }
-    }
-
-    private void test_file_2() {
+        test_file.close();
     }
 
     @Override

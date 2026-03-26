@@ -38,9 +38,7 @@ public class RunFunctions026FunctionExceptionStatus extends CobolProgram {
 
     private void para_main() {
         CobolDisplay.displayNoAdvancing(String.valueOf(CobolIntrinsics.exception_status()) + "|");
-    }
-
-    private void test_file() {
+        test_file.open("INPUT");
         CobolDisplay.displayNoAdvancing(String.valueOf(CobolIntrinsics.exception_status()));
         System.exit(0);
     }

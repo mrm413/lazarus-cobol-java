@@ -31,6 +31,7 @@ public class SynFile014VariableRecordLength extends CobolProgram {
     private BigDecimal test_p3 = BigDecimal.ZERO;
     private int test_p4 = 0;
     private short test_p5 = (short) 0;
+    private CobolString filler_1 = new CobolString(129);
 
 
     // FILE DESCRIPTORS
@@ -38,12 +39,8 @@ public class SynFile014VariableRecordLength extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void test_file() {
-    }
-
-    private void test_file_2() {
+        test_file.open("INPUT");
+        test_file.close();
         System.exit(0);
     }
 

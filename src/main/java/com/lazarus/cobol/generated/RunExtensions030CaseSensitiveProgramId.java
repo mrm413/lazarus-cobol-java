@@ -35,10 +35,7 @@ public class RunExtensions030CaseSensitiveProgramId extends CobolProgram {
     }
 
     private void prog() {
-        /* RAW: PROCEDURE  */
-    }
-
-    private void division() {
+        /* RAW: PROCEDURE DIVISION */
         return;
     }
 

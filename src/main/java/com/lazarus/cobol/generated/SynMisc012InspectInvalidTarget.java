@@ -28,7 +28,7 @@ public class SynMisc012InspectInvalidTarget extends CobolProgram {
     private CobolString x = new CobolString(8);
 
 
-    private CobolString function = new CobolString(256);
+    private CobolString function = new CobolString(256); // fallback
 
     private void para_main() {
         /* INSPECT FUNCTION — 3 clause(s) */

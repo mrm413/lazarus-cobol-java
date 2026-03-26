@@ -28,6 +28,7 @@ public class RunExtensions048LargerRedefinesLengths extends CobolProgram {
     private int z = 0;
     private CobolString xmain = new CobolString(8);
     private CobolString xmainred = new CobolString(1); // Group: XMAINRED
+    private CobolString filler_1 = new CobolString(4);
     private CobolString xmain03 = new CobolString(1); // Group: XMAIN03
     private CobolString xmain0501 = new CobolString(4);
     private CobolString xmain0502 = new CobolString(5);
@@ -54,40 +55,25 @@ public class RunExtensions048LargerRedefinesLengths extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void z() {
+        z = new BigDecimal(String.valueOf(CobolIntrinsics.length(xmain)).trim()).intValue();
         if (z != 8) {
-            CobolDisplay.display("Test 1 ");
-            /* RAW: Z  */
+            CobolDisplay.display("Test 1 " + String.valueOf(z));
         }
-    }
-
-    private void z_2() {
+        z = new BigDecimal(String.valueOf(CobolIntrinsics.length(xmainred)).trim()).intValue();
         if (z != 9) {
-            CobolDisplay.display("Test 2 ");
-            /* RAW: Z  */
+            CobolDisplay.display("Test 2 " + String.valueOf(z));
         }
-    }
-
-    private void z_3() {
+        z = new BigDecimal(String.valueOf(CobolIntrinsics.length(xmain03)).trim()).intValue();
         if (z != 5) {
-            CobolDisplay.display("Test 3 ");
-            /* RAW: Z  */
+            CobolDisplay.display("Test 3 " + String.valueOf(z));
         }
-    }
-
-    private void z_4() {
+        z = new BigDecimal(String.valueOf(CobolIntrinsics.length(xmain0501)).trim()).intValue();
         if (z != 4) {
-            CobolDisplay.display("Test 4 ");
-            /* RAW: Z  */
+            CobolDisplay.display("Test 4 " + String.valueOf(z));
         }
-    }
-
-    private void z_5() {
+        z = new BigDecimal(String.valueOf(CobolIntrinsics.length(xmain0502)).trim()).intValue();
         if (z != 5) {
-            CobolDisplay.display("Test 5 ");
-            /* RAW: Z  */
+            CobolDisplay.display("Test 5 " + String.valueOf(z));
         }
         if (CobolIntrinsics.length(use_first) != 33211) {
             CobolDisplay.display(String.valueOf(CobolIntrinsics.length(use_first)));

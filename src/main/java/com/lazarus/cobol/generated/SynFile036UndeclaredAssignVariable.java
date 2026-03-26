@@ -24,28 +24,10 @@ public class SynFile036UndeclaredAssignVariable extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
-    // WORKING-STORAGE SECTION
-    private static final String glob_path = "GLOBAL";
 
-    // FILE SECTION — TEST-FILE
-    private CobolString test_rec = new CobolString(4);
-
-
-    // FILE DESCRIPTORS
-    private CobolFile test_file = new CobolFile("GLOB-PATH", "SEQUENTIAL", "SEQUENTIAL");
-
-    private CobolString glob_var = new CobolString(256);
-
-    private void para_main() {
-        CobolDisplay.display(String.valueOf(glob_path) + String.valueOf(glob_var));
-        CobolProgram.call("prog2");
-        CobolProgram.call("prog3");
-        System.exit(0);
-    }
 
     @Override
     public void run() {
-        para_main();
     }
 
     public static void main(String[] args) {

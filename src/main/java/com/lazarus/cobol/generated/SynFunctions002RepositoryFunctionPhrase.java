@@ -30,13 +30,8 @@ public class SynFunctions002RepositoryFunctionPhrase extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void ret() {
-        /* RAW: END FUNCTION */
-    }
-
-    private void x() {
+        ret = new BigDecimal(String.valueOf(100).trim()).intValue();
+        /* RAW: END FUNCTION x */
     }
 
     @Override

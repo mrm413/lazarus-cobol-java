@@ -25,10 +25,10 @@ public class RunExtensions028CallByValueNumericLiteralWithSizeIs extends CobolPr
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
-    private CobolString size = new CobolString(256);
-    private CobolString cb_default = new CobolString(256);
-    private CobolString auto = new CobolString(256);
-    private CobolString unsigned = new CobolString(256);
+    private CobolString size = new CobolString(256); // fallback
+    private CobolString cb_default = new CobolString(256); // fallback
+    private CobolString auto = new CobolString(256); // fallback
+    private CobolString unsigned = new CobolString(256); // fallback
 
     private void para_main() {
         CobolProgram.call("prog2", 4, 0, 0, 1, 0);

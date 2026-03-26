@@ -35,9 +35,6 @@ public class Listings021SymbolsMultipleProgramsFunctions extends CobolProgram {
         return;
     }
 
-    private void withpar() {
-    }
-
     @Override
     public void run() {
         para_main();

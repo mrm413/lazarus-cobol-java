@@ -28,12 +28,13 @@ public class RunMisc004DecimalPointIsComma4 extends CobolProgram {
     private int x = 0;
 
 
-    private CobolString _unnamed = new CobolString(256);
+    private CobolString _filler_001 = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
+    private CobolString _filler_004 = new CobolString(256); // fallback
     private void para_main() {
-    }
-
-    private void x() {
+        // KNOWN_ISSUE: x = new BigDecimal(String.valueOf(CobolIntrinsics.min(3, _filler_002, _filler_003, _filler_004, 1, 5)).trim()).intValue();
         CobolDisplay.display(String.valueOf(x));
         System.exit(0);
     }

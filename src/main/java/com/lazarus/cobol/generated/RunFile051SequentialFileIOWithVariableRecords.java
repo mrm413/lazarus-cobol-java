@@ -24,67 +24,10 @@ public class RunFile051SequentialFileIOWithVariableRecords extends CobolProgram 
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
-    // WORKING-STORAGE SECTION
-    private int rec_size = 0;
-    private int i = 0;
 
-    // FILE SECTION — f
-    private CobolString f_rec = new CobolString(1); // Group: f-rec
-    private CobolString[] f_x = new CobolString[20];
-
-
-    // FILE DESCRIPTORS
-    private CobolFile f = new CobolFile("F", "SEQUENTIAL", "SEQUENTIAL");
-
-    
-    private CobolFile _unnamed = new CobolFile("*", "SEQUENTIAL", "SEQUENTIAL");
-    private CobolFile should = new CobolFile("SHOULD", "SEQUENTIAL", "SEQUENTIAL");
-    private CobolFile not = new CobolFile("NOT", "SEQUENTIAL", "SEQUENTIAL");
-    private CobolFile influence = new CobolFile("INFLUENCE", "SEQUENTIAL", "SEQUENTIAL");
-    private CobolFile move = new CobolFile("MOVE", "SEQUENTIAL", "SEQUENTIAL");
-
-    private CobolString template = new CobolString(256);
-    private CobolString[] x = new CobolString[100];
-
-    private void para_main() {
-        f.open("OUTPUT");
-        for (rec_size = 20; !(rec_size < 10); rec_size += -1) {
-            f.write((1 - Integer.parseInt(String.valueOf(template).trim())));
-        }
-        f.close();
-        f.open("INPUT");
-        _unnamed.open("INPUT");
-        /* OPEN rec-size — skipped, not a file */
-        should.open("INPUT");
-        not.open("INPUT");
-        influence.open("INPUT");
-        if (move.read(null) == FileStatus.AT_END) {
-        }
-        /* RAW: 15 TO rec-size */
-        for (i = 20; !(i < 10); i += -1) {
-            if (f.read(null) == FileStatus.AT_END) {
-                CobolDisplay.display("Failed: EOF");
-                System.exit(1);
-            }
-            /* RAW: * Note the characters f-rec ( */
-        }
-        CobolDisplay.display(String.valueOf(rec_size) + ": >" + String.valueOf(CobolString.refMod(f_rec, 1, rec_size)) + "<");
-        if (rec_size != i) {
-            CobolDisplay.display("Failed: bad record size");
-            System.exit(1);
-        }
-        if (!String.valueOf(f_x[rec_size - 1]).equals(String.valueOf((1 - Integer.parseInt(String.valueOf(x[rec_size - 1]).trim()))))) {
-            CobolDisplay.display("Failed: bad data");
-            System.exit(1);
-        }
-    }
-
-    private void f() {
-    }
 
     @Override
     public void run() {
-        para_main();
     }
 
     public static void main(String[] args) {

@@ -30,9 +30,7 @@ public class RunMisc019MoveX00 extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void x() {
+        x.set(String.valueOf("000102"));
         CobolProgram.call("dump", x);
         System.exit(0);
     }

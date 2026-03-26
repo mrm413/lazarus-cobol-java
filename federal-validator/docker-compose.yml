@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  validator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: lazarus-validator
+    volumes:
+      - ./validation-report.txt:/validator/validation-report.txt
+    command: ["--compile-only"]

@@ -37,7 +37,7 @@ public class RunExtensions094GcosFloatingPointUsages extends CobolProgram {
         CobolDisplay.display(String.valueOf(float_binary_64));
         float_binary_64 = new BigDecimal(String.valueOf(new BigDecimal("9.899999999999e+304")).trim()).intValue();
         CobolDisplay.display(String.valueOf(float_binary_64));
-    // float_binary_64 = new BigDecimal(String.valueOf(float_binary_64 + new BigDecimal("-1.111111111011e+302")).trim()).intValue();
+        // KNOWN_ISSUE: float_binary_64 = new BigDecimal(String.valueOf(float_binary_64 + new BigDecimal("-1.111111111011e+302")).trim()).intValue();
         CobolDisplay.display(String.valueOf(float_binary_64));
         System.exit(0);
     }

@@ -33,28 +33,16 @@ public class RunFile045LineSequentialWriteAfter extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void test_file() {
-    }
-
-    private void test_rec() {
+        test_file.open("OUTPUT");
+        test_rec.set(String.valueOf("a"));
         test_file.write(test_rec);
-    }
-
-    private void test_rec_2() {
+        test_rec.set(String.valueOf("ab"));
         test_file.write(test_rec);
-    }
-
-    private void test_rec_3() {
+        test_rec.set(String.valueOf("abc"));
         test_file.write(test_rec);
-    }
-
-    private void test_rec_4() {
+        test_rec.set(String.valueOf("abcd"));
         test_file.write(test_rec);
-    }
-
-    private void test_file_2() {
+        test_file.close();
         System.exit(0);
     }
 

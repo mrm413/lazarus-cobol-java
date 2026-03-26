@@ -28,13 +28,13 @@ public class SynScreen001DuplicateAcceptDisplayClauses extends CobolProgram {
     private CobolString a_field = new CobolString(3);
 
 
-    private CobolString line = new CobolString(256);
-    private CobolString col = new CobolString(256);
-    private CobolString highlight = new CobolString(256);
-    private CobolString at = new CobolString(256);
-    private CobolString mode = new CobolString(256);
-    private CobolString is = new CobolString(256);
-    private CobolString block = new CobolString(256);
+    private CobolString line = new CobolString(256); // fallback
+    private CobolString col = new CobolString(256); // fallback
+    private CobolString highlight = new CobolString(256); // fallback
+    private CobolString at = new CobolString(256); // fallback
+    private CobolString mode = new CobolString(256); // fallback
+    private CobolString is = new CobolString(256); // fallback
+    private CobolString block = new CobolString(256); // fallback
 
     private void para_main() {
         CobolDisplay.display("foo" + String.valueOf(line) + String.valueOf(1) + String.valueOf(col) + String.valueOf(1) + String.valueOf(highlight) + String.valueOf(line) + String.valueOf(1) + String.valueOf(highlight) + String.valueOf(at) + String.valueOf(101) + String.valueOf(mode) + String.valueOf(is) + String.valueOf(block) + String.valueOf(mode) + String.valueOf(is) + String.valueOf(block));

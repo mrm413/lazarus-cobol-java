@@ -26,16 +26,8 @@ public class SynMisc036ContinuationOfCobolWords extends CobolProgram {
     private CobolString debug_contents = new CobolString(256);
 
 
-    private void para_main() {
-        _unnamed();
-        return;
-    }
-
-    private void _unnamed() { /* stub — external/COPY */ }
-
     @Override
     public void run() {
-        para_main();
     }
 
     public static void main(String[] args) {

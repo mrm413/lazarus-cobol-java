@@ -24,32 +24,10 @@ public class RunMisc149CallWithDirectory extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
-    // WORKING-STORAGE SECTION
-    private CobolString myrtn = new CobolString(9);
 
-
-
-    private void para_main() {
-        try {
-            CobolProgram.call("SUB", "0");
-        } catch (Exception _callEx) {
-            /* CONTINUE */
-        }
-        CobolProgram.call(String.valueOf(myrtn), "X");
-        CobolProgram.call("DIR/SUB", "Y");
-        CobolProgram.call("SUB", "Z");
-        /* CANCEL "SUB" */
-        try {
-            CobolProgram.call("SUB", "0");
-        } catch (Exception _callEx) {
-            /* CONTINUE */
-        }
-        System.exit(0);
-    }
 
     @Override
     public void run() {
-        para_main();
     }
 
     public static void main(String[] args) {

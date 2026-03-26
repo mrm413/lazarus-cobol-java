@@ -6,6 +6,7 @@ import com.lazarus.cobol.CobolIntrinsics;
 import com.lazarus.cobol.CobolProgram;
 import com.lazarus.cobol.CobolString;
 import com.lazarus.cobol.FileStatus;
+import com.lazarus.cobol.jcl.batch.DfsortProgram;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -26,6 +27,17 @@ public class RunFile095FileSortSequentialVariableRecords extends CobolProgram {
     private CobolString debug_contents = new CobolString(256);
     // WORKING-STORAGE SECTION
     private int rsz = 0;
+    private CobolString _1_data = new CobolString(1); // Group: 1-data
+    private CobolString filler_1 = new CobolString(14);
+    private CobolString filler_2 = new CobolString(14);
+    private CobolString filler_3 = new CobolString(14);
+    private CobolString filler_4 = new CobolString(14);
+    private CobolString filler_5 = new CobolString(14);
+    private CobolString filler_6 = new CobolString(14);
+    private CobolString filler_7 = new CobolString(14);
+    private CobolString filler_8 = new CobolString(14);
+    private CobolString filler_9 = new CobolString(14);
+    private CobolString filler_10 = new CobolString(14);
 
     // FILE SECTION — file1
     private CobolString file1_rec = new CobolString(12);
@@ -39,51 +51,45 @@ public class RunFile095FileSortSequentialVariableRecords extends CobolProgram {
     private CobolFile file2 = new CobolFile("ORGANIZATION", "SEQUENTIAL", "SEQUENTIAL");
     private CobolFile file3 = new CobolFile("FILE3", "SEQUENTIAL", "SEQUENTIAL");
 
-    private CobolString ix_1 = new CobolString(256);
-    private CobolString[] rec = new CobolString[100];
+    private CobolString ix_1 = new CobolString(256); // fallback
+    private CobolString[] _1_rsz = new CobolString[100]; // fallback array
+    private CobolString[] _1_rec = new CobolString[100]; // fallback array
 
     private void para_main() {
-    }
-
-    private void file1() {
+        file1.open("OUTPUT");
         for (int _v = 1; !(Integer.parseInt(String.valueOf(ix_1).trim()) > 10); _v += 2) {
             ix_1.set(String.valueOf(_v));
-            rsz = new BigDecimal(String.valueOf((1 - rsz)).trim()).intValue();
-            file1_rec.set(String.valueOf((1 - Integer.parseInt(String.valueOf(rec[Integer.parseInt(String.valueOf(ix_1).trim()) - 1]).trim()))));
+            rsz = new BigDecimal(String.valueOf(_1_rsz[Integer.parseInt(String.valueOf(ix_1).trim()) - 1]).trim()).intValue();
+            file1_rec.set(String.valueOf(_1_rec[Integer.parseInt(String.valueOf(ix_1).trim()) - 1]));
             file1.write(file1_rec);
         }
         for (int _v = 2; !(Integer.parseInt(String.valueOf(ix_1).trim()) > 10); _v += 2) {
             ix_1.set(String.valueOf(_v));
-            rsz = new BigDecimal(String.valueOf((1 - rsz)).trim()).intValue();
-            file1_rec.set(String.valueOf((1 - Integer.parseInt(String.valueOf(rec[Integer.parseInt(String.valueOf(ix_1).trim()) - 1]).trim()))));
+            rsz = new BigDecimal(String.valueOf(_1_rsz[Integer.parseInt(String.valueOf(ix_1).trim()) - 1]).trim()).intValue();
+            file1_rec.set(String.valueOf(_1_rec[Integer.parseInt(String.valueOf(ix_1).trim()) - 1]));
             file1.write(file1_rec);
         }
-    }
-
-    private void file1_2() {
-        /* SORT file3 */
+        file1.close();
+        { /* SORT file3 (file3) */
+            DfsortProgram _sort = new DfsortProgram();
+            _sort.setSortKeys(new String[]{});
+            _sort.execute();
+        }
         /* RAW: ON ASCENDING file3-key1 DESCENDING file3-key2 USING */
-    }
-
-    private void file2() {
-    }
-
-    private void file2_2() {
+        file2.open("INPUT");
         for (int _v = 1; !(Integer.parseInt(String.valueOf(ix_1).trim()) > 10); _v += 1) {
             ix_1.set(String.valueOf(_v));
             if (file2.read(null) == FileStatus.AT_END) {
             }
-            rsz = new BigDecimal(String.valueOf((1 - rsz)).trim()).intValue();
-            if ((1 - rsz) != rsz) {
-                CobolDisplay.display("FAILED Test " + String.valueOf(ix_1) + ": " + String.valueOf((1 - rsz)) + " <> " + String.valueOf(rsz));
+            rsz = new BigDecimal(String.valueOf(_1_rsz[Integer.parseInt(String.valueOf(ix_1).trim()) - 1]).trim()).intValue();
+            if (!String.valueOf(_1_rsz[Integer.parseInt(String.valueOf(ix_1).trim()) - 1]).equals(String.valueOf(rsz))) {
+                CobolDisplay.display("FAILED Test " + String.valueOf(ix_1) + ": " + String.valueOf(_1_rsz[Integer.parseInt(String.valueOf(ix_1).trim()) - 1]) + " <> " + String.valueOf(rsz));
             }
-            if (!String.valueOf((1 - Integer.parseInt(String.valueOf(rec[Integer.parseInt(String.valueOf(ix_1).trim()) - 1]).trim()))).equals(String.valueOf(file2_rec))) {
-                CobolDisplay.display("FAILED Test " + String.valueOf(ix_1) + ": " + String.valueOf((1 - Integer.parseInt(String.valueOf(rec[Integer.parseInt(String.valueOf(ix_1).trim()) - 1]).trim()))) + " <> " + String.valueOf(file2_rec));
+            if (!String.valueOf(_1_rec[Integer.parseInt(String.valueOf(ix_1).trim()) - 1]).equals(String.valueOf(file2_rec))) {
+                CobolDisplay.display("FAILED Test " + String.valueOf(ix_1) + ": " + String.valueOf(_1_rec[Integer.parseInt(String.valueOf(ix_1).trim()) - 1]) + " <> " + String.valueOf(file2_rec));
             }
         }
-    }
-
-    private void file2_3() {
+        file2.close();
         System.exit(0);
     }
 

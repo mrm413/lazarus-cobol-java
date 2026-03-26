@@ -28,8 +28,8 @@ public class SynDefinition009ErrorHandlingInConditions extends CobolProgram {
     private CobolString testme = new CobolString(1);
 
 
-    private CobolString broken = new CobolString(256);
-    private CobolString not_defined = new CobolString(256);
+    private CobolString broken = new CobolString(256); // fallback
+    private CobolString not_defined = new CobolString(256); // fallback
 
     private void para_main() {
         if (!String.valueOf(testme).trim().isEmpty()) {

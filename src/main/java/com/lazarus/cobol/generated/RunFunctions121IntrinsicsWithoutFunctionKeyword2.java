@@ -28,16 +28,12 @@ public class RunFunctions121IntrinsicsWithoutFunctionKeyword2 extends CobolProgr
     private int z = 0;
 
 
-    private CobolString pi = new CobolString(256);
-    private CobolString e = new CobolString(256);
+    private CobolString pi = new CobolString(256); // fallback
+    private CobolString e = new CobolString(256); // fallback
 
     private void para_main() {
-    }
-
-    private void z() {
-    }
-
-    private void z_2() {
+        z = new BigDecimal(String.valueOf(pi).trim()).intValue();
+        z = new BigDecimal(String.valueOf(e).trim()).intValue();
         System.exit(0);
     }
 

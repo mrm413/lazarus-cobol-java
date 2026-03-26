@@ -31,9 +31,7 @@ public class SynMisc150ContextSensitiveAlias extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void xx() {
+        xx = new BigDecimal(String.valueOf(x).trim()).intValue();
         CobolDisplay.displayNoAdvancing(String.valueOf(xx));
         System.exit(0);
     }

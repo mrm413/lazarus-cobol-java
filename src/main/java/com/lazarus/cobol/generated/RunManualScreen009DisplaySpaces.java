@@ -28,18 +28,19 @@ public class RunManualScreen009DisplaySpaces extends CobolProgram {
     private CobolString success_flag = new CobolString(1);
 
 
-    private CobolString scr_1 = new CobolString(256);
-    private CobolString at = new CobolString(256);
-    private CobolString line = new CobolString(256);
-    private CobolString _unnamed = new CobolString(256);
-    private CobolString col = new CobolString(256);
-    private CobolString highlight = new CobolString(256);
-    private CobolString success_field = new CobolString(256);
-    private CobolString success = new CobolString(256);
+    private CobolString scr_1 = new CobolString(256); // fallback
+    private CobolString at = new CobolString(256); // fallback
+    private CobolString line = new CobolString(256); // fallback
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString col = new CobolString(256); // fallback
+    private CobolString highlight = new CobolString(256); // fallback
+    private CobolString success_field = new CobolString(256); // fallback
+    private CobolString success = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
     private void para_main() {
         CobolDisplay.display(String.valueOf(scr_1));
-        CobolDisplay.display(" " + String.valueOf(at) + String.valueOf(line) + String.valueOf(6) + String.valueOf(_unnamed) + String.valueOf(col) + String.valueOf(8) + "foo" + String.valueOf(highlight));
+        CobolDisplay.display(" " + String.valueOf(at) + String.valueOf(line) + String.valueOf(6) + String.valueOf(_filler_002) + String.valueOf(col) + String.valueOf(8) + "foo" + String.valueOf(highlight));
         success_field.set(String.valueOf(CobolDisplay.accept()));
         if ((!String.valueOf(success).trim().isEmpty() && cob_crt_status == 0)) {
             return;

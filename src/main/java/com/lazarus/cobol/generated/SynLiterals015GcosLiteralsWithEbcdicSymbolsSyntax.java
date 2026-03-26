@@ -25,14 +25,25 @@ public class SynLiterals015GcosLiteralsWithEbcdicSymbolsSyntax extends CobolProg
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
-    private CobolString _unnamed = new CobolString(256);
-    private CobolString x = new CobolString(256);
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString x = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
+    private CobolString _filler_004 = new CobolString(256); // fallback
+    private CobolString _filler_005 = new CobolString(256); // fallback
+    private CobolString _filler_006 = new CobolString(256); // fallback
+    private CobolString _filler_007 = new CobolString(256); // fallback
+    private CobolString _filler_008 = new CobolString(256); // fallback
+    private CobolString _filler_009 = new CobolString(256); // fallback
+    private CobolString _filler_010 = new CobolString(256); // fallback
+    private CobolString _filler_011 = new CobolString(256); // fallback
+    private CobolString _filler_012 = new CobolString(256); // fallback
     private void para_main() {
-        CobolDisplay.display("" + String.valueOf(135) + String.valueOf(_unnamed) + String.valueOf(151) + String.valueOf(_unnamed) + String.valueOf(151) + "bar" + String.valueOf(195) + String.valueOf(_unnamed) + String.valueOf(194) + String.valueOf(_unnamed) + String.valueOf(0) + "");
-        CobolDisplay.display("" + String.valueOf(135) + String.valueOf(_unnamed) + String.valueOf(257) + "");
-        CobolDisplay.display("" + String.valueOf(135) + String.valueOf(_unnamed) + String.valueOf(x) + String.valueOf(_unnamed) + String.valueOf(194) + String.valueOf(_unnamed) + String.valueOf(1) + "");
-        CobolDisplay.display("" + String.valueOf(135) + String.valueOf(_unnamed) + String.valueOf(_unnamed) + String.valueOf(155) + String.valueOf(_unnamed) + "");
+        CobolDisplay.display("" + String.valueOf(135) + String.valueOf(_filler_002) + String.valueOf(151) + String.valueOf(_filler_003) + String.valueOf(151) + "bar" + String.valueOf(195) + String.valueOf(_filler_004) + String.valueOf(194) + String.valueOf(_filler_005) + String.valueOf(0) + "");
+        CobolDisplay.display("" + String.valueOf(135) + String.valueOf(_filler_006) + String.valueOf(257) + "");
+        CobolDisplay.display("" + String.valueOf(135) + String.valueOf(_filler_007) + String.valueOf(x) + String.valueOf(_filler_008) + String.valueOf(194) + String.valueOf(_filler_009) + String.valueOf(1) + "");
+        CobolDisplay.display("" + String.valueOf(135) + String.valueOf(_filler_010) + String.valueOf(_filler_011) + String.valueOf(155) + String.valueOf(_filler_012) + "");
         CobolDisplay.display("" + String.valueOf(135) + String.valueOf(155) + " ");
         System.exit(0);
     }

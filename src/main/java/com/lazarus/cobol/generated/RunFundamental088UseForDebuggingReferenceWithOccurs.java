@@ -32,18 +32,16 @@ public class RunFundamental088UseForDebuggingReferenceWithOccurs extends CobolPr
     // SECTION: TEST-DEBUG
     private void test_debug() {
         use();
-        data_field();
     }
 
     private void use() {
         /* RAW: FOR DEBUGGING ON ALL REFERENCES OF */
-    }
-
-    private void data_field() {
         CobolDisplay.display(String.valueOf(debug_item) + "|");
     }
 
     private void some_par() {
+        // KNOWN_ISSUE: if (data_field[4 - 1] == null) data_field[4 - 1] = new CobolString[5];
+        if (data_field[4 - 1][2 - 1] == null) data_field[4 - 1][2 - 1] = new CobolString[2];
         if (data_field[4 - 1][2 - 1][1 - 1] == null) data_field[4 - 1][2 - 1][1 - 1] = new CobolString(256);
         data_field[4 - 1][2 - 1][1 - 1].set(String.valueOf("\""));
         System.exit(0);

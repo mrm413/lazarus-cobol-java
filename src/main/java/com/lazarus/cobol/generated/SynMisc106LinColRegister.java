@@ -25,15 +25,15 @@ public class SynMisc106LinColRegister extends CobolProgram {
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
-    private CobolString lin = new CobolString(256);
-    private CobolString _unnamed = new CobolString(256);
+    private CobolString lin = new CobolString(256); // fallback
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString col = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
     private void para_main() {
         lin.set(String.valueOf(1));
-        _unnamed.set(String.valueOf(1));
-    }
-
-    private void col() {
+        _filler_002.set(String.valueOf(1));
+        col.set(String.valueOf(1));
     }
 
     @Override

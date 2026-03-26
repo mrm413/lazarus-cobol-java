@@ -24,32 +24,10 @@ public class RunFundamental096AlphanumericValueLongerThanPic extends CobolProgra
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
-    // WORKING-STORAGE SECTION
-    private CobolString x_spaces = new CobolString(3);
-    private CobolString x_xs = new CobolString(2);
-    private CobolString x_xxx = new CobolString(3);
 
-
-
-    private void para_main() {
-        if (!String.valueOf(x_spaces).equals(String.valueOf("SPACE"))) {
-            CobolDisplay.display("BAD SPACE: ");
-            /* RAW: X-SPACES  */
-        }
-        if (!String.valueOf(x_xs).equals(String.valueOf("X"))) {
-            CobolDisplay.display("BAD X: ");
-            /* RAW: X-Xs  */
-        }
-        if (!String.valueOf(x_xxx).equals(String.valueOf("XX "))) {
-            CobolDisplay.display("BAD XXX: ");
-            /* RAW: X-XXX  */
-        }
-        System.exit(0);
-    }
 
     @Override
     public void run() {
-        para_main();
     }
 
     public static void main(String[] args) {

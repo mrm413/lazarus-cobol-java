@@ -30,12 +30,9 @@ public class RunFunctions099FunctionSum extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void z() {
+        z = new BigDecimal(String.valueOf(CobolIntrinsics.sum((3 - 14), 0, (8 - 3))).trim()).intValue();
         if (z != -6) {
-            CobolDisplay.display();
-            /* RAW: Z  */
+            CobolDisplay.display(String.valueOf(z));
         }
         System.exit(0);
     }

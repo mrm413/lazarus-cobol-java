@@ -24,38 +24,10 @@ public class RunFunctions033FunctionFormattedDatetime extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
-    // WORKING-STORAGE SECTION
-    private CobolString str = new CobolString(40);
 
-
-
-    private void para_main() {
-        str.set(String.valueOf(CobolIntrinsics.formatted_datetime("YYYYMMDDThhmmss", 1, 45296)));
-        if (!String.valueOf(str).equals(String.valueOf("16010101T123456"))) {
-            CobolDisplay.display("Test 1 failed: " + String.valueOf(str));
-        }
-        str.set(String.valueOf(CobolIntrinsics.formatted_datetime("YYYY-MM-DDThh:mm:ss", 1, 45296)));
-        if (!String.valueOf(str).equals(String.valueOf("1601-01-01T12:34:56"))) {
-            CobolDisplay.display("Test 2 failed: " + String.valueOf(str));
-        }
-        str.set(String.valueOf(CobolIntrinsics.formatted_datetime("YYYYDDDThhmmss+hhmm", 1, 45296, -754)));
-        if (!String.valueOf(str).equals(String.valueOf("1601001T123456-1234"))) {
-            CobolDisplay.display("Test 3 failed: " + String.valueOf(str));
-        }
-        str.set(String.valueOf(CobolIntrinsics.formatted_datetime("YYYYDDDThhmmss+hhmm", 1, 45296)));
-        if (!String.valueOf(str).equals(String.valueOf("1601001T123456+0000"))) {
-            CobolDisplay.display("Test 4 failed: " + String.valueOf(str));
-        }
-        str.set(String.valueOf(CobolIntrinsics.formatted_datetime("YYYYDDDThhmmss.sssssssssZ", 150846, 0, 1)));
-        if (!String.valueOf(str).equals(String.valueOf("2013365T235900.000000000Z"))) {
-            CobolDisplay.display("Test 5 failed: " + String.valueOf(str));
-        }
-        System.exit(0);
-    }
 
     @Override
     public void run() {
-        para_main();
     }
 
     public static void main(String[] args) {

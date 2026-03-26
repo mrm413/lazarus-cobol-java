@@ -29,7 +29,7 @@ public class SynMisc107TokensConsistingOfMultipleWords extends CobolProgram {
     private CobolString todo = new CobolString(2);
 
 
-    private CobolString endoffile = new CobolString(256);
+    private CobolString endoffile = new CobolString(256); // fallback
 
     private void para_main() {
         if (!(!String.valueOf(endoffile).trim().isEmpty())) {

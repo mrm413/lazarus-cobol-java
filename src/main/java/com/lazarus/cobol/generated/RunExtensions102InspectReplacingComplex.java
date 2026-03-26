@@ -32,13 +32,11 @@ public class RunExtensions102InspectReplacingComplex extends CobolProgram {
     private void para_main() {
         /* INSPECT X — 2 clause(s) */
         if (!String.valueOf(x).equals(String.valueOf("Z0ZYYCDCCEXX"))) {
-            CobolDisplay.display("1 - ");
-            /* RAW: X  */
+            CobolDisplay.display("1 - " + String.valueOf(x));
         }
         /* INSPECT X — 2 clause(s) */
         if (!String.valueOf(x).equals(String.valueOf("Z0   C000EXX"))) {
-            CobolDisplay.display("2 - ");
-            /* RAW: X  */
+            CobolDisplay.display("2 - " + String.valueOf(x));
         }
         System.exit(0);
     }

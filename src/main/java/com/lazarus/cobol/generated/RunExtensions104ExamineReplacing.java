@@ -34,28 +34,23 @@ public class RunExtensions104ExamineReplacing extends CobolProgram {
     private void para_main() {
         /* RAW: EXAMINE X REPLACING ALL "A" BY */
         if (!String.valueOf(x).equals(String.valueOf("XXBXBCXB"))) {
-            CobolDisplay.display("Should be XXBXBCXB but is ");
-            /* RAW: X  */
+            CobolDisplay.display("Should be XXBXBCXB but is " + String.valueOf(x));
         }
         /* RAW: EXAMINE X REPLACING LEADING "X" BY */
         if (!String.valueOf(x).equals(String.valueOf("YYBXBCXB"))) {
-            CobolDisplay.display("Should be YYBXBCXB but is ");
-            /* RAW: X  */
+            CobolDisplay.display("Should be YYBXBCXB but is " + String.valueOf(x));
         }
         /* RAW: EXAMINE X REPLACING FIRST "B" BY */
         if (!String.valueOf(x).equals(String.valueOf("YYCXBCXB"))) {
-            CobolDisplay.display("Should be YYCXBCXB but is ");
-            /* RAW: X  */
+            CobolDisplay.display("Should be YYCXBCXB but is " + String.valueOf(x));
         }
         /* RAW: EXAMINE X REPLACING UNTIL FIRST "B" */
         if (!String.valueOf(x).equals(String.valueOf("ZZZZBCXB"))) {
-            CobolDisplay.display("Should be ZZZZBCXB but is ");
-            /* RAW: X  */
+            CobolDisplay.display("Should be ZZZZBCXB but is " + String.valueOf(x));
         }
         /* RAW: EXAMINE N REPLACING ALL 1 BY */
         if (n != -33322) {
-            CobolDisplay.display("Should be -33322 but is ");
-            /* RAW: N  */
+            CobolDisplay.display("Should be -33322 but is " + String.valueOf(n));
         }
         System.exit(0);
     }

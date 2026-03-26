@@ -33,59 +33,35 @@ public class SynMisc084UseForDebuggingDuplicateTargets extends CobolProgram {
     // SECTION: test-DEBUG
     private void test_debug() {
         use();
-        para_main();
-        debug_line();
     }
 
     private void use() {
-        /* RAW: FOR DEBUGGING ON MAIN */
-    }
-
-    private void para_main() {
-        CobolDisplay.display();
-    }
-
-    private void debug_line() {
+        /* RAW: FOR DEBUGGING ON MAIN MAIN */
+        CobolDisplay.display(String.valueOf(debug_line));
     }
 
     // SECTION: test-DEBUG2
     private void test_debug2() {
         use();
-        procedures();
-        debug_line();
     }
 
     private void use_2() {
         /* RAW: FOR DEBUGGING ON ALL I ALL */
-    }
-
-    private void procedures() {
-        CobolDisplay.display();
-    }
-
-    private void debug_line_2() {
+        CobolDisplay.display(String.valueOf(debug_line));
     }
 
     // SECTION: test-DEBUG3
     private void test_debug3() {
         use();
-        i();
-        debug_line();
     }
 
     private void use_3() {
         /* RAW: FOR DEBUGGING ON ALL PROCEDURES J */
-    }
-
-    private void i() {
-        CobolDisplay.display();
-    }
-
-    private void debug_line_3() {
+        CobolDisplay.display(String.valueOf(debug_line));
     }
 
     // SECTION: MAIN
-    private void para_main_2() {
+    private void para_main() {
         move();
     }
 

@@ -33,8 +33,7 @@ public class RunMisc017MoveWithGroupRefmod extends CobolProgram {
     private void para_main() {
         g.setRefMod(3, 2, String.valueOf("99"));
         if (!String.valueOf(g).equals(String.valueOf("1299"))) {
-            CobolDisplay.display();
-            /* RAW: G  */
+            CobolDisplay.display(String.valueOf(g));
         }
         System.exit(0);
     }

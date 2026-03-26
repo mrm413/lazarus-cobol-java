@@ -29,27 +29,19 @@ public class RunManualScreen051EndKey extends CobolProgram {
     private CobolString ws_x_20 = new CobolString(20);
 
 
-    private CobolString line = new CobolString(256);
-    private CobolString column = new CobolString(256);
-    private CobolString success = new CobolString(256);
+    private CobolString line = new CobolString(256); // fallback
+    private CobolString column = new CobolString(256); // fallback
+    private CobolString success = new CobolString(256); // fallback
 
     private void para_main() {
         CobolDisplay.display("Enter 'y' if multiple presses of the END key" + String.valueOf(line) + String.valueOf(1) + String.valueOf(column) + String.valueOf(1));
         CobolDisplay.display("go to the end of the field and just after the end" + String.valueOf(line) + String.valueOf(2) + String.valueOf(column) + String.valueOf(1));
         CobolDisplay.display("of the characters." + String.valueOf(line) + String.valueOf(3) + String.valueOf(column) + String.valueOf(1));
-    }
-
-    private void ws_x_20() {
+        ws_x_20.set(String.valueOf("   ABC    "));
         ws_x_20.set(String.valueOf(CobolDisplay.accept()));
         /* RAW: LINE 5 COLUMN 1 WITH AUTO-SKIP */
-    }
-
-    private void update() {
         success_flag.set(String.valueOf(CobolDisplay.accept()));
-        /* RAW: LINE 7 COLUMN 1 WITH */
-    }
-
-    private void update_2() {
+        /* RAW: LINE 7 COLUMN 1 WITH UPDATE */
         if ((!String.valueOf(success).trim().isEmpty() && cob_crt_status == 0)) {
             return;
         } else {

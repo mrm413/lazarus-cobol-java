@@ -30,10 +30,7 @@ public class RunMisc164DisplayUpon extends CobolProgram {
 
 
     private void para_main() {
-        /* RAW: CHAINING  */
-    }
-
-    private void note() {
+        /* RAW: CHAINING note */
         CobolDisplay.display("This is sent to CONSOLE " + String.valueOf(note));
         CobolDisplay.display("This is sent to SYSERR  " + String.valueOf(note));
         CobolDisplay.display("This is sent to PRINTER " + String.valueOf(note));

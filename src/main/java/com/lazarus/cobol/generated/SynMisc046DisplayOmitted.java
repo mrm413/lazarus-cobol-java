@@ -25,20 +25,18 @@ public class SynMisc046DisplayOmitted extends CobolProgram {
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
-    private CobolString omitted = new CobolString(256);
-    private CobolString bell = new CobolString(256);
-    private CobolString line = new CobolString(256);
-    private CobolString col = new CobolString(256);
-    private CobolString erase = new CobolString(256);
-    private CobolString eol = new CobolString(256);
-    private CobolString stop = new CobolString(256);
+    private CobolString omitted = new CobolString(256); // fallback
+    private CobolString bell = new CobolString(256); // fallback
+    private CobolString line = new CobolString(256); // fallback
+    private CobolString col = new CobolString(256); // fallback
+    private CobolString erase = new CobolString(256); // fallback
+    private CobolString eol = new CobolString(256); // fallback
+    private CobolString stop = new CobolString(256); // fallback
+    private CobolString run = new CobolString(256); // fallback
 
     private void para_main() {
         CobolDisplay.display(String.valueOf(omitted) + String.valueOf(bell));
-        CobolDisplay.display(String.valueOf(omitted) + String.valueOf(line) + String.valueOf(10) + String.valueOf(col) + String.valueOf(15) + String.valueOf(erase) + String.valueOf((Integer.parseInt(String.valueOf(eol).trim()) * Integer.parseInt(String.valueOf(stop).trim()))));
-    }
-
-    private void para_run() {
+        CobolDisplay.display(String.valueOf(omitted) + String.valueOf(line) + String.valueOf(10) + String.valueOf(col) + String.valueOf(15) + String.valueOf(erase) + String.valueOf((Integer.parseInt(String.valueOf(eol).trim()) * Integer.parseInt(String.valueOf(stop).trim()))) + String.valueOf(run));
     }
 
     @Override

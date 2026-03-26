@@ -30,12 +30,9 @@ public class RunFunctions093FunctionStandardDeviation extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void y() {
+        y = new BigDecimal(String.valueOf(CobolIntrinsics.standard_deviation((3 - 14), 0, (8 - 3))).trim());
         if (y.compareTo(new BigDecimal(String.valueOf(7.359347797189639).trim())) != 0) {
-            CobolDisplay.display();
-            /* RAW: Y  */
+            CobolDisplay.display(String.valueOf(y));
         }
         System.exit(0);
     }

@@ -28,28 +28,18 @@ public class SynCopy016CopyWithLeadingMultiplePartialMatches extends CobolProgra
     private CobolString get_value = new CobolString(1);
 
 
+    private CobolString test_avr = new CobolString(256); // fallback
+    private CobolString test_avr_bis = new CobolString(256); // fallback
+    private CobolString test_ko = new CobolString(256); // fallback
+    private CobolString test_dd = new CobolString(256); // fallback
+    private CobolString test_ff = new CobolString(256); // fallback
 
     private void para_main() {
-        CobolDisplay.display();
-    }
-
-    private void test_avr() {
-        CobolDisplay.display();
-    }
-
-    private void test_avr_bis() {
-        CobolDisplay.display();
-    }
-
-    private void test_ko() {
-        CobolDisplay.display();
-    }
-
-    private void test_dd() {
-        CobolDisplay.display();
-    }
-
-    private void test_ff() {
+        CobolDisplay.display(String.valueOf(test_avr));
+        CobolDisplay.display(String.valueOf(test_avr_bis));
+        CobolDisplay.display(String.valueOf(test_ko));
+        CobolDisplay.display(String.valueOf(test_dd));
+        CobolDisplay.display(String.valueOf(test_ff));
         System.exit(0);
     }
 

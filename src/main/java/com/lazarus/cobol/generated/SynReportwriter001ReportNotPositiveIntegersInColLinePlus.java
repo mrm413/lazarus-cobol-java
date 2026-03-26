@@ -32,24 +32,11 @@ public class SynReportwriter001ReportNotPositiveIntegersInColLinePlus extends Co
 
 
     private void para_main() {
-    }
-
-    private void out_file() {
-        /* RAW: INITIATE  */
-    }
-
-    private void rp() {
-        /* RAW: GENERATE  */
-    }
-
-    private void rp_detail() {
-        /* RAW: TERMINATE  */
-    }
-
-    private void rp_2() {
-    }
-
-    private void out_file_2() {
+        out_file.open("OUTPUT");
+        /* RAW: INITIATE rp */
+        /* RAW: GENERATE rp-detail */
+        /* RAW: TERMINATE rp */
+        out_file.close();
         System.exit(0);
     }
 

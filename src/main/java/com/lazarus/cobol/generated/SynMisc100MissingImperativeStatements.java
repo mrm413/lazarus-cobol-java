@@ -56,8 +56,8 @@ public class SynMisc100MissingImperativeStatements extends CobolProgram {
             /* RAW: = B */
             othervar.set(String.valueOf(cb_var));
         }
-    // while (!(1 != 3)) {
-    // }
+        if (false) {
+        }
         if (!((a != 0))) {
             /* RAW: = B */
         } else if (!((b != 0))) {
@@ -70,8 +70,7 @@ public class SynMisc100MissingImperativeStatements extends CobolProgram {
         if ((a != 0)) {
             /* RAW: = B */
         } else if ((b != 0)) {
-            /* RAW: =  */
-            /* RAW: A  */
+            /* RAW: = A */
         }
         System.exit(0);
     }

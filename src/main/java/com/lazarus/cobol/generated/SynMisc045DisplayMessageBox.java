@@ -38,24 +38,24 @@ public class SynMisc045DisplayMessageBox extends CobolProgram {
     private static final int mb_error_icon = 3;
 
 
-    private CobolString message = new CobolString(256);
-    private CobolString title = new CobolString(256);
-    private CobolString type = new CobolString(256);
-    private CobolString _unnamed = new CobolString(256);
-    private CobolString icon = new CobolString(256);
-    private CobolString is = new CobolString(256);
-    private CobolString box = new CobolString(256);
-    private CobolString cb_default = new CobolString(256);
-    private CobolString returning = new CobolString(256);
-    private CobolString stop = new CobolString(256);
+    private CobolString message = new CobolString(256); // fallback
+    private CobolString title = new CobolString(256); // fallback
+    private CobolString type = new CobolString(256); // fallback
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString icon = new CobolString(256); // fallback
+    private CobolString is = new CobolString(256); // fallback
+    private CobolString box = new CobolString(256); // fallback
+    private CobolString cb_default = new CobolString(256); // fallback
+    private CobolString returning = new CobolString(256); // fallback
+    private CobolString stop = new CobolString(256); // fallback
+    private CobolString run = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
     private void para_main() {
-        CobolDisplay.display(String.valueOf(message) + "Important" + String.valueOf(title) + "Very important" + String.valueOf(type) + String.valueOf(_unnamed) + String.valueOf(mb_ok) + String.valueOf(icon) + String.valueOf(is) + String.valueOf(mb_warning_icon));
+        CobolDisplay.display(String.valueOf(message) + "Important" + String.valueOf(title) + "Very important" + String.valueOf(type) + String.valueOf(_filler_002) + String.valueOf(mb_ok) + String.valueOf(icon) + String.valueOf(is) + String.valueOf(mb_warning_icon));
         CobolDisplay.display(String.valueOf(message) + "This is" + " " + "my" + " " + String.valueOf(my_text));
-        CobolDisplay.display(String.valueOf(message) + String.valueOf(box) + "More messages?" + String.valueOf(type) + String.valueOf(mb_yes_no) + String.valueOf(title) + String.valueOf(_unnamed) + "box title" + String.valueOf(cb_default) + String.valueOf(is) + String.valueOf(mb_yes) + String.valueOf(returning) + String.valueOf((return_code * Integer.parseInt(String.valueOf(stop).trim()))));
-    }
-
-    private void para_run() {
+        CobolDisplay.display(String.valueOf(message) + String.valueOf(box) + "More messages?" + String.valueOf(type) + String.valueOf(mb_yes_no) + String.valueOf(title) + String.valueOf(_filler_003) + "box title" + String.valueOf(cb_default) + String.valueOf(is) + String.valueOf(mb_yes) + String.valueOf(returning) + String.valueOf((return_code * Integer.parseInt(String.valueOf(stop).trim()))) + String.valueOf(run));
     }
 
     @Override

@@ -6,6 +6,7 @@ import com.lazarus.cobol.CobolIntrinsics;
 import com.lazarus.cobol.CobolProgram;
 import com.lazarus.cobol.CobolString;
 import com.lazarus.cobol.FileStatus;
+import com.lazarus.cobol.jcl.batch.DfsortProgram;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -38,11 +39,12 @@ public class RunFile099ExtfhFileSortLineSequentialVariableRecords extends CobolP
 
 
     private void para_main() {
-        /* SORT file3 */
+        { /* SORT file3 (file3) */
+            DfsortProgram _sort = new DfsortProgram();
+            _sort.setSortKeys(new String[]{});
+            _sort.execute();
+        }
         /* RAW: ON ASCENDING file3-key1 DESCENDING file3-key2 USING */
-    }
-
-    private void file2() {
         System.exit(0);
     }
 

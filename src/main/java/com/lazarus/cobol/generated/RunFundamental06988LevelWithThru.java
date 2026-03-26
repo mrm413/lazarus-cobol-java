@@ -29,11 +29,11 @@ public class RunFundamental06988LevelWithThru extends CobolProgram {
     private int var_9 = 0;
 
 
-    private CobolString x = new CobolString(256);
-    private CobolString cb_true = new CobolString(256);
-    private CobolString t_y = new CobolString(256);
-    private CobolString v9 = new CobolString(256);
-    private CobolString v2_4 = new CobolString(256);
+    private CobolString x = new CobolString(256); // fallback
+    private CobolString cb_true = new CobolString(256); // fallback
+    private CobolString t_y = new CobolString(256); // fallback
+    private CobolString v9 = new CobolString(256); // fallback
+    private CobolString v2_4 = new CobolString(256); // fallback
 
     private void para_main() {
         if (!String.valueOf(x).trim().isEmpty()) {

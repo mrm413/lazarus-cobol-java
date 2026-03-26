@@ -35,97 +35,64 @@ public class RunMisc157OsvsArithmetic1 extends CobolProgram {
     private int rsltv2 = 0;
 
 
-    private CobolString _unnamed = new CobolString(256);
+    private CobolString _filler_001 = new CobolString(256); // fallback
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
+    private CobolString _filler_004 = new CobolString(256); // fallback
+    private CobolString _filler_005 = new CobolString(256); // fallback
+    private CobolString _filler_006 = new CobolString(256); // fallback
     private void para_main() {
         rslt = new BigDecimal(String.valueOf((num_a + 1.1)).trim()).intValue();
         CobolDisplay.display("Simple Compute  RSLT IS " + String.valueOf(rslt));
         rslt = new BigDecimal(String.valueOf((((((num_a / 100)) - ((num_b / 100)))) * 100)).trim()).intValue();
         CobolDisplay.display("Single Variable RSLT IS " + String.valueOf(rslt));
         rsltv2 = new BigDecimal(String.valueOf((((((num_a / 100)) - ((num_b / 100)))) * 100)).trim()).intValue();
-        _unnamed.set(String.valueOf((((((num_a / 100)) - ((num_b / 100)))) * 100)));
+        _filler_002.set(String.valueOf((((((num_a / 100)) - ((num_b / 100)))) * 100)));
         rslt = new BigDecimal(String.valueOf((((((num_a / 100)) - ((num_b / 100)))) * 100)).trim()).intValue();
         CobolDisplay.display("Compute  RSLT    IS " + String.valueOf(rslt));
         CobolDisplay.display("Compute  RSLTv99 IS " + String.valueOf(rsltv2));
         rsltv1 = new BigDecimal(String.valueOf((((((num_a / 100)) - ((num_b / 100)))) * 100)).trim()).intValue();
-        _unnamed.set(String.valueOf((((((num_a / 100)) - ((num_b / 100)))) * 100)));
+        _filler_003.set(String.valueOf((((((num_a / 100)) - ((num_b / 100)))) * 100)));
         rslt = new BigDecimal(String.valueOf((((((num_a / 100)) - ((num_b / 100)))) * 100)).trim()).intValue();
         CobolDisplay.display("Compute  RSLT    IS " + String.valueOf(rslt));
         CobolDisplay.display("Compute  RSLTv9  IS " + String.valueOf(rsltv1));
         rslt = new BigDecimal(String.valueOf(0).trim()).intValue();
         rslt = new BigDecimal(String.valueOf(rslt + num_c).trim()).intValue();
-        CobolDisplay.display("Add      RSLT    IS ");
-    }
-
-    private void rslt() {
+        CobolDisplay.display("Add      RSLT    IS " + String.valueOf(rslt));
         rslt = new BigDecimal(String.valueOf(0).trim()).intValue();
         rslt = new BigDecimal(String.valueOf(rslt + num_a + num_c + 10).trim()).intValue();
-        CobolDisplay.display("Add      RSLT    IS ");
-    }
-
-    private void rslt_2() {
+        CobolDisplay.display("Add      RSLT    IS " + String.valueOf(rslt));
         rslt = new BigDecimal(String.valueOf(rslt - num_c).trim()).intValue();
-        CobolDisplay.display("Subtract RSLT    IS ");
-    }
-
-    private void rslt_3() {
+        CobolDisplay.display("Subtract RSLT    IS " + String.valueOf(rslt));
         rslt = new BigDecimal(String.valueOf(rslt - (num_a - 10)).trim()).intValue();
-        CobolDisplay.display("Subtract RSLT    IS ");
-    }
-
-    private void rslt_4() {
+        CobolDisplay.display("Subtract RSLT    IS " + String.valueOf(rslt));
         rslt = new BigDecimal(String.valueOf(0).trim()).intValue();
         rsltv1 = new BigDecimal(String.valueOf(num_a + num_c).trim()).intValue();
         CobolDisplay.display("Add      RSLTv9  IS " + String.valueOf(rsltv1));
         rslt = new BigDecimal(String.valueOf(num_a * num_c).trim()).intValue();
-        CobolDisplay.display("Multiply RSLT    IS ");
-    }
-
-    private void rslt_5() {
+        CobolDisplay.display("Multiply RSLT    IS " + String.valueOf(rslt));
         /* MULTIPLY without GIVING — needs runtime */
-        CobolDisplay.display("Multiply RSLT    IS ");
-    }
-
-    private void rslt_6() {
+        CobolDisplay.display("Multiply RSLT    IS " + String.valueOf(rslt));
         rslt = new BigDecimal(String.valueOf(num_a / 10).trim()).intValue();
-        CobolDisplay.display("Divide   RSLT    IS ");
-    }
-
-    private void rslt_7() {
+        CobolDisplay.display("Divide   RSLT    IS " + String.valueOf(rslt));
         rsltv1 = new BigDecimal(String.valueOf(rslt / 4).trim()).intValue();
-        CobolDisplay.display("Divide   RSLTv9  IS ");
-    }
-
-    private void rsltv1() {
+        CobolDisplay.display("Divide   RSLTv9  IS " + String.valueOf(rsltv1));
         rslt = new BigDecimal(String.valueOf(rslt / 4).trim()).intValue();
-        CobolDisplay.display("Divide   RSLT    IS ");
-    }
-
-    private void rslt_8() {
+        CobolDisplay.display("Divide   RSLT    IS " + String.valueOf(rslt));
         rsltv1 = new BigDecimal(String.valueOf((((((num_a / 100)) - ((num_b / 100)))) * 100)).trim()).intValue();
-        _unnamed.set(String.valueOf((((((num_a / 100)) - ((num_b / 100)))) * 100)));
+        _filler_004.set(String.valueOf((((((num_a / 100)) - ((num_b / 100)))) * 100)));
         rslt = new BigDecimal(String.valueOf((((((num_a / 100)) - ((num_b / 100)))) * 100)).trim()).intValue();
-        CobolDisplay.display("Simple   RSLT    IS " + String.valueOf(rslt) + " RSLTv9  IS ");
-    }
-
-    private void rsltv1_2() {
+        CobolDisplay.display("Simple   RSLT    IS " + String.valueOf(rslt) + " RSLTv9  IS " + String.valueOf(rsltv1));
         rsltv1 = new BigDecimal(String.valueOf((((((num_a / ((100.55 + -0.55)))) - ((num_b / (((10.11 * 10) - 1.1)))))) * ((220 / 2.2)))).trim()).intValue();
-        _unnamed.set(String.valueOf((((((num_a / ((100.55 + -0.55)))) - ((num_b / (((10.11 * 10) - 1.1)))))) * ((220 / 2.2)))));
+        _filler_005.set(String.valueOf((((((num_a / ((100.55 + -0.55)))) - ((num_b / (((10.11 * 10) - 1.1)))))) * ((220 / 2.2)))));
         rslt = new BigDecimal(String.valueOf((((((num_a / ((100.55 + -0.55)))) - ((num_b / (((10.11 * 10) - 1.1)))))) * ((220 / 2.2)))).trim()).intValue();
-        CobolDisplay.display("Complex  RSLT    IS " + String.valueOf(rslt) + " RSLTv9  IS ");
-    }
-
-    private void rsltv1_3() {
+        CobolDisplay.display("Complex  RSLT    IS " + String.valueOf(rslt) + " RSLTv9  IS " + String.valueOf(rsltv1));
         rsltv1 = new BigDecimal(String.valueOf((((((num_a / ((101 - 1)))) - ((num_b / ((10 * 10)))))) * ((200 / 2)))).trim()).intValue();
-        _unnamed.set(String.valueOf((((((num_a / ((101 - 1)))) - ((num_b / ((10 * 10)))))) * ((200 / 2)))));
+        _filler_006.set(String.valueOf((((((num_a / ((101 - 1)))) - ((num_b / ((10 * 10)))))) * ((200 / 2)))));
         rslt = new BigDecimal(String.valueOf((((((num_a / ((101 - 1)))) - ((num_b / ((10 * 10)))))) * ((200 / 2)))).trim()).intValue();
-        CobolDisplay.display("Reduced  RSLT    IS " + String.valueOf(rslt) + " RSLTv9  IS ");
-    }
-
-    private void rsltv1_4() {
-    }
-
-    private void numv1() {
+        CobolDisplay.display("Reduced  RSLT    IS " + String.valueOf(rslt) + " RSLTv9  IS " + String.valueOf(rsltv1));
+        numv1 = new BigDecimal(String.valueOf(num_a).trim()).intValue();
         if (true) {
             /* RAW: - ( NUM-B / ( 10 */
             CobolDisplay.display("Not Using ARITHMETIC-OSVS");

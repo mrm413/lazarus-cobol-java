@@ -30,10 +30,7 @@ public class RunMisc110AnyLength3 extends CobolProgram {
 
 
     private void para_main() {
-        CobolProgram.call("subprog");
-    }
-
-    private void str() {
+        CobolProgram.call("subprog", str);
     }
 
     @Override

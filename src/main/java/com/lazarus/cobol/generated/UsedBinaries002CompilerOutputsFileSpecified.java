@@ -32,14 +32,10 @@ public class UsedBinaries002CompilerOutputsFileSpecified extends CobolProgram {
     // SECTION: MAIN-PROC
     private void main_proc() {
         _00();
-        proc();
     }
 
     private void _00() {
-        /* RAW: COPY  */
-    }
-
-    private void proc() {
+        /* RAW: COPY PROC */
     }
 
     // SECTION: END-PROC

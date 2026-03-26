@@ -30,13 +30,8 @@ public class RunFunctions123UdfInCompute extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void num() {
-        /* RAW: END FUNCTION */
-    }
-
-    private void func() {
+        num = new BigDecimal(String.valueOf(100).trim()).intValue();
+        /* RAW: END FUNCTION func */
     }
 
     @Override

@@ -25,7 +25,7 @@ public class Listings011CopyRecursiveReplacement extends CobolProgram {
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
-    private CobolString copy_var = new CobolString(256);
+    private CobolString copy_var = new CobolString(256); // fallback
 
     private void para_main() {
         CobolDisplay.displayNoAdvancing(String.valueOf(copy_var));

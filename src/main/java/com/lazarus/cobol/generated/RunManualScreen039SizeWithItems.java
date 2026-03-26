@@ -32,15 +32,21 @@ public class RunManualScreen039SizeWithItems extends CobolProgram {
     private int four = 0;
 
 
-    private CobolString _unnamed = new CobolString(256);
-    private CobolString line = new CobolString(256);
-    private CobolString col = new CobolString(256);
-    private CobolString size = new CobolString(256);
-    private CobolString success = new CobolString(256);
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString line = new CobolString(256); // fallback
+    private CobolString col = new CobolString(256); // fallback
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString size = new CobolString(256); // fallback
+    private CobolString success = new CobolString(256); // fallback
 
+    private CobolString _filler_003 = new CobolString(256); // fallback
+    private CobolString _filler_004 = new CobolString(256); // fallback
+    private CobolString _filler_005 = new CobolString(256); // fallback
+    private CobolString _filler_006 = new CobolString(256); // fallback
+    private CobolString _filler_007 = new CobolString(256); // fallback
     private void para_main() {
-        CobolDisplay.display("Enter \"y\" if you see exactly four rows of 1234, all" + String.valueOf(_unnamed) + " aligned." + String.valueOf(line) + String.valueOf(1));
-        CobolDisplay.display(String.valueOf(num_1) + String.valueOf(line) + String.valueOf(3) + String.valueOf(col) + String.valueOf(3) + String.valueOf(_unnamed) + String.valueOf(size) + String.valueOf(4) + String.valueOf(num_2) + String.valueOf(line) + String.valueOf(4) + String.valueOf(col) + String.valueOf(3) + String.valueOf(_unnamed) + String.valueOf(size) + String.valueOf(four) + String.valueOf(num_3) + String.valueOf(line) + String.valueOf(5) + String.valueOf(col) + String.valueOf(3) + String.valueOf(_unnamed) + String.valueOf(size) + String.valueOf(8) + "1234" + String.valueOf(line) + String.valueOf(6) + String.valueOf(col) + String.valueOf(3) + String.valueOf(_unnamed) + String.valueOf(size) + 0);
+        CobolDisplay.display("Enter \"y\" if you see exactly four rows of 1234, all" + String.valueOf(_filler_003) + " aligned." + String.valueOf(line) + String.valueOf(1));
+        CobolDisplay.display(String.valueOf(num_1) + String.valueOf(line) + String.valueOf(3) + String.valueOf(col) + String.valueOf(3) + String.valueOf(_filler_004) + String.valueOf(size) + String.valueOf(4) + String.valueOf(num_2) + String.valueOf(line) + String.valueOf(4) + String.valueOf(col) + String.valueOf(3) + String.valueOf(_filler_005) + String.valueOf(size) + String.valueOf(four) + String.valueOf(num_3) + String.valueOf(line) + String.valueOf(5) + String.valueOf(col) + String.valueOf(3) + String.valueOf(_filler_006) + String.valueOf(size) + String.valueOf(8) + "1234" + String.valueOf(line) + String.valueOf(6) + String.valueOf(col) + String.valueOf(3) + String.valueOf(_filler_007) + String.valueOf(size) + 0);
         success_flag.set(String.valueOf(CobolDisplay.accept()));
         /* RAW: LINE 8 , REQUIRED UPDATE */
         if ((!String.valueOf(success).trim().isEmpty() && cob_crt_status == 0)) {

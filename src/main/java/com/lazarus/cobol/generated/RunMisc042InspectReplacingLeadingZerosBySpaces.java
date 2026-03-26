@@ -31,9 +31,6 @@ public class RunMisc042InspectReplacingLeadingZerosBySpaces extends CobolProgram
 
     private void para_main() {
         /* INSPECT X — 2 clause(s) */
-    }
-
-    private void spaces() {
         if (!String.valueOf(x).equals(String.valueOf("   1"))) {
             CobolDisplay.display("Should be '   1' but is '" + String.valueOf(x) + "'");
         }

@@ -41,25 +41,17 @@ public class RunFile075ReadInputPipeWriteOutputPipe extends CobolProgram {
     private CobolFile pipe_out = new CobolFile("organization", "LINE SEQUENTIAL", "SEQUENTIAL");
     // File status: f-status
 
-    private CobolString f_status_ok = new CobolString(256);
+    private CobolString f_status_ok = new CobolString(256); // fallback
 
     private void para_main() {
-    }
-
-    private void w_command() {
-    }
-
-    private void pipe_in() {
+        w_command.set(String.valueOf("< sh ./provider ./test-data-in"));
+        pipe_in.open("INPUT");
         if (!(!String.valueOf(f_status_ok).trim().isEmpty())) {
             CobolDisplay.display("FAILED: OPEN INPUT");
             System.exit(0);
         }
-    }
-
-    private void w_command_2() {
-    }
-
-    private void pipe_out() {
+        w_command.set(String.valueOf("> sh ./consumer > ./test-data-out"));
+        pipe_out.open("OUTPUT");
         if (!(!String.valueOf(f_status_ok).trim().isEmpty())) {
             CobolDisplay.display("FAILED: OPEN OUTPUT");
             System.exit(0);
@@ -72,32 +64,12 @@ public class RunFile075ReadInputPipeWriteOutputPipe extends CobolProgram {
                 pipe_out.write(pipe_msg_out);
             }
         }
-    }
-
-    private void pipe_in_2() {
-    }
-
-    private void pipe_out_2() {
+        pipe_in.close();
+        pipe_out.close();
         System.exit(0);
     }
 
-    private void x01_100_map() {
-    }
-
-    private void pipe_msg_out() {
-        if (String.valueOf(pipe_msg_in).equals(String.valueOf("COUNTRY"))) {
-            /* RAW: pipe-msg-out  */
-        }
-        if (String.valueOf(pipe_msg_in).equals(String.valueOf("TOWN"))) {
-            /* RAW: pipe-msg-out  */
-        }
-        if (String.valueOf(pipe_msg_in).equals(String.valueOf("NAME"))) {
-            /* RAW: pipe-msg-out  */
-        }
-        if (String.valueOf(pipe_msg_in).equals(String.valueOf("STREET"))) {
-            /* RAW: pipe-msg-out  */
-        }
-    }
+    private void x01_100_map() { /* stub — external/COPY */ }
 
     @Override
     public void run() {

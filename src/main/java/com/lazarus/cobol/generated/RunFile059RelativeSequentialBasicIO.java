@@ -31,7 +31,7 @@ public class RunFile059RelativeSequentialBasicIO extends CobolProgram {
     // FILE DESCRIPTORS
     private CobolFile file1 = new CobolFile("ORGANIZATION", "RELATIVE", "SEQUENTIAL");
 
-    
+    // FALLBACK FILE DESCRIPTORS
     private CobolFile file = new CobolFile("FILE", "SEQUENTIAL", "SEQUENTIAL");
 
 
@@ -40,27 +40,17 @@ public class RunFile059RelativeSequentialBasicIO extends CobolProgram {
     }
 
     private void file1() {
-    }
-
-    private void file1_2() {
-    }
-
-    private void file1_rec() {
+        file1.open("OUTPUT");
+        file1_rec.set(String.valueOf("A"));
         file1.write(file1_rec);
-    }
-
-    private void file1_3() {
-    }
-
-    private void file1_4() {
+        file1.close();
+        file1.open("INPUT");
         if (file1.read(null) == FileStatus.AT_END) {
         }
         if (!String.valueOf(file1_rec).equals(String.valueOf("A"))) {
             CobolDisplay.display("FAILED");
         }
-    }
-
-    private void file1_5() {
+        file1.close();
         System.exit(0);
     }
 

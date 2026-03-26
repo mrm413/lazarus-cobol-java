@@ -54,8 +54,8 @@ public class RunFile074IndexedUndeclaredKeys extends CobolProgram {
     private CobolFile file2 = new CobolFile("./fileX", "INDEXED", "RANDOM");
     private CobolFile file3 = new CobolFile("./fileX", "INDEXED", "RANDOM");
 
-    
-    private CobolFile _unnamed = new CobolFile("*", "SEQUENTIAL", "SEQUENTIAL");
+    // FALLBACK FILE DESCRIPTORS
+    private CobolFile _filler_001 = new CobolFile("*", "SEQUENTIAL", "SEQUENTIAL");
     private CobolFile check = new CobolFile("CHECK", "SEQUENTIAL", "SEQUENTIAL");
     private CobolFile cb_new = new CobolFile("NEW", "SEQUENTIAL", "SEQUENTIAL");
     private CobolFile rec = new CobolFile("REC", "SEQUENTIAL", "SEQUENTIAL");
@@ -66,10 +66,10 @@ public class RunFile074IndexedUndeclaredKeys extends CobolProgram {
     private CobolFile files = new CobolFile("FILES", "SEQUENTIAL", "SEQUENTIAL");
 
 
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
     private void para_main() {
-    }
-
-    private void file1() {
+        file1.open("OUTPUT");
         for (ix = 1; !(ix > 10); ix += 1) {
             file1_key1 = new BigDecimal(String.valueOf(ix).trim()).intValue();
             file1_data = new BigDecimal(String.valueOf(ix).trim()).intValue();
@@ -77,13 +77,9 @@ public class RunFile074IndexedUndeclaredKeys extends CobolProgram {
             file1_key3 = new BigDecimal(String.valueOf(200).trim()).intValue();
             file1.write(file1_rec);
         }
-    }
-
-    private void file1_2() {
+        file1.close();
         /* RAW: *  */
-    }
-
-    private void file1_3() {
+        file1.open("INPUT");
         for (ix = 1; !(ix > 10); ix += 1) {
             file1_key1 = new BigDecimal(String.valueOf(ix).trim()).intValue();
             if (file1.read(null) == FileStatus.AT_END) {
@@ -108,13 +104,9 @@ public class RunFile074IndexedUndeclaredKeys extends CobolProgram {
                 CobolDisplay.display("FAILED 1-3");
             }
         }
-    }
-
-    private void file1_4() {
+        file1.close();
         /* RAW: *  */
-    }
-
-    private void file2() {
+        file2.open("INPUT");
         for (ix = 1; !(ix > 10); ix += 1) {
             file2_key1 = new BigDecimal(String.valueOf(ix).trim()).intValue();
             if (file2.read(null) == FileStatus.AT_END) {
@@ -131,13 +123,9 @@ public class RunFile074IndexedUndeclaredKeys extends CobolProgram {
                 CobolDisplay.display("FAILED 2-2");
             }
         }
-    }
-
-    private void file2_2() {
+        file2.close();
         /* RAW: *  */
-    }
-
-    private void file3() {
+        file3.open("INPUT");
         for (ix = 1; !(ix > 10); ix += 1) {
             file3_key1 = new BigDecimal(String.valueOf(ix).trim()).intValue();
             if (file3.read(null) == FileStatus.AT_END) {
@@ -146,24 +134,18 @@ public class RunFile074IndexedUndeclaredKeys extends CobolProgram {
                 CobolDisplay.display("FAILED 3-1");
             }
         }
-    }
-
-    private void file3_2() {
+        file3.close();
         /* RAW: * * Insert rec via file */
-    }
-
-    private void file3_3() {
-    }
-
-    private void ix() {
+        file3.open("I-O");
+        ix = new BigDecimal(String.valueOf(20).trim()).intValue();
         file3_key1 = new BigDecimal(String.valueOf(ix).trim()).intValue();
         file3_data = new BigDecimal(String.valueOf(ix).trim()).intValue();
         file3_key2 = new BigDecimal(String.valueOf(100).trim()).intValue();
         file3_key3 = new BigDecimal(String.valueOf(200).trim()).intValue();
         file3.write(file3_rec);
         file3.close();
-        _unnamed.close();
-        _unnamed.close();
+        // KNOWN_ISSUE: _filler_002.close();
+        // KNOWN_ISSUE: _filler_003.close();
         check.close();
         cb_new.close();
         rec.close();
@@ -172,68 +154,44 @@ public class RunFile074IndexedUndeclaredKeys extends CobolProgram {
         in.close();
         other.close();
         files.close();
-    }
-
-    private void file1_5() {
-    }
-
-    private void file1_key1() {
+        file1.open("INPUT");
+        file1_key1 = new BigDecimal(String.valueOf(10).trim()).intValue();
         if (file1.read(null) == FileStatus.AT_END) {
         }
         if (file1_data != 10) {
             CobolDisplay.display("FAILED 1-4");
         }
-    }
-
-    private void file1_rec() {
-    }
-
-    private void file1_key2() {
+        file1_rec.set(String.valueOf(" "));
+        file1_key2 = new BigDecimal(String.valueOf(110).trim()).intValue();
         if (file1.read(null) == FileStatus.AT_END) {
         }
         if (file1_data != 10) {
             CobolDisplay.display("FAILED 1-5");
         }
-    }
-
-    private void file1_rec_2() {
-    }
-
-    private void file1_key3() {
+        file1_rec.set(String.valueOf(" "));
+        file1_key3 = new BigDecimal(String.valueOf(210).trim()).intValue();
         if (file1.read(null) == FileStatus.AT_END) {
         }
         if (file1_data != 10) {
             CobolDisplay.display("FAILED 1-6");
         }
-    }
-
-    private void file1_6() {
+        file1.close();
         /* RAW: *  */
-    }
-
-    private void file2_3() {
-    }
-
-    private void file2_key1() {
+        file2.open("INPUT");
+        file2_key1 = new BigDecimal(String.valueOf(10).trim()).intValue();
         if (file2.read(null) == FileStatus.AT_END) {
         }
         if (file2_data != 10) {
             CobolDisplay.display("FAILED 2-3");
         }
-    }
-
-    private void file2_rec() {
-    }
-
-    private void file2_key2() {
+        file2_rec.set(String.valueOf(" "));
+        file2_key2 = new BigDecimal(String.valueOf(110).trim()).intValue();
         if (file2.read(null) == FileStatus.AT_END) {
         }
         if (file2_data != 10) {
             CobolDisplay.display("FAILED 2-4");
         }
-    }
-
-    private void file2_4() {
+        file2.close();
         System.exit(0);
     }
 

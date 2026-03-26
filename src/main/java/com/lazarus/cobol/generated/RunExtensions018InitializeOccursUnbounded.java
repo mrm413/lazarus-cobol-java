@@ -39,9 +39,9 @@ public class RunExtensions018InitializeOccursUnbounded extends CobolProgram {
     private CobolString[] col2 = new CobolString[100];
 
 
-    private CobolString address = new CobolString(256);
-    private CobolString to = new CobolString(256);
-    private CobolString cb_default = new CobolString(256);
+    private CobolString address = new CobolString(256); // fallback
+    private CobolString to = new CobolString(256); // fallback
+    private CobolString cb_default = new CobolString(256); // fallback
 
     private void para_main() {
         /* ALLOCATE — dynamic memory, not typical in Java */
@@ -56,8 +56,7 @@ public class RunExtensions018InitializeOccursUnbounded extends CobolProgram {
         prefix.set("");
         if (CobolIntrinsics.length(a_table) != 372) {
             dlen = new BigDecimal(String.valueOf(CobolIntrinsics.length(a_table)).trim()).intValue();
-            CobolDisplay.display("BAD SIZE: ");
-            /* RAW: dlen  */
+            CobolDisplay.display("BAD SIZE: " + String.valueOf(dlen));
         }
         table_data.setRefMod(1, (CobolIntrinsics.length(rows[1 - 1]) * n), "");
         if (!String.valueOf(col2[1 - 1]).equals(String.valueOf("BC"))) {
@@ -112,9 +111,6 @@ public class RunExtensions018InitializeOccursUnbounded extends CobolProgram {
         }
         n = new BigDecimal(String.valueOf(8).trim()).intValue();
         table_data.setRefMod(1, CobolIntrinsics.length(table_data), "");
-    }
-
-    private void value() {
         CobolDisplay.display(String.valueOf(CobolString.refMod(a_table, 20, 10)));
     }
 

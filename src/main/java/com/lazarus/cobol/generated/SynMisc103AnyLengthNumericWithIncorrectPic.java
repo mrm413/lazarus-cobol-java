@@ -24,17 +24,6 @@ public class SynMisc103AnyLengthNumericWithIncorrectPic extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
-    // LINKAGE SECTION
-    private CobolString valid_1 = new CobolString(1);
-    private CobolString valid_2 = new CobolString(2);
-    private int valid_3 = 0;
-    private CobolString invalid_1 = new CobolString(1);
-    private CobolString invalid_2 = new CobolString(1);
-    private int invalid_3 = 0;
-    private CobolString invalid_4 = new CobolString(1);
-    private CobolString invalid_5 = new CobolString(2);
-    private CobolString invalid_6 = new CobolString(4);
-
 
 
     @Override

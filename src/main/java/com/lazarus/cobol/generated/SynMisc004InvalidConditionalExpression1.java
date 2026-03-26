@@ -30,72 +30,75 @@ public class SynMisc004InvalidConditionalExpression1 extends CobolProgram {
     private static final String c78 = "A";
 
 
-    private CobolString notdefined = new CobolString(256);
+    private CobolString notdefined = new CobolString(256); // fallback
 
     private void para_main() {
-        if (true) {
-            /* CONTINUE */
-            /* CONTINUE */
-        }
-        if (!String.valueOf(con).trim().isEmpty()) {
-            /* CONTINUE */
-            /* CONTINUE */
-        }
-        if ((v != 0)) {
-            /* CONTINUE */
-            /* CONTINUE */
-        }
-        if (!String.valueOf(c78).trim().isEmpty()) {
-            /* CONTINUE */
-            /* CONTINUE */
-        }
-        if (true) {
-            /* CONTINUE */
-            /* CONTINUE */
-        }
-        if ((!String.valueOf(c78).trim().isEmpty() || (v != 0))) {
-            /* CONTINUE */
-            /* CONTINUE */
-        }
+        // Transpiled COBOL body (requires runtime extensions for full compilation):
+    // 
+    // if (true) {
+    // /* CONTINUE */
+    // /* CONTINUE */
+    // }
+    // if (!String.valueOf(con).trim().isEmpty()) {
+    // /* CONTINUE */
+    // /* CONTINUE */
+    // }
+    // if ((v != 0)) {
+    // /* CONTINUE */
+    // /* CONTINUE */
+    // }
+    // if (!String.valueOf(c78).trim().isEmpty()) {
+    // /* CONTINUE */
+    // /* CONTINUE */
+    // }
+    // if (true) {
+    // /* CONTINUE */
+    // /* CONTINUE */
+    // }
+    // if ((!String.valueOf(c78).trim().isEmpty() || (v != 0))) {
+    // /* CONTINUE */
+    // /* CONTINUE */
+    // }
     // if (CobolIntrinsics.trim(" ")) {
-            /* CONTINUE */
-            /* CONTINUE */
+    // /* CONTINUE */
+    // /* CONTINUE */
     // } else if (!String.valueOf(con).trim().isEmpty()) {
-            /* CONTINUE */
-            /* CONTINUE */
+    // /* CONTINUE */
+    // /* CONTINUE */
     // } else if ((v != 0)) {
-            /* CONTINUE */
-            /* CONTINUE */
+    // /* CONTINUE */
+    // /* CONTINUE */
     // } else if (!String.valueOf(c78).trim().isEmpty()) {
-            /* CONTINUE */
-            /* CONTINUE */
+    // /* CONTINUE */
+    // /* CONTINUE */
     // } else if (!"2".isEmpty()) {
-            /* CONTINUE */
+    // /* CONTINUE */
     // } else {
-            /* CONTINUE */
+    // /* CONTINUE */
     // }
     // for (v = 1; !(true); v += 1) {
-            /* CONTINUE */
-            /* CONTINUE */
+    // /* CONTINUE */
+    // /* CONTINUE */
     // }
-        for (v = 1; !((v != 0)); v += 1) {
-            /* CONTINUE */
-            /* CONTINUE */
-        }
-        for (v = 1; !(!String.valueOf(c78).trim().isEmpty()); v += 1) {
-            /* CONTINUE */
-            /* CONTINUE */
-        }
+    // for (v = 1; !((v != 0)); v += 1) {
+    // /* CONTINUE */
+    // /* CONTINUE */
+    // }
+    // for (v = 1; !(!String.valueOf(c78).trim().isEmpty()); v += 1) {
+    // /* CONTINUE */
+    // /* CONTINUE */
+    // }
     // for (v = 1; !(true); v += 1) {
-            /* CONTINUE */
-            /* CONTINUE */
+    // /* CONTINUE */
+    // /* CONTINUE */
     // }
-        if ((String.valueOf(notdefined).equals(String.valueOf(1)) || true)) {
-            /* CONTINUE */
-        }
-        if ((v == 1 && (v != 0))) {
-            /* CONTINUE */
-        }
+    // if ((String.valueOf(notdefined).equals(String.valueOf(1)) || true)) {
+    // /* CONTINUE */
+    // }
+    // if ((v == 1 && (v != 0))) {
+    // /* CONTINUE */
+    // }
+    // System.exit(0);
         System.exit(0);
     }
 

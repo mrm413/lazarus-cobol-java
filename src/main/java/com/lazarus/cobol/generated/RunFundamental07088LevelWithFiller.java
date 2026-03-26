@@ -25,10 +25,11 @@ public class RunFundamental07088LevelWithFiller extends CobolProgram {
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
     // WORKING-STORAGE SECTION
+    private CobolString filler_1 = new CobolString(1);
 
 
-    private CobolString x = new CobolString(256);
-    private CobolString cb_true = new CobolString(256);
+    private CobolString x = new CobolString(256); // fallback
+    private CobolString cb_true = new CobolString(256); // fallback
 
     private void para_main() {
         if (!String.valueOf(x).trim().isEmpty()) {

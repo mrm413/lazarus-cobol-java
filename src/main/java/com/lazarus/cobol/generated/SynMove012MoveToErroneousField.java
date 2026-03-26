@@ -31,9 +31,7 @@ public class SynMove012MoveToErroneousField extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void invalid_item() {
+        invalid_item.set(String.valueOf(1));
         { String _rs = String.valueOf(i); StringBuilder _rb = new StringBuilder(_rs); try { _rb.replace(1 - 1, 1 - 1 + 2, String.valueOf(" ")); i = Integer.parseInt(_rb.toString().trim()); } catch (Exception _e) {} }
         System.exit(0);
     }

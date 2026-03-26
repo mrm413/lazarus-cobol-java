@@ -42,61 +42,35 @@ public class RunExtensions013ComplexOccursDependingOn4 extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void i() {
-    }
-
-    private void j() {
-    }
-
-    private void k() {
+        i = new BigDecimal(String.valueOf(1).trim()).intValue();
+        j = new BigDecimal(String.valueOf(1).trim()).intValue();
+        k = new BigDecimal(String.valueOf(1).trim()).intValue();
         if (vxx[1 - 1] == null) vxx[1 - 1] = new CobolString(256);
         vxx[1 - 1].set(String.valueOf("1"));
         if (vyy[1 - 1] == null) vyy[1 - 1] = new CobolString(256);
         vyy[1 - 1].set(String.valueOf("22"));
         if (vzz[1 - 1] == null) vzz[1 - 1] = new CobolString(256);
         vzz[1 - 1].set(String.valueOf("333"));
-    }
-
-    private void vfix() {
-    }
-
-    private void vlen() {
+        vfix.set(String.valueOf("444"));
+        vlen = new BigDecimal(String.valueOf(CobolIntrinsics.length(vgroup)).trim()).intValue();
         CobolDisplay.displayNoAdvancing(String.valueOf(vlen));
-    }
-
-    private void vlen_2() {
+        vlen = new BigDecimal(String.valueOf(CobolIntrinsics.length(vgroup)).trim()).intValue();
         CobolDisplay.displayNoAdvancing(String.valueOf(vlen));
         CobolDisplay.display(String.valueOf(vgroup));
-    }
-
-    private void vtop() {
-    }
-
-    private void i_2() {
-    }
-
-    private void j_2() {
-    }
-
-    private void k_2() {
+        vtop.set("");
+        i = new BigDecimal(String.valueOf(3).trim()).intValue();
+        j = new BigDecimal(String.valueOf(2).trim()).intValue();
+        k = new BigDecimal(String.valueOf(1).trim()).intValue();
         if (vxx[3 - 1] == null) vxx[3 - 1] = new CobolString(256);
         vxx[3 - 1].set(String.valueOf("3"));
         if (vyy[2 - 1] == null) vyy[2 - 1] = new CobolString(256);
         vyy[2 - 1].set(String.valueOf("22"));
         if (vzz[1 - 1] == null) vzz[1 - 1] = new CobolString(256);
         vzz[1 - 1].set(String.valueOf("111"));
-    }
-
-    private void vfix_2() {
-    }
-
-    private void vlen_3() {
+        vfix.set(String.valueOf("000"));
+        vlen = new BigDecimal(String.valueOf(CobolIntrinsics.length(vgroup)).trim()).intValue();
         CobolDisplay.displayNoAdvancing(String.valueOf(vlen));
-    }
-
-    private void vlen_4() {
+        vlen = new BigDecimal(String.valueOf(CobolIntrinsics.length(vgroup)).trim()).intValue();
         CobolDisplay.displayNoAdvancing(String.valueOf(vlen));
         CobolDisplay.display(String.valueOf(vgroup));
         System.exit(0);

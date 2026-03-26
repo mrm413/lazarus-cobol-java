@@ -28,14 +28,14 @@ public class SynMisc023Switches extends CobolProgram {
     private int cb_switch = 0;
 
 
-    private CobolString swit1_on = new CobolString(256);
-    private CobolString swit2_on = new CobolString(256);
-    private CobolString switch_b = new CobolString(256);
-    private CobolString off = new CobolString(256);
-    private CobolString swit25_on = new CobolString(256);
-    private CobolString swit26_on = new CobolString(256);
-    private CobolString swit32_on = new CobolString(256);
-    private CobolString swit32_off = new CobolString(256);
+    private CobolString swit1_on = new CobolString(256); // fallback
+    private CobolString swit2_on = new CobolString(256); // fallback
+    private CobolString switch_b = new CobolString(256); // fallback
+    private CobolString off = new CobolString(256); // fallback
+    private CobolString swit25_on = new CobolString(256); // fallback
+    private CobolString swit26_on = new CobolString(256); // fallback
+    private CobolString swit32_on = new CobolString(256); // fallback
+    private CobolString swit32_off = new CobolString(256); // fallback
 
     private void para_main() {
         cb_switch = new BigDecimal(String.valueOf(cb_switch + 1).trim()).intValue();

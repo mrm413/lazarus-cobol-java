@@ -34,25 +34,13 @@ public class DataPacked005PackedDecimalUsedWithInitialize extends CobolProgram {
 
     private void para_main() {
         x_99 = BigDecimal.ZERO;
-        CobolDisplay.display();
-    }
-
-    private void x_99() {
+        CobolDisplay.display(String.valueOf(x_99));
         x_s99 = BigDecimal.ZERO;
-        CobolDisplay.display();
-    }
-
-    private void x_s99() {
+        CobolDisplay.display(String.valueOf(x_s99));
         x_999 = BigDecimal.ZERO;
-        CobolDisplay.display();
-    }
-
-    private void x_999() {
+        CobolDisplay.display(String.valueOf(x_999));
         x_s999 = BigDecimal.ZERO;
-        CobolDisplay.display();
-    }
-
-    private void x_s999() {
+        CobolDisplay.display(String.valueOf(x_s999));
         System.exit(0);
     }
 

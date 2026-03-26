@@ -28,23 +28,17 @@ public class RunMisc118SymbolicClause extends CobolProgram {
     private CobolString z = new CobolString(1);
 
 
-    private CobolString z_asc = new CobolString(256);
-    private CobolString z_ebc = new CobolString(256);
+    private CobolString z_asc = new CobolString(256); // fallback
+    private CobolString z_ebc = new CobolString(256); // fallback
 
     private void para_main() {
-    }
-
-    private void z() {
+        z.set(String.valueOf(z_asc));
         if (!String.valueOf(z).equals(String.valueOf("0"))) {
-            CobolDisplay.display();
-            /* RAW: Z  */
+            CobolDisplay.display(String.valueOf(z));
         }
-    }
-
-    private void z_2() {
+        z.set(String.valueOf(z_ebc));
         if (!String.valueOf(z).equals(String.valueOf("0"))) {
-            CobolDisplay.display();
-            /* RAW: Z  */
+            CobolDisplay.display(String.valueOf(z));
         }
         System.exit(0);
     }

@@ -24,25 +24,10 @@ public class RunFundamental075ComputeWithDecimalConstants extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
-    // WORKING-STORAGE SECTION
-    private int cnt = 0;
-    private BigDecimal calcer = BigDecimal.ZERO;
-    private int dummy_res = 0;
 
-
-
-    private void para_main() {
-        calcer = new BigDecimal(String.valueOf(3.5).trim());
-        for (int _i0 = 0; _i0 < 42; _i0++) {
-            cnt = new BigDecimal(String.valueOf(cnt + 1).trim()).intValue();
-    // dummy_res = new BigDecimal(String.valueOf((((calcer.add(new BigDecimal(String.valueOf(2).trim()))) * 2) + 2)).trim()).intValue();
-        }
-        return;
-    }
 
     @Override
     public void run() {
-        para_main();
     }
 
     public static void main(String[] args) {

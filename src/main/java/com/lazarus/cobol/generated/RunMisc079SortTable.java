@@ -6,6 +6,7 @@ import com.lazarus.cobol.CobolIntrinsics;
 import com.lazarus.cobol.CobolProgram;
 import com.lazarus.cobol.CobolString;
 import com.lazarus.cobol.FileStatus;
+import com.lazarus.cobol.jcl.batch.DfsortProgram;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -33,34 +34,37 @@ public class RunMisc079SortTable extends CobolProgram {
 
 
     private void para_main() {
-        /* SORT TBL */
-    }
-
-    private void x() {
-        if (!String.valueOf(g).equals(String.valueOf("a3b2c5d4e1"))) {
-            CobolDisplay.display();
-            /* RAW: G  */
+        { /* SORT TBL (tbl) */
+            DfsortProgram _sort = new DfsortProgram();
+            _sort.setSortKeys(new String[]{"X:A"});
+            _sort.execute();
         }
-        /* SORT TBL */
-    }
-
-    private void y() {
+        if (!String.valueOf(g).equals(String.valueOf("a3b2c5d4e1"))) {
+            CobolDisplay.display(String.valueOf(g));
+        }
+        { /* SORT TBL (tbl) */
+            DfsortProgram _sort = new DfsortProgram();
+            _sort.setSortKeys(new String[]{"Y:D"});
+            _sort.execute();
+        }
         if (!String.valueOf(g).equals(String.valueOf("c5d4a3b2e1"))) {
-            CobolDisplay.display();
-            /* RAW: G  */
+            CobolDisplay.display(String.valueOf(g));
         }
-        /* SORT TBL */
-    }
-
-    private void tbl() {
+        { /* SORT TBL (tbl) */
+            DfsortProgram _sort = new DfsortProgram();
+            _sort.setSortKeys(new String[]{"TBL:A"});
+            _sort.execute();
+        }
         if (!String.valueOf(g).equals(String.valueOf("a3b2c5d4e1"))) {
-            CobolDisplay.display();
-            /* RAW: G  */
+            CobolDisplay.display(String.valueOf(g));
         }
-        /* SORT TBL */
+        { /* SORT TBL (tbl) */
+            DfsortProgram _sort = new DfsortProgram();
+            _sort.setSortKeys(new String[]{});
+            _sort.execute();
+        }
         if (!String.valueOf(g).equals(String.valueOf("e1d4c5b2a3"))) {
-            CobolDisplay.display();
-            /* RAW: G  */
+            CobolDisplay.display(String.valueOf(g));
         }
         System.exit(0);
     }

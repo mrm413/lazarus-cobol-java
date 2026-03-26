@@ -29,16 +29,16 @@ public class SynFunctions009IntrinsicFunctionsNumberOfArguments extends CobolPro
     private void para_main() {
         CobolDisplay.display(String.valueOf(CobolIntrinsics.pi()));
         CobolDisplay.display(String.valueOf(CobolIntrinsics.pi()));
-    // CobolDisplay.display(String.valueOf(CobolIntrinsics.pi(1)));
-    // CobolDisplay.display(String.valueOf(CobolIntrinsics.abs()));
+        CobolDisplay.display(String.valueOf(CobolIntrinsics.pi(1)));
+        // KNOWN_ISSUE: CobolDisplay.display(String.valueOf(CobolIntrinsics.abs()));
         CobolDisplay.display(String.valueOf(CobolIntrinsics.abs(1)));
-    // CobolDisplay.display(String.valueOf(CobolIntrinsics.abs(1, 2)));
-    // CobolDisplay.display(String.valueOf(CobolIntrinsics.day_to_yyyyddd()));
+        // KNOWN_ISSUE: CobolDisplay.display(String.valueOf(CobolIntrinsics.abs(1, 2)));
+        // KNOWN_ISSUE: CobolDisplay.display(String.valueOf(CobolIntrinsics.day_to_yyyyddd()));
         CobolDisplay.display(String.valueOf(CobolIntrinsics.day_to_yyyyddd(6000)));
         CobolDisplay.display(String.valueOf(CobolIntrinsics.day_to_yyyyddd(6000, 50)));
         CobolDisplay.display(String.valueOf(CobolIntrinsics.day_to_yyyyddd(6000, 50, 1600)));
-    // CobolDisplay.display(String.valueOf(CobolIntrinsics.day_to_yyyyddd(6000, 50, 1600, 500)));
-        CobolDisplay.display(String.valueOf(CobolIntrinsics.max()));
+        // KNOWN_ISSUE: CobolDisplay.display(String.valueOf(CobolIntrinsics.day_to_yyyyddd(6000, 50, 1600, 500)));
+        // KNOWN_ISSUE: CobolDisplay.display(String.valueOf(CobolIntrinsics.max()));
         CobolDisplay.display(String.valueOf(CobolIntrinsics.max(6000)));
         CobolDisplay.display(String.valueOf(CobolIntrinsics.substitute("A", "B", "C", "D")));
         System.exit(0);

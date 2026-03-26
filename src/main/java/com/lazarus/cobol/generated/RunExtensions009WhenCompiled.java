@@ -30,9 +30,7 @@ public class RunExtensions009WhenCompiled extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void x() {
+        x.set(String.valueOf(when_compiled));
         /* INSPECT X — 2 clause(s) */
         if (!String.valueOf(x).equals(String.valueOf("99/99/9999.99.99    "))) {
             try {

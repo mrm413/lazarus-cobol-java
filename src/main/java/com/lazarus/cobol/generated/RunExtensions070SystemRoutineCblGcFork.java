@@ -50,9 +50,7 @@ public class RunExtensions070SystemRoutineCblGcFork extends CobolProgram {
         if (child_pid == parent_pid) {
             CobolDisplay.display("CHILD: parent and child have same PID: " + "'" + String.valueOf(child_pid) + "'");
         }
-    }
-
-    private void return_code() {
+        return_code = new BigDecimal(String.valueOf(0).trim()).intValue();
     }
 
     private void parent_code() {
@@ -66,9 +64,7 @@ public class RunExtensions070SystemRoutineCblGcFork extends CobolProgram {
         if (return_code != parent_pid) {
             CobolDisplay.display("PARENT: parent PID has changed: " + "'" + String.valueOf(parent_pid) + "' -> '" + String.valueOf(return_code) + "'");
         }
-    }
-
-    private void return_code_2() {
+        return_code = new BigDecimal(String.valueOf(0).trim()).intValue();
     }
 
     @Override

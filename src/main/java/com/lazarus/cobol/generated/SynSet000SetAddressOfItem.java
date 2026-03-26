@@ -32,7 +32,7 @@ public class SynSet000SetAddressOfItem extends CobolProgram {
     private CobolString z = new CobolString(1);
 
 
-    private CobolString address = new CobolString(256);
+    private CobolString address = new CobolString(256); // fallback
 
     private void para_main() {
         address.set(String.valueOf(0));

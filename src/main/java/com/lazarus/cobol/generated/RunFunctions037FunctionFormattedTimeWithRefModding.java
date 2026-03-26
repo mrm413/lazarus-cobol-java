@@ -28,17 +28,22 @@ public class RunFunctions037FunctionFormattedTimeWithRefModding extends CobolPro
     private CobolString str = new CobolString(4);
 
 
-    private CobolString _unnamed = new CobolString(256);
-    private CobolString _3 = new CobolString(256);
-    private CobolString _4 = new CobolString(256);
-    private CobolString to = new CobolString(256);
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString _3 = new CobolString(256); // fallback
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _4 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
+    private CobolString to = new CobolString(256); // fallback
 
+    private CobolString _filler_004 = new CobolString(256); // fallback
+    private CobolString _filler_005 = new CobolString(256); // fallback
+    private CobolString _filler_006 = new CobolString(256); // fallback
     private void para_main() {
-        _unnamed.set(String.valueOf(CobolIntrinsics.formatted_time("hhmmss", 45296)));
+        _filler_004.set(String.valueOf(CobolIntrinsics.formatted_time("hhmmss", 45296)));
         _3.set(String.valueOf(CobolIntrinsics.formatted_time("hhmmss", 45296)));
-        _unnamed.set(String.valueOf(CobolIntrinsics.formatted_time("hhmmss", 45296)));
+        _filler_005.set(String.valueOf(CobolIntrinsics.formatted_time("hhmmss", 45296)));
         _4.set(String.valueOf(CobolIntrinsics.formatted_time("hhmmss", 45296)));
-        _unnamed.set(String.valueOf(CobolIntrinsics.formatted_time("hhmmss", 45296)));
+        _filler_006.set(String.valueOf(CobolIntrinsics.formatted_time("hhmmss", 45296)));
         to.set(String.valueOf(CobolIntrinsics.formatted_time("hhmmss", 45296)));
         str.set(String.valueOf(CobolIntrinsics.formatted_time("hhmmss", 45296)));
         if (!String.valueOf(str).equals(String.valueOf("3456"))) {

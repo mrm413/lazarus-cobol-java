@@ -33,7 +33,7 @@ public class RunMl007JsonGenerateGeneral extends CobolProgram {
     private CobolString d = new CobolString(3);
 
 
-    private CobolString json = new CobolString(256);
+    private CobolString json = new CobolString(256); // fallback
 
     private void para_main() {
         /* RAW: JSON  */

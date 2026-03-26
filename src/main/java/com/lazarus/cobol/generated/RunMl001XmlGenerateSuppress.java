@@ -37,7 +37,7 @@ public class RunMl001XmlGenerateSuppress extends CobolProgram {
     private CobolString out = new CobolString(100);
 
 
-    private CobolString xml = new CobolString(256);
+    private CobolString xml = new CobolString(256); // fallback
 
     private void para_main() {
         /* RAW: XML  */

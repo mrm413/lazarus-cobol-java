@@ -30,9 +30,7 @@ public class RunFunctions051FunctionLog10 extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void y() {
+        y = new BigDecimal(String.valueOf(CobolIntrinsics.log10(1.5)).trim());
         if (y.compareTo(new BigDecimal(String.valueOf(0.17609125905568124).trim())) != 0) {
             CobolDisplay.display(String.valueOf(y));
         }

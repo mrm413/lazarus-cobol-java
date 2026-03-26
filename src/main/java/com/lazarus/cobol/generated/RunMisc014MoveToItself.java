@@ -30,12 +30,9 @@ public class RunMisc014MoveToItself extends CobolProgram {
 
 
     private void para_main() {
-    }
-
-    private void x() {
+        x = new BigDecimal(String.valueOf(x).trim()).intValue();
         if (x != 12) {
-            CobolDisplay.display();
-            /* RAW: X  */
+            CobolDisplay.display(String.valueOf(x));
         }
         System.exit(0);
     }
