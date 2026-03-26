@@ -24,10 +24,27 @@ public class RunAccept003AcceptDateDayAndIntrinsicFunctions1 extends CobolProgra
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private int ws_yyyymmdd = 0;
+    private int ws_yyyyddd = 0;
 
+
+
+    private void para_main() {
+        ws_yyyymmdd = new BigDecimal(String.valueOf(CobolIntrinsics.acceptFrom("DATE YYYYMMDD")).trim()).intValue();
+        ws_yyyyddd = new BigDecimal(String.valueOf(CobolIntrinsics.acceptFrom("DAY YYYYDDD")).trim()).intValue();
+        if (!String.valueOf(CobolIntrinsics.integer_of_date(ws_yyyymmdd)).equals(String.valueOf(CobolIntrinsics.integer_of_day(ws_yyyyddd)))) {
+            CobolDisplay.display("DIFFERENCES FOUND!");
+            CobolDisplay.display("YYYYMMDD = " + String.valueOf(ws_yyyymmdd) + ", " + "YYYYDDD = " + String.valueOf(ws_yyyyddd));
+            CobolDisplay.display("INTEGER-OF-DATE = " + String.valueOf(CobolIntrinsics.integer_of_date(ws_yyyymmdd)) + ", " + "INTEGER-OF-DAY = " + String.valueOf(CobolIntrinsics.integer_of_day(ws_yyyyddd)));
+            return_code = new BigDecimal(String.valueOf(1).trim()).intValue();
+        }
+        System.exit(0);
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

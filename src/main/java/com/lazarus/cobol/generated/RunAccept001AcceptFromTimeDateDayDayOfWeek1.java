@@ -24,10 +24,52 @@ public class RunAccept001AcceptFromTimeDateDayDayOfWeek1 extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private CobolString x = new CobolString(9);
 
+
+    private CobolString _filler_001 = new CobolString(256); // fallback
+
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private void para_main() {
+        x.set(String.valueOf(CobolIntrinsics.acceptFrom("TIME")));
+        if ((String.valueOf(CobolString.refMod(x, 1, 2)).compareTo(String.valueOf("00")) >= 0 && !String.valueOf(_filler_002).trim().isEmpty())) {
+            /* RAW: "23" AND X ( 3 : */
+            /* CONTINUE */
+        } else {
+            CobolDisplay.display("TIME " + String.valueOf(x) + "!");
+        }
+        x.set(String.valueOf(CobolIntrinsics.acceptFrom("DATE")));
+        /* INSPECT X — 2 clause(s) */
+        if (!String.valueOf(x).equals(String.valueOf("999999"))) {
+            CobolDisplay.display("DATE " + String.valueOf(x) + "!");
+        }
+        x.set(String.valueOf(CobolIntrinsics.acceptFrom("DATE YYYYMMDD")));
+        /* INSPECT X — 2 clause(s) */
+        if (!String.valueOf(x).equals(String.valueOf("99999999"))) {
+            CobolDisplay.display("YYYYMMDD " + String.valueOf(x) + "!");
+        }
+        x.set(String.valueOf(CobolIntrinsics.acceptFrom("DAY")));
+        /* INSPECT X — 2 clause(s) */
+        if (!String.valueOf(x).equals(String.valueOf("99999"))) {
+            CobolDisplay.display("DAY " + String.valueOf(x) + "!");
+        }
+        x.set(String.valueOf(CobolIntrinsics.acceptFrom("DAY YYYYDDD")));
+        /* INSPECT X — 2 clause(s) */
+        if (!String.valueOf(x).equals(String.valueOf("9999999"))) {
+            CobolDisplay.display("YYYYDDD " + String.valueOf(x) + "!");
+        }
+        x.set(String.valueOf(CobolIntrinsics.acceptFrom("DAY-OF-WEEK")));
+        /* INSPECT X — 2 clause(s) */
+        if (!String.valueOf(x).equals(String.valueOf("9"))) {
+            CobolDisplay.display("DAY-OF-WEEK " + String.valueOf(x) + "!");
+        }
+        System.exit(0);
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

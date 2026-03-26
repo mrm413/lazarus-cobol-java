@@ -25,9 +25,52 @@ public class SynMisc006InvalidConditionalExpression3 extends CobolProgram {
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
+    private CobolString fld1 = new CobolString(256); // fallback
+    private CobolString fldx = new CobolString(256); // fallback
+    private CobolString fld2 = new CobolString(256); // fallback
+
+    private void para_main() {
+        if ((true && 2 > 1)) {
+            CobolDisplay.display("Test 1 is WRONG");
+        } else {
+            CobolDisplay.display("Test 1 is OK");
+        }
+        if ((!String.valueOf(fld1).trim().isEmpty() && String.valueOf(fldx).compareTo(String.valueOf(fld2)) > 0)) {
+            CobolDisplay.display("Test 2 is OK");
+        } else {
+            CobolDisplay.display("Test 2 is Wrong");
+        }
+        if ((!String.valueOf(fld1).trim().isEmpty() || String.valueOf(fldx).compareTo(String.valueOf(fld2)) > 0)) {
+            CobolDisplay.display("Test 2 is OK");
+        } else {
+            CobolDisplay.display("Test 2 is Wrong");
+        }
+        if ((Integer.parseInt(String.valueOf(fld1).trim()) > 2 && String.valueOf(fldx).compareTo(String.valueOf(fld2)) > 0)) {
+            CobolDisplay.display("Test 2 is OK");
+        } else {
+            CobolDisplay.display("Test 2 is Wrong");
+        }
+        if ((CobolIntrinsics.isNumeric(fld2) && !String.valueOf(fld1).trim().isEmpty())) {
+            CobolDisplay.display("Test 2 is OK");
+        } else {
+            CobolDisplay.display("Test 2 is Wrong");
+        }
+        if (((String.valueOf(fldx).compareTo(String.valueOf(fld2)) > 0 && !String.valueOf(fld1).trim().isEmpty()) && true)) {
+            CobolDisplay.display("Test 3 is OK " + String.valueOf(fldx) + " > " + String.valueOf(fld2) + " & " + String.valueOf(fld1));
+        } else {
+            CobolDisplay.display("Test 3 is Wrong");
+        }
+        if (((String.valueOf(fldx).compareTo(String.valueOf(fld2)) > 0 || !String.valueOf(fld1).trim().isEmpty()) || true)) {
+            CobolDisplay.display("Test 3 is OK");
+        } else {
+            CobolDisplay.display("Test 3 is Wrong");
+        }
+        System.exit(0);
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

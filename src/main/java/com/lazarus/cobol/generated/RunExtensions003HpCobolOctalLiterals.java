@@ -24,10 +24,42 @@ public class RunExtensions003HpCobolOctalLiterals extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private CobolString item_alpha = new CobolString(2);
+    private short item_numeric = (short) 0;
+    private int item_num = 0;
 
+
+
+    private void para_main() {
+        CobolDisplay.display(String.valueOf(54131));
+        if (!String.valueOf(item_alpha).equals(String.valueOf("AB"))) {
+            CobolDisplay.display("VALUE %40502 is not \"AB\" (ASCII) but " + String.valueOf(item_alpha));
+        }
+        if (item_numeric != 39) {
+            CobolDisplay.display("VALUE %47 BINARY is not 39 but " + String.valueOf(item_numeric));
+        }
+        if (item_num != 12) {
+            CobolDisplay.display("VALUE %30462 is not 12 (ASCII) but " + String.valueOf(item_num));
+        }
+        item_num = new BigDecimal(String.valueOf(item_num + 23).trim()).intValue();
+        if (item_num != 31) {
+            CobolDisplay.display("12 + %23 (19) is not 31 but " + String.valueOf(item_num));
+        }
+        item_num = new BigDecimal(String.valueOf(30462).trim()).intValue();
+        if (item_num != 12) {
+            CobolDisplay.display("%30462 is not 12 (ASCII) but " + String.valueOf(item_num));
+        }
+        item_alpha.set(String.valueOf(101));
+        if (!String.valueOf(item_alpha).equals(String.valueOf("4100"))) {
+            CobolDisplay.display("%101 is not x\"4100\" = Anull (ASCII) but " + String.valueOf(item_alpha));
+        }
+        System.exit(0);
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

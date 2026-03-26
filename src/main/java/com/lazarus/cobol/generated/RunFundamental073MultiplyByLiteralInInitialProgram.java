@@ -24,10 +24,30 @@ public class RunFundamental073MultiplyByLiteralInInitialProgram extends CobolPro
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private int num = 0;
+    private int result = 0;
+    private int ws_temp = 0;
+    private int ws_temp2 = 0;
 
+
+
+    private void para_main() {
+        result = new BigDecimal(String.valueOf(num * 4).trim()).intValue();
+        ws_temp = new BigDecimal(String.valueOf(1.1).trim()).intValue();
+        ws_temp = new BigDecimal(String.valueOf(ws_temp2 * ws_temp).trim()).intValue();
+        if (result != 20) {
+            CobolDisplay.display("Bad integer: " + String.valueOf(result));
+        }
+        if (ws_temp != 11.55) {
+            CobolDisplay.display("Bad decimal: " + String.valueOf(ws_temp));
+        }
+        return;
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

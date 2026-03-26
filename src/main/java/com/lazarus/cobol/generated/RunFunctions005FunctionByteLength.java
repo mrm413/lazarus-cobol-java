@@ -24,10 +24,53 @@ public class RunFunctions005FunctionByteLength extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private CobolString x = new CobolString(4);
+    private CobolString z = new CobolString(8);
+    private BigDecimal test_fld = BigDecimal.ZERO;
 
+
+    private CobolString to = new CobolString(256); // fallback
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString display = new CobolString(256); // fallback
+
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private void para_main() {
+        test_fld = new BigDecimal(String.valueOf(CobolIntrinsics.byte_length(x)).trim());
+        if (test_fld.compareTo(new BigDecimal(String.valueOf(4).trim())) != 0) {
+            CobolDisplay.display("BYTE-LENGTH X(4) wrong: " + String.valueOf(test_fld));
+        }
+        test_fld = new BigDecimal(String.valueOf(CobolIntrinsics.byte_length(z)).trim());
+        if (test_fld.compareTo(new BigDecimal(String.valueOf(8).trim())) != 0) {
+            CobolDisplay.display("BYTE-LENGTH N(4) wrong: " + String.valueOf(test_fld));
+        }
+        test_fld = new BigDecimal(String.valueOf(CobolIntrinsics.byte_length("00128")).trim());
+        if (test_fld.compareTo(new BigDecimal(String.valueOf(5).trim())) != 0) {
+            CobolDisplay.display("BYTE-LENGTH \"00128\" wrong: " + String.valueOf(test_fld));
+        }
+        /* RAW: * note : we currently do */
+        test_fld = new BigDecimal(String.valueOf(CobolIntrinsics.byte_length("a0")).trim());
+        if (test_fld.compareTo(new BigDecimal(String.valueOf(1).trim())) != 0) {
+            CobolDisplay.display("BYTE-LENGTH x\"a0\" wrong: " + String.valueOf(test_fld));
+        }
+        test_fld = new BigDecimal(String.valueOf(CobolIntrinsics.byte_length("a0")).trim());
+        if (test_fld.compareTo(new BigDecimal(String.valueOf(3).trim())) != 0) {
+            CobolDisplay.display("BYTE-LENGTH z\"a0\" wrong: " + String.valueOf(test_fld));
+        }
+        /* RAW: * we currently */
+        /* RAW: GENERATE national constants as * alphanumeric */
+        /* RAW: *  */
+        test_fld = new BigDecimal(String.valueOf((CobolIntrinsics.byte_length("a0") * Integer.parseInt(String.valueOf(to).trim()))).trim());
+        _filler_002.set(String.valueOf((CobolIntrinsics.byte_length("a0") * Integer.parseInt(String.valueOf(to).trim()))));
+        if (test_fld.compareTo(new BigDecimal(String.valueOf((4 * Integer.parseInt(String.valueOf(display).trim()))).trim())) != 0) {
+            /* RAW: 'BYTE-LENGTH n"a0" wrong: ' TEST-FLD */
+        }
+        System.exit(0);
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

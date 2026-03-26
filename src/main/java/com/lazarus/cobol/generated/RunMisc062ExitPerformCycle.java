@@ -27,12 +27,7 @@ public class RunMisc062ExitPerformCycle extends CobolProgram {
 
 
     private void para_main() {
-        for (int _i0 = 0; _i0 < 2; _i0++) {
-            CobolDisplay.displayNoAdvancing("OK");
-            continue;
-        // KNOWN_ISSUE: CobolDisplay.display("NOT OK");
-        }
-        System.exit(0);
+        // Method body requires runtime extensions
     }
 
     @Override

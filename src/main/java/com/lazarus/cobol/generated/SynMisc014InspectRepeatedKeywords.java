@@ -24,10 +24,21 @@ public class SynMisc014InspectRepeatedKeywords extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private int x = 0;
 
+
+    private CobolString abcde = new CobolString(256); // fallback
+
+    private void para_main() {
+        /* INSPECT "abcde" — 2 clause(s) */
+        /* INSPECT "abcde" — 2 clause(s) */
+        /* INSPECT "abcde" — 2 clause(s) */
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

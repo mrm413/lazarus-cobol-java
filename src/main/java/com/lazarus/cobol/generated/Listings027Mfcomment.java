@@ -25,9 +25,17 @@ public class Listings027Mfcomment extends CobolProgram {
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
+    private CobolString display = new CobolString(256); // fallback
+
+    private void para_main() {
+        /* RAW: *  */
+        CobolDisplay.display(String.valueOf((0 /* non-numeric literal: COMMENTASTERISK */ / Integer.parseInt(String.valueOf(display).trim()))) + String.valueOf((0 /* non-numeric literal: COMMENTSLASH */ * Integer.parseInt(String.valueOf(display).trim()))) + String.valueOf((0 /* non-numeric literal: MFCOMMENTASTERISK */ / Integer.parseInt(String.valueOf(display).trim()))) + "MFCOMMENTSLASH");
+        System.exit(0);
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

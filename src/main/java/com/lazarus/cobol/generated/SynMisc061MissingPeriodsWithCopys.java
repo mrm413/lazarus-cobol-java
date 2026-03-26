@@ -26,8 +26,26 @@ public class SynMisc061MissingPeriodsWithCopys extends CobolProgram {
     private CobolString debug_contents = new CobolString(256);
 
 
+    // SECTION: MAIN
+    private void para_main() {
+        perform();
+        sec_1();
+    }
+
+    private void perform() {
+    }
+
+    private void sec_1() {
+        sec_2();
+        /* RAW: * Directive purposefully in Area A */
+        System.exit(0);
+    }
+
+    private void sec_2() { /* stub — external/COPY */ }
+
     @Override
     public void run() {
+        perform();
     }
 
     public static void main(String[] args) {

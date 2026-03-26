@@ -24,10 +24,35 @@ public class SynMisc104VolatileClause extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private CobolString data_collection = new CobolString(1); // Group: DATA-COLLECTION
+    private CobolString data_items_a = new CobolString(1); // Group: DATA-ITEMS-A
+    private int data_a1 = 0;
+    private int data_a2 = 0;
+    private CobolString cb_volatile = new CobolString(1); // Group: VOLATILE
+    private int data_filler = 0;
+    private CobolString data_items_b = new CobolString(1); // Group: DATA-ITEMS-B
+    private int data_b1 = 0;
+    private int data_b2 = 0;
+    private CobolString data_items_c = new CobolString(1); // Group: DATA-ITEMS-C
+    private int data_c1 = 0;
+    private int data_c2 = 0;
+    private short step = (short) 0;
 
+    // LINKAGE SECTION
+    private CobolString xmyrec = new CobolString(1); // Group: XMYREC
+    private int xfld1 = 0;
+
+
+
+    private void para_main() {
+        data_items_c.set(String.valueOf(data_items_b));
+        System.exit(0);
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

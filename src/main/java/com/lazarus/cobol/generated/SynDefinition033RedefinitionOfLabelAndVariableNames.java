@@ -25,9 +25,26 @@ public class SynDefinition033RedefinitionOfLabelAndVariableNames extends CobolPr
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
+    private CobolString word = new CobolString(256); // fallback
+
+    // SECTION: main
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private void para_main() {
+        _filler_001();
+    }
+
+    private void _filler_001() {
+        word.set(String.valueOf(0));
+        word();
+        /* RAW: *  */
+        System.exit(0);
+    }
+
+    private void word() { /* stub — external/COPY */ }
 
     @Override
     public void run() {
+        _filler_001();
     }
 
     public static void main(String[] args) {

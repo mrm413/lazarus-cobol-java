@@ -24,10 +24,61 @@ public class DataBinary010ArithmeticTruncationWithUsageBinary extends CobolProgr
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private short result = (short) 0;
 
+
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString sign = new CobolString(256); // fallback
+    private CobolString drop = new CobolString(256); // fallback
+    private CobolString truncation = new CobolString(256); // fallback
+    private CobolString with = new CobolString(256); // fallback
+    private CobolString leading = new CobolString(256); // fallback
+    private CobolString after = new CobolString(256); // fallback
+
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private void para_main() {
+        /* RAW: * internal arithmetic to */
+        CobolDisplay.display();
+        result = new BigDecimal(String.valueOf(1).trim()).shortValue();
+        result = new BigDecimal(String.valueOf(((15 + result) - (2 / result))).trim()).shortValue();
+        if (result != 14) {
+            CobolDisplay.display("NOT 14: " + String.valueOf(result));
+        }
+        /* RAW: * internal arithmetic to */
+        CobolDisplay.display(String.valueOf(_filler_002) + String.valueOf(sign) + String.valueOf(drop));
+        result = new BigDecimal(String.valueOf(1).trim()).shortValue();
+        result = new BigDecimal(String.valueOf(((15 + result) - (20 / result))).trim()).shortValue();
+        if (result != 4) {
+            CobolDisplay.display("NOT [-] 4: " + String.valueOf(result));
+        }
+        /* RAW: * internal arithmetic to */
+        CobolDisplay.display(String.valueOf(truncation));
+        result = new BigDecimal(String.valueOf(1).trim()).shortValue();
+        result = new BigDecimal(String.valueOf((15 + (result / 2))).trim()).shortValue();
+        if (result != 15) {
+            CobolDisplay.display("NOT 15: " + String.valueOf(result));
+        }
+        /* RAW: * internal arithmetic to */
+        CobolDisplay.display(String.valueOf(truncation));
+        result = new BigDecimal(String.valueOf(1).trim()).shortValue();
+        result = new BigDecimal(String.valueOf(((15 + result) - (2000 / result))).trim()).shortValue();
+        if (result != 984) {
+            CobolDisplay.display("NOT [-1] 984: " + String.valueOf(result));
+        }
+        /* RAW: * internal arithmetic to */
+        CobolDisplay.display(String.valueOf((Integer.parseInt(String.valueOf(truncation).trim()) * Integer.parseInt(String.valueOf(with).trim()))) + String.valueOf(leading) + 0 + String.valueOf(after) + String.valueOf(truncation));
+        result = new BigDecimal(String.valueOf(1).trim()).shortValue();
+        result = new BigDecimal(String.valueOf(((15 + result) + (2000 / result))).trim()).shortValue();
+        if (result != 16) {
+            CobolDisplay.display("NOT [+20] 16: " + String.valueOf(result));
+        }
+        System.exit(0);
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

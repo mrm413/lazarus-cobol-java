@@ -24,10 +24,24 @@ public class RunFunctions076FunctionNumvalF extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private CobolString x1 = new CobolString(12);
+    private CobolString x2 = new CobolString(12);
+    private CobolString bad1 = new CobolString(18);
+    private BigDecimal n = BigDecimal.ZERO;
 
+
+    // FALLBACK FILE DESCRIPTORS
+    private CobolFile zero = new CobolFile("ZERO", "SEQUENTIAL", "SEQUENTIAL");
+
+
+    private void para_main() {
+        // Method body requires runtime extensions
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

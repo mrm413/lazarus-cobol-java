@@ -24,10 +24,30 @@ public class RunMisc053InspectTallyingBeforeAndAfter extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private CobolString x = new CobolString(4);
+    private int tal = 0;
+    private CobolString msg = new CobolString(256);
 
+
+
+    private void para_main() {
+        tal = new BigDecimal(String.valueOf(0).trim()).intValue();
+        /* INSPECT X — 2 clause(s) */
+        if (tal != 0) {
+            CobolDisplay.display("1: should be 0 but is " + String.valueOf(tal));
+        }
+        tal = new BigDecimal(String.valueOf(0).trim()).intValue();
+        /* INSPECT MSG — 2 clause(s) */
+        if (tal != 0) {
+            CobolDisplay.display("2: should be 0 but is " + String.valueOf(tal));
+        }
+        System.exit(0);
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

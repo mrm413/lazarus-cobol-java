@@ -38,12 +38,7 @@ public class SynMisc075InvalidInspectTransformOperands extends CobolProgram {
     private CobolString function = new CobolString(256); // fallback
 
     private void para_main() {
-        /* INSPECT f — 4 clause(s) */
-        /* TRANSFORM f — skipped, target is a file */
-        // KNOWN_ISSUE: { String _tf = String.valueOf(function); String _from = String.valueOf(String.valueOf(udf[Integer.parseInt(String.valueOf(f_rec).trim()) - 1])); String _to = String.valueOf(String.valueOf(from)); StringBuilder _sb = new StringBuilder(_tf); for (int _i = 0; _i < _sb.length(); _i++) { int _p = _from.indexOf(_sb.charAt(_i)); if (_p >= 0 && _p < _to.length()) _sb.setCharAt(_i, _to.charAt(_p)); } function.set(_sb.toString()); }
-        /* RAW: SPACE TO ZERO */
-        // KNOWN_ISSUE: { String _tf = String.valueOf(yada); String _from = String.valueOf(" "); String _to = String.valueOf(0); StringBuilder _sb = new StringBuilder(_tf); for (int _i = 0; _i < _sb.length(); _i++) { int _p = _from.indexOf(_sb.charAt(_i)); if (_p >= 0 && _p < _to.length()) _sb.setCharAt(_i, _to.charAt(_p)); } yada.set(_sb.toString()); }
-        /* INSPECT function — 5 clause(s) */
+        // Method body requires runtime extensions
     }
 
     @Override

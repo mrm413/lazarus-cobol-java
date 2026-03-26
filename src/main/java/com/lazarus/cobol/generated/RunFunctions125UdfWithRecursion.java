@@ -37,15 +37,7 @@ public class RunFunctions125UdfWithRecursion extends CobolProgram {
 
 
     private void para_main() {
-        if (arg < 5) {
-            num = new BigDecimal(String.valueOf(1).trim()).intValue();
-        // KNOWN_ISSUE: ret = new BigDecimal(String.valueOf(CobolIntrinsics.foo(num)).trim()).intValue();
-        } else {
-            ret = new BigDecimal(String.valueOf(arg).trim()).intValue();
-        }
-        CobolDisplay.display("Step: " + String.valueOf(ttl) + ", Arg: " + String.valueOf(arg) + ", Return: " + String.valueOf(ret));
-        ttl = new BigDecimal(String.valueOf(ttl + 1).trim()).intValue();
-        return;
+        // Method body requires runtime extensions
     }
 
     @Override

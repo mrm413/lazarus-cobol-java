@@ -24,10 +24,26 @@ public class SynRefmod003ConstantFoldingOutOfBounds extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private static final int var_len = 4;
+    private CobolString x = new CobolString(5);
 
+
+
+    private void para_main() {
+        if (var_len < 4) {
+            CobolDisplay.display(String.valueOf(CobolString.refMod(x, (4 - var_len), 1)));
+            CobolDisplay.display(String.valueOf(CobolString.refMod(x, 1, (4 - var_len))));
+            CobolDisplay.display(String.valueOf(CobolString.refMod(x, (9 - var_len), 1)));
+            CobolDisplay.display(String.valueOf(CobolString.refMod(x, 1, (9 - var_len))));
+            /* INSPECT X — 2 clause(s) */
+        }
+        System.exit(0);
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

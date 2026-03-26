@@ -24,10 +24,47 @@ public class SynLiterals002NumericLiterals extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private int counter = 0;
 
+
+
+    // SECTION: 00000000000000000000000000000000000000000000000000000000000
+    private void _00000000000000000000000000000000000000000000000000000000000() {
+        _000000000000000000000000000000000000000000000000000000000000();
+    }
+
+    private void _000000000000000000000000000000000000000000000000000000000000() {
+        counter = new BigDecimal(String.valueOf(counter + 1).trim()).intValue();
+        if (counter == 1) {
+            _00000000000000000000000000000000000000000000000000000000000();
+        } else if (counter == 2) {
+            _000000000000000000000000000000000000000000000000000000000000();
+        } else if (counter == 3) {
+            counter = new BigDecimal(String.valueOf(0).trim()).intValue();
+        }
+    }
+
+    // SECTION: 100000000000000000000000000000000000000000000000000000000001
+    private void _100000000000000000000000000000000000000000000000000000000001() {
+        _20000000000000000000000000000000000000000000000000000000002();
+    }
+
+    private void _20000000000000000000000000000000000000000000000000000000002() {
+        counter = new BigDecimal(String.valueOf(counter + 1).trim()).intValue();
+        if (counter == 1) {
+            _100000000000000000000000000000000000000000000000000000000001();
+        } else if (counter == 2) {
+            _20000000000000000000000000000000000000000000000000000000002();
+        } else if (counter == 3) {
+            counter = new BigDecimal(String.valueOf(0).trim()).intValue();
+        }
+        System.exit(0);
+    }
 
     @Override
     public void run() {
+        _000000000000000000000000000000000000000000000000000000000000();
     }
 
     public static void main(String[] args) {

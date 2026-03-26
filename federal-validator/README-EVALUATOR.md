@@ -2,7 +2,7 @@
 
 ## What This Is
 
-This Docker image contains **1,323 COBOL programs** transpiled to pure, compilable Java by the Lazarus transpiler engine. Every program compiles against OpenJDK 21 with zero errors.
+This Docker image contains **1,320 COBOL programs** transpiled to pure, compilable Java by the Lazarus transpiler engine. Every program compiles against OpenJDK 21 with zero errors.
 
 **Source corpus:**
 - 1,224 GnuCOBOL test suite programs
@@ -11,7 +11,7 @@ This Docker image contains **1,323 COBOL programs** transpiled to pure, compilab
 
 **What's included:**
 - `runtime/` — Java runtime library source (the public API that transpiled programs call)
-- `generated/` — 1,323 transpiled Java files
+- `generated/` — 1,320 transpiled Java files
 - `cobol-source/` — Original COBOL source files for output comparison
 - `test_runner.sh` — Automated test harness
 - `FIXES_APPLIED.md` — Detailed description of every transpiler fix applied
@@ -28,7 +28,7 @@ This Docker image contains **1,323 COBOL programs** transpiled to pure, compilab
 ## Quick Start
 
 ```bash
-# Build and run all 1,323 tests (compile-only, ~3 minutes)
+# Build and run all 1,320 tests (compile-only, ~3 minutes)
 make test
 
 # Or without make:
@@ -41,7 +41,7 @@ docker run --rm lazarus-java-validator --compile-only
 | Command | Description |
 |---------|-------------|
 | `make build` | Build the Docker image |
-| `make test` | Compile all 1,323 programs (fastest) |
+| `make test` | Compile all 1,320 programs (fastest) |
 | `make run` | Compile + run + compare output against GnuCOBOL |
 | `make single T=fundamental` | Run a single test by partial name |
 | `make report` | Generate `validation-report.txt` with full results |
@@ -72,8 +72,8 @@ See `FIXES_APPLIED.md` for a detailed description of every transpiler improvemen
 ## Verification
 
 ```
-Total programs:    1,323
-Passed:            1,323
+Total programs:    1,320
+Passed:            1,320
 Failed:            0
 Compile rate:      100.0%
 ```

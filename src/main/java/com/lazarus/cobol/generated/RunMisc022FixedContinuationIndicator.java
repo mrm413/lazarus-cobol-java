@@ -24,10 +24,23 @@ public class RunMisc022FixedContinuationIndicator extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private CobolString x = new CobolString(333);
 
+
+
+    private void para_main() {
+        CobolDisplay.displayNoAdvancing(String.valueOf(x));
+        CobolDisplay.display("_");
+        x.set(String.valueOf(((((((0 /* non-numeric literal: abcdefghijklmnopqrst */ - 0 /* non-numeric literal: 89abcdefghijklmnopqr */) - 0 /* non-numeric literal: 6789abcdefghijklmnop */) - 0 /* non-numeric literal: 456789abcdefghijklmn */) - 0 /* non-numeric literal: 23456789abcdefghijkl */) - 0 /* non-numeric literal: Z */) - 0 /* non-numeric literal: 0123456789 */)));
+        CobolDisplay.displayNoAdvancing(String.valueOf(x));
+        CobolDisplay.display("_");
+        System.exit(0);
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

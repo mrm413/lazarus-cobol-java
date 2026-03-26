@@ -24,10 +24,31 @@ public class RunFundamental111MoveToEdittedZero extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private int disp_1 = 0;
+    private CobolString edit_1 = new CobolString(1);
+    private CobolString edit_1_x = new CobolString(6);
 
+
+
+    private void para_main() {
+        edit_1.set(String.valueOf(111111));
+        disp_1 = new BigDecimal(String.valueOf(0).trim()).intValue();
+        edit_1.set(String.valueOf(disp_1));
+        if (!String.valueOf(edit_1_x).equals(String.valueOf("******"))) {
+            CobolDisplay.display("Error EDIT-1-X <" + String.valueOf(edit_1_x) + "> !=  <******>");
+        }
+        disp_1 = new BigDecimal(String.valueOf(123).trim()).intValue();
+        edit_1.set(String.valueOf(disp_1));
+        if (!String.valueOf(edit_1_x).equals(String.valueOf("***123"))) {
+            CobolDisplay.display("Error EDIT-1-X <" + String.valueOf(edit_1_x) + "> !=  <***123>");
+        }
+        return;
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

@@ -24,10 +24,25 @@ public class SynRedefines011RedefinesSizeExceeds extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private CobolString g1 = new CobolString(1); // Group: G1
+    private CobolString x = new CobolString(1);
+    private int[] a = new int[2];
+    private CobolString g2 = new CobolString(1); // Group: G2
+    private CobolString ext_x = new CobolString(1);
+    private int ext_x_redef = 0;
+    private CobolString wrk_x2 = new CobolString(1);
+    private CobolString filler_1 = new CobolString(4);
 
+
+
+    private void para_main() {
+        System.exit(0);
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

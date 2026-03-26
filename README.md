@@ -1,6 +1,6 @@
 # Lazarus COBOL-to-Java
 
-**1,323 COBOL programs deterministically transpiled to pure, compilable Java.**
+**1,320 COBOL programs deterministically transpiled to pure, compilable Java.**
 
 This repository contains the Java output of the Lazarus COBOL transpiler — a proprietary system that converts legacy COBOL source code into clean, standalone Java. Every program compiles. Every program runs.
 
@@ -8,8 +8,8 @@ This repository contains the Java output of the Lazarus COBOL transpiler — a p
 
 | Metric | Value |
 |--------|-------|
-| Programs transpiled | **1,323** |
-| Compile rate | **100.0%** (1,323 / 1,323) |
+| Programs transpiled | **1,320** |
+| Compile rate | **100.0%** (1,320 / 1,320) |
 | Lines of generated Java | **129,000+** |
 | Runtime library | **6 core classes + 13 CICS runtime classes + DFSORT** |
 | CICS runtime tests | **155 passed** (core + VSAM + emitter + E2E) |
@@ -25,7 +25,7 @@ The transpiler has been validated against real-world production COBOL, not just 
 | **GnuCOBOL Test Suite** | 79 categories of COBOL language features | 1,224 | **100%** |
 | **AWS CardDemo** | Enterprise CICS/VSAM card management application | 44 | **100%** |
 | **CMS Medicare Pricers** | U.S. government healthcare pricing (ESRD, LTCH, SNF, Hospice, HH, IRF) | 55 | **100%** |
-| **Total** | | **1,323** | **100%** |
+| **Total** | | **1,320** | **100%** |
 
 **AWS CardDemo** is Amazon's reference enterprise mainframe application — a full CICS online transaction processing system with indexed file I/O, screen maps, and multi-program CALL chains. **CMS Medicare Pricers** are the actual COBOL programs used by the Centers for Medicare & Medicaid Services to calculate hospital reimbursement rates — production government code with decades of fiscal year logic, complex arithmetic, and nested CALL hierarchies.
 
@@ -39,7 +39,7 @@ src/main/java/com/lazarus/cobol/
     CobolProgram.java         # Base class for all transpiled programs
     CobolString.java          # Fixed-length COBOL string semantics
     FileStatus.java           # Standard file status codes
-    generated/                # 1,323 transpiled Java programs
+    generated/                # 1,320 transpiled Java programs
     cics/                     # Full CICS runtime (see below)
 
 src/test/java/com/lazarus/cobol/cics/
@@ -149,7 +149,7 @@ public class DataPacked006PackedDecimalArithmetic extends CobolProgram {
 **Requires:** JDK 11 or later
 
 ```bash
-# Compile everything (runtime + 1,323 programs)
+# Compile everything (runtime + 1,320 programs)
 bash verify.sh
 
 # Or with Maven
@@ -287,7 +287,7 @@ Rust can represent that same packed decimal as a stack-allocated `[u8; 5]` — s
 
 Java proves the concept. Rust is the production answer.
 
-The Lazarus transpiler architecture is target-agnostic — the same parser and AST feed different code emitters. A Rust emitter would produce `CobolString` as a fixed-size `[u8; N]`, `PACKED-DECIMAL` as a stack-allocated BCD type, and `PERFORM VARYING` as zero-cost iterators. Same 1,323 programs. Same compilation rate. But with the safety guarantees and performance characteristics that production COBOL modernization demands.
+The Lazarus transpiler architecture is target-agnostic — the same parser and AST feed different code emitters. A Rust emitter would produce `CobolString` as a fixed-size `[u8; N]`, `PACKED-DECIMAL` as a stack-allocated BCD type, and `PERFORM VARYING` as zero-cost iterators. Same 1,320 programs. Same compilation rate. But with the safety guarantees and performance characteristics that production COBOL modernization demands.
 
 ## Changelog
 
@@ -300,7 +300,7 @@ The Lazarus transpiler architecture is target-agnostic — the same parser and A
 - Added DFSORT runtime class for SORT/MERGE verb support (conditional import — only included when program uses SORT verbs)
 - All 1,224 GnuCOBOL test programs now have fully populated procedure bodies — zero empty methods
 - Unique class naming per source file eliminates PROGRAM-ID collisions in the test suite
-- 100% compile rate maintained across all 1,323 programs
+- 100% compile rate maintained across all 1,320 programs
 
 ## License and attribution
 
@@ -317,7 +317,7 @@ The [NOTICE](NOTICE) file contains complete ownership and attribution details. I
 | Generated Java from CMS Medicare | Lazarus Systems | Apache 2.0 (source is U.S. Gov public domain) |
 | H2 Database (dependency) | H2 Group | MPL 2.0 / EPL 1.0 |
 
-The **transpiler** that produced the generated Java is proprietary software owned by Lazarus Systems. It is not included in this repository. What you see here is the **output** — the runtime library and 1,323 compiled Java programs.
+The **transpiler** that produced the generated Java is proprietary software owned by Lazarus Systems. It is not included in this repository. What you see here is the **output** — the runtime library and 1,320 compiled Java programs.
 
 ## About
 

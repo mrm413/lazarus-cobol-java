@@ -26,8 +26,13 @@ public class SynLiterals014LiteralMissingTerminatingCharacter extends CobolProgr
     private CobolString debug_contents = new CobolString(256);
 
 
+    private void para_main() {
+        CobolDisplay.display(String.valueOf((0 /* non-numeric literal:  1  c d e f g h i j  */ - 0 /* non-numeric literal:  2  C D E F G H I J  */)));
+    }
+
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

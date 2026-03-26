@@ -26,8 +26,14 @@ public class Listings034HugeReplace extends CobolProgram {
     private CobolString debug_contents = new CobolString(256);
 
 
+    private void para_main() {
+        /* RAW: COPY "display.inc" REPLACING = = 111111111111111111111111111111111111111 */
+        System.exit(0);
+    }
+
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

@@ -26,8 +26,13 @@ public class Listings001CopyWithinComment extends CobolProgram {
     private CobolString debug_contents = new CobolString(256);
 
 
+    private void para_main() {
+        System.exit(0);
+    }
+
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

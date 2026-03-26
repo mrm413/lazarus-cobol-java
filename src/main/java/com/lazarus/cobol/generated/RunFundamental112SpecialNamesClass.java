@@ -24,10 +24,39 @@ public class RunFundamental112SpecialNamesClass extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private CobolString alpha = new CobolString(1);
+    private int num_1 = 0;
 
+
+
+    private void para_main() {
+        alpha.set(String.valueOf("3"));
+        if (!String.valueOf(alpha).trim().isEmpty()) {
+            /* RAW: HEXA THEN */
+            /* CONTINUE */
+        } else {
+            CobolDisplay.display("ERROR 1");
+        }
+        if (!String.valueOf(alpha).trim().isEmpty()) {
+            /* RAW: ODD THEN */
+            /* CONTINUE */
+        } else {
+            CobolDisplay.display("ERROR 2");
+        }
+        num_1 = new BigDecimal(String.valueOf(2).trim()).intValue();
+        if ((num_1 != 0)) {
+            /* RAW: EVEN THEN */
+            /* CONTINUE */
+        } else {
+            CobolDisplay.display("ERROR 3");
+        }
+        return;
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

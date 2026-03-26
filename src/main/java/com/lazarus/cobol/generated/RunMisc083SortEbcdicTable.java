@@ -6,6 +6,7 @@ import com.lazarus.cobol.CobolIntrinsics;
 import com.lazarus.cobol.CobolProgram;
 import com.lazarus.cobol.CobolString;
 import com.lazarus.cobol.FileStatus;
+import com.lazarus.cobol.jcl.batch.DfsortProgram;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -24,10 +25,41 @@ public class RunMisc083SortEbcdicTable extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private CobolString z = new CobolString(10);
+    private CobolString g = new CobolString(1); // Group: G
+    private CobolString[] tbl = new CobolString[10]; // Group: TBL
+    private CobolString[] x = new CobolString[10];
 
+
+
+    private void para_main() {
+        g.set(String.valueOf(z));
+        /* RAW: * alphabet-name as collation : */
+        { /* SORT TBL (tbl) */
+            DfsortProgram _sort = new DfsortProgram();
+            _sort.setSortKeys(new String[]{"X:A", "SEQUENCE:A", "ALPHA:A"});
+            _sort.execute();
+        }
+        if (!String.valueOf(g).equals(String.valueOf("abcde12345"))) {
+            CobolDisplay.display(String.valueOf(g));
+        }
+        g.set(String.valueOf(z));
+        /* RAW: * code-name as collation : */
+        { /* SORT TBL (tbl) */
+            DfsortProgram _sort = new DfsortProgram();
+            _sort.setSortKeys(new String[]{"X:D", "SEQUENCE:D", "EBCDIC:D"});
+            _sort.execute();
+        }
+        if (!String.valueOf(g).equals(String.valueOf("54321edcba"))) {
+            CobolDisplay.display(String.valueOf(g));
+        }
+        System.exit(0);
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

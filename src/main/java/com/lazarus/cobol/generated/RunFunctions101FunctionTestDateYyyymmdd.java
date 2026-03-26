@@ -26,8 +26,14 @@ public class RunFunctions101FunctionTestDateYyyymmdd extends CobolProgram {
     private CobolString debug_contents = new CobolString(256);
 
 
+    private void para_main() {
+        CobolDisplay.displayNoAdvancing(String.valueOf(CobolIntrinsics.test_date_yyyymmdd(20020231)));
+        System.exit(0);
+    }
+
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

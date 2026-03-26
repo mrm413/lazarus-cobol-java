@@ -24,10 +24,47 @@ public class RunFile035DeclarativesProcedureReferencing extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private int z = 0;
 
+    // FILE SECTION — TEST-FILE
+    private CobolString test_rec = new CobolString(10);
+
+
+    // FILE DESCRIPTORS
+    private CobolFile test_file = new CobolFile("./TEST-FILE", "SEQUENTIAL", "SEQUENTIAL");
+
+
+    // SECTION: P01
+    private void p01() {
+        use();
+        p0101();
+    }
+
+    private void use() {
+        /* RAW: AFTER ERROR PROCEDURE ON TEST-FILE */
+    }
+
+    private void p0101() {
+        z = new BigDecimal(String.valueOf(z + 1).trim()).intValue();
+    }
+
+    private void para_main() {
+        /* RAW: * some comments here * to */
+    }
+
+    private void mp0101() {
+        test_file.open("INPUT");
+        p0101();
+        if (z != 2) {
+            CobolDisplay.display(String.valueOf(z));
+        }
+        System.exit(0);
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

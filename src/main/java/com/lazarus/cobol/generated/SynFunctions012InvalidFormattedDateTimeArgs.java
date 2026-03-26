@@ -24,10 +24,36 @@ public class SynFunctions012InvalidFormattedDateTimeArgs extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private CobolString format_str = new CobolString(8);
+    private CobolString date_format = new CobolString(1);
+    private CobolString time_format = new CobolString(1);
+    private CobolString datetime_format = new CobolString(1);
 
+
+
+    private void para_main() {
+        CobolDisplay.display(String.valueOf(CobolIntrinsics.formatted_date("YYYYWWWD", 1)));
+        CobolDisplay.display(String.valueOf(CobolIntrinsics.formatted_time("HHMMSS", 1)));
+        CobolDisplay.display(String.valueOf(CobolIntrinsics.formatted_datetime("YYYYWWWDTHHMMSS", 1, 1)));
+        CobolDisplay.display(String.valueOf(CobolIntrinsics.formatted_date(format_str, 1)));
+        CobolDisplay.display(String.valueOf(CobolIntrinsics.formatted_current_date(date_format)));
+        CobolDisplay.display(String.valueOf(CobolIntrinsics.formatted_current_date(time_format)));
+        CobolDisplay.display(String.valueOf(CobolIntrinsics.formatted_date(time_format, 1)));
+        CobolDisplay.display(String.valueOf(CobolIntrinsics.formatted_date(datetime_format, 1)));
+        CobolDisplay.display(String.valueOf(CobolIntrinsics.formatted_time(date_format, 1)));
+        CobolDisplay.display(String.valueOf(CobolIntrinsics.formatted_time(datetime_format, 1)));
+        CobolDisplay.display(String.valueOf(CobolIntrinsics.formatted_datetime(date_format, 1, 1)));
+        CobolDisplay.display(String.valueOf(CobolIntrinsics.formatted_datetime(time_format, 1, 1)));
+        CobolDisplay.display(String.valueOf(CobolIntrinsics.integer_of_formatted_date(time_format, 1)));
+        CobolDisplay.display(String.valueOf(CobolIntrinsics.seconds_from_formatted_time(date_format, 1)));
+        CobolDisplay.display(String.valueOf(CobolIntrinsics.formatted_time("hhmmss.ssssssssss", 1)));
+        System.exit(0);
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

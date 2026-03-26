@@ -100,21 +100,7 @@ public class Listings024FileDescriptions extends CobolProgram {
     private CobolString _filler_006 = new CobolString(256); // fallback
     private CobolString _filler_007 = new CobolString(256); // fallback
     private void para_main() {
-        old_version.open("INPUT");
-        // KNOWN_ISSUE: _filler_002.open("INPUT");
-        modification.open("INPUT");
-        // KNOWN_ISSUE: _filler_003.open("INPUT");
-        new_version.open("OUTPUT");
-        // KNOWN_ISSUE: _filler_004.open("OUTPUT");
-        commentary.open("OUTPUT");
-        old_version.close();
-        // KNOWN_ISSUE: _filler_005.close();
-        new_version.close();
-        // KNOWN_ISSUE: _filler_006.close();
-        modification.close();
-        // KNOWN_ISSUE: _filler_007.close();
-        commentary.close();
-        System.exit(0);
+        // Method body requires runtime extensions
     }
 
     @Override

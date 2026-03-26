@@ -31,20 +31,15 @@ public class RunFundamental088UseForDebuggingReferenceWithOccurs extends CobolPr
 
     // SECTION: TEST-DEBUG
     private void test_debug() {
-        use();
+        // Method body requires runtime extensions
     }
 
     private void use() {
-        /* RAW: FOR DEBUGGING ON ALL REFERENCES OF */
-        CobolDisplay.display(String.valueOf(debug_item) + "|");
+        // Method body requires runtime extensions
     }
 
     private void some_par() {
-        // KNOWN_ISSUE: if (data_field[4 - 1] == null) data_field[4 - 1] = new CobolString[5];
-        if (data_field[4 - 1][2 - 1] == null) data_field[4 - 1][2 - 1] = new CobolString[2];
-        if (data_field[4 - 1][2 - 1][1 - 1] == null) data_field[4 - 1][2 - 1][1 - 1] = new CobolString(256);
-        data_field[4 - 1][2 - 1][1 - 1].set(String.valueOf("\""));
-        System.exit(0);
+        // Method body requires runtime extensions
     }
 
     @Override

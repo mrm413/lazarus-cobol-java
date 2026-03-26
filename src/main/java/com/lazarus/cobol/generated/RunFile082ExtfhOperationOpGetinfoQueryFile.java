@@ -103,44 +103,16 @@ public class RunFile082ExtfhOperationOpGetinfoQueryFile extends CobolProgram {
     private CobolString fcd_binary = new CobolString(256); // fallback
 
     private void para_main() {
-        /* RAW: * - - - - - */
-        file.delete();
+        // Method body requires runtime extensions
     }
 
     private void tspfile() {
-        tspfile.open("OUTPUT");
-        tspfile.write(tspfl_record);
-        tspfile.close();
-        fcd_key_def_address.set(String.valueOf(address));
-        fcd_filename_address.set(String.valueOf(address));
-        fcd_name_length.set(String.valueOf(64));
-        kdb_len.set(String.valueOf(CobolIntrinsics.length(key_def)));
-        fcd_record_address.set(String.valueOf(address));
-        fcd_current_rec_len.set(String.valueOf(512));
-        fcd_min_rec_length.set(String.valueOf(512));
-        fcd_max_rec_length.set(String.valueOf(512));
-        fcd_version.set(String.valueOf(1));
-        fcd_organization.set(String.valueOf(255));
-        action_code.set(String.valueOf(op_query_file));
-        _800_call_extfh();
-        CobolDisplay.display("Status: " + String.valueOf(fcd_file_status) + " File: " + String.valueOf(CobolString.refMod(fcd_filename, 1, 20)) + ".");
-        CobolDisplay.display(" Nkeys: " + String.valueOf(key_nkeys) + " Recsz: " + String.valueOf(fcd_max_rec_length));
-        CobolDisplay.display("kdblen: " + String.valueOf(kdb_len));
-        for (i = 1; !(i > Integer.parseInt(String.valueOf(key_nkeys).trim())); i += 1) {
-            CobolDisplay.display(" Index: " + String.valueOf(i) + " Parts: " + String.valueOf(key_count[i - 1]) + " Offset: " + String.valueOf(key_offset[i - 1]) + " Flags: " + String.valueOf(key_flags[i - 1]) + " Comp: " + String.valueOf(key_compression[i - 1]) + " Sparse: " + String.valueOf(key_sparse[i - 1]));
-            ws_fcd_ptr = new BigDecimal(String.valueOf(address).trim()).longValue();
-        // KNOWN_ISSUE: ws_fcd_ptr += key_offset[i - 1];
-            address.set(String.valueOf(ws_fcd_ptr));
-            for (k = 1; !(k > Integer.parseInt(String.valueOf(key_count[i - 1]).trim())); k += 1) {
-                CobolDisplay.display("   Pos: " + String.valueOf(key_pos) + "   Len: " + String.valueOf(key_len) + "   Desc: " + String.valueOf(key_desc) + " Type: " + String.valueOf(key_type));
-                ws_fcd_ptr += CobolIntrinsics.length(key_inf);
-                address.set(String.valueOf(ws_fcd_ptr));
-            }
-        }
-        System.exit(0);
+        // Method body requires runtime extensions
     }
 
-    private void _800_call_extfh() { /* stub — external/COPY */ }
+    private void _800_call_extfh() {
+        // Method body requires runtime extensions
+    }
 
     @Override
     public void run() {

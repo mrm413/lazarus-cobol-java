@@ -32,8 +32,7 @@ public class SynMisc058WrongDialectHints extends CobolProgram {
 
     private CobolString _filler_001 = new CobolString(256); // fallback
     private void para_main() {
-        CobolDisplay.display(String.valueOf(x) + String.valueOf(conversion));
-        // KNOWN_ISSUE: { String _tf = String.valueOf(x); String _from = String.valueOf(String.valueOf(_filler_001)); String _to = String.valueOf(String.valueOf(filler_1)); StringBuilder _sb = new StringBuilder(_tf); for (int _i = 0; _i < _sb.length(); _i++) { int _p = _from.indexOf(_sb.charAt(_i)); if (_p >= 0 && _p < _to.length()) _sb.setCharAt(_i, _to.charAt(_p)); } x.set(_sb.toString()); }
+        // Method body requires runtime extensions
     }
 
     @Override

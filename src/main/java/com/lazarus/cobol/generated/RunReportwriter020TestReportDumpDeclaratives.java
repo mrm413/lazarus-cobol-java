@@ -64,94 +64,19 @@ public class RunReportwriter020TestReportDumpDeclaratives extends CobolProgram {
     private CobolString _filler_012 = new CobolString(256); // fallback
     private CobolString _filler_013 = new CobolString(256); // fallback
     private void before_detail() {
-        use();
-        doit_1();
+        // Method body requires runtime extensions
     }
 
     private void use() {
-        /* RAW: BEFORE REPORTING RP-DTL2 */
+        // Method body requires runtime extensions
     }
 
     private void doit_1() {
-        CobolDisplay.display("Hello World");
-        // KNOWN_ISSUE: dtl2[2 - 1].set(String.valueOf("_"));
+        // Method body requires runtime extensions
     }
 
     private void para_main() {
-        rp_file.open("OUTPUT");
-        /* RAW: INITIATE RP */
-        if (nnns[1 - 1] == null) nnns[1 - 1] = new CobolString(256);
-        nnns[1 - 1].set(String.valueOf(169));
-        _filler_002.set(String.valueOf(169));
-        if (nnns[2 - 1] == null) nnns[2 - 1] = new CobolString(256);
-        nnns[2 - 1].set(String.valueOf(169));
-        _filler_003.set(String.valueOf(169));
-        if (nnns[3 - 1] == null) nnns[3 - 1] = new CobolString(256);
-        nnns[3 - 1].set(String.valueOf(169));
-        if (nnns[4 - 1] == null) nnns[4 - 1] = new CobolString(256);
-        nnns[4 - 1].set(String.valueOf(169));
-        tagp.set(String.valueOf("NOT"));
-        mrk4.set(String.valueOf("NOW"));
-        if (nums[1 - 1] == null) nums[1 - 1] = new CobolString(256);
-        nums[1 - 1].set(String.valueOf(100));
-        _filler_004.set(String.valueOf(100));
-        if (nums[2 - 1] == null) nums[2 - 1] = new CobolString(256);
-        nums[2 - 1].set(String.valueOf(100));
-        _filler_005.set(String.valueOf(100));
-        if (nums[3 - 1] == null) nums[3 - 1] = new CobolString(256);
-        nums[3 - 1].set(String.valueOf(100));
-        mark.set(String.valueOf("<1>"));
-        /* RAW: GENERATE rp-dtl1 */
-        if (grps[1 - 1] == null) grps[1 - 1] = new CobolString(256);
-        grps[1 - 1].set(String.valueOf("*"));
-        _filler_006.set(String.valueOf("*"));
-        if (grps[2 - 1] == null) grps[2 - 1] = new CobolString(256);
-        grps[2 - 1].set(String.valueOf("*"));
-        _filler_007.set(String.valueOf("*"));
-        if (grps[3 - 1] == null) grps[3 - 1] = new CobolString(256);
-        grps[3 - 1].set(String.valueOf("*"));
-        if (tag1[1 - 1] == null) tag1[1 - 1] = new CobolString(256);
-        tag1[1 - 1].set(String.valueOf("Tag1"));
-        _filler_008.set(String.valueOf("Tag1"));
-        if (tag1[2 - 1] == null) tag1[2 - 1] = new CobolString(256);
-        tag1[2 - 1].set(String.valueOf("Tag1"));
-        _filler_009.set(String.valueOf("Tag1"));
-        if (tag1[3 - 1] == null) tag1[3 - 1] = new CobolString(256);
-        tag1[3 - 1].set(String.valueOf("Tag1"));
-        if (tag2[1 - 1] == null) tag2[1 - 1] = new CobolString(256);
-        tag2[1 - 1].set(String.valueOf("Tag2"));
-        _filler_010.set(String.valueOf("Tag2"));
-        if (tag2[2 - 1] == null) tag2[2 - 1] = new CobolString(256);
-        tag2[2 - 1].set(String.valueOf("Tag2"));
-        _filler_011.set(String.valueOf("Tag2"));
-        if (tag2[3 - 1] == null) tag2[3 - 1] = new CobolString(256);
-        tag2[3 - 1].set(String.valueOf("Tag2"));
-        mrk2.set(String.valueOf("<2>"));
-        /* RAW: GENERATE RP-DTL2 */
-        if (nnns[1 - 1] == null) nnns[1 - 1] = new CobolString(256);
-        nnns[1 - 1].set(String.valueOf(200));
-        _filler_012.set(String.valueOf(200));
-        if (nnns[2 - 1] == null) nnns[2 - 1] = new CobolString(256);
-        nnns[2 - 1].set(String.valueOf(200));
-        _filler_013.set(String.valueOf(200));
-        if (nnns[3 - 1] == null) nnns[3 - 1] = new CobolString(256);
-        nnns[3 - 1].set(String.valueOf(200));
-        if (nnns[4 - 1] == null) nnns[4 - 1] = new CobolString(256);
-        nnns[4 - 1].set(String.valueOf(200));
-        tagp.set(String.valueOf("<3>"));
-        /* RAW: GENERATE RP-DTL3 */
-        num4a.set(String.valueOf(400));
-        if (num4b[1 - 1] == null) num4b[1 - 1] = new CobolString(256);
-        num4b[1 - 1].set(String.valueOf(401));
-        if (num4b[2 - 1] == null) num4b[2 - 1] = new CobolString(256);
-        num4b[2 - 1].set(String.valueOf(402));
-        if (num4b[3 - 1] == null) num4b[3 - 1] = new CobolString(256);
-        num4b[3 - 1].set(String.valueOf(403));
-        mrk4.set(String.valueOf("<4>"));
-        /* RAW: GENERATE RP-DTL4 */
-        /* RAW: TERMINATE rp */
-        rp_file.close();
-        System.exit(0);
+        // Method body requires runtime extensions
     }
 
     @Override

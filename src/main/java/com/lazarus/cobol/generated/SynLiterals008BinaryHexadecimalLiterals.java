@@ -26,8 +26,16 @@ public class SynLiterals008BinaryHexadecimalLiterals extends CobolProgram {
     private CobolString debug_contents = new CobolString(256);
 
 
+    private void para_main() {
+        CobolDisplay.display("AB05CD0F");
+        CobolDisplay.display(String.valueOf((0 /* non-numeric literal: 0123456789ABCDEF0123 */ - 0 /* non-numeric literal: BCDEF */)));
+        CobolDisplay.display("A");
+        System.exit(0);
+    }
+
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

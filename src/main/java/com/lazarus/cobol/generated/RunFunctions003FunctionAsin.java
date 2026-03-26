@@ -24,10 +24,35 @@ public class RunFunctions003FunctionAsin extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private BigDecimal y = BigDecimal.ZERO;
+    private BigDecimal p = BigDecimal.ZERO;
+    private BigDecimal s = BigDecimal.ZERO;
 
+
+
+    private void para_main() {
+        y = new BigDecimal(String.valueOf(CobolIntrinsics.asin(-0.2345)).trim());
+        if (y.compareTo(new BigDecimal(String.valueOf(-0.23670419431334683).trim())) != 0) {
+            CobolDisplay.display("DISPLAY: " + String.valueOf(y));
+        }
+        p = new BigDecimal(String.valueOf(CobolIntrinsics.asin(-0.2345)).trim());
+        if (p.compareTo(new BigDecimal(String.valueOf(-0.23670419431334683).trim())) != 0) {
+            CobolDisplay.display("PACKED:  " + String.valueOf(p));
+        }
+        s = new BigDecimal(String.valueOf(CobolIntrinsics.asin(-0.2345)).trim());
+        if (s.compareTo(new BigDecimal(String.valueOf(0.23670419431334683).trim())) != 0) {
+            CobolDisplay.display("COMP-6:  " + String.valueOf(s));
+        }
+        if (!String.valueOf(CobolIntrinsics.asin(-0.2345)).equals(String.valueOf(CobolIntrinsics.asin(-0.2345)))) {
+            CobolDisplay.display("ASIN IS NOT ITSELF");
+        }
+        System.exit(0);
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

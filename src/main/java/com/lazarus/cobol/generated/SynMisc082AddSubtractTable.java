@@ -39,14 +39,7 @@ public class SynMisc082AddSubtractTable extends CobolProgram {
     private CobolString table = new CobolString(256); // fallback
 
     private void para_main() {
-        // KNOWN_ISSUE: java.util.Arrays.fill(tab2_entry, tab2_entry + Integer.parseInt(String.valueOf(table).trim()) + tab1_entry);
-        // KNOWN_ISSUE: java.util.Arrays.fill(tab1_entry, tab1_entry - (Integer.parseInt(String.valueOf(table).trim()) + tab2_entry));
-        // KNOWN_ISSUE: tab3_entry[1 - 1] = new BigDecimal(String.valueOf(tab3_entry[1 - 1] + Integer.parseInt(String.valueOf(table).trim()) + tab1_entry).trim()).intValue();
-        // KNOWN_ISSUE: tab3_entry[2 - 1] = new BigDecimal(String.valueOf(tab3_entry[2 - 1] - (Integer.parseInt(String.valueOf(table).trim()) + tab2_entry)).trim()).intValue();
-        // KNOWN_ISSUE: java.util.Arrays.fill(x, x + Integer.parseInt(String.valueOf(table).trim()) + tab1_entry);
-        // KNOWN_ISSUE: java.util.Arrays.fill(tab1_entry, tab1_entry - (Integer.parseInt(String.valueOf(table).trim()) + x));
-        // KNOWN_ISSUE: for (int _ii = 0; _ii < tab2b_entry.length; _ii++) { if (tab2b_entry[_ii] == null) tab2b_entry[_ii] = new CobolString(256); tab2b_entry[_ii].set(String.valueOf(tab2b_entry + Integer.parseInt(String.valueOf(table).trim()) + tab1_entry)); }
-        return;
+        // Method body requires runtime extensions
     }
 
     @Override

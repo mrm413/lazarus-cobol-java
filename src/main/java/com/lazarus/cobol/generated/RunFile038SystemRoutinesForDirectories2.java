@@ -24,10 +24,87 @@ public class RunFile038SystemRoutinesForDirectories2 extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private CobolString fh = new CobolString(4);
+    private CobolString rb = new CobolString(8);
+    private CobolString cb_bfr = new CobolString(4);
+    private CobolString w_dirname_1 = new CobolString(4);
+    private CobolString w_dirname_2 = new CobolString(9);
+    private CobolString w_dirname_3 = new CobolString(14);
+    private CobolString w_filename = new CobolString(20);
+    private CobolString w_finfo = new CobolString(16);
 
+
+    private CobolString _filler_001 = new CobolString(256); // fallback
+    private CobolString display = new CobolString(256); // fallback
+
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
+    private CobolString _filler_004 = new CobolString(256); // fallback
+    private CobolString _filler_005 = new CobolString(256); // fallback
+    private CobolString _filler_006 = new CobolString(256); // fallback
+    private CobolString _filler_007 = new CobolString(256); // fallback
+    private CobolString _filler_008 = new CobolString(256); // fallback
+    private CobolString _filler_009 = new CobolString(256); // fallback
+    private CobolString _filler_010 = new CobolString(256); // fallback
+    private void para_main() {
+        CobolProgram.call("CBL_CREATE_DIR", w_dirname_1);
+        if (return_code != 0) {
+            CobolDisplay.display("FAILED 1: CBL_CREATE_DIR (res=" + String.valueOf(return_code) + ")");
+        }
+        CobolProgram.call("CBL_CREATE_DIR", w_dirname_2);
+        if (return_code != 0) {
+            CobolDisplay.display("FAILED 2: CBL_CREATE_DIR (res=" + String.valueOf(return_code) + ")");
+        }
+        /* RAW: * Should fail because directory does */
+        CobolProgram.call("CBL_CREATE_FILE", w_filename, _filler_002, 1, _filler_003, 0, _filler_004, 0, _filler_005, fh);
+        if (return_code != 35) {
+            CobolDisplay.display("FAILED 3: CBL_CREATE_FILE expected fail (res=" + String.valueOf(return_code) + ")");
+            if (String.valueOf(return_code).equals(String.valueOf(0))) {
+                CobolProgram.call("CBL_CLOSE_FILE", fh);
+            }
+        }
+        CobolProgram.call("CBL_CREATE_DIR", w_dirname_3);
+        if (return_code != 0) {
+            CobolDisplay.display("FAILED 4: CBL_CREATE_DIR (res=" + String.valueOf(return_code) + ")");
+        }
+        CobolProgram.call("CBL_CREATE_FILE", w_filename, _filler_006, 1, _filler_007, 0, _filler_008, 0, _filler_009, fh);
+        if (return_code != 0) {
+            CobolDisplay.display("FAILED 5: CBL_CREATE_FILE (res=" + String.valueOf(return_code) + ")");
+        }
+        CobolProgram.call("CBL_CLOSE_FILE", fh);
+        if (return_code != 0) {
+            CobolDisplay.display("FAILED 6: CBL_CLOSE_FILE (res=" + String.valueOf(return_code) + ")");
+        }
+        CobolProgram.call("CBL_CHECK_FILE_EXIST", w_filename, _filler_010, w_finfo);
+        if (return_code != 0) {
+            CobolDisplay.display("FAILED 7: CBL_CHECK_FILE_EXIST (res=" + String.valueOf(return_code) + ")");
+        }
+        /* RAW: * Should fail because directory is */
+        CobolProgram.call("CBL_DELETE_DIR", w_dirname_1);
+        if (return_code == 0) {
+            CobolDisplay.display("FAILED 8: CBL_DELETE_DIR EXPECTED TO FAIL");
+        }
+        /* RAW: ** ** ** ** ** ** */
+        /* RAW: ** ** ** ** ** ** */
+        CobolProgram.call("CBL_PURGE_DIR", w_dirname_1);
+        /* RAW: *  */
+        if (return_code != (0 * Integer.parseInt(String.valueOf(display).trim()))) {
+            /* RAW: "FAILED 9: CBL_PURGE_DIR (res=" RETURN-CODE ")" * */
+        }
+        /* RAW: * * Should succeed because directory */
+        /* RAW: *  */
+        CobolProgram.call("CBL_DELETE_DIR", w_dirname_1);
+        /* RAW: *  */
+        if (return_code != (0 * Integer.parseInt(String.valueOf(display).trim()))) {
+            /* RAW: "FAILED 10: CBL_DELETE_DIR (res=" RETURN-CODE ")" * */
+        }
+        System.exit(0);
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

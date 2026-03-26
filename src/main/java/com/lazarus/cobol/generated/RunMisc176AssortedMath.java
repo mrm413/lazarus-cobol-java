@@ -24,10 +24,22 @@ public class RunMisc176AssortedMath extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private int n = 0;
+    private int m = 0;
+    private int variable = 0;
 
+
+    private CobolString a_one = new CobolString(256); // fallback
+    private CobolString a_two = new CobolString(256); // fallback
+
+    private void para_main() {
+        // Method body requires runtime extensions
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

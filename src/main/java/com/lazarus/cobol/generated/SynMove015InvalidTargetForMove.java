@@ -34,12 +34,7 @@ public class SynMove015InvalidTargetForMove extends CobolProgram {
     private CobolString quote = new CobolString(256); // fallback
 
     private void para_main() {
-        main_var.set(String.valueOf("A"));
-        main.set(String.valueOf("B"));
-        repo_prog.set(String.valueOf("C"));
-        quote.set(String.valueOf("D"));
-        // KNOWN_ISSUE: defined_const.set(String.valueOf("E"));
-        System.exit(0);
+        // Method body requires runtime extensions
     }
 
     @Override

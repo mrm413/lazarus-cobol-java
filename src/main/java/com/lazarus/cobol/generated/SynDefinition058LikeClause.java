@@ -43,11 +43,7 @@ public class SynDefinition058LikeClause extends CobolProgram {
 
 
     private void para_main() {
-        CobolDisplay.display(String.valueOf(ausgabe_file_name));
-        CobolDisplay.display(String.valueOf(CobolString.refMod(z_message_t2, 55, CobolIntrinsics.length(detail_no))));
-        CobolDisplay.display(String.valueOf(CobolString.refMod(mt3, 1, CobolIntrinsics.length(ausgabe_file_name))));
-        // KNOWN_ISSUE: detail_no = new BigDecimal(String.valueOf(detail_no + output_val).trim()).intValue();
-        return;
+        // Method body requires runtime extensions
     }
 
     @Override

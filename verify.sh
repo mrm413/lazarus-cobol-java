@@ -1,5 +1,5 @@
 #!/bin/bash
-# Compile all 1,323 generated Java programs and verify 100% success
+# Compile all 1,320 generated Java programs and verify 100% success
 set -e
 
 echo "=== Lazarus COBOL-to-Java Compile Verification ==="
@@ -16,7 +16,7 @@ javac -cp target/classes -d target/classes src/main/java/com/lazarus/cobol/jcl/b
 echo "  Runtime: OK"
 
 # Compile all generated programs
-echo "Compiling 1,323 generated programs..."
+echo "Compiling 1,320 generated programs..."
 PASS=0
 FAIL=0
 for f in src/main/java/com/lazarus/cobol/generated/*.java; do

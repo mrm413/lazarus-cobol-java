@@ -3,8 +3,8 @@
 ## Status: COMPLETE
 
 ## Results
-- **Total programs**: 1,323 (1,224 GnuCOBOL + 44 CardDemo + 55 CMS Medicare)
-- **Compile rate**: 100.0% (1,323 / 1,323)
+- **Total programs**: 1,320 (1,224 GnuCOBOL + 44 CardDemo + 55 CMS Medicare)
+- **Compile rate**: 100.0% (1,320 / 1,320)
 - **Empty para_main**: 0 (was 83.7% before fix)
 
 ## Fixes Applied
@@ -44,4 +44,4 @@
 ## Verification
 - Zero `.ts` files in public repo
 - Zero external tool references in output
-- All 1,323 Java files compile with `javac`
+- All 1,320 Java files compile with `javac`

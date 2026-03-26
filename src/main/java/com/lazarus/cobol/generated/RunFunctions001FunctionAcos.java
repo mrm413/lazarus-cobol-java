@@ -24,10 +24,40 @@ public class RunFunctions001FunctionAcos extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private BigDecimal z = BigDecimal.ZERO;
+    private BigDecimal p = BigDecimal.ZERO;
+    private BigDecimal s = BigDecimal.ZERO;
 
+
+    private CobolString n = new CobolString(256); // fallback
+    private CobolString display = new CobolString(256); // fallback
+
+    private void para_main() {
+        z = new BigDecimal(String.valueOf(CobolIntrinsics.acos(-0.2345)).trim());
+        if (z.compareTo(new BigDecimal(String.valueOf(1.8075005211082433).trim())) != 0) {
+            CobolDisplay.display("DISPLAY: " + String.valueOf(z));
+        }
+        p = new BigDecimal(String.valueOf(CobolIntrinsics.acos(-0.2345)).trim());
+        if (p.compareTo(new BigDecimal(String.valueOf(1.8075005211082433).trim())) != 0) {
+            CobolDisplay.display("PACKED: " + String.valueOf(p));
+        }
+        s = new BigDecimal(String.valueOf(CobolIntrinsics.acos(-0.2345)).trim());
+        if (s.compareTo(new BigDecimal(String.valueOf(1.8075005211082433).trim())) != 0) {
+            CobolDisplay.display("COMP-6: " + String.valueOf(s));
+        }
+        /* RAW: *  */
+        n.set(String.valueOf(CobolIntrinsics.acos(-0.2345)));
+        /* RAW: *  */
+        if (!String.valueOf(n).equals(String.valueOf((1.8075005211082433 * Integer.parseInt(String.valueOf(display).trim()))))) {
+            /* RAW: "PACKED: " N */
+        }
+        System.exit(0);
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

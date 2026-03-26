@@ -24,10 +24,37 @@ public class RunFile032ReadOnOptionalMissingRelativeSequential extends CobolProg
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private CobolString wsfs = new CobolString(2);
+    private CobolString wsinrec = new CobolString(80);
 
+    // FILE SECTION — INFILE
+    private CobolString inrec = new CobolString(80);
+
+    // FILE SECTION — INFILES
+    private CobolString inrecs = new CobolString(80);
+
+
+    // FILE DESCRIPTORS
+    private CobolFile infile = new CobolFile("missing.txt", "RELATIVE", "SEQUENTIAL");
+    // File status: WSFS
+    private CobolFile infiles = new CobolFile("missings.txt", "SEQUENTIAL", "SEQUENTIAL");
+    // File status: WSFS
+
+    // FALLBACK FILE DESCRIPTORS
+    private CobolFile _filler_001 = new CobolFile(",", "SEQUENTIAL", "SEQUENTIAL");
+    private CobolFile after = new CobolFile("AFTER", "SEQUENTIAL", "SEQUENTIAL");
+
+
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
+    private void main_procedure() {
+        // Method body requires runtime extensions
+    }
 
     @Override
     public void run() {
+        main_procedure();
     }
 
     public static void main(String[] args) {

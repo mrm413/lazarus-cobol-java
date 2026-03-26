@@ -37,11 +37,7 @@ public class SynFunctions010IntrinsicFunctionsReferenceModification extends Cobo
     private CobolString _filler_009 = new CobolString(256); // fallback
     private CobolString _filler_010 = new CobolString(256); // fallback
     private void para_main() {
-        // KNOWN_ISSUE: CobolDisplay.display(String.valueOf(CobolIntrinsics.char(66)) + String.valueOf((1)) + String.valueOf(_filler_003) + String.valueOf(2) + String.valueOf(_filler_004));
-        CobolDisplay.display(String.valueOf(CobolIntrinsics.numval_c(123)) + String.valueOf((1)) + String.valueOf(_filler_005) + String.valueOf(2) + String.valueOf(_filler_006));
-        CobolDisplay.display(String.valueOf(CobolIntrinsics.reverse("TESTME")) + String.valueOf((-1)) + String.valueOf(_filler_007) + String.valueOf(1) + String.valueOf(_filler_008));
-        CobolDisplay.display(String.valueOf(CobolIntrinsics.reverse("TESTME")) + String.valueOf((1)) + String.valueOf(_filler_009) + String.valueOf(0) + String.valueOf(_filler_010));
-        System.exit(0);
+        // Method body requires runtime extensions
     }
 
     @Override

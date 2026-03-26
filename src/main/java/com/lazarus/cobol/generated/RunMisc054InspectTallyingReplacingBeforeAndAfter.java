@@ -24,10 +24,31 @@ public class RunMisc054InspectTallyingReplacingBeforeAndAfter extends CobolProgr
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private CobolString insp_string = new CobolString(26);
+    private CobolString exptd_result = new CobolString(1);
+    private short res_idx = (short) 0;
+    private short res_idx_1 = (short) 0;
 
+
+
+    private void para_main() {
+        /* INSPECT INSP-STRING — 4 clause(s) */
+        if (!String.valueOf(insp_string).equals(String.valueOf(exptd_result))) {
+            CobolDisplay.display("Failed <" + String.valueOf(insp_string) + "> != <" + String.valueOf(exptd_result) + ">");
+        }
+        if (res_idx != 107) {
+            CobolDisplay.display("Failed <" + String.valueOf(res_idx) + "> != <107>");
+        }
+        if (res_idx_1 != 19) {
+            CobolDisplay.display("Failed <" + String.valueOf(res_idx_1) + "> != <19>");
+        }
+        return;
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

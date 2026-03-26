@@ -24,10 +24,25 @@ public class RunMisc170EcSizeOverflow extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private int x = 0;
+    private int y = 0;
 
+
+
+    private void para_main() {
+        /* RAW: *  */
+        /* RAW: RAISE exception checked in previous test */
+        y = new BigDecimal(String.valueOf(x / y).trim()).intValue();
+        y = new BigDecimal(String.valueOf(x / 0.1).trim()).intValue();
+        if (!String.valueOf(CobolIntrinsics.trim(CobolIntrinsics.exception_status())).equals(String.valueOf("EC-SIZE-OVERFLOW"))) {
+            CobolDisplay.display("Wrong/missing exception: " + String.valueOf(CobolIntrinsics.exception_status()));
+        }
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

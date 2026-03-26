@@ -17,7 +17,7 @@ echo -e "${CYAN}╔════════════════════�
 echo -e "${CYAN}║                                                                  ║${NC}"
 echo -e "${CYAN}║    ${GREEN}Lazarus COBOL-to-Java Transpiler — Validation Suite${CYAN}          ║${NC}"
 echo -e "${CYAN}║                                                                  ║${NC}"
-echo -e "${CYAN}║    1,323 COBOL programs transpiled to pure, compilable Java      ║${NC}"
+echo -e "${CYAN}║    1,320 COBOL programs transpiled to pure, compilable Java      ║${NC}"
 echo -e "${CYAN}║    Runtime: OpenJDK 21 | Reference: GnuCOBOL 3.2                ║${NC}"
 echo -e "${CYAN}║                                                                  ║${NC}"
 echo -e "${CYAN}║    Built by Lazarus Systems — lazarus-systems.com                ║${NC}"

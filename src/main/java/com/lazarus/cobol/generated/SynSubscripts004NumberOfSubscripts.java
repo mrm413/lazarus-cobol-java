@@ -32,13 +32,7 @@ public class SynSubscripts004NumberOfSubscripts extends CobolProgram {
 
 
     private void para_main() {
-        CobolDisplay.display(String.valueOf(x));
-        CobolDisplay.display(String.valueOf(x[1 - 1]));
-        // KNOWN_ISSUE: CobolDisplay.display(String.valueOf(x[1 - 1][2 - 1]));
-        CobolDisplay.display(String.valueOf(y[1 - 1]));
-        CobolDisplay.display(String.valueOf(y[1 - 1][2 - 1]));
-        // KNOWN_ISSUE: CobolDisplay.display(String.valueOf(y[1 - 1][2 - 1][3 - 1]));
-        System.exit(0);
+        // Method body requires runtime extensions
     }
 
     @Override

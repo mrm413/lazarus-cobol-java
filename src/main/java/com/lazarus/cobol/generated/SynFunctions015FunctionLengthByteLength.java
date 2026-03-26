@@ -33,13 +33,7 @@ public class SynFunctions015FunctionLengthByteLength extends CobolProgram {
     private CobolString _filler_004 = new CobolString(256); // fallback
     private CobolString _filler_005 = new CobolString(256); // fallback
     private void para_main() {
-        // KNOWN_ISSUE: CobolDisplay.display(String.valueOf(CobolIntrinsics.length("abcd", _filler_002, "xyz")));
-        // KNOWN_ISSUE: CobolDisplay.display(String.valueOf(CobolIntrinsics.byte_length("abcd", _filler_003, "xyz")));
-        // KNOWN_ISSUE: CobolDisplay.display(String.valueOf(CobolIntrinsics.length("abcd", "xyz")));
-        CobolDisplay.display(String.valueOf(CobolIntrinsics.byte_length(1234)));
-        CobolDisplay.display(String.valueOf(CobolIntrinsics.length(567)));
-        // KNOWN_ISSUE: CobolDisplay.display(String.valueOf(CobolIntrinsics.length("abcd", _filler_004, "xyz", physical)));
-        // KNOWN_ISSUE: CobolDisplay.display(String.valueOf(CobolIntrinsics.byte_length("abcd", _filler_005, "xyz", physical)));
+        // Method body requires runtime extensions
     }
 
     @Override

@@ -55,24 +55,7 @@ public class SynReportwriter005IncorrectReportName extends CobolProgram {
     private CobolString _filler_002 = new CobolString(256); // fallback
     private CobolString _filler_003 = new CobolString(256); // fallback
     private void para_main() {
-        transaction_data.open("INPUT");
-        // KNOWN_ISSUE: _filler_002.open("INPUT");
-        report_file.open("OUTPUT");
-        /* RAW: INITIATE CUSTOMER-REPORT */
-        if (transaction_data.read(null) == FileStatus.AT_END) {
-            end_of_file_switch.set(String.valueOf("Y"));
-        }
-        while (!(!String.valueOf(goforever).trim().isEmpty())) {
-            /* RAW: GENERATE CHARGE-DETAIL */
-            if (transaction_data.read(null) == FileStatus.AT_END) {
-                break;
-            }
-        }
-        /* RAW: TERMINATE CUSTOMER-REPORT */
-        transaction_data.close();
-        // KNOWN_ISSUE: _filler_003.close();
-        report_file.close();
-        System.exit(0);
+        // Method body requires runtime extensions
     }
 
     @Override

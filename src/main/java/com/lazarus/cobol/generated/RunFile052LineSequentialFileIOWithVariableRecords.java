@@ -24,10 +24,36 @@ public class RunFile052LineSequentialFileIOWithVariableRecords extends CobolProg
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private int rec_size = 0;
+    private int i = 0;
+    private CobolString _1_template = new CobolString(1); // Group: 1-template
+    private CobolString[] _1_x = new CobolString[20];
 
+    // FILE SECTION — f
+    private CobolString f_rec = new CobolString(1); // Group: f-rec
+    private CobolString[] f_x = new CobolString[20];
+
+
+    // FILE DESCRIPTORS
+    private CobolFile f = new CobolFile("LINE", "SEQUENTIAL", "SEQUENTIAL");
+
+    // FALLBACK FILE DESCRIPTORS
+    private CobolFile _filler_001 = new CobolFile("*", "SEQUENTIAL", "SEQUENTIAL");
+    private CobolFile should = new CobolFile("SHOULD", "SEQUENTIAL", "SEQUENTIAL");
+    private CobolFile not = new CobolFile("NOT", "SEQUENTIAL", "SEQUENTIAL");
+    private CobolFile influence = new CobolFile("INFLUENCE", "SEQUENTIAL", "SEQUENTIAL");
+    private CobolFile move = new CobolFile("MOVE", "SEQUENTIAL", "SEQUENTIAL");
+
+
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private void para_main() {
+        // Method body requires runtime extensions
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

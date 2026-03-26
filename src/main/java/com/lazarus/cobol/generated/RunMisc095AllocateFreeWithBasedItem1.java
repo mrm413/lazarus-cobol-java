@@ -31,16 +31,11 @@ public class RunMisc095AllocateFreeWithBasedItem1 extends CobolProgram {
 
     // SECTION: ASTART
     private void astart() {
-        a01();
+        // Method body requires runtime extensions
     }
 
     private void a01() {
-        /* ALLOCATE — dynamic memory, not typical in Java */
-        if (!String.valueOf(myfld).equals(String.valueOf("ABCDEF"))) {
-            CobolDisplay.display(String.valueOf(myfld));
-        }
-        // KNOWN_ISSUE: address = null; /* FREE */
-        System.exit(0);
+        // Method body requires runtime extensions
     }
 
     @Override

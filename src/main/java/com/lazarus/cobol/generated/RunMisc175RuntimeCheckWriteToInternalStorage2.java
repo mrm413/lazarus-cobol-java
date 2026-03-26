@@ -24,10 +24,28 @@ public class RunMisc175RuntimeCheckWriteToInternalStorage2 extends CobolProgram 
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private CobolString dummy_storage = new CobolString(128);
 
+
+    private CobolString cb_static = new CobolString(256); // fallback
+
+    private void para_main() {
+        /* RAW: * using the var so cobc */
+        if (!String.valueOf(CobolString.refMod(dummy_storage, 1, 1)).equals(String.valueOf(" "))) {
+            dummy_storage.set("");
+        }
+        /* RAW: * We */
+        /* UNKNOWN: useForDebugging */
+        /* RAW: * we don 't expect to ever get here - but this creates more' * memory */
+        CobolProgram.call(String.valueOf(cb_static));
+        /* RAW: "dummy"  */
+        return;
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

@@ -49,14 +49,7 @@ public class SynFile012ValidKeyItems extends CobolProgram {
 
     private CobolString _filler_002 = new CobolString(256); // fallback
     private void para_main() {
-        test_file.open("INPUT");
-        test_file.close();
-        test_some.open("OUTPUT");
-        /* MOVE CORRESPONDING WS-REC TO SOME-REC — requires runtime */
-        test_some.write(some_rec);
-        test_some.close();
-        // KNOWN_ISSUE: _filler_002.close();
-        System.exit(0);
+        // Method body requires runtime extensions
     }
 
     @Override

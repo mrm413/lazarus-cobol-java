@@ -24,10 +24,23 @@ public class RunFundamental013EqualityOfFloatShortFloatExtended extends CobolPro
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private double src1 = 0.0;
+    private float dst1 = 0.0f;
+    private float src2 = 0.0f;
+    private double dst2 = 0.0;
 
+
+    private CobolString end_display = new CobolString(256); // fallback
+    private CobolString end_if = new CobolString(256); // fallback
+
+    private void para_main() {
+        // Method body requires runtime extensions
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

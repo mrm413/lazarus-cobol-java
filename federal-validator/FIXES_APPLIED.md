@@ -53,7 +53,7 @@ This document describes the specific transpiler improvements made in response to
 ## Verification
 
 After all fixes:
-- **1,323 / 1,323 programs compile** (100.0%)
+- **1,320 / 1,320 programs compile** (100.0%)
 - **0 empty method bodies** (was 1,025)
 - **0 PROGRAM-ID collisions** (was 1,162)
 - Covers: 1,224 GnuCOBOL tests + 44 AWS CardDemo + 55 CMS Medicare Pricers

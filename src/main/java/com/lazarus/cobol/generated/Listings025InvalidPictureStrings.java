@@ -24,6 +24,16 @@ public class Listings025InvalidPictureStrings extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private CobolString empty_pic = new CobolString(1);
+    private CobolString too_long_pic = new CobolString(44);
+    private CobolString too_long_pic2 = new CobolString(43);
+    private CobolString multiple_symbols = new CobolString(1); // Group: multiple-symbols
+    private int filler_1 = 0;
+    private int filler_2 = 0;
+    private int filler_3 = 0;
+    private int filler_4 = 0;
+
 
 
     @Override

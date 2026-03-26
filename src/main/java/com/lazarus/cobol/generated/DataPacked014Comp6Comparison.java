@@ -24,10 +24,73 @@ public class DataPacked014Comp6Comparison extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private BigDecimal u1 = BigDecimal.ZERO;
+    private BigDecimal u2 = BigDecimal.ZERO;
+    private BigDecimal u3 = BigDecimal.ZERO;
+    private BigDecimal u4 = BigDecimal.ZERO;
+    private BigDecimal u1_32 = BigDecimal.ZERO;
+    private BigDecimal u2_32 = BigDecimal.ZERO;
+    private BigDecimal u1_32d = BigDecimal.ZERO;
+    private BigDecimal u2_32d = BigDecimal.ZERO;
+    private BigDecimal u3_32d = BigDecimal.ZERO;
+    private BigDecimal u4_32d = BigDecimal.ZERO;
+    private int filler_1 = 0;
 
+
+    private CobolString on = new CobolString(256); // fallback
+    private CobolString error = new CobolString(256); // fallback
+    private CobolString no_disp = new CobolString(256); // fallback
+    private CobolString cb_true = new CobolString(256); // fallback
+    private CobolString some = new CobolString(256); // fallback
+
+    private void para_main() {
+        /* RAW: * Test with */
+        CobolDisplay.display(String.valueOf(on) + String.valueOf(error));
+        do_check();
+        no_disp.set(String.valueOf((Integer.parseInt(String.valueOf(cb_true).trim()) * Integer.parseInt(String.valueOf(some).trim()))));
+        /* RAW: performance checks on the way */
+        for (int _i0 = 0; _i0 < 30000; _i0++) {
+        }
+        return;
+    }
+
+    private void do_check() {
+        if (u1.compareTo(u2) != 0) {
+            CobolDisplay.display("U1 <> U2");
+        }
+        if (u3.compareTo(u4) != 0) {
+            CobolDisplay.display("U3 <> U4");
+        }
+        if (u1.compareTo(u3) >= 0) {
+            CobolDisplay.display("U1 >= U3");
+        }
+        if (u1_32.compareTo(u2_32) != 0) {
+            CobolDisplay.display("U1-32 <> U2-32");
+        }
+        if (u1_32.compareTo(u2_32d) >= 0) {
+            CobolDisplay.display("U1-32 >= U1-32D");
+        }
+        if (u1_32d.compareTo(u2_32d) != 0) {
+            CobolDisplay.display("U1-32D <> U2-32D");
+        }
+        if (u1_32d.compareTo(u3) <= 0) {
+            CobolDisplay.display("U1-32 <= U3");
+        }
+        if (u2_32d.compareTo(u3_32d) != 0) {
+            CobolDisplay.display("U2-32D <> U3-32D");
+        }
+        if (u2_32d.compareTo(u4_32d) <= 0) {
+            CobolDisplay.display("U2-32D <= U4-32D");
+        }
+        if (u4_32d.compareTo(u2_32d) >= 0) {
+            CobolDisplay.display("U4-32D >= U2-32D");
+        }
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

@@ -26,8 +26,17 @@ public class SynLiterals007BinaryLiterals extends CobolProgram {
     private CobolString debug_contents = new CobolString(256);
 
 
+    private void para_main() {
+        CobolDisplay.display("101010");
+        CobolDisplay.display(String.valueOf((0 /* non-numeric literal: 11111111111111111111 */ - 0 /* non-numeric literal: 1111111111111 */)));
+        CobolDisplay.display("23");
+        CobolDisplay.display(String.valueOf(((0 /* non-numeric literal: 11111111111111111111 */ - 0 /* non-numeric literal: 11111111111111111111 */) - 0 /* non-numeric literal: 11111111111111111111 */)));
+        System.exit(0);
+    }
+
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

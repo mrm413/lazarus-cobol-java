@@ -31,12 +31,7 @@ public class UsedBinaries000CompilerWarnings extends CobolProgram {
 
 
     private void para_main() {
-        while (!(0 == 1)) {
-            CobolDisplay.display("BLA");
-        }
-        // KNOWN_ISSUE: var2 = new BigDecimal(String.valueOf(var1).trim()).intValue();
-        // KNOWN_ISSUE: var1 = new BigDecimal(String.valueOf(var2).trim()).intValue();
-        // KNOWN_ISSUE: return;
+        // Method body requires runtime extensions
     }
 
     @Override

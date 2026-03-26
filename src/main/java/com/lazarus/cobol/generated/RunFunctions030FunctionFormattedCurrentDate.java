@@ -24,10 +24,23 @@ public class RunFunctions030FunctionFormattedCurrentDate extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private CobolString datetime_format = new CobolString(1);
+    private CobolString str = new CobolString(25);
 
+
+
+    private void para_main() {
+        str.set(String.valueOf(CobolIntrinsics.formatted_current_date(datetime_format)));
+        if (!String.valueOf(CobolIntrinsics.test_formatted_datetime(datetime_format, str)).equals(String.valueOf(0))) {
+            CobolDisplay.display("Test 1 failed: " + String.valueOf(str));
+        }
+        System.exit(0);
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

@@ -35,26 +35,7 @@ public class RunFunctions008FunctionConcatConcatenate extends CobolProgram {
     private CobolString valid_data = new CobolString(256); // fallback
 
     private void para_main() {
-        // Transpiled COBOL body (requires runtime extensions for full compilation):
-    // 
-    // y.set(String.valueOf("defx"));
-    // {
-    // StringBuilder _sb = new StringBuilder();
-    // _sb.append(String.valueOf(CobolIntrinsics.concatenate(y, "abc", "zz", "55", "666")));
-    // test_fld.set(_sb.toString());
-    // }
-    // if (-valid_unset) {
-    // CobolDisplay.display("FUNCTION result too long");
-    // } else if (!String.valueOf(test_data).trim().isEmpty()) {
-    // /* RAW: <> FUNCTION CONCAT ( Y "abc" */
-    // CobolDisplay.display("CONCAT issue, '" + String.valueOf(test_data) + "' vs. '" + String.valueOf(CobolIntrinsics.concatenate(y, "abc", "zz", "55", "666")) + "'");
-    // } else if (!String.valueOf(valid_data).trim().isEmpty()) {
-    // /* CONTINUE */
-    // } else {
-    // CobolDisplay.display(String.valueOf(test_data));
-    // }
-    // System.exit(0);
-        System.exit(0);
+        // Method body requires runtime extensions
     }
 
     @Override

@@ -24,10 +24,40 @@ public class RunExtensions075SystemRoutineCblErrorProc1 extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private long err_proc_address = 0L;
+    private short err_message_len = (short) 0;
 
+    // LINKAGE SECTION
+    private CobolString err_message_from_runtime = new CobolString(1023);
+
+
+    private CobolString entry = new CobolString(256); // fallback
+    private CobolString _filler_001 = new CobolString(256); // fallback
+
+    private CobolString _filler_002 = new CobolString(256); // fallback
+    private CobolString _filler_003 = new CobolString(256); // fallback
+    private CobolString _filler_004 = new CobolString(256); // fallback
+    private void s1() {
+        CobolDisplay.display("Program is starting");
+        err_proc_address = new BigDecimal(String.valueOf(entry).trim()).longValue();
+        /* RAW: 'ErrProc'  */
+        CobolProgram.call("CBL_ERROR_PROC", 0, _filler_002, err_proc_address);
+        err_proc_address = new BigDecimal(String.valueOf(entry).trim()).longValue();
+        /* RAW: 'ErrProc-internal'  */
+        CobolProgram.call("CBL_ERROR_PROC", 0, _filler_003, err_proc_address);
+        err_proc_address = new BigDecimal(String.valueOf(entry).trim()).longValue();
+        /* RAW: 'ErrProc'  */
+        CobolProgram.call("CBL_ERROR_PROC", 0, _filler_004, err_proc_address);
+        err_proc_address = new BigDecimal(String.valueOf(0).trim()).longValue();
+        CobolProgram.call("Tilt");
+        CobolDisplay.display("Program is stopping");
+        System.exit(0);
+    }
 
     @Override
     public void run() {
+        s1();
     }
 
     public static void main(String[] args) {

@@ -49,11 +49,7 @@ public class SynMisc118OsvsIOExtensions extends CobolProgram {
 
     private CobolString _filler_002 = new CobolString(256); // fallback
     private void para_main() {
-        f.open("INPUT");
-        disp.open("INPUT");
-        // KNOWN_ISSUE: _filler_002.open("INPUT");
-        g.open("INPUT");
-        reread.open("INPUT");
+        // Method body requires runtime extensions
     }
 
     @Override

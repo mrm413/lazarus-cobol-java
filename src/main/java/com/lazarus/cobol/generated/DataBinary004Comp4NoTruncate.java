@@ -24,10 +24,65 @@ public class DataBinary004Comp4NoTruncate extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private short random_origin_b = (short) 0;
+    private BigDecimal random_target_b = BigDecimal.ZERO;
+    private int random_origin_d = 0;
+    private BigDecimal random_target_d = BigDecimal.ZERO;
+    private int filler_1 = 0;
 
+
+    private CobolString on = new CobolString(256); // fallback
+    private CobolString error = new CobolString(256); // fallback
+    private CobolString no_disp = new CobolString(256); // fallback
+    private CobolString cb_true = new CobolString(256); // fallback
+    private CobolString some = new CobolString(256); // fallback
+
+    private void para_main() {
+        /* RAW: * Test with */
+        CobolDisplay.display(String.valueOf(on) + String.valueOf(error));
+        do_check();
+        no_disp.set(String.valueOf((Integer.parseInt(String.valueOf(cb_true).trim()) * Integer.parseInt(String.valueOf(some).trim()))));
+        /* RAW: performance checks on the way */
+        for (int _i0 = 0; _i0 < 30000; _i0++) {
+        }
+        return;
+    }
+
+    private void do_check() {
+        random_origin_d = new BigDecimal(String.valueOf(0.12).trim()).intValue();
+        random_target_d = new BigDecimal(String.valueOf(random_origin_d).trim());
+        random_origin_b = new BigDecimal(String.valueOf(0.12).trim()).shortValue();
+        random_target_b = new BigDecimal(String.valueOf(random_origin_b).trim());
+        if (random_origin_d != random_origin_b) {
+            CobolDisplay.display("ORIGIN 0.12 WRONG");
+            CobolDisplay.display("DISPLAY: " + String.valueOf(random_origin_d) + " !=  BINARY : " + String.valueOf(random_origin_b));
+        }
+        if (random_target_d.compareTo(random_target_b) != 0) {
+            CobolDisplay.display("TARGET  .12 WRONG");
+            CobolDisplay.display("DISPLAY: " + String.valueOf(random_target_d) + " !=  BINARY : " + String.valueOf(random_target_b));
+        } else {
+            CobolDisplay.display("Ok with " + String.valueOf(random_target_d) + " == " + String.valueOf(random_target_b));
+        }
+        random_origin_d = new BigDecimal(String.valueOf(9.85).trim()).intValue();
+        random_target_d = new BigDecimal(String.valueOf(random_origin_d).trim());
+        random_origin_b = new BigDecimal(String.valueOf(9.85).trim()).shortValue();
+        random_target_b = new BigDecimal(String.valueOf(random_origin_b).trim());
+        if (random_origin_d != random_origin_b) {
+            CobolDisplay.display("ORIGIN 9.85 WRONG");
+            CobolDisplay.display("DISPLAY: " + String.valueOf(random_origin_d) + " !=  BINARY : " + String.valueOf(random_origin_b));
+        }
+        if (random_target_d.compareTo(random_target_b) != 0) {
+            CobolDisplay.display("TARGET  .85 WRONG");
+            CobolDisplay.display("DISPLAY: " + String.valueOf(random_target_d) + " !=  BINARY : " + String.valueOf(random_target_b));
+        } else {
+            CobolDisplay.display("Ok with " + String.valueOf(random_target_d) + " == " + String.valueOf(random_target_b));
+        }
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

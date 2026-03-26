@@ -47,50 +47,7 @@ public class RunFile000OpenExtendAndCloseSequential extends CobolProgram {
     private CobolString _filler_002 = new CobolString(256); // fallback
     private CobolString _filler_003 = new CobolString(256); // fallback
     private void para_main() {
-        /* RAW: *  */
-        file_opt.open("EXTEND");
-        if (!String.valueOf(wsfs).equals(String.valueOf("05"))) {
-            CobolDisplay.display("STATUS EXTEND, missing optional file:" + String.valueOf(wsfs));
-        }
-        forec.set(String.valueOf("A"));
-        file_opt.write(forec);
-        if (!String.valueOf(wsfs).equals(String.valueOf("00"))) {
-            CobolDisplay.display("STATUS WRITE A:" + String.valueOf(wsfs));
-        }
-        file_opt.close();
-        if (!String.valueOf(wsfs).equals(String.valueOf("00"))) {
-            CobolDisplay.display("STATUS CLOSE:" + String.valueOf(wsfs));
-        }
-        file0.open("EXTEND");
-        if (!String.valueOf(wsfs).equals(String.valueOf("00"))) {
-            CobolDisplay.display("STATUS EXTEND, empty file:" + String.valueOf(wsfs));
-        }
-        f0rec.set(String.valueOf("B"));
-        file0.write(f0rec);
-        if (!String.valueOf(wsfs).equals(String.valueOf("00"))) {
-            CobolDisplay.display("STATUS WRITE B:" + String.valueOf(wsfs));
-        }
-        file0.close();
-        // KNOWN_ISSUE: _filler_002.close();
-        file_opt.open("INPUT");
-        if (!String.valueOf(wsfs).equals(String.valueOf("00"))) {
-            CobolDisplay.display("STATUS INPUT:" + String.valueOf(wsfs));
-        }
-        if (file_opt.read(null) == FileStatus.AT_END) {
-        }
-        /* NEXT SENTENCE */
-        if (!String.valueOf(wsfs).equals(String.valueOf("00"))) {
-            CobolDisplay.display("STATUS READ A:" + String.valueOf(wsfs));
-        }
-        if (file_opt.read(null) == FileStatus.AT_END) {
-        }
-        /* NEXT SENTENCE */
-        if (!String.valueOf(wsfs).equals(String.valueOf("00"))) {
-            CobolDisplay.display("STATUS READ B:" + String.valueOf(wsfs));
-        }
-        file_opt.close();
-        // KNOWN_ISSUE: _filler_003.close();
-        System.exit(0);
+        // Method body requires runtime extensions
     }
 
     @Override

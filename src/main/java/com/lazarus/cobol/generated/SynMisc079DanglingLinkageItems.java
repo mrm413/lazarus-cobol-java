@@ -25,9 +25,20 @@ public class SynMisc079DanglingLinkageItems extends CobolProgram {
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
+    private CobolString d2 = new CobolString(256); // fallback
+    private CobolString g_val_b = new CobolString(256); // fallback
+    private CobolString cb_true = new CobolString(256); // fallback
+
+    private void para_main() {
+        if (!String.valueOf(d2).trim().isEmpty()) {
+            /* RAW: OMITTED OR Eb2 OMITTED or F2 */
+            g_val_b.set(String.valueOf(cb_true));
+        }
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

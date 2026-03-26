@@ -25,9 +25,37 @@ public class RunInitialize006ValueForGroupItemWithValue extends CobolProgram {
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
 
+    private CobolString g = new CobolString(256); // fallback
+    private CobolString add = new CobolString(256); // fallback
+    private CobolString to = new CobolString(256); // fallback
+    private CobolString failed = new CobolString(256); // fallback
+    private CobolString display = new CobolString(256); // fallback
+
+    private void para_main() {
+        if (!String.valueOf(g).equals(String.valueOf("09Y9Y9Y9Y9YZ09Y9Y9Y9Y9YZ09Y9Y9Y9Y9YZ"))) {
+            CobolDisplay.display("Compile failed: " + String.valueOf(g) + ".");
+            CobolDisplay.display("     should be: " + String.valueOf((0 /* non-numeric literal: 09Y9Y9Y9Y9YZ09Y9Y9Y9 */ * Integer.parseInt(String.valueOf(add).trim()))) + String.valueOf(1) + String.valueOf(to) + String.valueOf(failed));
+        }
+        g.set("");
+        if (!String.valueOf(g).equals(String.valueOf("00 0 0 0 0  00 0 0 0 0  00 0 0 0 0  "))) {
+            CobolDisplay.display("INITIALIZE failed: " + String.valueOf(g) + ".");
+            CobolDisplay.display("        should be: " + String.valueOf((0 /* non-numeric literal: 00 0 0 0 0  00 0 0 0 */ * Integer.parseInt(String.valueOf(add).trim()))) + String.valueOf(1) + String.valueOf(to) + String.valueOf(failed));
+        }
+        g.set("");
+        if (!String.valueOf(g).equals(String.valueOf("09Y9Y9Y9Y9YZ09Y9Y9Y9Y9YZ09Y9Y9Y9Y9YZ"))) {
+            CobolDisplay.display("INIT VALUE failed: " + String.valueOf(g) + ".");
+            CobolDisplay.display("        should be: " + String.valueOf((0 /* non-numeric literal: 09Y9Y9Y9Y9YZ09Y9Y9Y9 */ * Integer.parseInt(String.valueOf(add).trim()))) + String.valueOf(1) + String.valueOf(to) + String.valueOf(failed));
+        }
+        /* RAW: *  */
+        if (String.valueOf(failed).equals(String.valueOf((0 * Integer.parseInt(String.valueOf(display).trim()))))) {
+            /* RAW: "All INITIALIZE tests passed." * */
+        }
+        System.exit(0);
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

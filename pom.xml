@@ -10,7 +10,7 @@
     <packaging>jar</packaging>
 
     <name>Lazarus COBOL-to-Java</name>
-    <description>1,323 COBOL programs deterministically transpiled to pure Java with full CICS runtime</description>
+    <description>1,320 COBOL programs deterministically transpiled to pure Java with full CICS runtime</description>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>

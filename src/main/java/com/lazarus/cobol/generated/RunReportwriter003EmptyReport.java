@@ -24,10 +24,28 @@ public class RunReportwriter003EmptyReport extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // FILE SECTION — REPORT-FILE
 
+
+    // FILE DESCRIPTORS
+    private CobolFile report_file = new CobolFile("PRINTOUT", "LINE SEQUENTIAL", "SEQUENTIAL");
+
+
+    // SECTION: 010-Main
+    private void _010_main() {
+        _1();
+    }
+
+    private void _1() {
+        report_file.open("OUTPUT");
+        /* RAW: INITIATE RWCS-Report */
+        /* RAW: TERMINATE RWCS-Report */
+        report_file.close();
+    }
 
     @Override
     public void run() {
+        _1();
     }
 
     public static void main(String[] args) {

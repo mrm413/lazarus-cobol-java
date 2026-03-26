@@ -24,10 +24,56 @@ public class RunFile002DeleteFileSequential extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private CobolString wsfs = new CobolString(2);
 
+    // FILE SECTION — FILE-OPT
+    private CobolString forec = new CobolString(80);
+
+
+    // FILE DESCRIPTORS
+    private CobolFile file_opt = new CobolFile("testfile", "SEQUENTIAL", "SEQUENTIAL");
+    // File status: WSFS
+
+    // FALLBACK FILE DESCRIPTORS
+    private CobolFile file = new CobolFile("FILE", "SEQUENTIAL", "SEQUENTIAL");
+
+
+    private void para_main() {
+        /* RAW: *  */
+        file_opt.open("I-O");
+        if (!String.valueOf(wsfs).equals(String.valueOf("05"))) {
+            CobolDisplay.display("STATUS I-O, missing optional file:" + String.valueOf(wsfs));
+        }
+        file_opt.close();
+        if (!String.valueOf(wsfs).equals(String.valueOf("00"))) {
+            CobolDisplay.display("STATUS CLOSE:" + String.valueOf(wsfs));
+        }
+        file_opt.open("I-O");
+        if (!String.valueOf(wsfs).equals(String.valueOf("00"))) {
+            CobolDisplay.display("STATUS I-O, empty file:" + String.valueOf(wsfs));
+        }
+        file.delete();
+        /* RAW: FILE-OPT  */
+        if (!String.valueOf(wsfs).equals(String.valueOf("41"))) {
+            CobolDisplay.display("STATUS DELETE FILE (OPENED):" + String.valueOf(wsfs));
+        }
+        file_opt.close();
+        if (!String.valueOf(wsfs).equals(String.valueOf("00"))) {
+            CobolDisplay.display("STATUS CLOSE #2:" + String.valueOf(wsfs));
+        }
+        file.delete();
+        /* RAW: FILE-OPT  */
+        if (!String.valueOf(wsfs).equals(String.valueOf("00"))) {
+            CobolDisplay.display("STATUS DELETE FILE (closed):" + String.valueOf(wsfs));
+        }
+        /* RAW: *  */
+        System.exit(0);
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

@@ -24,10 +24,20 @@ public class SynRefmod001InvalidReferenceModification extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private CobolString x = new CobolString(4);
 
+
+    private CobolString x_ab = new CobolString(256); // fallback
+
+    private void para_main() {
+        CobolDisplay.display(String.valueOf(CobolString.refMod(x_ab, 1, 1)));
+        return;
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

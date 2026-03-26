@@ -6,6 +6,7 @@ import com.lazarus.cobol.CobolIntrinsics;
 import com.lazarus.cobol.CobolProgram;
 import com.lazarus.cobol.CobolString;
 import com.lazarus.cobol.FileStatus;
+import com.lazarus.cobol.jcl.batch.DfsortProgram;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -24,10 +25,46 @@ public class RunFile096FileSortLineSequential extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // FILE SECTION — SORT-IN
+    private CobolString in_rec = new CobolString(20);
 
+    // FILE SECTION — SORT-OUT
+    private CobolString out_rec = new CobolString(20);
+
+
+    // FILE DESCRIPTORS
+    private CobolFile sort_in = new CobolFile("test.txt", "LINE SEQUENTIAL", "SEQUENTIAL");
+    private CobolFile sort_out = new CobolFile("result.txt", "LINE SEQUENTIAL", "SEQUENTIAL");
+    private CobolFile sort_wrk = new CobolFile("SORT-WRK", "SEQUENTIAL", "SEQUENTIAL");
+
+    private CobolString test = new CobolString(256); // fallback
+
+    private void para_main() {
+        /* RAW: * Special case : */
+        /* WRITE test — no file mapping */ // test.write();
+        /* RAW: data in COBOL , see note */
+        sort_in.open("OUTPUT");
+        sort_in.write(" ");
+        sort_in.write(" ");
+        sort_in.write("world ");
+        sort_in.write(" ");
+        sort_in.write("hello ");
+        sort_in.write(" ");
+        sort_in.write(" ");
+        sort_in.close();
+        { /* SORT SORT-WRK (sort_wrk) */
+            DfsortProgram _sort = new DfsortProgram();
+            _sort.setSortKeys(new String[]{"WRK-REC:A"});
+            _sort.addInputFile("SORT-IN");
+            _sort.setOutputFile("SORT-OUT");
+            _sort.execute();
+        }
+        System.exit(0);
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {

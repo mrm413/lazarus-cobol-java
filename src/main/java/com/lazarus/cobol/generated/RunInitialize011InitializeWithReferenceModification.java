@@ -24,10 +24,24 @@ public class RunInitialize011InitializeWithReferenceModification extends CobolPr
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private CobolString my_fld = new CobolString(6);
+    private int my_other_fld = 0;
 
+
+
+    // SECTION: ASTART
+    private void astart() {
+        // Method body requires runtime extensions
+    }
+
+    private void a01() {
+        // Method body requires runtime extensions
+    }
 
     @Override
     public void run() {
+        a01();
     }
 
     public static void main(String[] args) {

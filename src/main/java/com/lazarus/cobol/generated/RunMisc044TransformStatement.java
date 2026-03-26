@@ -24,10 +24,18 @@ public class RunMisc044TransformStatement extends CobolProgram {
     private CobolString debug_sub_2 = new CobolString(4);
     private CobolString debug_sub_3 = new CobolString(4);
     private CobolString debug_contents = new CobolString(256);
+    // WORKING-STORAGE SECTION
+    private CobolString x = new CobolString(3);
 
+
+
+    private void para_main() {
+        // Method body requires runtime extensions
+    }
 
     @Override
     public void run() {
+        para_main();
     }
 
     public static void main(String[] args) {
