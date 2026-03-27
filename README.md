@@ -310,15 +310,15 @@ The [NOTICE](NOTICE) file contains complete ownership and attribution details. I
 
 | Component | Owner | License |
 |-----------|-------|---------|
-| Transpiler (not included) | Lazarus Systems | Proprietary |
-| Runtime library + CICS runtime | Lazarus Systems | Apache 2.0 |
-| Generated Java from GnuCOBOL tests | Lazarus Systems | Apache 2.0 |
+| Transpiler (not included) | Torsova LLC | Proprietary |
+| Runtime library + CICS runtime | Torsova LLC | Apache 2.0 |
+| Generated Java from GnuCOBOL tests | Torsova LLC | Apache 2.0 |
 | Generated Java from AWS CardDemo | Derivative of Amazon.com, Inc. | Apache 2.0 |
-| Generated Java from CMS Medicare | Lazarus Systems | Apache 2.0 (source is U.S. Gov public domain) |
+| Generated Java from CMS Medicare | Torsova LLC | Apache 2.0 (source is U.S. Gov public domain) |
 | H2 Database (dependency) | H2 Group | MPL 2.0 / EPL 1.0 |
 
-The **transpiler** that produced the generated Java is proprietary software owned by Lazarus Systems. It is not included in this repository. What you see here is the **output** — the runtime library and 1,320 compiled Java programs.
+The **transpiler** that produced the generated Java is proprietary software owned by Torsova LLC. It is not included in this repository. What you see here is the **output** — the runtime library and 1,320 compiled Java programs.
 
 ## About
 
-Built by [Lazarus Systems](https://lazarus-systems.com) — legacy code modernization, automated.
+Built by [Torsova LLC](https://torsova.com) — legacy code modernization, automated.

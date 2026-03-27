@@ -20,7 +20,7 @@ echo -e "${CYAN}║                                                             
 echo -e "${CYAN}║    1,320 COBOL programs transpiled to pure, compilable Java      ║${NC}"
 echo -e "${CYAN}║    Runtime: OpenJDK 21 | Reference: GnuCOBOL 3.2                ║${NC}"
 echo -e "${CYAN}║                                                                  ║${NC}"
-echo -e "${CYAN}║    Built by Lazarus Systems — lazarus-systems.com                ║${NC}"
+echo -e "${CYAN}║    Built by Torsova LLC — torsova.com                ║${NC}"
 echo -e "${CYAN}║                                                                  ║${NC}"
 echo -e "${CYAN}╚══════════════════════════════════════════════════════════════════╝${NC}"
 echo ""

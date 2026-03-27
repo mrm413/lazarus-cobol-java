@@ -30,11 +30,12 @@ COPY cobol-source/ /validator/cobol-source/
 
 # Copy test runner scripts
 COPY test_runner.sh /validator/test_runner.sh
+COPY parity_harness.sh /validator/parity_harness.sh
 COPY run.sh /validator/run.sh
 COPY known_issues.txt /validator/known_issues.txt
 COPY FIXES_APPLIED.md /validator/FIXES_APPLIED.md
 
-RUN chmod +x /validator/test_runner.sh /validator/run.sh
+RUN chmod +x /validator/test_runner.sh /validator/parity_harness.sh /validator/run.sh
 
 # Pre-compile runtime into JAR for fast per-test compilation
 RUN mkdir -p /validator/build && \
