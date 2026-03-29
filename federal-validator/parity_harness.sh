@@ -1,239 +1,208 @@
 #!/bin/bash
-# Lazarus Behavioral Parity Harness
-# Compiles + runs each Java program, compares stdout against golden COBOL output.
-# Generates HTML report proving COBOL X = Java X.
-#
-# Usage: ./parity_harness.sh [--filter=pattern]
+# ============================================================================
+# Lazarus COBOL-to-Java — Federal Parity Harness
+# Proves transpiled Java output matches GnuCOBOL federal test reference
+# line-by-line. Each test compiles Java, runs it, compares to golden output.
+# Torsova LLC
+# ============================================================================
 
 set -uo pipefail
 
-GREEN='\033[0;32m'
-RED='\033[0;31m'
-YELLOW='\033[1;33m'
-CYAN='\033[0;36m'
-NC='\033[0m'
-
-RUNTIME_JAR="/validator/lazarus-runtime.jar"
-GEN_DIR="/validator/generated"
-COBOL_DIR="/validator/cobol-source"
-BUILD_DIR="/validator/parity-build"
 GOLDEN_DIR="/validator/golden-outputs"
-REPORT_HTML="/validator/parity-report.html"
-REPORT_JSON="/validator/parity-report.json"
+GEN_DIR="/validator/generated"
+RUNTIME_JAR="/validator/lazarus-runtime.jar"
+BUILD_DIR="/validator/parity-build"
 
-FILTER=""
-TIMEOUT=10
-
-for arg in "$@"; do
-    case "$arg" in
-        --filter=*) FILTER="${arg#--filter=}" ;;
-    esac
-done
-
-mkdir -p "$BUILD_DIR" "$GOLDEN_DIR"
+GRN='\033[0;32m'
+RED='\033[0;31m'
+YEL='\033[0;33m'
+CYN='\033[0;36m'
+BLD='\033[1m'
+DIM='\033[2m'
+RST='\033[0m'
 
 PASS=0
 FAIL=0
-SKIP=0
+COMPILE_FAIL=0
 TOTAL=0
-HTML_ROWS=""
-JSON_PROGRAMS=""
+FAILURES=""
 
-echo -e "${CYAN}=== Lazarus Behavioral Parity Harness ===${NC}"
-echo ""
+declare -A CAT_PASS
+declare -A CAT_TOTAL
 
-# Phase 1: Capture golden COBOL outputs (if not already cached)
-COBOL_COUNT=$(ls "$COBOL_DIR"/*.cob "$COBOL_DIR"/*.cbl 2>/dev/null | wc -l)
-GOLDEN_COUNT=$(ls "$GOLDEN_DIR"/*.expected 2>/dev/null | wc -l)
-
-if [[ "$GOLDEN_COUNT" -lt 10 ]] && [[ "$COBOL_COUNT" -gt 0 ]]; then
-    echo -e "${CYAN}Phase 1: Capturing COBOL golden outputs...${NC}"
-    for cobfile in "$COBOL_DIR"/*.cob "$COBOL_DIR"/*.cbl; do
-        [[ -f "$cobfile" ]] || continue
-        bn=$(basename "$cobfile" | sed 's/\.[^.]*$//')
-        outbin="$BUILD_DIR/${bn}_cobol"
-        if cobc -x -o "$outbin" "$cobfile" 2>/dev/null; then
-            timeout "$TIMEOUT" "$outbin" > "$GOLDEN_DIR/${bn}.expected" 2>/dev/null || true
-        fi
-    done
-    GOLDEN_COUNT=$(ls "$GOLDEN_DIR"/*.expected 2>/dev/null | wc -l)
-    echo -e "  Captured ${GREEN}${GOLDEN_COUNT}${NC} golden outputs"
-    echo ""
-fi
-
-# Build name mapping: COBOL filename → Java class name
-# run_fundamental_000_DISPLAY_literals → RunFundamental000DisplayLiterals
-cobol_to_java_class() {
-    echo "$1" | sed 's/\.[^.]*$//' | sed 's/[-_]\([a-zA-Z0-9]\)/\u\1/g' | sed 's/^\([a-z]\)/\u\1/'
+get_category() {
+    echo "$1" | sed 's/^Run\([A-Za-z]*\)[0-9].*/\1/'
 }
 
-echo -e "${CYAN}Phase 2: Running Java programs and comparing output...${NC}"
+mkdir -p "$BUILD_DIR"
+
+echo ""
+echo -e "${BLD}╔══════════════════════════════════════════════════════════════════════╗${RST}"
+echo -e "${BLD}║                                                                      ║${RST}"
+echo -e "${BLD}║   Lazarus COBOL-to-Java — Federal Parity Proof                       ║${RST}"
+echo -e "${BLD}║   Transpiled output vs GnuCOBOL federal test reference               ║${RST}"
+echo -e "${BLD}║   Torsova LLC                                                        ║${RST}"
+echo -e "${BLD}║                                                                      ║${RST}"
+echo -e "${BLD}╚══════════════════════════════════════════════════════════════════════╝${RST}"
+echo ""
+echo -e "${DIM}Each test: compile transpiled Java -> run -> compare output to GnuCOBOL"
+echo -e "reference line-by-line. Every line must match exactly.${RST}"
 echo ""
 
-for jfile in "$GEN_DIR"/*.java; do
-    [[ -f "$jfile" ]] || continue
-    bn=$(basename "$jfile" .java)
+TOTAL_GOLDEN=$(ls "$GOLDEN_DIR"/*.expected 2>/dev/null | wc -l)
 
-    # Apply filter
-    if [[ -n "$FILTER" ]]; then
-        if ! echo "$bn" | grep -qi "$FILTER"; then
-            continue
-        fi
-    fi
-
+for gfile in "$GOLDEN_DIR"/*.expected; do
+    [ -f "$gfile" ] || continue
     TOTAL=$((TOTAL + 1))
 
-    # Find matching golden output
-    # Try multiple naming conventions
-    GOLDEN_FILE=""
-    bn_lower=$(echo "$bn" | tr '[:upper:]' '[:lower:]')
-    for gfile in "$GOLDEN_DIR"/*.expected; do
-        [[ -f "$gfile" ]] || continue
-        gbn=$(basename "$gfile" .expected)
-        gbn_lower=$(echo "$gbn" | tr '[:upper:]' '[:lower:]')
-        java_class=$(cobol_to_java_class "$gbn")
-        java_class_lower=$(echo "$java_class" | tr '[:upper:]' '[:lower:]')
-        if [[ "$java_class_lower" == "$bn_lower" ]] || [[ "$gbn_lower" == "$bn_lower" ]]; then
-            GOLDEN_FILE="$gfile"
-            break
-        fi
-    done
+    bn=$(basename "$gfile" .expected)
+    jfile="${GEN_DIR}/${bn}.java"
+    classname="com.lazarus.cobol.generated.${bn}"
+    category=$(get_category "$bn")
 
-    if [[ -z "$GOLDEN_FILE" ]]; then
-        SKIP=$((SKIP + 1))
-        HTML_ROWS+="<tr class=\"skip\"><td>${bn}</td><td colspan=\"3\" class=\"skip-msg\">No golden COBOL output available</td></tr>\n"
-        JSON_PROGRAMS+="{\"program\":\"${bn}\",\"passed\":null,\"skipped\":true},"
+    CAT_TOTAL[$category]=$(( ${CAT_TOTAL[$category]:-0} + 1 ))
+
+    echo -e "${BLD}────────────────────────────────────────────────────────────────────${RST}"
+    printf "${CYN}TEST %03d/${TOTAL_GOLDEN}${RST}  %-52s ${DIM}[%s]${RST}\n" "$TOTAL" "$bn" "$category"
+
+    if [ ! -f "$jfile" ]; then
+        COMPILE_FAIL=$((COMPILE_FAIL + 1))
+        FAILURES="${FAILURES}\n  MISSING: ${bn}"
+        echo -e "  ${RED}NO JAVA FILE${RST}"
+        echo ""
         continue
     fi
 
-    # Compile Java
+    # Clean previous test classes to prevent cross-contamination
+    rm -rf "${BUILD_DIR}/com/lazarus/cobol/generated/"*.class 2>/dev/null || true
+
     if ! javac -cp "$RUNTIME_JAR" -d "$BUILD_DIR" "$jfile" 2>/dev/null; then
-        FAIL=$((FAIL + 1))
-        HTML_ROWS+="<tr class=\"fail\"><td><span class=\"badge fail\">FAIL</span> ${bn}</td><td>compile error</td><td>-</td><td>-</td></tr>\n"
-        JSON_PROGRAMS+="{\"program\":\"${bn}\",\"passed\":false,\"reason\":\"compile\"},"
+        COMPILE_FAIL=$((COMPILE_FAIL + 1))
+        FAILURES="${FAILURES}\n  COMPILE_FAIL: ${bn}"
+        echo -e "  ${RED}COMPILE FAILED${RST}"
+        echo ""
         continue
     fi
 
-    # Run Java
-    JAVA_OUT=$(timeout "$TIMEOUT" java -cp "$RUNTIME_JAR:$BUILD_DIR" "com.lazarus.cobol.generated.${bn}" 2>/dev/null || true)
-    COBOL_OUT=$(cat "$GOLDEN_FILE")
+    actual=$(timeout 10 java -cp "$RUNTIME_JAR:$BUILD_DIR" "$classname" 2>/dev/null || true)
 
-    # Normalize: trim trailing whitespace per line, remove trailing blank lines
-    JAVA_NORM=$(echo "$JAVA_OUT" | sed 's/[[:space:]]*$//' | sed -e :a -e '/^[[:space:]]*$/{ $d; N; ba; }')
-    COBOL_NORM=$(echo "$COBOL_OUT" | sed 's/[[:space:]]*$//' | sed -e :a -e '/^[[:space:]]*$/{ $d; N; ba; }')
+    expected=$(cat "$gfile" | tr -d '\r' | sed 's/[[:space:]]*$//' | sed -e :a -e '/^\n*$/{$d;N;ba;}')
+    actual=$(echo "$actual" | tr -d '\r' | sed 's/[[:space:]]*$//' | sed -e :a -e '/^\n*$/{$d;N;ba;}')
 
-    if [[ "$JAVA_NORM" == "$COBOL_NORM" ]]; then
+    if [ -z "$expected" ]; then exp_lines=0; else exp_lines=$(echo "$expected" | wc -l); fi
+    if [ -z "$actual" ]; then act_lines=0; else act_lines=$(echo "$actual" | wc -l); fi
+
+    if [ "$expected" = "$actual" ]; then
         PASS=$((PASS + 1))
-        JAVA_LINES=$(echo "$JAVA_NORM" | wc -l)
-        echo -e "  ${GREEN}PASS${NC}  ${bn}  (${JAVA_LINES} lines match)"
-        HTML_ROWS+="<tr class=\"pass\"><td><span class=\"badge pass\">PASS</span> ${bn}</td><td>${JAVA_LINES}/${JAVA_LINES}</td><td>golden</td><td>match</td></tr>\n"
-        JSON_PROGRAMS+="{\"program\":\"${bn}\",\"passed\":true,\"lines\":${JAVA_LINES}},"
+        CAT_PASS[$category]=$(( ${CAT_PASS[$category]:-0} + 1 ))
+
+        echo -e "  ${DIM}COBOL (GnuCOBOL reference)${RST}            ${DIM}Java (Lazarus transpiler)${RST}"
+
+        if [ "$exp_lines" -eq 0 ]; then
+            echo -e "  ${DIM}(empty output)${RST}                        ${DIM}(empty output)${RST}              ${GRN}✓${RST}"
+        elif [ "$exp_lines" -le 8 ]; then
+            line_num=0
+            while IFS= read -r eline; do
+                line_num=$((line_num + 1))
+                aline=$(echo "$actual" | sed -n "${line_num}p")
+                edisp=$(printf "%-34.34s" "$eline")
+                adisp=$(printf "%-34.34s" "$aline")
+                echo -e "  ${edisp}${adisp}${GRN}✓${RST}"
+            done <<< "$expected"
+        else
+            line_num=0
+            while IFS= read -r eline; do
+                line_num=$((line_num + 1))
+                if [ "$line_num" -le 3 ]; then
+                    aline=$(echo "$actual" | sed -n "${line_num}p")
+                    edisp=$(printf "%-34.34s" "$eline")
+                    adisp=$(printf "%-34.34s" "$aline")
+                    echo -e "  ${edisp}${adisp}${GRN}✓${RST}"
+                fi
+            done <<< "$expected"
+            hidden=$((exp_lines - 5))
+            if [ "$hidden" -gt 0 ]; then
+                echo -e "  ${DIM}  ... $hidden more matching lines ...${RST}"
+            fi
+            for tail_n in 1 0; do
+                ln=$((exp_lines - tail_n))
+                eline=$(echo "$expected" | sed -n "${ln}p")
+                aline=$(echo "$actual" | sed -n "${ln}p")
+                edisp=$(printf "%-34.34s" "$eline")
+                adisp=$(printf "%-34.34s" "$aline")
+                echo -e "  ${edisp}${adisp}${GRN}✓${RST}"
+            done
+        fi
+
+        echo -e "  ${GRN}EXACT MATCH${RST} -- ${exp_lines} line(s)    ${DIM}running: ${PASS}/${TOTAL}${RST}"
     else
         FAIL=$((FAIL + 1))
-        # Generate diff snippet for HTML
-        DIFF_HTML=""
-        DIFF_LINES=$(diff <(echo "$COBOL_NORM") <(echo "$JAVA_NORM") | head -30 || true)
-        if [[ -n "$DIFF_LINES" ]]; then
-            ESCAPED=$(echo "$DIFF_LINES" | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g')
-            DIFF_HTML="<tr><td colspan=\"4\"><pre class=\"diff\">${ESCAPED}</pre></td></tr>"
-        fi
-        echo -e "  ${RED}FAIL${NC}  ${bn}"
-        HTML_ROWS+="<tr class=\"fail\"><td><span class=\"badge fail\">FAIL</span> ${bn}</td><td>differs</td><td>golden</td><td>mismatch</td></tr>\n${DIFF_HTML}\n"
-        JSON_PROGRAMS+="{\"program\":\"${bn}\",\"passed\":false,\"reason\":\"output_mismatch\"},"
+        FAILURES="${FAILURES}\n  FAIL: ${bn}"
+
+        echo -e "  ${RED}MISMATCH${RST} -- expected ${exp_lines} lines, got ${act_lines}"
+        echo -e "  ${RED}--- expected (COBOL) ---${RST}"
+        echo "$expected" | head -5 | while IFS= read -r line; do echo "    $line"; done
+        if [ "$exp_lines" -gt 5 ]; then echo -e "    ${DIM}... ($((exp_lines - 5)) more)${RST}"; fi
+        echo -e "  ${RED}--- actual (Java) ---${RST}"
+        echo "$actual" | head -5 | while IFS= read -r line; do echo "    $line"; done
+        if [ "$act_lines" -gt 5 ]; then echo -e "    ${DIM}... ($((act_lines - 5)) more)${RST}"; fi
     fi
 
-    # Progress
-    if [[ $((TOTAL % 50)) -eq 0 ]]; then
-        echo -e "  ${CYAN}... ${TOTAL} programs tested${NC}"
-    fi
+    echo ""
 done
 
-# Calculate pass rate
-TESTED=$((PASS + FAIL))
-if [[ $TESTED -gt 0 ]]; then
-    RATE=$(echo "scale=1; $PASS * 100 / $TESTED" | bc 2>/dev/null || echo "N/A")
-else
-    RATE="0.0"
+# Category summary
+echo -e "${BLD}════════════════════════════════════════════════════════════════════════${RST}"
+echo -e "${BLD}  CATEGORY BREAKDOWN${RST}"
+echo -e "${BLD}════════════════════════════════════════════════════════════════════════${RST}"
+echo ""
+printf "  ${BLD}%-20s %8s %8s %8s${RST}\n" "Category" "Tests" "Passed" "Rate"
+printf "  %-20s %8s %8s %8s\n" "--------------------" "--------" "--------" "--------"
+
+for cat in $(echo "${!CAT_TOTAL[@]}" | tr ' ' '\n' | sort); do
+    ct=${CAT_TOTAL[$cat]}
+    cp=${CAT_PASS[$cat]:-0}
+    if [ "$ct" -gt 0 ]; then
+        rate=$(echo "scale=1; $cp * 100 / $ct" | bc)
+    else
+        rate="0.0"
+    fi
+    if [ "$cp" -eq "$ct" ]; then color=$GRN; else color=$RED; fi
+    printf "  %-20s %8d %8d ${color}%7s%%${RST}\n" "$cat" "$ct" "$cp" "$rate"
+done
+
+echo ""
+echo -e "${BLD}════════════════════════════════════════════════════════════════════════${RST}"
+echo -e "${BLD}  FINAL RESULTS${RST}"
+echo -e "${BLD}════════════════════════════════════════════════════════════════════════${RST}"
+echo ""
+echo -e "  Total tests:        ${BLD}${TOTAL}${RST}"
+echo -e "  Passed:             ${GRN}${BLD}${PASS}${RST}"
+echo -e "  Failed:             ${FAIL}"
+echo -e "  Compile failures:   ${COMPILE_FAIL}"
+echo ""
+
+if [ $TOTAL -gt 0 ]; then
+    RATE=$(echo "scale=1; $PASS * 100 / $TOTAL" | bc)
+    echo -e "  Parity rate:        ${BLD}${RATE}%${RST}"
 fi
 
 echo ""
-echo -e "${CYAN}══════════════════════════════════════════════════════════════${NC}"
-echo -e "  Total: ${CYAN}${TOTAL}${NC}  Pass: ${GREEN}${PASS}${NC}  Fail: ${RED}${FAIL}${NC}  Skip: ${YELLOW}${SKIP}${NC}  Rate: ${GREEN}${RATE}%${NC}"
-echo -e "${CYAN}══════════════════════════════════════════════════════════════${NC}"
 
-# Generate HTML report
-BAR_COLOR="#3fb950"
-[[ $FAIL -gt 0 ]] && BAR_COLOR="#f85149"
-[[ $FAIL -gt 0 ]] && [[ $PASS -gt 0 ]] && BAR_COLOR="#d29922"
-
-cat > "$REPORT_HTML" << HTMLEOF
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8">
-<title>Lazarus Behavioral Parity Report</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:monospace;background:#0d1117;color:#c9d1d9;padding:24px}
-h1{color:#58a6ff;font-size:20px;margin-bottom:4px}
-h2{color:#8b949e;font-size:13px;font-weight:normal;margin-bottom:20px}
-.summary{display:flex;gap:24px;margin-bottom:24px;background:#161b22;padding:16px;border-radius:8px;align-items:center}
-.stat{text-align:center}
-.stat .n{font-size:32px;font-weight:bold}
-.stat .l{font-size:10px;text-transform:uppercase;color:#8b949e}
-.stat .n.p{color:#3fb950} .stat .n.f{color:#f85149} .stat .n.s{color:#d29922} .stat .n.t{color:#58a6ff}
-.bar{flex:1;height:8px;background:#21262d;border-radius:4px;overflow:hidden}
-.fill{height:100%;background:${BAR_COLOR};width:${RATE}%}
-.pct{color:#8b949e;font-size:14px}
-table{width:100%;border-collapse:collapse}
-th{background:#161b22;padding:8px 12px;text-align:left;font-size:11px;text-transform:uppercase;color:#8b949e;border-bottom:1px solid #30363d}
-td{padding:8px 12px;border-bottom:1px solid #21262d;font-size:13px}
-tr.pass td{border-left:3px solid #3fb950}
-tr.fail td{border-left:3px solid #f85149}
-tr.skip td{border-left:3px solid #d29922;color:#8b949e}
-.badge{font-size:10px;padding:2px 6px;border-radius:3px;font-weight:bold;color:#fff}
-.badge.pass{background:#238636} .badge.fail{background:#da3633}
-.skip-msg{font-style:italic;font-size:12px}
-pre.diff{background:#161b22;padding:8px;font-size:11px;color:#f85149;white-space:pre-wrap;margin:4px 0}
-footer{margin-top:24px;color:#484f58;font-size:11px}
-</style></head><body>
-<h1>Lazarus Behavioral Parity Report</h1>
-<h2>COBOL Program Output vs Transpiled Java Output | Generated: $(date -u '+%Y-%m-%d %H:%M:%S UTC')</h2>
-<div class="summary">
-<div class="stat"><div class="n t">${TOTAL}</div><div class="l">Total</div></div>
-<div class="stat"><div class="n p">${PASS}</div><div class="l">Pass</div></div>
-<div class="stat"><div class="n f">${FAIL}</div><div class="l">Fail</div></div>
-<div class="stat"><div class="n s">${SKIP}</div><div class="l">Skip</div></div>
-<div class="bar"><div class="fill"></div></div>
-<div class="pct">${RATE}%</div>
-</div>
-<table>
-<thead><tr><th>Program</th><th>Lines</th><th>COBOL Source</th><th>Result</th></tr></thead>
-<tbody>
-$(echo -e "$HTML_ROWS")
-</tbody>
-</table>
-<footer>Torsova LLC — Behavioral Parity Harness</footer>
-</body></html>
-HTMLEOF
-
-# Generate JSON report
-JSON_PROGRAMS="${JSON_PROGRAMS%,}"  # Remove trailing comma
-cat > "$REPORT_JSON" << JSONEOF
-{
-  "timestamp": "$(date -u '+%Y-%m-%dT%H:%M:%SZ')",
-  "summary": {
-    "total": ${TOTAL},
-    "pass": ${PASS},
-    "fail": ${FAIL},
-    "skip": ${SKIP},
-    "passRate": ${RATE}
-  },
-  "programs": [${JSON_PROGRAMS}]
-}
-JSONEOF
-
-echo ""
-echo -e "Reports written to:"
-echo -e "  HTML: ${CYAN}${REPORT_HTML}${NC}"
-echo -e "  JSON: ${CYAN}${REPORT_JSON}${NC}"
-
-[[ $FAIL -eq 0 ]]
+if [ $FAIL -gt 0 ] || [ $COMPILE_FAIL -gt 0 ]; then
+    echo -e "  ${RED}Failures:${RST}"
+    echo -e "$FAILURES"
+    echo ""
+    echo -e "${RED}${BLD}  SUITE FAILED${RST}"
+    exit 1
+else
+    echo -e "${GRN}${BLD}╔══════════════════════════════════════════════════════════════════════╗${RST}"
+    echo -e "${GRN}${BLD}║                                                                      ║${RST}"
+    echo -e "${GRN}${BLD}║   ALL ${TOTAL} TESTS PASSED -- 100% PARITY WITH GNUCOBOL REFERENCE     ║${RST}"
+    echo -e "${GRN}${BLD}║                                                                      ║${RST}"
+    echo -e "${GRN}${BLD}║   Every line of transpiled Java output matches the GnuCOBOL federal  ║${RST}"
+    echo -e "${GRN}${BLD}║   test suite reference output exactly.                               ║${RST}"
+    echo -e "${GRN}${BLD}║                                                                      ║${RST}"
+    echo -e "${GRN}${BLD}╚══════════════════════════════════════════════════════════════════════╝${RST}"
+    exit 0
+fi

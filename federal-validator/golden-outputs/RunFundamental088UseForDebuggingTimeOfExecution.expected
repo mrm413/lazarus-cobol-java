@@ -1,0 +1,6 @@
+    18 DATA-FIELD                                       """"""""""""""""""""""""""""""""""""""""|
+    19 DATA-FIELD                                       ABCD                                    |
+DEBUG
+    23 DATA-FIELD                                                                               |
+    24 DATA-FIELD                                       ABCD                                    |
+THIS IS FINE

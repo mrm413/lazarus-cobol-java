@@ -1,0 +1,14 @@
+       FIRST-PAR                                        START PROGRAM                 |
+OK1
+    16 SECOND-PAR                                                                     |
+OK2
+    18 THIRD-PAR                                        FALL THROUGH                  |
+OK3
+    21 FIRST-PAR                                        PERFORM LOOP                  |
+OK1
+    16 SECOND-PAR                                                                     |
+OK2
+OK4
+    23 SECOND-PAR                                       PERFORM LOOP                  |
+OK2
+OK5

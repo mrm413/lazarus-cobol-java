@@ -1,0 +1,37 @@
+Test #1:
+  CALL 'SYSTEM' with prog 1:
+  called with -1-
+  --> return of the given CALL 'SYSTEM': +000000000
+Test #2:
+  CALL 'SYSTEM' with prog "1":
+  called with -1-
+  --> return of the given CALL 'SYSTEM': +000000000
+Test #3:
+  CALL 'SYSTEM' with "prog" 1:
+  called with -1-
+  --> return of the given CALL 'SYSTEM': +000000000
+Test #4:
+  CALL 'SYSTEM' with "prog" "1":
+  called with -1-
+  --> return of the given CALL 'SYSTEM': +000000000
+Test #5:
+  CALL 'SYSTEM' with prog a v:
+  called with -a- and with -v-
+  --> return of the given CALL 'SYSTEM': +000000000
+Test #6:
+  CALL 'SYSTEM' with prog "a v":
+  called with -a v-
+  --> return of the given CALL 'SYSTEM': +000000000
+Test #7:
+  CALL 'SYSTEM' with "prog" a v:
+  called with -a- and with -v-
+  --> return of the given CALL 'SYSTEM': +000000000
+Test #8:
+  CALL 'SYSTEM' with "prog" "a v":
+  called with -a v-
+  --> return of the given CALL 'SYSTEM': +000000000
+Test #9:
+  CALL 'SYSTEM' with "prog" "a" "v":
+  called with -a- and with -v-
+  --> return of the given CALL 'SYSTEM': +000000000
+tests finished

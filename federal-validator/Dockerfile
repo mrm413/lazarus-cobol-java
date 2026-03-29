@@ -28,6 +28,9 @@ COPY generated/ /validator/generated/
 # Copy original COBOL source for comparison
 COPY cobol-source/ /validator/cobol-source/
 
+# Copy golden expected outputs from GnuCOBOL federal test suite
+COPY golden-outputs/ /validator/golden-outputs/
+
 # Copy test runner scripts
 COPY test_runner.sh /validator/test_runner.sh
 COPY parity_harness.sh /validator/parity_harness.sh
@@ -36,6 +39,7 @@ COPY known_issues.txt /validator/known_issues.txt
 COPY FIXES_APPLIED.md /validator/FIXES_APPLIED.md
 
 RUN chmod +x /validator/test_runner.sh /validator/parity_harness.sh /validator/run.sh
+RUN sed -i 's/\r$//' /validator/test_runner.sh /validator/parity_harness.sh /validator/run.sh
 
 # Pre-compile runtime into JAR for fast per-test compilation
 RUN mkdir -p /validator/build && \

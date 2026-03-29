@@ -77,6 +77,10 @@ fi
 COBOL_COUNT=$(ls "$SCRIPT_DIR/cobol-source/" 2>/dev/null | wc -l)
 echo -e "  ${GREEN}$COBOL_COUNT COBOL source files${NC}"
 
+# Golden outputs are committed to the repo — no need to copy
+GOLDEN_COUNT=$(ls "$SCRIPT_DIR/golden-outputs/"*.expected 2>/dev/null | wc -l)
+echo -e "  ${GREEN}$GOLDEN_COUNT golden parity reference outputs (committed)${NC}"
+
 echo ""
 echo -e "${GREEN}Build context ready.${NC} Run: docker build -t lazarus-java-validator ."
 echo -e "Or: make build"
