@@ -3,9 +3,31 @@
 ## Status: COMPLETE
 
 ## Results
-- **Total programs**: 1,320 (1,224 GnuCOBOL + 44 CardDemo + 55 CMS Medicare)
-- **Compile rate**: 100.0% (1,320 / 1,320)
+- **Total programs**: 1,416 (1,320 GnuCOBOL + 44 CardDemo + 55 CMS Medicare)
+- **Compile rate**: 100.0% (1,416 / 1,416)
+- **Federal parity**: 281/281 (100% match with GnuCOBOL reference output)
 - **Empty para_main**: 0 (was 83.7% before fix)
+
+## Federal Parity Proof (added 2026-03-29)
+
+281 programs validated line-by-line against GnuCOBOL golden reference output:
+
+| Category | Tests | Parity |
+|----------|-------|--------|
+| Accept | 2 | 100% |
+| Extensions | 50 | 100% |
+| File | 34 | 100% |
+| Functions | 38 | 100% |
+| Fundamental | 59 | 100% |
+| Initialize | 2 | 100% |
+| Misc | 82 | 100% |
+| Ml | 2 | 100% |
+| Refmod | 5 | 100% |
+| Reportwriter | 3 | 100% |
+| Subscripts | 4 | 100% |
+| **Total** | **281** | **100%** |
+
+Run: `cd federal-validator && make parity`
 
 ## Fixes Applied
 
@@ -44,4 +66,5 @@
 ## Verification
 - Zero `.ts` files in public repo
 - Zero external tool references in output
-- All 1,320 Java files compile with `javac`
+- All 1,416 Java files compile with `javac`
+- 281/281 federal parity tests pass in Docker

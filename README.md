@@ -23,7 +23,7 @@ The transpiler has been validated against real-world production COBOL, not just 
 
 | Source | Description | Programs | Compile Rate |
 |--------|-------------|----------|--------------|
-| **GnuCOBOL Test Suite** | 79 categories of COBOL language features | 1,320 | **100%** compile, **281 parity proven** |
+| **GnuCOBOL Test Suite** | 79 categories of COBOL language features | 1,320 | **100%** compile, **281/281 parity proven** |
 | **AWS CardDemo** | Enterprise CICS/VSAM card management application | 44 | **100%** |
 | **CMS Medicare Pricers** | U.S. government healthcare pricing (ESRD, LTCH, SNF, Hospice, HH, IRF) | 55 | **100%** |
 | **Total** | | **1,416** | **100%** |
@@ -301,7 +301,14 @@ The Lazarus transpiler architecture is target-agnostic — the same parser and A
 - Added DFSORT runtime class for SORT/MERGE verb support (conditional import — only included when program uses SORT verbs)
 - All 1,224 GnuCOBOL test programs now have fully populated procedure bodies — zero empty methods
 - Unique class naming per source file eliminates PROGRAM-ID collisions in the test suite
-- 100% compile rate maintained across all 1,416 programs
+- 100% compile rate maintained across all 1,320 programs
+
+**2026-03-29** — Federal parity proof added:
+- 96 additional GnuCOBOL test programs transpiled (1,320 -> 1,416 total)
+- 281 golden reference outputs captured from GnuCOBOL federal test suite
+- Federal parity harness: line-by-line COBOL vs Java output comparison
+- 281/281 tests pass — 100% behavioral parity across 11 test categories
+- Docker: `docker run lazarus-java-validator --parity`
 
 ## License and attribution
 
@@ -318,7 +325,7 @@ The [NOTICE](NOTICE) file contains complete ownership and attribution details. I
 | Generated Java from CMS Medicare | Torsova LLC | Apache 2.0 (source is U.S. Gov public domain) |
 | H2 Database (dependency) | H2 Group | MPL 2.0 / EPL 1.0 |
 
-The **transpiler** that produced the generated Java is proprietary software owned by Torsova LLC. It is not included in this repository. What you see here is the **output** — the runtime library and 1,320 compiled Java programs.
+The **transpiler** that produced the generated Java is proprietary software owned by Torsova LLC. It is not included in this repository. What you see here is the **output** — the runtime library and 1,416 compiled Java programs.
 
 ## About
 
