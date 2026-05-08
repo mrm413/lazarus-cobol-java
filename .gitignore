@@ -1,0 +1,16 @@
+# Build / temp artifacts
+build/
+*.class
+*.jar
+verify.log
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Old showcase reference (kept locally; not pushed)
+oldshowcase/

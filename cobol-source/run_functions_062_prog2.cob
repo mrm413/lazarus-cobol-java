@@ -1,0 +1,8 @@
+       IDENTIFICATION   DIVISION.
+       PROGRAM-ID.      prog2.
+       ENVIRONMENT      DIVISION.
+       DATA             DIVISION.
+       WORKING-STORAGE SECTION.
+       PROCEDURE        DIVISION.
+           DISPLAY FUNCTION MODULE-CALLER-ID.
+           EXIT PROGRAM.

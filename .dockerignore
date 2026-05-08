@@ -1,0 +1,9 @@
+# Don't ship local build artifacts or the legacy showcase reference.
+build/
+verify.log
+*.class
+*.jar
+oldshowcase/
+.git/
+.gitignore
+.dockerignore

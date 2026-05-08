@@ -1,0 +1,55 @@
+Lazarus COBOL-to-Java
+Copyright 2026 Michael R. Mull / Torsova LLC
+
+This product includes software developed by Torsova LLC
+(https://torsova.com).
+
+================================================================================
+
+OWNERSHIP AND ATTRIBUTION
+================================================================================
+
+The following components are ORIGINAL WORK by Torsova LLC, licensed under
+the Apache License, Version 2.0:
+
+  - Generated Java programs (generated/*.java)
+  - Runtime library (runtime/com/lazarus/cobol/**)
+  - Validation harness (docker/**, verify.sh, verify.bat)
+  - Documentation (README.md)
+
+================================================================================
+
+THIRD-PARTY COBOL SOURCE ATTRIBUTION
+================================================================================
+
+The COBOL source files under cobol-source/ originate from the GnuCOBOL
+test suite (https://sourceforge.net/projects/gnucobol/). GnuCOBOL is
+distributed under the GNU General Public License. The COBOL source files
+are reproduced here unmodified, solely as the input fixtures used to
+generate the corresponding Java programs and to capture the golden
+reference outputs against which those programs are validated.
+
+GnuCOBOL is Copyright (C) Free Software Foundation, Inc., and the
+individual contributors listed in the GnuCOBOL project. The presence of
+these COBOL source files in this repository does not imply any change
+in their license status.
+
+================================================================================
+
+GOLDEN REFERENCE OUTPUTS
+================================================================================
+
+The files under golden-outputs/*.expected are the verbatim stdout captures
+from running each COBOL test program with GnuCOBOL 3.2 on Linux/AMD64.
+They are factual representations of program execution and serve only as
+test fixtures.
+
+================================================================================
+
+DEPENDENCIES
+================================================================================
+
+This repository has zero runtime dependencies beyond OpenJDK 11+. The
+validation harness additionally depends on GnuCOBOL 3.2 (installed via
+the system package manager inside the Docker image) for the optional
+"compile-from-source" verification path.

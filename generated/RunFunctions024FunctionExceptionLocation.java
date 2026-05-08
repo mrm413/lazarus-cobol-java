@@ -1,0 +1,98 @@
+package com.lazarus.cobol.generated;
+
+import com.lazarus.cobol.CobolDisplay;
+import com.lazarus.cobol.CobolFile;
+import com.lazarus.cobol.CobolIntrinsics;
+import com.lazarus.cobol.CobolProgram;
+import com.lazarus.cobol.CobolString;
+import com.lazarus.cobol.FileStatus;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
+public class RunFunctions024FunctionExceptionLocation extends CobolProgram {
+    public static final String COBOL_PROGRAM_ID = "prog";
+    private int sort_return = 0;
+    private int json_code = 0;
+    private int xml_code = 0;
+    private int cob_crt_status = 0;
+    private int length_an = 0;
+    private CobolString when_compiled = new CobolString(21);
+    private CobolString debug_item = new CobolString(256);
+    private CobolString debug_line = new CobolString(6);
+    private CobolString debug_name = new CobolString(30);
+    private CobolString debug_sub_1 = new CobolString(4);
+    private CobolString debug_sub_2 = new CobolString(4);
+    private CobolString debug_sub_3 = new CobolString(4);
+    private CobolString debug_contents = new CobolString(256);
+    private CobolString stdin = new CobolString(256);
+    private CobolString stdout = new CobolString(256);
+    private CobolString stderr = new CobolString(256);
+    private boolean _exitSection = false;
+    // WORKING-STORAGE SECTION
+    private CobolString test_status = new CobolString(2);
+
+    // FILE SECTION — TEST-FILE
+    private CobolString test_rec = new CobolString(4);
+
+    
+    // VMG: flat-memory layout (Phase 1.5b — declarations only, not yet wired into MOVE/DISPLAY)
+    private final com.lazarus.cobol.vmg.MemoryGrid _vmg_grid = new com.lazarus.cobol.vmg.MemoryGrid(2);
+    @SuppressWarnings("unused") private final com.lazarus.cobol.vmg.FieldDescriptor _vmgfd_test_status = com.lazarus.cobol.vmg.FieldDescriptor.builder().grid(_vmg_grid).at(0, 2).storage(com.lazarus.cobol.vmg.FieldDescriptor.Storage.ALPHANUMERIC).name("TEST-STATUS").build();
+
+    // FILE DESCRIPTORS
+    private CobolFile test_file = new CobolFile("NOTEXIST", "SEQUENTIAL", "SEQUENTIAL", "TEST-FILE");
+
+
+    // SECTION: A00-MAIN
+    private void a00_main() {
+        _exitSection = false;
+        a00();
+    }
+
+    private void a00() {
+        CobolIntrinsics.setCurrentLocation("prog; A00 OF A00-MAIN");
+        CobolDisplay.displayNoAdvancing(String.valueOf(CobolIntrinsics.exception_location()) + "|");
+        test_file.open("INPUT");
+        test_status.set(test_file.getFileStatus());
+        b00_main();
+    }
+
+    // SECTION: B00-MAIN
+    private void b00_main() {
+        _exitSection = false;
+        b00();
+    }
+
+    private void b00() {
+        CobolIntrinsics.setCurrentLocation("prog; B00 OF B00-MAIN");
+        CobolDisplay.displayNoAdvancing(String.valueOf(CobolIntrinsics.exception_location()));
+        CobolIntrinsics.programExit(CobolProgram.return_code);
+    }
+
+    @Override
+    public void run() {
+        CobolIntrinsics.setModuleInfo("prog", "", "prog.cob");
+        CobolProgram.pushActive("prog");
+        try {
+            CobolProgram.registerCallAlias("prog", "RunFunctions024FunctionExceptionLocation");
+            CobolProgram.registerCallAlias("prog", "RunFunctions024FunctionExceptionLocation");
+            CobolDisplay.setDecimalPointIsComma(false);
+            CobolDisplay.setDpcInDataMode("DEFAULT");
+            CobolIntrinsics.setLocationEnabled(false);
+            if (test_file != null && test_status != null) test_file.setStatusField(test_status);
+            a00_main();
+            b00_main();
+        } finally { CobolProgram.popActive(); }
+    }
+
+    public static void main(String[] args) {
+        if (args.length > 0 && "--cobol-child".equals(args[0])) {
+            CobolProgram.markIsCobolChild(true);
+            String[] _rest = new String[args.length - 1];
+            System.arraycopy(args, 1, _rest, 0, _rest.length);
+            args = _rest;
+        }
+        CobolIntrinsics.setCommandLineArgs(args);
+        new RunFunctions024FunctionExceptionLocation().run();
+    }
+}
