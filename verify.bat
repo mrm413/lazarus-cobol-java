@@ -2,9 +2,10 @@
 REM ===========================================================================
 REM Lazarus COBOL-to-Java — local validation entry point (Windows).
 REM
-REM Compiles the runtime library into a JAR, then compiles + runs each Java
-REM program in generated/, diffs stdout against golden-outputs/, and reports
-REM PASS / FAIL totals. Requires JDK 11+ on PATH.
+REM Compiles the runtime library + all 723 generated Java programs in two
+REM javac invocations, then runs each program and diffs stdout against
+REM golden-outputs/. Reports PASS / FAIL totals.
+REM Requires JDK 11+ on PATH.
 REM ===========================================================================
 
 setlocal enabledelayedexpansion
@@ -30,6 +31,11 @@ jar cf ..\lazarus-runtime.jar com\
 popd
 echo.
 
+echo Batch-compiling generated programs...
+dir /b /s /a-d generated\*.java > build\test_sources.txt
+javac -cp build\lazarus-runtime.jar -d build\test-classes @build\test_sources.txt 2>build\javac_batch.err
+echo.
+
 set PASS=0
 set FAIL=0
 set TOTAL=0
@@ -40,8 +46,10 @@ for %%F in (generated\*.java) do (
     set "base=%%~nF"
     set "expected=golden-outputs\!base!.expected"
     if exist "!expected!" (
-        javac -cp build\lazarus-runtime.jar -d build\test-classes "%%F" 2>nul
-        if !ERRORLEVEL! equ 0 (
+        if not exist build\test-classes\com\lazarus\cobol\generated\!base!.class (
+            javac -cp build\lazarus-runtime.jar -d build\test-classes "%%F" 2>nul
+        )
+        if exist build\test-classes\com\lazarus\cobol\generated\!base!.class (
             java -cp "build\lazarus-runtime.jar;build\test-classes" "com.lazarus.cobol.generated.!base!" > build\actual.txt 2>nul
             fc /w "!expected!" build\actual.txt >nul 2>&1
             if !ERRORLEVEL! equ 0 (

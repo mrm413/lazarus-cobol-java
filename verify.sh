@@ -2,9 +2,11 @@
 # ============================================================================
 # Lazarus COBOL-to-Java — local validation entry point (Linux / macOS).
 #
-# Compiles the runtime library into a JAR, then compiles + runs each Java
-# program in generated/ in a fresh working directory, diffs its stdout
-# against golden-outputs/, and reports PASS / FAIL totals.
+# Compiles the runtime library + all 723 generated Java programs in two
+# javac invocations (avoids the per-test JVM startup cost), then runs each
+# program in a fresh working directory and diffs stdout against
+# golden-outputs/. Reports PASS / FAIL totals.
+#
 # Requires JDK 11 or later.
 # ============================================================================
 
@@ -15,10 +17,12 @@ GOLDEN_DIR="golden-outputs"
 RUNTIME_DIR="runtime"
 BUILD_DIR="build"
 RUNTIME_JAR="${BUILD_DIR}/lazarus-runtime.jar"
+TEST_CLASSES="${BUILD_DIR}/test-classes"
 WORK_ROOT="${BUILD_DIR}/work"
 
 GRN='\033[0;32m'
 RED='\033[0;31m'
+YEL='\033[1;33m'
 RST='\033[0m'
 
 if ! command -v javac >/dev/null 2>&1; then
@@ -26,13 +30,22 @@ if ! command -v javac >/dev/null 2>&1; then
     exit 2
 fi
 
-mkdir -p "${BUILD_DIR}/runtime-classes" "${BUILD_DIR}/test-classes" "${WORK_ROOT}"
+mkdir -p "${BUILD_DIR}/runtime-classes" "${TEST_CLASSES}" "${WORK_ROOT}"
 
 echo "Compiling runtime library..."
 find "${RUNTIME_DIR}" -name '*.java' > "${BUILD_DIR}/runtime_sources.txt"
 javac -d "${BUILD_DIR}/runtime-classes" @"${BUILD_DIR}/runtime_sources.txt"
 ( cd "${BUILD_DIR}/runtime-classes" && jar cf "../$(basename "${RUNTIME_JAR}")" com/ )
 echo "  Runtime JAR: $(du -h "${RUNTIME_JAR}" | cut -f1)"
+echo
+
+echo "Batch-compiling generated programs..."
+ls "${GEN_DIR}"/*.java > "${BUILD_DIR}/test_sources.txt"
+COMPILE_START=$(date +%s)
+if ! javac -cp "${RUNTIME_JAR}" -d "${TEST_CLASSES}" @"${BUILD_DIR}/test_sources.txt" 2>"${BUILD_DIR}/javac_batch.err"; then
+    echo -e "  ${YEL}batch compile reported issues; falling back to per-file compile${RST}"
+fi
+echo "  Test classes compiled in $(($(date +%s) - COMPILE_START))s."
 echo
 
 normalize() {
@@ -54,10 +67,9 @@ FAIL=0
 TOTAL=0
 FAILED_TESTS=""
 START_TIME=$(date +%s)
+ROOT_PWD="$(pwd)"
 
 echo "Running parity validation..."
-
-ROOT_PWD="$(pwd)"
 
 for java_file in "${GEN_DIR}"/*.java; do
     [ -f "${java_file}" ] || continue
@@ -66,10 +78,14 @@ for java_file in "${GEN_DIR}"/*.java; do
     expected="${ROOT_PWD}/${GOLDEN_DIR}/${base}.expected"
     [ -f "${expected}" ] || continue
 
-    if ! javac -cp "${RUNTIME_JAR}" -d "${BUILD_DIR}/test-classes" "${java_file}" 2>/dev/null; then
-        FAIL=$((FAIL+1))
-        FAILED_TESTS+="  ${base}  (compile)\n"
-        continue
+    # Per-file compile fallback only if the batch missed something.
+    class_file="${TEST_CLASSES}/com/lazarus/cobol/generated/${base}.class"
+    if [ ! -f "${class_file}" ]; then
+        if ! javac -cp "${RUNTIME_JAR}" -d "${TEST_CLASSES}" "${java_file}" 2>/dev/null; then
+            FAIL=$((FAIL+1))
+            FAILED_TESTS+="  ${base}  (compile)\n"
+            continue
+        fi
     fi
 
     work="${WORK_ROOT}/${base}"
@@ -77,7 +93,8 @@ for java_file in "${GEN_DIR}"/*.java; do
     mkdir -p "${work}"
     pushd "${work}" >/dev/null
     prep_test "${base}"
-    actual_raw=$(java -cp "${ROOT_PWD}/${RUNTIME_JAR}:${ROOT_PWD}/${BUILD_DIR}/test-classes" "com.lazarus.cobol.generated.${base}" 2>/dev/null)
+    # 30 s per-test cap; stdin from /dev/null so ACCEPT-from-keyboard hits EOF.
+    actual_raw=$(timeout 30 java -cp "${ROOT_PWD}/${RUNTIME_JAR}:${ROOT_PWD}/${TEST_CLASSES}" "com.lazarus.cobol.generated.${base}" </dev/null 2>/dev/null)
     popd >/dev/null
     rm -rf "${work}"
 

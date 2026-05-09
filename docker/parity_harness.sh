@@ -2,9 +2,11 @@
 # ============================================================================
 # Lazarus COBOL-to-Java — Parity Harness.
 #
-# For each program in /validator/generated, compile it, run it in a fresh
-# working directory, capture stdout, and diff against the golden reference
-# in /validator/golden-outputs. Reports PASS / FAIL totals at the end.
+# Compiles all 723 generated Java programs ONCE in a single javac invocation,
+# then for each program: spawn the JVM in a fresh working directory, capture
+# stdout, and diff against the matching golden reference. The single batch
+# compile avoids the per-test JVM startup cost of javac (the dominant overhead
+# inside Docker on Windows).
 #
 # Output normalization mirrors the GnuCOBOL test-suite convention: trailing
 # whitespace is trimmed per line, trailing blank lines removed.
@@ -36,31 +38,35 @@ normalize() {
         awk 'BEGIN{n=0} { lines[n++]=$0 } END{ while (n>0 && lines[n-1]=="") n--; for (i=0;i<n;i++) print lines[i] }'
 }
 
-# Per-test preparation: touch files, set env, etc. The 723 programs cover
-# corners that need a small amount of fixture setup; everything else runs
-# in a clean fresh working directory.
 prep_test() {
-    local base="$1"
-    local java_class="$2"
+    local java_class="$1"
     case "${java_class}" in
-        # RunFile002 deletes a sequential file — needs the file to exist.
-        RunFile002DeleteFileSequential)
-            touch testfile
-            ;;
-        # RunFile090 (TURN EC-I-O) writes "out.txt" then re-reads it.
-        RunFile090TurnEcIo)
-            rm -f out.txt
-            ;;
-        # RunFile104 references a TEST-FILE; previous run must not leak.
-        RunFile104ScopeOfFdGlobalInNestedPrograms)
-            rm -f TEST-FILE
-            ;;
-        # RunFile032 tests OPTIONAL-missing — fixture must NOT exist.
-        RunFile032ReadOnOptionalMissingRelativeSequential)
-            rm -f missing.txt missings.txt
-            ;;
+        RunFile002DeleteFileSequential) touch testfile ;;
+        RunFile090TurnEcIo) rm -f out.txt ;;
+        RunFile104ScopeOfFdGlobalInNestedPrograms) rm -f TEST-FILE ;;
+        RunFile032ReadOnOptionalMissingRelativeSequential) rm -f missing.txt missings.txt ;;
     esac
 }
+
+TOTAL_PROGS=$(ls "${GEN_DIR}"/*.java 2>/dev/null | wc -l)
+
+echo "Batch-compiling ${TOTAL_PROGS} Java programs (one javac invocation)..."
+COMPILE_START=$(date +%s)
+JAVAC_LIST="/tmp/javac_sources.txt"
+ls "${GEN_DIR}"/*.java > "${JAVAC_LIST}"
+
+# Batch javac. If anything fails to compile, fall back to per-file compilation
+# below so we can still tally results — but in practice the corpus compiles
+# clean as a single invocation.
+if ! javac -cp "${RUNTIME_JAR}" -d "${BUILD_DIR}" @"${JAVAC_LIST}" 2>/tmp/javac_batch.err; then
+    echo -e "  ${YEL}batch compile reported issues; falling back to per-file compile${RST}"
+    BATCH_OK=0
+else
+    BATCH_OK=1
+fi
+COMPILE_END=$(date +%s)
+echo "  Compile complete in $((COMPILE_END - COMPILE_START))s."
+echo
 
 echo "Running parity validation against ${GOLDEN_DIR}..."
 echo
@@ -75,22 +81,28 @@ for java_file in "${GEN_DIR}"/*.java; do
     expected="${GOLDEN_DIR}/${base}.expected"
     [ -f "${expected}" ] || continue
 
-    # Compile (cached in BUILD_DIR).
-    if ! javac -cp "${RUNTIME_JAR}" -d "${BUILD_DIR}" "${java_file}" 2>/tmp/javac.err; then
-        COMPILE_FAIL=$((COMPILE_FAIL+1))
-        FAIL=$((FAIL+1))
-        FAILED_TESTS+="  ${base}  (compile)\n"
-        continue
+    # Per-file compile fallback for the rare case the batch javac failed.
+    class_file="${BUILD_DIR}/com/lazarus/cobol/generated/${base}.class"
+    if [ ! -f "${class_file}" ]; then
+        if ! javac -cp "${RUNTIME_JAR}" -d "${BUILD_DIR}" "${java_file}" 2>/tmp/javac.err; then
+            COMPILE_FAIL=$((COMPILE_FAIL+1))
+            FAIL=$((FAIL+1))
+            FAILED_TESTS+="  ${base}  (compile)\n"
+            continue
+        fi
     fi
 
-    # Fresh working directory per test prevents file-fixture pollution.
+    # Fresh working directory per test to avoid file-fixture pollution.
     work="${WORK_ROOT}/${base}"
     rm -rf "${work}"
     mkdir -p "${work}"
     pushd "${work}" >/dev/null
-    prep_test "${base}" "${base}"
+    prep_test "${base}"
 
-    actual_raw=$(java -cp "${RUNTIME_JAR}:${BUILD_DIR}" "com.lazarus.cobol.generated.${base}" 2>/dev/null)
+    # Hard 30 s per-test cap and stdin redirected from /dev/null. Programs that
+    # ACCEPT from CONSOLE / KEYBOARD complete on EOF; any program that ignores
+    # stdin and busy-waits gets killed instead of hanging the whole run.
+    actual_raw=$(timeout 30 java -cp "${RUNTIME_JAR}:${BUILD_DIR}" "com.lazarus.cobol.generated.${base}" </dev/null 2>/dev/null)
 
     popd >/dev/null
     rm -rf "${work}"
@@ -106,9 +118,8 @@ for java_file in "${GEN_DIR}"/*.java; do
         FAILED_TESTS+="  ${base}\n"
     fi
 
-    # Periodic progress (every 50 tests) so the user sees motion.
     if (( TOTAL % 50 == 0 )); then
-        printf "\r  progress: %4d / %4d  pass=%d fail=%d" "${TOTAL}" "$(ls "${GEN_DIR}"/*.java | wc -l)" "${PASS}" "${FAIL}"
+        printf "\r  progress: %4d / %4d  pass=%d fail=%d" "${TOTAL}" "${TOTAL_PROGS}" "${PASS}" "${FAIL}"
     fi
 done
 printf "\r%${WIDTH}s\r" ""
