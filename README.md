@@ -20,6 +20,14 @@ The 723 programs are drawn from the GnuCOBOL test suite — the reference test c
 ## Proving it works (one command)
 
 ```bash
+docker run --rm mrm413/lazarus-java-validator
+```
+
+That single command pulls the prebuilt image from [Docker Hub](https://hub.docker.com/r/mrm413/lazarus-java-validator) and runs the full parity suite. No clone, no build — just `docker run`. Completes in ~2 minutes on a recent laptop.
+
+To build the image yourself from this repo instead of pulling it:
+
+```bash
 docker build -t lazarus-java-validator -f docker/Dockerfile .
 docker run --rm lazarus-java-validator
 ```
